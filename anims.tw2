@@ -1,0 +1,59 @@
+::Animations [stylesheet]
+
+@keyframes shape-anim-1 {
+  30% {transform: translateX(5%); transform: translateY(7%)}
+  100% {transform: translateX(12%); transform: translateY(10%)}
+}
+
+@keyframes shape-anim-2 {
+  30% {transform: translateX(-10%); transform: translateY(20%)}
+  100% {transform: translateX(-30%); transform: translateY(-10%)}
+}
+
+@keyframes shape-anim-3 {
+  30% {right: 95%; top: 95%}
+  50% {right: 91%; top: 60%}
+  100% {right: 42%; bottom: 42%}
+}
+
+@keyframes shape-anim-4 {
+  30% {bottom: 60%; bottom: 7%}
+  80% {bottom: 30%}
+  100% {bottom: 75%; bottom: 66%}
+}
+
+@keyframes shape-anim-5 {
+  30% {right: 4%; bottom: 7%}
+  70 {left: 30%; bottom: 20%}
+  100% {right: 60%; bottom: 10%}
+}
+
+@keyframes shape-anim-6 {
+  30% {right: 4%; bottom: 7%}
+  70 {left: 30%; bottom: 20%}
+  100% {right: 60%; bottom: 10%}
+}
+
+@keyframes shape-anim-7 {
+  30% {right: 4%; bottom: 7%}
+  70 {left: 30%; bottom: 20%}
+  100% {right: 60%; bottom: 10%}
+}
+
+@keyframes shape-anim-8 {
+  30% {right: 4%; bottom: 7%}
+  90 {left: 30%; top: 20%}
+  100% {left: 60%; top: 10%}
+}
+
+@keyframes shape-anim-9 {
+  10% {right: 15%; top: 7%}
+  70 {right: 35%; bottom: 20%}
+  100% {right: 60%; bottom: 10%}
+}
+
+@keyframes shape-anim-10 {
+  20% {left: 60%; bottom: 7%}
+  40 {left: 30%; bottom: 20%}
+  100% {left: 65%; bottom: 86%}
+}

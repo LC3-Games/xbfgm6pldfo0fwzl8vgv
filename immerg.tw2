@@ -1,5 +1,6 @@
 ::StoryIncludes
   css.tw2
+  anims.tw2
   js_ready_done.tw2
 
   storyinit.tw2
@@ -15,6 +16,15 @@ Immerging
 
 
 ::Start [nobr]
-  <div id="right">[img[images/one.png][NextChoice][$choice = 1]]</div>
-  <div id="left">[img[images/two.png][NextChoice][$choice = 2]]</div>
-  and so we are okay
+  <div class="container">
+    <a data-passage="ShapeChoice" data-setter="$choice_1 = 1"><div id="fullright"></div></a>
+    <a data-passage="ShapeChoice" data-setter="$choice_1 = 2"><div id="fullleft"></div></a>
+  </div>
+
+::ShapeChoice [nobr]
+  <div class="shape">[img[images/circle_blue.png][Home][$shapeChoice = 1]]</div>
+  <div class="shape">[img[images/circle_pink.png][Home][$shapeChoice = 1]]</div>
+  <div class="shape">[img[images/square_blue.png][Home][$shapeChoice = 1]]</div>
+  <div class="shape">[img[images/square_pink.png][Home][$shapeChoice = 1]]</div>
+  <div class="shape">[img[images/triangle_blue.png][Home][$shapeChoice = 1]]</div>
+  <div class="shape">[img[images/triangle_pink.png][Home][$shapeChoice = 1]]</div>

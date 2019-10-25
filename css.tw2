@@ -20,45 +20,118 @@ time, mark, audio, video {
 
 html {
 	margin: auto;
-	background-color: black;
+	background-color: transparent;
 }
 
 body {
-	background-color: #ff70e494;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100%;
+  min-width: 100%;
 	margin: auto;
 	max-width: 1100px;
 	min-height: 100vh;
-	box-shadow: 0px 0px 20px 20px #ff70e494;
 }
 
 #story {
 	position: relative;
   text-align: center;
 	font-size: 1.1em;
-	margin: 0 auto;
-	padding: 2em;
-	min-height: 100vh;
-	bottom: 12%;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100%;
+  min-width: 100%;
 	margin: auto 0;
-	padding-bottom: 12%;
 	box-sizing: border-box;
 }
 
 #passages {
-	max-width: 1100px;
+	max-width: 100%;
+  margin: 0; /* auto 0 or vis versa centers things again */
 }
 
 .passage {
-  color: black;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: white;
 	line-height: 1.2;
   font-size: 1.4em;
-  min-height: 100%;
-  padding: 1em 0em;
-	box-shadow: 0px 0px 20px 20px #00000038;
-	background: white;
+	background: transparent;
 }
 
-.passage a {
+#fullright {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: #ff006c;
+  float: right;
+}
+
+#fullleft {
+  content: "";
+  width: 50%;
+  height: 100vh;
+  background-color: #34f3ff;
+  float: left;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.shape-anim-1 {
+  animation: shape-anim-1 ease 5s forwards;
+}
+
+.shape-anim-2 {
+  animation: shape-anim-2 ease 5s forwards;
+}
+
+.shape-anim-3 {
+  animation: shape-anim-3 ease 5s forwards;
+}
+
+.shape-anim-4 {
+  animation: shape-anim-4 ease 5s forwards;
+}
+
+.shape-anim-5 {
+  animation: shape-anim-5 ease 5s forwards;
+}
+
+.shape-anim-6 {
+  animation: shape-anim-6 ease 5s forwards;
+}
+
+.shape-anim-7 {
+  animation: shape-anim-7 ease 5s forwards;
+}
+
+.shape-anim-8 {
+  animation: shape-anim-8 ease 5s forwards;
+}
+
+.shape-anim-9 {
+  animation: shape-anim-9 ease 5s forwards;
+}
+
+.shape-anim-10 {
+  animation: shape-anim-10 ease 5s forwards;
+}
+
+.shape {
+  width: 100px;
+  margin: auto;
+  position: relative;
+}
+
+/* .passage a {
 	color: lime;
 }
 
@@ -74,15 +147,15 @@ p {
   text-align: left;
   margin: 0 auto;
   margin-bottom: 0.5em;
-}
+} */
 
-.header {
-	/* position: absolute;
+/* .header {
+	position: absolute;
 	z-index: 50;
 	margin: auto;
 	background: #651cbe;
 	bottom: 27%;
-	right: 1em; */
+	right: 1em;
 }
 
 #centered {
@@ -90,23 +163,12 @@ p {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-}
+} */
 
 img {
   max-width: 100%;
-  box-shadow: 10px 10px 20px 0px #b7a9a91c;
 }
 
 .link {
   color: #651cbe;
-}
-
-input {
-	color: black;
-	border-color: #afafaf;
-	background-color: #d5d5d5;
-}
-
-input:not(:disabled):focus, input:not(:disabled):hover {
-	background-color: #fff;
 }

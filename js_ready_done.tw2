@@ -4,6 +4,81 @@
 
 
 ::PassageDone
+<<if passage() == "ShapeChoice">>
+  <<script>>
+
+  var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10"];
+  $(".shape").each(function() {
+    $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
+  });
+
+  // $(".shape").on("animationend", function(){
+  //   $(this).attr('class', 'shape');
+  //   $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
+  // });
+
+  // var anim = {
+  //   shape : function() {
+  //     var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10"];
+  //     $(".shape").each(function() {
+  //       $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
+  //     });
+  //   }
+  // }
+    <</script>>
+  <<endif>>
 
 
 ::PassageReady
+// var anim = Math.floor((Math.random() * 10) + 1);
+// if(anim == 1) {
+//   $(this).addClass('shape-anim-1').on("animationend", function(){
+//     $(this).removeClass('shape-anim-1');
+//     anim.shape();
+//   });
+// } else if(anim == 2) {
+//   $(this).addClass('shape-anim-2').on("animationend", function(){
+//     $(this).removeClass('shape-anim-2');
+//     anim.shape();
+//   });
+// } else if(anim == 3) {
+//   $(this).addClass('shape-anim-3').on("animationend", function(){
+//     $(this).removeClass('shape-anim-3');
+//     anim.shape();
+//   });
+// } else if(anim == 4) {
+//   $(this).addClass('shape-anim-4').on("animationend", function(){
+//     $(this).removeClass('shape-anim-4');
+//     anim.shape();
+//   });
+// } else if(anim == 5) {
+//   $(this).addClass('shape-anim-5').on("animationend", function(){
+//     $(this).removeClass('shape-anim-5');
+//     anim.shape();
+//   });
+// } else if(anim == 6) {
+//   $(this).addClass('shape-anim-6').on("animationend", function(){
+//     $(this).removeClass('shape-anim-6');
+//     anim.shape();
+//   });
+// } else if(anim == 7) {
+//   $(this).addClass('shape-anim-7').on("animationend", function(){
+//     $(this).removeClass('shape-anim-7');
+//     anim.shape();
+//   });
+// } else if(anim == 8) {
+//   $(this).addClass('shape-anim-8').on("animationend", function(){
+//     $(this).removeClass('shape-anim-8');
+//     anim.shape();
+//   });
+// } else if(anim == 9) {
+//   $(this).addClass('shape-anim-9').on("animationend", function(){
+//     $(this).removeClass('shape-anim-9');
+//     anim.shape();
+//   });
+// } else if(anim == 10) {
+//   $(this).addClass('shape-anim-10').on("animationend", function(){
+//     $(this).removeClass('shape-anim-10');
+//     anim.shape();
+//   });
+// }
