@@ -1,0 +1,9 @@
+::StoryJS [script]
+  UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
+  $('<div id="right-side-bar"></div>').appendTo(document.body); /* ain't really a side bar anymore but this creates the persistent element used for the phone */
+
+
+::PassageDone
+
+
+::PassageReady

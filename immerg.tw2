@@ -1,0 +1,20 @@
+::StoryIncludes
+  css.tw2
+  js_ready_done.tw2
+
+  storyinit.tw2
+
+
+::StoryIFID [twee2]
+Twee2::build_config.story_ifid ='80A24E8A-1ED1-4677-84AF-EB3E11E6D40D'
+Twee2::build_config.story_format = 'Sugarcube2'
+
+
+::StoryTitle
+Immerging
+
+
+::Start [nobr]
+  <div id="right">[img[images/one.png][NextChoice][$choice = 1]]</div>
+  <div id="left">[img[images/two.png][NextChoice][$choice = 2]]</div>
+  and so we are okay
