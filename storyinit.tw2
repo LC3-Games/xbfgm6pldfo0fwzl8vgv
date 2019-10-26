@@ -1,2 +1,3 @@
 ::StoryInit
   <<set $choice = 0>>
+  <<set $cursor = 1>>

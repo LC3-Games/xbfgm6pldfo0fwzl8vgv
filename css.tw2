@@ -53,12 +53,16 @@ body {
 .passage {
   padding: 0;
   margin: 0 auto;
-  min-height: 100vh;
-  min-width: 100vw;
   color: white;
 	line-height: 1.2;
   font-size: 1.4em;
 	background: transparent;
+  font-family: "Consolas", "Monaco", sans-serif;
+  transition: none;
+}
+
+.passage.flash {
+  animation: flash 4s ease forwards;
 }
 
 #fullright {
@@ -82,53 +86,156 @@ body {
 .container {
   height: 100%;
   width: 100%;
-  display: inline-block;
 }
 
-.shape-anim-1 {
-  animation: shape-anim-1 ease 5s forwards;
+.black-container {
+  height: 100%;
+  width: 100%;
+	animation: black-box 10s forwards;
+	position: fixed;
+	background-color: #111111;
 }
 
-.shape-anim-2 {
-  animation: shape-anim-2 ease 5s forwards;
+.black-container-reverse {
+  height: 100%;
+  width: 100%;
+	animation: black-box-reverse 7s forwards;
+	position: fixed;
+	background-color: #111111;
 }
 
-.shape-anim-3 {
-  animation: shape-anim-3 ease 5s forwards;
+button.pink:hover {
+	background-color: #ff006c;
 }
 
-.shape-anim-4 {
-  animation: shape-anim-4 ease 5s forwards;
+button.blue:hover {
+	background-color: #34f3ff;
 }
 
-.shape-anim-5 {
-  animation: shape-anim-5 ease 5s forwards;
+#shape1 {
+  top: 10%;
+  right: 44%;
 }
 
-.shape-anim-6 {
-  animation: shape-anim-6 ease 5s forwards;
+#shape2 {
+  top: 66%;
+  right: 65%;
 }
 
-.shape-anim-7 {
-  animation: shape-anim-7 ease 5s forwards;
+#shape3 {
+  top: 13%;
+  right: 70%;
 }
 
-.shape-anim-8 {
-  animation: shape-anim-8 ease 5s forwards;
+#shape4 {
+  top: 33%;
+  right: 21%;
 }
 
-.shape-anim-9 {
-  animation: shape-anim-9 ease 5s forwards;
+#shape5 {
+  top: 40%;
+  right: 20%;
 }
 
-.shape-anim-10 {
-  animation: shape-anim-10 ease 5s forwards;
+#shape6 {
+  top: 20%;
+  right: 75%;
+}
+
+#shapes1 {
+  top: 15%;
+  right: 55%;
+}
+
+#shapes2 {
+  top: 85%;
+  right: 21%;
+}
+
+#shapes3 {
+  top: 33%;
+  right: 90%;
+}
+
+#shapes4 {
+  top: 50%;
+  right: 50%;
+}
+
+#shapes5 {
+  top: 40%;
+  right: 5%;
+}
+
+#shapes6 {
+  top: 20%;
+  right: 65%;
+}
+
+#bar1 {
+  right: 10%;
+}
+
+#bar2 {
+  right: 70%;
+}
+
+#bar3 {
+  right: 33%;
+}
+
+#bar4 {
+  right: 1%;
+}
+
+#bar5 {
+  right: 75%;
+}
+
+#bar6 {
+  right: 50%;
+}
+
+#bar7 {
+  right: 95%;
+}
+
+#bar8 {
+  right: 44%;
+}
+
+.flash {
+
+}
+
+button {
+  background-color: transparent;
+  max-width: 30%;
+  margin-left: 2em;
+  vertical-align: middle;
 }
 
 .shape {
   width: 100px;
   margin: auto;
-  position: relative;
+  position: fixed;
+}
+
+.bar {
+  position: fixed;
+  height: 100vh;
+}
+
+.bar img {
+  height: 100vh;
+}
+
+.white {
+  background-color: white;
+}
+
+.flicker {
+  animation: flicker 1s linear alternate infinite;
 }
 
 /* .passage a {
