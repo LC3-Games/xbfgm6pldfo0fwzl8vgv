@@ -1442,7 +1442,7 @@ img {
         [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail]]
       &lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="FlickFast" tags="nobr" position="">&lt;&lt;if $visInput == true&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Quiz Nothing" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="21" name="Quiz You" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="22" name="Quiz" tags="" position=""></tw-passagedata><tw-passagedata pid="23" name="FlickFast" tags="nobr" position="">&lt;&lt;if $visInput == true&gt;&gt;
     &lt;script&gt;
       $(".passage").prepend("&lt;div class='flick-fast'&gt;&lt;/div&gt;")
       // $("#flick").removeClass("flick-fast");
@@ -1453,7 +1453,7 @@ img {
         $(".flick-fast").remove(".flick-fast")
       &lt;/script&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 6&gt;&gt;&lt;&lt;goto "Next"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="ChooseNamePronouns" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="23" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 6&gt;&gt;&lt;&lt;goto "Next"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="ChooseNamePronouns" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="26" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
       var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10"];
@@ -1544,7 +1544,7 @@ img {
     &lt;&lt;script&gt;&gt;
       $(".passage").addClass("ship4bg");
     &lt;&lt;/script&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="25" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="28" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1565,7 +1565,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1585,7 +1585,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
   &lt;&lt;set $shapeChoice = 0&gt;&gt;
   &lt;&lt;set $choice = 0&gt;&gt;
   &lt;&lt;set $cursor = 1&gt;&gt;
@@ -1600,6 +1600,7 @@ img {
   &lt;&lt;set $audInput = false&gt;&gt;
 
   &lt;&lt;set $last = false&gt;&gt;
+  &lt;&lt;set $returnPassage = ""&gt;&gt;
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "pinkNoise" "Sounds/pink_noise.ogg"&gt;&gt;
