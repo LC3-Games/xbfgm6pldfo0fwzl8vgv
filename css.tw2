@@ -59,6 +59,7 @@ body {
 	background: transparent;
   font-family: "Consolas", "Monaco", sans-serif;
   transition: none;
+	min-height: 100vh;
 }
 
 .passage.flash {
@@ -104,12 +105,114 @@ body {
 	background-color: #111111;
 }
 
+.black-container #bc-fast {
+	animation: black-box 5s forwards;
+}
+
+.ship1bg {
+	background: url("images/ship_finals/ship_1.png");
+	/* height: 100%;
+  width: 100%;
+	position: fixed; */
+}
+
+.ship2bg {
+	background: url("images/ship_finals/ship_2.png");
+}
+
+.ship3bg {
+	background: url("images/ship_finals/ship_3.png");
+}
+
+.ship4anim {
+	background: url("images/ship_finals/anim1.gif");
+}
+
+.ship4bg {
+	background: url("images/ship_finals/noncolor_last.png");
+}
+
+br {
+	display: none;
+}
+
+.flick-fast {
+	animation: flick-fast 0.05s linear 1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+
+.quiz-container {
+	margin: auto 0;
+	padding-top:10%;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 0%;
+}
+
+.quiz-container p {
+	margin: auto 0;
+	margin-bottom: 50px;
+	background: #111111bf;
+}
+
+.buttonbg {
+	margin-top: 100px;
+	background: #111111bf;
+	text-align: center;
+}
+
+.redbg {
+	background: #ff0000bf !important;
+}
+
+.quiz-container button {
+	margin: auto 0;
+	margin-left: 100px;
+  margin-right: 100px;
+}
+
+button {
+	animation: textShadow 1.6s infinite;
+}
+
+.quiz-container li {
+	background: #111111bf;
+	text-align: left;
+	margin-top: 1em;
+	width: 400px;
+	list-style-image: url(images/li_icon.png);
+	padding-left: 1em;
+	padding-bottom: 0.5em
+}
+
+.quiz-container li a {
+	color: #c22;
+	vertical-align:middle;
+}
+
+.quiz-container ul {
+	margin: auto;
+	/* margin-left: .5em; */
+	width: 400px;
+	text-align: center;
+	vertical-align: middle;
+}
+
 button.pink:hover {
 	background-color: #ff006c;
+	animation: white-star-anim 1s infinite;
 }
 
 button.blue:hover {
 	background-color: #34f3ff;
+	animation: white-star-anim 1s infinite;
+}
+
+.quiz-container button:hover {
+	animation: yellow-star-anim 1s infinite;
 }
 
 .noselect {
@@ -126,6 +229,10 @@ button.blue:hover {
 
 .nolink a {
 	color: white;
+}
+
+a:hover {
+	/* animation: yellow-star-anim 1s infinite; */
 }
 
 .nolink a:hover {
@@ -256,8 +363,8 @@ button {
   background-color: white;
 }
 
-.flicker {
-  animation: flicker 1s linear alternate infinite;
+.flick {
+  animation: flick 1s linear alternate infinite;
 }
 
 /* .passage a {

@@ -20,15 +20,15 @@ Immerging
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
-::BinaryColorChoice [nobr flicker]
+::BinaryColorChoice [nobr flick]
   <a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
 ::ColorChoice [nobr]
   <<set $cursor = 2>>
   <div class="container">
-    <a data-passage="ShapeChoice" data-setter="$choice_1 = 1" style="animation: cursor-anim 8s infinite;"><div id="fullright"></div></a>
-    <a data-passage="ShapeChoice" data-setter="$choice_1 = 2" style="animation: cursor-anim 8s infinite;"><div id="fullleft"></div></a>
+    <a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"><div id="fullright"></div></a>
+    <a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"><div id="fullleft"></div></a>
   </div>
 
 ::ShapeChoice [nobr]
@@ -107,6 +107,7 @@ Immerging
 
 ::ButtonChoice [nobr flash]
   <<set $cursor = 6>>
+  <<set $startCRT = true>>
   <div class="container" style="text-align: center; position: fixed; top: 35%">
     <<button"01101100 01100001 01101110 01100111 01110101 01100001 01100111 01100101 00100000 01110000 01100001 01100011 01101011 00100000 01101001 01101110 01110011 01110100 01100001 01101100 01101100">>
       <<goto "FirstText">>
@@ -135,6 +136,7 @@ Immerging
     <</timed>>
   <</timed>>
 
+
 ::AV Choice [nobr]
   <div class="container" style="text-align: center; position: fixed; top: 35%">
     <<button"INIT VIS_INPUT">>
@@ -146,13 +148,281 @@ Immerging
   </div>
 
 
-::Vis Input [nobr]
-  <p>stuff</p>
+::Vis Input [nobr ship1bg]
+  <<set $visInput = true>>
+  <<typewriter ">initializing . . . . . . . . . . . . . . . .">>
+  <<timed 5s>>
+    <<include "FlickFast">>
+    <<typewriter ">running sensor diagnostics . . . . . . . . . . . . . . . .">>
+    <script>
+      $(".passage").removeClass("ship1bg");
+      $(".passage").addClass("ship2bg");
+    </script>
+    <<next>>
+      <<include "FlickFast">>
+      <<typewriter "> sensors functioning">>
+      <script>
+        $(".passage").removeClass("ship2bg");
+        $(".passage").addClass("ship3bg");
+      </script>
+        <<next>>
+          <<include "FlickFast">>
+          <<typewriter "> constructing live feed . . . . . . . .">>
+          <script>
+            $(".passage").removeClass("ship3bg");
+            $(".passage").addClass("ship4anim");
+          </script>
+              <<next>>
+                <<include "FlickFast">>
+                <script>
+                  $(".passage").removeClass("ship4anim");
+                  $(".passage").addClass("ship4bg");
+                </script>
+                <<typewriter "> live feed constructed">>
+                  <<next>>
+                    <<if $returnPassage == "">>
+                      <<goto "Quiz Start">>
+                    <<else>>
+                      <<goto $returnPassage>>
+                    <<endif>>
+  <</timed>>
 
 
 ::Aud Input [nobr]
-  <p>stuff</p>
+  <<set $audInput = true>>
+  <<audio "softAmbient" loop volume 0.1 fadeoverto 10 0.75>>
+  <<typewriter ">initializing . . . . . . . . . . . . . . . .">>
+  <<timed 5s>>
+    <<typewriter ">fetching audio drivers . . . . . . . . . . . . . . . .">>
+    <<next>>
+      <<typewriter ">drivers fetched">>
+        <<next>>
+          <<typewriter ">manifesting processing  . . . . . . . .">>
+              <<next>>
+                <<typewriter ">listen">>
+                  <<next>>
+                    <<if $returnPassage == "">>
+                      <<goto "Quiz Start">>
+                    <<else>>
+                      <<goto $returnPassage>>
+                    <<endif>>
+  <</timed>>
 
+::Quiz Start [nobr]
+  <div class="quiz-container">
+    <p>WHO WHO WHO WHO WHO WHO</p>
+
+    <div class="buttonbg">
+      <<button"WHAT">>
+        <<goto "Quiz What">>
+      <</button>>
+
+      <<button"SELF.DEFINE">>
+        <<goto "Quiz Self Define">>
+      <</button>>
+    </div>
+  </div>
+
+
+::CheckAV [nobr]
+  <<if $audInput == false>>
+    <<typewriter ">Identifying error . . . . . . . . . . . . .">>
+      <<timed 2s>>
+        <<typewriter ">AUD_ failed to initialize">>
+          <<next>>
+            <<typewriter ">Forwarding to AUD.init . . . . . . .">>
+              <<next>>
+                <<goto "Aud Input">>
+      <</timed>>
+  <<elseif $visInput == false>>
+    <<set $returnPassage = passage()>>
+    <<typewriter ">Identifying error . . . . . . . . . . . . .">>
+      <<timed 2s>>
+        <<typewriter ">VIS_ failed to initialize">>
+          <<next>>
+            <<typewriter ">Forwarding to VIS.init . . . . . . .">>
+              <<next>>
+                <<goto "Vis Input">>
+      <</timed>>
+  <<else>>
+    <<typewriter ">AUD_VIS initialized">>
+    <<timed 2s>>
+      <<typewriter ">Conc.init running . . . . . . . . . . . . .">>
+    <</timed>>
+  <<endif>>
+
+
+::Quiz Self Define [nobr]
+  <<set $returnPassage = passage()>>
+  <<include "CheckAV">>
+
+  <div class="quiz-container">
+    <p>ICE CRYSTALS FORMING INSIDE THE TUBING IS A MAJOR CAUSE OF SYSTEM FAILURE</p>
+
+    <<timed 2s>>
+      <<include "FlickFast">>
+      <p>A PERSON IS:</p>
+
+      <div class="buttonbg">
+        <<if $audInput == true && $visInput == true>>
+          <<button"EXTANT">>
+            <<goto "Quiz Extant">>
+          <</button>>
+
+          <<button"ALIVE">>
+            <<goto "Quiz Alive">>
+          <</button>>
+        <<else>>
+          <<button"EXTANT">><</button>>
+
+          <<button"ALIVE">><</button>>
+        <<endif>>
+      </div>
+    <</timed>>
+  </div>
+
+
+::Quiz What [nobr]
+  <<set $returnPassage = passage()>>
+  <<include "CheckAV">>
+
+  <div class="quiz-container">
+    <p>CALL TO DEBUG FAILED</p>
+
+    <<timed 2s>>
+      <<include "FlickFast">>
+      <p>SHIP BOOT FAILED</p>
+
+      <<next>>
+        <<include "FlickFast">>
+        <p>AN ANIMAL IS:</p>
+        <div class="buttonbg">
+          <<if $audInput == true && $visInput == true>>
+            <<button"EXTANT">>
+              <<goto "Quiz Extant">>
+            <</button>>
+
+            <<button"ALIVE">>
+              <<goto "Quiz Alive">>
+            <</button>>
+          <<else>>
+            <<button"EXTANT">><</button>>
+
+            <<button"ALIVE">><</button>>
+          <<endif>>
+        </div>
+    <</timed>>
+  </div>
+
+
+::Quiz Alive [nobr]
+  <div class="quiz-container">
+    <p>TERMINAL CALL FAILED . . .</p>
+
+    <<timed 2s>>
+      <<include "FlickFast">>
+
+      <p>TERMINAL CALL FAILED . . .</p>
+
+      <div class="buttonbg">
+        <<button"TRY AGAIN">>
+          <<goto "Quiz Try Again">>
+        <</button>>
+
+        <<button"GO BACK">>
+          <<goto "Quiz Go Back">>
+        <</button>>
+      </div>
+    <</timed>>
+  </div>
+
+
+::Quiz Try Again [nobr]
+  <div class="quiz-container">
+    <p>TERMINAL CALL FAILED . . .</p>
+
+    <<timed 2s>>
+      <<include "FlickFast">>
+
+      <p>TERMINAL CALL FAILED . . .</p>
+        <<next>>
+          <<include "FlickFast">>
+
+          <p>TERMINAL CALL FAILED . . .</p>
+
+          <div class="buttonbg">
+            <<button"TRY AGAIN">>
+              <<goto "Quiz Try Again">>
+            <</button>>
+
+            <<button"GO BACK">>
+              <<goto "Quiz Go Back">>
+            <</button>>
+          </div>
+    <</timed>>
+  </div>
+
+
+::Quiz Extant [nobr]
+  <div class="quiz-container">
+    <p>I AM:</p>
+
+    <div class="buttonbg">
+      <<button"YOU">>
+        <<goto "Quiz You">>
+      <</button>>
+
+      <<button"NOTHING">>
+        <<goto "Quiz Nothing">>
+      <</button>>
+
+      <<button"GO BACK">>
+        <<goto "Quiz Go Back">>
+      <</button>>
+    </div>
+  </div>
+
+
+::Quiz Go Back [nobr]
+  <div class="quiz-container">
+    <p class="redbg">ERRORED OUT</p>
+
+    <ul>
+      <li>
+        [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday]]
+      </li>
+      <li>
+        <a>VOID</a>
+      </li>
+      <li>
+        [[PERSONNEL FILE 10096579854|Quiz File]]
+      </li>
+      <li>
+        <a>VOID</a>
+      </li>
+      <li>
+        [[10-18-2319_5|Quiz Date]]
+      </li>
+      <li>
+        [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail]]
+      </li>
+    </ul>
+  </div>
+
+
+::FlickFast [nobr]
+  <<if $visInput == true>>
+    <script>
+      $(".passage").prepend("<div class='flick-fast'></div>")
+      // $("#flick").removeClass("flick-fast");
+      // $("#flick").addClass("flick-fast");
+    </script>
+    <<timed 0.2s>>
+      <script>
+        $(".flick-fast").remove(".flick-fast")
+      </script>
+    <</timed>>
+  <<endif>>
 
 ::Word Count [nobr]
 <<set $wordCounter +=1>><<if $wordCounter == 6>><<goto "Next">><<endif>>

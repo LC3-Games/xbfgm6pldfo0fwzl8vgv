@@ -2,13 +2,18 @@ Transitions during the formation stage. 1D, 2D, 3D. The background takes on colo
 
 jquery draggable() and cursor: move;
 
+revisit aligning the bullet items
+
+make anims smooth and rolly. All rolly, just in different directions from different starting points
+
+soft ambient
+
 
 
 any word: (([A-Z])\w+)
 
-<<include "Word Count">>
+<<linkreplace"\1">><span class="hide">\1</span><<include "Word Count">><</linkreplace>>
 
-<<set $wordCounter +=1>><<script>>$(this).addClass("hide")<</script>><<if $wordCounter == 6>><<goto "Next">><<endif>>
 
 
 

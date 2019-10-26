@@ -1,7 +1,23 @@
 ::StoryInit
+  <<set $colorChoice = "">>
+  <<set $shapeChoice = 0>>
   <<set $choice = 0>>
   <<set $cursor = 1>>
+
   <<set $wordCounter = 0>>
+
   <<set $name = "">>
   <<set $pronoun1 = "">>
   <<set $pronoun2 = "">>
+
+  <<set $visInput = false>>
+  <<set $audInput = false>>
+
+  <<set $last = false>>
+
+  <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>
+  <<cacheaudio "pinkNoise" "Sounds/pink_noise.ogg">>
+  <<cacheaudio "auralDrone" "Sounds/aural_drone.ogg">>
+  <<cacheaudio "harmonicDrone" "Sounds/harmonic_drone.ogg">>
+  <<cacheaudio "tapMetal" "Sounds/tapping_metal.ogg">>
+  <<cacheaudio "ambientDrone" "Sounds/ambient_drone.ogg">>
