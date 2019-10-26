@@ -112,6 +112,28 @@ button.blue:hover {
 	background-color: #34f3ff;
 }
 
+.noselect {
+	user-select: none;
+}
+
+.hide {
+	opacity: 0;
+}
+
+.nolink {
+
+}
+
+.nolink a {
+	color: white;
+}
+
+.nolink a:hover {
+	color: white;
+	animation: flash-word 0.1s infinite;
+	text-decoration: none;
+}
+
 #shape1 {
   top: 10%;
   right: 44%;

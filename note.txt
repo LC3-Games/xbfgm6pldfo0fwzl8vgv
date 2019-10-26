@@ -1,3 +1,20 @@
 Transitions during the formation stage. 1D, 2D, 3D. The background takes on colour and shapes of decisions
 
 jquery draggable() and cursor: move;
+
+
+
+any word: (([A-Z])\w+)
+
+<<include "Word Count">>
+
+<<set $wordCounter +=1>><<script>>$(this).addClass("hide")<</script>><<if $wordCounter == 6>><<goto "Next">><<endif>>
+
+
+
+<<set $name = setup.makename(5)>>
+<<set $pronoun1 = setup.makepronoun(3)>>
+<<set $pronoun2 = $pronoun1 + "s">>
+<<print $name>>
+<<print $pronoun1>>
+<<print $pronoun2>>

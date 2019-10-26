@@ -5,6 +5,30 @@
   var txt = 'Lorem ipsum dummy text blabla.';
   var speed = 50;
 
+
+  setup.makename = function(length) {
+     var nameResult           = '';
+     var charactersName       = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789';
+     var charactersLength = charactersName.length;
+     for ( var i = 0; i < length; i++ ) {
+        nameResult += charactersName.charAt(Math.floor(Math.random() * charactersLength));
+        State.variables.name = nameResult;
+     }
+     return State.variables.name;
+  }
+
+  setup.makepronoun = function(length) {
+     var pronounResult           = '';
+     var charactersPronoun       = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789';
+     var charactersLength = charactersPronoun.length;
+     for ( var i = 0; i < length; i++ ) {
+        pronounResult += charactersPronoun.charAt(Math.floor(Math.random() * charactersLength));
+        State.variables.pronoun1 = pronounResult;
+        State.variables.pronoun2 = pronounResult + 's';
+     }
+     return State.variables.pronoun1
+  }
+
   $("div.wrapper input").click(function(){
   	var $input = $(this);
   	inputFieldID = $input.attr("id");
@@ -207,3 +231,31 @@
 //     anim.shape();
 //   });
 // }
+
+
+::Generator [nobr]
+
+var length1 = 5
+var length2 = 3
+function makename(length) {
+   var nameResult           = '';
+   var charactersName       = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = charactersName.length;
+   for ( var i = 0; i < length; i++ ) {
+      nameResult += charactersName.charAt(Math.floor(Math.random() * charactersLength));
+      State.variables.name = nameResult;
+   }
+   return State.variables.name;
+}
+
+function makepronoun(length2) {
+   var pronounResult           = '';
+   var charactersPronoun       = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = charactersPronoun.length;
+   for ( var i = 0; i < length; i++ ) {
+      pronounResult += charactersPronoun.charAt(Math.floor(Math.random() * charactersLength));
+      State.variables.pronoun1 = nameResult;
+      State.variables.pronoun2 = nameResult + 's';
+   }
+   return State.variables.pronoun1, State.variables.pronoun2;
+}

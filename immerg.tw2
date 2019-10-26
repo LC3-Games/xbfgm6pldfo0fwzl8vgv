@@ -16,7 +16,7 @@ Twee2::build_config.story_format = 'Sugarcube2'
 Immerging
 
 
-::Start [nobr white]
+::Start [nobr white nolink noselect]
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -145,9 +145,17 @@ Immerging
     <</button>>
   </div>
 
+
 ::Vis Input [nobr]
-  <<set $cursor = 7>>
   <p>stuff</p>
+
 
 ::Aud Input [nobr]
   <p>stuff</p>
+
+
+::Word Count [nobr]
+<<set $wordCounter +=1>><<if $wordCounter == 6>><<goto "Next">><<endif>>
+
+
+::ChooseNamePronouns [nobr]

@@ -1,3 +1,7 @@
 ::StoryInit
   <<set $choice = 0>>
   <<set $cursor = 1>>
+  <<set $wordCounter = 0>>
+  <<set $name = "">>
+  <<set $pronoun1 = "">>
+  <<set $pronoun2 = "">>
