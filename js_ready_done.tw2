@@ -1,7 +1,69 @@
 ::StoryJS [script]
   UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
   $('<div id="right-side-bar"></div>').appendTo(document.body); /* ain't really a side bar anymore but this creates the persistent element used for the phone */
+  var i = 0;
+  var txt = 'Lorem ipsum dummy text blabla.';
+  var speed = 50;
 
+  $("div.wrapper input").click(function(){
+  	var $input = $(this);
+  	inputFieldID = $input.attr("id");
+    var outputFieldID = getOutputFieldIDFromInputFieldID(inputFieldID);
+    var $overlay = $input.siblings($("#"+outputFieldID));
+    if ($input.val() == "" || $input.val() == inputTextDefault) {
+      $overlay.css("font", $input.css("font"));
+      $input.val("");
+      $overlay.show().animate({"width": $input.width()}, $animSpeed);
+      $input.focus();
+    }
+  });
+
+:: Typewriterfast[widget]
+<<widget typewriter>>
+    <!-- Create a SPAN with an ID -->
+  <span id="typewriter"></span>
+    <!-- In SugarCube, arrays start at 0 -->
+  <<set _textArrayLength to 0>>
+    <!-- Repeat every second -->
+  <<repeat 0.01s>>
+      <!-- Test if textArrayLength is greater than length of $args[0] -->
+      <<if _textArrayLength gte $args[0].length>>
+        <<stop>>
+      <<else>>
+      <!-- Append the current position to the existing characters -->
+      <<append "#typewriter">>$args[0][_textArrayLength]<</append>>
+      <!-- Update the length -->
+      <<set _textArrayLength++>>
+      <<script>>
+        $(".macro-repeat").children().remove();
+      <</script>>
+      <</if>>
+   <</repeat>>
+<</widget>>
+
+
+:: Typewriterslow[widget]
+<<widget typewriterslow>>
+    <!-- Create a SPAN with an ID -->
+  <span id="typewriter"></span>
+    <!-- In SugarCube, arrays start at 0 -->
+  <<set _textArrayLength to 0>>
+    <!-- Repeat every second -->
+  <<repeat 0.1s>>
+      <!-- Test if textArrayLength is greater than length of $args[0] -->
+      <<if _textArrayLength gte $args[0].length>>
+        <<stop>>
+      <<else>>
+      <!-- Append the current position to the existing characters -->
+      <<append "#typewriter">>$args[0][_textArrayLength]<</append>>
+      <!-- Update the length -->
+      <<set _textArrayLength++>>
+      <<script>>
+        $(".macro-repeat").children().remove();
+      <</script>>
+      <</if>>
+   <</repeat>>
+<</widget>>
 
 ::PassageDone
 <<if passage() == "ShapeChoice">>
@@ -27,7 +89,70 @@
   // }
     <</script>>
   <<endif>>
+  <<if passage() == "GradientChoice">>
+    <<script>>
+      var classes = ["shape-anim-ug-1", "shape-anim-ug-2", "shape-anim-ug-3", "shape-anim-ug-4", "shape-anim-ug-5", "shape-anim-ug-6", "shape-anim-ug-7", "shape-anim-ug-8", "shape-anim-ug-9", "shape-anim-ug-10"];
+      $(".bar").each(function() {
+        $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
+      });
+    <</script>>
+  <<endif>>
 
+  <<if passage() == "ShapeChoiceUg">>
+    <<script>>
+      var classes = ["shape-anim-gross-1", "shape-anim-gross-2", "shape-anim-gross-3", "shape-anim-gross-4", "shape-anim-gross-5", "shape-anim-gross-6"];
+      $(".shape").each(function() {
+        $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
+      });
+    <</script>>
+  <<endif>>
+
+  <<if $choice_1 == 1>>
+    <<script>>
+      $("button").addClass("blue");
+    <</script>>
+  <<elseif $choice_1 == 2>>
+    <<script>>
+      $("button").addClass("pink");
+    <</script>>
+  <<endif>>
+
+  <<if $cursor == 1>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("slowest-cursor");
+    <</script>>
+  <<elseif $cursor == 2>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("slower-binary");
+    <</script>>
+  <<elseif $cursor == 3>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("slow-binary");
+    <</script>>
+  <<elseif $cursor == 4>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("fast-binary");
+    <</script>>
+  <<elseif $cursor == 5>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("faster-binary");
+    <</script>>
+  <<elseif $cursor == 6>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("white-star-cursor");
+    <</script>>
+  <<elseif $cursor == 7>>
+    <<script>>
+      $("body").removeClass();
+      $("body").addClass("yellow-star-cursor");
+    <</script>>
+  <<endif>>
 
 ::PassageReady
 // var anim = Math.floor((Math.random() * 10) + 1);

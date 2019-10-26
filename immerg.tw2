@@ -1,6 +1,7 @@
 ::StoryIncludes
   css.tw2
   anims.tw2
+  cursors.tw2
   js_ready_done.tw2
 
   storyinit.tw2
@@ -15,16 +16,138 @@ Twee2::build_config.story_format = 'Sugarcube2'
 Immerging
 
 
-::Start [nobr]
+::Start [nobr white]
+  <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
+
+
+::BinaryColorChoice [nobr flicker]
+  <a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
+
+
+::ColorChoice [nobr]
+  <<set $cursor = 2>>
   <div class="container">
-    <a data-passage="ShapeChoice" data-setter="$choice_1 = 1"><div id="fullright"></div></a>
-    <a data-passage="ShapeChoice" data-setter="$choice_1 = 2"><div id="fullleft"></div></a>
+    <a data-passage="ShapeChoice" data-setter="$choice_1 = 1" style="animation: cursor-anim 8s infinite;"><div id="fullright"></div></a>
+    <a data-passage="ShapeChoice" data-setter="$choice_1 = 2" style="animation: cursor-anim 8s infinite;"><div id="fullleft"></div></a>
   </div>
 
 ::ShapeChoice [nobr]
-  <div class="shape">[img[images/circle_blue.png][Home][$shapeChoice = 1]]</div>
-  <div class="shape">[img[images/circle_pink.png][Home][$shapeChoice = 1]]</div>
-  <div class="shape">[img[images/square_blue.png][Home][$shapeChoice = 1]]</div>
-  <div class="shape">[img[images/square_pink.png][Home][$shapeChoice = 1]]</div>
-  <div class="shape">[img[images/triangle_blue.png][Home][$shapeChoice = 1]]</div>
-  <div class="shape">[img[images/triangle_pink.png][Home][$shapeChoice = 1]]</div>
+  <<set $cursor = 3>>
+  <div class="container">
+    <div class="shape" id="shapes1">[img[images/circle_blue.png][ShapeChoiceUg][$shapeChoice = 1]]</div>
+    <div class="shape" id="shapes2">[img[images/circle_pink.png][ShapeChoiceUg][$shapeChoice = 2]]</div>
+    <div class="shape" id="shapes3">[img[images/square_blue.png][ShapeChoiceUg][$shapeChoice = 3]]</div>
+    <div class="shape" id="shapes4">[img[images/square_pink.png][ShapeChoiceUg][$shapeChoice = 4]]</div>
+    <div class="shape" id="shapes5">[img[images/triangle_blue.png][ShapeChoiceUg][$shapeChoice = 5]]</div>
+    <div class="shape" id="shapes6">[img[images/triangle_pink.png][ShapeChoiceUg][$shapeChoice = 6]]</div>
+  </div>
+
+
+::ShapeChoiceUg [nobr]
+  <<set $cursor = 4>>
+  <div class="container">
+    <<if $shapeChoice == 1>>
+      <div class="shape" id="shape1">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shape2">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shape3">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shape4">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shape5">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shape6">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+    <<elseif $shapeChoice == 2>>
+      <div class="shape" id="shape1">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shape2">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shape3">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shape4">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shape5">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shape6">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+    <<elseif $shapeChoice == 3>>
+      <div class="shape" id="shape1">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shape2">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shape3">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shape4">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shape5">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shape6">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+    <<elseif $shapeChoice == 4>>
+      <div class="shape" id="shape1">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shape2">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shape3">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shape4">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shape5">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shape6">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+    <<elseif $shapeChoice == 5>>
+      <div class="shape" id="shape1">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shape2">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shape3">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shape4">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shape5">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shape6">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+    <<elseif $shapeChoice == 6>>
+      <div class="shape" id="shape1">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shape2">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shape3">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shape4">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shape5">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shape6">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+    <<endif>>
+
+
+::GradientChoice [nobr]
+  <<set $cursor = 5>>
+  <div class="choiceContainer">
+    <div class="bar" id="bar1">[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar2">[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar3">[img[images/grad_pill2.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar4">[img[images/grad_pill2.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar5">[img[images/grad_pill3.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar6">[img[images/grad_pill3.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar7">[img[images/grad_pill4.png][ButtonChoice][$barChoice = 1]]</div>
+    <div class="bar" id="bar8">[img[images/grad_pill4.png][ButtonChoice][$barChoice = 1]]</div>
+  </div>
+
+
+::ButtonChoice [nobr flash]
+  <<set $cursor = 6>>
+  <div class="container" style="text-align: center; position: fixed; top: 35%">
+    <<button"01101100 01100001 01101110 01100111 01110101 01100001 01100111 01100101 00100000 01110000 01100001 01100011 01101011 00100000 01101001 01101110 01110011 01110100 01100001 01101100 01101100">>
+      <<goto "FirstText">>
+    <</button>>
+    <<button"01110010 01100101 01100010 01101111 01101111 01110100">>
+      <<goto "ButtonChoice">>
+    <</button>>
+  </div>
+
+
+::FirstText [nobr]
+  <span id="this"><div class="black-container"></div></span>
+  <p>01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01001111 01001000 01001110 01001111 01001111 01001000 01001000 01001000 01001111 01001000 01001111 01001000 01001111 01001000 01010100 01001000 01000101 01001100 01000001 01001110 01000111 01010101 01000001 01000111 01000101 01010000 01000001 01000011 01001011 00100000 01001000 01000001 01010011 00100000 01001101 01000001 01000100 01000101 00100000 01010011 01001111 01001101 01000101 00100000 01000001 01000100 01010110 01000001 01001110 01000011 01000101 01001101 01000101 01001110 01010100 01010011 00101110 00101110 00101110</p>
+  <p>I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I </p>
+  <p>-</p>
+  <p>-</p>
+  <p>-</p>
+  <p>-</p>
+  <p>YOU</p>
+  <p>STARTING TO THINKINKINKINKINKINK RESTARTING . . . </p>
+
+  <<timed 10s>>
+    <<replace "#this">><div class="black-container-reverse"></div><</replace>>
+    <<timed 7s>>
+      <<goto "AV Choice">>
+    <</timed>>
+  <</timed>>
+
+::AV Choice [nobr]
+  <div class="container" style="text-align: center; position: fixed; top: 35%">
+    <<button"INIT VIS_INPUT">>
+      <<goto "Vis Input">>
+    <</button>>
+    <<button"INIT AUD_INPUT">>
+      <<goto "Aud Input">>
+    <</button>>
+  </div>
+
+::Vis Input [nobr]
+  <<set $cursor = 7>>
+  <p>stuff</p>
+
+::Aud Input [nobr]
+  <p>stuff</p>

@@ -1,59 +1,298 @@
 ::Animations [stylesheet]
-
 @keyframes shape-anim-1 {
-  30% {transform: translateX(5%); transform: translateY(7%)}
-  100% {transform: translateX(12%); transform: translateY(10%)}
+  30% {transform: translate(75%, 65%)}
+  100% {transform: translate(-70%, 55%)}
 }
 
 @keyframes shape-anim-2 {
-  30% {transform: translateX(-10%); transform: translateY(20%)}
-  100% {transform: translateX(-30%); transform: translateY(-10%)}
+  30% {transform: translate(-10%, 20%)}
+  100% {transform: translate(-30%, -10%)}
 }
 
 @keyframes shape-anim-3 {
-  30% {right: 95%; top: 95%}
-  50% {right: 91%; top: 60%}
-  100% {right: 42%; bottom: 42%}
+  30% {transform: translate(60%, 30%)}
+  50% {transform: translate(-25%, 90%)}
+  100% {transform: translate(-8%, 60%)}
 }
 
 @keyframes shape-anim-4 {
-  30% {bottom: 60%; bottom: 7%}
-  80% {bottom: 30%}
-  100% {bottom: 75%; bottom: 66%}
+  10% {transform: translate(90%, 30%)}
+  80% {transform: translate(-55%, -22%)}
+  100% {transform: translate(-8%, 60%)}
 }
 
 @keyframes shape-anim-5 {
-  30% {right: 4%; bottom: 7%}
-  70 {left: 30%; bottom: 20%}
-  100% {right: 60%; bottom: 10%}
+  30% {transform: translate(20%, 30%)}
+  70% {transform: translate(60%, -40%)}
+  100% {transform: translate(-8%, -20%)}
 }
 
 @keyframes shape-anim-6 {
-  30% {right: 4%; bottom: 7%}
-  70 {left: 30%; bottom: 20%}
-  100% {right: 60%; bottom: 10%}
+  30% {transform: translate(20%, -40%)}
+  50% {transform: translate(-55%, 60%)}
+  100% {transform: translate(55%, -20%)}
 }
 
 @keyframes shape-anim-7 {
-  30% {right: 4%; bottom: 7%}
-  70 {left: 30%; bottom: 20%}
-  100% {right: 60%; bottom: 10%}
+  30% {transform: translate(0%, 70%)}
+  85% {transform: translate(-75%, 90%)}
+  100% {transform: translate(-20%, -44%)}
 }
 
 @keyframes shape-anim-8 {
-  30% {right: 4%; bottom: 7%}
-  90 {left: 30%; top: 20%}
-  100% {left: 60%; top: 10%}
+  30% {transform: translate(55%, -40%)}
+  90% {transform: translate(0%, 20%)}
+  100% {transform: translate(82%, 50%)}
 }
 
 @keyframes shape-anim-9 {
-  10% {right: 15%; top: 7%}
-  70 {right: 35%; bottom: 20%}
-  100% {right: 60%; bottom: 10%}
+  30% {transform: translate(40%, -10%)}
+  70% {transform: translate(-85%, -20%)}
+  100% {transform: translate(-70%, 30%)}
 }
 
 @keyframes shape-anim-10 {
-  20% {left: 60%; bottom: 7%}
-  40 {left: 30%; bottom: 20%}
-  100% {left: 65%; bottom: 86%}
+  20% {transform: translate(94%, 10%)}
+  40% {transform: translate(-25%, 70%)}
+  100% {transform: translate(-55%, -10%)}
+}
+
+
+@keyframes shape-anim-ug-1 {
+  30% {transform: translateX(25%)}
+  100% {transform: translateX(-50%)}
+}
+
+@keyframes shape-anim-ug-2 {
+  30% {transform: translateX(66%)}
+  100% {transform: translateX(-54%)}
+}
+
+@keyframes shape-anim-ug-3 {
+  30% {transform: translateX(33%)}
+  50% {transform: translateX(65%)}
+  100% {transform: translateX(-90%)}
+}
+
+@keyframes shape-anim-ug-4 {
+  10% {transform: translateX(-90%)}
+  80% {transform: translateX(-20%)}
+  100% {transform: translateX(60%)}
+}
+
+@keyframes shape-anim-ug-5 {
+  30% {transform: translateX(-21%)}
+  70% {transform: translateX(61%)}
+  100% {transform: translateX(-82%)}
+}
+
+@keyframes shape-anim-ug-6 {
+  30% {transform: translateX(-82%)}
+  50% {transform: translateX(47%)}
+  70% {transform: translateX(-47%)}
+  100% {transform: translateX(-70%)}
+}
+
+@keyframes shape-anim-ug-7 {
+  30% {transform: translateX(25%)}
+  40% {transform: translateX(65%)}
+  85% {transform: translateX(-50%)}
+  100% {transform: translateX(20%)}
+}
+
+@keyframes shape-anim-ug-8 {
+  30% {transform: translateX(33%)}
+  90% {transform: translateX(-33%)}
+  100% {transform: translateX(50%)}
+}
+
+@keyframes shape-anim-ug-9 {
+  30% {transform: translateX(-44%)}
+  70% {transform: translateX(22%)}
+  100% {transform: translateX(80%)}
+}
+
+@keyframes shape-anim-ug-10 {
+  20% {transform: translateX(88%)}
+  40% {transform: translateX(-90%)}
+  100% {transform: translateX(40%)}
+}
+
+@keyframes shape-anim-gross-1 {
+  30% {transform: scale(77%, 21%)}
+  100% {transform: scale(-60%, -60%)}
+}
+
+@keyframes shape-anim-gross-2 {
+  30% {transform: scaleX(66%); transform: rotate(200deg);}
+  100% {transform: scaleX(-54%); transform: rotate(-100deg);}
+}
+
+@keyframes shape-anim-gross-3 {
+  30% {transform: scaleY(45%); transform: skewY(100deg);}
+  50% {transform: scaleY(95%); transform: skew(170deg)}
+  100% {transform: scaleY(-75%); transform: skewY(80deg);}
+}
+
+@keyframes shape-anim-gross-4 {
+  10% {transform: rotate(120deg); transform: skew(60deg)}
+  80% {transform: rotate(220deg); transform: skew(120deg)}
+  100% {transform: rotate(350deg); transform: skew(140deg)}
+}
+
+@keyframes shape-anim-gross-5 {
+  30% {transform: matrix(0.866,0.5,-0.6,0.866,0,0); transform: scale(55%, 90%)}
+  70% {transform: matrix(0.586,0.8,-0.8,0.866,0,0); transform: scale(-80%, -70%)}
+  100% {transform: matrix(0.866,0.5,-0.5,0.866,0,0); transform: scale(60%, 60%)}
+}
+
+@keyframes shape-anim-gross-6 {
+  30% {transform: skew(50deg); transform: scale(90%, 84%)}
+  50% {transform: skew(170deg); transform: scale(-60%, -50%)}
+  70% {transform: skew(20deg); transform: scale(30%, 40%)}
+  100% {transform: skew(130deg); transform: scale(90%, 90%)}
+}
+
+@keyframes flash {
+  0% {opacity: 0}
+  30% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes flicker {
+  0% {background: black}
+  49% {background: black}
+  50% {background: white}
+  100% {background: white}
+}
+
+.shape-anim-1 {
+  animation: shape-anim-1 ease 3s alternate infinite;
+}
+
+.shape-anim-2 {
+  animation: shape-anim-2 ease 3s alternate infinite;
+}
+
+.shape-anim-3 {
+  animation: shape-anim-3 ease 3s alternate infinite;
+}
+
+.shape-anim-4 {
+  animation: shape-anim-4 ease 3s alternate infinite;
+}
+
+.shape-anim-5 {
+  animation: shape-anim-5 ease 3s alternate infinite;
+}
+
+.shape-anim-6 {
+  animation: shape-anim-6 ease 3s alternate infinite;
+}
+
+.shape-anim-7 {
+  animation: shape-anim-7 ease 3s alternate infinite;
+}
+
+.shape-anim-8 {
+  animation: shape-anim-8 ease 3s alternate infinite;
+}
+
+.shape-anim-9 {
+  animation: shape-anim-9 ease 3s alternate infinite;
+}
+
+.shape-anim-10 {
+  animation: shape-anim-10 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-1 {
+  animation: shape-anim-ug-1 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-2 {
+  animation: shape-anim-ug-2 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-3 {
+  animation: shape-anim-ug-3 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-4 {
+  animation: shape-anim-ug-4 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-5 {
+  animation: shape-anim-ug-5 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-6 {
+  animation: shape-anim-ug-6 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-7 {
+  animation: shape-anim-ug-7 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-8 {
+  animation: shape-anim-ug-8 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-9 {
+  animation: shape-anim-ug-9 ease 3s alternate infinite;
+}
+
+.shape-anim-ug-10 {
+  animation: shape-anim-ug-10 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-1 {
+  animation: shape-anim-gross-2 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-2 {
+  animation: shape-anim-gross-2 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-3 {
+  animation: shape-anim-gross-3 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-4 {
+  animation: shape-anim-gross-4 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-5 {
+  animation: shape-anim-gross-5 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-6 {
+  animation: shape-anim-gross-6 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-7 {
+  animation: shape-anim-gross-7 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-8 {
+  animation: shape-anim-gross-8 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-9 {
+  animation: shape-anim-gross-9 ease 3s alternate infinite;
+}
+
+.shape-anim-gross-10 {
+  animation: shape-anim-gross-10 ease 3s alternate infinite;
+}
+
+
+@keyframes black-box {
+  from {transform: translateY(0%);}
+  to {transform: translateY(100%);}
+}
+
+@keyframes black-box-reverse {
+  from {transform: translateY(-100%);}
+  to {transform: translateY(0%);}
 }

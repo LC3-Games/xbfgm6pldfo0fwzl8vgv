@@ -1,0 +1,3 @@
+Transitions during the formation stage. 1D, 2D, 3D. The background takes on colour and shapes of decisions
+
+jquery draggable() and cursor: move;
