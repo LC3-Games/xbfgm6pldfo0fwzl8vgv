@@ -18,7 +18,6 @@ Immerging
 
 
 ::Start [nobr white nolink noselect]
-  <<include "Quiz Halley's Birthday">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -42,6 +41,12 @@ Immerging
     <div class="shape" id="shapes4">[img[images/square_pink.png][ShapeChoiceUg][$shapeChoice = 4]]</div>
     <div class="shape" id="shapes5">[img[images/triangle_blue.png][ShapeChoiceUg][$shapeChoice = 5]]</div>
     <div class="shape" id="shapes6">[img[images/triangle_pink.png][ShapeChoiceUg][$shapeChoice = 6]]</div>
+    <div class="shape" id="shape1">[img[images/circle_blue.png][ShapeChoiceUg][$shapeChoice = 1]]</div>
+    <div class="shape" id="shape2">[img[images/circle_pink.png][ShapeChoiceUg][$shapeChoice = 2]]</div>
+    <div class="shape" id="shape3">[img[images/square_blue.png][ShapeChoiceUg][$shapeChoice = 3]]</div>
+    <div class="shape" id="shape4">[img[images/square_pink.png][ShapeChoiceUg][$shapeChoice = 4]]</div>
+    <div class="shape" id="shape5">[img[images/triangle_blue.png][ShapeChoiceUg][$shapeChoice = 5]]</div>
+    <div class="shape" id="shape6">[img[images/triangle_pink.png][ShapeChoiceUg][$shapeChoice = 6]]</div>
   </div>
 
 
@@ -55,6 +60,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
       <div class="shape" id="shape5">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
       <div class="shape" id="shape6">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shapes3">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shapes4">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shapes5">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
+      <div class="shape" id="shapes6">[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]</div>
     <<elseif $shapeChoice == 2>>
       <div class="shape" id="shape1">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
       <div class="shape" id="shape2">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
@@ -62,6 +71,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
       <div class="shape" id="shape5">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
       <div class="shape" id="shape6">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shapes3">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shapes4">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shapes5">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
+      <div class="shape" id="shapes6">[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]</div>
     <<elseif $shapeChoice == 3>>
       <div class="shape" id="shape1">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
       <div class="shape" id="shape2">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
@@ -69,6 +82,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
       <div class="shape" id="shape5">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
       <div class="shape" id="shape6">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shapes3">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shapes4">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shapes5">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
+      <div class="shape" id="shapes6">[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]</div>
     <<elseif $shapeChoice == 4>>
       <div class="shape" id="shape1">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
       <div class="shape" id="shape2">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
@@ -76,6 +93,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
       <div class="shape" id="shape5">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
       <div class="shape" id="shape6">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shapes3">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shapes4">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shapes5">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
+      <div class="shape" id="shapes6">[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]</div>
     <<elseif $shapeChoice == 5>>
       <div class="shape" id="shape1">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
       <div class="shape" id="shape2">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
@@ -83,6 +104,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
       <div class="shape" id="shape5">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
       <div class="shape" id="shape6">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shapes3">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shapes4">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shapes5">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
+      <div class="shape" id="shapes6">[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]</div>
     <<elseif $shapeChoice == 6>>
       <div class="shape" id="shape1">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
       <div class="shape" id="shape2">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
@@ -90,6 +115,10 @@ Immerging
       <div class="shape" id="shape4">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
       <div class="shape" id="shape5">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
       <div class="shape" id="shape6">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shapes3">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shapes4">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shapes5">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
+      <div class="shape" id="shapes6">[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]</div>
     <<endif>>
 
 
@@ -192,9 +221,9 @@ Immerging
 
 ::Aud Input [nobr]
   <<set $audInput = true>>
-  <<audio "softAmbient" loop volume 0.1 fadeoverto 10 0.75>>
+  <<audio "softAmbient" loop volume 0.1 fadeoverto 16 1>>
   <<typewriter ">initializing . . . . . . . . . . . . . . . .">>
-  <<timed 5s>>
+  <<timed 4s>>
     <<typewriter ">fetching audio drivers . . . . . . . . . . . . . . . .">>
     <<next>>
       <<typewriter ">drivers fetched">>
@@ -289,11 +318,11 @@ Immerging
   <<include "CheckAV">>
 
   <div class="quiz-container">
-    <p>CALL TO DEBUG FAILED</p>
+    <p class="redbg">CALL TO DEBUG FAILED</p>
 
     <<timed 2s>>
       <<include "FlickFast">>
-      <p>SHIP BOOT FAILED</p>
+      <p class="redbg">SHIP BOOT FAILED</p>
 
       <<next>>
         <<include "FlickFast">>
@@ -318,6 +347,7 @@ Immerging
 
 
 ::Quiz Alive [nobr]
+  <<set $bg = 2>>
   <div class="quiz-container">
     <p>TERMINAL CALL FAILED . . .</p>
 
@@ -366,6 +396,7 @@ Immerging
 
 
 ::Quiz Extant [nobr]
+  <<set $bg = 2>>
   <div class="quiz-container">
     <p>I AM:</p>
 
@@ -386,6 +417,7 @@ Immerging
 
 
 ::Quiz Go Back [nobr]
+  <<set $bg = 3>>
   <div class="quiz-container">
     <p class="redbg">ERRORED OUT</p>
 
@@ -413,6 +445,7 @@ Immerging
 
 
 ::Quiz Nothing [nobr]
+  <<set $bg = 3>>
   <div class="quiz-container">
     <p>HAND OVER HAND OVER HAND OVER HAND</p>
 
@@ -458,7 +491,22 @@ Immerging
   </div>
 
 
-::Quiz Halley's Birthday [nobr]
+::Quiz Halley's Birthday [nobr nolink fileerror]
+  <<set $bg = 3>>
+  <<typewriter ">File corrupted">>
+    <<timed 2s>>
+      <<typewriter ">Identifying error . . . . . . . . . . . . . . . . .">>
+        <<next>>
+          <<typewriter ">Identifying error . . . . . . . . . . . . . . . . .">>
+            <<next>>
+              <<next>>
+                <<typewriter ">Identifying error . . . . . . . . . . . . . . . . .">>
+                  <<next>>
+                    <<typewriter ">Cannot identify error">>
+                      <<next>>
+                        <<typewriter ">Please terminate offending content">>
+  <</timed>>
+
   <div class="file-container">
     <div class="file-header">SUBJECT: HALLEY'S BIRTHDAY</div>
     <p><<linkreplace"Hey">><span class="hidetext">Hey</span><<include "Word Count">><</linkreplace>> <<linkreplace"Wax">><span class="hidetext">Wax</span><<include "Word Count">><</linkreplace>>,</p>
@@ -472,7 +520,8 @@ Immerging
     <p><<linkreplace"&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;">><span class="hidetext">&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;</span><<include "Word Count">><</linkreplace>>,</p>
   </div>
 
-::Quiz File [nobr]
+::Quiz File [nobr fileerror]
+  <<set $bg = 3>>
   <<typewriter ">Identifying error . . . . . . . . . . . . .">>
     <<timed 2s>>
       <<typewriter ">File corrupted">>
@@ -490,12 +539,17 @@ Immerging
 
 
 ::Quiz Date [nobr familyImage]
+  <<set $bg = 3>>
+  <div class="file-container">
+    <div class="file-header">10-18-2319_5
+  </div>
   <<timed 5s>>
     <<goto "Quiz Continue">>
   <</timed>>
 
 
-::Quiz Mail [nobr]
+::Quiz Mail [nobr nolink fileerror]
+  <<set $bg = 3>>
   <div class="file-container">
     <div class="file-header">:-P LOOKS LIKE IM GONNA DIE</div>
     <p><<linkreplace"Transmissions">><span class="hidetext">Transmissions</span><<include "Word Count">><</linkreplace>> <<linkreplace"are">><span class="hidetext">are</span><<include "Word Count">><</linkreplace>> <<linkreplace"down">><span class="hidetext">down</span><<include "Word Count">><</linkreplace>>, <<linkreplace"so">><span class="hidetext">so</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"don">><span class="hidetext">don</span><<include "Word Count">><</linkreplace>>'t <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"why">><span class="hidetext">why</span><<include "Word Count">><</linkreplace>> <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"bothering">><span class="hidetext">bothering</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"write">><span class="hidetext">write</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>>. <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"trying">><span class="hidetext">trying</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"think">><span class="hidetext">think</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"as">><span class="hidetext">as</span><<include "Word Count">><</linkreplace>> <<linkreplace"not">><span class="hidetext">not</span><<include "Word Count">><</linkreplace>> a <<linkreplace"coffin">><span class="hidetext">coffin</span><<include "Word Count">><</linkreplace>>, <<linkreplace"but">><span class="hidetext">but</span><<include "Word Count">><</linkreplace>> <<linkreplace"an">><span class="hidetext">an</span><<include "Word Count">><</linkreplace>> <<linkreplace"extension">><span class="hidetext">extension</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"myself">><span class="hidetext">myself</span><<include "Word Count">><</linkreplace>>. <<linkreplace"That">><span class="hidetext">That</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"what">><span class="hidetext">what</span><<include "Word Count">><</linkreplace>> <<linkreplace"they">><span class="hidetext">they</span><<include "Word Count">><</linkreplace>> <<linkreplace"told">><span class="hidetext">told</span><<include "Word Count">><</linkreplace>> <<linkreplace"me">><span class="hidetext">me</span><<include "Word Count">><</linkreplace>> <<linkreplace"in">><span class="hidetext">in</span><<include "Word Count">><</linkreplace>> <<linkreplace"training">><span class="hidetext">training</span><<include "Word Count">><</linkreplace>>--<<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"is">><span class="hidetext">is</span><<include "Word Count">><</linkreplace>> <<linkreplace"part">><span class="hidetext">part</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"you">><span class="hidetext">you</span><<include "Word Count">><</linkreplace>>.</p>
@@ -509,6 +563,7 @@ Immerging
 
 
 ::Quiz Continue [nobr]
+  <<set $bg = 4>>
   <div class="quiz-container">
     <p>THERE ARE MORE CAMERAS IN HERE THAN THE ONE I'M LOOKING OUT OF. YOU SHOULD BE ABLE TO LOOK BACK ON YOURSELF RECURSIVE RECURSIVE HOLD ON SLOW DOWN HOLD ON</p>
 
@@ -540,10 +595,50 @@ Immerging
 
 
 ::Word Count [nobr]
-  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Continue">><<endif>>
+  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Quiz Continue">><<endif>>
 
 
 ::Corpse [nobr]
+  <<timed 5s>>
+    <<goto "ChooseName">>
+  <</timed>>
 
 
-::ChooseNamePronouns [nobr]
+::ChooseName [nobr]
+  <<set $bg = 5>>
+  <<set $name = setup.makename(5)>>
+
+  <div class="quiz-container">
+    <p>ROOT NAME GENERATED:  $name</p>
+
+    <div class="buttonbg">
+      <p><<textbox "$name" $name>></p>
+    </div>
+
+    <p><<button "CONTINUE">>
+        <<set $name to $name.trim()>>
+        <<goto "ChoosePronouns">>
+    <</button>></p>
+  </div>
+
+::ChoosePronouns [nobr]
+  <<set $pronoun1 = setup.makepronoun(3)>>
+  <<set $pronoun2 = $pronoun1 + "s">>
+
+  <div class="quiz-container">
+    <p>ROOT PRONOUNS GENERATED:  $pronoun1/$pronoun2</p>
+
+    <div class="buttonbg">
+      <p><<textbox "$pronoun1" $pronoun1>></p>
+    </div>
+
+    <p><<button "CONTINUE">>
+      <<set $prnoun1 to $pronoun1.trim()>>
+      <<set $pronoun2 = $pronoun1 + "s">>
+      <<goto "Escape Start">>
+    <</button>></p>
+  </div>
+
+
+::Escape Start [nobr]
+  <p></p>

@@ -47,7 +47,7 @@
   <<if passage() == "ShapeChoice">>
     <<script>>
 
-      var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10"];
+      var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
 
       $(".shape").each(function() {
         $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
@@ -68,7 +68,7 @@
 
   <<if passage() == "ShapeChoiceUg">>
     <<script>>
-      var classes = ["shape-anim-gross-1", "shape-anim-gross-2", "shape-anim-gross-3", "shape-anim-gross-4", "shape-anim-gross-5", "shape-anim-gross-6"];
+      var classes = ["shape-anim-gross-1", "shape-anim-gross-2", "shape-anim-gross-3", "shape-anim-gross-4", "shape-anim-gross-5", "shape-anim-gross-6", "shape-anim-gross-7", "shape-anim-gross-8", "shape-anim-gross-9", "shape-anim-gross-10"];
 
       $(".shape").each(function() {
         $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
@@ -116,12 +116,7 @@
   <<elseif $cursor == 6>>
     <<script>>
       $("body").addClass("white-star-cursor");
-      $("a").addClass("white-star-cursor");
-    <</script>>
-  <<elseif $cursor == 7>>
-    <<script>>
-      $("body").addClass("yellow-star-cursor");
-      $("a").addClass("white-star-cursor");
+      $("a").addClass("yellow-star-cursor");
     <</script>>
   <<endif>>
 
@@ -132,11 +127,29 @@
   <<endif>>
 
   <<if $visInput == true && passage() != "Vis Input">>
-    <<if not hasVisited("Corpse")>>
-      <<script>>
-        $(".passage").addClass("ship4bg");
-      <</script>>
-    <<elseif hasVisited("Corpse")>>
+    <<if passage() != "Corpse">>
+      <<if $bg == 1>>
+        <<script>>
+          $(".passage").addClass("ship4bg");
+        <</script>>
+      <<elseif $bg == 2>>
+        <<script>>
+          $(".passage").addClass("ship5bg");
+        <</script>>
+      <<elseif $bg == 3>>
+        <<script>>
+          $(".passage").addClass("ship6bg");
+        <</script>>
+      <<elseif $bg == 4>>
+        <<script>>
+            $(".passage").addClass("ship7bg");
+        <</script>>
+      <<elseif $bg == 5>>
+        <<script>>
+            $(".passage").addClass("ship7handsopen");
+        <</script>>
+      <<endif>>
+    <<else>>
       <<script>>
         $(".passage").addClass("corpse");
       <</script>>

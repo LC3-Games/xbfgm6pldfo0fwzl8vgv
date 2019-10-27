@@ -219,18 +219,43 @@ body {
 
 .ship2bg {
 	background: url("images/ship_finals/ship_2.png");
+	background-size: cover;
 }
 
 .ship3bg {
 	background: url("images/ship_finals/ship_3.png");
+	background-size: cover;
 }
 
 .ship4anim {
 	background: url("images/ship_finals/anim1.gif");
+	background-size: cover;
 }
 
 .ship4bg {
 	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.ship5bg {
+	background: url("images/ship_finals/ship_5.png");
+	background-size: cover;
+}
+
+.ship6bg {
+	background: url("images/ship_finals/ship_6.png");
+	background-size: cover;
+}
+
+.ship7bg {
+	background: url("images/ship_finals/ship_final.png");
+	background-size: cover;
+}
+
+.ship7handsopen {
+	background: url(images/hands/open_left.png) right bottom no-repeat, url(images/hands/open_right.png) left bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+	background-size: cover;
+
 }
 
 br {
@@ -302,22 +327,50 @@ button {
 	vertical-align: middle;
 }
 
-.familyImage {
+.familyImage .file-container {
 	background: url("images/ship_finals/noncolor_last.png");
 }
 
 .corpse {
-	background: url("images/ship_finals/noncolor_last.png");
+	background: url("images/o_dam2.png");
 }
 
 button.pink:hover {
 	background-color: #ff006c;
-	animation: white-star-anim 1s infinite;
+	animation: yellow-star-anim 1s infinite;
+}
+
+.file-container {
+  top: 10%;
+  position: fixed;
+  width: 80%;
+  height: 70%;
+  border: 8px double #111111;
+  background: #1111118c;
+  padding: 20px 50px 50px 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
+}
+
+.file-container p {
+	line-height: 1.6
+}
+
+.file-container a {
+	color: white;
+	animation: textShadow 1.6s infinite;
+}
+
+.file-header {
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 button.blue:hover {
 	background-color: #34f3ff;
-	animation: white-star-anim 1s infinite;
+	animation: yellow-star-anim 1s infinite;
 }
 
 .quiz-container button:hover {
@@ -371,7 +424,7 @@ a:hover {
 }
 
 #shape5 {
-  top: 40%;
+  top: 70%;
   right: 20%;
 }
 
@@ -406,7 +459,7 @@ a:hover {
 }
 
 #shapes6 {
-  top: 20%;
+  top: 40%;
   right: 65%;
 }
 
@@ -518,7 +571,7 @@ img {
 .link {
   color: #651cbe;
 }
-@keyframes shape-anim-1 {
+/* @keyframes shape-anim-1 {
   30% {transform: translate(75%, 65%)}
   100% {transform: translate(-70%, 55%)}
 }
@@ -532,15 +585,18 @@ img {
   30% {transform: translate(60%, 30%)}
   50% {transform: translate(-25%, 90%)}
   100% {transform: translate(-8%, 60%)}
-}
+} */
 
 @keyframes shape-anim-4 {
-  10% {transform: translate(90%, 30%)}
-  80% {transform: translate(-55%, -22%)}
-  100% {transform: translate(-8%, 60%)}
-}
+  0% {
+    transform: rotate(0) translateX(0);
+   }
+  100% {
+    transform: rotate(360deg) translateX(400px);
+   }
+ }
 
-@keyframes shape-anim-5 {
+/* @keyframes shape-anim-5 {
   30% {transform: translate(20%, 30%)}
   70% {transform: translate(60%, -40%)}
   100% {transform: translate(-8%, -20%)}
@@ -562,18 +618,11 @@ img {
   30% {transform: translate(55%, -40%)}
   90% {transform: translate(0%, 20%)}
   100% {transform: translate(82%, 50%)}
-}
-
-@keyframes shape-anim-9 {
-  30% {transform: translate(40%, -10%)}
-  70% {transform: translate(-85%, -20%)}
-  100% {transform: translate(-70%, 30%)}
-}
+} */
 
 @keyframes shape-anim-10 {
-  20% {transform: translate(94%, 10%)}
-  40% {transform: translate(-25%, 70%)}
-  100% {transform: translate(-55%, -10%)}
+  from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
 
@@ -693,43 +742,51 @@ img {
 
 
 .shape-anim-1 {
-  animation: shape-anim-1 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-2 {
-  animation: shape-anim-2 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 9s alternate-reverse infinite;
 }
 
 .shape-anim-3 {
-  animation: shape-anim-3 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
 }
 
 .shape-anim-4 {
-  animation: shape-anim-4 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 6s alternate-reverse infinite;
 }
 
 .shape-anim-5 {
-  animation: shape-anim-5 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-6 {
-  animation: shape-anim-6 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 9s alternate-reverse infinite;
 }
 
 .shape-anim-7 {
-  animation: shape-anim-7 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
 }
 
 .shape-anim-8 {
-  animation: shape-anim-8 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-9 {
-  animation: shape-anim-9 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite alternate-reverse;
 }
 
 .shape-anim-10 {
-  animation: shape-anim-10 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+}
+
+.shape-anim-11 {
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s infinite alternate-reverse;
+}
+
+.shape-anim-12 {
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 6s alternate-reverse infinite;
 }
 
 .shape-anim-ug-1 {
@@ -773,43 +830,43 @@ img {
 }
 
 .shape-anim-gross-1 {
-  animation: shape-anim-gross-2 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-2 {
-  animation: shape-anim-gross-2 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate-reverse infinite;
 }
 
 .shape-anim-gross-3 {
-  animation: shape-anim-gross-3 ease 3s alternate infinite;
+  animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-gross-4 {
-  animation: shape-anim-gross-4 ease 3s alternate infinite;
+  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-5 {
-  animation: shape-anim-gross-5 ease 3s alternate infinite;
+  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate-reverse infinite;
 }
 
 .shape-anim-gross-6 {
-  animation: shape-anim-gross-6 ease 3s alternate infinite;
+  animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-gross-7 {
-  animation: shape-anim-gross-7 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-8 {
-  animation: shape-anim-gross-8 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate-reverse infinite;
 }
 
 .shape-anim-gross-9 {
-  animation: shape-anim-gross-9 ease 3s alternate infinite;
+  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-10 {
-  animation: shape-anim-gross-10 ease 3s alternate infinite;
+  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 
@@ -985,9 +1042,23 @@ img {
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
+
 }
 .crt {
   animation: textShadow 1.6s infinite;
+}
+
+.fileerror::before {
+  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+@keyframes shadow-inset-center {
+  0% {
+    box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+  }
+  100% {
+    box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+  }
 }
 @keyframes cursor-anim {
   0%{
@@ -1131,8 +1202,7 @@ img {
       $input.focus();
     }
   });
-</script><tw-passagedata pid="1" name="Start" tags="nobr white nolink noselect" position="">&lt;&lt;include "Quiz Halley's Birthday"&gt;&gt;
-  &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="2" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
+</script><tw-passagedata pid="1" name="Start" tags="nobr white nolink noselect" position="">&lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="2" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullleft"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -1144,6 +1214,12 @@ img {
     &lt;div class="shape" id="shapes4"&gt;[img[images/square_pink.png][ShapeChoiceUg][$shapeChoice = 4]]&lt;/div&gt;
     &lt;div class="shape" id="shapes5"&gt;[img[images/triangle_blue.png][ShapeChoiceUg][$shapeChoice = 5]]&lt;/div&gt;
     &lt;div class="shape" id="shapes6"&gt;[img[images/triangle_pink.png][ShapeChoiceUg][$shapeChoice = 6]]&lt;/div&gt;
+    &lt;div class="shape" id="shape1"&gt;[img[images/circle_blue.png][ShapeChoiceUg][$shapeChoice = 1]]&lt;/div&gt;
+    &lt;div class="shape" id="shape2"&gt;[img[images/circle_pink.png][ShapeChoiceUg][$shapeChoice = 2]]&lt;/div&gt;
+    &lt;div class="shape" id="shape3"&gt;[img[images/square_blue.png][ShapeChoiceUg][$shapeChoice = 3]]&lt;/div&gt;
+    &lt;div class="shape" id="shape4"&gt;[img[images/square_pink.png][ShapeChoiceUg][$shapeChoice = 4]]&lt;/div&gt;
+    &lt;div class="shape" id="shape5"&gt;[img[images/triangle_blue.png][ShapeChoiceUg][$shapeChoice = 5]]&lt;/div&gt;
+    &lt;div class="shape" id="shape6"&gt;[img[images/triangle_pink.png][ShapeChoiceUg][$shapeChoice = 6]]&lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="ShapeChoiceUg" tags="nobr" position="">&lt;&lt;set $cursor = 4&gt;&gt;
   &lt;div class="container"&gt;
     &lt;&lt;if $shapeChoice == 1&gt;&gt;
@@ -1153,6 +1229,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/circle_blue.png][GradientChoice][$shapeChoiceUg = 1]]&lt;/div&gt;
     &lt;&lt;elseif $shapeChoice == 2&gt;&gt;
       &lt;div class="shape" id="shape1"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
       &lt;div class="shape" id="shape2"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
@@ -1160,6 +1240,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/circle_pink.png][GradientChoice][$shapeChoiceUg = 2]]&lt;/div&gt;
     &lt;&lt;elseif $shapeChoice == 3&gt;&gt;
       &lt;div class="shape" id="shape1"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
       &lt;div class="shape" id="shape2"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
@@ -1167,6 +1251,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/square_blue.png][GradientChoice][$shapeChoiceUg = 3]]&lt;/div&gt;
     &lt;&lt;elseif $shapeChoice == 4&gt;&gt;
       &lt;div class="shape" id="shape1"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
       &lt;div class="shape" id="shape2"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
@@ -1174,6 +1262,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/square_pink.png][GradientChoice][$shapeChoiceUg = 4]]&lt;/div&gt;
     &lt;&lt;elseif $shapeChoice == 5&gt;&gt;
       &lt;div class="shape" id="shape1"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
       &lt;div class="shape" id="shape2"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
@@ -1181,6 +1273,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/triangle_blue.png][GradientChoice][$shapeChoiceUg = 5]]&lt;/div&gt;
     &lt;&lt;elseif $shapeChoice == 6&gt;&gt;
       &lt;div class="shape" id="shape1"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
       &lt;div class="shape" id="shape2"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
@@ -1188,6 +1284,10 @@ img {
       &lt;div class="shape" id="shape4"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
       &lt;div class="shape" id="shape5"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
       &lt;div class="shape" id="shape6"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes3"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes4"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes5"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
+      &lt;div class="shape" id="shapes6"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
     &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="GradientChoice" tags="nobr" position="">&lt;&lt;set $cursor = 5&gt;&gt;
   &lt;div class="choiceContainer"&gt;
     &lt;div class="bar" id="bar1"&gt;[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]&lt;/div&gt;
@@ -1266,9 +1366,9 @@ img {
                       &lt;&lt;goto $returnPassage&gt;&gt;
                     &lt;&lt;endif&gt;&gt;
   &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Aud Input" tags="nobr" position="">&lt;&lt;set $audInput = true&gt;&gt;
-  &lt;&lt;audio "softAmbient" loop volume 0.1 fadeoverto 10 0.75&gt;&gt;
+  &lt;&lt;audio "softAmbient" loop volume 0.1 fadeoverto 16 1&gt;&gt;
   &lt;&lt;typewriter "&gt;initializing . . . . . . . . . . . . . . . ."&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;timed 4s&gt;&gt;
     &lt;&lt;typewriter "&gt;fetching audio drivers . . . . . . . . . . . . . . . ."&gt;&gt;
     &lt;&lt;next&gt;&gt;
       &lt;&lt;typewriter "&gt;drivers fetched"&gt;&gt;
@@ -1348,11 +1448,11 @@ img {
   &lt;&lt;include "CheckAV"&gt;&gt;
 
   &lt;div class="quiz-container"&gt;
-    &lt;p&gt;CALL TO DEBUG FAILED&lt;/p&gt;
+    &lt;p class="redbg"&gt;CALL TO DEBUG FAILED&lt;/p&gt;
 
     &lt;&lt;timed 2s&gt;&gt;
       &lt;&lt;include "FlickFast"&gt;&gt;
-      &lt;p&gt;SHIP BOOT FAILED&lt;/p&gt;
+      &lt;p class="redbg"&gt;SHIP BOOT FAILED&lt;/p&gt;
 
       &lt;&lt;next&gt;&gt;
         &lt;&lt;include "FlickFast"&gt;&gt;
@@ -1373,7 +1473,8 @@ img {
           &lt;&lt;endif&gt;&gt;
         &lt;/div&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Quiz Alive" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="Quiz Alive" tags="nobr" position="">&lt;&lt;set $bg = 2&gt;&gt;
+  &lt;div class="quiz-container"&gt;
     &lt;p&gt;TERMINAL CALL FAILED . . .&lt;/p&gt;
 
     &lt;&lt;timed 2s&gt;&gt;
@@ -1413,7 +1514,8 @@ img {
             &lt;&lt;/button&gt;&gt;
           &lt;/div&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Quiz Extant" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Quiz Extant" tags="nobr" position="">&lt;&lt;set $bg = 2&gt;&gt;
+  &lt;div class="quiz-container"&gt;
     &lt;p&gt;I AM:&lt;/p&gt;
 
     &lt;div class="buttonbg"&gt;
@@ -1429,7 +1531,8 @@ img {
         &lt;&lt;goto "Quiz Go Back"&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="Quiz Go Back" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="Quiz Go Back" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;div class="quiz-container"&gt;
     &lt;p class="redbg"&gt;ERRORED OUT&lt;/p&gt;
 
     &lt;ul&gt;
@@ -1452,7 +1555,8 @@ img {
         [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail]]
       &lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Quiz Nothing" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Quiz Nothing" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;div class="quiz-container"&gt;
     &lt;p&gt;HAND OVER HAND OVER HAND OVER HAND&lt;/p&gt;
 
     &lt;&lt;timed 2s&gt;&gt;
@@ -1490,7 +1594,22 @@ img {
         &lt;&lt;goto "Quiz Go Back"&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Quiz Halley's Birthday" tags="nobr" position="">&lt;div class="file-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Quiz Halley's Birthday" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;&lt;typewriter "&gt;File corrupted"&gt;&gt;
+    &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;typewriter "&gt;Identifying error . . . . . . . . . . . . . . . . ."&gt;&gt;
+        &lt;&lt;next&gt;&gt;
+          &lt;&lt;typewriter "&gt;Identifying error . . . . . . . . . . . . . . . . ."&gt;&gt;
+            &lt;&lt;next&gt;&gt;
+              &lt;&lt;next&gt;&gt;
+                &lt;&lt;typewriter "&gt;Identifying error . . . . . . . . . . . . . . . . ."&gt;&gt;
+                  &lt;&lt;next&gt;&gt;
+                    &lt;&lt;typewriter "&gt;Cannot identify error"&gt;&gt;
+                      &lt;&lt;next&gt;&gt;
+                        &lt;&lt;typewriter "&gt;Please terminate offending content"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+
+  &lt;div class="file-container"&gt;
     &lt;div class="file-header"&gt;SUBJECT: HALLEY'S BIRTHDAY&lt;/div&gt;
     &lt;p&gt;&lt;&lt;linkreplace"Hey"&gt;&gt;&lt;span class="hidetext"&gt;Hey&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"Wax"&gt;&gt;&lt;span class="hidetext"&gt;Wax&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;,&lt;/p&gt;
 
@@ -1501,7 +1620,8 @@ img {
     &lt;p&gt;&lt;&lt;linkreplace"love"&gt;&gt;&lt;span class="hidetext"&gt;love&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;,&lt;/p&gt;
 
     &lt;p&gt;&lt;&lt;linkreplace"&amp;#114;&amp;#866;&amp;#821;&amp;#856;&amp;#828;&amp;#826;&amp;#803;&amp;#851;&amp;#839;&amp;#101;&amp;#804;&amp;#796;&amp;#825;&amp;#858;&amp;#851;&amp;#121;&amp;#861;&amp;#856;&amp;#811;&amp;#857;&amp;#797;&amp;#798;&amp;#841;&amp;#839;&amp;#846;&amp;#819;&amp;#97;&amp;#1161;&amp;#866;&amp;#846;&amp;#852;&amp;#792;"&gt;&gt;&lt;span class="hidetext"&gt;&amp;#114;&amp;#866;&amp;#821;&amp;#856;&amp;#828;&amp;#826;&amp;#803;&amp;#851;&amp;#839;&amp;#101;&amp;#804;&amp;#796;&amp;#825;&amp;#858;&amp;#851;&amp;#121;&amp;#861;&amp;#856;&amp;#811;&amp;#857;&amp;#797;&amp;#798;&amp;#841;&amp;#839;&amp;#846;&amp;#819;&amp;#97;&amp;#1161;&amp;#866;&amp;#846;&amp;#852;&amp;#792;&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;,&lt;/p&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Quiz File" tags="nobr" position="">&lt;&lt;typewriter "&gt;Identifying error . . . . . . . . . . . . ."&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="Quiz File" tags="nobr fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;&lt;typewriter "&gt;Identifying error . . . . . . . . . . . . ."&gt;&gt;
     &lt;&lt;timed 2s&gt;&gt;
       &lt;&lt;typewriter "&gt;File corrupted"&gt;&gt;
         &lt;&lt;next&gt;&gt;
@@ -1514,9 +1634,14 @@ img {
                       &lt;&lt;goto "Quiz Continue"&gt;&gt;
   &lt;div class="file-container"&gt;
     &lt;&lt;include "BigZalgo"&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Quiz Date" tags="nobr familyImage" position="">&lt;&lt;timed 5s&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Quiz Date" tags="nobr familyImage" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;div class="file-container"&gt;
+    &lt;div class="file-header"&gt;10-18-2319_5
+  &lt;/div&gt;
+  &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto "Quiz Continue"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr" position="">&lt;div class="file-container"&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;div class="file-container"&gt;
     &lt;div class="file-header"&gt;:-P LOOKS LIKE IM GONNA DIE&lt;/div&gt;
     &lt;p&gt;&lt;&lt;linkreplace"Transmissions"&gt;&gt;&lt;span class="hidetext"&gt;Transmissions&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"are"&gt;&gt;&lt;span class="hidetext"&gt;are&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"down"&gt;&gt;&lt;span class="hidetext"&gt;down&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"so"&gt;&gt;&lt;span class="hidetext"&gt;so&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"don"&gt;&gt;&lt;span class="hidetext"&gt;don&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'t &lt;&lt;linkreplace"know"&gt;&gt;&lt;span class="hidetext"&gt;know&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"why"&gt;&gt;&lt;span class="hidetext"&gt;why&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"bothering"&gt;&gt;&lt;span class="hidetext"&gt;bothering&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"write"&gt;&gt;&lt;span class="hidetext"&gt;write&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"trying"&gt;&gt;&lt;span class="hidetext"&gt;trying&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"think"&gt;&gt;&lt;span class="hidetext"&gt;think&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"as"&gt;&gt;&lt;span class="hidetext"&gt;as&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"not"&gt;&gt;&lt;span class="hidetext"&gt;not&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"coffin"&gt;&gt;&lt;span class="hidetext"&gt;coffin&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"but"&gt;&gt;&lt;span class="hidetext"&gt;but&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"an"&gt;&gt;&lt;span class="hidetext"&gt;an&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"extension"&gt;&gt;&lt;span class="hidetext"&gt;extension&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"myself"&gt;&gt;&lt;span class="hidetext"&gt;myself&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"That"&gt;&gt;&lt;span class="hidetext"&gt;That&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'s &lt;&lt;linkreplace"what"&gt;&gt;&lt;span class="hidetext"&gt;what&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"they"&gt;&gt;&lt;span class="hidetext"&gt;they&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"told"&gt;&gt;&lt;span class="hidetext"&gt;told&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"me"&gt;&gt;&lt;span class="hidetext"&gt;me&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"in"&gt;&gt;&lt;span class="hidetext"&gt;in&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"training"&gt;&gt;&lt;span class="hidetext"&gt;training&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;--&lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"is"&gt;&gt;&lt;span class="hidetext"&gt;is&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"part"&gt;&gt;&lt;span class="hidetext"&gt;part&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"you"&gt;&gt;&lt;span class="hidetext"&gt;you&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;.&lt;/p&gt;
 
@@ -1525,7 +1650,8 @@ img {
     &lt;p&gt;&lt;&lt;linkreplace"Training"&gt;&gt;&lt;span class="hidetext"&gt;Training&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"Like"&gt;&gt;&lt;span class="hidetext"&gt;Like&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"wow"&gt;&gt;&lt;span class="hidetext"&gt;wow&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"who"&gt;&gt;&lt;span class="hidetext"&gt;who&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"gives"&gt;&gt;&lt;span class="hidetext"&gt;gives&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"shit"&gt;&gt;&lt;span class="hidetext"&gt;shit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;?&lt;/p&gt;
 
     &lt;p&gt;&lt;&lt;linkreplace"if"&gt;&gt;&lt;span class="hidetext"&gt;if&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"makes"&gt;&gt;&lt;span class="hidetext"&gt;makes&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"it"&gt;&gt;&lt;span class="hidetext"&gt;it&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"through"&gt;&gt;&lt;span class="hidetext"&gt;through&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"sorry"&gt;&gt;&lt;span class="hidetext"&gt;sorry&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"for"&gt;&gt;&lt;span class="hidetext"&gt;for&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"writing"&gt;&gt;&lt;span class="hidetext"&gt;writing&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"it"&gt;&gt;&lt;span class="hidetext"&gt;it&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"like"&gt;&gt;&lt;span class="hidetext"&gt;like&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"if"&gt;&gt;&lt;span class="hidetext"&gt;if&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"makes"&gt;&gt;&lt;span class="hidetext"&gt;makes&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"it"&gt;&gt;&lt;span class="hidetext"&gt;it&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"through"&gt;&gt;&lt;span class="hidetext"&gt;through&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"tell"&gt;&gt;&lt;span class="hidetext"&gt;tell&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"halley"&gt;&gt;&lt;span class="hidetext"&gt;halley&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"love"&gt;&gt;&lt;span class="hidetext"&gt;love&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"her"&gt;&gt;&lt;span class="hidetext"&gt;her&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"and"&gt;&gt;&lt;span class="hidetext"&gt;and&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"tell"&gt;&gt;&lt;span class="hidetext"&gt;tell&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"my"&gt;&gt;&lt;span class="hidetext"&gt;my&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"mom"&gt;&gt;&lt;span class="hidetext"&gt;mom&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"sorry"&gt;&gt;&lt;span class="hidetext"&gt;sorry&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;/p&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="Quiz Continue" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="Quiz Continue" tags="nobr" position="">&lt;&lt;set $bg = 4&gt;&gt;
+  &lt;div class="quiz-container"&gt;
     &lt;p&gt;THERE ARE MORE CAMERAS IN HERE THAN THE ONE I'M LOOKING OUT OF. YOU SHOULD BE ABLE TO LOOK BACK ON YOURSELF RECURSIVE RECURSIVE HOLD ON SLOW DOWN HOLD ON&lt;/p&gt;
 
     &lt;div class="buttonbg"&gt;
@@ -1548,10 +1674,41 @@ img {
         $(".flick-fast").remove(".flick-fast")
       &lt;/script&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 5&gt;&gt;&lt;&lt;goto "Continue"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="30" name="ChooseNamePronouns" tags="nobr" position=""></tw-passagedata><tw-passagedata pid="31" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 5&gt;&gt;&lt;&lt;goto "Quiz Continue"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
+    &lt;&lt;goto "ChooseName"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="ChooseName" tags="nobr" position="">&lt;&lt;set $bg = 5&gt;&gt;
+  &lt;&lt;set $name = setup.makename(5)&gt;&gt;
+
+  &lt;div class="quiz-container"&gt;
+    &lt;p&gt;ROOT NAME GENERATED:  $name&lt;/p&gt;
+
+    &lt;div class="buttonbg"&gt;
+      &lt;p&gt;&lt;&lt;textbox "$name" $name&gt;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;&lt;&lt;button "CONTINUE"&gt;&gt;
+        &lt;&lt;set $name to $name.trim()&gt;&gt;
+        &lt;&lt;goto "ChoosePronouns"&gt;&gt;
+    &lt;&lt;/button&gt;&gt;&lt;/p&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="ChoosePronouns" tags="nobr" position="">&lt;&lt;set $pronoun1 = setup.makepronoun(3)&gt;&gt;
+  &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
+
+  &lt;div class="quiz-container"&gt;
+    &lt;p&gt;ROOT PRONOUNS GENERATED:  $pronoun1/$pronoun2&lt;/p&gt;
+
+    &lt;div class="buttonbg"&gt;
+      &lt;p&gt;&lt;&lt;textbox "$pronoun1" $pronoun1&gt;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;&lt;&lt;button "CONTINUE"&gt;&gt;
+      &lt;&lt;set $prnoun1 to $pronoun1.trim()&gt;&gt;
+      &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
+      &lt;&lt;goto "Escape Start"&gt;&gt;
+    &lt;&lt;/button&gt;&gt;&lt;/p&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Escape Start" tags="nobr" position="">&lt;p&gt;&lt;/p&gt;</tw-passagedata><tw-passagedata pid="33" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
-      var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10"];
+      var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
 
       $(".shape").each(function() {
         $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
@@ -1572,7 +1729,7 @@ img {
 
   &lt;&lt;if passage() == "ShapeChoiceUg"&gt;&gt;
     &lt;&lt;script&gt;&gt;
-      var classes = ["shape-anim-gross-1", "shape-anim-gross-2", "shape-anim-gross-3", "shape-anim-gross-4", "shape-anim-gross-5", "shape-anim-gross-6"];
+      var classes = ["shape-anim-gross-1", "shape-anim-gross-2", "shape-anim-gross-3", "shape-anim-gross-4", "shape-anim-gross-5", "shape-anim-gross-6", "shape-anim-gross-7", "shape-anim-gross-8", "shape-anim-gross-9", "shape-anim-gross-10"];
 
       $(".shape").each(function() {
         $(this).addClass( classes.splice( ~~(Math.random()*classes.length), 1 )[0] );
@@ -1620,12 +1777,7 @@ img {
   &lt;&lt;elseif $cursor == 6&gt;&gt;
     &lt;&lt;script&gt;&gt;
       $("body").addClass("white-star-cursor");
-      $("a").addClass("white-star-cursor");
-    &lt;&lt;/script&gt;&gt;
-  &lt;&lt;elseif $cursor == 7&gt;&gt;
-    &lt;&lt;script&gt;&gt;
-      $("body").addClass("yellow-star-cursor");
-      $("a").addClass("white-star-cursor");
+      $("a").addClass("yellow-star-cursor");
     &lt;&lt;/script&gt;&gt;
   &lt;&lt;endif&gt;&gt;
 
@@ -1636,16 +1788,34 @@ img {
   &lt;&lt;endif&gt;&gt;
 
   &lt;&lt;if $visInput == true &amp;&amp; passage() != "Vis Input"&gt;&gt;
-    &lt;&lt;if not hasVisited("Corpse")&gt;&gt;
-      &lt;&lt;script&gt;&gt;
-        $(".passage").addClass("ship4bg");
-      &lt;&lt;/script&gt;&gt;
-    &lt;&lt;elseif hasVisited("Corpse")&gt;&gt;
+    &lt;&lt;if passage() != "Corpse"&gt;&gt;
+      &lt;&lt;if $bg == 1&gt;&gt;
+        &lt;&lt;script&gt;&gt;
+          $(".passage").addClass("ship4bg");
+        &lt;&lt;/script&gt;&gt;
+      &lt;&lt;elseif $bg == 2&gt;&gt;
+        &lt;&lt;script&gt;&gt;
+          $(".passage").addClass("ship5bg");
+        &lt;&lt;/script&gt;&gt;
+      &lt;&lt;elseif $bg == 3&gt;&gt;
+        &lt;&lt;script&gt;&gt;
+          $(".passage").addClass("ship6bg");
+        &lt;&lt;/script&gt;&gt;
+      &lt;&lt;elseif $bg == 4&gt;&gt;
+        &lt;&lt;script&gt;&gt;
+            $(".passage").addClass("ship7bg");
+        &lt;&lt;/script&gt;&gt;
+      &lt;&lt;elseif $bg == 5&gt;&gt;
+        &lt;&lt;script&gt;&gt;
+            $(".passage").addClass("ship7handsopen");
+        &lt;&lt;/script&gt;&gt;
+      &lt;&lt;endif&gt;&gt;
+    &lt;&lt;else&gt;&gt;
       &lt;&lt;script&gt;&gt;
         $(".passage").addClass("corpse");
       &lt;&lt;/script&gt;&gt;
     &lt;&lt;endif&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="33" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="35" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1666,7 +1836,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1686,7 +1856,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
     &amp;#97;&amp;#863;&amp;#795;&amp;#824;&amp;#822;&amp;#828;&amp;#846;&amp;#798;&amp;#857;&amp;#791;&amp;#851;&amp;#790;&amp;#857;&amp;#857;&amp;#792;&amp;#103;&amp;#823;&amp;#863;&amp;#824;&amp;#797;&amp;#806;&amp;#803;&amp;#828;&amp;#815;&amp;#797;&amp;#857;&amp;#828;&amp;#839;&amp;#101;&amp;#864;&amp;#807;&amp;#860;&amp;#833;&amp;#826;&amp;#852;&amp;#790;&amp;#817;&amp;#58;&amp;#860;&amp;#863;&amp;#790;&amp;#813;&amp;#817;&amp;#827;&amp;#798;&amp;#803;&amp;#837;&amp;#817;&amp;#817;&amp;#813;&amp;#790;&amp;#32;&amp;#863;&amp;#795;&amp;#866;&amp;#863;&amp;#852;&amp;#853;&amp;#800;&amp;#819;&amp;#827;&amp;#800;&amp;#50;&amp;#866;&amp;#832;&amp;#861;&amp;#833;&amp;#804;&amp;#846;&amp;#803;&amp;#813;&amp;#810;&amp;#853;&amp;#793;&amp;#800;&amp;#826;&amp;#793;&amp;#790;&amp;#851;&amp;#857;&amp;#816;&amp;#854;&amp;#792;&amp;#796;&amp;#52;&amp;#820;&amp;#832;&amp;#823;&amp;#821;&amp;#845;&amp;#812;&amp;#810;&amp;#816;&amp;#853;&amp;#813;&amp;#825;&amp;#837;&amp;#815;&amp;#814;&amp;#792;&amp;#846;&amp;#798;&amp;#841;&amp;#828;&amp;#817;
   &lt;/p&gt;
 
@@ -1708,10 +1878,12 @@ img {
 
   &lt;p&gt;
     &amp;#110;&amp;#860;&amp;#863;&amp;#856;&amp;#845;&amp;#803;&amp;#809;&amp;#851;&amp;#825;&amp;#853;&amp;#111;&amp;#801;&amp;#823;&amp;#841;&amp;#805;&amp;#811;&amp;#798;&amp;#793;&amp;#804;&amp;#814;&amp;#817;&amp;#800;&amp;#851;&amp;#818;&amp;#854;&amp;#792;&amp;#841;&amp;#799;&amp;#811;&amp;#827;&amp;#799;&amp;#116;&amp;#863;&amp;#856;&amp;#799;&amp;#806;&amp;#827;&amp;#853;&amp;#798;&amp;#852;&amp;#817;&amp;#827;&amp;#797;&amp;#804;&amp;#846;&amp;#798;&amp;#809;&amp;#840;&amp;#803;&amp;#825;&amp;#851;&amp;#101;&amp;#863;&amp;#820;&amp;#797;&amp;#812;&amp;#812;&amp;#814;&amp;#858;&amp;#811;&amp;#817;&amp;#115;&amp;#821;&amp;#846;&amp;#818;&amp;#790;&amp;#825;&amp;#826;&amp;#816;&amp;#804;&amp;#804;&amp;#828;&amp;#846;&amp;#793;&amp;#827;&amp;#851;&amp;#805;&amp;#796;&amp;#803;&amp;#58;&amp;#1161;&amp;#833;&amp;#862;&amp;#847;&amp;#846;&amp;#809;&amp;#858;&amp;#828;&amp;#790;&amp;#813;&amp;#799;&amp;#851;&amp;#841;&amp;#805;&amp;#803;&amp;#790;&amp;#845;&amp;#797;&amp;#32;&amp;#1161;&amp;#862;&amp;#821;&amp;#1161;&amp;#824;&amp;#837;&amp;#826;&amp;#828;&amp;#805;&amp;#800;&amp;#797;&amp;#839;&amp;#845;&amp;#72;&amp;#863;&amp;#795;&amp;#821;&amp;#861;&amp;#826;&amp;#852;&amp;#841;&amp;#857;&amp;#811;&amp;#826;&amp;#803;&amp;#805;&amp;#810;&amp;#858;&amp;#810;&amp;#117;&amp;#821;&amp;#801;&amp;#832;&amp;#1161;&amp;#821;&amp;#793;&amp;#825;&amp;#851;&amp;#816;&amp;#790;&amp;#809;&amp;#857;&amp;#817;&amp;#791;&amp;#800;&amp;#818;&amp;#109;&amp;#861;&amp;#833;&amp;#862;&amp;#833;&amp;#839;&amp;#825;&amp;#857;&amp;#815;&amp;#803;&amp;#819;&amp;#857;&amp;#839;&amp;#805;&amp;#858;&amp;#852;&amp;#815;&amp;#805;&amp;#839;&amp;#803;&amp;#804;&amp;#97;&amp;#795;&amp;#801;&amp;#837;&amp;#814;&amp;#819;&amp;#819;&amp;#841;&amp;#791;&amp;#858;&amp;#810;&amp;#792;&amp;#790;&amp;#806;&amp;#110;&amp;#823;&amp;#807;&amp;#823;&amp;#865;&amp;#823;&amp;#813;&amp;#837;&amp;#827;&amp;#790;&amp;#115;&amp;#856;&amp;#822;&amp;#1161;&amp;#802;&amp;#863;&amp;#818;&amp;#800;&amp;#839;&amp;#806;&amp;#819;&amp;#818;&amp;#841;&amp;#825;&amp;#32;&amp;#824;&amp;#807;&amp;#847;&amp;#860;&amp;#793;&amp;#827;&amp;#851;&amp;#818;&amp;#805;&amp;#809;&amp;#40;&amp;#863;&amp;#856;&amp;#826;&amp;#815;&amp;#839;&amp;#814;&amp;#72;&amp;#860;&amp;#801;&amp;#807;&amp;#804;&amp;#813;&amp;#853;&amp;#790;&amp;#826;&amp;#840;&amp;#825;&amp;#796;&amp;#111;&amp;#823;&amp;#847;&amp;#847;&amp;#802;&amp;#810;&amp;#799;&amp;#793;&amp;#815;&amp;#790;&amp;#812;&amp;#857;&amp;#809;&amp;#840;&amp;#846;&amp;#853;&amp;#812;&amp;#825;&amp;#858;&amp;#845;&amp;#827;&amp;#799;&amp;#804;&amp;#854;&amp;#109;&amp;#823;&amp;#865;&amp;#811;&amp;#796;&amp;#858;&amp;#800;&amp;#811;&amp;#796;&amp;#810;&amp;#858;&amp;#852;&amp;#841;&amp;#828;&amp;#841;&amp;#817;&amp;#837;&amp;#111;&amp;#820;&amp;#802;&amp;#865;&amp;#801;&amp;#845;&amp;#851;&amp;#803;&amp;#827;&amp;#845;&amp;#826;&amp;#845;&amp;#799;&amp;#858;&amp;#853;&amp;#806;&amp;#828;&amp;#837;&amp;#800;&amp;#32;&amp;#801;&amp;#864;&amp;#798;&amp;#797;&amp;#792;&amp;#797;&amp;#814;&amp;#791;&amp;#792;&amp;#840;&amp;#828;&amp;#818;&amp;#797;&amp;#115;&amp;#821;&amp;#824;&amp;#847;&amp;#806;&amp;#806;&amp;#799;&amp;#840;&amp;#792;&amp;#816;&amp;#796;&amp;#825;&amp;#825;&amp;#809;&amp;#804;&amp;#810;&amp;#815;&amp;#853;&amp;#816;&amp;#97;&amp;#802;&amp;#833;&amp;#862;&amp;#866;&amp;#807;&amp;#792;&amp;#793;&amp;#814;&amp;#799;&amp;#796;&amp;#798;&amp;#813;&amp;#800;&amp;#818;&amp;#799;&amp;#852;&amp;#813;&amp;#845;&amp;#800;&amp;#804;&amp;#112;&amp;#824;&amp;#821;&amp;#1161;&amp;#807;&amp;#818;&amp;#857;&amp;#837;&amp;#841;&amp;#852;&amp;#854;&amp;#837;&amp;#817;&amp;#792;&amp;#805;&amp;#846;&amp;#800;&amp;#837;&amp;#825;&amp;#857;&amp;#815;&amp;#818;&amp;#105;&amp;#866;&amp;#820;&amp;#860;&amp;#789;&amp;#837;&amp;#819;&amp;#799;&amp;#825;&amp;#793;&amp;#857;&amp;#845;&amp;#796;&amp;#825;&amp;#101;&amp;#820;&amp;#863;&amp;#807;&amp;#846;&amp;#805;&amp;#797;&amp;#793;&amp;#819;&amp;#826;&amp;#857;&amp;#803;&amp;#827;&amp;#814;&amp;#814;&amp;#800;&amp;#790;&amp;#857;&amp;#813;&amp;#110;&amp;#863;&amp;#860;&amp;#833;&amp;#803;&amp;#818;&amp;#852;&amp;#792;&amp;#839;&amp;#827;&amp;#817;&amp;#797;&amp;#806;&amp;#815;&amp;#798;&amp;#809;&amp;#857;&amp;#800;&amp;#812;&amp;#115;&amp;#789;&amp;#802;&amp;#799;&amp;#806;&amp;#797;&amp;#790;&amp;#811;&amp;#827;&amp;#839;&amp;#41;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#792;&amp;#813;&amp;#857;&amp;#809;&amp;#32;&amp;#856;&amp;#802;&amp;#822;&amp;#805;&amp;#852;&amp;#816;&amp;#818;&amp;#793;&amp;#854;&amp;#809;&amp;#791;&amp;#817;&amp;#827;&amp;#792;&amp;#858;&amp;#857;&amp;#851;&amp;#97;&amp;#795;&amp;#863;&amp;#807;&amp;#817;&amp;#818;&amp;#826;&amp;#858;&amp;#846;&amp;#791;&amp;#845;&amp;#803;&amp;#796;&amp;#815;&amp;#825;&amp;#806;&amp;#812;&amp;#857;&amp;#828;&amp;#796;&amp;#806;&amp;#799;&amp;#792;&amp;#114;&amp;#860;&amp;#833;&amp;#866;&amp;#866;&amp;#795;&amp;#846;&amp;#851;&amp;#828;&amp;#827;&amp;#840;&amp;#810;&amp;#815;&amp;#858;&amp;#800;&amp;#828;&amp;#805;&amp;#814;&amp;#811;&amp;#101;&amp;#823;&amp;#796;&amp;#811;&amp;#841;&amp;#792;&amp;#858;&amp;#819;&amp;#846;&amp;#817;&amp;#828;&amp;#815;&amp;#827;&amp;#858;&amp;#846;&amp;#811;&amp;#793;&amp;#817;&amp;#32;&amp;#861;&amp;#866;&amp;#865;&amp;#812;&amp;#791;&amp;#798;&amp;#845;&amp;#791;&amp;#790;&amp;#857;&amp;#790;&amp;#804;&amp;#799;&amp;#825;&amp;#796;&amp;#857;&amp;#854;&amp;#800;&amp;#796;&amp;#810;&amp;#851;&amp;#846;&amp;#116;&amp;#801;&amp;#833;&amp;#812;&amp;#811;&amp;#810;&amp;#805;&amp;#804;&amp;#792;&amp;#810;&amp;#853;&amp;#804;&amp;#797;&amp;#841;&amp;#792;&amp;#846;&amp;#104;&amp;#856;&amp;#822;&amp;#791;&amp;#858;&amp;#827;&amp;#825;&amp;#827;&amp;#818;&amp;#101;&amp;#1161;&amp;#861;&amp;#789;&amp;#832;&amp;#821;&amp;#837;&amp;#826;&amp;#813;&amp;#841;&amp;#819;&amp;#851;&amp;#809;&amp;#803;&amp;#854;&amp;#793;&amp;#805;&amp;#854;&amp;#796;&amp;#809;&amp;#817;&amp;#810;&amp;#792;&amp;#805;&amp;#809;&amp;#32;&amp;#860;&amp;#847;&amp;#802;&amp;#839;&amp;#815;&amp;#839;&amp;#812;&amp;#812;&amp;#790;&amp;#814;&amp;#804;&amp;#791;&amp;#852;&amp;#809;&amp;#825;&amp;#825;&amp;#812;&amp;#819;&amp;#846;&amp;#825;&amp;#798;&amp;#825;&amp;#111;&amp;#822;&amp;#856;&amp;#790;&amp;#806;&amp;#803;&amp;#806;&amp;#812;&amp;#814;&amp;#803;&amp;#810;&amp;#793;&amp;#810;&amp;#817;&amp;#812;&amp;#814;&amp;#110;&amp;#822;&amp;#822;&amp;#805;&amp;#803;&amp;#797;&amp;#805;&amp;#798;&amp;#798;&amp;#815;&amp;#809;&amp;#851;&amp;#854;&amp;#827;&amp;#826;&amp;#857;&amp;#793;&amp;#796;&amp;#813;&amp;#851;&amp;#108;&amp;#864;&amp;#832;&amp;#823;&amp;#819;&amp;#799;&amp;#811;&amp;#826;&amp;#790;&amp;#846;&amp;#819;&amp;#121;&amp;#824;&amp;#863;&amp;#814;&amp;#791;&amp;#790;&amp;#798;&amp;#799;&amp;#810;&amp;#32;&amp;#801;&amp;#808;&amp;#811;&amp;#800;&amp;#852;&amp;#840;&amp;#797;&amp;#837;&amp;#805;&amp;#814;&amp;#814;&amp;#791;&amp;#809;&amp;#814;&amp;#809;&amp;#803;&amp;#101;&amp;#824;&amp;#860;&amp;#865;&amp;#808;&amp;#812;&amp;#841;&amp;#798;&amp;#841;&amp;#853;&amp;#816;&amp;#826;&amp;#854;&amp;#799;&amp;#803;&amp;#804;&amp;#851;&amp;#793;&amp;#804;&amp;#854;&amp;#815;&amp;#812;&amp;#796;&amp;#120;&amp;#802;&amp;#796;&amp;#841;&amp;#828;&amp;#846;&amp;#813;&amp;#793;&amp;#841;&amp;#116;&amp;#861;&amp;#795;&amp;#840;&amp;#805;&amp;#828;&amp;#798;&amp;#845;&amp;#796;&amp;#818;&amp;#97;&amp;#789;&amp;#821;&amp;#802;&amp;#832;&amp;#833;&amp;#851;&amp;#805;&amp;#791;&amp;#845;&amp;#793;&amp;#839;&amp;#800;&amp;#840;&amp;#110;&amp;#821;&amp;#795;&amp;#832;&amp;#862;&amp;#807;&amp;#854;&amp;#813;&amp;#805;&amp;#828;&amp;#811;&amp;#810;&amp;#814;&amp;#816;&amp;#804;&amp;#837;&amp;#797;&amp;#805;&amp;#857;&amp;#116;&amp;#820;&amp;#863;&amp;#801;&amp;#856;&amp;#864;&amp;#792;&amp;#811;&amp;#805;&amp;#857;&amp;#857;&amp;#803;&amp;#792;&amp;#798;&amp;#840;&amp;#809;&amp;#809;&amp;#825;&amp;#32;&amp;#808;&amp;#824;&amp;#832;&amp;#862;&amp;#832;&amp;#796;&amp;#811;&amp;#809;&amp;#858;&amp;#805;&amp;#798;&amp;#805;&amp;#819;&amp;#800;&amp;#839;&amp;#109;&amp;#847;&amp;#821;&amp;#862;&amp;#845;&amp;#816;&amp;#812;&amp;#798;&amp;#798;&amp;#826;&amp;#792;&amp;#837;&amp;#841;&amp;#101;&amp;#862;&amp;#856;&amp;#799;&amp;#796;&amp;#816;&amp;#857;&amp;#793;&amp;#828;&amp;#846;&amp;#818;&amp;#791;&amp;#792;&amp;#809;&amp;#827;&amp;#817;&amp;#800;&amp;#800;&amp;#851;&amp;#109;&amp;#822;&amp;#822;&amp;#1161;&amp;#808;&amp;#833;&amp;#825;&amp;#806;&amp;#803;&amp;#851;&amp;#800;&amp;#853;&amp;#811;&amp;#800;&amp;#815;&amp;#790;&amp;#797;&amp;#840;&amp;#98;&amp;#833;&amp;#856;&amp;#854;&amp;#811;&amp;#815;&amp;#851;&amp;#827;&amp;#841;&amp;#799;&amp;#791;&amp;#810;&amp;#799;&amp;#797;&amp;#841;&amp;#858;&amp;#837;&amp;#101;&amp;#795;&amp;#833;&amp;#862;&amp;#790;&amp;#837;&amp;#792;&amp;#846;&amp;#853;&amp;#804;&amp;#804;&amp;#792;&amp;#837;&amp;#114;&amp;#833;&amp;#841;&amp;#840;&amp;#798;&amp;#816;&amp;#809;&amp;#812;&amp;#809;&amp;#828;&amp;#792;&amp;#840;&amp;#819;&amp;#846;&amp;#115;&amp;#821;&amp;#847;&amp;#825;&amp;#797;&amp;#809;&amp;#851;&amp;#818;&amp;#825;&amp;#845;&amp;#857;&amp;#32;&amp;#820;&amp;#861;&amp;#789;&amp;#837;&amp;#790;&amp;#846;&amp;#809;&amp;#851;&amp;#791;&amp;#845;&amp;#858;&amp;#827;&amp;#111;&amp;#824;&amp;#807;&amp;#862;&amp;#795;&amp;#823;&amp;#797;&amp;#815;&amp;#819;&amp;#837;&amp;#840;&amp;#818;&amp;#803;&amp;#858;&amp;#811;&amp;#852;&amp;#851;&amp;#798;&amp;#840;&amp;#102;&amp;#820;&amp;#847;&amp;#823;&amp;#828;&amp;#803;&amp;#810;&amp;#796;&amp;#854;&amp;#816;&amp;#846;&amp;#811;&amp;#32;&amp;#862;&amp;#864;&amp;#856;&amp;#807;&amp;#802;&amp;#791;&amp;#853;&amp;#803;&amp;#813;&amp;#852;&amp;#851;&amp;#803;&amp;#790;&amp;#799;&amp;#116;&amp;#862;&amp;#863;&amp;#798;&amp;#826;&amp;#854;&amp;#858;&amp;#818;&amp;#797;&amp;#828;&amp;#811;&amp;#837;&amp;#817;&amp;#839;&amp;#817;&amp;#858;&amp;#104;&amp;#795;&amp;#865;&amp;#866;&amp;#833;&amp;#816;&amp;#814;&amp;#825;&amp;#817;&amp;#825;&amp;#101;&amp;#824;&amp;#824;&amp;#808;&amp;#865;&amp;#820;&amp;#799;&amp;#854;&amp;#828;&amp;#858;&amp;#814;&amp;#796;&amp;#792;&amp;#809;&amp;#845;&amp;#839;&amp;#806;&amp;#837;&amp;#32;&amp;#861;&amp;#789;&amp;#863;&amp;#825;&amp;#819;&amp;#793;&amp;#845;&amp;#811;&amp;#811;&amp;#800;&amp;#806;&amp;#852;&amp;#827;&amp;#804;&amp;#819;&amp;#825;&amp;#837;&amp;#115;&amp;#864;&amp;#823;&amp;#864;&amp;#832;&amp;#813;&amp;#852;&amp;#817;&amp;#826;&amp;#809;&amp;#806;&amp;#858;&amp;#810;&amp;#810;&amp;#816;&amp;#841;&amp;#854;&amp;#117;&amp;#795;&amp;#820;&amp;#832;&amp;#827;&amp;#846;&amp;#803;&amp;#839;&amp;#806;&amp;#797;&amp;#828;&amp;#798;&amp;#826;&amp;#837;&amp;#828;&amp;#813;&amp;#791;&amp;#857;&amp;#98;&amp;#821;&amp;#802;&amp;#806;&amp;#854;&amp;#798;&amp;#815;&amp;#854;&amp;#793;&amp;#815;&amp;#810;&amp;#854;&amp;#828;&amp;#790;&amp;#814;&amp;#818;&amp;#803;&amp;#851;&amp;#116;&amp;#802;&amp;#823;&amp;#802;&amp;#828;&amp;#839;&amp;#827;&amp;#845;&amp;#114;&amp;#823;&amp;#795;&amp;#862;&amp;#798;&amp;#799;&amp;#825;&amp;#796;&amp;#797;&amp;#811;&amp;#796;&amp;#791;&amp;#815;&amp;#810;&amp;#800;&amp;#828;&amp;#857;&amp;#825;&amp;#840;&amp;#812;&amp;#105;&amp;#866;&amp;#820;&amp;#822;&amp;#857;&amp;#840;&amp;#799;&amp;#841;&amp;#797;&amp;#803;&amp;#845;&amp;#817;&amp;#841;&amp;#828;&amp;#813;&amp;#810;&amp;#841;&amp;#798;&amp;#811;&amp;#800;&amp;#798;&amp;#841;&amp;#98;&amp;#866;&amp;#820;&amp;#811;&amp;#818;&amp;#817;&amp;#845;&amp;#839;&amp;#857;&amp;#854;&amp;#790;&amp;#839;&amp;#841;&amp;#803;&amp;#839;&amp;#845;&amp;#798;&amp;#846;&amp;#837;&amp;#841;&amp;#101;&amp;#861;&amp;#824;&amp;#824;&amp;#864;&amp;#864;&amp;#815;&amp;#845;&amp;#797;&amp;#857;&amp;#810;&amp;#840;&amp;#818;&amp;#797;&amp;#799;&amp;#799;&amp;#845;&amp;#826;&amp;#32;&amp;#795;&amp;#865;&amp;#803;&amp;#837;&amp;#806;&amp;#828;&amp;#810;&amp;#819;&amp;#72;&amp;#808;&amp;#863;&amp;#805;&amp;#812;&amp;#819;&amp;#809;&amp;#817;&amp;#817;&amp;#111;&amp;#866;&amp;#798;&amp;#798;&amp;#811;&amp;#825;&amp;#797;&amp;#814;&amp;#790;&amp;#851;&amp;#810;&amp;#791;&amp;#813;&amp;#109;&amp;#865;&amp;#802;&amp;#832;&amp;#853;&amp;#825;&amp;#800;&amp;#840;&amp;#818;&amp;#810;&amp;#818;&amp;#805;&amp;#793;&amp;#799;&amp;#815;&amp;#839;&amp;#839;&amp;#817;&amp;#105;&amp;#863;&amp;#818;&amp;#804;&amp;#816;&amp;#792;&amp;#813;&amp;#110;&amp;#789;&amp;#808;&amp;#1161;&amp;#864;&amp;#853;&amp;#854;&amp;#826;&amp;#819;&amp;#818;&amp;#814;&amp;#819;&amp;#793;&amp;#837;&amp;#814;&amp;#809;&amp;#105;&amp;#861;&amp;#858;&amp;#817;&amp;#804;&amp;#804;&amp;#857;&amp;#811;&amp;#791;&amp;#826;&amp;#110;&amp;#795;&amp;#789;&amp;#847;&amp;#821;&amp;#823;&amp;#796;&amp;#811;&amp;#827;&amp;#857;&amp;#803;&amp;#852;&amp;#852;&amp;#846;&amp;#825;&amp;#805;&amp;#825;&amp;#796;&amp;#797;&amp;#97;&amp;#822;&amp;#826;&amp;#800;&amp;#840;&amp;#806;&amp;#854;&amp;#798;&amp;#840;&amp;#815;&amp;#810;&amp;#799;&amp;#797;&amp;#809;&amp;#797;&amp;#857;&amp;#812;&amp;#857;&amp;#796;&amp;#818;&amp;#46;&amp;#824;&amp;#824;&amp;#861;&amp;#833;&amp;#862;&amp;#851;&amp;#846;&amp;#815;&amp;#792;&amp;#825;&amp;#791;&amp;#812;&amp;#853;&amp;#32;&amp;#847;&amp;#823;&amp;#832;&amp;#792;&amp;#840;&amp;#809;&amp;#810;&amp;#841;&amp;#806;&amp;#827;&amp;#852;&amp;#825;&amp;#84;&amp;#795;&amp;#864;&amp;#790;&amp;#800;&amp;#799;&amp;#854;&amp;#791;&amp;#804;&amp;#816;&amp;#853;&amp;#111;&amp;#1161;&amp;#865;&amp;#862;&amp;#823;&amp;#815;&amp;#797;&amp;#814;&amp;#800;&amp;#845;&amp;#804;&amp;#810;&amp;#103;&amp;#864;&amp;#862;&amp;#847;&amp;#799;&amp;#852;&amp;#827;&amp;#858;&amp;#791;&amp;#813;&amp;#815;&amp;#806;&amp;#101;&amp;#824;&amp;#822;&amp;#847;&amp;#866;&amp;#862;&amp;#811;&amp;#815;&amp;#815;&amp;#826;&amp;#790;&amp;#810;&amp;#816;&amp;#813;&amp;#837;&amp;#792;&amp;#846;&amp;#828;&amp;#805;&amp;#116;&amp;#822;&amp;#863;&amp;#795;&amp;#803;&amp;#796;&amp;#845;&amp;#803;&amp;#840;&amp;#800;&amp;#846;&amp;#852;&amp;#803;&amp;#817;&amp;#840;&amp;#828;&amp;#806;&amp;#796;&amp;#796;&amp;#810;&amp;#845;&amp;#828;&amp;#104;&amp;#824;&amp;#863;&amp;#789;&amp;#845;&amp;#793;&amp;#813;&amp;#806;&amp;#846;&amp;#839;&amp;#826;&amp;#837;&amp;#826;&amp;#813;&amp;#817;&amp;#828;&amp;#846;&amp;#827;&amp;#804;&amp;#846;&amp;#101;&amp;#833;&amp;#824;&amp;#861;&amp;#817;&amp;#817;&amp;#837;&amp;#845;&amp;#796;&amp;#853;&amp;#817;&amp;#792;&amp;#827;&amp;#810;&amp;#825;&amp;#797;&amp;#114;&amp;#789;&amp;#860;&amp;#817;&amp;#813;&amp;#853;&amp;#814;&amp;#857;&amp;#816;&amp;#804;&amp;#793;&amp;#817;&amp;#846;&amp;#803;&amp;#809;&amp;#797;&amp;#818;&amp;#812;&amp;#851;&amp;#845;&amp;#32;&amp;#833;&amp;#862;&amp;#813;&amp;#841;&amp;#806;&amp;#803;&amp;#818;&amp;#791;&amp;#809;&amp;#857;&amp;#791;&amp;#814;&amp;#792;&amp;#800;&amp;#840;&amp;#857;&amp;#852;&amp;#839;&amp;#819;&amp;#796;&amp;#119;&amp;#861;&amp;#801;&amp;#860;&amp;#811;&amp;#796;&amp;#846;&amp;#796;&amp;#827;&amp;#818;&amp;#816;&amp;#790;&amp;#837;&amp;#837;&amp;#828;&amp;#839;&amp;#854;&amp;#826;&amp;#798;&amp;#837;&amp;#806;&amp;#105;&amp;#832;&amp;#833;&amp;#832;&amp;#818;&amp;#804;&amp;#852;&amp;#809;&amp;#805;&amp;#791;&amp;#817;&amp;#815;&amp;#800;&amp;#809;&amp;#825;&amp;#811;&amp;#828;&amp;#810;&amp;#845;&amp;#810;&amp;#796;&amp;#840;&amp;#827;&amp;#116;&amp;#801;&amp;#832;&amp;#866;&amp;#861;&amp;#792;&amp;#806;&amp;#793;&amp;#798;&amp;#793;&amp;#851;&amp;#804;&amp;#791;&amp;#826;&amp;#826;&amp;#815;&amp;#837;&amp;#827;&amp;#858;&amp;#851;&amp;#104;&amp;#847;&amp;#861;&amp;#865;&amp;#796;&amp;#827;&amp;#793;&amp;#815;&amp;#32;&amp;#821;&amp;#863;&amp;#824;&amp;#808;&amp;#824;&amp;#810;&amp;#814;&amp;#809;&amp;#793;&amp;#814;&amp;#99;&amp;#847;&amp;#861;&amp;#863;&amp;#807;&amp;#826;&amp;#790;&amp;#851;&amp;#806;&amp;#104;&amp;#862;&amp;#801;&amp;#857;&amp;#852;&amp;#839;&amp;#845;&amp;#815;&amp;#853;&amp;#798;&amp;#852;&amp;#841;&amp;#819;&amp;#857;&amp;#803;&amp;#840;&amp;#812;&amp;#105;&amp;#823;&amp;#862;&amp;#801;&amp;#847;&amp;#825;&amp;#815;&amp;#803;&amp;#810;&amp;#839;&amp;#851;&amp;#800;&amp;#804;&amp;#805;&amp;#790;&amp;#804;&amp;#852;&amp;#826;&amp;#109;&amp;#820;&amp;#822;&amp;#866;&amp;#823;&amp;#813;&amp;#841;&amp;#827;&amp;#803;&amp;#815;&amp;#837;&amp;#816;&amp;#826;&amp;#853;&amp;#841;&amp;#798;&amp;#805;&amp;#792;&amp;#818;&amp;#796;&amp;#810;&amp;#817;&amp;#790;&amp;#814;&amp;#112;&amp;#801;&amp;#863;&amp;#812;&amp;#819;&amp;#841;&amp;#806;&amp;#812;&amp;#812;&amp;#793;&amp;#858;&amp;#846;&amp;#814;&amp;#846;&amp;#826;&amp;#815;&amp;#858;&amp;#845;&amp;#839;&amp;#841;&amp;#810;&amp;#97;&amp;#824;&amp;#795;&amp;#801;&amp;#856;&amp;#805;&amp;#819;&amp;#818;&amp;#813;&amp;#805;&amp;#798;&amp;#828;&amp;#840;&amp;#816;&amp;#841;&amp;#840;&amp;#853;&amp;#840;&amp;#793;&amp;#817;&amp;#818;&amp;#813;&amp;#110;&amp;#1161;&amp;#807;&amp;#852;&amp;#806;&amp;#857;&amp;#790;&amp;#796;&amp;#828;&amp;#122;&amp;#865;&amp;#856;&amp;#822;&amp;#802;&amp;#790;&amp;#797;&amp;#851;&amp;#857;&amp;#815;&amp;#854;&amp;#854;&amp;#101;&amp;#1161;&amp;#862;&amp;#802;&amp;#802;&amp;#798;&amp;#810;&amp;#799;&amp;#793;&amp;#852;&amp;#840;&amp;#852;&amp;#852;&amp;#841;&amp;#809;&amp;#101;&amp;#824;&amp;#1161;&amp;#821;&amp;#823;&amp;#804;&amp;#817;&amp;#800;&amp;#845;&amp;#806;&amp;#854;&amp;#845;&amp;#797;&amp;#115;&amp;#861;&amp;#866;&amp;#809;&amp;#846;&amp;#798;&amp;#805;&amp;#827;&amp;#816;&amp;#806;&amp;#818;&amp;#44;&amp;#866;&amp;#822;&amp;#821;&amp;#863;&amp;#837;&amp;#813;&amp;#806;&amp;#796;&amp;#845;&amp;#857;&amp;#852;&amp;#799;&amp;#32;&amp;#832;&amp;#824;&amp;#789;&amp;#866;&amp;#856;&amp;#817;&amp;#811;&amp;#803;&amp;#819;&amp;#817;&amp;#804;&amp;#811;&amp;#828;&amp;#828;&amp;#791;&amp;#846;&amp;#798;&amp;#851;&amp;#812;&amp;#814;&amp;#791;&amp;#796;&amp;#813;&amp;#806;&amp;#103;&amp;#832;&amp;#832;&amp;#863;&amp;#813;&amp;#837;&amp;#818;&amp;#839;&amp;#791;&amp;#840;&amp;#811;&amp;#827;&amp;#825;&amp;#837;&amp;#827;&amp;#809;&amp;#828;&amp;#806;&amp;#826;&amp;#809;&amp;#813;&amp;#814;&amp;#805;&amp;#111;&amp;#833;&amp;#802;&amp;#864;&amp;#823;&amp;#799;&amp;#791;&amp;#857;&amp;#814;&amp;#818;&amp;#812;&amp;#797;&amp;#828;&amp;#114;&amp;#801;&amp;#800;&amp;#796;&amp;#803;&amp;#803;&amp;#790;&amp;#826;&amp;#816;&amp;#819;&amp;#846;&amp;#805;&amp;#796;&amp;#837;&amp;#815;&amp;#105;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#821;&amp;#841;&amp;#793;&amp;#819;&amp;#793;&amp;#799;&amp;#798;&amp;#845;&amp;#846;&amp;#815;&amp;#811;&amp;#108;&amp;#861;&amp;#861;&amp;#802;&amp;#789;&amp;#796;&amp;#791;&amp;#841;&amp;#846;&amp;#810;&amp;#811;&amp;#815;&amp;#108;&amp;#862;&amp;#823;&amp;#820;&amp;#861;&amp;#815;&amp;#790;&amp;#854;&amp;#827;&amp;#845;&amp;#845;&amp;#845;&amp;#815;&amp;#97;&amp;#1161;&amp;#808;&amp;#833;&amp;#847;&amp;#837;&amp;#799;&amp;#845;&amp;#810;&amp;#115;&amp;#865;&amp;#808;&amp;#862;&amp;#795;&amp;#796;&amp;#803;&amp;#790;&amp;#804;&amp;#826;&amp;#44;&amp;#866;&amp;#847;&amp;#847;&amp;#820;&amp;#827;&amp;#809;&amp;#845;&amp;#819;&amp;#812;&amp;#803;&amp;#839;&amp;#854;&amp;#852;&amp;#809;&amp;#819;&amp;#854;&amp;#797;&amp;#799;&amp;#805;&amp;#851;&amp;#814;&amp;#32;&amp;#856;&amp;#860;&amp;#808;&amp;#814;&amp;#800;&amp;#839;&amp;#796;&amp;#853;&amp;#805;&amp;#817;&amp;#815;&amp;#846;&amp;#858;&amp;#858;&amp;#799;&amp;#810;&amp;#840;&amp;#797;&amp;#790;&amp;#803;&amp;#799;&amp;#857;&amp;#97;&amp;#789;&amp;#847;&amp;#811;&amp;#799;&amp;#799;&amp;#790;&amp;#806;&amp;#110;&amp;#821;&amp;#822;&amp;#821;&amp;#856;&amp;#798;&amp;#841;&amp;#837;&amp;#857;&amp;#800;&amp;#812;&amp;#813;&amp;#809;&amp;#841;&amp;#797;&amp;#854;&amp;#837;&amp;#819;&amp;#853;&amp;#854;&amp;#791;&amp;#100;&amp;#789;&amp;#808;&amp;#866;&amp;#853;&amp;#804;&amp;#814;&amp;#854;&amp;#852;&amp;#826;&amp;#799;&amp;#796;&amp;#793;&amp;#852;&amp;#845;&amp;#793;&amp;#32;&amp;#863;&amp;#860;&amp;#802;&amp;#860;&amp;#865;&amp;#790;&amp;#804;&amp;#852;&amp;#790;&amp;#791;&amp;#813;&amp;#814;&amp;#111;&amp;#864;&amp;#866;&amp;#1161;&amp;#851;&amp;#811;&amp;#810;&amp;#806;&amp;#827;&amp;#839;&amp;#793;&amp;#790;&amp;#793;&amp;#793;&amp;#837;&amp;#845;&amp;#792;&amp;#818;&amp;#805;&amp;#114;&amp;#807;&amp;#833;&amp;#821;&amp;#797;&amp;#810;&amp;#800;&amp;#811;&amp;#845;&amp;#839;&amp;#97;&amp;#862;&amp;#802;&amp;#795;&amp;#816;&amp;#841;&amp;#851;&amp;#805;&amp;#817;&amp;#810;&amp;#817;&amp;#110;&amp;#807;&amp;#866;&amp;#802;&amp;#808;&amp;#845;&amp;#797;&amp;#816;&amp;#819;&amp;#796;&amp;#810;&amp;#793;&amp;#103;&amp;#808;&amp;#801;&amp;#817;&amp;#819;&amp;#816;&amp;#792;&amp;#817;&amp;#803;&amp;#798;&amp;#846;&amp;#857;&amp;#825;&amp;#803;&amp;#814;&amp;#827;&amp;#845;&amp;#117;&amp;#861;&amp;#795;&amp;#803;&amp;#852;&amp;#819;&amp;#851;&amp;#852;&amp;#816;&amp;#819;&amp;#799;&amp;#804;&amp;#857;&amp;#804;&amp;#819;&amp;#828;&amp;#816;&amp;#116;&amp;#821;&amp;#856;&amp;#797;&amp;#798;&amp;#845;&amp;#797;&amp;#837;&amp;#799;&amp;#799;&amp;#858;&amp;#97;&amp;#866;&amp;#864;&amp;#823;&amp;#821;&amp;#810;&amp;#793;&amp;#800;&amp;#799;&amp;#791;&amp;#841;&amp;#819;&amp;#804;&amp;#793;&amp;#803;&amp;#826;&amp;#851;&amp;#839;&amp;#845;&amp;#827;&amp;#804;&amp;#818;&amp;#828;&amp;#110;&amp;#795;&amp;#802;&amp;#823;&amp;#795;&amp;#798;&amp;#840;&amp;#825;&amp;#806;&amp;#828;&amp;#857;&amp;#805;&amp;#817;&amp;#797;&amp;#813;&amp;#796;&amp;#837;&amp;#851;&amp;#812;&amp;#799;&amp;#115;&amp;#821;&amp;#801;&amp;#820;&amp;#801;&amp;#856;&amp;#791;&amp;#804;&amp;#854;&amp;#796;&amp;#815;&amp;#813;&amp;#818;&amp;#816;&amp;#841;&amp;#791;&amp;#800;&amp;#44;&amp;#820;&amp;#808;&amp;#1161;&amp;#820;&amp;#789;&amp;#799;&amp;#799;&amp;#806;&amp;#809;&amp;#792;&amp;#816;&amp;#815;&amp;#819;&amp;#804;&amp;#32;&amp;#856;&amp;#832;&amp;#866;&amp;#789;&amp;#811;&amp;#816;&amp;#818;&amp;#813;&amp;#804;&amp;#803;&amp;#845;&amp;#840;&amp;#798;&amp;#814;&amp;#817;&amp;#116;&amp;#789;&amp;#820;&amp;#862;&amp;#865;&amp;#800;&amp;#811;&amp;#800;&amp;#837;&amp;#839;&amp;#796;&amp;#840;&amp;#799;&amp;#819;&amp;#810;&amp;#806;&amp;#799;&amp;#826;&amp;#818;&amp;#806;&amp;#104;&amp;#1161;&amp;#832;&amp;#789;&amp;#862;&amp;#840;&amp;#846;&amp;#799;&amp;#828;&amp;#853;&amp;#837;&amp;#819;&amp;#791;&amp;#851;&amp;#799;&amp;#809;&amp;#792;&amp;#101;&amp;#824;&amp;#846;&amp;#809;&amp;#793;&amp;#793;&amp;#845;&amp;#792;&amp;#819;&amp;#797;&amp;#854;&amp;#798;&amp;#818;&amp;#815;&amp;#819;&amp;#121;&amp;#863;&amp;#795;&amp;#813;&amp;#811;&amp;#810;&amp;#825;&amp;#819;&amp;#853;&amp;#817;&amp;#840;&amp;#841;&amp;#790;&amp;#857;&amp;#858;&amp;#846;&amp;#825;&amp;#811;&amp;#791;&amp;#809;&amp;#803;&amp;#32;&amp;#862;&amp;#860;&amp;#801;&amp;#864;&amp;#832;&amp;#797;&amp;#811;&amp;#805;&amp;#790;&amp;#811;&amp;#853;&amp;#854;&amp;#799;&amp;#799;&amp;#815;&amp;#97;&amp;#865;&amp;#860;&amp;#802;&amp;#847;&amp;#823;&amp;#793;&amp;#826;&amp;#816;&amp;#828;&amp;#806;&amp;#828;&amp;#841;&amp;#810;&amp;#805;&amp;#114;&amp;#807;&amp;#863;&amp;#832;&amp;#814;&amp;#854;&amp;#858;&amp;#854;&amp;#812;&amp;#812;&amp;#819;&amp;#815;&amp;#798;&amp;#840;&amp;#793;&amp;#852;&amp;#811;&amp;#840;&amp;#854;&amp;#792;&amp;#818;&amp;#101;&amp;#823;&amp;#795;&amp;#864;&amp;#805;&amp;#797;&amp;#852;&amp;#815;&amp;#827;&amp;#796;&amp;#797;&amp;#858;&amp;#853;&amp;#806;&amp;#851;&amp;#32;&amp;#1161;&amp;#860;&amp;#833;&amp;#821;&amp;#814;&amp;#804;&amp;#799;&amp;#810;&amp;#812;&amp;#797;&amp;#839;&amp;#806;&amp;#840;&amp;#857;&amp;#805;&amp;#839;&amp;#790;&amp;#858;&amp;#837;&amp;#858;&amp;#841;&amp;#826;&amp;#112;&amp;#802;&amp;#833;&amp;#819;&amp;#817;&amp;#811;&amp;#852;&amp;#799;&amp;#826;&amp;#857;&amp;#798;&amp;#851;&amp;#827;&amp;#803;&amp;#840;&amp;#814;&amp;#818;&amp;#857;&amp;#804;&amp;#803;&amp;#840;&amp;#97;&amp;#861;&amp;#864;&amp;#864;&amp;#847;&amp;#789;&amp;#818;&amp;#853;&amp;#839;&amp;#796;&amp;#854;&amp;#793;&amp;#818;&amp;#816;&amp;#839;&amp;#798;&amp;#825;&amp;#825;&amp;#841;&amp;#837;&amp;#852;&amp;#790;&amp;#845;&amp;#791;&amp;#114;&amp;#821;&amp;#807;&amp;#833;&amp;#793;&amp;#790;&amp;#851;&amp;#818;&amp;#800;&amp;#816;&amp;#815;&amp;#815;&amp;#854;&amp;#851;&amp;#813;&amp;#816;&amp;#803;&amp;#817;&amp;#803;&amp;#116;&amp;#864;&amp;#860;&amp;#800;&amp;#805;&amp;#817;&amp;#837;&amp;#854;&amp;#858;&amp;#790;&amp;#791;&amp;#858;&amp;#815;&amp;#837;&amp;#853;&amp;#858;&amp;#814;&amp;#839;&amp;#32;&amp;#802;&amp;#805;&amp;#840;&amp;#792;&amp;#826;&amp;#812;&amp;#858;&amp;#845;&amp;#790;&amp;#805;&amp;#111;&amp;#801;&amp;#1161;&amp;#856;&amp;#822;&amp;#837;&amp;#797;&amp;#837;&amp;#828;&amp;#803;&amp;#799;&amp;#800;&amp;#854;&amp;#815;&amp;#803;&amp;#819;&amp;#817;&amp;#811;&amp;#102;&amp;#861;&amp;#822;&amp;#819;&amp;#803;&amp;#852;&amp;#837;&amp;#825;&amp;#791;&amp;#815;&amp;#798;&amp;#803;&amp;#32;&amp;#822;&amp;#864;&amp;#861;&amp;#813;&amp;#804;&amp;#816;&amp;#813;&amp;#819;&amp;#811;&amp;#792;&amp;#806;&amp;#116;&amp;#807;&amp;#822;&amp;#865;&amp;#823;&amp;#841;&amp;#858;&amp;#798;&amp;#809;&amp;#837;&amp;#800;&amp;#845;&amp;#839;&amp;#796;&amp;#799;&amp;#858;&amp;#845;&amp;#813;&amp;#815;&amp;#839;&amp;#800;&amp;#837;&amp;#840;&amp;#818;&amp;#104;&amp;#1161;&amp;#795;&amp;#818;&amp;#858;&amp;#813;&amp;#792;&amp;#101;&amp;#847;&amp;#1161;&amp;#833;&amp;#817;&amp;#797;&amp;#853;&amp;#853;&amp;#796;&amp;#790;&amp;#804;&amp;#857;&amp;#857;&amp;#817;&amp;#853;&amp;#813;&amp;#853;&amp;#841;&amp;#827;&amp;#815;&amp;#852;&amp;#810;&amp;#32;&amp;#860;&amp;#793;&amp;#809;&amp;#845;&amp;#790;&amp;#816;&amp;#819;&amp;#812;&amp;#818;&amp;#799;&amp;#815;&amp;#102;&amp;#1161;&amp;#840;&amp;#800;&amp;#840;&amp;#815;&amp;#828;&amp;#819;&amp;#805;&amp;#811;&amp;#819;&amp;#97;&amp;#1161;&amp;#862;&amp;#807;&amp;#861;&amp;#846;&amp;#800;&amp;#839;&amp;#800;&amp;#852;&amp;#109;&amp;#862;&amp;#864;&amp;#828;&amp;#813;&amp;#846;&amp;#815;&amp;#852;&amp;#818;&amp;#804;&amp;#806;&amp;#796;&amp;#853;&amp;#811;&amp;#806;&amp;#814;&amp;#818;&amp;#796;&amp;#105;&amp;#865;&amp;#833;&amp;#802;&amp;#823;&amp;#833;&amp;#818;&amp;#852;&amp;#790;&amp;#845;&amp;#809;&amp;#852;&amp;#852;&amp;#812;&amp;#812;&amp;#798;&amp;#790;&amp;#840;&amp;#845;&amp;#806;&amp;#825;&amp;#813;&amp;#108;&amp;#865;&amp;#863;&amp;#821;&amp;#823;&amp;#795;&amp;#791;&amp;#837;&amp;#814;&amp;#812;&amp;#854;&amp;#815;&amp;#854;&amp;#121;&amp;#795;&amp;#807;&amp;#817;&amp;#799;&amp;#798;&amp;#796;&amp;#813;&amp;#791;&amp;#809;&amp;#815;&amp;#792;&amp;#819;&amp;#796;&amp;#839;&amp;#845;&amp;#812;&amp;#793;&amp;#806;&amp;#816;&amp;#32;&amp;#789;&amp;#789;&amp;#862;&amp;#793;&amp;#837;&amp;#798;&amp;#852;&amp;#825;&amp;#72;&amp;#860;&amp;#801;&amp;#861;&amp;#804;&amp;#857;&amp;#812;&amp;#800;&amp;#804;&amp;#803;&amp;#798;&amp;#853;&amp;#840;&amp;#799;&amp;#812;&amp;#816;&amp;#111;&amp;#863;&amp;#860;&amp;#795;&amp;#818;&amp;#797;&amp;#790;&amp;#796;&amp;#826;&amp;#840;&amp;#806;&amp;#827;&amp;#793;&amp;#804;&amp;#818;&amp;#858;&amp;#804;&amp;#798;&amp;#814;&amp;#817;&amp;#825;&amp;#826;&amp;#109;&amp;#824;&amp;#1161;&amp;#796;&amp;#792;&amp;#845;&amp;#837;&amp;#812;&amp;#797;&amp;#797;&amp;#828;&amp;#851;&amp;#790;&amp;#105;&amp;#860;&amp;#824;&amp;#801;&amp;#822;&amp;#828;&amp;#799;&amp;#841;&amp;#790;&amp;#858;&amp;#804;&amp;#797;&amp;#853;&amp;#805;&amp;#798;&amp;#815;&amp;#845;&amp;#852;&amp;#826;&amp;#110;&amp;#823;&amp;#866;&amp;#814;&amp;#803;&amp;#799;&amp;#800;&amp;#798;&amp;#796;&amp;#793;&amp;#815;&amp;#839;&amp;#825;&amp;#825;&amp;#811;&amp;#839;&amp;#813;&amp;#793;&amp;#828;&amp;#803;&amp;#858;&amp;#105;&amp;#808;&amp;#865;&amp;#810;&amp;#840;&amp;#818;&amp;#798;&amp;#813;&amp;#797;&amp;#806;&amp;#791;&amp;#790;&amp;#839;&amp;#793;&amp;#825;&amp;#825;&amp;#817;&amp;#858;&amp;#815;&amp;#839;&amp;#800;&amp;#100;&amp;#847;&amp;#802;&amp;#866;&amp;#856;&amp;#792;&amp;#796;&amp;#851;&amp;#804;&amp;#826;&amp;#826;&amp;#805;&amp;#854;&amp;#852;&amp;#837;&amp;#97;&amp;#789;&amp;#807;&amp;#795;&amp;#799;&amp;#812;&amp;#805;&amp;#811;&amp;#793;&amp;#790;&amp;#846;&amp;#811;&amp;#809;&amp;#101;&amp;#856;&amp;#860;&amp;#864;&amp;#789;&amp;#804;&amp;#814;&amp;#825;&amp;#826;&amp;#811;&amp;#811;&amp;#806;&amp;#852;&amp;#854;&amp;#827;&amp;#815;&amp;#845;&amp;#845;&amp;#809;&amp;#814;&amp;#817;&amp;#841;&amp;#810;&amp;#32;&amp;#866;&amp;#863;&amp;#821;&amp;#856;&amp;#837;&amp;#803;&amp;#837;&amp;#813;&amp;#837;&amp;#792;&amp;#817;&amp;#791;&amp;#817;&amp;#811;&amp;#798;&amp;#846;&amp;#811;&amp;#797;&amp;#797;&amp;#792;&amp;#40;&amp;#795;&amp;#853;&amp;#791;&amp;#854;&amp;#857;&amp;#841;&amp;#819;&amp;#792;&amp;#817;&amp;#825;&amp;#815;&amp;#854;&amp;#814;&amp;#800;&amp;#839;&amp;#803;&amp;#854;&amp;#796;&amp;#806;&amp;#857;&amp;#116;&amp;#866;&amp;#822;&amp;#801;&amp;#795;&amp;#821;&amp;#810;&amp;#790;&amp;#806;&amp;#806;&amp;#854;&amp;#800;&amp;#796;&amp;#104;&amp;#808;&amp;#865;&amp;#814;&amp;#816;&amp;#797;&amp;#852;&amp;#806;&amp;#819;&amp;#101;&amp;#863;&amp;#847;&amp;#864;&amp;#813;&amp;#816;&amp;#839;&amp;#837;&amp;#32;&amp;#862;&amp;#795;&amp;#857;&amp;#804;&amp;#846;&amp;#840;&amp;#812;&amp;#854;&amp;#103;&amp;#823;&amp;#864;&amp;#802;&amp;#860;&amp;#808;&amp;#819;&amp;#819;&amp;#806;&amp;#809;&amp;#818;&amp;#852;&amp;#851;&amp;#793;&amp;#837;&amp;#810;&amp;#852;&amp;#825;&amp;#812;&amp;#114;&amp;#801;&amp;#822;&amp;#820;&amp;#845;&amp;#816;&amp;#809;&amp;#837;&amp;#857;&amp;#809;&amp;#851;&amp;#811;&amp;#839;&amp;#819;&amp;#797;&amp;#814;&amp;#791;&amp;#806;&amp;#810;&amp;#811;&amp;#841;&amp;#809;&amp;#793;&amp;#101;&amp;#861;&amp;#860;&amp;#801;&amp;#828;&amp;#841;&amp;#813;&amp;#825;&amp;#800;&amp;#805;&amp;#840;&amp;#837;&amp;#803;&amp;#97;&amp;#863;&amp;#833;&amp;#809;&amp;#825;&amp;#841;&amp;#854;&amp;#857;&amp;#825;&amp;#116;&amp;#789;&amp;#856;&amp;#820;&amp;#815;&amp;#852;&amp;#837;&amp;#803;&amp;#826;&amp;#813;&amp;#815;&amp;#817;&amp;#810;&amp;#818;&amp;#827;&amp;#798;&amp;#32;&amp;#823;&amp;#807;&amp;#833;&amp;#847;&amp;#846;&amp;#810;&amp;#828;&amp;#815;&amp;#798;&amp;#840;&amp;#811;&amp;#97;&amp;#863;&amp;#1161;&amp;#790;&amp;#800;&amp;#853;&amp;#857;&amp;#813;&amp;#112;&amp;#861;&amp;#863;&amp;#864;&amp;#823;&amp;#841;&amp;#845;&amp;#839;&amp;#845;&amp;#792;&amp;#846;&amp;#837;&amp;#817;&amp;#805;&amp;#798;&amp;#798;&amp;#854;&amp;#810;&amp;#798;&amp;#846;&amp;#839;&amp;#828;&amp;#852;&amp;#828;&amp;#101;&amp;#802;&amp;#822;&amp;#841;&amp;#837;&amp;#793;&amp;#809;&amp;#804;&amp;#858;&amp;#840;&amp;#800;&amp;#817;&amp;#798;&amp;#839;&amp;#790;&amp;#793;&amp;#791;&amp;#796;&amp;#814;&amp;#115;&amp;#865;&amp;#863;&amp;#858;&amp;#818;&amp;#791;&amp;#796;&amp;#790;&amp;#854;&amp;#845;&amp;#818;&amp;#815;&amp;#817;&amp;#828;&amp;#44;&amp;#832;&amp;#807;&amp;#825;&amp;#853;&amp;#851;&amp;#841;&amp;#805;&amp;#792;&amp;#812;&amp;#825;&amp;#798;&amp;#809;&amp;#803;&amp;#810;&amp;#857;&amp;#32;&amp;#820;&amp;#820;&amp;#862;&amp;#832;&amp;#841;&amp;#816;&amp;#852;&amp;#818;&amp;#791;&amp;#854;&amp;#803;&amp;#792;&amp;#803;&amp;#806;&amp;#812;&amp;#815;&amp;#111;&amp;#802;&amp;#789;&amp;#816;&amp;#846;&amp;#819;&amp;#792;&amp;#819;&amp;#790;&amp;#813;&amp;#817;&amp;#854;&amp;#812;&amp;#114;&amp;#866;&amp;#801;&amp;#814;&amp;#803;&amp;#828;&amp;#805;&amp;#845;&amp;#809;&amp;#846;&amp;#804;&amp;#32;&amp;#1161;&amp;#820;&amp;#791;&amp;#839;&amp;#840;&amp;#803;&amp;#811;&amp;#854;&amp;#798;&amp;#792;&amp;#810;&amp;#837;&amp;#814;&amp;#806;&amp;#792;&amp;#816;&amp;#104;&amp;#801;&amp;#808;&amp;#789;&amp;#866;&amp;#827;&amp;#803;&amp;#837;&amp;#853;&amp;#828;&amp;#857;&amp;#812;&amp;#791;&amp;#853;&amp;#839;&amp;#791;&amp;#804;&amp;#810;&amp;#839;&amp;#804;&amp;#819;&amp;#111;&amp;#861;&amp;#1161;&amp;#808;&amp;#854;&amp;#812;&amp;#799;&amp;#852;&amp;#812;&amp;#811;&amp;#811;&amp;#837;&amp;#812;&amp;#846;&amp;#852;&amp;#109;&amp;#795;&amp;#795;&amp;#860;&amp;#832;&amp;#851;&amp;#793;&amp;#837;&amp;#811;&amp;#827;&amp;#809;&amp;#812;&amp;#814;&amp;#812;&amp;#797;&amp;#800;&amp;#798;&amp;#105;&amp;#861;&amp;#801;&amp;#856;&amp;#824;&amp;#860;&amp;#845;&amp;#841;&amp;#793;&amp;#851;&amp;#799;&amp;#813;&amp;#792;&amp;#840;&amp;#799;&amp;#818;&amp;#815;&amp;#792;&amp;#796;&amp;#110;&amp;#866;&amp;#795;&amp;#813;&amp;#819;&amp;#857;&amp;#845;&amp;#105;&amp;#823;&amp;#863;&amp;#853;&amp;#852;&amp;#828;&amp;#100;&amp;#866;&amp;#864;&amp;#847;&amp;#864;&amp;#846;&amp;#851;&amp;#796;&amp;#840;&amp;#799;&amp;#791;&amp;#852;&amp;#816;&amp;#817;&amp;#857;&amp;#805;&amp;#840;&amp;#797;&amp;#816;&amp;#819;&amp;#852;&amp;#804;&amp;#115;&amp;#863;&amp;#865;&amp;#821;&amp;#801;&amp;#866;&amp;#791;&amp;#819;&amp;#799;&amp;#790;&amp;#817;&amp;#853;&amp;#812;&amp;#858;&amp;#825;&amp;#837;&amp;#841;&amp;#851;&amp;#840;&amp;#852;&amp;#858;&amp;#817;&amp;#798;&amp;#41;&amp;#861;&amp;#863;&amp;#802;&amp;#790;&amp;#853;&amp;#841;&amp;#811;&amp;#841;&amp;#852;&amp;#46;&amp;#802;&amp;#821;&amp;#824;&amp;#798;&amp;#799;&amp;#851;&amp;#841;&amp;#827;
-  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="36" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
+  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="38" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
   &lt;&lt;set $shapeChoice = 0&gt;&gt;
   &lt;&lt;set $choice = 0&gt;&gt;
   &lt;&lt;set $cursor = 1&gt;&gt;
+
+  &lt;&lt;set $bg = 1&gt;&gt;
 
   &lt;&lt;set $wordCounter = 0&gt;&gt;
 

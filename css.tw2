@@ -118,18 +118,43 @@ body {
 
 .ship2bg {
 	background: url("images/ship_finals/ship_2.png");
+	background-size: cover;
 }
 
 .ship3bg {
 	background: url("images/ship_finals/ship_3.png");
+	background-size: cover;
 }
 
 .ship4anim {
 	background: url("images/ship_finals/anim1.gif");
+	background-size: cover;
 }
 
 .ship4bg {
 	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.ship5bg {
+	background: url("images/ship_finals/ship_5.png");
+	background-size: cover;
+}
+
+.ship6bg {
+	background: url("images/ship_finals/ship_6.png");
+	background-size: cover;
+}
+
+.ship7bg {
+	background: url("images/ship_finals/ship_final.png");
+	background-size: cover;
+}
+
+.ship7handsopen {
+	background: url(images/hands/open_left.png) right bottom no-repeat, url(images/hands/open_right.png) left bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+	background-size: cover;
+
 }
 
 br {
@@ -201,22 +226,50 @@ button {
 	vertical-align: middle;
 }
 
-.familyImage {
+.familyImage .file-container {
 	background: url("images/ship_finals/noncolor_last.png");
 }
 
 .corpse {
-	background: url("images/ship_finals/noncolor_last.png");
+	background: url("images/o_dam2.png");
 }
 
 button.pink:hover {
 	background-color: #ff006c;
-	animation: white-star-anim 1s infinite;
+	animation: yellow-star-anim 1s infinite;
+}
+
+.file-container {
+  top: 10%;
+  position: fixed;
+  width: 80%;
+  height: 70%;
+  border: 8px double #111111;
+  background: #1111118c;
+  padding: 20px 50px 50px 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
+}
+
+.file-container p {
+	line-height: 1.6
+}
+
+.file-container a {
+	color: white;
+	animation: textShadow 1.6s infinite;
+}
+
+.file-header {
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 button.blue:hover {
 	background-color: #34f3ff;
-	animation: white-star-anim 1s infinite;
+	animation: yellow-star-anim 1s infinite;
 }
 
 .quiz-container button:hover {
@@ -270,7 +323,7 @@ a:hover {
 }
 
 #shape5 {
-  top: 40%;
+  top: 70%;
   right: 20%;
 }
 
@@ -305,7 +358,7 @@ a:hover {
 }
 
 #shapes6 {
-  top: 20%;
+  top: 40%;
   right: 65%;
 }
 

@@ -1,5 +1,5 @@
 ::Animations [stylesheet]
-@keyframes shape-anim-1 {
+/* @keyframes shape-anim-1 {
   30% {transform: translate(75%, 65%)}
   100% {transform: translate(-70%, 55%)}
 }
@@ -13,15 +13,18 @@
   30% {transform: translate(60%, 30%)}
   50% {transform: translate(-25%, 90%)}
   100% {transform: translate(-8%, 60%)}
-}
+} */
 
 @keyframes shape-anim-4 {
-  10% {transform: translate(90%, 30%)}
-  80% {transform: translate(-55%, -22%)}
-  100% {transform: translate(-8%, 60%)}
-}
+  0% {
+    transform: rotate(0) translateX(0);
+   }
+  100% {
+    transform: rotate(360deg) translateX(400px);
+   }
+ }
 
-@keyframes shape-anim-5 {
+/* @keyframes shape-anim-5 {
   30% {transform: translate(20%, 30%)}
   70% {transform: translate(60%, -40%)}
   100% {transform: translate(-8%, -20%)}
@@ -43,18 +46,11 @@
   30% {transform: translate(55%, -40%)}
   90% {transform: translate(0%, 20%)}
   100% {transform: translate(82%, 50%)}
-}
-
-@keyframes shape-anim-9 {
-  30% {transform: translate(40%, -10%)}
-  70% {transform: translate(-85%, -20%)}
-  100% {transform: translate(-70%, 30%)}
-}
+} */
 
 @keyframes shape-anim-10 {
-  20% {transform: translate(94%, 10%)}
-  40% {transform: translate(-25%, 70%)}
-  100% {transform: translate(-55%, -10%)}
+  from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
 
@@ -174,43 +170,51 @@
 
 
 .shape-anim-1 {
-  animation: shape-anim-1 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-2 {
-  animation: shape-anim-2 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 9s alternate-reverse infinite;
 }
 
 .shape-anim-3 {
-  animation: shape-anim-3 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
 }
 
 .shape-anim-4 {
-  animation: shape-anim-4 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 6s alternate-reverse infinite;
 }
 
 .shape-anim-5 {
-  animation: shape-anim-5 ease 3s alternate infinite;
+  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-6 {
-  animation: shape-anim-6 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 9s alternate-reverse infinite;
 }
 
 .shape-anim-7 {
-  animation: shape-anim-7 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
 }
 
 .shape-anim-8 {
-  animation: shape-anim-8 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-9 {
-  animation: shape-anim-9 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s infinite alternate-reverse;
 }
 
 .shape-anim-10 {
-  animation: shape-anim-10 ease 3s alternate infinite;
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+}
+
+.shape-anim-11 {
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s infinite alternate-reverse;
+}
+
+.shape-anim-12 {
+  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 6s alternate-reverse infinite;
 }
 
 .shape-anim-ug-1 {
@@ -254,43 +258,43 @@
 }
 
 .shape-anim-gross-1 {
-  animation: shape-anim-gross-2 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-2 {
-  animation: shape-anim-gross-2 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate-reverse infinite;
 }
 
 .shape-anim-gross-3 {
-  animation: shape-anim-gross-3 ease 3s alternate infinite;
+  animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-gross-4 {
-  animation: shape-anim-gross-4 ease 3s alternate infinite;
+  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-5 {
-  animation: shape-anim-gross-5 ease 3s alternate infinite;
+  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate-reverse infinite;
 }
 
 .shape-anim-gross-6 {
-  animation: shape-anim-gross-6 ease 3s alternate infinite;
+  animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-gross-7 {
-  animation: shape-anim-gross-7 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-8 {
-  animation: shape-anim-gross-8 ease 3s alternate infinite;
+  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate-reverse infinite;
 }
 
 .shape-anim-gross-9 {
-  animation: shape-anim-gross-9 ease 3s alternate infinite;
+  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-10 {
-  animation: shape-anim-gross-10 ease 3s alternate infinite;
+  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 
@@ -466,7 +470,21 @@
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
+
 }
 .crt {
   animation: textShadow 1.6s infinite;
+}
+
+.fileerror::before {
+  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+@keyframes shadow-inset-center {
+  0% {
+    box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+  }
+  100% {
+    box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+  }
 }
