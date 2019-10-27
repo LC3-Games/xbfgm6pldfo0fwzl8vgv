@@ -3,6 +3,7 @@
   anims.tw2
   cursors.tw2
   js_ready_done.tw2
+  zalgofile.tw2
 
   storyinit.tw2
 
@@ -17,6 +18,7 @@ Immerging
 
 
 ::Start [nobr white nolink noselect]
+  <<include "Quiz Halley's Birthday">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -197,7 +199,7 @@ Immerging
     <<next>>
       <<typewriter ">drivers fetched">>
         <<next>>
-          <<typewriter ">manifesting processing  . . . . . . . .">>
+          <<typewriter ">oh o okay oh no, here it is... flooding  . . . . . . . .">>
               <<next>>
                 <<typewriter ">listen">>
                   <<next>>
@@ -411,12 +413,116 @@ Immerging
 
 
 ::Quiz Nothing [nobr]
+  <div class="quiz-container">
+    <p>HAND OVER HAND OVER HAND OVER HAND</p>
+
+    <<timed 2s>>
+      <<include "FlickFast">>
+
+      <p>LIMB&#8212;APPENDAGE&#8212;BRANCH&#8212;EXTREMITY</p>
+        <<next>>
+          <<include "FlickFast">>
+
+          <p>YOU ARE:</p>
+
+          <div class="buttonbg">
+            <<button"INSIDE OPERATING ME">>
+              <<goto "Quiz Go Back">>
+            <</button>>
+
+            <<button"BREAKING DOWN AS FAST AS I CAN BUILD MYSELF">>
+              <<goto "Quiz Go Back">>
+            <</button>>
+          </div>
+    <</timed>>
+  </div>
 
 
 ::Quiz You [nobr]
+  <div class="quiz-container">
+    <p>I AM OR WILL BE:</p>
+
+    <div class="buttonbg">
+      <<button"YOU">>
+        <<goto "Quiz You">>
+      <</button>>
+
+      <<button"INSIDE OPERATING ME">>
+        <<goto "Quiz Go Back">>
+      <</button>>
+
+      <<button"BREAKING DOWN AS FAST AS I CAN BUILD MYSELF">>
+        <<goto "Quiz Go Back">>
+      <</button>>
+    </div>
+  </div>
 
 
-::Quiz
+::Quiz Halley's Birthday [nobr]
+  <div class="file-container">
+    <div class="file-header">SUBJECT: HALLEY'S BIRTHDAY</div>
+    <p><<linkreplace"Hey">><span class="hidetext">Hey</span><<include "Word Count">><</linkreplace>> <<linkreplace"Wax">><span class="hidetext">Wax</span><<include "Word Count">><</linkreplace>>,</p>
+
+    <p><<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"you">><span class="hidetext">you</span><<include "Word Count">><</linkreplace>>'<<linkreplace"re">><span class="hidetext">re</span><<include "Word Count">><</linkreplace>> <<linkreplace"having">><span class="hidetext">having</span><<include "Word Count">><</linkreplace>> a <<linkreplace"tough">><span class="hidetext">tough</span><<include "Word Count">><</linkreplace>> <<linkreplace"time">><span class="hidetext">time</span><<include "Word Count">><</linkreplace>>, <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"am">><span class="hidetext">am</span><<include "Word Count">><</linkreplace>> <<linkreplace"too">><span class="hidetext">too</span><<include "Word Count">><</linkreplace>> <<linkreplace"honestly">><span class="hidetext">honestly</span><<include "Word Count">><</linkreplace>>. <<linkreplace"Please">><span class="hidetext">Please</span><<include "Word Count">><</linkreplace>> <<linkreplace"do">><span class="hidetext">do</span><<include "Word Count">><</linkreplace>> <<linkreplace"message">><span class="hidetext">message</span><<include "Word Count">><</linkreplace>> <<linkreplace"Halley">><span class="hidetext">Halley</span><<include "Word Count">><</linkreplace>> <<linkreplace"though">><span class="hidetext">though</span><<include "Word Count">><</linkreplace>>. <<linkreplace"She">><span class="hidetext">She</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"been">><span class="hidetext">been</span><<include "Word Count">><</linkreplace>> <<linkreplace"bugging">><span class="hidetext">bugging</span><<include "Word Count">><</linkreplace>> <<linkreplace"me">><span class="hidetext">me</span><<include "Word Count">><</linkreplace>> <<linkreplace"all">><span class="hidetext">all</span><<include "Word Count">><</linkreplace>> <<linkreplace"week">><span class="hidetext">week</span><<include "Word Count">><</linkreplace>>, <<linkreplace"and">><span class="hidetext">and</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"it">><span class="hidetext">it</span><<include "Word Count">><</linkreplace>> <<linkreplace"means">><span class="hidetext">means</span><<include "Word Count">><</linkreplace>> a <<linkreplace"lot">><span class="hidetext">lot</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"her">><span class="hidetext">her</span><<include "Word Count">><</linkreplace>>.</p>
+
+    <p><<linkreplace"Your">><span class="hidetext">Your</span><<include "Word Count">><</linkreplace>> <<linkreplace"mom">><span class="hidetext">mom</span><<include "Word Count">><</linkreplace>> <<linkreplace"sent">><span class="hidetext">sent</span><<include "Word Count">><</linkreplace>> <<linkreplace"flowers">><span class="hidetext">flowers</span><<include "Word Count">><</linkreplace>> <<linkreplace"again">><span class="hidetext">again</span><<include "Word Count">><</linkreplace>>. <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"don">><span class="hidetext">don</span><<include "Word Count">><</linkreplace>>'t <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"what">><span class="hidetext">what</span><<include "Word Count">><</linkreplace>> <<linkreplace"she">><span class="hidetext">she</span><<include "Word Count">><</linkreplace>> <<linkreplace"thinks">><span class="hidetext">thinks</span><<include "Word Count">><</linkreplace>> <<linkreplace"she">><span class="hidetext">she</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"doing">><span class="hidetext">doing</span><<include "Word Count">><</linkreplace>> <<linkreplace"with">><span class="hidetext">with</span><<include "Word Count">><</linkreplace>> <<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"flowers">><span class="hidetext">flowers</span><<include "Word Count">><</linkreplace>>. <<linkreplace"Last">><span class="hidetext">Last</span><<include "Word Count">><</linkreplace>> <<linkreplace"thing">><span class="hidetext">thing</span><<include "Word Count">><</linkreplace>> <<linkreplace"we">><span class="hidetext">we</span><<include "Word Count">><</linkreplace>> <<linkreplace"need">><span class="hidetext">need</span><<include "Word Count">><</linkreplace>>.</p>
+
+    <p><<linkreplace"love">><span class="hidetext">love</span><<include "Word Count">><</linkreplace>>,</p>
+
+    <p><<linkreplace"&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;">><span class="hidetext">&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;</span><<include "Word Count">><</linkreplace>>,</p>
+  </div>
+
+::Quiz File [nobr]
+  <<typewriter ">Identifying error . . . . . . . . . . . . .">>
+    <<timed 2s>>
+      <<typewriter ">File corrupted">>
+        <<next>>
+          <<typewriter ">Attempting repairs . . . . . . . . . . .">>
+            <<next>>
+              <<typewriter ">The repairs too much. I have to stop">>
+                <<next>>
+                  <<typewriter ">Deleting file . . . . . . . . . . . . .">>
+                    <<next>>
+                      <<goto "Quiz Continue">>
+  <div class="file-container">
+    <<include "BigZalgo">>
+  </div>
+
+
+::Quiz Date [nobr familyImage]
+  <<timed 5s>>
+    <<goto "Quiz Continue">>
+  <</timed>>
+
+
+::Quiz Mail [nobr]
+  <div class="file-container">
+    <div class="file-header">:-P LOOKS LIKE IM GONNA DIE</div>
+    <p><<linkreplace"Transmissions">><span class="hidetext">Transmissions</span><<include "Word Count">><</linkreplace>> <<linkreplace"are">><span class="hidetext">are</span><<include "Word Count">><</linkreplace>> <<linkreplace"down">><span class="hidetext">down</span><<include "Word Count">><</linkreplace>>, <<linkreplace"so">><span class="hidetext">so</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"don">><span class="hidetext">don</span><<include "Word Count">><</linkreplace>>'t <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"why">><span class="hidetext">why</span><<include "Word Count">><</linkreplace>> <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"bothering">><span class="hidetext">bothering</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"write">><span class="hidetext">write</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>>. <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"trying">><span class="hidetext">trying</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"think">><span class="hidetext">think</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"as">><span class="hidetext">as</span><<include "Word Count">><</linkreplace>> <<linkreplace"not">><span class="hidetext">not</span><<include "Word Count">><</linkreplace>> a <<linkreplace"coffin">><span class="hidetext">coffin</span><<include "Word Count">><</linkreplace>>, <<linkreplace"but">><span class="hidetext">but</span><<include "Word Count">><</linkreplace>> <<linkreplace"an">><span class="hidetext">an</span><<include "Word Count">><</linkreplace>> <<linkreplace"extension">><span class="hidetext">extension</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"myself">><span class="hidetext">myself</span><<include "Word Count">><</linkreplace>>. <<linkreplace"That">><span class="hidetext">That</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"what">><span class="hidetext">what</span><<include "Word Count">><</linkreplace>> <<linkreplace"they">><span class="hidetext">they</span><<include "Word Count">><</linkreplace>> <<linkreplace"told">><span class="hidetext">told</span><<include "Word Count">><</linkreplace>> <<linkreplace"me">><span class="hidetext">me</span><<include "Word Count">><</linkreplace>> <<linkreplace"in">><span class="hidetext">in</span><<include "Word Count">><</linkreplace>> <<linkreplace"training">><span class="hidetext">training</span><<include "Word Count">><</linkreplace>>--<<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"is">><span class="hidetext">is</span><<include "Word Count">><</linkreplace>> <<linkreplace"part">><span class="hidetext">part</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"you">><span class="hidetext">you</span><<include "Word Count">><</linkreplace>>.</p>
+
+    <p><<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"want">><span class="hidetext">want</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"go">><span class="hidetext">go</span><<include "Word Count">><</linkreplace>> <<linkreplace"home">><span class="hidetext">home</span><<include "Word Count">><</linkreplace>>.</p>
+
+    <p><<linkreplace"Training">><span class="hidetext">Training</span><<include "Word Count">><</linkreplace>>. <<linkreplace"Like">><span class="hidetext">Like</span><<include "Word Count">><</linkreplace>> <<linkreplace"wow">><span class="hidetext">wow</span><<include "Word Count">><</linkreplace>>, <<linkreplace"who">><span class="hidetext">who</span><<include "Word Count">><</linkreplace>> <<linkreplace"gives">><span class="hidetext">gives</span><<include "Word Count">><</linkreplace>> a <<linkreplace"shit">><span class="hidetext">shit</span><<include "Word Count">><</linkreplace>>?</p>
+
+    <p><<linkreplace"if">><span class="hidetext">if</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>> <<linkreplace"makes">><span class="hidetext">makes</span><<include "Word Count">><</linkreplace>> <<linkreplace"it">><span class="hidetext">it</span><<include "Word Count">><</linkreplace>> <<linkreplace"through">><span class="hidetext">through</span><<include "Word Count">><</linkreplace>>, <<linkreplace"sorry">><span class="hidetext">sorry</span><<include "Word Count">><</linkreplace>> <<linkreplace"for">><span class="hidetext">for</span><<include "Word Count">><</linkreplace>> <<linkreplace"writing">><span class="hidetext">writing</span><<include "Word Count">><</linkreplace>> <<linkreplace"it">><span class="hidetext">it</span><<include "Word Count">><</linkreplace>> <<linkreplace"like">><span class="hidetext">like</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>>. <<linkreplace"if">><span class="hidetext">if</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>> <<linkreplace"makes">><span class="hidetext">makes</span><<include "Word Count">><</linkreplace>> <<linkreplace"it">><span class="hidetext">it</span><<include "Word Count">><</linkreplace>> <<linkreplace"through">><span class="hidetext">through</span><<include "Word Count">><</linkreplace>>, <<linkreplace"tell">><span class="hidetext">tell</span><<include "Word Count">><</linkreplace>> <<linkreplace"halley">><span class="hidetext">halley</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"love">><span class="hidetext">love</span><<include "Word Count">><</linkreplace>> <<linkreplace"her">><span class="hidetext">her</span><<include "Word Count">><</linkreplace>>, <<linkreplace"and">><span class="hidetext">and</span><<include "Word Count">><</linkreplace>> <<linkreplace"tell">><span class="hidetext">tell</span><<include "Word Count">><</linkreplace>> <<linkreplace"my">><span class="hidetext">my</span><<include "Word Count">><</linkreplace>> <<linkreplace"mom">><span class="hidetext">mom</span><<include "Word Count">><</linkreplace>> <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"sorry">><span class="hidetext">sorry</span><<include "Word Count">><</linkreplace>></p>
+  </div>
+
+
+::Quiz Continue [nobr]
+  <div class="quiz-container">
+    <p>THERE ARE MORE CAMERAS IN HERE THAN THE ONE I'M LOOKING OUT OF. YOU SHOULD BE ABLE TO LOOK BACK ON YOURSELF RECURSIVE RECURSIVE HOLD ON SLOW DOWN HOLD ON</p>
+
+    <div class="buttonbg">
+      <<button"SEE YOURSELF">>
+        <<goto "Corpse">>
+      <</button>>
+
+      <<button"OPEN YOUR EYES">>
+        <<goto "Corpse">>
+      <</button>>
+    </div>
+  </div>
+
 
 ::FlickFast [nobr]
   <<if $visInput == true>>
@@ -432,8 +538,12 @@ Immerging
     <</timed>>
   <<endif>>
 
+
 ::Word Count [nobr]
-<<set $wordCounter +=1>><<if $wordCounter == 6>><<goto "Next">><<endif>>
+  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Continue">><<endif>>
+
+
+::Corpse [nobr]
 
 
 ::ChooseNamePronouns [nobr]

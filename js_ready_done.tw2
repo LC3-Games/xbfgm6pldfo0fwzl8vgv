@@ -132,9 +132,15 @@
   <<endif>>
 
   <<if $visInput == true && passage() != "Vis Input">>
-    <<script>>
-      $(".passage").addClass("ship4bg");
-    <</script>>
+    <<if not hasVisited("Corpse")>>
+      <<script>>
+        $(".passage").addClass("ship4bg");
+      <</script>>
+    <<elseif hasVisited("Corpse")>>
+      <<script>>
+        $(".passage").addClass("corpse");
+      <</script>>
+    <<endif>>
   <<endif>>
 
 

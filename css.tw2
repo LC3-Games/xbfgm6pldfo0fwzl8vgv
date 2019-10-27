@@ -201,6 +201,14 @@ button {
 	vertical-align: middle;
 }
 
+.familyImage {
+	background: url("images/ship_finals/noncolor_last.png");
+}
+
+.corpse {
+	background: url("images/ship_finals/noncolor_last.png");
+}
+
 button.pink:hover {
 	background-color: #ff006c;
 	animation: white-star-anim 1s infinite;
@@ -219,7 +227,7 @@ button.blue:hover {
 	user-select: none;
 }
 
-.hide {
+.hidetext {
 	opacity: 0;
 }
 
@@ -361,6 +369,7 @@ button {
 
 .white {
   background-color: white;
+	color: black;
 }
 
 .flick {

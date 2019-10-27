@@ -6,13 +6,17 @@ revisit aligning the bullet items
 
 make anims smooth and rolly. All rolly, just in different directions from different starting points
 
-soft ambient
+more shapes in first thing (and subsequent?)
 
+only complex cursor on hover intentionally
 
+do file-container/header css
+
+<<linkreplace"I">><span class="hide">I</span><<include "Word Count">><</linkreplace>>
 
 any word: (([A-Z])\w+)
 
-<<linkreplace"\1">><span class="hide">\1</span><<include "Word Count">><</linkreplace>>
+<<linkreplace"\1">><span class="hidetext">\1</span><<include "Word Count">><</linkreplace>>
 
 
 
