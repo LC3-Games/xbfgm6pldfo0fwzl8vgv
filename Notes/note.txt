@@ -14,7 +14,13 @@ any word: (([A-Z])\w+)
 
 <<linkreplace"\1">><span class="hidetext">\1</span><<include "Word Count">><</linkreplace>>
 
+talking iframe https://gist.github.com/pbojinov/8965299
+
 
 <<set $name = setup.makename(5)>>
 <<set $pronoun1 = setup.makepronoun(3)>>
 <<set $pronoun2 = $pronoun1 + "s">>
+
+
+Essay:
+  * 

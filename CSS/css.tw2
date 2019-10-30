@@ -1,0 +1,263 @@
+::Base [stylesheet]
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html {
+	margin: auto;
+	background: transparent;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100%;
+  min-width: 100%;
+	margin: auto;
+	max-width: 1100px;
+	min-height: 100vh;
+}
+
+#story {
+	position: relative;
+  text-align: center;
+	font-size: 1.1em;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 100%;
+  min-width: 100%;
+	margin: auto 0;
+	box-sizing: border-box;
+}
+
+#passages {
+	max-width: 100%;
+  margin: 0; /* auto 0 or vis versa centers things again */
+}
+
+.passage {
+  padding: 0;
+  margin: 0 auto;
+  color: white;
+	line-height: 1.2;
+  font-size: 1.4em;
+	background: transparent;
+  font-family: "Consolas", "Monaco", sans-serif;
+  transition: none;
+	min-height: 100vh;
+}
+
+#fullright {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: #ff006c;
+  float: right;
+}
+
+#fullleft {
+  content: "";
+  width: 50%;
+  height: 100vh;
+  background-color: #34f3ff;
+  float: left;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.black {
+	animation: black-box 10s forwards;
+	position: fixed;
+	background-color: #111111;
+}
+
+.black-reverse {
+	animation: black-box 7s reverse;
+	position: fixed;
+	background-color: #111111;
+}
+
+.black #bc-fast {
+	animation: black-box 5s forwards;
+}
+
+.redbg {
+	background: #ff0000bf !important;
+}
+
+button {
+  background-color: transparent;
+  max-width: 30%;
+  margin-left: 2em;
+  vertical-align: middle;
+	animation: textShadow 1.6s infinite;
+	border-color: #939393;
+}
+
+button:hover {
+	animation: yellow-star-anim 1s infinite;
+}
+
+button.blue:hover {
+	background-color: #34f3ff;
+}
+
+button.pink:hover {
+	background-color: #ff006c;
+}
+
+span.red button {
+	background: red;
+}
+
+span.green button {
+	background: green;
+}
+
+.buttonbg {
+	margin-top: 100px;
+	background: #111111bf;
+	text-align: center;
+}
+
+/* Quiz & File Container */
+.quiz-container {
+	margin: auto 0;
+	padding-top:10%;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 0%;
+}
+
+.quiz-container button {
+	margin: auto 0;
+	margin-left: 100px;
+  margin-right: 100px;
+}
+
+.quiz-container p {
+	margin: auto 0;
+	margin-bottom: 50px;
+	background: #111111bf;
+}
+
+.quiz-container li {
+	background: #111111bf;
+	text-align: left;
+	margin-top: 1em;
+	width: 400px;
+	list-style-image: url(images/li_icon.png);
+	padding-left: 1em;
+	padding-bottom: 0.5em
+}
+
+.quiz-container li a {
+	color: #c22;
+	vertical-align: middle;
+}
+
+.quiz-container ul {
+	margin: auto;
+	width: 400px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.file-container {
+  top: 10%;
+  position: fixed;
+  width: 80%;
+  height: 70%;
+  border: 8px double #111111;
+  background: #1111118c;
+  padding: 20px 50px 50px 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
+}
+
+.file-container p {
+	line-height: 1.6
+}
+
+.file-container a {
+	color: white;
+	animation: textShadow 1.6s infinite;
+}
+
+.file-header {
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.noselect {
+	user-select: none;
+}
+
+.hidetext {
+	opacity: 0;
+}
+
+.nolink a {
+	color: white;
+}
+
+a:hover {
+	/* animation: yellow-star-anim 1s infinite; */
+}
+
+.nolink a:hover {
+	color: white;
+	animation: flash-word 0.1s infinite;
+	text-decoration: none;
+}
+
+.white {
+  background-color: white;
+}
+
+.flick {
+  animation: flick 1s linear alternate infinite;
+}
+
+img {
+  max-width: 100%;
+}
+
+.link {
+  color: #651cbe;
+}
+
+canvas {
+  border: 1px solid white;
+}
+
+br {
+	display: none;
+}
+
+.snake {
+	height: 100vh;
+}

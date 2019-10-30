@@ -8,15 +8,54 @@
 
   <<set $wordCounter = 0>>
 
-  <<set $name = "">>
-  <<set $pronoun1 = "">>
-  <<set $pronoun2 = "">>
+  <<set $name = "praxis">>
+  <<set $pronoun1 = "ix">>
+  <<set $pronoun2 = "ixs">>
 
   <<set $visInput = false>>
   <<set $audInput = false>>
 
   <<set $last = false>>
   <<set $returnPassage = "">>
+
+  <<set $change = {
+    battery : false,
+    damage : false,
+    component : false,
+    function : false,
+    designation : false,
+    alert : false,
+    cam : false
+  }>>
+  <<set $battery = 10>>
+  <<set $damage = 100>>
+
+  /* what was this for? */
+  <<set $funct = {
+    test : false,
+    damage : false,
+    component : false,
+    alert : false,
+    function : false,
+    designation : false,
+  }>>
+
+  <<set $comp = {
+    humanEndo: {
+
+    },
+    humanBio : "unsorted"
+
+  }>>
+
+  <<set $cam = {
+    one : "on",
+    two : "off"
+  }>>
+
+  <<set $alert = {
+    worm : false
+  }>>
 
   <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>
   <<cacheaudio "pinkNoise" "Sounds/pink_noise.ogg">>

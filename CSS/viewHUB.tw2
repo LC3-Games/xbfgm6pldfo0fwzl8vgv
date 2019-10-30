@@ -1,0 +1,254 @@
+::ViewHUB [stylesheet]
+#battery {
+	position: fixed;
+	top: 10px;
+	right: 25px;
+	width: 120px;
+	height: 25px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.appear #battery {
+	animation: battery-appear 3s linear;
+}
+
+.batteryLevel {
+	position: relative;
+	width: 10px;
+	height: 20px;
+	margin: 0;
+	background-color: green;
+	border: 1px solid black;
+	animation: battery-flicker 3s ease alternate infinite;
+	content: "";
+	display: inline-block;
+}
+
+#damage {
+	position: fixed;
+	font-size: 0.5em;
+	width: 115px;
+	height: 15px;
+	background-color: #1111118c;
+	padding: 4px;
+	color: white;
+	right: 25px;
+	top: 35px;
+	text-align: center;
+}
+
+#designation {
+	background-color: #1111118c;
+	text-align: center;
+	height: 25px;
+	top: 10px;
+	left: 50%;
+	color: white;
+	transform: translate(-50%, 0);
+	position: fixed;
+	font-size: 0.8em;
+}
+
+#component {
+	position: fixed;
+	height: 600px;
+	width: 400px;
+	top: 75px;
+	right: 25px;
+	border: 2px solid #939393;
+	background-color: #1111118c;
+	font-size: 0.6em;
+	color: white;
+	box-sizing: border-box;
+}
+
+#component #unsorted {
+	height: 300px;
+	padding: 10px;
+	border-bottom: 2px solid #939393;
+}
+
+#component #bottomRow {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  height: 237px;
+}
+
+#component .sorted {
+	height: 100%;
+	width: 45%;
+	padding: 5px;
+}
+
+#component .sorted .scrollcontent {
+	height: 80%;
+}
+
+#component h5 {
+	font-size: 1.2em;
+	margin: 0.2em;
+	border-bottom: 1px solid #939393;
+	color: yellow;
+}
+
+#component .sorted.right {
+	float: right;
+	border-left: 1px solid #939393;
+}
+
+#component .right h5 {
+	color: red;
+}
+
+#component .sorted.left {
+	float: left;
+}
+
+#component .left h5 {
+	color: green;
+}
+
+#component h4 {
+	color: white;
+  text-align: center;
+  margin: 0.2em;
+  border-bottom: 1px solid #939393;
+	font-size: 1.2em;
+}
+
+#component p {
+	border-bottom: 1px solid #93939370;
+}
+
+#component ul {
+	border-bottom: 1px solid #93939370;
+}
+
+.scrollcontent {
+	overflow-y: auto;
+	height: 93%;
+}
+
+.scrollcontent::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+  background-color: #ffffff8c;
+}
+
+.scrollcontent::-webkit-scrollbar-thumb
+{
+	background-color: #111111;
+	border: 1px solid #ffffff8c;
+}
+
+#functionLib {
+	height: 600px;
+	width: 300px;
+	top: 75px;
+	left: 25px;
+	background-color: #1111118c;
+	position: fixed;
+	border: 2px solid #939393;
+	color: white;
+	font-size: 0.6em;
+}
+
+#functionLib h4 {
+	text-align: center;
+	margin: 0.2em;
+	border-bottom: 1px solid #939393;
+	font-size: 1.2em
+}
+
+#lib-container {
+	padding: 20px;
+}
+
+#lib-container a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+  user-select: none;
+}
+
+#lib-container a:hover {
+  animation: yellow-star-anim 1s infinite;
+  text-decoration: none;
+}
+
+.funct-container {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  background-color: #1111118c;
+  border: 1px solid #939393;
+  animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.funct-container button {
+  margin: 20px 0px 0px 70px;
+}
+
+.funct-container .red::before {
+  height: 1px;
+  border-top: 1px solid #93939370;
+  width: 230px;
+  content: "";
+  position: fixed;
+  bottom: 45px;
+}
+
+#lib-container p {
+  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+}
+
+#systemAlert {
+	position: fixed;
+	background: #ff00008c;
+	height: 400px;
+	width: 500px;
+	border: 1px solid black;
+	left: 50%;
+	top: 150px;
+  transform: translate(-50%, 0);
+	padding: 20px;
+	border: 2px solid #939393;
+	color: white;
+	font-size: 0.8em;
+  text-align: center;
+}
+
+#systemAlert h4 {
+	color: white;
+	text-align: center;
+	margin: 0.2em;
+	margin-bottom: 0.6em;
+	border-bottom: 1px solid #939393;
+}
+
+#systemAlert button {
+	margin: auto 0;
+	display: inline-block;
+	width: 400px;
+}
+
+#systemAlert .buttonbg {
+	background: transparent;
+	position: fixed;
+	top: 150px;
+	bottom: 20px;
+	display: inline-block;
+	left: 50%;
+  transform: translate(-50%, 0);
+}

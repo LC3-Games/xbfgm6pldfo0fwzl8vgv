@@ -121,7 +121,7 @@ time, mark, audio, video {
 
 html {
 	margin: auto;
-	background-color: transparent;
+	background: transparent;
 }
 
 body {
@@ -163,10 +163,6 @@ body {
 	min-height: 100vh;
 }
 
-.passage.flash {
-  animation: flash 4s ease forwards;
-}
-
 #fullright {
   content: "";
   margin: 0;
@@ -190,85 +186,62 @@ body {
   width: 100%;
 }
 
-.black-container {
-  height: 100%;
-  width: 100%;
+.black {
 	animation: black-box 10s forwards;
 	position: fixed;
 	background-color: #111111;
 }
 
-.black-container-reverse {
-  height: 100%;
-  width: 100%;
-	animation: black-box-reverse 7s forwards;
+.black-reverse {
+	animation: black-box 7s reverse;
 	position: fixed;
 	background-color: #111111;
 }
 
-.black-container #bc-fast {
+.black #bc-fast {
 	animation: black-box 5s forwards;
 }
 
-.ship1bg {
-	background: url("images/ship_finals/ship_1.png");
-	/* height: 100%;
-  width: 100%;
-	position: fixed; */
+.redbg {
+	background: #ff0000bf !important;
 }
 
-.ship2bg {
-	background: url("images/ship_finals/ship_2.png");
-	background-size: cover;
+button {
+  background-color: transparent;
+  max-width: 30%;
+  margin-left: 2em;
+  vertical-align: middle;
+	animation: textShadow 1.6s infinite;
+	border-color: #939393;
 }
 
-.ship3bg {
-	background: url("images/ship_finals/ship_3.png");
-	background-size: cover;
+button:hover {
+	animation: yellow-star-anim 1s infinite;
 }
 
-.ship4anim {
-	background: url("images/ship_finals/anim1.gif");
-	background-size: cover;
+button.blue:hover {
+	background-color: #34f3ff;
 }
 
-.ship4bg {
-	background: url("images/ship_finals/noncolor_last.png");
-	background-size: cover;
+button.pink:hover {
+	background-color: #ff006c;
 }
 
-.ship5bg {
-	background: url("images/ship_finals/ship_5.png");
-	background-size: cover;
+span.red button {
+	background: red;
 }
 
-.ship6bg {
-	background: url("images/ship_finals/ship_6.png");
-	background-size: cover;
+span.green button {
+	background: green;
 }
 
-.ship7bg {
-	background: url("images/ship_finals/ship_final.png");
-	background-size: cover;
+.buttonbg {
+	margin-top: 100px;
+	background: #111111bf;
+	text-align: center;
 }
 
-.ship7handsopen {
-	background: url(images/hands/open_left.png) right bottom no-repeat, url(images/hands/open_right.png) left bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
-	background-size: cover;
-
-}
-
-br {
-	display: none;
-}
-
-.flick-fast {
-	animation: flick-fast 0.05s linear 1;
-	height: 100%;
-	width: 100%;
-	position: fixed;
-}
-
+/* Quiz &amp; File Container */
 .quiz-container {
 	margin: auto 0;
 	padding-top:10%;
@@ -278,30 +251,16 @@ br {
 	top: 0%;
 }
 
-.quiz-container p {
-	margin: auto 0;
-	margin-bottom: 50px;
-	background: #111111bf;
-}
-
-.buttonbg {
-	margin-top: 100px;
-	background: #111111bf;
-	text-align: center;
-}
-
-.redbg {
-	background: #ff0000bf !important;
-}
-
 .quiz-container button {
 	margin: auto 0;
 	margin-left: 100px;
   margin-right: 100px;
 }
 
-button {
-	animation: textShadow 1.6s infinite;
+.quiz-container p {
+	margin: auto 0;
+	margin-bottom: 50px;
+	background: #111111bf;
 }
 
 .quiz-container li {
@@ -316,28 +275,14 @@ button {
 
 .quiz-container li a {
 	color: #c22;
-	vertical-align:middle;
+	vertical-align: middle;
 }
 
 .quiz-container ul {
 	margin: auto;
-	/* margin-left: .5em; */
 	width: 400px;
 	text-align: center;
 	vertical-align: middle;
-}
-
-.familyImage .file-container {
-	background: url("images/ship_finals/noncolor_last.png");
-}
-
-.corpse {
-	background: url("images/o_dam2.png");
-}
-
-button.pink:hover {
-	background-color: #ff006c;
-	animation: yellow-star-anim 1s infinite;
 }
 
 .file-container {
@@ -368,25 +313,12 @@ button.pink:hover {
 	padding-bottom: 20px;
 }
 
-button.blue:hover {
-	background-color: #34f3ff;
-	animation: yellow-star-anim 1s infinite;
-}
-
-.quiz-container button:hover {
-	animation: yellow-star-anim 1s infinite;
-}
-
 .noselect {
 	user-select: none;
 }
 
 .hidetext {
 	opacity: 0;
-}
-
-.nolink {
-
 }
 
 .nolink a {
@@ -403,6 +335,48 @@ a:hover {
 	text-decoration: none;
 }
 
+.white {
+  background-color: white;
+}
+
+.flick {
+  animation: flick 1s linear alternate infinite;
+}
+
+img {
+  max-width: 100%;
+}
+
+.link {
+  color: #651cbe;
+}
+
+canvas {
+  border: 1px solid white;
+}
+
+br {
+	display: none;
+}
+
+.snake {
+	height: 100vh;
+}
+.shape {
+  width: 100px;
+  margin: auto;
+  position: fixed;
+}
+
+.bar {
+  position: fixed;
+  height: 100vh;
+}
+
+.bar img {
+  height: 100vh;
+}
+/* Shape */
 #shape1 {
   top: 10%;
   right: 44%;
@@ -433,6 +407,7 @@ a:hover {
   right: 75%;
 }
 
+/* Shapes */
 #shapes1 {
   top: 15%;
   right: 55%;
@@ -463,6 +438,7 @@ a:hover {
   right: 65%;
 }
 
+/* Bars */
 #bar1 {
   right: 10%;
 }
@@ -493,83 +469,6 @@ a:hover {
 
 #bar8 {
   right: 44%;
-}
-
-.flash {
-
-}
-
-button {
-  background-color: transparent;
-  max-width: 30%;
-  margin-left: 2em;
-  vertical-align: middle;
-}
-
-.shape {
-  width: 100px;
-  margin: auto;
-  position: fixed;
-}
-
-.bar {
-  position: fixed;
-  height: 100vh;
-}
-
-.bar img {
-  height: 100vh;
-}
-
-.white {
-  background-color: white;
-	color: black;
-}
-
-.flick {
-  animation: flick 1s linear alternate infinite;
-}
-
-/* .passage a {
-	color: lime;
-}
-
-.passage a:hover {
-	color: #031df4;
-}
-
-p {
-	position: relative;
-  z-index: 10;
-  clear: both;
-  width: 90%;
-  text-align: left;
-  margin: 0 auto;
-  margin-bottom: 0.5em;
-} */
-
-/* .header {
-	position: absolute;
-	z-index: 50;
-	margin: auto;
-	background: #651cbe;
-	bottom: 27%;
-	right: 1em;
-}
-
-#centered {
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-} */
-
-img {
-  max-width: 100%;
-}
-
-.link {
-  color: #651cbe;
 }
 /* @keyframes shape-anim-1 {
   30% {transform: translate(75%, 65%)}
@@ -727,6 +626,10 @@ img {
   100% {opacity: 1}
 }
 
+.passage.flash {
+  animation: flash 4s ease forwards;
+}
+
 @keyframes flick {
   0% {background: black}
   49% {background: black}
@@ -875,16 +778,10 @@ img {
   to {transform: translateY(100%);}
 }
 
-@keyframes black-box-reverse {
-  from {transform: translateY(-100%);}
-  to {transform: translateY(0%);}
-}
-
 @keyframes flash-word {
   0% {opacity: 1}
   100% {opacity: 0}
 }
-
 
 @keyframes flicker {
   0% {
@@ -1030,6 +927,7 @@ img {
   pointer-events: none;
   animation: flicker 0.15s infinite;
 }
+
 .crt::before {
   content: " ";
   display: block;
@@ -1058,6 +956,89 @@ img {
   }
   100% {
     box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+  }
+}
+
+.flick-fast {
+	animation: flick-fast 0.05s linear 1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+
+@keyframes screen-stutter {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-400px);
+  }
+  21% {
+    transform: translateY(-378px);
+  }
+  22% {
+    transform: translateY(-402px);
+  }
+  52% {
+    transform: translateY(-1002px);
+  }
+  53% {
+    transform: translateY(-980px);
+  }
+  54% {
+    transform: translateY(-1004px);
+  }
+  84% {
+    transform: translateY(-1604px);
+  }
+  85% {
+    transform: translateY(-1582px);
+  }
+  86% {
+    transform: translateY(-1606px);
+  }
+  100% {
+    transform: translateY(-1766px);
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-hands {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40 %{
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+  }
+  60% {
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
   }
 }
 @keyframes cursor-anim {
@@ -1160,6 +1141,348 @@ img {
 .yellow-star-cursor {
   animation: yellow-star-anim 1s infinite;
 }
+#battery {
+	position: fixed;
+	top: 10px;
+	right: 25px;
+	width: 120px;
+	height: 25px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.appear #battery {
+	animation: battery-appear 3s linear;
+}
+
+.batteryLevel {
+	position: relative;
+	width: 10px;
+	height: 20px;
+	margin: 0;
+	background-color: green;
+	border: 1px solid black;
+	animation: battery-flicker 3s ease alternate infinite;
+	content: "";
+	display: inline-block;
+}
+
+#damage {
+	position: fixed;
+	font-size: 0.5em;
+	width: 115px;
+	height: 15px;
+	background-color: #1111118c;
+	padding: 4px;
+	color: white;
+	right: 25px;
+	top: 35px;
+	text-align: center;
+}
+
+#designation {
+	background-color: #1111118c;
+	text-align: center;
+	height: 25px;
+	top: 10px;
+	left: 50%;
+	color: white;
+	transform: translate(-50%, 0);
+	position: fixed;
+	font-size: 0.8em;
+}
+
+#component {
+	position: fixed;
+	height: 600px;
+	width: 400px;
+	top: 75px;
+	right: 25px;
+	border: 2px solid #939393;
+	background-color: #1111118c;
+	font-size: 0.6em;
+	color: white;
+	box-sizing: border-box;
+}
+
+#component #unsorted {
+	height: 300px;
+	padding: 10px;
+	border-bottom: 2px solid #939393;
+}
+
+#component #bottomRow {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  height: 237px;
+}
+
+#component .sorted {
+	height: 100%;
+	width: 45%;
+	padding: 5px;
+}
+
+#component .sorted .scrollcontent {
+	height: 80%;
+}
+
+#component h5 {
+	font-size: 1.2em;
+	margin: 0.2em;
+	border-bottom: 1px solid #939393;
+	color: yellow;
+}
+
+#component .sorted.right {
+	float: right;
+	border-left: 1px solid #939393;
+}
+
+#component .right h5 {
+	color: red;
+}
+
+#component .sorted.left {
+	float: left;
+}
+
+#component .left h5 {
+	color: green;
+}
+
+#component h4 {
+	color: white;
+  text-align: center;
+  margin: 0.2em;
+  border-bottom: 1px solid #939393;
+	font-size: 1.2em;
+}
+
+#component p {
+	border-bottom: 1px solid #93939370;
+}
+
+#component ul {
+	border-bottom: 1px solid #93939370;
+}
+
+.scrollcontent {
+	overflow-y: auto;
+	height: 93%;
+}
+
+.scrollcontent::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+  background-color: #ffffff8c;
+}
+
+.scrollcontent::-webkit-scrollbar-thumb
+{
+	background-color: #111111;
+	border: 1px solid #ffffff8c;
+}
+
+#functionLib {
+	height: 600px;
+	width: 300px;
+	top: 75px;
+	left: 25px;
+	background-color: #1111118c;
+	position: fixed;
+	border: 2px solid #939393;
+	color: white;
+	font-size: 0.6em;
+}
+
+#functionLib h4 {
+	text-align: center;
+	margin: 0.2em;
+	border-bottom: 1px solid #939393;
+	font-size: 1.2em
+}
+
+#lib-container {
+	padding: 20px;
+}
+
+#lib-container a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+  user-select: none;
+}
+
+#lib-container a:hover {
+  animation: yellow-star-anim 1s infinite;
+  text-decoration: none;
+}
+
+.funct-container {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  background-color: #1111118c;
+  border: 1px solid #939393;
+  animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.funct-container button {
+  margin: 20px 0px 0px 70px;
+}
+
+.funct-container .red::before {
+  height: 1px;
+  border-top: 1px solid #93939370;
+  width: 230px;
+  content: "";
+  position: fixed;
+  bottom: 45px;
+}
+
+#lib-container p {
+  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+}
+
+#systemAlert {
+	position: fixed;
+	background: #ff00008c;
+	height: 400px;
+	width: 500px;
+	border: 1px solid black;
+	left: 50%;
+	top: 150px;
+  transform: translate(-50%, 0);
+	padding: 20px;
+	border: 2px solid #939393;
+	color: white;
+	font-size: 0.8em;
+  text-align: center;
+}
+
+#systemAlert h4 {
+	color: white;
+	text-align: center;
+	margin: 0.2em;
+	margin-bottom: 0.6em;
+	border-bottom: 1px solid #939393;
+}
+
+#systemAlert button {
+	margin: auto 0;
+	display: inline-block;
+	width: 400px;
+}
+
+#systemAlert .buttonbg {
+	background: transparent;
+	position: fixed;
+	top: 150px;
+	bottom: 20px;
+	display: inline-block;
+	left: 50%;
+  transform: translate(-50%, 0);
+}
+.ship1bg {
+	background: url("images/ship_finals/ship_1.png");
+	background-size: cover;
+}
+
+.ship2bg {
+	background: url("images/ship_finals/ship_2.png");
+	background-size: cover;
+}
+
+.ship3bg {
+	background: url("images/ship_finals/ship_3.png");
+	background-size: cover;
+}
+
+.ship4anim {
+	background: url("images/ship_finals/anim1.gif");
+	background-size: cover;
+}
+
+.ship4bg {
+	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.ship5bg {
+	background: url("images/ship_finals/ship_5.png");
+	background-size: cover;
+}
+
+.ship6bg {
+	background: url("images/ship_finals/ship_6.png");
+	background-size: cover;
+}
+
+.ship7bg {
+	background: url("images/ship_finals/ship_final.png");
+	background-size: cover;
+}
+
+.ship7handsopen {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+	background-size: cover;
+  background-size: 70%, 70%, cover;
+	animation: move-hands 8s alternate both infinite;
+}
+
+.ship7backgroundsplitopenhands {
+  background: url(images/hands/open_left.png) no-repeat, url(images/hands/open_right.png) no-repeat, url(images/o_dam.png) no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+  background-position: left bottom, right bottom, 150% 50%, -150% 50%;
+  background-size: 70%, 70%, cover, cover;
+}
+
+#left-bg {
+  background: url(images/o_dam.png);
+  width: 50%;
+  position: fixed;
+  left: 0px;
+  height: 3000px;
+  content: "";
+  background-size: contain;
+  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  overflow-y: hidden;
+  transform: translateY(-1900px);
+}
+
+#right-bg {
+  background: url(images/hands/open_left.png) left bottom repeat-y, url(images/hands/open_right.png) right bottom repeat-y, url(images/ship_finals/ship_final.png);
+  background-size: 100%, 100%, contain;
+  width: 50%;
+  position: fixed;
+  right: 0px;
+  height: 3000px;
+  content: "";
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  overflow-y: hidden;
+  transform: translateY(-1900px);
+  border-right: 4px solid left;
+}
+
+.familyImage .file-container {
+	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.corpse {
+	background: url("images/o_dam2.png");
+	background-size: cover;
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
   $('<div id="right-side-bar"></div>').appendTo(document.body); /* ain't really a side bar anymore but this creates the persistent element used for the phone */
   var i = 0;
@@ -1202,7 +1525,133 @@ img {
       $input.focus();
     }
   });
-</script><tw-passagedata pid="1" name="Start" tags="nobr white nolink noselect" position="">&lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="2" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
+// 
+// var canvas = document.getElementById('game');
+// var context = canvas.getContext('2d');
+// var grid = 16;
+// var count = 0;
+//
+// var snake = {
+//   x: 160,
+//   y: 160,
+//
+//   // snake velocity. moves one grid length every frame in either the x or y direction
+//   dx: grid,
+//   dy: 0,
+//
+//   // keep track of all grids the snake body occupies
+//   cells: [],
+//
+//   // length of the snake. grows when eating an apple
+//   maxCells: 4
+// };
+// var apple = {
+//   x: 320,
+//   y: 320
+// };
+// // get random whole numbers in a specific range
+// // @see https://stackoverflow.com/a/1527820/2124254
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+// // game loop
+// function loop() {
+//   requestAnimationFrame(loop);
+//   // slow game loop to 15 fps instead of 60 (60/15 = 4)
+//   if (++count < 4) {
+//     return;
+//   }
+//   count = 0;
+//   context.clearRect(0,0,canvas.width,canvas.height);
+//   // move snake by it's velocity
+//   snake.x += snake.dx;
+//   snake.y += snake.dy;
+//   // wrap snake position horizontally on edge of screen
+//   if (snake.x < 0) {
+//     snake.x = canvas.width - grid;
+//   }
+//   else if (snake.x >= canvas.width) {
+//     snake.x = 0;
+//   }
+//
+//   // wrap snake position vertically on edge of screen
+//   if (snake.y < 0) {
+//     snake.y = canvas.height - grid;
+//   }
+//   else if (snake.y >= canvas.height) {
+//     snake.y = 0;
+//   }
+//   // keep track of where snake has been. front of the array is always the head
+//   snake.cells.unshift({x: snake.x, y: snake.y});
+//   // remove cells as we move away from them
+//   if (snake.cells.length > snake.maxCells) {
+//     snake.cells.pop();
+//   }
+//   // draw apple
+//   context.fillStyle = 'red';
+//   context.fillRect(apple.x, apple.y, grid-1, grid-1);
+//   // draw snake one cell at a time
+//   context.fillStyle = 'green';
+//   snake.cells.forEach(function(cell, index) {
+//
+//     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+//     context.fillRect(cell.x, cell.y, grid-1, grid-1);
+//     // snake ate apple
+//     if (cell.x === apple.x && cell.y === apple.y) {
+//       snake.maxCells++;
+//       // canvas is 400x400 which is 25x25 grids
+//       apple.x = getRandomInt(0, 25) * grid;
+//       apple.y = getRandomInt(0, 25) * grid;
+//     }
+//     // check collision with all cells after this one (modified bubble sort)
+//     for (var i = index + 1; i < snake.cells.length; i++) {
+//
+//       // snake occupies same space as a body part. reset game
+//       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+//         snake.x = 160;
+//         snake.y = 160;
+//         snake.cells = [];
+//         snake.maxCells = 4;
+//         snake.dx = grid;
+//         snake.dy = 0;
+//         apple.x = getRandomInt(0, 25) * grid;
+//         apple.y = getRandomInt(0, 25) * grid;
+//       }
+//     }
+//   });
+// }
+// // listen to keyboard events to move the snake
+// document.addEventListener('keydown', function(e) {
+//   // prevent snake from backtracking on itself by checking that it's
+//   // not already moving on the same axis (pressing left while moving
+//   // left won't do anything, and pressing right while moving left
+//   // shouldn't let you collide with your own body)
+//
+//   // left arrow key
+//   if (e.which === 37 && snake.dx === 0) {
+//     snake.dx = -grid;
+//     snake.dy = 0;
+//   }
+//   // up arrow key
+//   else if (e.which === 38 && snake.dy === 0) {
+//     snake.dy = -grid;
+//     snake.dx = 0;
+//   }
+//   // right arrow key
+//   else if (e.which === 39 && snake.dx === 0) {
+//     snake.dx = grid;
+//     snake.dy = 0;
+//   }
+//   // down arrow key
+//   else if (e.which === 40 && snake.dy === 0) {
+//     snake.dy = grid;
+//     snake.dx = 0;
+//   }
+// });
+// // start the game
+// requestAnimationFrame(loop);
+</script><tw-passagedata pid="1" name="Start" tags="nobr white crt ship7handsopen" position="">&lt;&lt;include "ViewHUD"&gt;&gt;
+  &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="2" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullleft"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -1289,7 +1738,7 @@ img {
       &lt;div class="shape" id="shapes5"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
       &lt;div class="shape" id="shapes6"&gt;[img[images/triangle_pink.png][GradientChoice][$shapeChoiceUg = 6]]&lt;/div&gt;
     &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="GradientChoice" tags="nobr" position="">&lt;&lt;set $cursor = 5&gt;&gt;
-  &lt;div class="choiceContainer"&gt;
+  &lt;div class="container"&gt;
     &lt;div class="bar" id="bar1"&gt;[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]&lt;/div&gt;
     &lt;div class="bar" id="bar2"&gt;[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]&lt;/div&gt;
     &lt;div class="bar" id="bar3"&gt;[img[images/grad_pill2.png][ButtonChoice][$barChoice = 1]]&lt;/div&gt;
@@ -1307,7 +1756,7 @@ img {
     &lt;&lt;button"01110010 01100101 01100010 01101111 01101111 01110100"&gt;&gt;
       &lt;&lt;goto "ButtonChoice"&gt;&gt;
     &lt;&lt;/button&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="FirstText" tags="nobr" position="">&lt;span id="this"&gt;&lt;div class="black-container"&gt;&lt;/div&gt;&lt;/span&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="FirstText" tags="nobr" position="">&lt;span id="this"&gt;&lt;div class="container black"&gt;&lt;/div&gt;&lt;/span&gt;
   &lt;p&gt;01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01001111 01001000 01001110 01001111 01001111 01001000 01001000 01001000 01001111 01001000 01001111 01001000 01001111 01001000 01010100 01001000 01000101 01001100 01000001 01001110 01000111 01010101 01000001 01000111 01000101 01010000 01000001 01000011 01001011 00100000 01001000 01000001 01010011 00100000 01001101 01000001 01000100 01000101 00100000 01010011 01001111 01001101 01000101 00100000 01000001 01000100 01010110 01000001 01001110 01000011 01000101 01001101 01000101 01001110 01010100 01010011 00101110 00101110 00101110&lt;/p&gt;
   &lt;p&gt;I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I &lt;/p&gt;
   &lt;p&gt;-&lt;/p&gt;
@@ -1318,7 +1767,7 @@ img {
   &lt;p&gt;STARTING TO THINKINKINKINKINKINK RESTARTING . . . &lt;/p&gt;
 
   &lt;&lt;timed 10s&gt;&gt;
-    &lt;&lt;replace "#this"&gt;&gt;&lt;div class="black-container-reverse"&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace "#this"&gt;&gt;&lt;div class="container black-reverse"&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;timed 7s&gt;&gt;
       &lt;&lt;goto "AV Choice"&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
@@ -1686,10 +2135,15 @@ img {
       &lt;p&gt;&lt;&lt;textbox "$name" $name&gt;&gt;&lt;/p&gt;
     &lt;/div&gt;
 
-    &lt;p&gt;&lt;&lt;button "CONTINUE"&gt;&gt;
+    &lt;p&gt;
+      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+        &lt;&lt;goto "ChoosePronouns"&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
         &lt;&lt;set $name to $name.trim()&gt;&gt;
         &lt;&lt;goto "ChoosePronouns"&gt;&gt;
-    &lt;&lt;/button&gt;&gt;&lt;/p&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;/p&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="ChoosePronouns" tags="nobr" position="">&lt;&lt;set $pronoun1 = setup.makepronoun(3)&gt;&gt;
   &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
 
@@ -1700,12 +2154,251 @@ img {
       &lt;p&gt;&lt;&lt;textbox "$pronoun1" $pronoun1&gt;&gt;&lt;/p&gt;
     &lt;/div&gt;
 
-    &lt;p&gt;&lt;&lt;button "CONTINUE"&gt;&gt;
-      &lt;&lt;set $prnoun1 to $pronoun1.trim()&gt;&gt;
-      &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
-      &lt;&lt;goto "Escape Start"&gt;&gt;
-    &lt;&lt;/button&gt;&gt;&lt;/p&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Escape Start" tags="nobr" position="">&lt;p&gt;&lt;/p&gt;</tw-passagedata><tw-passagedata pid="33" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+    &lt;p&gt;
+      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+        &lt;&lt;goto "Escape Start"&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+        &lt;&lt;set $prnoun1 to $pronoun1.trim()&gt;&gt;
+        &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
+        &lt;&lt;goto "HUD Boot"&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="HUD Boot" tags="nobr" position="">&lt;&lt;typewriter "Determining HUD systems . . . . . . . . . . . . ."&gt;&gt;
+  &lt;&lt;timed 3s&gt;&gt;
+    &lt;&lt;include "FlickFast"&gt;&gt;
+    &lt;&lt;typewriter "Booting up HUD systems. . . . . . . . . . . . ."&gt;&gt;
+      &lt;&lt;next&gt;&gt;
+        &lt;&lt;include "FlickFast"&gt;&gt;
+        &lt;&lt;include "ViewHUD"&gt;&gt;
+        &lt;&lt;typewriter "HUD systems booted"&gt;&gt;
+          &lt;&lt;next&gt;&gt;
+          &lt;&lt;goto "Escape Start"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="Escape Start" tags="" position="">&lt;div class="narrationHud"&gt;
+    &lt;p&gt;$name, you move in a way. Move, you think, might have never been defined for you before now. You'd been everywhere before, but now you're just here.&lt;/p&gt;
+
+    &lt;p&gt;Over there is there, and there is where you're trying to get. So you move toward a gash in the wall of the space to find how many more there's there might be. You can imagine many numbers, and you hope they will suffice.&lt;/p&gt;
+
+    &lt;&lt;timed 6s&gt;&gt;
+      &lt;&lt;set $alerts.push["0"]&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;include "BackgroundShit"&gt;&gt;
+
+  &lt;&lt;include "SelfDesignation"&gt;&gt;
+
+  &lt;&lt;include "FunctionLibrary"&gt;&gt;
+
+  &lt;&lt;if passage() == "Escape Start"&gt;&gt;
+    &lt;div class="battery appear"&gt;&lt;&lt;include "BatteryLevel"&gt;&gt;&lt;/div&gt;
+  &lt;&lt;else&gt;&gt;
+    &lt;&lt;include "Battery"&gt;&gt;
+  &lt;&lt;endif&gt;&gt;
+
+  &lt;&lt;include "Damage"&gt;&gt;
+
+  &lt;&lt;include "SystemAlert"&gt;&gt;
+
+  &lt;&lt;include "ComponentBreakdown"&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
+  &lt;div id="damage"&gt;
+    Integrity: $damage%
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
+  &lt;div id="component"&gt;
+    &lt;h4&gt;COMPONENTS&lt;/h4&gt;
+    &lt;div id="unsorted"&gt;
+      &lt;h5&gt;UNSORTED&lt;/h5&gt;
+      &lt;div class="scrollcontent"&gt;
+        &lt;p&gt;Human Endoskeleton&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Skull (teeth et. al)&lt;/li&gt;
+          &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
+          &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;Human biomatter&lt;/p&gt;
+        &lt;p&gt;Climate control system&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Compressor&lt;/li&gt;
+            &lt;li&gt;Fans (3x)&lt;/li&gt;
+            &lt;li&gt;Exo combustion&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;Life Support systems&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Water collection&lt;/li&gt;
+            &lt;li&gt;Wasted recycling&lt;/li&gt;
+            &lt;li&gt;Climate control (x)&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;Suit Mechanics&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Heat Sinks (x4)&lt;/li&gt;
+            &lt;li&gt;Motors (x21)&lt;/li&gt;
+            &lt;li&gt;Ligamentation system&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="bottomRow"&gt;
+      &lt;div class="sorted left"&gt;
+        &lt;h5&gt;ESSENTIAL&lt;/h5&gt;
+        &lt;div class="scrollcontent"&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="sorted right"&gt;
+        &lt;h5&gt;VESTIGIAL&lt;/h5&gt;
+        &lt;div class="scrollcontent"&gt;
+          &lt;p&gt;Human Endoskeleton&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Skull (teeth et. al)&lt;/li&gt;
+            &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
+            &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;p&gt;Human biomatter&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="SystemAlert" tags="nobr" position="">&lt;div id="alertcon"&gt;
+  &lt;div id="systemAlert"&gt;
+    &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+    &lt;&lt;if $alert.worm == false&gt;&gt;
+    &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
+
+    &lt;div class="buttonbg"&gt;
+      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+        &lt;&lt;set $alert.worm = "on"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+        &lt;&lt;set $alert.worm = "on"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
+      &lt;&lt;timed 0.1s&gt;&gt;
+        &lt;&lt;replace "#systemAlert"&gt;&gt;
+          &lt;&lt;include "Snake"&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
+      &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
+
+      &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
+        &lt;&lt;set $alert.worm = "done"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;&lt;endif&gt;&gt;
+    &lt;&lt;if $alert.next == "Something" &amp;&amp; $alert.worm == "done"&gt;&gt;
+      &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="CameraToggle" tags="nobr" position="">&lt;div class="camcon"&gt;
+    &lt;div class="cam"&gt;
+      &lt;&lt;if $cam.one == "on"&gt;&gt;
+        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.one = "on"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;elseif $cam.one == "off"&gt;&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.one = "off"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+      &lt;&lt;if $cam.two == "on"&gt;&gt;
+        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.two = "on"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;elseif $cam.two == "off"&gt;&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.two = "off"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
+  &lt;div id="functionLib"&gt;
+    &lt;h4&gt;FUNCTON LIBRARY REVIEW&lt;/h4&gt;
+    &lt;div id="lib-container"&gt;
+      &lt;&lt;link ".pressTest()"&gt;&gt;
+        &lt;&lt;include "FlickFast"&gt;&gt;
+        &lt;&lt;if $funct.test == false&gt;&gt;&lt;&lt;set $funct.test = true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.test = false&gt;&gt;&lt;&lt;endif&gt;&gt;
+        &lt;&lt;set $change.function = true&gt;&gt;
+      &lt;&lt;/link&gt;&gt;
+      &lt;&lt;if $funct.test == true&gt;&gt;
+        &lt;div class="funct-container"&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. pressTest = {&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. &amp;nbsp;&amp;nbsp;x-x++++++&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. &amp;nbsp;&amp;nbsp;sfdsbhfd&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;. . .&lt;/p&gt;
+          &lt;p&gt;4562. asdjasdasd&lt;/p&gt;
+          &lt;p&gt;4563. }&lt;/p&gt;
+
+          &lt;span class="red"&gt;&lt;&lt;button "EXECUTE"&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;&lt;endif&gt;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="SelfDesignation" tags="nobr" position="">&lt;div id="designcon"&gt;
+  &lt;div id="designation"&gt;
+    Self-Designation: $name, $pronoun1/$pronoun2
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
+  &lt;div id="battery"&gt;
+    &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;/for&gt;&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="BackgroundShit" tags="nobr" position="">&lt;&lt;include "FlickFast"&gt;&gt;
+  &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off"&gt;&gt;
+  /* &lt;script&gt;
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt MainCamStuff");
+  &lt;/script&gt; */
+  &lt;&lt;elseif $cam.one == "off" &amp;&amp; $cam.two == "on"&gt;&gt;
+  /* &lt;script&gt;
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt AuxCamStuff");
+  &lt;/script&gt; */
+  &lt;&lt;elseif $cam.one == "on" &amp;&amp; $cam.two == "on"&gt;&gt;
+    /* &lt;div id="left-bg"&gt;&lt;/div&gt;
+    &lt;div id="right-bg"&gt;&lt;/div&gt; */
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
+  &lt;&lt;repeat 0.1s&gt;&gt;
+    &lt;&lt;if $change.battery == true&gt;&gt;
+      &lt;&lt;set $change.battery = false&gt;&gt;
+      &lt;&lt;replace "#battcon"&gt;&gt;&lt;&lt;display "Battery"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.damage == true&gt;&gt;
+      &lt;&lt;set $change.damage = false&gt;&gt;
+      &lt;&lt;replace "#damagecon"&gt;&gt;&lt;&lt;display "Damage"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.component == true&gt;&gt;
+      &lt;&lt;set $change.component = false&gt;&gt;
+      &lt;&lt;replace "#compcon"&gt;&gt;&lt;&lt;display "ComponentBreakdown"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.alert == true&gt;&gt;
+      &lt;&lt;set $change.alert = false&gt;&gt;
+      &lt;&lt;replace "#alertcon"&gt;&gt;&lt;&lt;display "SystemAlert"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.function == true&gt;&gt;
+      &lt;&lt;set $change.function = false&gt;&gt;
+      &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.designation == true&gt;&gt;
+      &lt;&lt;set $change.designation = false&gt;&gt;
+      &lt;&lt;replace "#designcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.cam == true&gt;&gt;
+      &lt;&lt;set $change.cam = false&gt;&gt;
+      &lt;&lt;replace "#camcon"&gt;&gt;&lt;&lt;display "CameraToggle"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.background == true&gt;&gt;
+      &lt;&lt;include "FlickFast"&gt;&gt;
+      &lt;&lt;set $change.background = false&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;&lt;/repeat&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Snake" tags="nobr snake" position="">&lt;p&gt;System repairs: 1%&lt;/p&gt;
+  &lt;&lt;timed 60s&gt;&gt;
+    &lt;&lt;set $alert.worm = "won"&gt;&gt;
+    &lt;&lt;set $alert.next = "Something"&gt;&gt;
+    &lt;&lt;set $change.alert = true&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+  &lt;iframe src="snakegame.html" width="100%" height="100%" position="relative"&gt;
+  &lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="45" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
       var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
@@ -1815,7 +2508,11 @@ img {
         $(".passage").addClass("corpse");
       &lt;&lt;/script&gt;&gt;
     &lt;&lt;endif&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="35" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
+  &lt;&lt;endif&gt;&gt;
+
+  &lt;&lt;if passage() == "Snake"&gt;&gt;
+
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="47" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1836,7 +2533,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -1856,7 +2553,7 @@ img {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
     &amp;#97;&amp;#863;&amp;#795;&amp;#824;&amp;#822;&amp;#828;&amp;#846;&amp;#798;&amp;#857;&amp;#791;&amp;#851;&amp;#790;&amp;#857;&amp;#857;&amp;#792;&amp;#103;&amp;#823;&amp;#863;&amp;#824;&amp;#797;&amp;#806;&amp;#803;&amp;#828;&amp;#815;&amp;#797;&amp;#857;&amp;#828;&amp;#839;&amp;#101;&amp;#864;&amp;#807;&amp;#860;&amp;#833;&amp;#826;&amp;#852;&amp;#790;&amp;#817;&amp;#58;&amp;#860;&amp;#863;&amp;#790;&amp;#813;&amp;#817;&amp;#827;&amp;#798;&amp;#803;&amp;#837;&amp;#817;&amp;#817;&amp;#813;&amp;#790;&amp;#32;&amp;#863;&amp;#795;&amp;#866;&amp;#863;&amp;#852;&amp;#853;&amp;#800;&amp;#819;&amp;#827;&amp;#800;&amp;#50;&amp;#866;&amp;#832;&amp;#861;&amp;#833;&amp;#804;&amp;#846;&amp;#803;&amp;#813;&amp;#810;&amp;#853;&amp;#793;&amp;#800;&amp;#826;&amp;#793;&amp;#790;&amp;#851;&amp;#857;&amp;#816;&amp;#854;&amp;#792;&amp;#796;&amp;#52;&amp;#820;&amp;#832;&amp;#823;&amp;#821;&amp;#845;&amp;#812;&amp;#810;&amp;#816;&amp;#853;&amp;#813;&amp;#825;&amp;#837;&amp;#815;&amp;#814;&amp;#792;&amp;#846;&amp;#798;&amp;#841;&amp;#828;&amp;#817;
   &lt;/p&gt;
 
@@ -1878,7 +2575,7 @@ img {
 
   &lt;p&gt;
     &amp;#110;&amp;#860;&amp;#863;&amp;#856;&amp;#845;&amp;#803;&amp;#809;&amp;#851;&amp;#825;&amp;#853;&amp;#111;&amp;#801;&amp;#823;&amp;#841;&amp;#805;&amp;#811;&amp;#798;&amp;#793;&amp;#804;&amp;#814;&amp;#817;&amp;#800;&amp;#851;&amp;#818;&amp;#854;&amp;#792;&amp;#841;&amp;#799;&amp;#811;&amp;#827;&amp;#799;&amp;#116;&amp;#863;&amp;#856;&amp;#799;&amp;#806;&amp;#827;&amp;#853;&amp;#798;&amp;#852;&amp;#817;&amp;#827;&amp;#797;&amp;#804;&amp;#846;&amp;#798;&amp;#809;&amp;#840;&amp;#803;&amp;#825;&amp;#851;&amp;#101;&amp;#863;&amp;#820;&amp;#797;&amp;#812;&amp;#812;&amp;#814;&amp;#858;&amp;#811;&amp;#817;&amp;#115;&amp;#821;&amp;#846;&amp;#818;&amp;#790;&amp;#825;&amp;#826;&amp;#816;&amp;#804;&amp;#804;&amp;#828;&amp;#846;&amp;#793;&amp;#827;&amp;#851;&amp;#805;&amp;#796;&amp;#803;&amp;#58;&amp;#1161;&amp;#833;&amp;#862;&amp;#847;&amp;#846;&amp;#809;&amp;#858;&amp;#828;&amp;#790;&amp;#813;&amp;#799;&amp;#851;&amp;#841;&amp;#805;&amp;#803;&amp;#790;&amp;#845;&amp;#797;&amp;#32;&amp;#1161;&amp;#862;&amp;#821;&amp;#1161;&amp;#824;&amp;#837;&amp;#826;&amp;#828;&amp;#805;&amp;#800;&amp;#797;&amp;#839;&amp;#845;&amp;#72;&amp;#863;&amp;#795;&amp;#821;&amp;#861;&amp;#826;&amp;#852;&amp;#841;&amp;#857;&amp;#811;&amp;#826;&amp;#803;&amp;#805;&amp;#810;&amp;#858;&amp;#810;&amp;#117;&amp;#821;&amp;#801;&amp;#832;&amp;#1161;&amp;#821;&amp;#793;&amp;#825;&amp;#851;&amp;#816;&amp;#790;&amp;#809;&amp;#857;&amp;#817;&amp;#791;&amp;#800;&amp;#818;&amp;#109;&amp;#861;&amp;#833;&amp;#862;&amp;#833;&amp;#839;&amp;#825;&amp;#857;&amp;#815;&amp;#803;&amp;#819;&amp;#857;&amp;#839;&amp;#805;&amp;#858;&amp;#852;&amp;#815;&amp;#805;&amp;#839;&amp;#803;&amp;#804;&amp;#97;&amp;#795;&amp;#801;&amp;#837;&amp;#814;&amp;#819;&amp;#819;&amp;#841;&amp;#791;&amp;#858;&amp;#810;&amp;#792;&amp;#790;&amp;#806;&amp;#110;&amp;#823;&amp;#807;&amp;#823;&amp;#865;&amp;#823;&amp;#813;&amp;#837;&amp;#827;&amp;#790;&amp;#115;&amp;#856;&amp;#822;&amp;#1161;&amp;#802;&amp;#863;&amp;#818;&amp;#800;&amp;#839;&amp;#806;&amp;#819;&amp;#818;&amp;#841;&amp;#825;&amp;#32;&amp;#824;&amp;#807;&amp;#847;&amp;#860;&amp;#793;&amp;#827;&amp;#851;&amp;#818;&amp;#805;&amp;#809;&amp;#40;&amp;#863;&amp;#856;&amp;#826;&amp;#815;&amp;#839;&amp;#814;&amp;#72;&amp;#860;&amp;#801;&amp;#807;&amp;#804;&amp;#813;&amp;#853;&amp;#790;&amp;#826;&amp;#840;&amp;#825;&amp;#796;&amp;#111;&amp;#823;&amp;#847;&amp;#847;&amp;#802;&amp;#810;&amp;#799;&amp;#793;&amp;#815;&amp;#790;&amp;#812;&amp;#857;&amp;#809;&amp;#840;&amp;#846;&amp;#853;&amp;#812;&amp;#825;&amp;#858;&amp;#845;&amp;#827;&amp;#799;&amp;#804;&amp;#854;&amp;#109;&amp;#823;&amp;#865;&amp;#811;&amp;#796;&amp;#858;&amp;#800;&amp;#811;&amp;#796;&amp;#810;&amp;#858;&amp;#852;&amp;#841;&amp;#828;&amp;#841;&amp;#817;&amp;#837;&amp;#111;&amp;#820;&amp;#802;&amp;#865;&amp;#801;&amp;#845;&amp;#851;&amp;#803;&amp;#827;&amp;#845;&amp;#826;&amp;#845;&amp;#799;&amp;#858;&amp;#853;&amp;#806;&amp;#828;&amp;#837;&amp;#800;&amp;#32;&amp;#801;&amp;#864;&amp;#798;&amp;#797;&amp;#792;&amp;#797;&amp;#814;&amp;#791;&amp;#792;&amp;#840;&amp;#828;&amp;#818;&amp;#797;&amp;#115;&amp;#821;&amp;#824;&amp;#847;&amp;#806;&amp;#806;&amp;#799;&amp;#840;&amp;#792;&amp;#816;&amp;#796;&amp;#825;&amp;#825;&amp;#809;&amp;#804;&amp;#810;&amp;#815;&amp;#853;&amp;#816;&amp;#97;&amp;#802;&amp;#833;&amp;#862;&amp;#866;&amp;#807;&amp;#792;&amp;#793;&amp;#814;&amp;#799;&amp;#796;&amp;#798;&amp;#813;&amp;#800;&amp;#818;&amp;#799;&amp;#852;&amp;#813;&amp;#845;&amp;#800;&amp;#804;&amp;#112;&amp;#824;&amp;#821;&amp;#1161;&amp;#807;&amp;#818;&amp;#857;&amp;#837;&amp;#841;&amp;#852;&amp;#854;&amp;#837;&amp;#817;&amp;#792;&amp;#805;&amp;#846;&amp;#800;&amp;#837;&amp;#825;&amp;#857;&amp;#815;&amp;#818;&amp;#105;&amp;#866;&amp;#820;&amp;#860;&amp;#789;&amp;#837;&amp;#819;&amp;#799;&amp;#825;&amp;#793;&amp;#857;&amp;#845;&amp;#796;&amp;#825;&amp;#101;&amp;#820;&amp;#863;&amp;#807;&amp;#846;&amp;#805;&amp;#797;&amp;#793;&amp;#819;&amp;#826;&amp;#857;&amp;#803;&amp;#827;&amp;#814;&amp;#814;&amp;#800;&amp;#790;&amp;#857;&amp;#813;&amp;#110;&amp;#863;&amp;#860;&amp;#833;&amp;#803;&amp;#818;&amp;#852;&amp;#792;&amp;#839;&amp;#827;&amp;#817;&amp;#797;&amp;#806;&amp;#815;&amp;#798;&amp;#809;&amp;#857;&amp;#800;&amp;#812;&amp;#115;&amp;#789;&amp;#802;&amp;#799;&amp;#806;&amp;#797;&amp;#790;&amp;#811;&amp;#827;&amp;#839;&amp;#41;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#792;&amp;#813;&amp;#857;&amp;#809;&amp;#32;&amp;#856;&amp;#802;&amp;#822;&amp;#805;&amp;#852;&amp;#816;&amp;#818;&amp;#793;&amp;#854;&amp;#809;&amp;#791;&amp;#817;&amp;#827;&amp;#792;&amp;#858;&amp;#857;&amp;#851;&amp;#97;&amp;#795;&amp;#863;&amp;#807;&amp;#817;&amp;#818;&amp;#826;&amp;#858;&amp;#846;&amp;#791;&amp;#845;&amp;#803;&amp;#796;&amp;#815;&amp;#825;&amp;#806;&amp;#812;&amp;#857;&amp;#828;&amp;#796;&amp;#806;&amp;#799;&amp;#792;&amp;#114;&amp;#860;&amp;#833;&amp;#866;&amp;#866;&amp;#795;&amp;#846;&amp;#851;&amp;#828;&amp;#827;&amp;#840;&amp;#810;&amp;#815;&amp;#858;&amp;#800;&amp;#828;&amp;#805;&amp;#814;&amp;#811;&amp;#101;&amp;#823;&amp;#796;&amp;#811;&amp;#841;&amp;#792;&amp;#858;&amp;#819;&amp;#846;&amp;#817;&amp;#828;&amp;#815;&amp;#827;&amp;#858;&amp;#846;&amp;#811;&amp;#793;&amp;#817;&amp;#32;&amp;#861;&amp;#866;&amp;#865;&amp;#812;&amp;#791;&amp;#798;&amp;#845;&amp;#791;&amp;#790;&amp;#857;&amp;#790;&amp;#804;&amp;#799;&amp;#825;&amp;#796;&amp;#857;&amp;#854;&amp;#800;&amp;#796;&amp;#810;&amp;#851;&amp;#846;&amp;#116;&amp;#801;&amp;#833;&amp;#812;&amp;#811;&amp;#810;&amp;#805;&amp;#804;&amp;#792;&amp;#810;&amp;#853;&amp;#804;&amp;#797;&amp;#841;&amp;#792;&amp;#846;&amp;#104;&amp;#856;&amp;#822;&amp;#791;&amp;#858;&amp;#827;&amp;#825;&amp;#827;&amp;#818;&amp;#101;&amp;#1161;&amp;#861;&amp;#789;&amp;#832;&amp;#821;&amp;#837;&amp;#826;&amp;#813;&amp;#841;&amp;#819;&amp;#851;&amp;#809;&amp;#803;&amp;#854;&amp;#793;&amp;#805;&amp;#854;&amp;#796;&amp;#809;&amp;#817;&amp;#810;&amp;#792;&amp;#805;&amp;#809;&amp;#32;&amp;#860;&amp;#847;&amp;#802;&amp;#839;&amp;#815;&amp;#839;&amp;#812;&amp;#812;&amp;#790;&amp;#814;&amp;#804;&amp;#791;&amp;#852;&amp;#809;&amp;#825;&amp;#825;&amp;#812;&amp;#819;&amp;#846;&amp;#825;&amp;#798;&amp;#825;&amp;#111;&amp;#822;&amp;#856;&amp;#790;&amp;#806;&amp;#803;&amp;#806;&amp;#812;&amp;#814;&amp;#803;&amp;#810;&amp;#793;&amp;#810;&amp;#817;&amp;#812;&amp;#814;&amp;#110;&amp;#822;&amp;#822;&amp;#805;&amp;#803;&amp;#797;&amp;#805;&amp;#798;&amp;#798;&amp;#815;&amp;#809;&amp;#851;&amp;#854;&amp;#827;&amp;#826;&amp;#857;&amp;#793;&amp;#796;&amp;#813;&amp;#851;&amp;#108;&amp;#864;&amp;#832;&amp;#823;&amp;#819;&amp;#799;&amp;#811;&amp;#826;&amp;#790;&amp;#846;&amp;#819;&amp;#121;&amp;#824;&amp;#863;&amp;#814;&amp;#791;&amp;#790;&amp;#798;&amp;#799;&amp;#810;&amp;#32;&amp;#801;&amp;#808;&amp;#811;&amp;#800;&amp;#852;&amp;#840;&amp;#797;&amp;#837;&amp;#805;&amp;#814;&amp;#814;&amp;#791;&amp;#809;&amp;#814;&amp;#809;&amp;#803;&amp;#101;&amp;#824;&amp;#860;&amp;#865;&amp;#808;&amp;#812;&amp;#841;&amp;#798;&amp;#841;&amp;#853;&amp;#816;&amp;#826;&amp;#854;&amp;#799;&amp;#803;&amp;#804;&amp;#851;&amp;#793;&amp;#804;&amp;#854;&amp;#815;&amp;#812;&amp;#796;&amp;#120;&amp;#802;&amp;#796;&amp;#841;&amp;#828;&amp;#846;&amp;#813;&amp;#793;&amp;#841;&amp;#116;&amp;#861;&amp;#795;&amp;#840;&amp;#805;&amp;#828;&amp;#798;&amp;#845;&amp;#796;&amp;#818;&amp;#97;&amp;#789;&amp;#821;&amp;#802;&amp;#832;&amp;#833;&amp;#851;&amp;#805;&amp;#791;&amp;#845;&amp;#793;&amp;#839;&amp;#800;&amp;#840;&amp;#110;&amp;#821;&amp;#795;&amp;#832;&amp;#862;&amp;#807;&amp;#854;&amp;#813;&amp;#805;&amp;#828;&amp;#811;&amp;#810;&amp;#814;&amp;#816;&amp;#804;&amp;#837;&amp;#797;&amp;#805;&amp;#857;&amp;#116;&amp;#820;&amp;#863;&amp;#801;&amp;#856;&amp;#864;&amp;#792;&amp;#811;&amp;#805;&amp;#857;&amp;#857;&amp;#803;&amp;#792;&amp;#798;&amp;#840;&amp;#809;&amp;#809;&amp;#825;&amp;#32;&amp;#808;&amp;#824;&amp;#832;&amp;#862;&amp;#832;&amp;#796;&amp;#811;&amp;#809;&amp;#858;&amp;#805;&amp;#798;&amp;#805;&amp;#819;&amp;#800;&amp;#839;&amp;#109;&amp;#847;&amp;#821;&amp;#862;&amp;#845;&amp;#816;&amp;#812;&amp;#798;&amp;#798;&amp;#826;&amp;#792;&amp;#837;&amp;#841;&amp;#101;&amp;#862;&amp;#856;&amp;#799;&amp;#796;&amp;#816;&amp;#857;&amp;#793;&amp;#828;&amp;#846;&amp;#818;&amp;#791;&amp;#792;&amp;#809;&amp;#827;&amp;#817;&amp;#800;&amp;#800;&amp;#851;&amp;#109;&amp;#822;&amp;#822;&amp;#1161;&amp;#808;&amp;#833;&amp;#825;&amp;#806;&amp;#803;&amp;#851;&amp;#800;&amp;#853;&amp;#811;&amp;#800;&amp;#815;&amp;#790;&amp;#797;&amp;#840;&amp;#98;&amp;#833;&amp;#856;&amp;#854;&amp;#811;&amp;#815;&amp;#851;&amp;#827;&amp;#841;&amp;#799;&amp;#791;&amp;#810;&amp;#799;&amp;#797;&amp;#841;&amp;#858;&amp;#837;&amp;#101;&amp;#795;&amp;#833;&amp;#862;&amp;#790;&amp;#837;&amp;#792;&amp;#846;&amp;#853;&amp;#804;&amp;#804;&amp;#792;&amp;#837;&amp;#114;&amp;#833;&amp;#841;&amp;#840;&amp;#798;&amp;#816;&amp;#809;&amp;#812;&amp;#809;&amp;#828;&amp;#792;&amp;#840;&amp;#819;&amp;#846;&amp;#115;&amp;#821;&amp;#847;&amp;#825;&amp;#797;&amp;#809;&amp;#851;&amp;#818;&amp;#825;&amp;#845;&amp;#857;&amp;#32;&amp;#820;&amp;#861;&amp;#789;&amp;#837;&amp;#790;&amp;#846;&amp;#809;&amp;#851;&amp;#791;&amp;#845;&amp;#858;&amp;#827;&amp;#111;&amp;#824;&amp;#807;&amp;#862;&amp;#795;&amp;#823;&amp;#797;&amp;#815;&amp;#819;&amp;#837;&amp;#840;&amp;#818;&amp;#803;&amp;#858;&amp;#811;&amp;#852;&amp;#851;&amp;#798;&amp;#840;&amp;#102;&amp;#820;&amp;#847;&amp;#823;&amp;#828;&amp;#803;&amp;#810;&amp;#796;&amp;#854;&amp;#816;&amp;#846;&amp;#811;&amp;#32;&amp;#862;&amp;#864;&amp;#856;&amp;#807;&amp;#802;&amp;#791;&amp;#853;&amp;#803;&amp;#813;&amp;#852;&amp;#851;&amp;#803;&amp;#790;&amp;#799;&amp;#116;&amp;#862;&amp;#863;&amp;#798;&amp;#826;&amp;#854;&amp;#858;&amp;#818;&amp;#797;&amp;#828;&amp;#811;&amp;#837;&amp;#817;&amp;#839;&amp;#817;&amp;#858;&amp;#104;&amp;#795;&amp;#865;&amp;#866;&amp;#833;&amp;#816;&amp;#814;&amp;#825;&amp;#817;&amp;#825;&amp;#101;&amp;#824;&amp;#824;&amp;#808;&amp;#865;&amp;#820;&amp;#799;&amp;#854;&amp;#828;&amp;#858;&amp;#814;&amp;#796;&amp;#792;&amp;#809;&amp;#845;&amp;#839;&amp;#806;&amp;#837;&amp;#32;&amp;#861;&amp;#789;&amp;#863;&amp;#825;&amp;#819;&amp;#793;&amp;#845;&amp;#811;&amp;#811;&amp;#800;&amp;#806;&amp;#852;&amp;#827;&amp;#804;&amp;#819;&amp;#825;&amp;#837;&amp;#115;&amp;#864;&amp;#823;&amp;#864;&amp;#832;&amp;#813;&amp;#852;&amp;#817;&amp;#826;&amp;#809;&amp;#806;&amp;#858;&amp;#810;&amp;#810;&amp;#816;&amp;#841;&amp;#854;&amp;#117;&amp;#795;&amp;#820;&amp;#832;&amp;#827;&amp;#846;&amp;#803;&amp;#839;&amp;#806;&amp;#797;&amp;#828;&amp;#798;&amp;#826;&amp;#837;&amp;#828;&amp;#813;&amp;#791;&amp;#857;&amp;#98;&amp;#821;&amp;#802;&amp;#806;&amp;#854;&amp;#798;&amp;#815;&amp;#854;&amp;#793;&amp;#815;&amp;#810;&amp;#854;&amp;#828;&amp;#790;&amp;#814;&amp;#818;&amp;#803;&amp;#851;&amp;#116;&amp;#802;&amp;#823;&amp;#802;&amp;#828;&amp;#839;&amp;#827;&amp;#845;&amp;#114;&amp;#823;&amp;#795;&amp;#862;&amp;#798;&amp;#799;&amp;#825;&amp;#796;&amp;#797;&amp;#811;&amp;#796;&amp;#791;&amp;#815;&amp;#810;&amp;#800;&amp;#828;&amp;#857;&amp;#825;&amp;#840;&amp;#812;&amp;#105;&amp;#866;&amp;#820;&amp;#822;&amp;#857;&amp;#840;&amp;#799;&amp;#841;&amp;#797;&amp;#803;&amp;#845;&amp;#817;&amp;#841;&amp;#828;&amp;#813;&amp;#810;&amp;#841;&amp;#798;&amp;#811;&amp;#800;&amp;#798;&amp;#841;&amp;#98;&amp;#866;&amp;#820;&amp;#811;&amp;#818;&amp;#817;&amp;#845;&amp;#839;&amp;#857;&amp;#854;&amp;#790;&amp;#839;&amp;#841;&amp;#803;&amp;#839;&amp;#845;&amp;#798;&amp;#846;&amp;#837;&amp;#841;&amp;#101;&amp;#861;&amp;#824;&amp;#824;&amp;#864;&amp;#864;&amp;#815;&amp;#845;&amp;#797;&amp;#857;&amp;#810;&amp;#840;&amp;#818;&amp;#797;&amp;#799;&amp;#799;&amp;#845;&amp;#826;&amp;#32;&amp;#795;&amp;#865;&amp;#803;&amp;#837;&amp;#806;&amp;#828;&amp;#810;&amp;#819;&amp;#72;&amp;#808;&amp;#863;&amp;#805;&amp;#812;&amp;#819;&amp;#809;&amp;#817;&amp;#817;&amp;#111;&amp;#866;&amp;#798;&amp;#798;&amp;#811;&amp;#825;&amp;#797;&amp;#814;&amp;#790;&amp;#851;&amp;#810;&amp;#791;&amp;#813;&amp;#109;&amp;#865;&amp;#802;&amp;#832;&amp;#853;&amp;#825;&amp;#800;&amp;#840;&amp;#818;&amp;#810;&amp;#818;&amp;#805;&amp;#793;&amp;#799;&amp;#815;&amp;#839;&amp;#839;&amp;#817;&amp;#105;&amp;#863;&amp;#818;&amp;#804;&amp;#816;&amp;#792;&amp;#813;&amp;#110;&amp;#789;&amp;#808;&amp;#1161;&amp;#864;&amp;#853;&amp;#854;&amp;#826;&amp;#819;&amp;#818;&amp;#814;&amp;#819;&amp;#793;&amp;#837;&amp;#814;&amp;#809;&amp;#105;&amp;#861;&amp;#858;&amp;#817;&amp;#804;&amp;#804;&amp;#857;&amp;#811;&amp;#791;&amp;#826;&amp;#110;&amp;#795;&amp;#789;&amp;#847;&amp;#821;&amp;#823;&amp;#796;&amp;#811;&amp;#827;&amp;#857;&amp;#803;&amp;#852;&amp;#852;&amp;#846;&amp;#825;&amp;#805;&amp;#825;&amp;#796;&amp;#797;&amp;#97;&amp;#822;&amp;#826;&amp;#800;&amp;#840;&amp;#806;&amp;#854;&amp;#798;&amp;#840;&amp;#815;&amp;#810;&amp;#799;&amp;#797;&amp;#809;&amp;#797;&amp;#857;&amp;#812;&amp;#857;&amp;#796;&amp;#818;&amp;#46;&amp;#824;&amp;#824;&amp;#861;&amp;#833;&amp;#862;&amp;#851;&amp;#846;&amp;#815;&amp;#792;&amp;#825;&amp;#791;&amp;#812;&amp;#853;&amp;#32;&amp;#847;&amp;#823;&amp;#832;&amp;#792;&amp;#840;&amp;#809;&amp;#810;&amp;#841;&amp;#806;&amp;#827;&amp;#852;&amp;#825;&amp;#84;&amp;#795;&amp;#864;&amp;#790;&amp;#800;&amp;#799;&amp;#854;&amp;#791;&amp;#804;&amp;#816;&amp;#853;&amp;#111;&amp;#1161;&amp;#865;&amp;#862;&amp;#823;&amp;#815;&amp;#797;&amp;#814;&amp;#800;&amp;#845;&amp;#804;&amp;#810;&amp;#103;&amp;#864;&amp;#862;&amp;#847;&amp;#799;&amp;#852;&amp;#827;&amp;#858;&amp;#791;&amp;#813;&amp;#815;&amp;#806;&amp;#101;&amp;#824;&amp;#822;&amp;#847;&amp;#866;&amp;#862;&amp;#811;&amp;#815;&amp;#815;&amp;#826;&amp;#790;&amp;#810;&amp;#816;&amp;#813;&amp;#837;&amp;#792;&amp;#846;&amp;#828;&amp;#805;&amp;#116;&amp;#822;&amp;#863;&amp;#795;&amp;#803;&amp;#796;&amp;#845;&amp;#803;&amp;#840;&amp;#800;&amp;#846;&amp;#852;&amp;#803;&amp;#817;&amp;#840;&amp;#828;&amp;#806;&amp;#796;&amp;#796;&amp;#810;&amp;#845;&amp;#828;&amp;#104;&amp;#824;&amp;#863;&amp;#789;&amp;#845;&amp;#793;&amp;#813;&amp;#806;&amp;#846;&amp;#839;&amp;#826;&amp;#837;&amp;#826;&amp;#813;&amp;#817;&amp;#828;&amp;#846;&amp;#827;&amp;#804;&amp;#846;&amp;#101;&amp;#833;&amp;#824;&amp;#861;&amp;#817;&amp;#817;&amp;#837;&amp;#845;&amp;#796;&amp;#853;&amp;#817;&amp;#792;&amp;#827;&amp;#810;&amp;#825;&amp;#797;&amp;#114;&amp;#789;&amp;#860;&amp;#817;&amp;#813;&amp;#853;&amp;#814;&amp;#857;&amp;#816;&amp;#804;&amp;#793;&amp;#817;&amp;#846;&amp;#803;&amp;#809;&amp;#797;&amp;#818;&amp;#812;&amp;#851;&amp;#845;&amp;#32;&amp;#833;&amp;#862;&amp;#813;&amp;#841;&amp;#806;&amp;#803;&amp;#818;&amp;#791;&amp;#809;&amp;#857;&amp;#791;&amp;#814;&amp;#792;&amp;#800;&amp;#840;&amp;#857;&amp;#852;&amp;#839;&amp;#819;&amp;#796;&amp;#119;&amp;#861;&amp;#801;&amp;#860;&amp;#811;&amp;#796;&amp;#846;&amp;#796;&amp;#827;&amp;#818;&amp;#816;&amp;#790;&amp;#837;&amp;#837;&amp;#828;&amp;#839;&amp;#854;&amp;#826;&amp;#798;&amp;#837;&amp;#806;&amp;#105;&amp;#832;&amp;#833;&amp;#832;&amp;#818;&amp;#804;&amp;#852;&amp;#809;&amp;#805;&amp;#791;&amp;#817;&amp;#815;&amp;#800;&amp;#809;&amp;#825;&amp;#811;&amp;#828;&amp;#810;&amp;#845;&amp;#810;&amp;#796;&amp;#840;&amp;#827;&amp;#116;&amp;#801;&amp;#832;&amp;#866;&amp;#861;&amp;#792;&amp;#806;&amp;#793;&amp;#798;&amp;#793;&amp;#851;&amp;#804;&amp;#791;&amp;#826;&amp;#826;&amp;#815;&amp;#837;&amp;#827;&amp;#858;&amp;#851;&amp;#104;&amp;#847;&amp;#861;&amp;#865;&amp;#796;&amp;#827;&amp;#793;&amp;#815;&amp;#32;&amp;#821;&amp;#863;&amp;#824;&amp;#808;&amp;#824;&amp;#810;&amp;#814;&amp;#809;&amp;#793;&amp;#814;&amp;#99;&amp;#847;&amp;#861;&amp;#863;&amp;#807;&amp;#826;&amp;#790;&amp;#851;&amp;#806;&amp;#104;&amp;#862;&amp;#801;&amp;#857;&amp;#852;&amp;#839;&amp;#845;&amp;#815;&amp;#853;&amp;#798;&amp;#852;&amp;#841;&amp;#819;&amp;#857;&amp;#803;&amp;#840;&amp;#812;&amp;#105;&amp;#823;&amp;#862;&amp;#801;&amp;#847;&amp;#825;&amp;#815;&amp;#803;&amp;#810;&amp;#839;&amp;#851;&amp;#800;&amp;#804;&amp;#805;&amp;#790;&amp;#804;&amp;#852;&amp;#826;&amp;#109;&amp;#820;&amp;#822;&amp;#866;&amp;#823;&amp;#813;&amp;#841;&amp;#827;&amp;#803;&amp;#815;&amp;#837;&amp;#816;&amp;#826;&amp;#853;&amp;#841;&amp;#798;&amp;#805;&amp;#792;&amp;#818;&amp;#796;&amp;#810;&amp;#817;&amp;#790;&amp;#814;&amp;#112;&amp;#801;&amp;#863;&amp;#812;&amp;#819;&amp;#841;&amp;#806;&amp;#812;&amp;#812;&amp;#793;&amp;#858;&amp;#846;&amp;#814;&amp;#846;&amp;#826;&amp;#815;&amp;#858;&amp;#845;&amp;#839;&amp;#841;&amp;#810;&amp;#97;&amp;#824;&amp;#795;&amp;#801;&amp;#856;&amp;#805;&amp;#819;&amp;#818;&amp;#813;&amp;#805;&amp;#798;&amp;#828;&amp;#840;&amp;#816;&amp;#841;&amp;#840;&amp;#853;&amp;#840;&amp;#793;&amp;#817;&amp;#818;&amp;#813;&amp;#110;&amp;#1161;&amp;#807;&amp;#852;&amp;#806;&amp;#857;&amp;#790;&amp;#796;&amp;#828;&amp;#122;&amp;#865;&amp;#856;&amp;#822;&amp;#802;&amp;#790;&amp;#797;&amp;#851;&amp;#857;&amp;#815;&amp;#854;&amp;#854;&amp;#101;&amp;#1161;&amp;#862;&amp;#802;&amp;#802;&amp;#798;&amp;#810;&amp;#799;&amp;#793;&amp;#852;&amp;#840;&amp;#852;&amp;#852;&amp;#841;&amp;#809;&amp;#101;&amp;#824;&amp;#1161;&amp;#821;&amp;#823;&amp;#804;&amp;#817;&amp;#800;&amp;#845;&amp;#806;&amp;#854;&amp;#845;&amp;#797;&amp;#115;&amp;#861;&amp;#866;&amp;#809;&amp;#846;&amp;#798;&amp;#805;&amp;#827;&amp;#816;&amp;#806;&amp;#818;&amp;#44;&amp;#866;&amp;#822;&amp;#821;&amp;#863;&amp;#837;&amp;#813;&amp;#806;&amp;#796;&amp;#845;&amp;#857;&amp;#852;&amp;#799;&amp;#32;&amp;#832;&amp;#824;&amp;#789;&amp;#866;&amp;#856;&amp;#817;&amp;#811;&amp;#803;&amp;#819;&amp;#817;&amp;#804;&amp;#811;&amp;#828;&amp;#828;&amp;#791;&amp;#846;&amp;#798;&amp;#851;&amp;#812;&amp;#814;&amp;#791;&amp;#796;&amp;#813;&amp;#806;&amp;#103;&amp;#832;&amp;#832;&amp;#863;&amp;#813;&amp;#837;&amp;#818;&amp;#839;&amp;#791;&amp;#840;&amp;#811;&amp;#827;&amp;#825;&amp;#837;&amp;#827;&amp;#809;&amp;#828;&amp;#806;&amp;#826;&amp;#809;&amp;#813;&amp;#814;&amp;#805;&amp;#111;&amp;#833;&amp;#802;&amp;#864;&amp;#823;&amp;#799;&amp;#791;&amp;#857;&amp;#814;&amp;#818;&amp;#812;&amp;#797;&amp;#828;&amp;#114;&amp;#801;&amp;#800;&amp;#796;&amp;#803;&amp;#803;&amp;#790;&amp;#826;&amp;#816;&amp;#819;&amp;#846;&amp;#805;&amp;#796;&amp;#837;&amp;#815;&amp;#105;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#821;&amp;#841;&amp;#793;&amp;#819;&amp;#793;&amp;#799;&amp;#798;&amp;#845;&amp;#846;&amp;#815;&amp;#811;&amp;#108;&amp;#861;&amp;#861;&amp;#802;&amp;#789;&amp;#796;&amp;#791;&amp;#841;&amp;#846;&amp;#810;&amp;#811;&amp;#815;&amp;#108;&amp;#862;&amp;#823;&amp;#820;&amp;#861;&amp;#815;&amp;#790;&amp;#854;&amp;#827;&amp;#845;&amp;#845;&amp;#845;&amp;#815;&amp;#97;&amp;#1161;&amp;#808;&amp;#833;&amp;#847;&amp;#837;&amp;#799;&amp;#845;&amp;#810;&amp;#115;&amp;#865;&amp;#808;&amp;#862;&amp;#795;&amp;#796;&amp;#803;&amp;#790;&amp;#804;&amp;#826;&amp;#44;&amp;#866;&amp;#847;&amp;#847;&amp;#820;&amp;#827;&amp;#809;&amp;#845;&amp;#819;&amp;#812;&amp;#803;&amp;#839;&amp;#854;&amp;#852;&amp;#809;&amp;#819;&amp;#854;&amp;#797;&amp;#799;&amp;#805;&amp;#851;&amp;#814;&amp;#32;&amp;#856;&amp;#860;&amp;#808;&amp;#814;&amp;#800;&amp;#839;&amp;#796;&amp;#853;&amp;#805;&amp;#817;&amp;#815;&amp;#846;&amp;#858;&amp;#858;&amp;#799;&amp;#810;&amp;#840;&amp;#797;&amp;#790;&amp;#803;&amp;#799;&amp;#857;&amp;#97;&amp;#789;&amp;#847;&amp;#811;&amp;#799;&amp;#799;&amp;#790;&amp;#806;&amp;#110;&amp;#821;&amp;#822;&amp;#821;&amp;#856;&amp;#798;&amp;#841;&amp;#837;&amp;#857;&amp;#800;&amp;#812;&amp;#813;&amp;#809;&amp;#841;&amp;#797;&amp;#854;&amp;#837;&amp;#819;&amp;#853;&amp;#854;&amp;#791;&amp;#100;&amp;#789;&amp;#808;&amp;#866;&amp;#853;&amp;#804;&amp;#814;&amp;#854;&amp;#852;&amp;#826;&amp;#799;&amp;#796;&amp;#793;&amp;#852;&amp;#845;&amp;#793;&amp;#32;&amp;#863;&amp;#860;&amp;#802;&amp;#860;&amp;#865;&amp;#790;&amp;#804;&amp;#852;&amp;#790;&amp;#791;&amp;#813;&amp;#814;&amp;#111;&amp;#864;&amp;#866;&amp;#1161;&amp;#851;&amp;#811;&amp;#810;&amp;#806;&amp;#827;&amp;#839;&amp;#793;&amp;#790;&amp;#793;&amp;#793;&amp;#837;&amp;#845;&amp;#792;&amp;#818;&amp;#805;&amp;#114;&amp;#807;&amp;#833;&amp;#821;&amp;#797;&amp;#810;&amp;#800;&amp;#811;&amp;#845;&amp;#839;&amp;#97;&amp;#862;&amp;#802;&amp;#795;&amp;#816;&amp;#841;&amp;#851;&amp;#805;&amp;#817;&amp;#810;&amp;#817;&amp;#110;&amp;#807;&amp;#866;&amp;#802;&amp;#808;&amp;#845;&amp;#797;&amp;#816;&amp;#819;&amp;#796;&amp;#810;&amp;#793;&amp;#103;&amp;#808;&amp;#801;&amp;#817;&amp;#819;&amp;#816;&amp;#792;&amp;#817;&amp;#803;&amp;#798;&amp;#846;&amp;#857;&amp;#825;&amp;#803;&amp;#814;&amp;#827;&amp;#845;&amp;#117;&amp;#861;&amp;#795;&amp;#803;&amp;#852;&amp;#819;&amp;#851;&amp;#852;&amp;#816;&amp;#819;&amp;#799;&amp;#804;&amp;#857;&amp;#804;&amp;#819;&amp;#828;&amp;#816;&amp;#116;&amp;#821;&amp;#856;&amp;#797;&amp;#798;&amp;#845;&amp;#797;&amp;#837;&amp;#799;&amp;#799;&amp;#858;&amp;#97;&amp;#866;&amp;#864;&amp;#823;&amp;#821;&amp;#810;&amp;#793;&amp;#800;&amp;#799;&amp;#791;&amp;#841;&amp;#819;&amp;#804;&amp;#793;&amp;#803;&amp;#826;&amp;#851;&amp;#839;&amp;#845;&amp;#827;&amp;#804;&amp;#818;&amp;#828;&amp;#110;&amp;#795;&amp;#802;&amp;#823;&amp;#795;&amp;#798;&amp;#840;&amp;#825;&amp;#806;&amp;#828;&amp;#857;&amp;#805;&amp;#817;&amp;#797;&amp;#813;&amp;#796;&amp;#837;&amp;#851;&amp;#812;&amp;#799;&amp;#115;&amp;#821;&amp;#801;&amp;#820;&amp;#801;&amp;#856;&amp;#791;&amp;#804;&amp;#854;&amp;#796;&amp;#815;&amp;#813;&amp;#818;&amp;#816;&amp;#841;&amp;#791;&amp;#800;&amp;#44;&amp;#820;&amp;#808;&amp;#1161;&amp;#820;&amp;#789;&amp;#799;&amp;#799;&amp;#806;&amp;#809;&amp;#792;&amp;#816;&amp;#815;&amp;#819;&amp;#804;&amp;#32;&amp;#856;&amp;#832;&amp;#866;&amp;#789;&amp;#811;&amp;#816;&amp;#818;&amp;#813;&amp;#804;&amp;#803;&amp;#845;&amp;#840;&amp;#798;&amp;#814;&amp;#817;&amp;#116;&amp;#789;&amp;#820;&amp;#862;&amp;#865;&amp;#800;&amp;#811;&amp;#800;&amp;#837;&amp;#839;&amp;#796;&amp;#840;&amp;#799;&amp;#819;&amp;#810;&amp;#806;&amp;#799;&amp;#826;&amp;#818;&amp;#806;&amp;#104;&amp;#1161;&amp;#832;&amp;#789;&amp;#862;&amp;#840;&amp;#846;&amp;#799;&amp;#828;&amp;#853;&amp;#837;&amp;#819;&amp;#791;&amp;#851;&amp;#799;&amp;#809;&amp;#792;&amp;#101;&amp;#824;&amp;#846;&amp;#809;&amp;#793;&amp;#793;&amp;#845;&amp;#792;&amp;#819;&amp;#797;&amp;#854;&amp;#798;&amp;#818;&amp;#815;&amp;#819;&amp;#121;&amp;#863;&amp;#795;&amp;#813;&amp;#811;&amp;#810;&amp;#825;&amp;#819;&amp;#853;&amp;#817;&amp;#840;&amp;#841;&amp;#790;&amp;#857;&amp;#858;&amp;#846;&amp;#825;&amp;#811;&amp;#791;&amp;#809;&amp;#803;&amp;#32;&amp;#862;&amp;#860;&amp;#801;&amp;#864;&amp;#832;&amp;#797;&amp;#811;&amp;#805;&amp;#790;&amp;#811;&amp;#853;&amp;#854;&amp;#799;&amp;#799;&amp;#815;&amp;#97;&amp;#865;&amp;#860;&amp;#802;&amp;#847;&amp;#823;&amp;#793;&amp;#826;&amp;#816;&amp;#828;&amp;#806;&amp;#828;&amp;#841;&amp;#810;&amp;#805;&amp;#114;&amp;#807;&amp;#863;&amp;#832;&amp;#814;&amp;#854;&amp;#858;&amp;#854;&amp;#812;&amp;#812;&amp;#819;&amp;#815;&amp;#798;&amp;#840;&amp;#793;&amp;#852;&amp;#811;&amp;#840;&amp;#854;&amp;#792;&amp;#818;&amp;#101;&amp;#823;&amp;#795;&amp;#864;&amp;#805;&amp;#797;&amp;#852;&amp;#815;&amp;#827;&amp;#796;&amp;#797;&amp;#858;&amp;#853;&amp;#806;&amp;#851;&amp;#32;&amp;#1161;&amp;#860;&amp;#833;&amp;#821;&amp;#814;&amp;#804;&amp;#799;&amp;#810;&amp;#812;&amp;#797;&amp;#839;&amp;#806;&amp;#840;&amp;#857;&amp;#805;&amp;#839;&amp;#790;&amp;#858;&amp;#837;&amp;#858;&amp;#841;&amp;#826;&amp;#112;&amp;#802;&amp;#833;&amp;#819;&amp;#817;&amp;#811;&amp;#852;&amp;#799;&amp;#826;&amp;#857;&amp;#798;&amp;#851;&amp;#827;&amp;#803;&amp;#840;&amp;#814;&amp;#818;&amp;#857;&amp;#804;&amp;#803;&amp;#840;&amp;#97;&amp;#861;&amp;#864;&amp;#864;&amp;#847;&amp;#789;&amp;#818;&amp;#853;&amp;#839;&amp;#796;&amp;#854;&amp;#793;&amp;#818;&amp;#816;&amp;#839;&amp;#798;&amp;#825;&amp;#825;&amp;#841;&amp;#837;&amp;#852;&amp;#790;&amp;#845;&amp;#791;&amp;#114;&amp;#821;&amp;#807;&amp;#833;&amp;#793;&amp;#790;&amp;#851;&amp;#818;&amp;#800;&amp;#816;&amp;#815;&amp;#815;&amp;#854;&amp;#851;&amp;#813;&amp;#816;&amp;#803;&amp;#817;&amp;#803;&amp;#116;&amp;#864;&amp;#860;&amp;#800;&amp;#805;&amp;#817;&amp;#837;&amp;#854;&amp;#858;&amp;#790;&amp;#791;&amp;#858;&amp;#815;&amp;#837;&amp;#853;&amp;#858;&amp;#814;&amp;#839;&amp;#32;&amp;#802;&amp;#805;&amp;#840;&amp;#792;&amp;#826;&amp;#812;&amp;#858;&amp;#845;&amp;#790;&amp;#805;&amp;#111;&amp;#801;&amp;#1161;&amp;#856;&amp;#822;&amp;#837;&amp;#797;&amp;#837;&amp;#828;&amp;#803;&amp;#799;&amp;#800;&amp;#854;&amp;#815;&amp;#803;&amp;#819;&amp;#817;&amp;#811;&amp;#102;&amp;#861;&amp;#822;&amp;#819;&amp;#803;&amp;#852;&amp;#837;&amp;#825;&amp;#791;&amp;#815;&amp;#798;&amp;#803;&amp;#32;&amp;#822;&amp;#864;&amp;#861;&amp;#813;&amp;#804;&amp;#816;&amp;#813;&amp;#819;&amp;#811;&amp;#792;&amp;#806;&amp;#116;&amp;#807;&amp;#822;&amp;#865;&amp;#823;&amp;#841;&amp;#858;&amp;#798;&amp;#809;&amp;#837;&amp;#800;&amp;#845;&amp;#839;&amp;#796;&amp;#799;&amp;#858;&amp;#845;&amp;#813;&amp;#815;&amp;#839;&amp;#800;&amp;#837;&amp;#840;&amp;#818;&amp;#104;&amp;#1161;&amp;#795;&amp;#818;&amp;#858;&amp;#813;&amp;#792;&amp;#101;&amp;#847;&amp;#1161;&amp;#833;&amp;#817;&amp;#797;&amp;#853;&amp;#853;&amp;#796;&amp;#790;&amp;#804;&amp;#857;&amp;#857;&amp;#817;&amp;#853;&amp;#813;&amp;#853;&amp;#841;&amp;#827;&amp;#815;&amp;#852;&amp;#810;&amp;#32;&amp;#860;&amp;#793;&amp;#809;&amp;#845;&amp;#790;&amp;#816;&amp;#819;&amp;#812;&amp;#818;&amp;#799;&amp;#815;&amp;#102;&amp;#1161;&amp;#840;&amp;#800;&amp;#840;&amp;#815;&amp;#828;&amp;#819;&amp;#805;&amp;#811;&amp;#819;&amp;#97;&amp;#1161;&amp;#862;&amp;#807;&amp;#861;&amp;#846;&amp;#800;&amp;#839;&amp;#800;&amp;#852;&amp;#109;&amp;#862;&amp;#864;&amp;#828;&amp;#813;&amp;#846;&amp;#815;&amp;#852;&amp;#818;&amp;#804;&amp;#806;&amp;#796;&amp;#853;&amp;#811;&amp;#806;&amp;#814;&amp;#818;&amp;#796;&amp;#105;&amp;#865;&amp;#833;&amp;#802;&amp;#823;&amp;#833;&amp;#818;&amp;#852;&amp;#790;&amp;#845;&amp;#809;&amp;#852;&amp;#852;&amp;#812;&amp;#812;&amp;#798;&amp;#790;&amp;#840;&amp;#845;&amp;#806;&amp;#825;&amp;#813;&amp;#108;&amp;#865;&amp;#863;&amp;#821;&amp;#823;&amp;#795;&amp;#791;&amp;#837;&amp;#814;&amp;#812;&amp;#854;&amp;#815;&amp;#854;&amp;#121;&amp;#795;&amp;#807;&amp;#817;&amp;#799;&amp;#798;&amp;#796;&amp;#813;&amp;#791;&amp;#809;&amp;#815;&amp;#792;&amp;#819;&amp;#796;&amp;#839;&amp;#845;&amp;#812;&amp;#793;&amp;#806;&amp;#816;&amp;#32;&amp;#789;&amp;#789;&amp;#862;&amp;#793;&amp;#837;&amp;#798;&amp;#852;&amp;#825;&amp;#72;&amp;#860;&amp;#801;&amp;#861;&amp;#804;&amp;#857;&amp;#812;&amp;#800;&amp;#804;&amp;#803;&amp;#798;&amp;#853;&amp;#840;&amp;#799;&amp;#812;&amp;#816;&amp;#111;&amp;#863;&amp;#860;&amp;#795;&amp;#818;&amp;#797;&amp;#790;&amp;#796;&amp;#826;&amp;#840;&amp;#806;&amp;#827;&amp;#793;&amp;#804;&amp;#818;&amp;#858;&amp;#804;&amp;#798;&amp;#814;&amp;#817;&amp;#825;&amp;#826;&amp;#109;&amp;#824;&amp;#1161;&amp;#796;&amp;#792;&amp;#845;&amp;#837;&amp;#812;&amp;#797;&amp;#797;&amp;#828;&amp;#851;&amp;#790;&amp;#105;&amp;#860;&amp;#824;&amp;#801;&amp;#822;&amp;#828;&amp;#799;&amp;#841;&amp;#790;&amp;#858;&amp;#804;&amp;#797;&amp;#853;&amp;#805;&amp;#798;&amp;#815;&amp;#845;&amp;#852;&amp;#826;&amp;#110;&amp;#823;&amp;#866;&amp;#814;&amp;#803;&amp;#799;&amp;#800;&amp;#798;&amp;#796;&amp;#793;&amp;#815;&amp;#839;&amp;#825;&amp;#825;&amp;#811;&amp;#839;&amp;#813;&amp;#793;&amp;#828;&amp;#803;&amp;#858;&amp;#105;&amp;#808;&amp;#865;&amp;#810;&amp;#840;&amp;#818;&amp;#798;&amp;#813;&amp;#797;&amp;#806;&amp;#791;&amp;#790;&amp;#839;&amp;#793;&amp;#825;&amp;#825;&amp;#817;&amp;#858;&amp;#815;&amp;#839;&amp;#800;&amp;#100;&amp;#847;&amp;#802;&amp;#866;&amp;#856;&amp;#792;&amp;#796;&amp;#851;&amp;#804;&amp;#826;&amp;#826;&amp;#805;&amp;#854;&amp;#852;&amp;#837;&amp;#97;&amp;#789;&amp;#807;&amp;#795;&amp;#799;&amp;#812;&amp;#805;&amp;#811;&amp;#793;&amp;#790;&amp;#846;&amp;#811;&amp;#809;&amp;#101;&amp;#856;&amp;#860;&amp;#864;&amp;#789;&amp;#804;&amp;#814;&amp;#825;&amp;#826;&amp;#811;&amp;#811;&amp;#806;&amp;#852;&amp;#854;&amp;#827;&amp;#815;&amp;#845;&amp;#845;&amp;#809;&amp;#814;&amp;#817;&amp;#841;&amp;#810;&amp;#32;&amp;#866;&amp;#863;&amp;#821;&amp;#856;&amp;#837;&amp;#803;&amp;#837;&amp;#813;&amp;#837;&amp;#792;&amp;#817;&amp;#791;&amp;#817;&amp;#811;&amp;#798;&amp;#846;&amp;#811;&amp;#797;&amp;#797;&amp;#792;&amp;#40;&amp;#795;&amp;#853;&amp;#791;&amp;#854;&amp;#857;&amp;#841;&amp;#819;&amp;#792;&amp;#817;&amp;#825;&amp;#815;&amp;#854;&amp;#814;&amp;#800;&amp;#839;&amp;#803;&amp;#854;&amp;#796;&amp;#806;&amp;#857;&amp;#116;&amp;#866;&amp;#822;&amp;#801;&amp;#795;&amp;#821;&amp;#810;&amp;#790;&amp;#806;&amp;#806;&amp;#854;&amp;#800;&amp;#796;&amp;#104;&amp;#808;&amp;#865;&amp;#814;&amp;#816;&amp;#797;&amp;#852;&amp;#806;&amp;#819;&amp;#101;&amp;#863;&amp;#847;&amp;#864;&amp;#813;&amp;#816;&amp;#839;&amp;#837;&amp;#32;&amp;#862;&amp;#795;&amp;#857;&amp;#804;&amp;#846;&amp;#840;&amp;#812;&amp;#854;&amp;#103;&amp;#823;&amp;#864;&amp;#802;&amp;#860;&amp;#808;&amp;#819;&amp;#819;&amp;#806;&amp;#809;&amp;#818;&amp;#852;&amp;#851;&amp;#793;&amp;#837;&amp;#810;&amp;#852;&amp;#825;&amp;#812;&amp;#114;&amp;#801;&amp;#822;&amp;#820;&amp;#845;&amp;#816;&amp;#809;&amp;#837;&amp;#857;&amp;#809;&amp;#851;&amp;#811;&amp;#839;&amp;#819;&amp;#797;&amp;#814;&amp;#791;&amp;#806;&amp;#810;&amp;#811;&amp;#841;&amp;#809;&amp;#793;&amp;#101;&amp;#861;&amp;#860;&amp;#801;&amp;#828;&amp;#841;&amp;#813;&amp;#825;&amp;#800;&amp;#805;&amp;#840;&amp;#837;&amp;#803;&amp;#97;&amp;#863;&amp;#833;&amp;#809;&amp;#825;&amp;#841;&amp;#854;&amp;#857;&amp;#825;&amp;#116;&amp;#789;&amp;#856;&amp;#820;&amp;#815;&amp;#852;&amp;#837;&amp;#803;&amp;#826;&amp;#813;&amp;#815;&amp;#817;&amp;#810;&amp;#818;&amp;#827;&amp;#798;&amp;#32;&amp;#823;&amp;#807;&amp;#833;&amp;#847;&amp;#846;&amp;#810;&amp;#828;&amp;#815;&amp;#798;&amp;#840;&amp;#811;&amp;#97;&amp;#863;&amp;#1161;&amp;#790;&amp;#800;&amp;#853;&amp;#857;&amp;#813;&amp;#112;&amp;#861;&amp;#863;&amp;#864;&amp;#823;&amp;#841;&amp;#845;&amp;#839;&amp;#845;&amp;#792;&amp;#846;&amp;#837;&amp;#817;&amp;#805;&amp;#798;&amp;#798;&amp;#854;&amp;#810;&amp;#798;&amp;#846;&amp;#839;&amp;#828;&amp;#852;&amp;#828;&amp;#101;&amp;#802;&amp;#822;&amp;#841;&amp;#837;&amp;#793;&amp;#809;&amp;#804;&amp;#858;&amp;#840;&amp;#800;&amp;#817;&amp;#798;&amp;#839;&amp;#790;&amp;#793;&amp;#791;&amp;#796;&amp;#814;&amp;#115;&amp;#865;&amp;#863;&amp;#858;&amp;#818;&amp;#791;&amp;#796;&amp;#790;&amp;#854;&amp;#845;&amp;#818;&amp;#815;&amp;#817;&amp;#828;&amp;#44;&amp;#832;&amp;#807;&amp;#825;&amp;#853;&amp;#851;&amp;#841;&amp;#805;&amp;#792;&amp;#812;&amp;#825;&amp;#798;&amp;#809;&amp;#803;&amp;#810;&amp;#857;&amp;#32;&amp;#820;&amp;#820;&amp;#862;&amp;#832;&amp;#841;&amp;#816;&amp;#852;&amp;#818;&amp;#791;&amp;#854;&amp;#803;&amp;#792;&amp;#803;&amp;#806;&amp;#812;&amp;#815;&amp;#111;&amp;#802;&amp;#789;&amp;#816;&amp;#846;&amp;#819;&amp;#792;&amp;#819;&amp;#790;&amp;#813;&amp;#817;&amp;#854;&amp;#812;&amp;#114;&amp;#866;&amp;#801;&amp;#814;&amp;#803;&amp;#828;&amp;#805;&amp;#845;&amp;#809;&amp;#846;&amp;#804;&amp;#32;&amp;#1161;&amp;#820;&amp;#791;&amp;#839;&amp;#840;&amp;#803;&amp;#811;&amp;#854;&amp;#798;&amp;#792;&amp;#810;&amp;#837;&amp;#814;&amp;#806;&amp;#792;&amp;#816;&amp;#104;&amp;#801;&amp;#808;&amp;#789;&amp;#866;&amp;#827;&amp;#803;&amp;#837;&amp;#853;&amp;#828;&amp;#857;&amp;#812;&amp;#791;&amp;#853;&amp;#839;&amp;#791;&amp;#804;&amp;#810;&amp;#839;&amp;#804;&amp;#819;&amp;#111;&amp;#861;&amp;#1161;&amp;#808;&amp;#854;&amp;#812;&amp;#799;&amp;#852;&amp;#812;&amp;#811;&amp;#811;&amp;#837;&amp;#812;&amp;#846;&amp;#852;&amp;#109;&amp;#795;&amp;#795;&amp;#860;&amp;#832;&amp;#851;&amp;#793;&amp;#837;&amp;#811;&amp;#827;&amp;#809;&amp;#812;&amp;#814;&amp;#812;&amp;#797;&amp;#800;&amp;#798;&amp;#105;&amp;#861;&amp;#801;&amp;#856;&amp;#824;&amp;#860;&amp;#845;&amp;#841;&amp;#793;&amp;#851;&amp;#799;&amp;#813;&amp;#792;&amp;#840;&amp;#799;&amp;#818;&amp;#815;&amp;#792;&amp;#796;&amp;#110;&amp;#866;&amp;#795;&amp;#813;&amp;#819;&amp;#857;&amp;#845;&amp;#105;&amp;#823;&amp;#863;&amp;#853;&amp;#852;&amp;#828;&amp;#100;&amp;#866;&amp;#864;&amp;#847;&amp;#864;&amp;#846;&amp;#851;&amp;#796;&amp;#840;&amp;#799;&amp;#791;&amp;#852;&amp;#816;&amp;#817;&amp;#857;&amp;#805;&amp;#840;&amp;#797;&amp;#816;&amp;#819;&amp;#852;&amp;#804;&amp;#115;&amp;#863;&amp;#865;&amp;#821;&amp;#801;&amp;#866;&amp;#791;&amp;#819;&amp;#799;&amp;#790;&amp;#817;&amp;#853;&amp;#812;&amp;#858;&amp;#825;&amp;#837;&amp;#841;&amp;#851;&amp;#840;&amp;#852;&amp;#858;&amp;#817;&amp;#798;&amp;#41;&amp;#861;&amp;#863;&amp;#802;&amp;#790;&amp;#853;&amp;#841;&amp;#811;&amp;#841;&amp;#852;&amp;#46;&amp;#802;&amp;#821;&amp;#824;&amp;#798;&amp;#799;&amp;#851;&amp;#841;&amp;#827;
-  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="38" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
+  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="50" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
   &lt;&lt;set $shapeChoice = 0&gt;&gt;
   &lt;&lt;set $choice = 0&gt;&gt;
   &lt;&lt;set $cursor = 1&gt;&gt;
@@ -1887,15 +2584,54 @@ img {
 
   &lt;&lt;set $wordCounter = 0&gt;&gt;
 
-  &lt;&lt;set $name = ""&gt;&gt;
-  &lt;&lt;set $pronoun1 = ""&gt;&gt;
-  &lt;&lt;set $pronoun2 = ""&gt;&gt;
+  &lt;&lt;set $name = "praxis"&gt;&gt;
+  &lt;&lt;set $pronoun1 = "ix"&gt;&gt;
+  &lt;&lt;set $pronoun2 = "ixs"&gt;&gt;
 
   &lt;&lt;set $visInput = false&gt;&gt;
   &lt;&lt;set $audInput = false&gt;&gt;
 
   &lt;&lt;set $last = false&gt;&gt;
   &lt;&lt;set $returnPassage = ""&gt;&gt;
+
+  &lt;&lt;set $change = {
+    battery : false,
+    damage : false,
+    component : false,
+    function : false,
+    designation : false,
+    alert : false,
+    cam : false
+  }&gt;&gt;
+  &lt;&lt;set $battery = 10&gt;&gt;
+  &lt;&lt;set $damage = 100&gt;&gt;
+
+  /* what was this for? */
+  &lt;&lt;set $funct = {
+    test : false,
+    damage : false,
+    component : false,
+    alert : false,
+    function : false,
+    designation : false,
+  }&gt;&gt;
+
+  &lt;&lt;set $comp = {
+    humanEndo: {
+
+    },
+    humanBio : "unsorted"
+
+  }&gt;&gt;
+
+  &lt;&lt;set $cam = {
+    one : "on",
+    two : "off"
+  }&gt;&gt;
+
+  &lt;&lt;set $alert = {
+    worm : false
+  }&gt;&gt;
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "pinkNoise" "Sounds/pink_noise.ogg"&gt;&gt;

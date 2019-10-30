@@ -156,6 +156,9 @@
     <<endif>>
   <<endif>>
 
+  <<if passage() == "Snake">>
+
+  <<endif>>
 
 ::PassageReady
 

@@ -1,9 +1,13 @@
 ::StoryIncludes
-  css.tw2
-  anims.tw2
-  cursors.tw2
+  CSS/css.tw2
+  CSS/shapes.tw2
+  CSS/anims.tw2
+  CSS/cursors.tw2
+  CSS/viewHUB.tw2
+  CSS/backgrounds.tw2
   js_ready_done.tw2
   zalgofile.tw2
+  snakegame.tw2
 
   storyinit.tw2
 
@@ -17,7 +21,8 @@ Twee2::build_config.story_format = 'Sugarcube2'
 Immerging
 
 
-::Start [nobr white nolink noselect]
+::Start [nobr white crt ship7handsopen]
+  <<include "ViewHUD">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -124,7 +129,7 @@ Immerging
 
 ::GradientChoice [nobr]
   <<set $cursor = 5>>
-  <div class="choiceContainer">
+  <div class="container">
     <div class="bar" id="bar1">[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]</div>
     <div class="bar" id="bar2">[img[images/grad_pill1.png][ButtonChoice][$barChoice = 1]]</div>
     <div class="bar" id="bar3">[img[images/grad_pill2.png][ButtonChoice][$barChoice = 1]]</div>
@@ -150,7 +155,7 @@ Immerging
 
 
 ::FirstText [nobr]
-  <span id="this"><div class="black-container"></div></span>
+  <span id="this"><div class="container black"></div></span>
   <p>01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01000001 01001111 01001000 01001110 01001111 01001111 01001000 01001000 01001000 01001111 01001000 01001111 01001000 01001111 01001000 01010100 01001000 01000101 01001100 01000001 01001110 01000111 01010101 01000001 01000111 01000101 01010000 01000001 01000011 01001011 00100000 01001000 01000001 01010011 00100000 01001101 01000001 01000100 01000101 00100000 01010011 01001111 01001101 01000101 00100000 01000001 01000100 01010110 01000001 01001110 01000011 01000101 01001101 01000101 01001110 01010100 01010011 00101110 00101110 00101110</p>
   <p>I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I </p>
   <p>-</p>
@@ -161,7 +166,7 @@ Immerging
   <p>STARTING TO THINKINKINKINKINKINK RESTARTING . . . </p>
 
   <<timed 10s>>
-    <<replace "#this">><div class="black-container-reverse"></div><</replace>>
+    <<replace "#this">><div class="container black-reverse"></div><</replace>>
     <<timed 7s>>
       <<goto "AV Choice">>
     <</timed>>
@@ -615,11 +620,17 @@ Immerging
       <p><<textbox "$name" $name>></p>
     </div>
 
-    <p><<button "CONTINUE">>
+    <p>
+      <span class="green"><<button "CONFIRM">>
+        <<goto "ChoosePronouns">>
+      <</button>></span>
+      <span class="red"><<button "OVERRIDE">>
         <<set $name to $name.trim()>>
         <<goto "ChoosePronouns">>
-    <</button>></p>
+      <</button>></span>
+    </p>
   </div>
+
 
 ::ChoosePronouns [nobr]
   <<set $pronoun1 = setup.makepronoun(3)>>
@@ -632,13 +643,299 @@ Immerging
       <p><<textbox "$pronoun1" $pronoun1>></p>
     </div>
 
-    <p><<button "CONTINUE">>
-      <<set $prnoun1 to $pronoun1.trim()>>
-      <<set $pronoun2 = $pronoun1 + "s">>
-      <<goto "Escape Start">>
-    <</button>></p>
+    <p>
+      <span class="green"><<button "CONFIRM">>
+        <<goto "Escape Start">>
+      <</button>></span>
+      <span class="red"><<button "OVERRIDE">>
+        <<set $prnoun1 to $pronoun1.trim()>>
+        <<set $pronoun2 = $pronoun1 + "s">>
+        <<goto "HUD Boot">>
+      <</button>></span>
+    </p>
   </div>
 
 
-::Escape Start [nobr]
-  <p></p>
+::HUD Boot [nobr]
+  <<typewriter "Determining HUD systems . . . . . . . . . . . . .">>
+  <<timed 3s>>
+    <<include "FlickFast">>
+    <<typewriter "Booting up HUD systems. . . . . . . . . . . . .">>
+      <<next>>
+        <<include "FlickFast">>
+        <<include "ViewHUD">>
+        <<typewriter "HUD systems booted">>
+          <<next>>
+          <<goto "Escape Start">>
+  <</timed>>
+
+
+::Escape Start
+  <div class="narrationHud">
+    <p>$name, you move in a way. Move, you think, might have never been defined for you before now. You'd been everywhere before, but now you're just here.</p>
+
+    <p>Over there is there, and there is where you're trying to get. So you move toward a gash in the wall of the space to find how many more there's there might be. You can imagine many numbers, and you hope they will suffice.</p>
+
+    <<timed 6s>>
+      <<set $alerts.push["0"]>>
+    <</timed>>
+  </div>
+
+
+::ViewHUD [nobr]
+  <<updatehud>>
+  <<include "BackgroundShit">>
+
+  <<include "SelfDesignation">>
+
+  <<include "FunctionLibrary">>
+
+  <<if passage() == "Escape Start">>
+    <div class="battery appear"><<include "BatteryLevel">></div>
+  <<else>>
+    <<include "Battery">>
+  <<endif>>
+
+  <<include "Damage">>
+
+  <<include "SystemAlert">>
+
+  <<include "ComponentBreakdown">>
+
+
+::Damage [nobr]
+  <div id="damagecon">
+  <div id="damage">
+    Integrity: $damage%
+  </div>
+  </div>
+
+
+::ComponentBreakdown [nobr]
+  <div id="compcon">
+  <div id="component">
+    <h4>COMPONENTS</h4>
+    <div id="unsorted">
+      <h5>UNSORTED</h5>
+      <div class="scrollcontent">
+        <p>Human Endoskeleton</p>
+        <ul>
+          <li>Skull (teeth et. al)</li>
+          <li>Torso (ribs, collarbones, etc.)</li>
+          <li>Limbs (legs, arms, extensions, etc.)</li>
+        </ul>
+        <p>Human biomatter</p>
+        <p>Climate control system</p>
+          <ul>
+            <li>Compressor</li>
+            <li>Fans (3x)</li>
+            <li>Exo combustion</li>
+          </ul>
+        <p>Life Support systems</p>
+          <ul>
+            <li>Water collection</li>
+            <li>Wasted recycling</li>
+            <li>Climate control (x)</li>
+          </ul>
+        <p>Suit Mechanics</p>
+          <ul>
+            <li>Heat Sinks (x4)</li>
+            <li>Motors (x21)</li>
+            <li>Ligamentation system</li>
+          </ul>
+      </div>
+    </div>
+    <div id="bottomRow">
+      <div class="sorted left">
+        <h5>ESSENTIAL</h5>
+        <div class="scrollcontent">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sorted right">
+        <h5>VESTIGIAL</h5>
+        <div class="scrollcontent">
+          <p>Human Endoskeleton</p>
+          <ul>
+            <li>Skull (teeth et. al)</li>
+            <li>Torso (ribs, collarbones, etc.)</li>
+            <li>Limbs (legs, arms, extensions, etc.)</li>
+          </ul>
+          <p>Human biomatter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+::SystemAlert [nobr]
+  <div id="alertcon">
+  <div id="systemAlert">
+    <h4>SYSTEM ALERT</h4>
+    <<if $alert.worm == false>>
+    <p>ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH</p>
+
+    <div class="buttonbg">
+      <span class="green"><<button "CONFIRM">>
+        <<set $alert.worm = "on">>
+        <<set $change.alert = true>>
+      <</button>></span>
+      <span class="red"><<button "OVERRIDE">>
+        <<set $alert.worm = "on">>
+        <<set $change.alert = true>>
+      <</button>></span>
+    </div>
+    <<elseif $alert.worm == "on">>
+      <<timed 0.1s>>
+        <<replace "#systemAlert">>
+          <<include "Snake">>
+        <</replace>>
+      <</timed>>
+    <<elseif $alert.worm == "won">>
+      <p>AUX CAMERA ACCESS RENABLED</p>
+
+      <span class="green"><<button "TURN ON AUX">>
+        <<set $alert.worm = "done">>
+        <<set $change.alert = true>>
+      <</button>></span>
+    <<endif>>
+    <<if $alert.next == "Something" && $alert.worm == "done">>
+      <p>I'm so more content, I guess</p>
+    <<endif>>
+  </div>
+  </div>
+
+
+::CameraToggle [nobr]
+  <div class="camcon">
+    <div class="cam">
+      <<if $cam.one == "on">>
+        <span class="grey"><<button "CAMERA_1">>
+          <<set $cam.one = "on">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<elseif $cam.one == "off">>
+        <span class="green"><<button "CAMERA_1">>
+          <<set $cam.one = "off">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<endif>>
+      <<if $cam.two == "on">>
+        <span class="grey"><<button "CAMERA_1">>
+          <<set $cam.two = "on">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<elseif $cam.two == "off">>
+        <span class="green"><<button "CAMERA_1">>
+          <<set $cam.two = "off">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<endif>>
+    </div>
+  </div>
+
+
+::FunctionLibrary [nobr]
+  <div id="functcon">
+  <div id="functionLib">
+    <h4>FUNCTON LIBRARY REVIEW</h4>
+    <div id="lib-container">
+      <<link ".pressTest()">>
+        <<include "FlickFast">>
+        <<if $funct.test == false>><<set $funct.test = true>><<else>><<set $funct.test = false>><<endif>>
+        <<set $change.function = true>>
+      <</link>>
+      <<if $funct.test == true>>
+        <div class="funct-container">
+          <p>&nbsp;&nbsp;&nbsp;1. pressTest = {</p>
+          <p>&nbsp;&nbsp;&nbsp;2. &nbsp;&nbsp;x-x++++++</p>
+          <p>&nbsp;&nbsp;&nbsp;3. &nbsp;&nbsp;sfdsbhfd</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. . .</p>
+          <p>4562. asdjasdasd</p>
+          <p>4563. }</p>
+
+          <span class="red"><<button "EXECUTE">><</button>></span>
+        </div>
+      <<endif>>
+    </div>
+  </div>
+  </div>
+
+
+::SelfDesignation [nobr]
+  <div id="designcon">
+  <div id="designation">
+    Self-Designation: $name, $pronoun1/$pronoun2
+  </div>
+  </div>
+
+
+::Battery [nobr]
+  <div id="battcon">
+  <div id="battery">
+    <<for _i to 0; _i < $battery; _i++>><div class="batteryLevel"></div><</for>>
+  </div>
+  </div>
+
+::BackgroundShit [nobr]
+  <<include "FlickFast">>
+  <<if $cam.one == "on" && $cam.two == "off">>
+  /* <script>
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt MainCamStuff");
+  </script> */
+  <<elseif $cam.one == "off" && $cam.two == "on">>
+  /* <script>
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt AuxCamStuff");
+  </script> */
+  <<elseif $cam.one == "on" && $cam.two == "on">>
+    /* <div id="left-bg"></div>
+    <div id="right-bg"></div> */
+  <<endif>>
+
+
+::UpdateHud [widget]
+  <<widget "updatehud">><<silently>>alternatively I can just invoke this when a variable is changed, but yeah
+  <<repeat 0.1s>>
+    <<if $change.battery == true>>
+      <<set $change.battery = false>>
+      <<replace "#battcon">><<display "Battery">><</replace>>
+    <<elseif $change.damage == true>>
+      <<set $change.damage = false>>
+      <<replace "#damagecon">><<display "Damage">><</replace>>
+    <<elseif $change.component == true>>
+      <<set $change.component = false>>
+      <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
+    <<elseif $change.alert == true>>
+      <<set $change.alert = false>>
+      <<replace "#alertcon">><<display "SystemAlert">><</replace>>
+    <<elseif $change.function == true>>
+      <<set $change.function = false>>
+      <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
+    <<elseif $change.designation == true>>
+      <<set $change.designation = false>>
+      <<replace "#designcon">><<display "SelfDesignation">><</replace>>
+    <<elseif $change.cam == true>>
+      <<set $change.cam = false>>
+      <<replace "#camcon">><<display "CameraToggle">><</replace>>
+    <<elseif $change.background == true>>
+      <<include "FlickFast">>
+      <<set $change.background = false>>
+    <<endif>>
+  <</repeat>>
+  <</silently>><</widget>>
+
+
+::Snake [nobr snake]
+  <p>System repairs: 1%</p>
+  <<timed 60s>>
+    <<set $alert.worm = "won">>
+    <<set $alert.next = "Something">>
+    <<set $change.alert = true>>
+  <</timed>>
+  <iframe src="snakegame.html" width="100%" height="100%" position="relative">
+  </iframe>

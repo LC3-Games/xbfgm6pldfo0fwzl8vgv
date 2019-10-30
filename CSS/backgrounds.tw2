@@ -1,0 +1,90 @@
+::Backgrounds [stylesheet]
+.ship1bg {
+	background: url("images/ship_finals/ship_1.png");
+	background-size: cover;
+}
+
+.ship2bg {
+	background: url("images/ship_finals/ship_2.png");
+	background-size: cover;
+}
+
+.ship3bg {
+	background: url("images/ship_finals/ship_3.png");
+	background-size: cover;
+}
+
+.ship4anim {
+	background: url("images/ship_finals/anim1.gif");
+	background-size: cover;
+}
+
+.ship4bg {
+	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.ship5bg {
+	background: url("images/ship_finals/ship_5.png");
+	background-size: cover;
+}
+
+.ship6bg {
+	background: url("images/ship_finals/ship_6.png");
+	background-size: cover;
+}
+
+.ship7bg {
+	background: url("images/ship_finals/ship_final.png");
+	background-size: cover;
+}
+
+.ship7handsopen {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+	background-size: cover;
+  background-size: 70%, 70%, cover;
+	animation: move-hands 8s alternate both infinite;
+}
+
+.ship7backgroundsplitopenhands {
+  background: url(images/hands/open_left.png) no-repeat, url(images/hands/open_right.png) no-repeat, url(images/o_dam.png) no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+  background-position: left bottom, right bottom, 150% 50%, -150% 50%;
+  background-size: 70%, 70%, cover, cover;
+}
+
+#left-bg {
+  background: url(images/o_dam.png);
+  width: 50%;
+  position: fixed;
+  left: 0px;
+  height: 3000px;
+  content: "";
+  background-size: contain;
+  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  overflow-y: hidden;
+  transform: translateY(-1900px);
+}
+
+#right-bg {
+  background: url(images/hands/open_left.png) left bottom repeat-y, url(images/hands/open_right.png) right bottom repeat-y, url(images/ship_finals/ship_final.png);
+  background-size: 100%, 100%, contain;
+  width: 50%;
+  position: fixed;
+  right: 0px;
+  height: 3000px;
+  content: "";
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  overflow-y: hidden;
+  transform: translateY(-1900px);
+  border-right: 4px solid left;
+}
+
+.familyImage .file-container {
+	background: url("images/ship_finals/noncolor_last.png");
+	background-size: cover;
+}
+
+.corpse {
+	background: url("images/o_dam2.png");
+	background-size: cover;
+}
