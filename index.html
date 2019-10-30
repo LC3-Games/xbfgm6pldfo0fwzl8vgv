@@ -2174,26 +2174,18 @@ br {
         &lt;&lt;typewriter "HUD systems booted"&gt;&gt;
           &lt;&lt;next&gt;&gt;
           &lt;&lt;goto "Escape Start"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="Escape Start" tags="" position="">&lt;div class="narrationHud"&gt;
-    &lt;p&gt;$name, you move in a way. Move, you think, might have never been defined for you before now. You'd been everywhere before, but now you're just here.&lt;/p&gt;
-
-    &lt;p&gt;Over there is there, and there is where you're trying to get. So you move toward a gash in the wall of the space to find how many more there's there might be. You can imagine many numbers, and you hope they will suffice.&lt;/p&gt;
-
-    &lt;&lt;timed 6s&gt;&gt;
-      &lt;&lt;set $alerts.push["0"]&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
   &lt;&lt;include "BackgroundShit"&gt;&gt;
 
   &lt;&lt;include "SelfDesignation"&gt;&gt;
 
   &lt;&lt;include "FunctionLibrary"&gt;&gt;
 
-  &lt;&lt;if passage() == "Escape Start"&gt;&gt;
+  /* &lt;&lt;if passage() == "Escape Start"&gt;&gt;
     &lt;div class="battery appear"&gt;&lt;&lt;include "BatteryLevel"&gt;&gt;&lt;/div&gt;
-  &lt;&lt;else&gt;&gt;
+  &lt;&lt;else&gt;&gt; */
     &lt;&lt;include "Battery"&gt;&gt;
-  &lt;&lt;endif&gt;&gt;
+  /* &lt;&lt;endif&gt;&gt; */
 
   &lt;&lt;include "Damage"&gt;&gt;
 
