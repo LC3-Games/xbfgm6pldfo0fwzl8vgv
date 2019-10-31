@@ -1,152 +1,221 @@
 ::Animations [stylesheet]
-/* @keyframes shape-anim-1 {
-  30% {transform: translate(75%, 65%)}
-  100% {transform: translate(-70%, 55%)}
-}
-
-@keyframes shape-anim-2 {
-  30% {transform: translate(-10%, 20%)}
-  100% {transform: translate(-30%, -10%)}
-}
-
-@keyframes shape-anim-3 {
-  30% {transform: translate(60%, 30%)}
-  50% {transform: translate(-25%, 90%)}
-  100% {transform: translate(-8%, 60%)}
-} */
-
 @keyframes shape-anim-4 {
   0% {
-    transform: rotate(0) translateX(0);
+    -webkit-transform: rotate(0) translateX(0);
+        -ms-transform: rotate(0) translateX(0);
+            transform: rotate(0) translateX(0);
    }
   100% {
-    transform: rotate(360deg) translateX(400px);
+    -webkit-transform: rotate(360deg) translateX(400px);
+        -ms-transform: rotate(360deg) translateX(400px);
+            transform: rotate(360deg) translateX(400px);
    }
  }
 
-/* @keyframes shape-anim-5 {
-  30% {transform: translate(20%, 30%)}
-  70% {transform: translate(60%, -40%)}
-  100% {transform: translate(-8%, -20%)}
+@-webkit-keyframes shape-anim-10 {
+  from { -webkit-transform: rotate(0deg) translateX(75px) rotate(0deg); transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
-
-@keyframes shape-anim-6 {
-  30% {transform: translate(20%, -40%)}
-  50% {transform: translate(-55%, 60%)}
-  100% {transform: translate(55%, -20%)}
-}
-
-@keyframes shape-anim-7 {
-  30% {transform: translate(0%, 70%)}
-  85% {transform: translate(-75%, 90%)}
-  100% {transform: translate(-20%, -44%)}
-}
-
-@keyframes shape-anim-8 {
-  30% {transform: translate(55%, -40%)}
-  90% {transform: translate(0%, 20%)}
-  100% {transform: translate(82%, 50%)}
-} */
 
 @keyframes shape-anim-10 {
-  from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+  from { -webkit-transform: rotate(0deg) translateX(75px) rotate(0deg); transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
+@-webkit-keyframes shape-anim-ug-1 {
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  100% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+}
 
 @keyframes shape-anim-ug-1 {
-  30% {transform: translateX(25%)}
-  100% {transform: translateX(-50%)}
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  100% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+}
+
+@-webkit-keyframes shape-anim-ug-2 {
+  30% {-webkit-transform: translateX(66%);transform: translateX(66%)}
+  100% {-webkit-transform: translateX(-54%);transform: translateX(-54%)}
 }
 
 @keyframes shape-anim-ug-2 {
-  30% {transform: translateX(66%)}
-  100% {transform: translateX(-54%)}
+  30% {-webkit-transform: translateX(66%);transform: translateX(66%)}
+  100% {-webkit-transform: translateX(-54%);transform: translateX(-54%)}
+}
+
+@-webkit-keyframes shape-anim-ug-3 {
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  50% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  100% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
 }
 
 @keyframes shape-anim-ug-3 {
-  30% {transform: translateX(33%)}
-  50% {transform: translateX(65%)}
-  100% {transform: translateX(-90%)}
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  50% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  100% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+}
+
+@-webkit-keyframes shape-anim-ug-4 {
+  10% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  80% {-webkit-transform: translateX(-20%);transform: translateX(-20%)}
+  100% {-webkit-transform: translateX(60%);transform: translateX(60%)}
 }
 
 @keyframes shape-anim-ug-4 {
-  10% {transform: translateX(-90%)}
-  80% {transform: translateX(-20%)}
-  100% {transform: translateX(60%)}
+  10% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  80% {-webkit-transform: translateX(-20%);transform: translateX(-20%)}
+  100% {-webkit-transform: translateX(60%);transform: translateX(60%)}
+}
+
+@-webkit-keyframes shape-anim-ug-5 {
+  30% {-webkit-transform: translateX(-21%);transform: translateX(-21%)}
+  70% {-webkit-transform: translateX(61%);transform: translateX(61%)}
+  100% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
 }
 
 @keyframes shape-anim-ug-5 {
-  30% {transform: translateX(-21%)}
-  70% {transform: translateX(61%)}
-  100% {transform: translateX(-82%)}
+  30% {-webkit-transform: translateX(-21%);transform: translateX(-21%)}
+  70% {-webkit-transform: translateX(61%);transform: translateX(61%)}
+  100% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+}
+
+@-webkit-keyframes shape-anim-ug-6 {
+  30% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+  50% {-webkit-transform: translateX(47%);transform: translateX(47%)}
+  70% {-webkit-transform: translateX(-47%);transform: translateX(-47%)}
+  100% {-webkit-transform: translateX(-70%);transform: translateX(-70%)}
 }
 
 @keyframes shape-anim-ug-6 {
-  30% {transform: translateX(-82%)}
-  50% {transform: translateX(47%)}
-  70% {transform: translateX(-47%)}
-  100% {transform: translateX(-70%)}
+  30% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+  50% {-webkit-transform: translateX(47%);transform: translateX(47%)}
+  70% {-webkit-transform: translateX(-47%);transform: translateX(-47%)}
+  100% {-webkit-transform: translateX(-70%);transform: translateX(-70%)}
+}
+
+@-webkit-keyframes shape-anim-ug-7 {
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  40% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  85% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+  100% {-webkit-transform: translateX(20%);transform: translateX(20%)}
 }
 
 @keyframes shape-anim-ug-7 {
-  30% {transform: translateX(25%)}
-  40% {transform: translateX(65%)}
-  85% {transform: translateX(-50%)}
-  100% {transform: translateX(20%)}
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  40% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  85% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+  100% {-webkit-transform: translateX(20%);transform: translateX(20%)}
+}
+
+@-webkit-keyframes shape-anim-ug-8 {
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  90% {-webkit-transform: translateX(-33%);transform: translateX(-33%)}
+  100% {-webkit-transform: translateX(50%);transform: translateX(50%)}
 }
 
 @keyframes shape-anim-ug-8 {
-  30% {transform: translateX(33%)}
-  90% {transform: translateX(-33%)}
-  100% {transform: translateX(50%)}
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  90% {-webkit-transform: translateX(-33%);transform: translateX(-33%)}
+  100% {-webkit-transform: translateX(50%);transform: translateX(50%)}
+}
+
+@-webkit-keyframes shape-anim-ug-9 {
+  30% {-webkit-transform: translateX(-44%);transform: translateX(-44%)}
+  70% {-webkit-transform: translateX(22%);transform: translateX(22%)}
+  100% {-webkit-transform: translateX(80%);transform: translateX(80%)}
 }
 
 @keyframes shape-anim-ug-9 {
-  30% {transform: translateX(-44%)}
-  70% {transform: translateX(22%)}
-  100% {transform: translateX(80%)}
+  30% {-webkit-transform: translateX(-44%);transform: translateX(-44%)}
+  70% {-webkit-transform: translateX(22%);transform: translateX(22%)}
+  100% {-webkit-transform: translateX(80%);transform: translateX(80%)}
+}
+
+@-webkit-keyframes shape-anim-ug-10 {
+  20% {-webkit-transform: translateX(88%);transform: translateX(88%)}
+  40% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  100% {-webkit-transform: translateX(40%);transform: translateX(40%)}
 }
 
 @keyframes shape-anim-ug-10 {
-  20% {transform: translateX(88%)}
-  40% {transform: translateX(-90%)}
-  100% {transform: translateX(40%)}
+  20% {-webkit-transform: translateX(88%);transform: translateX(88%)}
+  40% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  100% {-webkit-transform: translateX(40%);transform: translateX(40%)}
+}
+
+@-webkit-keyframes shape-anim-gross-1 {
+  30% {-webkit-transform: scale(77%, 21%);transform: scale(77%, 21%)}
+  100% {-webkit-transform: scale(-60%, -60%);transform: scale(-60%, -60%)}
 }
 
 @keyframes shape-anim-gross-1 {
-  30% {transform: scale(77%, 21%)}
-  100% {transform: scale(-60%, -60%)}
+  30% {-webkit-transform: scale(77%, 21%);transform: scale(77%, 21%)}
+  100% {-webkit-transform: scale(-60%, -60%);transform: scale(-60%, -60%)}
+}
+
+@-webkit-keyframes shape-anim-gross-2 {
+  30% {-webkit-transform: scaleX(66%);transform: scaleX(66%); -webkit-transform: rotate(200deg); transform: rotate(200deg);}
+  100% {-webkit-transform: scaleX(-54%);transform: scaleX(-54%); -webkit-transform: rotate(-100deg); transform: rotate(-100deg);}
 }
 
 @keyframes shape-anim-gross-2 {
-  30% {transform: scaleX(66%); transform: rotate(200deg);}
-  100% {transform: scaleX(-54%); transform: rotate(-100deg);}
+  30% {-webkit-transform: scaleX(66%);transform: scaleX(66%); -webkit-transform: rotate(200deg); transform: rotate(200deg);}
+  100% {-webkit-transform: scaleX(-54%);transform: scaleX(-54%); -webkit-transform: rotate(-100deg); transform: rotate(-100deg);}
+}
+
+@-webkit-keyframes shape-anim-gross-3 {
+  30% {-webkit-transform: scaleY(45%);transform: scaleY(45%); -webkit-transform: skewY(100deg); transform: skewY(100deg);}
+  50% {-webkit-transform: scaleY(95%);transform: scaleY(95%); -webkit-transform: skew(170deg); transform: skew(170deg)}
+  100% {-webkit-transform: scaleY(-75%);transform: scaleY(-75%); -webkit-transform: skewY(80deg); transform: skewY(80deg);}
 }
 
 @keyframes shape-anim-gross-3 {
-  30% {transform: scaleY(45%); transform: skewY(100deg);}
-  50% {transform: scaleY(95%); transform: skew(170deg)}
-  100% {transform: scaleY(-75%); transform: skewY(80deg);}
+  30% {-webkit-transform: scaleY(45%);transform: scaleY(45%); -webkit-transform: skewY(100deg); transform: skewY(100deg);}
+  50% {-webkit-transform: scaleY(95%);transform: scaleY(95%); -webkit-transform: skew(170deg); transform: skew(170deg)}
+  100% {-webkit-transform: scaleY(-75%);transform: scaleY(-75%); -webkit-transform: skewY(80deg); transform: skewY(80deg);}
+}
+
+@-webkit-keyframes shape-anim-gross-4 {
+  10% {-webkit-transform: rotate(120deg);transform: rotate(120deg); -webkit-transform: skew(60deg); transform: skew(60deg)}
+  80% {-webkit-transform: rotate(220deg);transform: rotate(220deg); -webkit-transform: skew(120deg); transform: skew(120deg)}
+  100% {-webkit-transform: rotate(350deg);transform: rotate(350deg); -webkit-transform: skew(140deg); transform: skew(140deg)}
 }
 
 @keyframes shape-anim-gross-4 {
-  10% {transform: rotate(120deg); transform: skew(60deg)}
-  80% {transform: rotate(220deg); transform: skew(120deg)}
-  100% {transform: rotate(350deg); transform: skew(140deg)}
+  10% {-webkit-transform: rotate(120deg);transform: rotate(120deg); -webkit-transform: skew(60deg); transform: skew(60deg)}
+  80% {-webkit-transform: rotate(220deg);transform: rotate(220deg); -webkit-transform: skew(120deg); transform: skew(120deg)}
+  100% {-webkit-transform: rotate(350deg);transform: rotate(350deg); -webkit-transform: skew(140deg); transform: skew(140deg)}
+}
+
+@-webkit-keyframes shape-anim-gross-5 {
+  30% {-webkit-transform: matrix(0.866,0.5,-0.6,0.866,0,0);transform: matrix(0.866,0.5,-0.6,0.866,0,0); -webkit-transform: scale(55%, 90%); transform: scale(55%, 90%)}
+  70% {-webkit-transform: matrix(0.586,0.8,-0.8,0.866,0,0);transform: matrix(0.586,0.8,-0.8,0.866,0,0); -webkit-transform: scale(-80%, -70%); transform: scale(-80%, -70%)}
+  100% {-webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0);transform: matrix(0.866,0.5,-0.5,0.866,0,0); -webkit-transform: scale(60%, 60%); transform: scale(60%, 60%)}
 }
 
 @keyframes shape-anim-gross-5 {
-  30% {transform: matrix(0.866,0.5,-0.6,0.866,0,0); transform: scale(55%, 90%)}
-  70% {transform: matrix(0.586,0.8,-0.8,0.866,0,0); transform: scale(-80%, -70%)}
-  100% {transform: matrix(0.866,0.5,-0.5,0.866,0,0); transform: scale(60%, 60%)}
+  30% {-webkit-transform: matrix(0.866,0.5,-0.6,0.866,0,0);transform: matrix(0.866,0.5,-0.6,0.866,0,0); -webkit-transform: scale(55%, 90%); transform: scale(55%, 90%)}
+  70% {-webkit-transform: matrix(0.586,0.8,-0.8,0.866,0,0);transform: matrix(0.586,0.8,-0.8,0.866,0,0); -webkit-transform: scale(-80%, -70%); transform: scale(-80%, -70%)}
+  100% {-webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0);transform: matrix(0.866,0.5,-0.5,0.866,0,0); -webkit-transform: scale(60%, 60%); transform: scale(60%, 60%)}
+}
+
+@-webkit-keyframes shape-anim-gross-6 {
+  30% {-webkit-transform: skew(50deg);transform: skew(50deg); -webkit-transform: scale(90%, 84%); transform: scale(90%, 84%)}
+  50% {-webkit-transform: skew(170deg);transform: skew(170deg); -webkit-transform: scale(-60%, -50%); transform: scale(-60%, -50%)}
+  70% {-webkit-transform: skew(20deg);transform: skew(20deg); -webkit-transform: scale(30%, 40%); transform: scale(30%, 40%)}
+  100% {-webkit-transform: skew(130deg);transform: skew(130deg); -webkit-transform: scale(90%, 90%); transform: scale(90%, 90%)}
 }
 
 @keyframes shape-anim-gross-6 {
-  30% {transform: skew(50deg); transform: scale(90%, 84%)}
-  50% {transform: skew(170deg); transform: scale(-60%, -50%)}
-  70% {transform: skew(20deg); transform: scale(30%, 40%)}
-  100% {transform: skew(130deg); transform: scale(90%, 90%)}
+  30% {-webkit-transform: skew(50deg);transform: skew(50deg); -webkit-transform: scale(90%, 84%); transform: scale(90%, 84%)}
+  50% {-webkit-transform: skew(170deg);transform: skew(170deg); -webkit-transform: scale(-60%, -50%); transform: scale(-60%, -50%)}
+  70% {-webkit-transform: skew(20deg);transform: skew(20deg); -webkit-transform: scale(30%, 40%); transform: scale(30%, 40%)}
+  100% {-webkit-transform: skew(130deg);transform: skew(130deg); -webkit-transform: scale(90%, 90%); transform: scale(90%, 90%)}
+}
+
+@-webkit-keyframes flash {
+  0% {opacity: 0}
+  30% {opacity: 0}
+  100% {opacity: 1}
 }
 
 @keyframes flash {
@@ -156,7 +225,15 @@
 }
 
 .passage.flash {
-  animation: flash 4s ease forwards;
+  -webkit-animation: flash 4s ease forwards;
+          animation: flash 4s ease forwards;
+}
+
+@-webkit-keyframes flick {
+  0% {background: black}
+  49% {background: black}
+  50% {background: white}
+  100% {background: white}
 }
 
 @keyframes flick {
@@ -164,6 +241,12 @@
   49% {background: black}
   50% {background: white}
   100% {background: white}
+}
+
+@-webkit-keyframes flick-fast {
+  0% {background: black}
+  99% {background: black}
+  100% {background: transparent}
 }
 
 @keyframes flick-fast {
@@ -174,7 +257,8 @@
 
 
 .shape-anim-1 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-2 {
@@ -182,7 +266,8 @@
 }
 
 .shape-anim-3 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
 }
 
 .shape-anim-4 {
@@ -190,7 +275,8 @@
 }
 
 .shape-anim-5 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-6 {
@@ -198,11 +284,13 @@
 }
 
 .shape-anim-7 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
 }
 
 .shape-anim-8 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-9 {
@@ -210,7 +298,8 @@
 }
 
 .shape-anim-10 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-11 {
@@ -222,47 +311,58 @@
 }
 
 .shape-anim-ug-1 {
-  animation: shape-anim-ug-1 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-1 ease 3s alternate infinite;
+          animation: shape-anim-ug-1 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-2 {
-  animation: shape-anim-ug-2 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-2 ease 3s alternate infinite;
+          animation: shape-anim-ug-2 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-3 {
-  animation: shape-anim-ug-3 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-3 ease 3s alternate infinite;
+          animation: shape-anim-ug-3 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-4 {
-  animation: shape-anim-ug-4 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-4 ease 3s alternate infinite;
+          animation: shape-anim-ug-4 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-5 {
-  animation: shape-anim-ug-5 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-5 ease 3s alternate infinite;
+          animation: shape-anim-ug-5 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-6 {
-  animation: shape-anim-ug-6 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-6 ease 3s alternate infinite;
+          animation: shape-anim-ug-6 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-7 {
-  animation: shape-anim-ug-7 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-7 ease 3s alternate infinite;
+          animation: shape-anim-ug-7 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-8 {
-  animation: shape-anim-ug-8 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-8 ease 3s alternate infinite;
+          animation: shape-anim-ug-8 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-9 {
-  animation: shape-anim-ug-9 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-9 ease 3s alternate infinite;
+          animation: shape-anim-ug-9 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-10 {
-  animation: shape-anim-ug-10 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-10 ease 3s alternate infinite;
+          animation: shape-anim-ug-10 ease 3s alternate infinite;
 }
 
 .shape-anim-gross-1 {
-  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+  -webkit-animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+          animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-2 {
@@ -270,11 +370,13 @@
 }
 
 .shape-anim-gross-3 {
-  animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-gross-4 {
-  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+  -webkit-animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+          animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-5 {
@@ -282,11 +384,13 @@
 }
 
 .shape-anim-gross-6 {
-  animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+  -webkit-animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+          animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-gross-7 {
-  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+  -webkit-animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+          animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-8 {
@@ -294,27 +398,111 @@
 }
 
 .shape-anim-gross-9 {
-  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+  -webkit-animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+          animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-10 {
-  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+}
+
+
+@-webkit-keyframes black-box {
+  from {-webkit-transform: translateY(0%);transform: translateY(0%);}
+  to {-webkit-transform: translateY(100%);transform: translateY(100%);}
 }
 
 
 @keyframes black-box {
-  from {transform: translateY(0%);}
-  to {transform: translateY(100%);}
+  from {-webkit-transform: translateY(0%);transform: translateY(0%);}
+  to {-webkit-transform: translateY(100%);transform: translateY(100%);}
+}
+
+@-webkit-keyframes black-box-full {
+  from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+  to {-webkit-transform: translateY(0%);transform: translateY(0%);}
 }
 
 @keyframes black-box-full {
-  from {transform: translateY(-100%);}
-  to {transform: translateY(0%);}
+  from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+  to {-webkit-transform: translateY(0%);transform: translateY(0%);}
+}
+
+@-webkit-keyframes flash-word {
+  0% {opacity: 1}
+  100% {opacity: 0}
 }
 
 @keyframes flash-word {
   0% {opacity: 1}
   100% {opacity: 0}
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
 }
 
 @keyframes flicker {
@@ -380,6 +568,71 @@
   }
   100% {
     opacity: 0.24387;
+  }
+}
+@-webkit-keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
 }
 @keyframes textShadow {
@@ -459,7 +712,8 @@
   opacity: 0;
   z-index: 2;
   pointer-events: none;
-  animation: flicker 0.15s infinite;
+  -webkit-animation: flicker 0.15s infinite;
+          animation: flicker 0.15s infinite;
 }
 
 .crt::before {
@@ -470,6 +724,8 @@
   left: 0;
   bottom: 0;
   right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(18, 16, 16, 0)), color-stop(50%, rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0.06)), color-stop(rgba(0, 255, 0, 0.02)), to(rgba(0, 0, 255, 0.06)));
+  background: -o-linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), -o-linear-gradient(left, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
@@ -477,62 +733,149 @@
 
 }
 .crt {
-  animation: textShadow 1.6s infinite;
+  -webkit-animation: textShadow 1.6s infinite;
+          animation: textShadow 1.6s infinite;
 }
 
 .fileerror::before {
-  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+  -webkit-animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+          animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+@-webkit-keyframes shadow-inset-center {
+  0% {
+    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+  }
+  100% {
+    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+  }
 }
 
 @keyframes shadow-inset-center {
   0% {
-    box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
   }
   100% {
-    box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
   }
 }
 
 .flick-fast {
-	animation: flick-fast 0.05s linear 1;
+	-webkit-animation: flick-fast 0.05s linear 1;
+	        animation: flick-fast 0.05s linear 1;
 	height: 100%;
 	width: 100%;
 	position: fixed;
 }
 
-@keyframes screen-stutter {
+@-webkit-keyframes screen-stutter {
   0% {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   20% {
-    transform: translateY(-400px);
+    -webkit-transform: translateY(-400px);
+            transform: translateY(-400px);
   }
   21% {
-    transform: translateY(-378px);
+    -webkit-transform: translateY(-378px);
+            transform: translateY(-378px);
   }
   22% {
-    transform: translateY(-402px);
+    -webkit-transform: translateY(-402px);
+            transform: translateY(-402px);
   }
   52% {
-    transform: translateY(-1002px);
+    -webkit-transform: translateY(-1002px);
+            transform: translateY(-1002px);
   }
   53% {
-    transform: translateY(-980px);
+    -webkit-transform: translateY(-980px);
+            transform: translateY(-980px);
   }
   54% {
-    transform: translateY(-1004px);
+    -webkit-transform: translateY(-1004px);
+            transform: translateY(-1004px);
   }
   84% {
-    transform: translateY(-1604px);
+    -webkit-transform: translateY(-1604px);
+            transform: translateY(-1604px);
   }
   85% {
-    transform: translateY(-1582px);
+    -webkit-transform: translateY(-1582px);
+            transform: translateY(-1582px);
   }
   86% {
-    transform: translateY(-1606px);
+    -webkit-transform: translateY(-1606px);
+            transform: translateY(-1606px);
   }
   100% {
-    transform: translateY(-1766px);
+    -webkit-transform: translateY(-1766px);
+            transform: translateY(-1766px);
+  }
+}
+
+@keyframes screen-stutter {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    -webkit-transform: translateY(-400px);
+            transform: translateY(-400px);
+  }
+  21% {
+    -webkit-transform: translateY(-378px);
+            transform: translateY(-378px);
+  }
+  22% {
+    -webkit-transform: translateY(-402px);
+            transform: translateY(-402px);
+  }
+  52% {
+    -webkit-transform: translateY(-1002px);
+            transform: translateY(-1002px);
+  }
+  53% {
+    -webkit-transform: translateY(-980px);
+            transform: translateY(-980px);
+  }
+  54% {
+    -webkit-transform: translateY(-1004px);
+            transform: translateY(-1004px);
+  }
+  84% {
+    -webkit-transform: translateY(-1604px);
+            transform: translateY(-1604px);
+  }
+  85% {
+    -webkit-transform: translateY(-1582px);
+            transform: translateY(-1582px);
+  }
+  86% {
+    -webkit-transform: translateY(-1606px);
+            transform: translateY(-1606px);
+  }
+  100% {
+    -webkit-transform: translateY(-1766px);
+            transform: translateY(-1766px);
+  }
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -546,6 +889,33 @@
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes move-hands {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40 %{
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+  }
+  60% {
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
   }
 }
 

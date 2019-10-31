@@ -116,6 +116,8 @@
   <<set $alert = {
     off : true,
     worm : false,
+    frag : 0,
+    hide: false,
   }>>
 
   <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>

@@ -43,7 +43,8 @@
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
 	background-size: cover;
   background-size: 70%, 70%, cover;
-	animation: move-hands 8s alternate both infinite;
+	-webkit-animation: move-hands 8s alternate both infinite;
+	        animation: move-hands 8s alternate both infinite;
 }
 
 .ship7backgroundsplitopenhands {
@@ -52,17 +53,28 @@
   background-size: 70%, 70%, cover, cover;
 }
 
+.ship7aux {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+	background-size: cover;
+  background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+	        animation: move-hands 8s alternate both infinite;
+}
+
 #left-bg {
-  background: url(images/o_dam.png);
+  background: url(images/ship_finals/hatch.png);
   width: 50%;
   position: fixed;
   left: 0px;
   height: 3000px;
   content: "";
   background-size: contain;
-  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  -webkit-animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+          animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
   overflow-y: hidden;
-  transform: translateY(-1900px);
+  -webkit-transform: translateY(-1900px);
+      -ms-transform: translateY(-1900px);
+          transform: translateY(-1900px);
 }
 
 #right-bg {
@@ -73,9 +85,12 @@
   right: 0px;
   height: 3000px;
   content: "";
-  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  transform: translateY(-1900px);
+  -webkit-transform: translateY(-1900px);
+      -ms-transform: translateY(-1900px);
+          transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 

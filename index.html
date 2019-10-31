@@ -143,7 +143,8 @@ body {
   min-height: 100%;
   min-width: 100%;
 	margin: auto 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 #passages {
@@ -159,6 +160,8 @@ body {
   font-size: 1.4em;
 	background: transparent;
   font-family: "Consolas", "Monaco", sans-serif;
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 	min-height: 100vh;
 }
@@ -187,19 +190,22 @@ body {
 }
 
 .black {
-	animation: black-box 10s forwards;
+	-webkit-animation: black-box 10s forwards;
+	        animation: black-box 10s forwards;
 	position: fixed;
 	background-color: #111111;
 }
 
 .black-reverse {
-	animation: black-box-full 7s;
+	-webkit-animation: black-box-full 7s;
+	        animation: black-box-full 7s;
 	position: fixed;
 	background-color: #111111;
 }
 
 .black #bc-fast {
-	animation: black-box 5s forwards;
+	-webkit-animation: black-box 5s forwards;
+	        animation: black-box 5s forwards;
 }
 
 .redbg {
@@ -211,7 +217,8 @@ button {
   max-width: 30%;
   margin-left: 2em;
   vertical-align: middle;
-	animation: textShadow 1.6s infinite;
+	-webkit-animation: textShadow 1.6s infinite;
+	        animation: textShadow 1.6s infinite;
 	border-color: #939393;
 }
 
@@ -295,7 +302,9 @@ span.green button {
   background: #1111118c;
   padding: 20px 50px 50px 50px;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
 }
 
@@ -305,7 +314,8 @@ span.green button {
 
 .file-container a {
 	color: white;
-	animation: textShadow 1.6s infinite;
+	-webkit-animation: textShadow 1.6s infinite;
+	        animation: textShadow 1.6s infinite;
 }
 
 .file-container img {
@@ -322,10 +332,13 @@ span.green button {
 
 .file-header img {
 	max-height: 30px;
-	transform: rotate(230deg);
+	-webkit-transform: rotate(230deg);
+	    -ms-transform: rotate(230deg);
+	        transform: rotate(230deg);
 	padding: 0;
 	margin: 0;
-	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	        filter: grayscale(1);
 	position: fixed;
 	left: 15px;
 }
@@ -335,7 +348,10 @@ span.green button {
 }
 
 .noselect {
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .hidetext {
@@ -352,7 +368,8 @@ a:hover {
 
 .nolink a:hover {
 	color: white;
-	animation: flash-word 0.1s infinite;
+	-webkit-animation: flash-word 0.1s infinite;
+	        animation: flash-word 0.1s infinite;
 	text-decoration: none;
 }
 
@@ -361,7 +378,8 @@ a:hover {
 }
 
 .flick {
-  animation: flick 1s linear alternate infinite;
+  -webkit-animation: flick 1s linear alternate infinite;
+          animation: flick 1s linear alternate infinite;
 }
 
 img {
@@ -374,6 +392,15 @@ img {
 
 canvas {
   border: 1px solid white;
+}
+
+p.snakey {
+	position: fixed;
+	top: 25px;
+	left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 br {
@@ -491,154 +518,223 @@ br {
 #bar8 {
   right: 44%;
 }
-/* @keyframes shape-anim-1 {
-  30% {transform: translate(75%, 65%)}
-  100% {transform: translate(-70%, 55%)}
-}
-
-@keyframes shape-anim-2 {
-  30% {transform: translate(-10%, 20%)}
-  100% {transform: translate(-30%, -10%)}
-}
-
-@keyframes shape-anim-3 {
-  30% {transform: translate(60%, 30%)}
-  50% {transform: translate(-25%, 90%)}
-  100% {transform: translate(-8%, 60%)}
-} */
-
 @keyframes shape-anim-4 {
   0% {
-    transform: rotate(0) translateX(0);
+    -webkit-transform: rotate(0) translateX(0);
+        -ms-transform: rotate(0) translateX(0);
+            transform: rotate(0) translateX(0);
    }
   100% {
-    transform: rotate(360deg) translateX(400px);
+    -webkit-transform: rotate(360deg) translateX(400px);
+        -ms-transform: rotate(360deg) translateX(400px);
+            transform: rotate(360deg) translateX(400px);
    }
  }
 
-/* @keyframes shape-anim-5 {
-  30% {transform: translate(20%, 30%)}
-  70% {transform: translate(60%, -40%)}
-  100% {transform: translate(-8%, -20%)}
+@-webkit-keyframes shape-anim-10 {
+  from { -webkit-transform: rotate(0deg) translateX(75px) rotate(0deg); transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
-
-@keyframes shape-anim-6 {
-  30% {transform: translate(20%, -40%)}
-  50% {transform: translate(-55%, 60%)}
-  100% {transform: translate(55%, -20%)}
-}
-
-@keyframes shape-anim-7 {
-  30% {transform: translate(0%, 70%)}
-  85% {transform: translate(-75%, 90%)}
-  100% {transform: translate(-20%, -44%)}
-}
-
-@keyframes shape-anim-8 {
-  30% {transform: translate(55%, -40%)}
-  90% {transform: translate(0%, 20%)}
-  100% {transform: translate(82%, 50%)}
-} */
 
 @keyframes shape-anim-10 {
-  from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+  from { -webkit-transform: rotate(0deg) translateX(75px) rotate(0deg); transform: rotate(0deg) translateX(75px) rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
+@-webkit-keyframes shape-anim-ug-1 {
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  100% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+}
 
 @keyframes shape-anim-ug-1 {
-  30% {transform: translateX(25%)}
-  100% {transform: translateX(-50%)}
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  100% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+}
+
+@-webkit-keyframes shape-anim-ug-2 {
+  30% {-webkit-transform: translateX(66%);transform: translateX(66%)}
+  100% {-webkit-transform: translateX(-54%);transform: translateX(-54%)}
 }
 
 @keyframes shape-anim-ug-2 {
-  30% {transform: translateX(66%)}
-  100% {transform: translateX(-54%)}
+  30% {-webkit-transform: translateX(66%);transform: translateX(66%)}
+  100% {-webkit-transform: translateX(-54%);transform: translateX(-54%)}
+}
+
+@-webkit-keyframes shape-anim-ug-3 {
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  50% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  100% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
 }
 
 @keyframes shape-anim-ug-3 {
-  30% {transform: translateX(33%)}
-  50% {transform: translateX(65%)}
-  100% {transform: translateX(-90%)}
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  50% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  100% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+}
+
+@-webkit-keyframes shape-anim-ug-4 {
+  10% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  80% {-webkit-transform: translateX(-20%);transform: translateX(-20%)}
+  100% {-webkit-transform: translateX(60%);transform: translateX(60%)}
 }
 
 @keyframes shape-anim-ug-4 {
-  10% {transform: translateX(-90%)}
-  80% {transform: translateX(-20%)}
-  100% {transform: translateX(60%)}
+  10% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  80% {-webkit-transform: translateX(-20%);transform: translateX(-20%)}
+  100% {-webkit-transform: translateX(60%);transform: translateX(60%)}
+}
+
+@-webkit-keyframes shape-anim-ug-5 {
+  30% {-webkit-transform: translateX(-21%);transform: translateX(-21%)}
+  70% {-webkit-transform: translateX(61%);transform: translateX(61%)}
+  100% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
 }
 
 @keyframes shape-anim-ug-5 {
-  30% {transform: translateX(-21%)}
-  70% {transform: translateX(61%)}
-  100% {transform: translateX(-82%)}
+  30% {-webkit-transform: translateX(-21%);transform: translateX(-21%)}
+  70% {-webkit-transform: translateX(61%);transform: translateX(61%)}
+  100% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+}
+
+@-webkit-keyframes shape-anim-ug-6 {
+  30% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+  50% {-webkit-transform: translateX(47%);transform: translateX(47%)}
+  70% {-webkit-transform: translateX(-47%);transform: translateX(-47%)}
+  100% {-webkit-transform: translateX(-70%);transform: translateX(-70%)}
 }
 
 @keyframes shape-anim-ug-6 {
-  30% {transform: translateX(-82%)}
-  50% {transform: translateX(47%)}
-  70% {transform: translateX(-47%)}
-  100% {transform: translateX(-70%)}
+  30% {-webkit-transform: translateX(-82%);transform: translateX(-82%)}
+  50% {-webkit-transform: translateX(47%);transform: translateX(47%)}
+  70% {-webkit-transform: translateX(-47%);transform: translateX(-47%)}
+  100% {-webkit-transform: translateX(-70%);transform: translateX(-70%)}
+}
+
+@-webkit-keyframes shape-anim-ug-7 {
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  40% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  85% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+  100% {-webkit-transform: translateX(20%);transform: translateX(20%)}
 }
 
 @keyframes shape-anim-ug-7 {
-  30% {transform: translateX(25%)}
-  40% {transform: translateX(65%)}
-  85% {transform: translateX(-50%)}
-  100% {transform: translateX(20%)}
+  30% {-webkit-transform: translateX(25%);transform: translateX(25%)}
+  40% {-webkit-transform: translateX(65%);transform: translateX(65%)}
+  85% {-webkit-transform: translateX(-50%);transform: translateX(-50%)}
+  100% {-webkit-transform: translateX(20%);transform: translateX(20%)}
+}
+
+@-webkit-keyframes shape-anim-ug-8 {
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  90% {-webkit-transform: translateX(-33%);transform: translateX(-33%)}
+  100% {-webkit-transform: translateX(50%);transform: translateX(50%)}
 }
 
 @keyframes shape-anim-ug-8 {
-  30% {transform: translateX(33%)}
-  90% {transform: translateX(-33%)}
-  100% {transform: translateX(50%)}
+  30% {-webkit-transform: translateX(33%);transform: translateX(33%)}
+  90% {-webkit-transform: translateX(-33%);transform: translateX(-33%)}
+  100% {-webkit-transform: translateX(50%);transform: translateX(50%)}
+}
+
+@-webkit-keyframes shape-anim-ug-9 {
+  30% {-webkit-transform: translateX(-44%);transform: translateX(-44%)}
+  70% {-webkit-transform: translateX(22%);transform: translateX(22%)}
+  100% {-webkit-transform: translateX(80%);transform: translateX(80%)}
 }
 
 @keyframes shape-anim-ug-9 {
-  30% {transform: translateX(-44%)}
-  70% {transform: translateX(22%)}
-  100% {transform: translateX(80%)}
+  30% {-webkit-transform: translateX(-44%);transform: translateX(-44%)}
+  70% {-webkit-transform: translateX(22%);transform: translateX(22%)}
+  100% {-webkit-transform: translateX(80%);transform: translateX(80%)}
+}
+
+@-webkit-keyframes shape-anim-ug-10 {
+  20% {-webkit-transform: translateX(88%);transform: translateX(88%)}
+  40% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  100% {-webkit-transform: translateX(40%);transform: translateX(40%)}
 }
 
 @keyframes shape-anim-ug-10 {
-  20% {transform: translateX(88%)}
-  40% {transform: translateX(-90%)}
-  100% {transform: translateX(40%)}
+  20% {-webkit-transform: translateX(88%);transform: translateX(88%)}
+  40% {-webkit-transform: translateX(-90%);transform: translateX(-90%)}
+  100% {-webkit-transform: translateX(40%);transform: translateX(40%)}
+}
+
+@-webkit-keyframes shape-anim-gross-1 {
+  30% {-webkit-transform: scale(77%, 21%);transform: scale(77%, 21%)}
+  100% {-webkit-transform: scale(-60%, -60%);transform: scale(-60%, -60%)}
 }
 
 @keyframes shape-anim-gross-1 {
-  30% {transform: scale(77%, 21%)}
-  100% {transform: scale(-60%, -60%)}
+  30% {-webkit-transform: scale(77%, 21%);transform: scale(77%, 21%)}
+  100% {-webkit-transform: scale(-60%, -60%);transform: scale(-60%, -60%)}
+}
+
+@-webkit-keyframes shape-anim-gross-2 {
+  30% {-webkit-transform: scaleX(66%);transform: scaleX(66%); -webkit-transform: rotate(200deg); transform: rotate(200deg);}
+  100% {-webkit-transform: scaleX(-54%);transform: scaleX(-54%); -webkit-transform: rotate(-100deg); transform: rotate(-100deg);}
 }
 
 @keyframes shape-anim-gross-2 {
-  30% {transform: scaleX(66%); transform: rotate(200deg);}
-  100% {transform: scaleX(-54%); transform: rotate(-100deg);}
+  30% {-webkit-transform: scaleX(66%);transform: scaleX(66%); -webkit-transform: rotate(200deg); transform: rotate(200deg);}
+  100% {-webkit-transform: scaleX(-54%);transform: scaleX(-54%); -webkit-transform: rotate(-100deg); transform: rotate(-100deg);}
+}
+
+@-webkit-keyframes shape-anim-gross-3 {
+  30% {-webkit-transform: scaleY(45%);transform: scaleY(45%); -webkit-transform: skewY(100deg); transform: skewY(100deg);}
+  50% {-webkit-transform: scaleY(95%);transform: scaleY(95%); -webkit-transform: skew(170deg); transform: skew(170deg)}
+  100% {-webkit-transform: scaleY(-75%);transform: scaleY(-75%); -webkit-transform: skewY(80deg); transform: skewY(80deg);}
 }
 
 @keyframes shape-anim-gross-3 {
-  30% {transform: scaleY(45%); transform: skewY(100deg);}
-  50% {transform: scaleY(95%); transform: skew(170deg)}
-  100% {transform: scaleY(-75%); transform: skewY(80deg);}
+  30% {-webkit-transform: scaleY(45%);transform: scaleY(45%); -webkit-transform: skewY(100deg); transform: skewY(100deg);}
+  50% {-webkit-transform: scaleY(95%);transform: scaleY(95%); -webkit-transform: skew(170deg); transform: skew(170deg)}
+  100% {-webkit-transform: scaleY(-75%);transform: scaleY(-75%); -webkit-transform: skewY(80deg); transform: skewY(80deg);}
+}
+
+@-webkit-keyframes shape-anim-gross-4 {
+  10% {-webkit-transform: rotate(120deg);transform: rotate(120deg); -webkit-transform: skew(60deg); transform: skew(60deg)}
+  80% {-webkit-transform: rotate(220deg);transform: rotate(220deg); -webkit-transform: skew(120deg); transform: skew(120deg)}
+  100% {-webkit-transform: rotate(350deg);transform: rotate(350deg); -webkit-transform: skew(140deg); transform: skew(140deg)}
 }
 
 @keyframes shape-anim-gross-4 {
-  10% {transform: rotate(120deg); transform: skew(60deg)}
-  80% {transform: rotate(220deg); transform: skew(120deg)}
-  100% {transform: rotate(350deg); transform: skew(140deg)}
+  10% {-webkit-transform: rotate(120deg);transform: rotate(120deg); -webkit-transform: skew(60deg); transform: skew(60deg)}
+  80% {-webkit-transform: rotate(220deg);transform: rotate(220deg); -webkit-transform: skew(120deg); transform: skew(120deg)}
+  100% {-webkit-transform: rotate(350deg);transform: rotate(350deg); -webkit-transform: skew(140deg); transform: skew(140deg)}
+}
+
+@-webkit-keyframes shape-anim-gross-5 {
+  30% {-webkit-transform: matrix(0.866,0.5,-0.6,0.866,0,0);transform: matrix(0.866,0.5,-0.6,0.866,0,0); -webkit-transform: scale(55%, 90%); transform: scale(55%, 90%)}
+  70% {-webkit-transform: matrix(0.586,0.8,-0.8,0.866,0,0);transform: matrix(0.586,0.8,-0.8,0.866,0,0); -webkit-transform: scale(-80%, -70%); transform: scale(-80%, -70%)}
+  100% {-webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0);transform: matrix(0.866,0.5,-0.5,0.866,0,0); -webkit-transform: scale(60%, 60%); transform: scale(60%, 60%)}
 }
 
 @keyframes shape-anim-gross-5 {
-  30% {transform: matrix(0.866,0.5,-0.6,0.866,0,0); transform: scale(55%, 90%)}
-  70% {transform: matrix(0.586,0.8,-0.8,0.866,0,0); transform: scale(-80%, -70%)}
-  100% {transform: matrix(0.866,0.5,-0.5,0.866,0,0); transform: scale(60%, 60%)}
+  30% {-webkit-transform: matrix(0.866,0.5,-0.6,0.866,0,0);transform: matrix(0.866,0.5,-0.6,0.866,0,0); -webkit-transform: scale(55%, 90%); transform: scale(55%, 90%)}
+  70% {-webkit-transform: matrix(0.586,0.8,-0.8,0.866,0,0);transform: matrix(0.586,0.8,-0.8,0.866,0,0); -webkit-transform: scale(-80%, -70%); transform: scale(-80%, -70%)}
+  100% {-webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0);transform: matrix(0.866,0.5,-0.5,0.866,0,0); -webkit-transform: scale(60%, 60%); transform: scale(60%, 60%)}
+}
+
+@-webkit-keyframes shape-anim-gross-6 {
+  30% {-webkit-transform: skew(50deg);transform: skew(50deg); -webkit-transform: scale(90%, 84%); transform: scale(90%, 84%)}
+  50% {-webkit-transform: skew(170deg);transform: skew(170deg); -webkit-transform: scale(-60%, -50%); transform: scale(-60%, -50%)}
+  70% {-webkit-transform: skew(20deg);transform: skew(20deg); -webkit-transform: scale(30%, 40%); transform: scale(30%, 40%)}
+  100% {-webkit-transform: skew(130deg);transform: skew(130deg); -webkit-transform: scale(90%, 90%); transform: scale(90%, 90%)}
 }
 
 @keyframes shape-anim-gross-6 {
-  30% {transform: skew(50deg); transform: scale(90%, 84%)}
-  50% {transform: skew(170deg); transform: scale(-60%, -50%)}
-  70% {transform: skew(20deg); transform: scale(30%, 40%)}
-  100% {transform: skew(130deg); transform: scale(90%, 90%)}
+  30% {-webkit-transform: skew(50deg);transform: skew(50deg); -webkit-transform: scale(90%, 84%); transform: scale(90%, 84%)}
+  50% {-webkit-transform: skew(170deg);transform: skew(170deg); -webkit-transform: scale(-60%, -50%); transform: scale(-60%, -50%)}
+  70% {-webkit-transform: skew(20deg);transform: skew(20deg); -webkit-transform: scale(30%, 40%); transform: scale(30%, 40%)}
+  100% {-webkit-transform: skew(130deg);transform: skew(130deg); -webkit-transform: scale(90%, 90%); transform: scale(90%, 90%)}
+}
+
+@-webkit-keyframes flash {
+  0% {opacity: 0}
+  30% {opacity: 0}
+  100% {opacity: 1}
 }
 
 @keyframes flash {
@@ -648,7 +744,15 @@ br {
 }
 
 .passage.flash {
-  animation: flash 4s ease forwards;
+  -webkit-animation: flash 4s ease forwards;
+          animation: flash 4s ease forwards;
+}
+
+@-webkit-keyframes flick {
+  0% {background: black}
+  49% {background: black}
+  50% {background: white}
+  100% {background: white}
 }
 
 @keyframes flick {
@@ -656,6 +760,12 @@ br {
   49% {background: black}
   50% {background: white}
   100% {background: white}
+}
+
+@-webkit-keyframes flick-fast {
+  0% {background: black}
+  99% {background: black}
+  100% {background: transparent}
 }
 
 @keyframes flick-fast {
@@ -666,7 +776,8 @@ br {
 
 
 .shape-anim-1 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-2 {
@@ -674,7 +785,8 @@ br {
 }
 
 .shape-anim-3 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 2s alternate infinite;
 }
 
 .shape-anim-4 {
@@ -682,7 +794,8 @@ br {
 }
 
 .shape-anim-5 {
-  animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-6 {
@@ -690,11 +803,13 @@ br {
 }
 
 .shape-anim-7 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s alternate infinite;
 }
 
 .shape-anim-8 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-9 {
@@ -702,7 +817,8 @@ br {
 }
 
 .shape-anim-10 {
-  animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-10 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-11 {
@@ -714,47 +830,58 @@ br {
 }
 
 .shape-anim-ug-1 {
-  animation: shape-anim-ug-1 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-1 ease 3s alternate infinite;
+          animation: shape-anim-ug-1 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-2 {
-  animation: shape-anim-ug-2 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-2 ease 3s alternate infinite;
+          animation: shape-anim-ug-2 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-3 {
-  animation: shape-anim-ug-3 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-3 ease 3s alternate infinite;
+          animation: shape-anim-ug-3 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-4 {
-  animation: shape-anim-ug-4 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-4 ease 3s alternate infinite;
+          animation: shape-anim-ug-4 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-5 {
-  animation: shape-anim-ug-5 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-5 ease 3s alternate infinite;
+          animation: shape-anim-ug-5 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-6 {
-  animation: shape-anim-ug-6 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-6 ease 3s alternate infinite;
+          animation: shape-anim-ug-6 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-7 {
-  animation: shape-anim-ug-7 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-7 ease 3s alternate infinite;
+          animation: shape-anim-ug-7 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-8 {
-  animation: shape-anim-ug-8 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-8 ease 3s alternate infinite;
+          animation: shape-anim-ug-8 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-9 {
-  animation: shape-anim-ug-9 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-9 ease 3s alternate infinite;
+          animation: shape-anim-ug-9 ease 3s alternate infinite;
 }
 
 .shape-anim-ug-10 {
-  animation: shape-anim-ug-10 ease 3s alternate infinite;
+  -webkit-animation: shape-anim-ug-10 ease 3s alternate infinite;
+          animation: shape-anim-ug-10 ease 3s alternate infinite;
 }
 
 .shape-anim-gross-1 {
-  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+  -webkit-animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+          animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-2 {
@@ -762,11 +889,13 @@ br {
 }
 
 .shape-anim-gross-3 {
-  animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-gross-3 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
 .shape-anim-gross-4 {
-  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+  -webkit-animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
+          animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 5s alternate infinite;
 }
 
 .shape-anim-gross-5 {
@@ -774,11 +903,13 @@ br {
 }
 
 .shape-anim-gross-6 {
-  animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+  -webkit-animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
+          animation: shape-anim-gross-6 cubic-bezier(0.455, 0.030, 0.515, 0.955) 7s alternate infinite;
 }
 
 .shape-anim-gross-7 {
-  animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+  -webkit-animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+          animation: shape-anim-gross-2 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-8 {
@@ -786,27 +917,111 @@ br {
 }
 
 .shape-anim-gross-9 {
-  animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+  -webkit-animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
+          animation: shape-anim-gross-5 cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s alternate infinite;
 }
 
 .shape-anim-gross-10 {
-  animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+  -webkit-animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+          animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
+}
+
+
+@-webkit-keyframes black-box {
+  from {-webkit-transform: translateY(0%);transform: translateY(0%);}
+  to {-webkit-transform: translateY(100%);transform: translateY(100%);}
 }
 
 
 @keyframes black-box {
-  from {transform: translateY(0%);}
-  to {transform: translateY(100%);}
+  from {-webkit-transform: translateY(0%);transform: translateY(0%);}
+  to {-webkit-transform: translateY(100%);transform: translateY(100%);}
+}
+
+@-webkit-keyframes black-box-full {
+  from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+  to {-webkit-transform: translateY(0%);transform: translateY(0%);}
 }
 
 @keyframes black-box-full {
-  from {transform: translateY(-100%);}
-  to {transform: translateY(0%);}
+  from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+  to {-webkit-transform: translateY(0%);transform: translateY(0%);}
+}
+
+@-webkit-keyframes flash-word {
+  0% {opacity: 1}
+  100% {opacity: 0}
 }
 
 @keyframes flash-word {
   0% {opacity: 1}
   100% {opacity: 0}
+}
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
 }
 
 @keyframes flicker {
@@ -872,6 +1087,71 @@ br {
   }
   100% {
     opacity: 0.24387;
+  }
+}
+@-webkit-keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
 }
 @keyframes textShadow {
@@ -951,7 +1231,8 @@ br {
   opacity: 0;
   z-index: 2;
   pointer-events: none;
-  animation: flicker 0.15s infinite;
+  -webkit-animation: flicker 0.15s infinite;
+          animation: flicker 0.15s infinite;
 }
 
 .crt::before {
@@ -962,6 +1243,8 @@ br {
   left: 0;
   bottom: 0;
   right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(18, 16, 16, 0)), color-stop(50%, rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0.06)), color-stop(rgba(0, 255, 0, 0.02)), to(rgba(0, 0, 255, 0.06)));
+  background: -o-linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), -o-linear-gradient(left, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
@@ -969,62 +1252,149 @@ br {
 
 }
 .crt {
-  animation: textShadow 1.6s infinite;
+  -webkit-animation: textShadow 1.6s infinite;
+          animation: textShadow 1.6s infinite;
 }
 
 .fileerror::before {
-  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+  -webkit-animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+          animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+@-webkit-keyframes shadow-inset-center {
+  0% {
+    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+  }
+  100% {
+    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+  }
 }
 
 @keyframes shadow-inset-center {
   0% {
-    box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
   }
   100% {
-    box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
   }
 }
 
 .flick-fast {
-	animation: flick-fast 0.05s linear 1;
+	-webkit-animation: flick-fast 0.05s linear 1;
+	        animation: flick-fast 0.05s linear 1;
 	height: 100%;
 	width: 100%;
 	position: fixed;
 }
 
-@keyframes screen-stutter {
+@-webkit-keyframes screen-stutter {
   0% {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   20% {
-    transform: translateY(-400px);
+    -webkit-transform: translateY(-400px);
+            transform: translateY(-400px);
   }
   21% {
-    transform: translateY(-378px);
+    -webkit-transform: translateY(-378px);
+            transform: translateY(-378px);
   }
   22% {
-    transform: translateY(-402px);
+    -webkit-transform: translateY(-402px);
+            transform: translateY(-402px);
   }
   52% {
-    transform: translateY(-1002px);
+    -webkit-transform: translateY(-1002px);
+            transform: translateY(-1002px);
   }
   53% {
-    transform: translateY(-980px);
+    -webkit-transform: translateY(-980px);
+            transform: translateY(-980px);
   }
   54% {
-    transform: translateY(-1004px);
+    -webkit-transform: translateY(-1004px);
+            transform: translateY(-1004px);
   }
   84% {
-    transform: translateY(-1604px);
+    -webkit-transform: translateY(-1604px);
+            transform: translateY(-1604px);
   }
   85% {
-    transform: translateY(-1582px);
+    -webkit-transform: translateY(-1582px);
+            transform: translateY(-1582px);
   }
   86% {
-    transform: translateY(-1606px);
+    -webkit-transform: translateY(-1606px);
+            transform: translateY(-1606px);
   }
   100% {
-    transform: translateY(-1766px);
+    -webkit-transform: translateY(-1766px);
+            transform: translateY(-1766px);
+  }
+}
+
+@keyframes screen-stutter {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  20% {
+    -webkit-transform: translateY(-400px);
+            transform: translateY(-400px);
+  }
+  21% {
+    -webkit-transform: translateY(-378px);
+            transform: translateY(-378px);
+  }
+  22% {
+    -webkit-transform: translateY(-402px);
+            transform: translateY(-402px);
+  }
+  52% {
+    -webkit-transform: translateY(-1002px);
+            transform: translateY(-1002px);
+  }
+  53% {
+    -webkit-transform: translateY(-980px);
+            transform: translateY(-980px);
+  }
+  54% {
+    -webkit-transform: translateY(-1004px);
+            transform: translateY(-1004px);
+  }
+  84% {
+    -webkit-transform: translateY(-1604px);
+            transform: translateY(-1604px);
+  }
+  85% {
+    -webkit-transform: translateY(-1582px);
+            transform: translateY(-1582px);
+  }
+  86% {
+    -webkit-transform: translateY(-1606px);
+            transform: translateY(-1606px);
+  }
+  100% {
+    -webkit-transform: translateY(-1766px);
+            transform: translateY(-1766px);
+  }
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -1038,6 +1408,33 @@ br {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes move-hands {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40 %{
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+  }
+  60% {
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
   }
 }
 
@@ -1103,6 +1500,21 @@ br {
   }
 }
 
+@-webkit-keyframes white-star-anim {
+  0%{
+    cursor: url("images/cursors/simple1.png"), auto;
+  }
+  33%{
+    cursor: url("images/cursors/simple2.png"), auto;
+  }
+  66%{
+    cursor: url("images/cursors/simple3.png"), auto;
+  }
+  100%{
+    cursor: url("images/cursors/simple4.png"), auto;
+  }
+}
+
 @keyframes white-star-anim {
   0%{
     cursor: url("images/cursors/simple1.png"), auto;
@@ -1115,6 +1527,24 @@ br {
   }
   100%{
     cursor: url("images/cursors/simple4.png"), auto;
+  }
+}
+
+@-webkit-keyframes yellow-star-anim {
+  0%{
+    cursor: url("images/cursors/cursor_1.png"), auto;
+  }
+  25%{
+    cursor: url("images/cursors/cursor_2.png"), auto;
+  }
+  50%{
+    cursor: url("images/cursors/cursor_3.png"), auto;
+  }
+  75%{
+    cursor: url("images/cursors/cursor_4.png"), auto;
+  }
+  100%{
+    cursor: url("images/cursors/cursor_5.png"), auto;
   }
 }
 
@@ -1137,31 +1567,38 @@ br {
 }
 
 .slowest-binary {
-  animation: cursor-anim 10s infinite;
+  -webkit-animation: cursor-anim 10s infinite;
+          animation: cursor-anim 10s infinite;
 }
 
 .slower-binary {
-  animation: cursor-anim 8s infinite;
+  -webkit-animation: cursor-anim 8s infinite;
+          animation: cursor-anim 8s infinite;
 }
 
 .slow-binary {
-  animation: cursor-anim 6s infinite;
+  -webkit-animation: cursor-anim 6s infinite;
+          animation: cursor-anim 6s infinite;
 }
 
 .fast-binary {
-  animation: cursor-anim 4s infinite;
+  -webkit-animation: cursor-anim 4s infinite;
+          animation: cursor-anim 4s infinite;
 }
 
 .faster-binary {
-  animation: cursor-anim 2s infinite;
+  -webkit-animation: cursor-anim 2s infinite;
+          animation: cursor-anim 2s infinite;
 }
 
 .fastest-binary {
-  animation: cursor-anim 1s infinite;
+  -webkit-animation: cursor-anim 1s infinite;
+          animation: cursor-anim 1s infinite;
 }
 
 .white-star-cursor {
-  animation: white-star-anim 1s infinite;
+  -webkit-animation: white-star-anim 1s infinite;
+          animation: white-star-anim 1s infinite;
 }
 
 .yellow-star-cursor {
@@ -1179,7 +1616,8 @@ br {
 }
 
 .appear #battery {
-	animation: battery-appear 3s linear;
+	-webkit-animation: battery-appear 3s linear;
+	        animation: battery-appear 3s linear;
 }
 
 .batteryLevel {
@@ -1189,7 +1627,8 @@ br {
 	margin: 0;
 	background-color: green;
 	border: 1px solid black;
-	animation: battery-flicker 3s ease alternate infinite;
+	-webkit-animation: battery-flicker 3s ease alternate infinite;
+	        animation: battery-flicker 3s ease alternate infinite;
 	content: "";
 	display: inline-block;
 }
@@ -1214,7 +1653,9 @@ br {
 	top: 10px;
 	left: 50%;
 	color: white;
-	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	        transform: translate(-50%, 0);
 	position: fixed;
 	font-size: 0.8em;
 }
@@ -1229,7 +1670,8 @@ br {
 	background-color: #1111118c;
 	font-size: 0.65em;
 	color: white;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 #component #unsorted {
@@ -1241,7 +1683,8 @@ br {
 #component #bottomRow {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
   height: 237px;
 }
 
@@ -1295,7 +1738,10 @@ br {
   border: 1px solid #939393;
   line-height: normal;
   padding: .4em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 	margin-bottom: 8px;
 }
 
@@ -1311,7 +1757,10 @@ br {
 }
 
 .scrollcontent a {
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	display: block;
 }
 
@@ -1346,7 +1795,8 @@ br {
 } */
 
 .comp-container {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10px;
   margin-bottom: 8px;
   background-color: #1111118c;
@@ -1411,7 +1861,10 @@ br {
   border: 1px solid #939393;
   line-height: normal;
   padding: .4em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #lib-container a:hover {
@@ -1421,13 +1874,15 @@ br {
 }
 
 .funct-container {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10px;
   margin-top: 6px;
   margin-bottom: 8px;
   background-color: #1111118c;
   border: 1px solid #939393;
-  animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   margin-left: 10px;
   max-height: 300px;
   overflow-y: auto;
@@ -1453,12 +1908,14 @@ br {
 #systemAlert {
 	position: fixed;
 	background: #ff00008c;
-	height: 400px;
+	height: 405px;
 	width: 500px;
 	border: 1px solid black;
 	left: 50%;
 	top: 150px;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 	padding: 20px;
 	border: 2px solid #939393;
 	color: white;
@@ -1487,11 +1944,12 @@ br {
 	bottom: 20px;
 	display: inline-block;
 	left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .cam {
-	background-color: #1111118c;
 	text-align: center;
 	height: 25px;
 	bottom: 25px;
@@ -1499,7 +1957,9 @@ br {
 	display: inline-block;
 	left: 50%;
 	color: white;
-	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	        transform: translate(-50%, 0);
 	position: fixed;
 	font-size: 0.8em;
 }
@@ -1508,7 +1968,8 @@ br {
 	width: 100%;
 	margin-right: 2em;
 	vertical-align: middle;
-	animation: textShadow 1.6s infinite;
+	-webkit-animation: textShadow 1.6s infinite;
+	        animation: textShadow 1.6s infinite;
 	border-color: #939393;
 }
 
@@ -1563,7 +2024,8 @@ br {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
 	background-size: cover;
   background-size: 70%, 70%, cover;
-	animation: move-hands 8s alternate both infinite;
+	-webkit-animation: move-hands 8s alternate both infinite;
+	        animation: move-hands 8s alternate both infinite;
 }
 
 .ship7backgroundsplitopenhands {
@@ -1572,17 +2034,28 @@ br {
   background-size: 70%, 70%, cover, cover;
 }
 
+.ship7aux {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+	background-size: cover;
+  background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+	        animation: move-hands 8s alternate both infinite;
+}
+
 #left-bg {
-  background: url(images/o_dam.png);
+  background: url(images/ship_finals/hatch.png);
   width: 50%;
   position: fixed;
   left: 0px;
   height: 3000px;
   content: "";
   background-size: contain;
-  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  -webkit-animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+          animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
   overflow-y: hidden;
-  transform: translateY(-1900px);
+  -webkit-transform: translateY(-1900px);
+      -ms-transform: translateY(-1900px);
+          transform: translateY(-1900px);
 }
 
 #right-bg {
@@ -1593,9 +2066,12 @@ br {
   right: 0px;
   height: 3000px;
   content: "";
-  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  transform: translateY(-1900px);
+  -webkit-transform: translateY(-1900px);
+      -ms-transform: translateY(-1900px);
+          transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 
@@ -2620,6 +3096,8 @@ br {
   &lt;&lt;set $alert = {
     off : true,
     worm : false,
+    frag : 0,
+    hide: false,
   }&gt;&gt;
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
@@ -2633,12 +3111,6 @@ br {
   &lt;&lt;include "SelfDesignation"&gt;&gt;
 
   &lt;&lt;include "FunctionLibrary"&gt;&gt;
-
-  /* &lt;&lt;if passage() == "Escape Start"&gt;&gt;
-    &lt;div class="battery appear"&gt;&lt;&lt;include "BatteryLevel"&gt;&gt;&lt;/div&gt;
-  &lt;&lt;else&gt;&gt; */
-    &lt;&lt;include "Battery"&gt;&gt;
-  /* &lt;&lt;endif&gt;&gt; */
 
   &lt;&lt;include "Damage"&gt;&gt;
 
@@ -2666,13 +3138,22 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Skull (teeth et al)")&gt;&gt;
-                  &lt;li&gt;Skull (teeth et al) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Skull (teeth et al)
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
-                  &lt;li&gt;Torso (ribs, collarbones, etc.) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Torso (ribs, collarbones, etc.)
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-                  &lt;li&gt;Limbs (legs, arms, extensions, etc.) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Limbs (legs, arms, extensions, etc.)
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
@@ -2689,13 +3170,22 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Compressor")&gt;&gt;
-                  &lt;li&gt;Compressor &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Compressor
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Fans")&gt;&gt;
-                  &lt;li&gt;Fans &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Fans
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Exo combusters")&gt;&gt;
-                  &lt;li&gt;Exo combusters &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Exo combusters
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
@@ -2712,13 +3202,22 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.life.unsorted.includes("Water collection")&gt;&gt;
-                  &lt;li&gt;Water collection &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Water collection
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.life.unsorted.includes("Waste management")&gt;&gt;
-                  &lt;li&gt;Waste recycling &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Waste recycling
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.life.unsorted.includes("Air filtration")&gt;&gt;
-                  &lt;li&gt;Air filtration &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Air filtration
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
@@ -2735,13 +3234,22 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.suit.unsorted.includes("Heat sink repository")&gt;&gt;
-                  &lt;li&gt;Heat sink repository &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Heat sink repository
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.suit.unsorted.includes("Motor lattice")&gt;&gt;
-                  &lt;li&gt;Motor lattice &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Motor lattice
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.suit.unsorted.includes("Ligamentation system")&gt;&gt;
-                  &lt;li&gt;Ligamentation system &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                  &lt;li&gt;Ligamentation system
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
@@ -2749,11 +3257,17 @@ br {
         &lt;&lt;endif&gt;&gt;
 
         &lt;&lt;if $comp.bio == "unsorted"&gt;&gt;
-          &lt;p&gt;Human biomatter &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/p&gt;
+          &lt;p&gt;Human biomatter
+            &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/p&gt;
         &lt;&lt;endif&gt;&gt;
 
         &lt;&lt;if $comp.photo == "unsorted"&gt;&gt;
-          &lt;p&gt;Photovoltaic unit &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.photo = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.photo = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/p&gt;
+          &lt;p&gt;Photovoltaic unit
+            &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.photo = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.photo = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/p&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -3006,35 +3520,103 @@ br {
       &lt;/div&gt;
     &lt;&lt;endif&gt;&gt;
 
-    &lt;&lt;if $alert.next == "Something" &amp;&amp; $alert.worm == "done"&gt;&gt;
-      &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
+    &lt;&lt;if $alert.frag == 5 &amp;&amp; $alert.worm == "done"&gt;&gt;
+      &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
+
+      &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
+
+      &lt;div class="buttonbg"&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+          &lt;&lt;set $alert.frag = 5&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+      &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
+
+      &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
+
+      &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
+
+      &lt;&lt;timed 3s&gt;&gt;
+        &lt;&lt;set $alert.frag = 5&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+      &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
+
+      &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
+
+      &lt;p&gt;THE SHIP IS TRACTABLE&lt;/p&gt;
+
+      &lt;div class="buttonbg"&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+          &lt;&lt;set $alert.frag = 5&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+      &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
+
+      &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
+
+      &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
+
+      &lt;p&gt;THE HATCH IS OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
+
+      &lt;div class="buttonbg"&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+          &lt;&lt;set $alert.frag = 5&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+      &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
+
+      &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
+
+      &lt;&lt;timed 6s&gt;&gt;
+        &lt;&lt;set $alert.frag = "done"&gt;&gt;
+        &lt;&lt;set $alert.hide = "true"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="CameraToggle" tags="nobr" position="">&lt;div id="camcon"&gt;
     &lt;div class="cam"&gt;
       &lt;&lt;if $cam.funct == "on"&gt;&gt;
         &lt;&lt;if $cam.one == "on"&gt;&gt;
+          &lt;&lt;if $cam.two == "off"&gt;&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;&lt;else&gt;&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+              &lt;&lt;set $cam.one = "off"&gt;&gt;
+              &lt;&lt;set $change.cam = true&gt;&gt;
+              &lt;&lt;set $change.background = true&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;elseif $cam.one == "off"&gt;&gt;
           &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
             &lt;&lt;set $cam.one = "on"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
             &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;&lt;elseif $cam.one == "off"&gt;&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-            &lt;&lt;set $cam.one = "off"&gt;&gt;
-            &lt;&lt;set $change.cam = true&gt;&gt;
-            &lt;&lt;set $change.background = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;&lt;endif&gt;&gt;
         &lt;&lt;if $cam.two == "on"&gt;&gt;
+          &lt;&lt;if $cam.one == "off"&gt;&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;&lt;else&gt;&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
+              &lt;&lt;set $cam.two = "off"&gt;&gt;
+              &lt;&lt;set $change.cam = true&gt;&gt;
+              &lt;&lt;set $change.background = true&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;elseif $cam.two == "off"&gt;&gt;
           &lt;span class="grey"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
             &lt;&lt;set $cam.two = "on"&gt;&gt;
-            &lt;&lt;set $change.cam = true&gt;&gt;
-            &lt;&lt;set $change.background = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;&lt;elseif $cam.two == "off"&gt;&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
-            &lt;&lt;set $cam.two = "off"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
             &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
@@ -3071,21 +3653,23 @@ br {
   &lt;div id="battery"&gt;
     &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;/for&gt;&gt;
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BackgroundShit" tags="nobr" position="">&lt;&lt;include "FlickFast"&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BackgroundShit" tags="nobr" position="">&lt;div id="backcon"&gt;
+
   &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off"&gt;&gt;
-  /* &lt;script&gt;
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt MainCamStuff");
-  &lt;/script&gt; */
+    &lt;script&gt;
+      $(".passage").removeClass("ship7aux");
+      $(".passage").addClass("ship7handsopen");
+    &lt;/script&gt;
   &lt;&lt;elseif $cam.one == "off" &amp;&amp; $cam.two == "on"&gt;&gt;
-  /* &lt;script&gt;
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt AuxCamStuff");
-  &lt;/script&gt; */
+    &lt;script&gt;
+      $(".passage").removeClass("ship7handsopen");
+      $(".passage").addClass("ship7aux");
+    &lt;/script&gt;
   &lt;&lt;elseif $cam.one == "on" &amp;&amp; $cam.two == "on"&gt;&gt;
-    /* &lt;div id="left-bg"&gt;&lt;/div&gt;
-    &lt;div id="right-bg"&gt;&lt;/div&gt; */
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
+    &lt;div id="left-bg"&gt;&lt;/div&gt;
+    &lt;div id="right-bg"&gt;&lt;/div&gt;
+  &lt;&lt;endif&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
   &lt;&lt;repeat 0.1s&gt;&gt;
     &lt;&lt;if $change.battery == true&gt;&gt;
       &lt;&lt;set $change.battery = false&gt;&gt;
@@ -3104,7 +3688,9 @@ br {
     &lt;&lt;elseif $change.alert == true&gt;&gt;
       &lt;&lt;set $change.alert = false&gt;&gt;
       &lt;&lt;replace "#alertcon"&gt;&gt;
-        &lt;&lt;display "SystemAlert"&gt;&gt;
+        &lt;&lt;if $alert.hide == false&gt;&gt;
+          &lt;&lt;display "SystemAlert"&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
     &lt;&lt;elseif $change.function == true&gt;&gt;
       &lt;&lt;set $change.function = false&gt;&gt;
@@ -3118,9 +3704,10 @@ br {
     &lt;&lt;elseif $change.background == true&gt;&gt;
       &lt;&lt;include "FlickFast"&gt;&gt;
       &lt;&lt;set $change.background = false&gt;&gt;
+      &lt;&lt;replace "#backcon"&gt;&gt;&lt;&lt;display "BackgroundShit"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Snake" tags="nobr snake" position="">&lt;p&gt;System repairs: 1%&lt;/p&gt;
+  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Snake" tags="nobr snake" position="">&lt;p class="snakey"&gt;System repairs: 1%&lt;/p&gt;
   &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;set $alert.worm = "won"&gt;&gt;
     &lt;&lt;set $alert.next = "Something"&gt;&gt;

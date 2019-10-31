@@ -22,5 +22,4 @@ talking iframe https://gist.github.com/pbojinov/8965299
 <<set $pronoun2 = $pronoun1 + "s">>
 
 
-Essay:
-  * 
+FIX FUCKIN BACKGROUND SHIT second bg not applying after i fucked with script

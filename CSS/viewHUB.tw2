@@ -10,7 +10,8 @@
 }
 
 .appear #battery {
-	animation: battery-appear 3s linear;
+	-webkit-animation: battery-appear 3s linear;
+	        animation: battery-appear 3s linear;
 }
 
 .batteryLevel {
@@ -20,7 +21,8 @@
 	margin: 0;
 	background-color: green;
 	border: 1px solid black;
-	animation: battery-flicker 3s ease alternate infinite;
+	-webkit-animation: battery-flicker 3s ease alternate infinite;
+	        animation: battery-flicker 3s ease alternate infinite;
 	content: "";
 	display: inline-block;
 }
@@ -45,7 +47,9 @@
 	top: 10px;
 	left: 50%;
 	color: white;
-	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	        transform: translate(-50%, 0);
 	position: fixed;
 	font-size: 0.8em;
 }
@@ -60,7 +64,8 @@
 	background-color: #1111118c;
 	font-size: 0.65em;
 	color: white;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 #component #unsorted {
@@ -72,7 +77,8 @@
 #component #bottomRow {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
   height: 237px;
 }
 
@@ -126,7 +132,10 @@
   border: 1px solid #939393;
   line-height: normal;
   padding: .4em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 	margin-bottom: 8px;
 }
 
@@ -142,7 +151,10 @@
 }
 
 .scrollcontent a {
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	display: block;
 }
 
@@ -177,7 +189,8 @@
 } */
 
 .comp-container {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10px;
   margin-bottom: 8px;
   background-color: #1111118c;
@@ -242,7 +255,10 @@
   border: 1px solid #939393;
   line-height: normal;
   padding: .4em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #lib-container a:hover {
@@ -252,13 +268,15 @@
 }
 
 .funct-container {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10px;
   margin-top: 6px;
   margin-bottom: 8px;
   background-color: #1111118c;
   border: 1px solid #939393;
-  animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   margin-left: 10px;
   max-height: 300px;
   overflow-y: auto;
@@ -284,12 +302,14 @@
 #systemAlert {
 	position: fixed;
 	background: #ff00008c;
-	height: 400px;
+	height: 405px;
 	width: 500px;
 	border: 1px solid black;
 	left: 50%;
 	top: 150px;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 	padding: 20px;
 	border: 2px solid #939393;
 	color: white;
@@ -318,11 +338,12 @@
 	bottom: 20px;
 	display: inline-block;
 	left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .cam {
-	background-color: #1111118c;
 	text-align: center;
 	height: 25px;
 	bottom: 25px;
@@ -330,7 +351,9 @@
 	display: inline-block;
 	left: 50%;
 	color: white;
-	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	        transform: translate(-50%, 0);
 	position: fixed;
 	font-size: 0.8em;
 }
@@ -339,7 +362,8 @@
 	width: 100%;
 	margin-right: 2em;
 	vertical-align: middle;
-	animation: textShadow 1.6s infinite;
+	-webkit-animation: textShadow 1.6s infinite;
+	        animation: textShadow 1.6s infinite;
 	border-color: #939393;
 }
 
