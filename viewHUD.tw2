@@ -22,6 +22,8 @@
 
   <<include "ComponentBreakdown">>
 
+  <<include "CameraToggle">>
+
 
 ::Damage [nobr]
   <div id="damagecon">
@@ -387,7 +389,7 @@
         <span class="green"><<button "TURN ON AUX">>
           <<set $alert.worm = "done">>
           <<set $cam.funct = "on">>
-          <<set $change.cam = "true">>
+          <<set $change.cam = true>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
@@ -401,29 +403,33 @@
 
 
 ::CameraToggle [nobr]
-  <div class="camcon">
+  <div id="camcon">
     <div class="cam">
       <<if $cam.funct == "on">>
         <<if $cam.one == "on">>
           <span class="grey"><<button "CAMERA_1">>
             <<set $cam.one = "on">>
             <<set $change.cam = true>>
+            <<set $change.background = true>>
           <</button>></span>
         <<elseif $cam.one == "off">>
           <span class="green"><<button "CAMERA_1">>
             <<set $cam.one = "off">>
             <<set $change.cam = true>>
+            <<set $change.background = true>>
           <</button>></span>
         <<endif>>
         <<if $cam.two == "on">>
-          <span class="grey"><<button "CAMERA_2">>
+          <span class="grey"><<button "VIEW_PORT">>
             <<set $cam.two = "on">>
             <<set $change.cam = true>>
+            <<set $change.background = true>>
           <</button>></span>
         <<elseif $cam.two == "off">>
-          <span class="green"><<button "CAMERA_2">>
+          <span class="green"><<button "VIEW_PORT">>
             <<set $cam.two = "off">>
             <<set $change.cam = true>>
+            <<set $change.background = true>>
           <</button>></span>
         <<endif>>
       <<endif>>

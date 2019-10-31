@@ -322,10 +322,31 @@
 }
 
 .cam {
-	width: 100%;
+	background-color: #1111118c;
+	text-align: center;
 	height: 25px;
+	bottom: 25px;
+	width: 40%;
+	display: inline-block;
+	left: 50%;
+	color: white;
+	transform: translate(-50%, 0);
+	position: fixed;
+	font-size: 0.8em;
 }
 
 .cam button {
+	width: 100%;
+	margin-right: 2em;
+	vertical-align: middle;
+	animation: textShadow 1.6s infinite;
+	border-color: #939393;
+}
 
+.cam .grey button {
+	background: grey;
+}
+
+.cam .green button {
+	background: green;
 }

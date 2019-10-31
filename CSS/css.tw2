@@ -92,7 +92,7 @@ body {
 }
 
 .black-reverse {
-	animation: black-box 7s reverse;
+	animation: black-box-full 7s;
 	position: fixed;
 	background-color: #111111;
 }

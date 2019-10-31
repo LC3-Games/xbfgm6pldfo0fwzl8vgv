@@ -193,7 +193,7 @@ body {
 }
 
 .black-reverse {
-	animation: black-box 7s reverse;
+	animation: black-box-full 7s;
 	position: fixed;
 	background-color: #111111;
 }
@@ -1486,12 +1486,33 @@ br {
 }
 
 .cam {
-	width: 100%;
+	background-color: #1111118c;
+	text-align: center;
 	height: 25px;
+	bottom: 25px;
+	width: 40%;
+	display: inline-block;
+	left: 50%;
+	color: white;
+	transform: translate(-50%, 0);
+	position: fixed;
+	font-size: 0.8em;
 }
 
 .cam button {
+	width: 100%;
+	margin-right: 2em;
+	vertical-align: middle;
+	animation: textShadow 1.6s infinite;
+	border-color: #939393;
+}
 
+.cam .grey button {
+	background: grey;
+}
+
+.cam .green button {
+	background: green;
 }
 .ship1bg {
 	background: url("images/ship_finals/ship_1.png");
@@ -1749,7 +1770,8 @@ br {
 // });
 // // start the game
 // requestAnimationFrame(loop);
-</script><tw-passagedata pid="1" name="Start" tags="nobr white crt ship7handsopen" position="">&lt;&lt;include "ViewHUD"&gt;&gt;
+</script><tw-passagedata pid="1" name="Start" tags="nobr white crt ship7handsopen" position="">&lt;&lt;include "BackgroundShit"&gt;&gt;
+  &lt;&lt;include "ViewHUD"&gt;&gt;
   &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="2" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -2128,7 +2150,7 @@ br {
     &lt;ul&gt;
       &lt;li&gt;
         &lt;&lt;if hasVisited ("Quiz Halley's Birthday")&gt;&gt;
-          &lt;a&gt;Void&lt;/a&gt;
+          &lt;a&gt;VOID&lt;/a&gt;
         &lt;&lt;else&gt;&gt;
           [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday][$quizCon +=1]]
         &lt;&lt;endif&gt;&gt;
@@ -2138,7 +2160,7 @@ br {
       &lt;/li&gt;
       &lt;li&gt;
         &lt;&lt;if hasVisited ("Quiz File")&gt;&gt;
-          &lt;a&gt;Void&lt;/a&gt;
+          &lt;a&gt;VOID&lt;/a&gt;
         &lt;&lt;else&gt;&gt;
           [[PERSONNEL FILE 10096579854|Quiz File][$quizCon +=1]]
         &lt;&lt;endif&gt;&gt;
@@ -2148,14 +2170,14 @@ br {
       &lt;/li&gt;
       &lt;li&gt;
         &lt;&lt;if hasVisited ("Quiz Date")&gt;&gt;
-          &lt;a&gt;Void&lt;/a&gt;
+          &lt;a&gt;VOID&lt;/a&gt;
         &lt;&lt;else&gt;&gt;
           [[`10-18-2319_5`|Quiz Date][$quizCon +=1]]
         &lt;&lt;endif&gt;&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;&lt;if hasVisited ("Quiz Mail")&gt;&gt;
-          &lt;a&gt;Void&lt;/a&gt;
+          &lt;a&gt;VOID&lt;/a&gt;
         &lt;&lt;else&gt;&gt;
           [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail][$quizCon +=1]]
         &lt;&lt;endif&gt;&gt;
@@ -2207,9 +2229,13 @@ br {
   &lt;div class="file-container"&gt;
     &lt;div class="file-header"&gt;[img[images/triangle_blue.png][Quiz Go Back]] 10-18-2319_5&lt;/div&gt;
     [img[images/who2.png]]
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;/div&gt;
+
+  &lt;&lt;timed 4s&gt;&gt;
+    &lt;&lt;goto "Quiz Go Back"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
   &lt;div class="file-container"&gt;
-    &lt;div class="file-header"&gt;:-P LOOKS LIKE IM GONNA DIE&lt;/div&gt;
+    &lt;div class="file-header"&gt;[img[images/triangle_blue.png][Quiz Go Back]] :-P LOOKS LIKE IM GONNA DIE&lt;/div&gt;
     &lt;p&gt;&lt;&lt;linkreplace"Transmissions"&gt;&gt;&lt;span class="hidetext"&gt;Transmissions&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"are"&gt;&gt;&lt;span class="hidetext"&gt;are&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"down"&gt;&gt;&lt;span class="hidetext"&gt;down&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"so"&gt;&gt;&lt;span class="hidetext"&gt;so&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"don"&gt;&gt;&lt;span class="hidetext"&gt;don&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'t &lt;&lt;linkreplace"know"&gt;&gt;&lt;span class="hidetext"&gt;know&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"why"&gt;&gt;&lt;span class="hidetext"&gt;why&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"bothering"&gt;&gt;&lt;span class="hidetext"&gt;bothering&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"write"&gt;&gt;&lt;span class="hidetext"&gt;write&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"trying"&gt;&gt;&lt;span class="hidetext"&gt;trying&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"think"&gt;&gt;&lt;span class="hidetext"&gt;think&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"as"&gt;&gt;&lt;span class="hidetext"&gt;as&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"not"&gt;&gt;&lt;span class="hidetext"&gt;not&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"coffin"&gt;&gt;&lt;span class="hidetext"&gt;coffin&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"but"&gt;&gt;&lt;span class="hidetext"&gt;but&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"an"&gt;&gt;&lt;span class="hidetext"&gt;an&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"extension"&gt;&gt;&lt;span class="hidetext"&gt;extension&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"myself"&gt;&gt;&lt;span class="hidetext"&gt;myself&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"That"&gt;&gt;&lt;span class="hidetext"&gt;That&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'s &lt;&lt;linkreplace"what"&gt;&gt;&lt;span class="hidetext"&gt;what&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"they"&gt;&gt;&lt;span class="hidetext"&gt;they&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"told"&gt;&gt;&lt;span class="hidetext"&gt;told&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"me"&gt;&gt;&lt;span class="hidetext"&gt;me&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"in"&gt;&gt;&lt;span class="hidetext"&gt;in&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"training"&gt;&gt;&lt;span class="hidetext"&gt;training&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;--&lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"is"&gt;&gt;&lt;span class="hidetext"&gt;is&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"part"&gt;&gt;&lt;span class="hidetext"&gt;part&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"you"&gt;&gt;&lt;span class="hidetext"&gt;you&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;.&lt;/p&gt;
 
     &lt;p&gt;&lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"want"&gt;&gt;&lt;span class="hidetext"&gt;want&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"go"&gt;&gt;&lt;span class="hidetext"&gt;go&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"home"&gt;&gt;&lt;span class="hidetext"&gt;home&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;.&lt;/p&gt;
@@ -2241,7 +2267,7 @@ br {
         $(".flick-fast").remove(".flick-fast")
       &lt;/script&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 5&gt;&gt;&lt;&lt;goto "Quiz Go Back"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position="">&lt;&lt;audio "pinkNoise" loop volume 0.4&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter &gt;= 5&gt;&gt;&lt;&lt;goto "Quiz Go Back"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position="">&lt;&lt;audio "pinkNoise" loop volume 0.4&gt;&gt;
   &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto "ChooseName"&gt;&gt;
   &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="ChooseName" tags="nobr" position="">&lt;&lt;set $bg = 5&gt;&gt;
@@ -2610,7 +2636,9 @@ br {
 
   &lt;&lt;include "SystemAlert"&gt;&gt;
 
-  &lt;&lt;include "ComponentBreakdown"&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
+  &lt;&lt;include "ComponentBreakdown"&gt;&gt;
+
+  &lt;&lt;include "CameraToggle"&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
   &lt;div id="damage"&gt;
     Integrity: $damage%
   &lt;/div&gt;
@@ -2964,7 +2992,7 @@ br {
         &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
           &lt;&lt;set $alert.worm = "done"&gt;&gt;
           &lt;&lt;set $cam.funct = "on"&gt;&gt;
-          &lt;&lt;set $change.cam = "true"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
@@ -2974,29 +3002,33 @@ br {
       &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="CameraToggle" tags="nobr" position="">&lt;div class="camcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="CameraToggle" tags="nobr" position="">&lt;div id="camcon"&gt;
     &lt;div class="cam"&gt;
       &lt;&lt;if $cam.funct == "on"&gt;&gt;
         &lt;&lt;if $cam.one == "on"&gt;&gt;
           &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
             &lt;&lt;set $cam.one = "on"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
+            &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;&lt;elseif $cam.one == "off"&gt;&gt;
           &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
             &lt;&lt;set $cam.one = "off"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
+            &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;&lt;endif&gt;&gt;
         &lt;&lt;if $cam.two == "on"&gt;&gt;
-          &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+          &lt;span class="grey"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
             &lt;&lt;set $cam.two = "on"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
+            &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;&lt;elseif $cam.two == "off"&gt;&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+          &lt;span class="green"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
             &lt;&lt;set $cam.two = "off"&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
+            &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;

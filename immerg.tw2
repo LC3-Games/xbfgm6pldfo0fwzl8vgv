@@ -24,6 +24,7 @@ Immerging
 
 
 ::Start [nobr white crt ship7handsopen]
+<<include "BackgroundShit">>
   <<include "ViewHUD">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
@@ -482,7 +483,7 @@ Immerging
     <ul>
       <li>
         <<if hasVisited ("Quiz Halley's Birthday")>>
-          <a>Void</a>
+          <a>VOID</a>
         <<else>>
           [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday][$quizCon +=1]]
         <<endif>>
@@ -492,7 +493,7 @@ Immerging
       </li>
       <li>
         <<if hasVisited ("Quiz File")>>
-          <a>Void</a>
+          <a>VOID</a>
         <<else>>
           [[PERSONNEL FILE 10096579854|Quiz File][$quizCon +=1]]
         <<endif>>
@@ -502,14 +503,14 @@ Immerging
       </li>
       <li>
         <<if hasVisited ("Quiz Date")>>
-          <a>Void</a>
+          <a>VOID</a>
         <<else>>
           [[`10-18-2319_5`|Quiz Date][$quizCon +=1]]
         <<endif>>
       </li>
       <li>
         <<if hasVisited ("Quiz Mail")>>
-          <a>Void</a>
+          <a>VOID</a>
         <<else>>
           [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail][$quizCon +=1]]
         <<endif>>
@@ -575,11 +576,15 @@ Immerging
     [img[images/who2.png]]
   </div>
 
+  <<timed 4s>>
+    <<goto "Quiz Go Back">>
+  <</timed>>
+
 
 ::Quiz Mail [nobr nolink fileerror]
   <<set $bg = 3>>
   <div class="file-container">
-    <div class="file-header">:-P LOOKS LIKE IM GONNA DIE</div>
+    <div class="file-header">[img[images/triangle_blue.png][Quiz Go Back]] :-P LOOKS LIKE IM GONNA DIE</div>
     <p><<linkreplace"Transmissions">><span class="hidetext">Transmissions</span><<include "Word Count">><</linkreplace>> <<linkreplace"are">><span class="hidetext">are</span><<include "Word Count">><</linkreplace>> <<linkreplace"down">><span class="hidetext">down</span><<include "Word Count">><</linkreplace>>, <<linkreplace"so">><span class="hidetext">so</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"don">><span class="hidetext">don</span><<include "Word Count">><</linkreplace>>'t <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"why">><span class="hidetext">why</span><<include "Word Count">><</linkreplace>> <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"bothering">><span class="hidetext">bothering</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"write">><span class="hidetext">write</span><<include "Word Count">><</linkreplace>> <<linkreplace"this">><span class="hidetext">this</span><<include "Word Count">><</linkreplace>>. <<linkreplace"I'm">><span class="hidetext">I'm</span><<include "Word Count">><</linkreplace>>  <<linkreplace"trying">><span class="hidetext">trying</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"think">><span class="hidetext">think</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"as">><span class="hidetext">as</span><<include "Word Count">><</linkreplace>> <<linkreplace"not">><span class="hidetext">not</span><<include "Word Count">><</linkreplace>> a <<linkreplace"coffin">><span class="hidetext">coffin</span><<include "Word Count">><</linkreplace>>, <<linkreplace"but">><span class="hidetext">but</span><<include "Word Count">><</linkreplace>> <<linkreplace"an">><span class="hidetext">an</span><<include "Word Count">><</linkreplace>> <<linkreplace"extension">><span class="hidetext">extension</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"myself">><span class="hidetext">myself</span><<include "Word Count">><</linkreplace>>. <<linkreplace"That">><span class="hidetext">That</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"what">><span class="hidetext">what</span><<include "Word Count">><</linkreplace>> <<linkreplace"they">><span class="hidetext">they</span><<include "Word Count">><</linkreplace>> <<linkreplace"told">><span class="hidetext">told</span><<include "Word Count">><</linkreplace>> <<linkreplace"me">><span class="hidetext">me</span><<include "Word Count">><</linkreplace>> <<linkreplace"in">><span class="hidetext">in</span><<include "Word Count">><</linkreplace>> <<linkreplace"training">><span class="hidetext">training</span><<include "Word Count">><</linkreplace>>--<<linkreplace"the">><span class="hidetext">the</span><<include "Word Count">><</linkreplace>> <<linkreplace"suit">><span class="hidetext">suit</span><<include "Word Count">><</linkreplace>> <<linkreplace"is">><span class="hidetext">is</span><<include "Word Count">><</linkreplace>> <<linkreplace"part">><span class="hidetext">part</span><<include "Word Count">><</linkreplace>> <<linkreplace"of">><span class="hidetext">of</span><<include "Word Count">><</linkreplace>> <<linkreplace"you">><span class="hidetext">you</span><<include "Word Count">><</linkreplace>>.</p>
 
     <p><<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"want">><span class="hidetext">want</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"go">><span class="hidetext">go</span><<include "Word Count">><</linkreplace>> <<linkreplace"home">><span class="hidetext">home</span><<include "Word Count">><</linkreplace>>.</p>
@@ -623,7 +628,7 @@ Immerging
 
 
 ::Word Count [nobr]
-  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Quiz Go Back">><<endif>>
+  <<set $wordCounter +=1>><<if $wordCounter >= 5>><<goto "Quiz Go Back">><<endif>>
 
 
 ::Corpse [nobr]
