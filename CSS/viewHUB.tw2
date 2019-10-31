@@ -314,6 +314,7 @@
   text-align: center;
   z-index: 1;
 	user-select: none;
+	text-shadow: 2px 2px 0px black;
 }
 
 #systemAlert h4 {
