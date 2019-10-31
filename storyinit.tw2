@@ -105,6 +105,14 @@
 
   }>>
 
+  <<set $override = {
+    photo : false,
+    limbs : false,
+    exo : false,
+    motor : false,
+    lig : false,
+  }>>
+
   <<set $pluck_pull = []>>
 
   <<set $cam = {

@@ -1,25 +1,15 @@
 Transitions during the formation stage. 1D, 2D, 3D. The background takes on colour and shapes of decisions
 
-jquery draggable() and cursor: move;
-
 revisit aligning the bullet items
 
 make anims smooth and rolly. All rolly, just in different directions from different starting points
-
-do file-container/header css
-
-<<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>>
 
 any word: (([A-Z])\w+)
 
 <<linkreplace"\1">><span class="hidetext">\1</span><<include "Word Count">><</linkreplace>>
 
-talking iframe https://gist.github.com/pbojinov/8965299
+make sure all the variables are being set properly due to button presses cause im worried the change. stuff might make them sometimes miss another change. BUT AT THE SAME TIME, that shouldn't be an issue at all because it still runs until each change. is addressed so ehh we good PROBABLY. just be aware
 
+ask penny about the backgrounds for hatch vs the fucked up pic vs front facing etc.
 
-<<set $name = setup.makename(5)>>
-<<set $pronoun1 = setup.makepronoun(3)>>
-<<set $pronoun2 = $pronoun1 + "s">>
-
-
-FIX FUCKIN BACKGROUND SHIT second bg not applying after i fucked with script
+ALSO, nonsense conde & its consequences

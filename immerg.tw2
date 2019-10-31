@@ -23,6 +23,16 @@ Twee2::build_config.story_format = 'Sugarcube2'
 Immerging
 
 
+::Passage1 [nobr]
+  <div class="header-image">[img[image/lyso_header.png]]</div>
+
+  <h1><strong>Epilepsy Warning<strong></h1>
+
+  <p>Proceed with caution if you are photosensitive.</p>
+
+  <p>[[Start|White]]</p>
+
+
 ::Start [nobr white crt ship7handsopen]
 <<include "BackgroundShit">>
   <<include "ViewHUD">>
@@ -699,3 +709,7 @@ Immerging
           <<next>>
           <<goto "Escape Start">>
   <</timed>>
+
+
+::Game Over [nobr]
+  <p>Tough shit.</p>

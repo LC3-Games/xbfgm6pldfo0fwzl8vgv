@@ -8,6 +8,8 @@
 
   <<include "SelfDesignation">>
 
+  <<include "Battery">>
+
   <<include "FunctionLibrary">>
 
   <<include "Damage">>
@@ -22,14 +24,18 @@
 ::Damage [nobr]
   <div id="damagecon">
   <div id="damage">
+    <<if $damage <= 20>>
+      <<goto "Game Over">>
+    <<endif>>
     Integrity: $damage%
   </div>
   </div>
 
 
 ::ComponentBreakdown [nobr]
-<div id="compcon">
+  <div id="compcon">
   <div id="component">
+    <<set $change.alert = true>>
     <h4>COMPONENTS</h4>
     <div id="unsorted">
       <h5>UNSORTED</h5>
@@ -424,6 +430,7 @@
         <span class="green"><<button "TURN ON AUX">>
           <<set $alert.worm = "done">>
           <<set $cam.funct = "on">>
+          <<set $alert.hide = "true">>
           <<set $change.cam = true>>
           <<set $change.alert = true>>
         <</button>></span>
@@ -490,6 +497,126 @@
         <<set $alert.hide = "true">>
         <<set $change.alert = true>>
       <</timed>>
+    <<endif>>
+
+    <<if alert.frag == "done">>
+      <<if $comp.photo == "ves" && $override.photo == false>>
+        <p>NEEDED FOR POWER</p>
+
+        <div class="buttonbg">
+          <span class="green"><<button "CANCEL">>
+            <<set $comp.photo = "ess">>
+            <<set $alert.hide = true>>
+            <<set $change.component = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+        <div class="buttonbg">
+          <span class="green"><<button "OVERRIDE">>
+            <<set $damage -= 22>>
+            <<set $battery -= 7>>
+            <<set $alert.hide = true>>
+            <<set $override.photo = true>>
+            <<set $change.damage = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+      <<elseif $comp.climate.sorted.ves.inlcudes("Exo combusters") && $override.exo == false>>
+        <p>WAIT IM AFRAID TO DIG THIS OUT</p>
+
+        <p>SYSTEMS THROWING ERRORS</p>
+
+        <p>OH</p>
+
+        <div class="buttonbg">
+          <span class="green"><<button "CANCEL">>
+            <<set $comp.climate.sorted.ess.push("Exo combusters")>>
+            <<set $comp.climate.sorted.ves.delete("Exo combusters")>>
+            <<set $alert.hide = true>>
+            <<set $change.component = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+        <div class="buttonbg">
+          <span class="green"><<button "OVERRIDE">>
+            <<set $damage -= 25>>
+            <<set $override.limbs = true>>
+            <<set $alert.hide = true>>
+            <<set $change.damage = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+      <<elseif $comp.human.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") && $override.limbs == false>>
+        <p>STRUCTURAL INTEGRITY IS WILL BE COMPROMISED</p>
+        <div class="buttonbg">
+          <span class="green"><<button "CANCEL">>
+            <<set $comp.human.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>>
+            <<set $comp.human.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")>>
+            <<set $alert.hide = true>>
+            <<set $change.component = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+        <div class="buttonbg">
+          <span class="green"><<button "OVERRIDE">>
+            <<set $damage -= 27>>
+            <<set $override.limbs = true>>
+            <<set $alert.hide = true>>
+            <<set $change.damage = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+      <<elseif $comp.suit.sorted.ves.includes("Motor lattice") && $override.motor == false>>
+        <p>THIS WILL HURT THIS WILL HURT THIS WILL HURT</p>
+        <div class="buttonbg">
+          <span class="green"><<button "CANCEL">>
+            <<set $comp.suit.sorted.ess.push("Motor lattice")>>
+            <<set $comp.suit.sorted.ves.delete("Motor lattice")>>
+            <<set $alert.hide = true>>
+            <<set $change.component = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+        <div class="buttonbg">
+          <span class="green"><<button "OVERRIDE">>
+            <<set $damage -= 21>>
+            <<set $override.motor = true>>
+            <<set $alert.hide = true>>
+            <<set $change.damage = true>>
+            <<set $change.alert = true>>
+          <</button>></span>
+        </div>
+      <<elseif $comp.suit.sorted.ves.includes("Ligamentation system") && $override.lig == false>>
+        <div class="first">
+          <p>OH NO NO NO NO NO NO</p>
+        </div>
+
+        <<timed 3s>>
+          <<replace "#first">>
+            <<include "FlickFast">>
+            <p>I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED</p>
+
+            <div class="buttonbg">
+              <span class="green"><<button "CANCEL">>
+                <<set $comp.suit.sorted.ess.push("Ligamentation system")>>
+                <<set $comp.suit.sorted.ves.delete("Ligamentation system")>>
+                <<set $alert.hide = true>>
+                <<set $change.component = true>>
+                <<set $change.alert = true>>
+              <</button>></span>
+            </div>
+            <div class="buttonbg">
+              <span class="green"><<button "OVERRIDE">>
+                <<set $damage -= 32>>
+                <<set $override.lig = true>>
+                <<set $alert.hide = true>>
+                <<set $change.damage = true>>
+                <<set $change.alert = true>>
+              <</button>></span>
+            </div>
+          <</replace>>
+        <</timed>>
+      <<endif>>
     <<endif>>
   </div>
   </div>
@@ -569,6 +696,14 @@
 ::SelfDesignation [nobr]
   <div id="designcon">
   <div id="designation">
+    <<timed 120s>>
+      <<if $alert.frag != "done">>
+        <<set $alert.frag = "1">>
+        <<if $worm.alert == "done">>
+          <<set $change.alert = true>>
+        <<endif>>
+      <<endif>>
+    <</timed>>
     Self-Designation: $name, $pronoun1/$pronoun2
   </div>
   </div>
