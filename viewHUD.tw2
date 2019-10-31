@@ -506,6 +506,11 @@
       <<set $change.damage = false>>
       <<replace "#damagecon">><<display "Damage">><</replace>>
     <<elseif $change.component == true>>
+      <<if $firstChange == "no">>
+        <<set $firstChange = "yes">>
+        <<audio "softAmbient" stop>>
+        <<audio "tapMetal" loop volume 0.2 fadeoverto 16 0.5>>
+      <<endif>>
       <<set $change.component = false>>
       <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
     <<elseif $change.alert == true>>

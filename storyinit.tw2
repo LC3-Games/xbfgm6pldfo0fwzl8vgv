@@ -3,6 +3,7 @@
   <<set $shapeChoice = 0>>
   <<set $choice = 0>>
   <<set $cursor = 1>>
+  <<set $firstChange = "no">>
 
   <<set $bg = 1>>
 
