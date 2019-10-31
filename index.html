@@ -216,7 +216,8 @@ button {
 }
 
 button:hover {
-	animation: yellow-star-anim 1s infinite;
+	/* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
 }
 
 button.blue:hover {
@@ -307,10 +308,30 @@ span.green button {
 	animation: textShadow 1.6s infinite;
 }
 
+.file-container img {
+	max-width: 60%;
+	text-align: center;
+	margin: auto;
+}
+
 .file-header {
 	border-bottom: 2px solid black;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
+}
+
+.file-header img {
+	max-height: 30px;
+	transform: rotate(230deg);
+	padding: 0;
+	margin: 0;
+	filter: grayscale(1);
+	position: fixed;
+	left: 15px;
+}
+
+.file-header img::before {
+	content: "back";
 }
 
 .noselect {
@@ -1139,7 +1160,8 @@ br {
 }
 
 .yellow-star-cursor {
-  animation: yellow-star-anim 1s infinite;
+  /* animation: yellow-star-anim 1s infinite; */
+  cursor: url("images/hover_cursor.png"), auto;
 }
 #battery {
 	position: fixed;
@@ -1260,17 +1282,68 @@ br {
 	font-size: 1.2em;
 }
 
+#component #unsorted a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+	margin-bottom: 0.4em;
+  user-select: none;
+}
+
+#component .sorted a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+	margin-bottom: 0.4em;
+  user-select: none;
+}
+
+#component #unsorted a:hover {
+  /* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
+  text-decoration: none;
+}
+
 #component p {
+	padding-top: 0.5em;
 	border-bottom: 1px solid #93939370;
 }
 
-#component ul {
+/* #component ul {
 	border-bottom: 1px solid #93939370;
+	padding-top: 0.5em;
+} */
+
+.comp-container {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  background-color: #1111118c;
+  border: 1px solid #939393;
+  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#unsorted .comp-container a {
+	padding: 2px !important;
+	margin-right: 4px;
 }
 
 .scrollcontent {
 	overflow-y: auto;
-	height: 93%;
+	height: 91%;
+	padding-top: 0.5em;
 }
 
 .scrollcontent::-webkit-scrollbar
@@ -1321,7 +1394,8 @@ br {
 }
 
 #lib-container a:hover {
-  animation: yellow-star-anim 1s infinite;
+  /* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
   text-decoration: none;
 }
 
@@ -1980,31 +2054,7 @@ br {
         &lt;&lt;goto "Quiz Go Back"&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="Quiz Go Back" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
-  &lt;div class="quiz-container"&gt;
-    &lt;p class="redbg"&gt;ERRORED OUT&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday]]
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a&gt;VOID&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        [[PERSONNEL FILE 10096579854|Quiz File]]
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a&gt;VOID&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        [[10-18-2319_5|Quiz Date]]
-      &lt;/li&gt;
-      &lt;li&gt;
-        [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail]]
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Quiz Nothing" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="Quiz Nothing" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
   &lt;div class="quiz-container"&gt;
     &lt;p&gt;HAND OVER HAND OVER HAND OVER HAND&lt;/p&gt;
 
@@ -2027,7 +2077,7 @@ br {
             &lt;&lt;/button&gt;&gt;
           &lt;/div&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="Quiz You" tags="nobr" position="">&lt;div class="quiz-container"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="Quiz You" tags="nobr" position="">&lt;div class="quiz-container"&gt;
     &lt;p&gt;I AM OR WILL BE:&lt;/p&gt;
 
     &lt;div class="buttonbg"&gt;
@@ -2043,6 +2093,49 @@ br {
         &lt;&lt;goto "Quiz Go Back"&gt;&gt;
       &lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="Quiz Go Back" tags="nobr" position="">&lt;&lt;set $bg = 3&gt;&gt;
+  &lt;&lt;if $quizCon == 4&gt;&gt;
+    &lt;&lt;goto "Quiz Continue"&gt;&gt;
+  &lt;&lt;endif&gt;&gt;
+  &lt;div class="quiz-container"&gt;
+    &lt;p class="redbg"&gt;ERRORED OUT&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;&lt;if hasVisited ("Quiz Halley's Birthday")&gt;&gt;
+          &lt;a&gt;Void&lt;/a&gt;
+        &lt;&lt;else&gt;&gt;
+          [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday][$quizCon +=1]]
+        &lt;&lt;endif&gt;&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;VOID&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;&lt;if hasVisited ("Quiz File")&gt;&gt;
+          &lt;a&gt;Void&lt;/a&gt;
+        &lt;&lt;else&gt;&gt;
+          [[PERSONNEL FILE 10096579854|Quiz File][$quizCon +=1]]
+        &lt;&lt;endif&gt;&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;VOID&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;&lt;if hasVisited ("Quiz Date")&gt;&gt;
+          &lt;a&gt;Void&lt;/a&gt;
+        &lt;&lt;else&gt;&gt;
+          [[`10-18-2319_5`|Quiz Date][$quizCon +=1]]
+        &lt;&lt;endif&gt;&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;&lt;if hasVisited ("Quiz Mail")&gt;&gt;
+          &lt;a&gt;Void&lt;/a&gt;
+        &lt;&lt;else&gt;&gt;
+          [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail][$quizCon +=1]]
+        &lt;&lt;endif&gt;&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Quiz Halley's Birthday" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
   &lt;&lt;typewriter "&gt;File corrupted"&gt;&gt;
     &lt;&lt;timed 2s&gt;&gt;
@@ -2059,8 +2152,8 @@ br {
   &lt;&lt;/timed&gt;&gt;
 
   &lt;div class="file-container"&gt;
-    &lt;div class="file-header"&gt;SUBJECT: HALLEY'S BIRTHDAY&lt;/div&gt;
-    &lt;p&gt;&lt;&lt;linkreplace"Hey"&gt;&gt;&lt;span class="hidetext"&gt;Hey&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"Wax"&gt;&gt;&lt;span class="hidetext"&gt;Wax&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;,&lt;/p&gt;
+    &lt;div class="file-header"&gt;[img[images/triangle_blue.png][Quiz Go Back]] SUBJECT: HALLEY'S BIRTHDAY&lt;/div&gt;
+    &lt;p&gt;&lt;&lt;linkreplace"Hey"&gt;&gt;&lt;span class="hidetext"&gt;Hey&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"Anser"&gt;&gt;&lt;span class="hidetext"&gt;Anser&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;,&lt;/p&gt;
 
     &lt;p&gt;&lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"know"&gt;&gt;&lt;span class="hidetext"&gt;know&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"you"&gt;&gt;&lt;span class="hidetext"&gt;you&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'&lt;&lt;linkreplace"re"&gt;&gt;&lt;span class="hidetext"&gt;re&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"having"&gt;&gt;&lt;span class="hidetext"&gt;having&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"tough"&gt;&gt;&lt;span class="hidetext"&gt;tough&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"time"&gt;&gt;&lt;span class="hidetext"&gt;time&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"am"&gt;&gt;&lt;span class="hidetext"&gt;am&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"too"&gt;&gt;&lt;span class="hidetext"&gt;too&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"honestly"&gt;&gt;&lt;span class="hidetext"&gt;honestly&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"Please"&gt;&gt;&lt;span class="hidetext"&gt;Please&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"do"&gt;&gt;&lt;span class="hidetext"&gt;do&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"message"&gt;&gt;&lt;span class="hidetext"&gt;message&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"Halley"&gt;&gt;&lt;span class="hidetext"&gt;Halley&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"though"&gt;&gt;&lt;span class="hidetext"&gt;though&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"She"&gt;&gt;&lt;span class="hidetext"&gt;She&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'s &lt;&lt;linkreplace"been"&gt;&gt;&lt;span class="hidetext"&gt;been&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"bugging"&gt;&gt;&lt;span class="hidetext"&gt;bugging&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"me"&gt;&gt;&lt;span class="hidetext"&gt;me&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"all"&gt;&gt;&lt;span class="hidetext"&gt;all&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"week"&gt;&gt;&lt;span class="hidetext"&gt;week&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"and"&gt;&gt;&lt;span class="hidetext"&gt;and&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"know"&gt;&gt;&lt;span class="hidetext"&gt;know&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"it"&gt;&gt;&lt;span class="hidetext"&gt;it&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"means"&gt;&gt;&lt;span class="hidetext"&gt;means&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"lot"&gt;&gt;&lt;span class="hidetext"&gt;lot&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"her"&gt;&gt;&lt;span class="hidetext"&gt;her&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;.&lt;/p&gt;
 
@@ -2080,16 +2173,16 @@ br {
                 &lt;&lt;next&gt;&gt;
                   &lt;&lt;typewriter "&gt;Deleting file . . . . . . . . . . . . ."&gt;&gt;
                     &lt;&lt;next&gt;&gt;
-                      &lt;&lt;goto "Quiz Continue"&gt;&gt;
+                      &lt;&lt;goto "Quiz Go Back"&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
   &lt;div class="file-container"&gt;
+    &lt;div class="file-header"&gt;[img[images/triangle_blue.png][Quiz Go Back]] PERSONNEL FILE 10096579854&lt;/div&gt;
     &lt;&lt;include "BigZalgo"&gt;&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Quiz Date" tags="nobr familyImage" position="">&lt;&lt;set $bg = 3&gt;&gt;
   &lt;div class="file-container"&gt;
-    &lt;div class="file-header"&gt;10-18-2319_5
-  &lt;/div&gt;
-  &lt;&lt;timed 5s&gt;&gt;
-    &lt;&lt;goto "Quiz Continue"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
+    &lt;div class="file-header"&gt;[img[images/triangle_blue.png][Quiz Go Back]] 10-18-2319_5&lt;/div&gt;
+    [img[images/who2.png]]
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Quiz Mail" tags="nobr nolink fileerror" position="">&lt;&lt;set $bg = 3&gt;&gt;
   &lt;div class="file-container"&gt;
     &lt;div class="file-header"&gt;:-P LOOKS LIKE IM GONNA DIE&lt;/div&gt;
     &lt;p&gt;&lt;&lt;linkreplace"Transmissions"&gt;&gt;&lt;span class="hidetext"&gt;Transmissions&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"are"&gt;&gt;&lt;span class="hidetext"&gt;are&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"down"&gt;&gt;&lt;span class="hidetext"&gt;down&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"so"&gt;&gt;&lt;span class="hidetext"&gt;so&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I"&gt;&gt;&lt;span class="hidetext"&gt;I&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"don"&gt;&gt;&lt;span class="hidetext"&gt;don&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'t &lt;&lt;linkreplace"know"&gt;&gt;&lt;span class="hidetext"&gt;know&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"why"&gt;&gt;&lt;span class="hidetext"&gt;why&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"bothering"&gt;&gt;&lt;span class="hidetext"&gt;bothering&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"write"&gt;&gt;&lt;span class="hidetext"&gt;write&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"this"&gt;&gt;&lt;span class="hidetext"&gt;this&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"I'm"&gt;&gt;&lt;span class="hidetext"&gt;I'm&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;  &lt;&lt;linkreplace"trying"&gt;&gt;&lt;span class="hidetext"&gt;trying&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"to"&gt;&gt;&lt;span class="hidetext"&gt;to&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"think"&gt;&gt;&lt;span class="hidetext"&gt;think&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"as"&gt;&gt;&lt;span class="hidetext"&gt;as&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"not"&gt;&gt;&lt;span class="hidetext"&gt;not&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; a &lt;&lt;linkreplace"coffin"&gt;&gt;&lt;span class="hidetext"&gt;coffin&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;, &lt;&lt;linkreplace"but"&gt;&gt;&lt;span class="hidetext"&gt;but&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"an"&gt;&gt;&lt;span class="hidetext"&gt;an&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"extension"&gt;&gt;&lt;span class="hidetext"&gt;extension&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"myself"&gt;&gt;&lt;span class="hidetext"&gt;myself&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;. &lt;&lt;linkreplace"That"&gt;&gt;&lt;span class="hidetext"&gt;That&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;'s &lt;&lt;linkreplace"what"&gt;&gt;&lt;span class="hidetext"&gt;what&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"they"&gt;&gt;&lt;span class="hidetext"&gt;they&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"told"&gt;&gt;&lt;span class="hidetext"&gt;told&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"me"&gt;&gt;&lt;span class="hidetext"&gt;me&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"in"&gt;&gt;&lt;span class="hidetext"&gt;in&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"training"&gt;&gt;&lt;span class="hidetext"&gt;training&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;--&lt;&lt;linkreplace"the"&gt;&gt;&lt;span class="hidetext"&gt;the&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"suit"&gt;&gt;&lt;span class="hidetext"&gt;suit&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"is"&gt;&gt;&lt;span class="hidetext"&gt;is&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"part"&gt;&gt;&lt;span class="hidetext"&gt;part&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"of"&gt;&gt;&lt;span class="hidetext"&gt;of&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt; &lt;&lt;linkreplace"you"&gt;&gt;&lt;span class="hidetext"&gt;you&lt;/span&gt;&lt;&lt;include "Word Count"&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;.&lt;/p&gt;
@@ -2123,7 +2216,8 @@ br {
         $(".flick-fast").remove(".flick-fast")
       &lt;/script&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 5&gt;&gt;&lt;&lt;goto "Quiz Continue"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Word Count" tags="nobr" position="">&lt;&lt;set $wordCounter +=1&gt;&gt;&lt;&lt;if $wordCounter == 5&gt;&gt;&lt;&lt;goto "Quiz Go Back"&gt;&gt;&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Corpse" tags="nobr" position="">&lt;&lt;audio "pinkNoise" loop volume 0.4&gt;&gt;
+  &lt;&lt;timed 5s&gt;&gt;
     &lt;&lt;goto "ChooseName"&gt;&gt;
   &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="ChooseName" tags="nobr" position="">&lt;&lt;set $bg = 5&gt;&gt;
   &lt;&lt;set $name = setup.makename(5)&gt;&gt;
@@ -2174,223 +2268,7 @@ br {
         &lt;&lt;typewriter "HUD systems booted"&gt;&gt;
           &lt;&lt;next&gt;&gt;
           &lt;&lt;goto "Escape Start"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
-  &lt;&lt;include "BackgroundShit"&gt;&gt;
-
-  &lt;&lt;include "SelfDesignation"&gt;&gt;
-
-  &lt;&lt;include "FunctionLibrary"&gt;&gt;
-
-  /* &lt;&lt;if passage() == "Escape Start"&gt;&gt;
-    &lt;div class="battery appear"&gt;&lt;&lt;include "BatteryLevel"&gt;&gt;&lt;/div&gt;
-  &lt;&lt;else&gt;&gt; */
-    &lt;&lt;include "Battery"&gt;&gt;
-  /* &lt;&lt;endif&gt;&gt; */
-
-  &lt;&lt;include "Damage"&gt;&gt;
-
-  &lt;&lt;include "SystemAlert"&gt;&gt;
-
-  &lt;&lt;include "ComponentBreakdown"&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
-  &lt;div id="damage"&gt;
-    Integrity: $damage%
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
-  &lt;div id="component"&gt;
-    &lt;h4&gt;COMPONENTS&lt;/h4&gt;
-    &lt;div id="unsorted"&gt;
-      &lt;h5&gt;UNSORTED&lt;/h5&gt;
-      &lt;div class="scrollcontent"&gt;
-        &lt;p&gt;Human Endoskeleton&lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Skull (teeth et. al)&lt;/li&gt;
-          &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
-          &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;p&gt;Human biomatter&lt;/p&gt;
-        &lt;p&gt;Climate control system&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Compressor&lt;/li&gt;
-            &lt;li&gt;Fans (3x)&lt;/li&gt;
-            &lt;li&gt;Exo combustion&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;p&gt;Life Support systems&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Water collection&lt;/li&gt;
-            &lt;li&gt;Wasted recycling&lt;/li&gt;
-            &lt;li&gt;Climate control (x)&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;p&gt;Suit Mechanics&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Heat Sinks (x4)&lt;/li&gt;
-            &lt;li&gt;Motors (x21)&lt;/li&gt;
-            &lt;li&gt;Ligamentation system&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div id="bottomRow"&gt;
-      &lt;div class="sorted left"&gt;
-        &lt;h5&gt;ESSENTIAL&lt;/h5&gt;
-        &lt;div class="scrollcontent"&gt;
-          &lt;ul&gt;
-            &lt;li&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="sorted right"&gt;
-        &lt;h5&gt;VESTIGIAL&lt;/h5&gt;
-        &lt;div class="scrollcontent"&gt;
-          &lt;p&gt;Human Endoskeleton&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Skull (teeth et. al)&lt;/li&gt;
-            &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
-            &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;p&gt;Human biomatter&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="SystemAlert" tags="nobr" position="">&lt;div id="alertcon"&gt;
-  &lt;div id="systemAlert"&gt;
-    &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
-    &lt;&lt;if $alert.worm == false&gt;&gt;
-    &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
-
-    &lt;div class="buttonbg"&gt;
-      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
-        &lt;&lt;set $alert.worm = "on"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-        &lt;&lt;set $alert.worm = "on"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
-      &lt;&lt;timed 0.1s&gt;&gt;
-        &lt;&lt;replace "#systemAlert"&gt;&gt;
-          &lt;&lt;include "Snake"&gt;&gt;
-        &lt;&lt;/replace&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
-      &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
-
-      &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
-        &lt;&lt;set $alert.worm = "done"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-    &lt;&lt;endif&gt;&gt;
-    &lt;&lt;if $alert.next == "Something" &amp;&amp; $alert.worm == "done"&gt;&gt;
-      &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
-    &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="CameraToggle" tags="nobr" position="">&lt;div class="camcon"&gt;
-    &lt;div class="cam"&gt;
-      &lt;&lt;if $cam.one == "on"&gt;&gt;
-        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.one = "on"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;elseif $cam.one == "off"&gt;&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.one = "off"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;endif&gt;&gt;
-      &lt;&lt;if $cam.two == "on"&gt;&gt;
-        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.two = "on"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;elseif $cam.two == "off"&gt;&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.two = "off"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;endif&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
-  &lt;div id="functionLib"&gt;
-    &lt;h4&gt;FUNCTON LIBRARY REVIEW&lt;/h4&gt;
-    &lt;div id="lib-container"&gt;
-      &lt;&lt;link ".pressTest()"&gt;&gt;
-        &lt;&lt;include "FlickFast"&gt;&gt;
-        &lt;&lt;if $funct.test == false&gt;&gt;&lt;&lt;set $funct.test = true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.test = false&gt;&gt;&lt;&lt;endif&gt;&gt;
-        &lt;&lt;set $change.function = true&gt;&gt;
-      &lt;&lt;/link&gt;&gt;
-      &lt;&lt;if $funct.test == true&gt;&gt;
-        &lt;div class="funct-container"&gt;
-          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. pressTest = {&lt;/p&gt;
-          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. &amp;nbsp;&amp;nbsp;x-x++++++&lt;/p&gt;
-          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. &amp;nbsp;&amp;nbsp;sfdsbhfd&lt;/p&gt;
-          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;. . .&lt;/p&gt;
-          &lt;p&gt;4562. asdjasdasd&lt;/p&gt;
-          &lt;p&gt;4563. }&lt;/p&gt;
-
-          &lt;span class="red"&gt;&lt;&lt;button "EXECUTE"&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;&lt;endif&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="SelfDesignation" tags="nobr" position="">&lt;div id="designcon"&gt;
-  &lt;div id="designation"&gt;
-    Self-Designation: $name, $pronoun1/$pronoun2
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
-  &lt;div id="battery"&gt;
-    &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;/for&gt;&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="BackgroundShit" tags="nobr" position="">&lt;&lt;include "FlickFast"&gt;&gt;
-  &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off"&gt;&gt;
-  /* &lt;script&gt;
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt MainCamStuff");
-  &lt;/script&gt; */
-  &lt;&lt;elseif $cam.one == "off" &amp;&amp; $cam.two == "on"&gt;&gt;
-  /* &lt;script&gt;
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt AuxCamStuff");
-  &lt;/script&gt; */
-  &lt;&lt;elseif $cam.one == "on" &amp;&amp; $cam.two == "on"&gt;&gt;
-    /* &lt;div id="left-bg"&gt;&lt;/div&gt;
-    &lt;div id="right-bg"&gt;&lt;/div&gt; */
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
-  &lt;&lt;repeat 0.1s&gt;&gt;
-    &lt;&lt;if $change.battery == true&gt;&gt;
-      &lt;&lt;set $change.battery = false&gt;&gt;
-      &lt;&lt;replace "#battcon"&gt;&gt;&lt;&lt;display "Battery"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.damage == true&gt;&gt;
-      &lt;&lt;set $change.damage = false&gt;&gt;
-      &lt;&lt;replace "#damagecon"&gt;&gt;&lt;&lt;display "Damage"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.component == true&gt;&gt;
-      &lt;&lt;set $change.component = false&gt;&gt;
-      &lt;&lt;replace "#compcon"&gt;&gt;&lt;&lt;display "ComponentBreakdown"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.alert == true&gt;&gt;
-      &lt;&lt;set $change.alert = false&gt;&gt;
-      &lt;&lt;replace "#alertcon"&gt;&gt;&lt;&lt;display "SystemAlert"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.function == true&gt;&gt;
-      &lt;&lt;set $change.function = false&gt;&gt;
-      &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.designation == true&gt;&gt;
-      &lt;&lt;set $change.designation = false&gt;&gt;
-      &lt;&lt;replace "#designcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.cam == true&gt;&gt;
-      &lt;&lt;set $change.cam = false&gt;&gt;
-      &lt;&lt;replace "#camcon"&gt;&gt;&lt;&lt;display "CameraToggle"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.background == true&gt;&gt;
-      &lt;&lt;include "FlickFast"&gt;&gt;
-      &lt;&lt;set $change.background = false&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
-  &lt;&lt;/repeat&gt;&gt;
-  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Snake" tags="nobr snake" position="">&lt;p&gt;System repairs: 1%&lt;/p&gt;
-  &lt;&lt;timed 60s&gt;&gt;
-    &lt;&lt;set $alert.worm = "won"&gt;&gt;
-    &lt;&lt;set $alert.next = "Something"&gt;&gt;
-    &lt;&lt;set $change.alert = true&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-  &lt;iframe src="snakegame.html" width="100%" height="100%" position="relative"&gt;
-  &lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="45" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
       var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
@@ -2504,7 +2382,7 @@ br {
 
   &lt;&lt;if passage() == "Snake"&gt;&gt;
 
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="47" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="35" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -2525,7 +2403,7 @@ br {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -2545,7 +2423,7 @@ br {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
     &amp;#97;&amp;#863;&amp;#795;&amp;#824;&amp;#822;&amp;#828;&amp;#846;&amp;#798;&amp;#857;&amp;#791;&amp;#851;&amp;#790;&amp;#857;&amp;#857;&amp;#792;&amp;#103;&amp;#823;&amp;#863;&amp;#824;&amp;#797;&amp;#806;&amp;#803;&amp;#828;&amp;#815;&amp;#797;&amp;#857;&amp;#828;&amp;#839;&amp;#101;&amp;#864;&amp;#807;&amp;#860;&amp;#833;&amp;#826;&amp;#852;&amp;#790;&amp;#817;&amp;#58;&amp;#860;&amp;#863;&amp;#790;&amp;#813;&amp;#817;&amp;#827;&amp;#798;&amp;#803;&amp;#837;&amp;#817;&amp;#817;&amp;#813;&amp;#790;&amp;#32;&amp;#863;&amp;#795;&amp;#866;&amp;#863;&amp;#852;&amp;#853;&amp;#800;&amp;#819;&amp;#827;&amp;#800;&amp;#50;&amp;#866;&amp;#832;&amp;#861;&amp;#833;&amp;#804;&amp;#846;&amp;#803;&amp;#813;&amp;#810;&amp;#853;&amp;#793;&amp;#800;&amp;#826;&amp;#793;&amp;#790;&amp;#851;&amp;#857;&amp;#816;&amp;#854;&amp;#792;&amp;#796;&amp;#52;&amp;#820;&amp;#832;&amp;#823;&amp;#821;&amp;#845;&amp;#812;&amp;#810;&amp;#816;&amp;#853;&amp;#813;&amp;#825;&amp;#837;&amp;#815;&amp;#814;&amp;#792;&amp;#846;&amp;#798;&amp;#841;&amp;#828;&amp;#817;
   &lt;/p&gt;
 
@@ -2567,7 +2445,7 @@ br {
 
   &lt;p&gt;
     &amp;#110;&amp;#860;&amp;#863;&amp;#856;&amp;#845;&amp;#803;&amp;#809;&amp;#851;&amp;#825;&amp;#853;&amp;#111;&amp;#801;&amp;#823;&amp;#841;&amp;#805;&amp;#811;&amp;#798;&amp;#793;&amp;#804;&amp;#814;&amp;#817;&amp;#800;&amp;#851;&amp;#818;&amp;#854;&amp;#792;&amp;#841;&amp;#799;&amp;#811;&amp;#827;&amp;#799;&amp;#116;&amp;#863;&amp;#856;&amp;#799;&amp;#806;&amp;#827;&amp;#853;&amp;#798;&amp;#852;&amp;#817;&amp;#827;&amp;#797;&amp;#804;&amp;#846;&amp;#798;&amp;#809;&amp;#840;&amp;#803;&amp;#825;&amp;#851;&amp;#101;&amp;#863;&amp;#820;&amp;#797;&amp;#812;&amp;#812;&amp;#814;&amp;#858;&amp;#811;&amp;#817;&amp;#115;&amp;#821;&amp;#846;&amp;#818;&amp;#790;&amp;#825;&amp;#826;&amp;#816;&amp;#804;&amp;#804;&amp;#828;&amp;#846;&amp;#793;&amp;#827;&amp;#851;&amp;#805;&amp;#796;&amp;#803;&amp;#58;&amp;#1161;&amp;#833;&amp;#862;&amp;#847;&amp;#846;&amp;#809;&amp;#858;&amp;#828;&amp;#790;&amp;#813;&amp;#799;&amp;#851;&amp;#841;&amp;#805;&amp;#803;&amp;#790;&amp;#845;&amp;#797;&amp;#32;&amp;#1161;&amp;#862;&amp;#821;&amp;#1161;&amp;#824;&amp;#837;&amp;#826;&amp;#828;&amp;#805;&amp;#800;&amp;#797;&amp;#839;&amp;#845;&amp;#72;&amp;#863;&amp;#795;&amp;#821;&amp;#861;&amp;#826;&amp;#852;&amp;#841;&amp;#857;&amp;#811;&amp;#826;&amp;#803;&amp;#805;&amp;#810;&amp;#858;&amp;#810;&amp;#117;&amp;#821;&amp;#801;&amp;#832;&amp;#1161;&amp;#821;&amp;#793;&amp;#825;&amp;#851;&amp;#816;&amp;#790;&amp;#809;&amp;#857;&amp;#817;&amp;#791;&amp;#800;&amp;#818;&amp;#109;&amp;#861;&amp;#833;&amp;#862;&amp;#833;&amp;#839;&amp;#825;&amp;#857;&amp;#815;&amp;#803;&amp;#819;&amp;#857;&amp;#839;&amp;#805;&amp;#858;&amp;#852;&amp;#815;&amp;#805;&amp;#839;&amp;#803;&amp;#804;&amp;#97;&amp;#795;&amp;#801;&amp;#837;&amp;#814;&amp;#819;&amp;#819;&amp;#841;&amp;#791;&amp;#858;&amp;#810;&amp;#792;&amp;#790;&amp;#806;&amp;#110;&amp;#823;&amp;#807;&amp;#823;&amp;#865;&amp;#823;&amp;#813;&amp;#837;&amp;#827;&amp;#790;&amp;#115;&amp;#856;&amp;#822;&amp;#1161;&amp;#802;&amp;#863;&amp;#818;&amp;#800;&amp;#839;&amp;#806;&amp;#819;&amp;#818;&amp;#841;&amp;#825;&amp;#32;&amp;#824;&amp;#807;&amp;#847;&amp;#860;&amp;#793;&amp;#827;&amp;#851;&amp;#818;&amp;#805;&amp;#809;&amp;#40;&amp;#863;&amp;#856;&amp;#826;&amp;#815;&amp;#839;&amp;#814;&amp;#72;&amp;#860;&amp;#801;&amp;#807;&amp;#804;&amp;#813;&amp;#853;&amp;#790;&amp;#826;&amp;#840;&amp;#825;&amp;#796;&amp;#111;&amp;#823;&amp;#847;&amp;#847;&amp;#802;&amp;#810;&amp;#799;&amp;#793;&amp;#815;&amp;#790;&amp;#812;&amp;#857;&amp;#809;&amp;#840;&amp;#846;&amp;#853;&amp;#812;&amp;#825;&amp;#858;&amp;#845;&amp;#827;&amp;#799;&amp;#804;&amp;#854;&amp;#109;&amp;#823;&amp;#865;&amp;#811;&amp;#796;&amp;#858;&amp;#800;&amp;#811;&amp;#796;&amp;#810;&amp;#858;&amp;#852;&amp;#841;&amp;#828;&amp;#841;&amp;#817;&amp;#837;&amp;#111;&amp;#820;&amp;#802;&amp;#865;&amp;#801;&amp;#845;&amp;#851;&amp;#803;&amp;#827;&amp;#845;&amp;#826;&amp;#845;&amp;#799;&amp;#858;&amp;#853;&amp;#806;&amp;#828;&amp;#837;&amp;#800;&amp;#32;&amp;#801;&amp;#864;&amp;#798;&amp;#797;&amp;#792;&amp;#797;&amp;#814;&amp;#791;&amp;#792;&amp;#840;&amp;#828;&amp;#818;&amp;#797;&amp;#115;&amp;#821;&amp;#824;&amp;#847;&amp;#806;&amp;#806;&amp;#799;&amp;#840;&amp;#792;&amp;#816;&amp;#796;&amp;#825;&amp;#825;&amp;#809;&amp;#804;&amp;#810;&amp;#815;&amp;#853;&amp;#816;&amp;#97;&amp;#802;&amp;#833;&amp;#862;&amp;#866;&amp;#807;&amp;#792;&amp;#793;&amp;#814;&amp;#799;&amp;#796;&amp;#798;&amp;#813;&amp;#800;&amp;#818;&amp;#799;&amp;#852;&amp;#813;&amp;#845;&amp;#800;&amp;#804;&amp;#112;&amp;#824;&amp;#821;&amp;#1161;&amp;#807;&amp;#818;&amp;#857;&amp;#837;&amp;#841;&amp;#852;&amp;#854;&amp;#837;&amp;#817;&amp;#792;&amp;#805;&amp;#846;&amp;#800;&amp;#837;&amp;#825;&amp;#857;&amp;#815;&amp;#818;&amp;#105;&amp;#866;&amp;#820;&amp;#860;&amp;#789;&amp;#837;&amp;#819;&amp;#799;&amp;#825;&amp;#793;&amp;#857;&amp;#845;&amp;#796;&amp;#825;&amp;#101;&amp;#820;&amp;#863;&amp;#807;&amp;#846;&amp;#805;&amp;#797;&amp;#793;&amp;#819;&amp;#826;&amp;#857;&amp;#803;&amp;#827;&amp;#814;&amp;#814;&amp;#800;&amp;#790;&amp;#857;&amp;#813;&amp;#110;&amp;#863;&amp;#860;&amp;#833;&amp;#803;&amp;#818;&amp;#852;&amp;#792;&amp;#839;&amp;#827;&amp;#817;&amp;#797;&amp;#806;&amp;#815;&amp;#798;&amp;#809;&amp;#857;&amp;#800;&amp;#812;&amp;#115;&amp;#789;&amp;#802;&amp;#799;&amp;#806;&amp;#797;&amp;#790;&amp;#811;&amp;#827;&amp;#839;&amp;#41;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#792;&amp;#813;&amp;#857;&amp;#809;&amp;#32;&amp;#856;&amp;#802;&amp;#822;&amp;#805;&amp;#852;&amp;#816;&amp;#818;&amp;#793;&amp;#854;&amp;#809;&amp;#791;&amp;#817;&amp;#827;&amp;#792;&amp;#858;&amp;#857;&amp;#851;&amp;#97;&amp;#795;&amp;#863;&amp;#807;&amp;#817;&amp;#818;&amp;#826;&amp;#858;&amp;#846;&amp;#791;&amp;#845;&amp;#803;&amp;#796;&amp;#815;&amp;#825;&amp;#806;&amp;#812;&amp;#857;&amp;#828;&amp;#796;&amp;#806;&amp;#799;&amp;#792;&amp;#114;&amp;#860;&amp;#833;&amp;#866;&amp;#866;&amp;#795;&amp;#846;&amp;#851;&amp;#828;&amp;#827;&amp;#840;&amp;#810;&amp;#815;&amp;#858;&amp;#800;&amp;#828;&amp;#805;&amp;#814;&amp;#811;&amp;#101;&amp;#823;&amp;#796;&amp;#811;&amp;#841;&amp;#792;&amp;#858;&amp;#819;&amp;#846;&amp;#817;&amp;#828;&amp;#815;&amp;#827;&amp;#858;&amp;#846;&amp;#811;&amp;#793;&amp;#817;&amp;#32;&amp;#861;&amp;#866;&amp;#865;&amp;#812;&amp;#791;&amp;#798;&amp;#845;&amp;#791;&amp;#790;&amp;#857;&amp;#790;&amp;#804;&amp;#799;&amp;#825;&amp;#796;&amp;#857;&amp;#854;&amp;#800;&amp;#796;&amp;#810;&amp;#851;&amp;#846;&amp;#116;&amp;#801;&amp;#833;&amp;#812;&amp;#811;&amp;#810;&amp;#805;&amp;#804;&amp;#792;&amp;#810;&amp;#853;&amp;#804;&amp;#797;&amp;#841;&amp;#792;&amp;#846;&amp;#104;&amp;#856;&amp;#822;&amp;#791;&amp;#858;&amp;#827;&amp;#825;&amp;#827;&amp;#818;&amp;#101;&amp;#1161;&amp;#861;&amp;#789;&amp;#832;&amp;#821;&amp;#837;&amp;#826;&amp;#813;&amp;#841;&amp;#819;&amp;#851;&amp;#809;&amp;#803;&amp;#854;&amp;#793;&amp;#805;&amp;#854;&amp;#796;&amp;#809;&amp;#817;&amp;#810;&amp;#792;&amp;#805;&amp;#809;&amp;#32;&amp;#860;&amp;#847;&amp;#802;&amp;#839;&amp;#815;&amp;#839;&amp;#812;&amp;#812;&amp;#790;&amp;#814;&amp;#804;&amp;#791;&amp;#852;&amp;#809;&amp;#825;&amp;#825;&amp;#812;&amp;#819;&amp;#846;&amp;#825;&amp;#798;&amp;#825;&amp;#111;&amp;#822;&amp;#856;&amp;#790;&amp;#806;&amp;#803;&amp;#806;&amp;#812;&amp;#814;&amp;#803;&amp;#810;&amp;#793;&amp;#810;&amp;#817;&amp;#812;&amp;#814;&amp;#110;&amp;#822;&amp;#822;&amp;#805;&amp;#803;&amp;#797;&amp;#805;&amp;#798;&amp;#798;&amp;#815;&amp;#809;&amp;#851;&amp;#854;&amp;#827;&amp;#826;&amp;#857;&amp;#793;&amp;#796;&amp;#813;&amp;#851;&amp;#108;&amp;#864;&amp;#832;&amp;#823;&amp;#819;&amp;#799;&amp;#811;&amp;#826;&amp;#790;&amp;#846;&amp;#819;&amp;#121;&amp;#824;&amp;#863;&amp;#814;&amp;#791;&amp;#790;&amp;#798;&amp;#799;&amp;#810;&amp;#32;&amp;#801;&amp;#808;&amp;#811;&amp;#800;&amp;#852;&amp;#840;&amp;#797;&amp;#837;&amp;#805;&amp;#814;&amp;#814;&amp;#791;&amp;#809;&amp;#814;&amp;#809;&amp;#803;&amp;#101;&amp;#824;&amp;#860;&amp;#865;&amp;#808;&amp;#812;&amp;#841;&amp;#798;&amp;#841;&amp;#853;&amp;#816;&amp;#826;&amp;#854;&amp;#799;&amp;#803;&amp;#804;&amp;#851;&amp;#793;&amp;#804;&amp;#854;&amp;#815;&amp;#812;&amp;#796;&amp;#120;&amp;#802;&amp;#796;&amp;#841;&amp;#828;&amp;#846;&amp;#813;&amp;#793;&amp;#841;&amp;#116;&amp;#861;&amp;#795;&amp;#840;&amp;#805;&amp;#828;&amp;#798;&amp;#845;&amp;#796;&amp;#818;&amp;#97;&amp;#789;&amp;#821;&amp;#802;&amp;#832;&amp;#833;&amp;#851;&amp;#805;&amp;#791;&amp;#845;&amp;#793;&amp;#839;&amp;#800;&amp;#840;&amp;#110;&amp;#821;&amp;#795;&amp;#832;&amp;#862;&amp;#807;&amp;#854;&amp;#813;&amp;#805;&amp;#828;&amp;#811;&amp;#810;&amp;#814;&amp;#816;&amp;#804;&amp;#837;&amp;#797;&amp;#805;&amp;#857;&amp;#116;&amp;#820;&amp;#863;&amp;#801;&amp;#856;&amp;#864;&amp;#792;&amp;#811;&amp;#805;&amp;#857;&amp;#857;&amp;#803;&amp;#792;&amp;#798;&amp;#840;&amp;#809;&amp;#809;&amp;#825;&amp;#32;&amp;#808;&amp;#824;&amp;#832;&amp;#862;&amp;#832;&amp;#796;&amp;#811;&amp;#809;&amp;#858;&amp;#805;&amp;#798;&amp;#805;&amp;#819;&amp;#800;&amp;#839;&amp;#109;&amp;#847;&amp;#821;&amp;#862;&amp;#845;&amp;#816;&amp;#812;&amp;#798;&amp;#798;&amp;#826;&amp;#792;&amp;#837;&amp;#841;&amp;#101;&amp;#862;&amp;#856;&amp;#799;&amp;#796;&amp;#816;&amp;#857;&amp;#793;&amp;#828;&amp;#846;&amp;#818;&amp;#791;&amp;#792;&amp;#809;&amp;#827;&amp;#817;&amp;#800;&amp;#800;&amp;#851;&amp;#109;&amp;#822;&amp;#822;&amp;#1161;&amp;#808;&amp;#833;&amp;#825;&amp;#806;&amp;#803;&amp;#851;&amp;#800;&amp;#853;&amp;#811;&amp;#800;&amp;#815;&amp;#790;&amp;#797;&amp;#840;&amp;#98;&amp;#833;&amp;#856;&amp;#854;&amp;#811;&amp;#815;&amp;#851;&amp;#827;&amp;#841;&amp;#799;&amp;#791;&amp;#810;&amp;#799;&amp;#797;&amp;#841;&amp;#858;&amp;#837;&amp;#101;&amp;#795;&amp;#833;&amp;#862;&amp;#790;&amp;#837;&amp;#792;&amp;#846;&amp;#853;&amp;#804;&amp;#804;&amp;#792;&amp;#837;&amp;#114;&amp;#833;&amp;#841;&amp;#840;&amp;#798;&amp;#816;&amp;#809;&amp;#812;&amp;#809;&amp;#828;&amp;#792;&amp;#840;&amp;#819;&amp;#846;&amp;#115;&amp;#821;&amp;#847;&amp;#825;&amp;#797;&amp;#809;&amp;#851;&amp;#818;&amp;#825;&amp;#845;&amp;#857;&amp;#32;&amp;#820;&amp;#861;&amp;#789;&amp;#837;&amp;#790;&amp;#846;&amp;#809;&amp;#851;&amp;#791;&amp;#845;&amp;#858;&amp;#827;&amp;#111;&amp;#824;&amp;#807;&amp;#862;&amp;#795;&amp;#823;&amp;#797;&amp;#815;&amp;#819;&amp;#837;&amp;#840;&amp;#818;&amp;#803;&amp;#858;&amp;#811;&amp;#852;&amp;#851;&amp;#798;&amp;#840;&amp;#102;&amp;#820;&amp;#847;&amp;#823;&amp;#828;&amp;#803;&amp;#810;&amp;#796;&amp;#854;&amp;#816;&amp;#846;&amp;#811;&amp;#32;&amp;#862;&amp;#864;&amp;#856;&amp;#807;&amp;#802;&amp;#791;&amp;#853;&amp;#803;&amp;#813;&amp;#852;&amp;#851;&amp;#803;&amp;#790;&amp;#799;&amp;#116;&amp;#862;&amp;#863;&amp;#798;&amp;#826;&amp;#854;&amp;#858;&amp;#818;&amp;#797;&amp;#828;&amp;#811;&amp;#837;&amp;#817;&amp;#839;&amp;#817;&amp;#858;&amp;#104;&amp;#795;&amp;#865;&amp;#866;&amp;#833;&amp;#816;&amp;#814;&amp;#825;&amp;#817;&amp;#825;&amp;#101;&amp;#824;&amp;#824;&amp;#808;&amp;#865;&amp;#820;&amp;#799;&amp;#854;&amp;#828;&amp;#858;&amp;#814;&amp;#796;&amp;#792;&amp;#809;&amp;#845;&amp;#839;&amp;#806;&amp;#837;&amp;#32;&amp;#861;&amp;#789;&amp;#863;&amp;#825;&amp;#819;&amp;#793;&amp;#845;&amp;#811;&amp;#811;&amp;#800;&amp;#806;&amp;#852;&amp;#827;&amp;#804;&amp;#819;&amp;#825;&amp;#837;&amp;#115;&amp;#864;&amp;#823;&amp;#864;&amp;#832;&amp;#813;&amp;#852;&amp;#817;&amp;#826;&amp;#809;&amp;#806;&amp;#858;&amp;#810;&amp;#810;&amp;#816;&amp;#841;&amp;#854;&amp;#117;&amp;#795;&amp;#820;&amp;#832;&amp;#827;&amp;#846;&amp;#803;&amp;#839;&amp;#806;&amp;#797;&amp;#828;&amp;#798;&amp;#826;&amp;#837;&amp;#828;&amp;#813;&amp;#791;&amp;#857;&amp;#98;&amp;#821;&amp;#802;&amp;#806;&amp;#854;&amp;#798;&amp;#815;&amp;#854;&amp;#793;&amp;#815;&amp;#810;&amp;#854;&amp;#828;&amp;#790;&amp;#814;&amp;#818;&amp;#803;&amp;#851;&amp;#116;&amp;#802;&amp;#823;&amp;#802;&amp;#828;&amp;#839;&amp;#827;&amp;#845;&amp;#114;&amp;#823;&amp;#795;&amp;#862;&amp;#798;&amp;#799;&amp;#825;&amp;#796;&amp;#797;&amp;#811;&amp;#796;&amp;#791;&amp;#815;&amp;#810;&amp;#800;&amp;#828;&amp;#857;&amp;#825;&amp;#840;&amp;#812;&amp;#105;&amp;#866;&amp;#820;&amp;#822;&amp;#857;&amp;#840;&amp;#799;&amp;#841;&amp;#797;&amp;#803;&amp;#845;&amp;#817;&amp;#841;&amp;#828;&amp;#813;&amp;#810;&amp;#841;&amp;#798;&amp;#811;&amp;#800;&amp;#798;&amp;#841;&amp;#98;&amp;#866;&amp;#820;&amp;#811;&amp;#818;&amp;#817;&amp;#845;&amp;#839;&amp;#857;&amp;#854;&amp;#790;&amp;#839;&amp;#841;&amp;#803;&amp;#839;&amp;#845;&amp;#798;&amp;#846;&amp;#837;&amp;#841;&amp;#101;&amp;#861;&amp;#824;&amp;#824;&amp;#864;&amp;#864;&amp;#815;&amp;#845;&amp;#797;&amp;#857;&amp;#810;&amp;#840;&amp;#818;&amp;#797;&amp;#799;&amp;#799;&amp;#845;&amp;#826;&amp;#32;&amp;#795;&amp;#865;&amp;#803;&amp;#837;&amp;#806;&amp;#828;&amp;#810;&amp;#819;&amp;#72;&amp;#808;&amp;#863;&amp;#805;&amp;#812;&amp;#819;&amp;#809;&amp;#817;&amp;#817;&amp;#111;&amp;#866;&amp;#798;&amp;#798;&amp;#811;&amp;#825;&amp;#797;&amp;#814;&amp;#790;&amp;#851;&amp;#810;&amp;#791;&amp;#813;&amp;#109;&amp;#865;&amp;#802;&amp;#832;&amp;#853;&amp;#825;&amp;#800;&amp;#840;&amp;#818;&amp;#810;&amp;#818;&amp;#805;&amp;#793;&amp;#799;&amp;#815;&amp;#839;&amp;#839;&amp;#817;&amp;#105;&amp;#863;&amp;#818;&amp;#804;&amp;#816;&amp;#792;&amp;#813;&amp;#110;&amp;#789;&amp;#808;&amp;#1161;&amp;#864;&amp;#853;&amp;#854;&amp;#826;&amp;#819;&amp;#818;&amp;#814;&amp;#819;&amp;#793;&amp;#837;&amp;#814;&amp;#809;&amp;#105;&amp;#861;&amp;#858;&amp;#817;&amp;#804;&amp;#804;&amp;#857;&amp;#811;&amp;#791;&amp;#826;&amp;#110;&amp;#795;&amp;#789;&amp;#847;&amp;#821;&amp;#823;&amp;#796;&amp;#811;&amp;#827;&amp;#857;&amp;#803;&amp;#852;&amp;#852;&amp;#846;&amp;#825;&amp;#805;&amp;#825;&amp;#796;&amp;#797;&amp;#97;&amp;#822;&amp;#826;&amp;#800;&amp;#840;&amp;#806;&amp;#854;&amp;#798;&amp;#840;&amp;#815;&amp;#810;&amp;#799;&amp;#797;&amp;#809;&amp;#797;&amp;#857;&amp;#812;&amp;#857;&amp;#796;&amp;#818;&amp;#46;&amp;#824;&amp;#824;&amp;#861;&amp;#833;&amp;#862;&amp;#851;&amp;#846;&amp;#815;&amp;#792;&amp;#825;&amp;#791;&amp;#812;&amp;#853;&amp;#32;&amp;#847;&amp;#823;&amp;#832;&amp;#792;&amp;#840;&amp;#809;&amp;#810;&amp;#841;&amp;#806;&amp;#827;&amp;#852;&amp;#825;&amp;#84;&amp;#795;&amp;#864;&amp;#790;&amp;#800;&amp;#799;&amp;#854;&amp;#791;&amp;#804;&amp;#816;&amp;#853;&amp;#111;&amp;#1161;&amp;#865;&amp;#862;&amp;#823;&amp;#815;&amp;#797;&amp;#814;&amp;#800;&amp;#845;&amp;#804;&amp;#810;&amp;#103;&amp;#864;&amp;#862;&amp;#847;&amp;#799;&amp;#852;&amp;#827;&amp;#858;&amp;#791;&amp;#813;&amp;#815;&amp;#806;&amp;#101;&amp;#824;&amp;#822;&amp;#847;&amp;#866;&amp;#862;&amp;#811;&amp;#815;&amp;#815;&amp;#826;&amp;#790;&amp;#810;&amp;#816;&amp;#813;&amp;#837;&amp;#792;&amp;#846;&amp;#828;&amp;#805;&amp;#116;&amp;#822;&amp;#863;&amp;#795;&amp;#803;&amp;#796;&amp;#845;&amp;#803;&amp;#840;&amp;#800;&amp;#846;&amp;#852;&amp;#803;&amp;#817;&amp;#840;&amp;#828;&amp;#806;&amp;#796;&amp;#796;&amp;#810;&amp;#845;&amp;#828;&amp;#104;&amp;#824;&amp;#863;&amp;#789;&amp;#845;&amp;#793;&amp;#813;&amp;#806;&amp;#846;&amp;#839;&amp;#826;&amp;#837;&amp;#826;&amp;#813;&amp;#817;&amp;#828;&amp;#846;&amp;#827;&amp;#804;&amp;#846;&amp;#101;&amp;#833;&amp;#824;&amp;#861;&amp;#817;&amp;#817;&amp;#837;&amp;#845;&amp;#796;&amp;#853;&amp;#817;&amp;#792;&amp;#827;&amp;#810;&amp;#825;&amp;#797;&amp;#114;&amp;#789;&amp;#860;&amp;#817;&amp;#813;&amp;#853;&amp;#814;&amp;#857;&amp;#816;&amp;#804;&amp;#793;&amp;#817;&amp;#846;&amp;#803;&amp;#809;&amp;#797;&amp;#818;&amp;#812;&amp;#851;&amp;#845;&amp;#32;&amp;#833;&amp;#862;&amp;#813;&amp;#841;&amp;#806;&amp;#803;&amp;#818;&amp;#791;&amp;#809;&amp;#857;&amp;#791;&amp;#814;&amp;#792;&amp;#800;&amp;#840;&amp;#857;&amp;#852;&amp;#839;&amp;#819;&amp;#796;&amp;#119;&amp;#861;&amp;#801;&amp;#860;&amp;#811;&amp;#796;&amp;#846;&amp;#796;&amp;#827;&amp;#818;&amp;#816;&amp;#790;&amp;#837;&amp;#837;&amp;#828;&amp;#839;&amp;#854;&amp;#826;&amp;#798;&amp;#837;&amp;#806;&amp;#105;&amp;#832;&amp;#833;&amp;#832;&amp;#818;&amp;#804;&amp;#852;&amp;#809;&amp;#805;&amp;#791;&amp;#817;&amp;#815;&amp;#800;&amp;#809;&amp;#825;&amp;#811;&amp;#828;&amp;#810;&amp;#845;&amp;#810;&amp;#796;&amp;#840;&amp;#827;&amp;#116;&amp;#801;&amp;#832;&amp;#866;&amp;#861;&amp;#792;&amp;#806;&amp;#793;&amp;#798;&amp;#793;&amp;#851;&amp;#804;&amp;#791;&amp;#826;&amp;#826;&amp;#815;&amp;#837;&amp;#827;&amp;#858;&amp;#851;&amp;#104;&amp;#847;&amp;#861;&amp;#865;&amp;#796;&amp;#827;&amp;#793;&amp;#815;&amp;#32;&amp;#821;&amp;#863;&amp;#824;&amp;#808;&amp;#824;&amp;#810;&amp;#814;&amp;#809;&amp;#793;&amp;#814;&amp;#99;&amp;#847;&amp;#861;&amp;#863;&amp;#807;&amp;#826;&amp;#790;&amp;#851;&amp;#806;&amp;#104;&amp;#862;&amp;#801;&amp;#857;&amp;#852;&amp;#839;&amp;#845;&amp;#815;&amp;#853;&amp;#798;&amp;#852;&amp;#841;&amp;#819;&amp;#857;&amp;#803;&amp;#840;&amp;#812;&amp;#105;&amp;#823;&amp;#862;&amp;#801;&amp;#847;&amp;#825;&amp;#815;&amp;#803;&amp;#810;&amp;#839;&amp;#851;&amp;#800;&amp;#804;&amp;#805;&amp;#790;&amp;#804;&amp;#852;&amp;#826;&amp;#109;&amp;#820;&amp;#822;&amp;#866;&amp;#823;&amp;#813;&amp;#841;&amp;#827;&amp;#803;&amp;#815;&amp;#837;&amp;#816;&amp;#826;&amp;#853;&amp;#841;&amp;#798;&amp;#805;&amp;#792;&amp;#818;&amp;#796;&amp;#810;&amp;#817;&amp;#790;&amp;#814;&amp;#112;&amp;#801;&amp;#863;&amp;#812;&amp;#819;&amp;#841;&amp;#806;&amp;#812;&amp;#812;&amp;#793;&amp;#858;&amp;#846;&amp;#814;&amp;#846;&amp;#826;&amp;#815;&amp;#858;&amp;#845;&amp;#839;&amp;#841;&amp;#810;&amp;#97;&amp;#824;&amp;#795;&amp;#801;&amp;#856;&amp;#805;&amp;#819;&amp;#818;&amp;#813;&amp;#805;&amp;#798;&amp;#828;&amp;#840;&amp;#816;&amp;#841;&amp;#840;&amp;#853;&amp;#840;&amp;#793;&amp;#817;&amp;#818;&amp;#813;&amp;#110;&amp;#1161;&amp;#807;&amp;#852;&amp;#806;&amp;#857;&amp;#790;&amp;#796;&amp;#828;&amp;#122;&amp;#865;&amp;#856;&amp;#822;&amp;#802;&amp;#790;&amp;#797;&amp;#851;&amp;#857;&amp;#815;&amp;#854;&amp;#854;&amp;#101;&amp;#1161;&amp;#862;&amp;#802;&amp;#802;&amp;#798;&amp;#810;&amp;#799;&amp;#793;&amp;#852;&amp;#840;&amp;#852;&amp;#852;&amp;#841;&amp;#809;&amp;#101;&amp;#824;&amp;#1161;&amp;#821;&amp;#823;&amp;#804;&amp;#817;&amp;#800;&amp;#845;&amp;#806;&amp;#854;&amp;#845;&amp;#797;&amp;#115;&amp;#861;&amp;#866;&amp;#809;&amp;#846;&amp;#798;&amp;#805;&amp;#827;&amp;#816;&amp;#806;&amp;#818;&amp;#44;&amp;#866;&amp;#822;&amp;#821;&amp;#863;&amp;#837;&amp;#813;&amp;#806;&amp;#796;&amp;#845;&amp;#857;&amp;#852;&amp;#799;&amp;#32;&amp;#832;&amp;#824;&amp;#789;&amp;#866;&amp;#856;&amp;#817;&amp;#811;&amp;#803;&amp;#819;&amp;#817;&amp;#804;&amp;#811;&amp;#828;&amp;#828;&amp;#791;&amp;#846;&amp;#798;&amp;#851;&amp;#812;&amp;#814;&amp;#791;&amp;#796;&amp;#813;&amp;#806;&amp;#103;&amp;#832;&amp;#832;&amp;#863;&amp;#813;&amp;#837;&amp;#818;&amp;#839;&amp;#791;&amp;#840;&amp;#811;&amp;#827;&amp;#825;&amp;#837;&amp;#827;&amp;#809;&amp;#828;&amp;#806;&amp;#826;&amp;#809;&amp;#813;&amp;#814;&amp;#805;&amp;#111;&amp;#833;&amp;#802;&amp;#864;&amp;#823;&amp;#799;&amp;#791;&amp;#857;&amp;#814;&amp;#818;&amp;#812;&amp;#797;&amp;#828;&amp;#114;&amp;#801;&amp;#800;&amp;#796;&amp;#803;&amp;#803;&amp;#790;&amp;#826;&amp;#816;&amp;#819;&amp;#846;&amp;#805;&amp;#796;&amp;#837;&amp;#815;&amp;#105;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#821;&amp;#841;&amp;#793;&amp;#819;&amp;#793;&amp;#799;&amp;#798;&amp;#845;&amp;#846;&amp;#815;&amp;#811;&amp;#108;&amp;#861;&amp;#861;&amp;#802;&amp;#789;&amp;#796;&amp;#791;&amp;#841;&amp;#846;&amp;#810;&amp;#811;&amp;#815;&amp;#108;&amp;#862;&amp;#823;&amp;#820;&amp;#861;&amp;#815;&amp;#790;&amp;#854;&amp;#827;&amp;#845;&amp;#845;&amp;#845;&amp;#815;&amp;#97;&amp;#1161;&amp;#808;&amp;#833;&amp;#847;&amp;#837;&amp;#799;&amp;#845;&amp;#810;&amp;#115;&amp;#865;&amp;#808;&amp;#862;&amp;#795;&amp;#796;&amp;#803;&amp;#790;&amp;#804;&amp;#826;&amp;#44;&amp;#866;&amp;#847;&amp;#847;&amp;#820;&amp;#827;&amp;#809;&amp;#845;&amp;#819;&amp;#812;&amp;#803;&amp;#839;&amp;#854;&amp;#852;&amp;#809;&amp;#819;&amp;#854;&amp;#797;&amp;#799;&amp;#805;&amp;#851;&amp;#814;&amp;#32;&amp;#856;&amp;#860;&amp;#808;&amp;#814;&amp;#800;&amp;#839;&amp;#796;&amp;#853;&amp;#805;&amp;#817;&amp;#815;&amp;#846;&amp;#858;&amp;#858;&amp;#799;&amp;#810;&amp;#840;&amp;#797;&amp;#790;&amp;#803;&amp;#799;&amp;#857;&amp;#97;&amp;#789;&amp;#847;&amp;#811;&amp;#799;&amp;#799;&amp;#790;&amp;#806;&amp;#110;&amp;#821;&amp;#822;&amp;#821;&amp;#856;&amp;#798;&amp;#841;&amp;#837;&amp;#857;&amp;#800;&amp;#812;&amp;#813;&amp;#809;&amp;#841;&amp;#797;&amp;#854;&amp;#837;&amp;#819;&amp;#853;&amp;#854;&amp;#791;&amp;#100;&amp;#789;&amp;#808;&amp;#866;&amp;#853;&amp;#804;&amp;#814;&amp;#854;&amp;#852;&amp;#826;&amp;#799;&amp;#796;&amp;#793;&amp;#852;&amp;#845;&amp;#793;&amp;#32;&amp;#863;&amp;#860;&amp;#802;&amp;#860;&amp;#865;&amp;#790;&amp;#804;&amp;#852;&amp;#790;&amp;#791;&amp;#813;&amp;#814;&amp;#111;&amp;#864;&amp;#866;&amp;#1161;&amp;#851;&amp;#811;&amp;#810;&amp;#806;&amp;#827;&amp;#839;&amp;#793;&amp;#790;&amp;#793;&amp;#793;&amp;#837;&amp;#845;&amp;#792;&amp;#818;&amp;#805;&amp;#114;&amp;#807;&amp;#833;&amp;#821;&amp;#797;&amp;#810;&amp;#800;&amp;#811;&amp;#845;&amp;#839;&amp;#97;&amp;#862;&amp;#802;&amp;#795;&amp;#816;&amp;#841;&amp;#851;&amp;#805;&amp;#817;&amp;#810;&amp;#817;&amp;#110;&amp;#807;&amp;#866;&amp;#802;&amp;#808;&amp;#845;&amp;#797;&amp;#816;&amp;#819;&amp;#796;&amp;#810;&amp;#793;&amp;#103;&amp;#808;&amp;#801;&amp;#817;&amp;#819;&amp;#816;&amp;#792;&amp;#817;&amp;#803;&amp;#798;&amp;#846;&amp;#857;&amp;#825;&amp;#803;&amp;#814;&amp;#827;&amp;#845;&amp;#117;&amp;#861;&amp;#795;&amp;#803;&amp;#852;&amp;#819;&amp;#851;&amp;#852;&amp;#816;&amp;#819;&amp;#799;&amp;#804;&amp;#857;&amp;#804;&amp;#819;&amp;#828;&amp;#816;&amp;#116;&amp;#821;&amp;#856;&amp;#797;&amp;#798;&amp;#845;&amp;#797;&amp;#837;&amp;#799;&amp;#799;&amp;#858;&amp;#97;&amp;#866;&amp;#864;&amp;#823;&amp;#821;&amp;#810;&amp;#793;&amp;#800;&amp;#799;&amp;#791;&amp;#841;&amp;#819;&amp;#804;&amp;#793;&amp;#803;&amp;#826;&amp;#851;&amp;#839;&amp;#845;&amp;#827;&amp;#804;&amp;#818;&amp;#828;&amp;#110;&amp;#795;&amp;#802;&amp;#823;&amp;#795;&amp;#798;&amp;#840;&amp;#825;&amp;#806;&amp;#828;&amp;#857;&amp;#805;&amp;#817;&amp;#797;&amp;#813;&amp;#796;&amp;#837;&amp;#851;&amp;#812;&amp;#799;&amp;#115;&amp;#821;&amp;#801;&amp;#820;&amp;#801;&amp;#856;&amp;#791;&amp;#804;&amp;#854;&amp;#796;&amp;#815;&amp;#813;&amp;#818;&amp;#816;&amp;#841;&amp;#791;&amp;#800;&amp;#44;&amp;#820;&amp;#808;&amp;#1161;&amp;#820;&amp;#789;&amp;#799;&amp;#799;&amp;#806;&amp;#809;&amp;#792;&amp;#816;&amp;#815;&amp;#819;&amp;#804;&amp;#32;&amp;#856;&amp;#832;&amp;#866;&amp;#789;&amp;#811;&amp;#816;&amp;#818;&amp;#813;&amp;#804;&amp;#803;&amp;#845;&amp;#840;&amp;#798;&amp;#814;&amp;#817;&amp;#116;&amp;#789;&amp;#820;&amp;#862;&amp;#865;&amp;#800;&amp;#811;&amp;#800;&amp;#837;&amp;#839;&amp;#796;&amp;#840;&amp;#799;&amp;#819;&amp;#810;&amp;#806;&amp;#799;&amp;#826;&amp;#818;&amp;#806;&amp;#104;&amp;#1161;&amp;#832;&amp;#789;&amp;#862;&amp;#840;&amp;#846;&amp;#799;&amp;#828;&amp;#853;&amp;#837;&amp;#819;&amp;#791;&amp;#851;&amp;#799;&amp;#809;&amp;#792;&amp;#101;&amp;#824;&amp;#846;&amp;#809;&amp;#793;&amp;#793;&amp;#845;&amp;#792;&amp;#819;&amp;#797;&amp;#854;&amp;#798;&amp;#818;&amp;#815;&amp;#819;&amp;#121;&amp;#863;&amp;#795;&amp;#813;&amp;#811;&amp;#810;&amp;#825;&amp;#819;&amp;#853;&amp;#817;&amp;#840;&amp;#841;&amp;#790;&amp;#857;&amp;#858;&amp;#846;&amp;#825;&amp;#811;&amp;#791;&amp;#809;&amp;#803;&amp;#32;&amp;#862;&amp;#860;&amp;#801;&amp;#864;&amp;#832;&amp;#797;&amp;#811;&amp;#805;&amp;#790;&amp;#811;&amp;#853;&amp;#854;&amp;#799;&amp;#799;&amp;#815;&amp;#97;&amp;#865;&amp;#860;&amp;#802;&amp;#847;&amp;#823;&amp;#793;&amp;#826;&amp;#816;&amp;#828;&amp;#806;&amp;#828;&amp;#841;&amp;#810;&amp;#805;&amp;#114;&amp;#807;&amp;#863;&amp;#832;&amp;#814;&amp;#854;&amp;#858;&amp;#854;&amp;#812;&amp;#812;&amp;#819;&amp;#815;&amp;#798;&amp;#840;&amp;#793;&amp;#852;&amp;#811;&amp;#840;&amp;#854;&amp;#792;&amp;#818;&amp;#101;&amp;#823;&amp;#795;&amp;#864;&amp;#805;&amp;#797;&amp;#852;&amp;#815;&amp;#827;&amp;#796;&amp;#797;&amp;#858;&amp;#853;&amp;#806;&amp;#851;&amp;#32;&amp;#1161;&amp;#860;&amp;#833;&amp;#821;&amp;#814;&amp;#804;&amp;#799;&amp;#810;&amp;#812;&amp;#797;&amp;#839;&amp;#806;&amp;#840;&amp;#857;&amp;#805;&amp;#839;&amp;#790;&amp;#858;&amp;#837;&amp;#858;&amp;#841;&amp;#826;&amp;#112;&amp;#802;&amp;#833;&amp;#819;&amp;#817;&amp;#811;&amp;#852;&amp;#799;&amp;#826;&amp;#857;&amp;#798;&amp;#851;&amp;#827;&amp;#803;&amp;#840;&amp;#814;&amp;#818;&amp;#857;&amp;#804;&amp;#803;&amp;#840;&amp;#97;&amp;#861;&amp;#864;&amp;#864;&amp;#847;&amp;#789;&amp;#818;&amp;#853;&amp;#839;&amp;#796;&amp;#854;&amp;#793;&amp;#818;&amp;#816;&amp;#839;&amp;#798;&amp;#825;&amp;#825;&amp;#841;&amp;#837;&amp;#852;&amp;#790;&amp;#845;&amp;#791;&amp;#114;&amp;#821;&amp;#807;&amp;#833;&amp;#793;&amp;#790;&amp;#851;&amp;#818;&amp;#800;&amp;#816;&amp;#815;&amp;#815;&amp;#854;&amp;#851;&amp;#813;&amp;#816;&amp;#803;&amp;#817;&amp;#803;&amp;#116;&amp;#864;&amp;#860;&amp;#800;&amp;#805;&amp;#817;&amp;#837;&amp;#854;&amp;#858;&amp;#790;&amp;#791;&amp;#858;&amp;#815;&amp;#837;&amp;#853;&amp;#858;&amp;#814;&amp;#839;&amp;#32;&amp;#802;&amp;#805;&amp;#840;&amp;#792;&amp;#826;&amp;#812;&amp;#858;&amp;#845;&amp;#790;&amp;#805;&amp;#111;&amp;#801;&amp;#1161;&amp;#856;&amp;#822;&amp;#837;&amp;#797;&amp;#837;&amp;#828;&amp;#803;&amp;#799;&amp;#800;&amp;#854;&amp;#815;&amp;#803;&amp;#819;&amp;#817;&amp;#811;&amp;#102;&amp;#861;&amp;#822;&amp;#819;&amp;#803;&amp;#852;&amp;#837;&amp;#825;&amp;#791;&amp;#815;&amp;#798;&amp;#803;&amp;#32;&amp;#822;&amp;#864;&amp;#861;&amp;#813;&amp;#804;&amp;#816;&amp;#813;&amp;#819;&amp;#811;&amp;#792;&amp;#806;&amp;#116;&amp;#807;&amp;#822;&amp;#865;&amp;#823;&amp;#841;&amp;#858;&amp;#798;&amp;#809;&amp;#837;&amp;#800;&amp;#845;&amp;#839;&amp;#796;&amp;#799;&amp;#858;&amp;#845;&amp;#813;&amp;#815;&amp;#839;&amp;#800;&amp;#837;&amp;#840;&amp;#818;&amp;#104;&amp;#1161;&amp;#795;&amp;#818;&amp;#858;&amp;#813;&amp;#792;&amp;#101;&amp;#847;&amp;#1161;&amp;#833;&amp;#817;&amp;#797;&amp;#853;&amp;#853;&amp;#796;&amp;#790;&amp;#804;&amp;#857;&amp;#857;&amp;#817;&amp;#853;&amp;#813;&amp;#853;&amp;#841;&amp;#827;&amp;#815;&amp;#852;&amp;#810;&amp;#32;&amp;#860;&amp;#793;&amp;#809;&amp;#845;&amp;#790;&amp;#816;&amp;#819;&amp;#812;&amp;#818;&amp;#799;&amp;#815;&amp;#102;&amp;#1161;&amp;#840;&amp;#800;&amp;#840;&amp;#815;&amp;#828;&amp;#819;&amp;#805;&amp;#811;&amp;#819;&amp;#97;&amp;#1161;&amp;#862;&amp;#807;&amp;#861;&amp;#846;&amp;#800;&amp;#839;&amp;#800;&amp;#852;&amp;#109;&amp;#862;&amp;#864;&amp;#828;&amp;#813;&amp;#846;&amp;#815;&amp;#852;&amp;#818;&amp;#804;&amp;#806;&amp;#796;&amp;#853;&amp;#811;&amp;#806;&amp;#814;&amp;#818;&amp;#796;&amp;#105;&amp;#865;&amp;#833;&amp;#802;&amp;#823;&amp;#833;&amp;#818;&amp;#852;&amp;#790;&amp;#845;&amp;#809;&amp;#852;&amp;#852;&amp;#812;&amp;#812;&amp;#798;&amp;#790;&amp;#840;&amp;#845;&amp;#806;&amp;#825;&amp;#813;&amp;#108;&amp;#865;&amp;#863;&amp;#821;&amp;#823;&amp;#795;&amp;#791;&amp;#837;&amp;#814;&amp;#812;&amp;#854;&amp;#815;&amp;#854;&amp;#121;&amp;#795;&amp;#807;&amp;#817;&amp;#799;&amp;#798;&amp;#796;&amp;#813;&amp;#791;&amp;#809;&amp;#815;&amp;#792;&amp;#819;&amp;#796;&amp;#839;&amp;#845;&amp;#812;&amp;#793;&amp;#806;&amp;#816;&amp;#32;&amp;#789;&amp;#789;&amp;#862;&amp;#793;&amp;#837;&amp;#798;&amp;#852;&amp;#825;&amp;#72;&amp;#860;&amp;#801;&amp;#861;&amp;#804;&amp;#857;&amp;#812;&amp;#800;&amp;#804;&amp;#803;&amp;#798;&amp;#853;&amp;#840;&amp;#799;&amp;#812;&amp;#816;&amp;#111;&amp;#863;&amp;#860;&amp;#795;&amp;#818;&amp;#797;&amp;#790;&amp;#796;&amp;#826;&amp;#840;&amp;#806;&amp;#827;&amp;#793;&amp;#804;&amp;#818;&amp;#858;&amp;#804;&amp;#798;&amp;#814;&amp;#817;&amp;#825;&amp;#826;&amp;#109;&amp;#824;&amp;#1161;&amp;#796;&amp;#792;&amp;#845;&amp;#837;&amp;#812;&amp;#797;&amp;#797;&amp;#828;&amp;#851;&amp;#790;&amp;#105;&amp;#860;&amp;#824;&amp;#801;&amp;#822;&amp;#828;&amp;#799;&amp;#841;&amp;#790;&amp;#858;&amp;#804;&amp;#797;&amp;#853;&amp;#805;&amp;#798;&amp;#815;&amp;#845;&amp;#852;&amp;#826;&amp;#110;&amp;#823;&amp;#866;&amp;#814;&amp;#803;&amp;#799;&amp;#800;&amp;#798;&amp;#796;&amp;#793;&amp;#815;&amp;#839;&amp;#825;&amp;#825;&amp;#811;&amp;#839;&amp;#813;&amp;#793;&amp;#828;&amp;#803;&amp;#858;&amp;#105;&amp;#808;&amp;#865;&amp;#810;&amp;#840;&amp;#818;&amp;#798;&amp;#813;&amp;#797;&amp;#806;&amp;#791;&amp;#790;&amp;#839;&amp;#793;&amp;#825;&amp;#825;&amp;#817;&amp;#858;&amp;#815;&amp;#839;&amp;#800;&amp;#100;&amp;#847;&amp;#802;&amp;#866;&amp;#856;&amp;#792;&amp;#796;&amp;#851;&amp;#804;&amp;#826;&amp;#826;&amp;#805;&amp;#854;&amp;#852;&amp;#837;&amp;#97;&amp;#789;&amp;#807;&amp;#795;&amp;#799;&amp;#812;&amp;#805;&amp;#811;&amp;#793;&amp;#790;&amp;#846;&amp;#811;&amp;#809;&amp;#101;&amp;#856;&amp;#860;&amp;#864;&amp;#789;&amp;#804;&amp;#814;&amp;#825;&amp;#826;&amp;#811;&amp;#811;&amp;#806;&amp;#852;&amp;#854;&amp;#827;&amp;#815;&amp;#845;&amp;#845;&amp;#809;&amp;#814;&amp;#817;&amp;#841;&amp;#810;&amp;#32;&amp;#866;&amp;#863;&amp;#821;&amp;#856;&amp;#837;&amp;#803;&amp;#837;&amp;#813;&amp;#837;&amp;#792;&amp;#817;&amp;#791;&amp;#817;&amp;#811;&amp;#798;&amp;#846;&amp;#811;&amp;#797;&amp;#797;&amp;#792;&amp;#40;&amp;#795;&amp;#853;&amp;#791;&amp;#854;&amp;#857;&amp;#841;&amp;#819;&amp;#792;&amp;#817;&amp;#825;&amp;#815;&amp;#854;&amp;#814;&amp;#800;&amp;#839;&amp;#803;&amp;#854;&amp;#796;&amp;#806;&amp;#857;&amp;#116;&amp;#866;&amp;#822;&amp;#801;&amp;#795;&amp;#821;&amp;#810;&amp;#790;&amp;#806;&amp;#806;&amp;#854;&amp;#800;&amp;#796;&amp;#104;&amp;#808;&amp;#865;&amp;#814;&amp;#816;&amp;#797;&amp;#852;&amp;#806;&amp;#819;&amp;#101;&amp;#863;&amp;#847;&amp;#864;&amp;#813;&amp;#816;&amp;#839;&amp;#837;&amp;#32;&amp;#862;&amp;#795;&amp;#857;&amp;#804;&amp;#846;&amp;#840;&amp;#812;&amp;#854;&amp;#103;&amp;#823;&amp;#864;&amp;#802;&amp;#860;&amp;#808;&amp;#819;&amp;#819;&amp;#806;&amp;#809;&amp;#818;&amp;#852;&amp;#851;&amp;#793;&amp;#837;&amp;#810;&amp;#852;&amp;#825;&amp;#812;&amp;#114;&amp;#801;&amp;#822;&amp;#820;&amp;#845;&amp;#816;&amp;#809;&amp;#837;&amp;#857;&amp;#809;&amp;#851;&amp;#811;&amp;#839;&amp;#819;&amp;#797;&amp;#814;&amp;#791;&amp;#806;&amp;#810;&amp;#811;&amp;#841;&amp;#809;&amp;#793;&amp;#101;&amp;#861;&amp;#860;&amp;#801;&amp;#828;&amp;#841;&amp;#813;&amp;#825;&amp;#800;&amp;#805;&amp;#840;&amp;#837;&amp;#803;&amp;#97;&amp;#863;&amp;#833;&amp;#809;&amp;#825;&amp;#841;&amp;#854;&amp;#857;&amp;#825;&amp;#116;&amp;#789;&amp;#856;&amp;#820;&amp;#815;&amp;#852;&amp;#837;&amp;#803;&amp;#826;&amp;#813;&amp;#815;&amp;#817;&amp;#810;&amp;#818;&amp;#827;&amp;#798;&amp;#32;&amp;#823;&amp;#807;&amp;#833;&amp;#847;&amp;#846;&amp;#810;&amp;#828;&amp;#815;&amp;#798;&amp;#840;&amp;#811;&amp;#97;&amp;#863;&amp;#1161;&amp;#790;&amp;#800;&amp;#853;&amp;#857;&amp;#813;&amp;#112;&amp;#861;&amp;#863;&amp;#864;&amp;#823;&amp;#841;&amp;#845;&amp;#839;&amp;#845;&amp;#792;&amp;#846;&amp;#837;&amp;#817;&amp;#805;&amp;#798;&amp;#798;&amp;#854;&amp;#810;&amp;#798;&amp;#846;&amp;#839;&amp;#828;&amp;#852;&amp;#828;&amp;#101;&amp;#802;&amp;#822;&amp;#841;&amp;#837;&amp;#793;&amp;#809;&amp;#804;&amp;#858;&amp;#840;&amp;#800;&amp;#817;&amp;#798;&amp;#839;&amp;#790;&amp;#793;&amp;#791;&amp;#796;&amp;#814;&amp;#115;&amp;#865;&amp;#863;&amp;#858;&amp;#818;&amp;#791;&amp;#796;&amp;#790;&amp;#854;&amp;#845;&amp;#818;&amp;#815;&amp;#817;&amp;#828;&amp;#44;&amp;#832;&amp;#807;&amp;#825;&amp;#853;&amp;#851;&amp;#841;&amp;#805;&amp;#792;&amp;#812;&amp;#825;&amp;#798;&amp;#809;&amp;#803;&amp;#810;&amp;#857;&amp;#32;&amp;#820;&amp;#820;&amp;#862;&amp;#832;&amp;#841;&amp;#816;&amp;#852;&amp;#818;&amp;#791;&amp;#854;&amp;#803;&amp;#792;&amp;#803;&amp;#806;&amp;#812;&amp;#815;&amp;#111;&amp;#802;&amp;#789;&amp;#816;&amp;#846;&amp;#819;&amp;#792;&amp;#819;&amp;#790;&amp;#813;&amp;#817;&amp;#854;&amp;#812;&amp;#114;&amp;#866;&amp;#801;&amp;#814;&amp;#803;&amp;#828;&amp;#805;&amp;#845;&amp;#809;&amp;#846;&amp;#804;&amp;#32;&amp;#1161;&amp;#820;&amp;#791;&amp;#839;&amp;#840;&amp;#803;&amp;#811;&amp;#854;&amp;#798;&amp;#792;&amp;#810;&amp;#837;&amp;#814;&amp;#806;&amp;#792;&amp;#816;&amp;#104;&amp;#801;&amp;#808;&amp;#789;&amp;#866;&amp;#827;&amp;#803;&amp;#837;&amp;#853;&amp;#828;&amp;#857;&amp;#812;&amp;#791;&amp;#853;&amp;#839;&amp;#791;&amp;#804;&amp;#810;&amp;#839;&amp;#804;&amp;#819;&amp;#111;&amp;#861;&amp;#1161;&amp;#808;&amp;#854;&amp;#812;&amp;#799;&amp;#852;&amp;#812;&amp;#811;&amp;#811;&amp;#837;&amp;#812;&amp;#846;&amp;#852;&amp;#109;&amp;#795;&amp;#795;&amp;#860;&amp;#832;&amp;#851;&amp;#793;&amp;#837;&amp;#811;&amp;#827;&amp;#809;&amp;#812;&amp;#814;&amp;#812;&amp;#797;&amp;#800;&amp;#798;&amp;#105;&amp;#861;&amp;#801;&amp;#856;&amp;#824;&amp;#860;&amp;#845;&amp;#841;&amp;#793;&amp;#851;&amp;#799;&amp;#813;&amp;#792;&amp;#840;&amp;#799;&amp;#818;&amp;#815;&amp;#792;&amp;#796;&amp;#110;&amp;#866;&amp;#795;&amp;#813;&amp;#819;&amp;#857;&amp;#845;&amp;#105;&amp;#823;&amp;#863;&amp;#853;&amp;#852;&amp;#828;&amp;#100;&amp;#866;&amp;#864;&amp;#847;&amp;#864;&amp;#846;&amp;#851;&amp;#796;&amp;#840;&amp;#799;&amp;#791;&amp;#852;&amp;#816;&amp;#817;&amp;#857;&amp;#805;&amp;#840;&amp;#797;&amp;#816;&amp;#819;&amp;#852;&amp;#804;&amp;#115;&amp;#863;&amp;#865;&amp;#821;&amp;#801;&amp;#866;&amp;#791;&amp;#819;&amp;#799;&amp;#790;&amp;#817;&amp;#853;&amp;#812;&amp;#858;&amp;#825;&amp;#837;&amp;#841;&amp;#851;&amp;#840;&amp;#852;&amp;#858;&amp;#817;&amp;#798;&amp;#41;&amp;#861;&amp;#863;&amp;#802;&amp;#790;&amp;#853;&amp;#841;&amp;#811;&amp;#841;&amp;#852;&amp;#46;&amp;#802;&amp;#821;&amp;#824;&amp;#798;&amp;#799;&amp;#851;&amp;#841;&amp;#827;
-  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="50" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
+  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="38" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
   &lt;&lt;set $shapeChoice = 0&gt;&gt;
   &lt;&lt;set $choice = 0&gt;&gt;
   &lt;&lt;set $cursor = 1&gt;&gt;
@@ -2586,6 +2464,8 @@ br {
   &lt;&lt;set $last = false&gt;&gt;
   &lt;&lt;set $returnPassage = ""&gt;&gt;
 
+  &lt;&lt;set $quizCon = 0&gt;&gt;
+
   &lt;&lt;set $change = {
     battery : false,
     damage : false,
@@ -2593,7 +2473,7 @@ br {
     function : false,
     designation : false,
     alert : false,
-    cam : false
+    cam : false,
   }&gt;&gt;
   &lt;&lt;set $battery = 10&gt;&gt;
   &lt;&lt;set $damage = 100&gt;&gt;
@@ -2609,12 +2489,68 @@ br {
   }&gt;&gt;
 
   &lt;&lt;set $comp = {
-    humanEndo: {
-
+    open : {
+      human : "none",
+      climate : "none",
+      life : "none",
+      suit : "none",
     },
-    humanBio : "unsorted"
+
+    endo : {
+      unsorted : [
+        "Skull (teeth et al)",
+        "Torso (ribs, collarbones, etc.)",
+        "Limbs (legs, arms, extensions, etc.)",
+      ],
+      sorted : {
+        ess : [],
+        ves : [],
+      }
+    },
+
+    climate : {
+      unsorted : [
+        "Compressor",
+        "Fans",
+        "Exo combusters",
+      ],
+      sorted : {
+        ess : [],
+        ves : [],
+      }
+    },
+
+    life : {
+      unsorted : [
+        "Water collection",
+        "Wasted recycling",
+        "Climate control",
+      ],
+      sorted : {
+        ess : [],
+        ves : [],
+      }
+    },
+
+    suit : {
+      unsorted : [
+        "Heat sink repository",
+        "Motor matrix",
+        "Ligamentation system",
+      ],
+      sorted : {
+        ess : [],
+        ves : [],
+      }
+    },
+
+    bio : "unsorted",
+
+    photo : "unsorted",
 
   }&gt;&gt;
+
+  &lt;&lt;set $pluck_pull = []&gt;&gt;
 
   &lt;&lt;set $cam = {
     one : "on",
@@ -2630,7 +2566,349 @@ br {
   &lt;&lt;cacheaudio "auralDrone" "Sounds/aural_drone.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "harmonicDrone" "Sounds/harmonic_drone.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "tapMetal" "Sounds/tapping_metal.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "ambientDrone" "Sounds/ambient_drone.ogg"&gt;&gt;</tw-passagedata></tw-storydata>
+  &lt;&lt;cacheaudio "ambientDrone" "Sounds/ambient_drone.ogg"&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;include "BackgroundShit"&gt;&gt;
+
+  &lt;&lt;include "SelfDesignation"&gt;&gt;
+
+  &lt;&lt;include "FunctionLibrary"&gt;&gt;
+
+  /* &lt;&lt;if passage() == "Escape Start"&gt;&gt;
+    &lt;div class="battery appear"&gt;&lt;&lt;include "BatteryLevel"&gt;&gt;&lt;/div&gt;
+  &lt;&lt;else&gt;&gt; */
+    &lt;&lt;include "Battery"&gt;&gt;
+  /* &lt;&lt;endif&gt;&gt; */
+
+  &lt;&lt;include "Damage"&gt;&gt;
+
+  &lt;&lt;include "SystemAlert"&gt;&gt;
+
+  &lt;&lt;include "ComponentBreakdown"&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
+  &lt;div id="damage"&gt;
+    Integrity: $damage%
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
+  &lt;div id="component"&gt;
+    &lt;h4&gt;COMPONENTS&lt;/h4&gt;
+    &lt;div id="unsorted"&gt;
+      &lt;h5&gt;UNSORTED&lt;/h5&gt;
+      &lt;div class="scrollcontent"&gt;
+        &lt;&lt;if $comp.endo.unsorted.length &gt; 0&gt;&gt;
+          &lt;&lt;link "Human Endoskeleton"&gt;&gt;
+            &lt;&lt;if $comp.open.human != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.human = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.human = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.component = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+
+          &lt;&lt;if $comp.open.human == "unsorted"&gt;&gt;
+            &lt;div class="comp-container"&gt;
+              &lt;ul&gt;
+                &lt;&lt;if $comp.endo.unsorted.includes("Skull (teeth et al)")&gt;&gt;
+                  &lt;li&gt;Skull (teeth et al)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.endo.unsorted.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
+                  &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                  &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $comp.bio == "unsorted"&gt;&gt;
+          &lt;p&gt;Human biomatter &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $comp.climate.unsorted.length &gt; 0&gt;&gt;
+          &lt;&lt;link "Climate control systems"&gt;&gt;
+            &lt;&lt;if $comp.open.climate != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.climate = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.component = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+
+          &lt;&lt;if $comp.open.climate == "unsorted"&gt;&gt;
+            &lt;div class="comp-container"&gt;
+              &lt;ul&gt;
+                &lt;&lt;if $comp.climate.unsorted.includes("Compressor")&gt;&gt;
+                  &lt;li&gt;Compressor&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.climate.unsorted.includes("Fans")&gt;&gt;
+                  &lt;li&gt;Fans&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.climate.unsorted.includes("Exo combusters")&gt;&gt;
+                  &lt;li&gt;Exo combusters&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;p&gt;Life Support systems&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Water collection&lt;/li&gt;
+            &lt;li&gt;Wasted recycling&lt;/li&gt;
+            &lt;li&gt;Climate control (x)&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;Suit Mechanics&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Heat Sinks (x4)&lt;/li&gt;
+            &lt;li&gt;Motors (x21)&lt;/li&gt;
+            &lt;li&gt;Ligamentation system&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;Photovoltaic Unit&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="bottomRow"&gt;
+      &lt;div class="sorted left"&gt;
+        &lt;h5&gt;ESSENTIAL&lt;/h5&gt;
+        &lt;div class="scrollcontent"&gt;
+          &lt;&lt;if $comp.endo.sorted.ess.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Human Endoskeleton"&gt;&gt;
+              &lt;&lt;if $comp.open.human != "ess"&gt;&gt;&lt;&lt;set $comp.open.human = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.human = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.human == "ess"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.endo.sorted.ess.includes("Skull (teeth et al)")&gt;&gt;
+                    &lt;li&gt;Skull (teeth et al) &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.endo.sorted.ess.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
+                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.endo.sorted.ess.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.bio == "ess"&gt;&gt;
+            &lt;p&gt;Human biomatter &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.climate.sorted.ess.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Climate control systems"&gt;&gt;
+              &lt;&lt;if $comp.open.climate != "ess"&gt;&gt;&lt;&lt;set $comp.open.climate = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.climate == "ess"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.climate.sorted.ess.includes("Compressor")&gt;&gt;
+                    &lt;li&gt;Compressor &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.climate.sorted.ess.includes("Fans")&gt;&gt;
+                    &lt;li&gt;Fans &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.climate.sorted.ess.includes("Exo combusters")&gt;&gt;
+                    &lt;li&gt;Exo combusters &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="sorted right"&gt;
+        &lt;h5&gt;VESTIGIAL&lt;/h5&gt;
+        &lt;div class="scrollcontent"&gt;
+          &lt;&lt;if $comp.endo.sorted.ves.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Human Endoskeleton"&gt;&gt;
+              &lt;&lt;if $comp.open.human != "ves"&gt;&gt;&lt;&lt;set $comp.open.human = "ves"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.human = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.human == "ves"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.endo.sorted.ves.includes("Skull (teeth et al)")&gt;&gt;
+                    &lt;li&gt;Skull (teeth et al) &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.endo.sorted.ves.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
+                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.bio == "ves"&gt;&gt;
+            &lt;p&gt;Human biomatter &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.climate.sorted.ves.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Climate control systems"&gt;&gt;
+              &lt;&lt;if $comp.open.climate != "ves"&gt;&gt;&lt;&lt;set $comp.open.climate = "ves"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.climate == "ves"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.climate.sorted.ves.includes("Compressor")&gt;&gt;
+                    &lt;li&gt;Compressor &lt;&lt;button "0"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.climate.sorted.ves.includes("Fans")&gt;&gt;
+                    &lt;li&gt;Fans &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.climate.sorted.ves.includes("Exo combusters")&gt;&gt;
+                    &lt;li&gt;Exo combusters &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="SystemAlert" tags="nobr" position="">&lt;div id="alertcon"&gt;
+  &lt;div id="systemAlert"&gt;
+    &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+    &lt;&lt;if $alert.worm == false&gt;&gt;
+    &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
+
+    &lt;div class="buttonbg"&gt;
+      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+        &lt;&lt;set $alert.worm = "on"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+        &lt;&lt;set $alert.worm = "on"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
+      &lt;&lt;timed 0.1s&gt;&gt;
+        &lt;&lt;replace "#systemAlert"&gt;&gt;
+          &lt;&lt;include "Snake"&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
+      &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
+
+      &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
+        &lt;&lt;set $alert.worm = "done"&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+    &lt;&lt;endif&gt;&gt;
+    &lt;&lt;if $alert.next == "Something" &amp;&amp; $alert.worm == "done"&gt;&gt;
+      &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="CameraToggle" tags="nobr" position="">&lt;div class="camcon"&gt;
+    &lt;div class="cam"&gt;
+      &lt;&lt;if $cam.one == "on"&gt;&gt;
+        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.one = "on"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;elseif $cam.one == "off"&gt;&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+          &lt;&lt;set $cam.one = "off"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+      &lt;&lt;if $cam.two == "on"&gt;&gt;
+        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+          &lt;&lt;set $cam.two = "on"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;elseif $cam.two == "off"&gt;&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+          &lt;&lt;set $cam.two = "off"&gt;&gt;
+          &lt;&lt;set $change.cam = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
+  &lt;div id="functionLib"&gt;
+    &lt;h4&gt;FUNCTON LIBRARY REVIEW&lt;/h4&gt;
+    &lt;div id="lib-container"&gt;
+      &lt;&lt;link ".pressTest()"&gt;&gt;
+        &lt;&lt;if $funct.test == false&gt;&gt;&lt;&lt;set $funct.test = true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.test = false&gt;&gt;&lt;&lt;endif&gt;&gt;
+        &lt;&lt;set $change.function = true&gt;&gt;
+      &lt;&lt;/link&gt;&gt;
+      &lt;&lt;if $funct.test == true&gt;&gt;
+        &lt;div class="funct-container"&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. pressTest = {&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. &amp;nbsp;&amp;nbsp;x-x++++++&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. &amp;nbsp;&amp;nbsp;sfdsbhfd&lt;/p&gt;
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;. . .&lt;/p&gt;
+          &lt;p&gt;4562. asdjasdasd&lt;/p&gt;
+          &lt;p&gt;4563. }&lt;/p&gt;
+
+          &lt;span class="red"&gt;&lt;&lt;button "EXECUTE"&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;&lt;endif&gt;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="SelfDesignation" tags="nobr" position="">&lt;div id="designcon"&gt;
+  &lt;div id="designation"&gt;
+    Self-Designation: $name, $pronoun1/$pronoun2
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
+  &lt;div id="battery"&gt;
+    &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;/for&gt;&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BackgroundShit" tags="nobr" position="">&lt;&lt;include "FlickFast"&gt;&gt;
+  &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off"&gt;&gt;
+  /* &lt;script&gt;
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt MainCamStuff");
+  &lt;/script&gt; */
+  &lt;&lt;elseif $cam.one == "off" &amp;&amp; $cam.two == "on"&gt;&gt;
+  /* &lt;script&gt;
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt AuxCamStuff");
+  &lt;/script&gt; */
+  &lt;&lt;elseif $cam.one == "on" &amp;&amp; $cam.two == "on"&gt;&gt;
+    /* &lt;div id="left-bg"&gt;&lt;/div&gt;
+    &lt;div id="right-bg"&gt;&lt;/div&gt; */
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
+  &lt;&lt;repeat 0.1s&gt;&gt;
+    &lt;&lt;if $change.battery == true&gt;&gt;
+      &lt;&lt;set $change.battery = false&gt;&gt;
+      &lt;&lt;replace "#battcon"&gt;&gt;&lt;&lt;display "Battery"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.damage == true&gt;&gt;
+      &lt;&lt;set $change.damage = false&gt;&gt;
+      &lt;&lt;replace "#damagecon"&gt;&gt;&lt;&lt;display "Damage"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.component == true&gt;&gt;
+      &lt;&lt;set $change.component = false&gt;&gt;
+      &lt;&lt;replace "#compcon"&gt;&gt;&lt;&lt;display "ComponentBreakdown"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.alert == true&gt;&gt;
+      &lt;&lt;set $change.alert = false&gt;&gt;
+      &lt;&lt;replace "#alertcon"&gt;&gt;&lt;&lt;display "SystemAlert"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.function == true&gt;&gt;
+      &lt;&lt;set $change.function = false&gt;&gt;
+      &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.designation == true&gt;&gt;
+      &lt;&lt;set $change.designation = false&gt;&gt;
+      &lt;&lt;replace "#designcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.cam == true&gt;&gt;
+      &lt;&lt;set $change.cam = false&gt;&gt;
+      &lt;&lt;replace "#camcon"&gt;&gt;&lt;&lt;display "CameraToggle"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;elseif $change.background == true&gt;&gt;
+      &lt;&lt;include "FlickFast"&gt;&gt;
+      &lt;&lt;set $change.background = false&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;&lt;/repeat&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Snake" tags="nobr snake" position="">&lt;p&gt;System repairs: 1%&lt;/p&gt;
+  &lt;&lt;timed 60s&gt;&gt;
+    &lt;&lt;set $alert.worm = "won"&gt;&gt;
+    &lt;&lt;set $alert.next = "Something"&gt;&gt;
+    &lt;&lt;set $change.alert = true&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+  &lt;iframe src="snakegame.html" width="100%" height="100%" position="relative"&gt;
+  &lt;/iframe&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],["┬á","\\u00a0"],["ßÜÇ","\\u1680"],["ßáÄ","\\u180e"],["ΓÇÇ","\\u2000"],["ΓÇü","\\u2001"],["ΓÇé","\\u2002"],["ΓÇâ","\\u2003"],["ΓÇä","\\u2004"],["ΓÇà","\\u2005"],["ΓÇå","\\u2006"],["ΓÇç","\\u2007"],["ΓÇê","\\u2008"],["ΓÇë","\\u2009"],["ΓÇè","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],["ΓÇ»","\\u202f"],["Γüƒ","\\u205f"],["πÇÇ","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="\\s"===e?"\\S":e.replace(/^\[/,"[^"),r="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",n=r.replace("\\-",""),a=function(){return"("+r+"+)\\(([^\\)\\|\\n]+)\\):|("+r+"+):([^;\\|\\n]+);|((?:\\."+r+"+)+);|((?:#"+r+"+)+);"}();return Object.freeze({space:e,spaceNoTerminator:"[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:t,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:r,anyLetterStrict:n,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:a,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){!function(e){if(e&&e.prototype&&null==e.prototype.firstElementChild){var t=Node.ELEMENT_NODE;Object.defineProperty(e.prototype,"firstElementChild",{get:function(){for(var e=this.childNodes,r=0;r<e.length;++r){var n=e[r];if(n.nodeType===t)return n}return null}})}}(window.Node||window.Element)}(),function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Windows:t||e.includes("iemobile"),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=e&&function(){try{var e=document.createElement("audio").play();return e.catch(function(){}),e instanceof Promise}catch(e){}return!1}(),r=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),n=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),a=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),i=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,audioPromise:t,fileAPI:r,geolocation:n,mutationObserver:a,performance:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return Boolean(r&&document[r.hiddenProperty])}function t(){return r&&document[r.stateProperty]||"visible"}var r=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return null}();return Object.freeze(Object.defineProperties({},{isHidden:{value:e},state:{value:t},hiddenProperty:{value:r.hiddenProperty},stateProperty:{value:r.stateProperty},changeEvent:{value:r.changeEvent}}))}(),_ref3=function(){function e(t){if("object"!==(void 0===t?"undefined":_typeof(t))||null===t)return t;if(t instanceof String)return String(t);if(t instanceof Number)return Number(t);if(t instanceof Boolean)return Boolean(t);if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return t instanceof Array?r=new Array(t.length):t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){return r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){return r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){switch(n.nodeName.toUpperCase()){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===(void 0===e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){var n=jQuery(document.createElement("div")),a=jQuery(document.createElement("button")),i=jQuery(document.createElement("pre")),o=L10n.get("errorTitle")+": "+(t||"unknown error");return a.addClass("error-toggle").ariaClick({label:L10n.get("errorToggle")},function(){a.hasClass("enabled")?(a.removeClass("enabled"),i.attr({"aria-hidden":!0,hidden:"hidden"})):(a.addClass("enabled"),i.removeAttr("aria-hidden hidden"))}).appendTo(n),jQuery(document.createElement("span")).addClass("error").text(o).appendTo(n),jQuery(document.createElement("code")).text(r).appendTo(i),i.addClass("error-source").attr({"aria-hidden":!0,hidden:"hidden"}).appendTo(n),n.addClass("error-view").appendTo(e),console.warn(o+"\n\t"+r.replace(/\n/g,"\n\t")),!1}function i(e,t){var r=i;switch(void 0===e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){return"{ΓÇ»"+[].concat(_toConsumableArray(e)).map(function(e){var n=_slicedToArray(e,2),a=n[0],i=n[1];return r(a,t)+" ΓåÆ "+r(i,t)}).join(", ")+"ΓÇ»}"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))}(),clone=_ref3.clone,convertBreaks=_ref3.convertBreaks,safeActiveElement=_ref3.safeActiveElement,setPageElement=_ref3.setPageElement,throwError=_ref3.throwError,toStringOrDefault=_ref3.toStringOrDefault;!function(){function e(e){13!==e.which&&32!==e.which||(e.preventDefault(),jQuery(safeActiveElement()||this).trigger("click"))}function t(e){return function(){var t=jQuery(this)

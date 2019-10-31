@@ -115,7 +115,8 @@ button {
 }
 
 button:hover {
-	animation: yellow-star-anim 1s infinite;
+	/* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
 }
 
 button.blue:hover {
@@ -206,10 +207,30 @@ span.green button {
 	animation: textShadow 1.6s infinite;
 }
 
+.file-container img {
+	max-width: 60%;
+	text-align: center;
+	margin: auto;
+}
+
 .file-header {
 	border-bottom: 2px solid black;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
+}
+
+.file-header img {
+	max-height: 30px;
+	transform: rotate(230deg);
+	padding: 0;
+	margin: 0;
+	filter: grayscale(1);
+	position: fixed;
+	left: 15px;
+}
+
+.file-header img::before {
+	content: "back";
 }
 
 .noselect {

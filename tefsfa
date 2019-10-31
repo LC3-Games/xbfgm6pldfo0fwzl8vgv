@@ -1,0 +1,16 @@
+<div class="text"><<print $comp.endo.unsorted[_i]>></div> <<link "X">>
+  <<script>>
+    window.pluck_push = $(".text").closest('.text').text();
+    State.variables.comp.endo.unsorted.pop(window.pluck_push);
+    State.variables.comp.endo.sorted.ves.push(window.pluck_push);
+    window.alert(State.variables.comp.endo.sorted.ves);
+  <</script>><<set $change.component = true>>
+<</link>>
+<<link "O">>
+  <<script>>
+    window.pluck_push = $(this).prev(".text").text();
+    State.variables.comp.endo.unsorted.pop(window.pluck_push);
+    State.variables.comp.endo.sorted.ess.push(window.pluck_push);
+    window.alert(State.variables.comp.endo.sorted.ess);
+  <</script>><<set $change.component = true>>
+<</link>>

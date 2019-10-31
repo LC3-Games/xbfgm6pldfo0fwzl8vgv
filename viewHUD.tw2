@@ -1,0 +1,387 @@
+::Escape Start
+  <<include "ViewHUD">>
+
+
+::ViewHUD [nobr]
+  <<updatehud>>
+  <<include "BackgroundShit">>
+
+  <<include "SelfDesignation">>
+
+  <<include "FunctionLibrary">>
+
+  /* <<if passage() == "Escape Start">>
+    <div class="battery appear"><<include "BatteryLevel">></div>
+  <<else>> */
+    <<include "Battery">>
+  /* <<endif>> */
+
+  <<include "Damage">>
+
+  <<include "SystemAlert">>
+
+  <<include "ComponentBreakdown">>
+
+
+::Damage [nobr]
+  <div id="damagecon">
+  <div id="damage">
+    Integrity: $damage%
+  </div>
+  </div>
+
+
+::ComponentBreakdown [nobr]
+  <div id="compcon">
+  <div id="component">
+    <h4>COMPONENTS</h4>
+    <div id="unsorted">
+      <h5>UNSORTED</h5>
+      <div class="scrollcontent">
+        <<if $comp.endo.unsorted.length > 0>>
+          <<link "Human Endoskeleton">>
+            <<if $comp.open.human != "unsorted">><<set $comp.open.human = "unsorted">><<else>><<set $comp.open.human = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.human == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.endo.unsorted.includes("Skull (teeth et al)")>>
+                  <li>Skull (teeth et al)<<button "X">><<set $comp.endo.unsorted.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ves.push("Skull (teeth et al)")>><<set $change.component = true>><</button>><<button "O">><<set $comp.endo.unsorted.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ess.push("Skull (teeth et al)")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+                <<if $comp.endo.unsorted.includes("Torso (ribs, collarbones, etc.)")>>
+                  <li>Torso (ribs, collarbones, etc.)<<button "X">><<set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>><<button "O">><<set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+                <<if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")>>
+                  <li>Limbs (legs, arms, extensions, etc.)<<button "X">><<set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>><<button "O">><<set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <<if $comp.bio == "unsorted">>
+          <p>Human biomatter <<button "X">><<set $comp.bio = "ves">><<set $change.component = true>><</button>><<button "O">><<set $comp.bio = "ess">><<set $change.component = true>><</button>></p>
+        <<endif>>
+
+        <<if $comp.climate.unsorted.length > 0>>
+          <<link "Climate control systems">>
+            <<if $comp.open.climate != "unsorted">><<set $comp.open.climate = "unsorted">><<else>><<set $comp.open.climate = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.climate == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.climate.unsorted.includes("Compressor")>>
+                  <li>Compressor<<button "X">><<set $comp.climate.unsorted.delete("Compressor")>><<set $comp.climate.sorted.ves.push("Compressor")>><<set $change.component = true>><</button>><<button "O">><<set $comp.climate.unsorted.delete("Compressor")>><<set $comp.climate.sorted.ess.push("Compressor")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+                <<if $comp.climate.unsorted.includes("Fans")>>
+                  <li>Fans<<button "X">><<set $comp.climate.unsorted.delete("Fans")>><<set $comp.climate.sorted.ves.push("Fans")>><<set $change.component = true>><</button>><<button "O">><<set $comp.climate.unsorted.delete("Fans")>><<set $comp.climate.sorted.ess.push("Fans")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+                <<if $comp.climate.unsorted.includes("Exo combusters")>>
+                  <li>Exo combusters<<button "X">><<set $comp.climate.unsorted.delete("Exo combusters")>><<set $comp.climate.sorted.ves.push("Exo combusters")>><<set $change.component = true>><</button>><<button "O">><<set $comp.climate.unsorted.delete("Exo combusters")>><<set $comp.climate.sorted.ess.push("Exo combusters")>><<set $change.component = true>><</button>></li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <p>Life Support systems</p>
+          <ul>
+            <li>Water collection</li>
+            <li>Wasted recycling</li>
+            <li>Climate control (x)</li>
+          </ul>
+        <p>Suit Mechanics</p>
+          <ul>
+            <li>Heat Sinks (x4)</li>
+            <li>Motors (x21)</li>
+            <li>Ligamentation system</li>
+          </ul>
+        <p>Photovoltaic Unit</p>
+      </div>
+    </div>
+    <div id="bottomRow">
+      <div class="sorted left">
+        <h5>ESSENTIAL</h5>
+        <div class="scrollcontent">
+          <<if $comp.endo.sorted.ess.length > 0>>
+            <<link "Human Endoskeleton">>
+              <<if $comp.open.human != "ess">><<set $comp.open.human = "ess">><<else>><<set $comp.open.human = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.human == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.endo.sorted.ess.includes("Skull (teeth et al)")>>
+                    <li>Skull (teeth et al) <<button "X">><<set $comp.endo.sorted.ess.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ves.push("Skull (teeth et al)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ess.includes("Torso (ribs, collarbones, etc.)")>>
+                    <li>Torso (ribs, collarbones, etc.)<<button "X">><<set $comp.endo.sorted.ess.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ess.includes("Limbs (legs, arms, extensions, etc.)")>>
+                    <li>Limbs (legs, arms, extensions, etc.)<<button "X">><<set $comp.endo.sorted.ess.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.bio == "ess">>
+            <p>Human biomatter <<button "X">><<set $comp.bio = "ves">><<set $change.component = true>><</button>></p>
+          <<endif>>
+
+          <<if $comp.climate.sorted.ess.length > 0>>
+            <<link "Climate control systems">>
+              <<if $comp.open.climate != "ess">><<set $comp.open.climate = "ess">><<else>><<set $comp.open.climate = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.climate == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.climate.sorted.ess.includes("Compressor")>>
+                    <li>Compressor <<button "X">><<set $comp.climate.sorted.ess.delete("Compressor")>><<set $comp.climate.sorted.ves.push("Compressor")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ess.includes("Fans")>>
+                    <li>Fans <<button "X">><<set $comp.climate.sorted.ess.delete("Fans")>><<set $comp.climate.sorted.ves.push("Fans")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ess.includes("Exo combusters")>>
+                    <li>Exo combusters <<button "X">><<set $comp.climate.sorted.ess.delete("Exo combusters")>><<set $comp.climate.sorted.ves.push("Exo combusters")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+        </div>
+      </div>
+
+      <div class="sorted right">
+        <h5>VESTIGIAL</h5>
+        <div class="scrollcontent">
+          <<if $comp.endo.sorted.ves.length > 0>>
+            <<link "Human Endoskeleton">>
+              <<if $comp.open.human != "ves">><<set $comp.open.human = "ves">><<else>><<set $comp.open.human = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.human == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.endo.sorted.ves.includes("Skull (teeth et al)")>>
+                    <li>Skull (teeth et al) <<button "O">><<set $comp.endo.sorted.ves.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ess.push("Skull (teeth et al)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ves.includes("Torso (ribs, collarbones, etc.)")>>
+                    <li>Torso (ribs, collarbones, etc.)<<button "O">><<set $comp.endo.sorted.ves.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)")>>
+                    <li>Limbs (legs, arms, extensions, etc.)<<button "O">><<set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.bio == "ves">>
+            <p>Human biomatter <<button "O">><<set $comp.bio = "ess">><<set $change.component = true>><</button>></p>
+          <<endif>>
+
+          <<if $comp.climate.sorted.ves.length > 0>>
+            <<link "Climate control systems">>
+              <<if $comp.open.climate != "ves">><<set $comp.open.climate = "ves">><<else>><<set $comp.open.climate = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.climate == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.climate.sorted.ves.includes("Compressor")>>
+                    <li>Compressor <<button "0">><<set $comp.climate.sorted.ves.delete("Compressor")>><<set $comp.climate.sorted.ess.push("Compressor")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ves.includes("Fans")>>
+                    <li>Fans <<button "O">><<set $comp.climate.sorted.ves.delete("Fans")>><<set $comp.climate.sorted.ess.push("Fans")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ves.includes("Exo combusters")>>
+                    <li>Exo combusters <<button "O">><<set $comp.climate.sorted.ves.delete("Exo combusters")>><<set $comp.climate.sorted.ess.push("Exo combusters")>><<set $change.component = true>><</button>></li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+::SystemAlert [nobr]
+  <div id="alertcon">
+  <div id="systemAlert">
+    <h4>SYSTEM ALERT</h4>
+    <<if $alert.worm == false>>
+    <p>ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH</p>
+
+    <div class="buttonbg">
+      <span class="green"><<button "CONFIRM">>
+        <<set $alert.worm = "on">>
+        <<set $change.alert = true>>
+      <</button>></span>
+      <span class="red"><<button "OVERRIDE">>
+        <<set $alert.worm = "on">>
+        <<set $change.alert = true>>
+      <</button>></span>
+    </div>
+    <<elseif $alert.worm == "on">>
+      <<timed 0.1s>>
+        <<replace "#systemAlert">>
+          <<include "Snake">>
+        <</replace>>
+      <</timed>>
+    <<elseif $alert.worm == "won">>
+      <p>AUX CAMERA ACCESS RENABLED</p>
+
+      <span class="green"><<button "TURN ON AUX">>
+        <<set $alert.worm = "done">>
+        <<set $change.alert = true>>
+      <</button>></span>
+    <<endif>>
+    <<if $alert.next == "Something" && $alert.worm == "done">>
+      <p>I'm so more content, I guess</p>
+    <<endif>>
+  </div>
+  </div>
+
+
+::CameraToggle [nobr]
+  <div class="camcon">
+    <div class="cam">
+      <<if $cam.one == "on">>
+        <span class="grey"><<button "CAMERA_1">>
+          <<set $cam.one = "on">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<elseif $cam.one == "off">>
+        <span class="green"><<button "CAMERA_1">>
+          <<set $cam.one = "off">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<endif>>
+      <<if $cam.two == "on">>
+        <span class="grey"><<button "CAMERA_2">>
+          <<set $cam.two = "on">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<elseif $cam.two == "off">>
+        <span class="green"><<button "CAMERA_2">>
+          <<set $cam.two = "off">>
+          <<set $change.cam = true>>
+        <</button>></span>
+      <<endif>>
+    </div>
+  </div>
+
+
+::FunctionLibrary [nobr]
+  <div id="functcon">
+  <div id="functionLib">
+    <h4>FUNCTON LIBRARY REVIEW</h4>
+    <div id="lib-container">
+      <<link ".pressTest()">>
+        <<if $funct.test == false>><<set $funct.test = true>><<else>><<set $funct.test = false>><<endif>>
+        <<set $change.function = true>>
+      <</link>>
+      <<if $funct.test == true>>
+        <div class="funct-container">
+          <p>&nbsp;&nbsp;&nbsp;1. pressTest = {</p>
+          <p>&nbsp;&nbsp;&nbsp;2. &nbsp;&nbsp;x-x++++++</p>
+          <p>&nbsp;&nbsp;&nbsp;3. &nbsp;&nbsp;sfdsbhfd</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. . .</p>
+          <p>4562. asdjasdasd</p>
+          <p>4563. }</p>
+
+          <span class="red"><<button "EXECUTE">><</button>></span>
+        </div>
+      <<endif>>
+    </div>
+  </div>
+  </div>
+
+
+::SelfDesignation [nobr]
+  <div id="designcon">
+  <div id="designation">
+    Self-Designation: $name, $pronoun1/$pronoun2
+  </div>
+  </div>
+
+
+::Battery [nobr]
+  <div id="battcon">
+  <div id="battery">
+    <<for _i to 0; _i < $battery; _i++>><div class="batteryLevel"></div><</for>>
+  </div>
+  </div>
+
+::BackgroundShit [nobr]
+  <<include "FlickFast">>
+  <<if $cam.one == "on" && $cam.two == "off">>
+  /* <script>
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt MainCamStuff");
+  </script> */
+  <<elseif $cam.one == "off" && $cam.two == "on">>
+  /* <script>
+    $(".passage").removeClass("");
+    $(".passage").addClass("crt AuxCamStuff");
+  </script> */
+  <<elseif $cam.one == "on" && $cam.two == "on">>
+    /* <div id="left-bg"></div>
+    <div id="right-bg"></div> */
+  <<endif>>
+
+
+::UpdateHud [widget]
+  <<widget "updatehud">><<silently>>alternatively I can just invoke this when a variable is changed, but yeah
+  <<repeat 0.1s>>
+    <<if $change.battery == true>>
+      <<set $change.battery = false>>
+      <<replace "#battcon">><<display "Battery">><</replace>>
+    <<elseif $change.damage == true>>
+      <<set $change.damage = false>>
+      <<replace "#damagecon">><<display "Damage">><</replace>>
+    <<elseif $change.component == true>>
+      <<set $change.component = false>>
+      <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
+    <<elseif $change.alert == true>>
+      <<set $change.alert = false>>
+      <<replace "#alertcon">><<display "SystemAlert">><</replace>>
+    <<elseif $change.function == true>>
+      <<set $change.function = false>>
+      <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
+    <<elseif $change.designation == true>>
+      <<set $change.designation = false>>
+      <<replace "#designcon">><<display "SelfDesignation">><</replace>>
+    <<elseif $change.cam == true>>
+      <<set $change.cam = false>>
+      <<replace "#camcon">><<display "CameraToggle">><</replace>>
+    <<elseif $change.background == true>>
+      <<include "FlickFast">>
+      <<set $change.background = false>>
+    <<endif>>
+  <</repeat>>
+  <</silently>><</widget>>
+
+
+::Snake [nobr snake]
+  <p>System repairs: 1%</p>
+  <<timed 60s>>
+    <<set $alert.worm = "won">>
+    <<set $alert.next = "Something">>
+    <<set $change.alert = true>>
+  <</timed>>
+  <iframe src="snakegame.html" width="100%" height="100%" position="relative">
+  </iframe>

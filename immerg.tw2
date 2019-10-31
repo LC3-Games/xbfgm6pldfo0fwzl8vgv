@@ -11,6 +11,8 @@
 
   storyinit.tw2
 
+  viewHUD.tw2
+
 
 ::StoryIFID [twee2]
 Twee2::build_config.story_ifid ='80A24E8A-1ED1-4677-84AF-EB3E11E6D40D'
@@ -244,6 +246,7 @@ Immerging
                     <<endif>>
   <</timed>>
 
+
 ::Quiz Start [nobr]
   <div class="quiz-container">
     <p>WHO WHO WHO WHO WHO WHO</p>
@@ -421,34 +424,6 @@ Immerging
   </div>
 
 
-::Quiz Go Back [nobr]
-  <<set $bg = 3>>
-  <div class="quiz-container">
-    <p class="redbg">ERRORED OUT</p>
-
-    <ul>
-      <li>
-        [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday]]
-      </li>
-      <li>
-        <a>VOID</a>
-      </li>
-      <li>
-        [[PERSONNEL FILE 10096579854|Quiz File]]
-      </li>
-      <li>
-        <a>VOID</a>
-      </li>
-      <li>
-        [[10-18-2319_5|Quiz Date]]
-      </li>
-      <li>
-        [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail]]
-      </li>
-    </ul>
-  </div>
-
-
 ::Quiz Nothing [nobr]
   <<set $bg = 3>>
   <div class="quiz-container">
@@ -496,6 +471,53 @@ Immerging
   </div>
 
 
+::Quiz Go Back [nobr]
+  <<set $bg = 3>>
+  <<if $quizCon == 4>>
+    <<goto "Quiz Continue">>
+  <<endif>>
+  <div class="quiz-container">
+    <p class="redbg">ERRORED OUT</p>
+
+    <ul>
+      <li>
+        <<if hasVisited ("Quiz Halley's Birthday")>>
+          <a>Void</a>
+        <<else>>
+          [[SUBJECT: HALLEY'S BIRTHDAY|Quiz Halley's Birthday][$quizCon +=1]]
+        <<endif>>
+      </li>
+      <li>
+        <a>VOID</a>
+      </li>
+      <li>
+        <<if hasVisited ("Quiz File")>>
+          <a>Void</a>
+        <<else>>
+          [[PERSONNEL FILE 10096579854|Quiz File][$quizCon +=1]]
+        <<endif>>
+      </li>
+      <li>
+        <a>VOID</a>
+      </li>
+      <li>
+        <<if hasVisited ("Quiz Date")>>
+          <a>Void</a>
+        <<else>>
+          [[`10-18-2319_5`|Quiz Date][$quizCon +=1]]
+        <<endif>>
+      </li>
+      <li>
+        <<if hasVisited ("Quiz Mail")>>
+          <a>Void</a>
+        <<else>>
+          [[:-P LOOKS LIKE IM GONNA DIE|Quiz Mail][$quizCon +=1]]
+        <<endif>>
+      </li>
+    </ul>
+  </div>
+
+
 ::Quiz Halley's Birthday [nobr nolink fileerror]
   <<set $bg = 3>>
   <<typewriter ">File corrupted">>
@@ -513,8 +535,8 @@ Immerging
   <</timed>>
 
   <div class="file-container">
-    <div class="file-header">SUBJECT: HALLEY'S BIRTHDAY</div>
-    <p><<linkreplace"Hey">><span class="hidetext">Hey</span><<include "Word Count">><</linkreplace>> <<linkreplace"Wax">><span class="hidetext">Wax</span><<include "Word Count">><</linkreplace>>,</p>
+    <div class="file-header">[img[images/triangle_blue.png][Quiz Go Back]] SUBJECT: HALLEY'S BIRTHDAY</div>
+    <p><<linkreplace"Hey">><span class="hidetext">Hey</span><<include "Word Count">><</linkreplace>> <<linkreplace"Anser">><span class="hidetext">Anser</span><<include "Word Count">><</linkreplace>>,</p>
 
     <p><<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"you">><span class="hidetext">you</span><<include "Word Count">><</linkreplace>>'<<linkreplace"re">><span class="hidetext">re</span><<include "Word Count">><</linkreplace>> <<linkreplace"having">><span class="hidetext">having</span><<include "Word Count">><</linkreplace>> a <<linkreplace"tough">><span class="hidetext">tough</span><<include "Word Count">><</linkreplace>> <<linkreplace"time">><span class="hidetext">time</span><<include "Word Count">><</linkreplace>>, <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"am">><span class="hidetext">am</span><<include "Word Count">><</linkreplace>> <<linkreplace"too">><span class="hidetext">too</span><<include "Word Count">><</linkreplace>> <<linkreplace"honestly">><span class="hidetext">honestly</span><<include "Word Count">><</linkreplace>>. <<linkreplace"Please">><span class="hidetext">Please</span><<include "Word Count">><</linkreplace>> <<linkreplace"do">><span class="hidetext">do</span><<include "Word Count">><</linkreplace>> <<linkreplace"message">><span class="hidetext">message</span><<include "Word Count">><</linkreplace>> <<linkreplace"Halley">><span class="hidetext">Halley</span><<include "Word Count">><</linkreplace>> <<linkreplace"though">><span class="hidetext">though</span><<include "Word Count">><</linkreplace>>. <<linkreplace"She">><span class="hidetext">She</span><<include "Word Count">><</linkreplace>>'s <<linkreplace"been">><span class="hidetext">been</span><<include "Word Count">><</linkreplace>> <<linkreplace"bugging">><span class="hidetext">bugging</span><<include "Word Count">><</linkreplace>> <<linkreplace"me">><span class="hidetext">me</span><<include "Word Count">><</linkreplace>> <<linkreplace"all">><span class="hidetext">all</span><<include "Word Count">><</linkreplace>> <<linkreplace"week">><span class="hidetext">week</span><<include "Word Count">><</linkreplace>>, <<linkreplace"and">><span class="hidetext">and</span><<include "Word Count">><</linkreplace>> <<linkreplace"I">><span class="hidetext">I</span><<include "Word Count">><</linkreplace>> <<linkreplace"know">><span class="hidetext">know</span><<include "Word Count">><</linkreplace>> <<linkreplace"it">><span class="hidetext">it</span><<include "Word Count">><</linkreplace>> <<linkreplace"means">><span class="hidetext">means</span><<include "Word Count">><</linkreplace>> a <<linkreplace"lot">><span class="hidetext">lot</span><<include "Word Count">><</linkreplace>> <<linkreplace"to">><span class="hidetext">to</span><<include "Word Count">><</linkreplace>> <<linkreplace"her">><span class="hidetext">her</span><<include "Word Count">><</linkreplace>>.</p>
 
@@ -524,6 +546,7 @@ Immerging
 
     <p><<linkreplace"&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;">><span class="hidetext">&#114;&#866;&#821;&#856;&#828;&#826;&#803;&#851;&#839;&#101;&#804;&#796;&#825;&#858;&#851;&#121;&#861;&#856;&#811;&#857;&#797;&#798;&#841;&#839;&#846;&#819;&#97;&#1161;&#866;&#846;&#852;&#792;</span><<include "Word Count">><</linkreplace>>,</p>
   </div>
+
 
 ::Quiz File [nobr fileerror]
   <<set $bg = 3>>
@@ -537,8 +560,10 @@ Immerging
                 <<next>>
                   <<typewriter ">Deleting file . . . . . . . . . . . . .">>
                     <<next>>
-                      <<goto "Quiz Continue">>
+                      <<goto "Quiz Go Back">>
+    <</timed>>
   <div class="file-container">
+    <div class="file-header">[img[images/triangle_blue.png][Quiz Go Back]] PERSONNEL FILE 10096579854</div>
     <<include "BigZalgo">>
   </div>
 
@@ -546,11 +571,9 @@ Immerging
 ::Quiz Date [nobr familyImage]
   <<set $bg = 3>>
   <div class="file-container">
-    <div class="file-header">10-18-2319_5
+    <div class="file-header">[img[images/triangle_blue.png][Quiz Go Back]] 10-18-2319_5</div>
+    [img[images/who2.png]]
   </div>
-  <<timed 5s>>
-    <<goto "Quiz Continue">>
-  <</timed>>
 
 
 ::Quiz Mail [nobr nolink fileerror]
@@ -600,10 +623,11 @@ Immerging
 
 
 ::Word Count [nobr]
-  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Quiz Continue">><<endif>>
+  <<set $wordCounter +=1>><<if $wordCounter == 5>><<goto "Quiz Go Back">><<endif>>
 
 
 ::Corpse [nobr]
+  <<audio "pinkNoise" loop volume 0.4>>
   <<timed 5s>>
     <<goto "ChooseName">>
   <</timed>>
@@ -668,266 +692,3 @@ Immerging
           <<next>>
           <<goto "Escape Start">>
   <</timed>>
-
-
-::Escape Start
-  <<include "ViewHUD">>
-
-
-::ViewHUD [nobr]
-  <<updatehud>>
-  <<include "BackgroundShit">>
-
-  <<include "SelfDesignation">>
-
-  <<include "FunctionLibrary">>
-
-  /* <<if passage() == "Escape Start">>
-    <div class="battery appear"><<include "BatteryLevel">></div>
-  <<else>> */
-    <<include "Battery">>
-  /* <<endif>> */
-
-  <<include "Damage">>
-
-  <<include "SystemAlert">>
-
-  <<include "ComponentBreakdown">>
-
-
-::Damage [nobr]
-  <div id="damagecon">
-  <div id="damage">
-    Integrity: $damage%
-  </div>
-  </div>
-
-
-::ComponentBreakdown [nobr]
-  <div id="compcon">
-  <div id="component">
-    <h4>COMPONENTS</h4>
-    <div id="unsorted">
-      <h5>UNSORTED</h5>
-      <div class="scrollcontent">
-        <p>Human Endoskeleton</p>
-        <ul>
-          <li>Skull (teeth et. al)</li>
-          <li>Torso (ribs, collarbones, etc.)</li>
-          <li>Limbs (legs, arms, extensions, etc.)</li>
-        </ul>
-        <p>Human biomatter</p>
-        <p>Climate control system</p>
-          <ul>
-            <li>Compressor</li>
-            <li>Fans (3x)</li>
-            <li>Exo combustion</li>
-          </ul>
-        <p>Life Support systems</p>
-          <ul>
-            <li>Water collection</li>
-            <li>Wasted recycling</li>
-            <li>Climate control (x)</li>
-          </ul>
-        <p>Suit Mechanics</p>
-          <ul>
-            <li>Heat Sinks (x4)</li>
-            <li>Motors (x21)</li>
-            <li>Ligamentation system</li>
-          </ul>
-      </div>
-    </div>
-    <div id="bottomRow">
-      <div class="sorted left">
-        <h5>ESSENTIAL</h5>
-        <div class="scrollcontent">
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-      <div class="sorted right">
-        <h5>VESTIGIAL</h5>
-        <div class="scrollcontent">
-          <p>Human Endoskeleton</p>
-          <ul>
-            <li>Skull (teeth et. al)</li>
-            <li>Torso (ribs, collarbones, etc.)</li>
-            <li>Limbs (legs, arms, extensions, etc.)</li>
-          </ul>
-          <p>Human biomatter</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-::SystemAlert [nobr]
-  <div id="alertcon">
-  <div id="systemAlert">
-    <h4>SYSTEM ALERT</h4>
-    <<if $alert.worm == false>>
-    <p>ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH</p>
-
-    <div class="buttonbg">
-      <span class="green"><<button "CONFIRM">>
-        <<set $alert.worm = "on">>
-        <<set $change.alert = true>>
-      <</button>></span>
-      <span class="red"><<button "OVERRIDE">>
-        <<set $alert.worm = "on">>
-        <<set $change.alert = true>>
-      <</button>></span>
-    </div>
-    <<elseif $alert.worm == "on">>
-      <<timed 0.1s>>
-        <<replace "#systemAlert">>
-          <<include "Snake">>
-        <</replace>>
-      <</timed>>
-    <<elseif $alert.worm == "won">>
-      <p>AUX CAMERA ACCESS RENABLED</p>
-
-      <span class="green"><<button "TURN ON AUX">>
-        <<set $alert.worm = "done">>
-        <<set $change.alert = true>>
-      <</button>></span>
-    <<endif>>
-    <<if $alert.next == "Something" && $alert.worm == "done">>
-      <p>I'm so more content, I guess</p>
-    <<endif>>
-  </div>
-  </div>
-
-
-::CameraToggle [nobr]
-  <div class="camcon">
-    <div class="cam">
-      <<if $cam.one == "on">>
-        <span class="grey"><<button "CAMERA_1">>
-          <<set $cam.one = "on">>
-          <<set $change.cam = true>>
-        <</button>></span>
-      <<elseif $cam.one == "off">>
-        <span class="green"><<button "CAMERA_1">>
-          <<set $cam.one = "off">>
-          <<set $change.cam = true>>
-        <</button>></span>
-      <<endif>>
-      <<if $cam.two == "on">>
-        <span class="grey"><<button "CAMERA_1">>
-          <<set $cam.two = "on">>
-          <<set $change.cam = true>>
-        <</button>></span>
-      <<elseif $cam.two == "off">>
-        <span class="green"><<button "CAMERA_1">>
-          <<set $cam.two = "off">>
-          <<set $change.cam = true>>
-        <</button>></span>
-      <<endif>>
-    </div>
-  </div>
-
-
-::FunctionLibrary [nobr]
-  <div id="functcon">
-  <div id="functionLib">
-    <h4>FUNCTON LIBRARY REVIEW</h4>
-    <div id="lib-container">
-      <<link ".pressTest()">>
-        <<include "FlickFast">>
-        <<if $funct.test == false>><<set $funct.test = true>><<else>><<set $funct.test = false>><<endif>>
-        <<set $change.function = true>>
-      <</link>>
-      <<if $funct.test == true>>
-        <div class="funct-container">
-          <p>&nbsp;&nbsp;&nbsp;1. pressTest = {</p>
-          <p>&nbsp;&nbsp;&nbsp;2. &nbsp;&nbsp;x-x++++++</p>
-          <p>&nbsp;&nbsp;&nbsp;3. &nbsp;&nbsp;sfdsbhfd</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. . .</p>
-          <p>4562. asdjasdasd</p>
-          <p>4563. }</p>
-
-          <span class="red"><<button "EXECUTE">><</button>></span>
-        </div>
-      <<endif>>
-    </div>
-  </div>
-  </div>
-
-
-::SelfDesignation [nobr]
-  <div id="designcon">
-  <div id="designation">
-    Self-Designation: $name, $pronoun1/$pronoun2
-  </div>
-  </div>
-
-
-::Battery [nobr]
-  <div id="battcon">
-  <div id="battery">
-    <<for _i to 0; _i < $battery; _i++>><div class="batteryLevel"></div><</for>>
-  </div>
-  </div>
-
-::BackgroundShit [nobr]
-  <<include "FlickFast">>
-  <<if $cam.one == "on" && $cam.two == "off">>
-  /* <script>
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt MainCamStuff");
-  </script> */
-  <<elseif $cam.one == "off" && $cam.two == "on">>
-  /* <script>
-    $(".passage").removeClass("");
-    $(".passage").addClass("crt AuxCamStuff");
-  </script> */
-  <<elseif $cam.one == "on" && $cam.two == "on">>
-    /* <div id="left-bg"></div>
-    <div id="right-bg"></div> */
-  <<endif>>
-
-
-::UpdateHud [widget]
-  <<widget "updatehud">><<silently>>alternatively I can just invoke this when a variable is changed, but yeah
-  <<repeat 0.1s>>
-    <<if $change.battery == true>>
-      <<set $change.battery = false>>
-      <<replace "#battcon">><<display "Battery">><</replace>>
-    <<elseif $change.damage == true>>
-      <<set $change.damage = false>>
-      <<replace "#damagecon">><<display "Damage">><</replace>>
-    <<elseif $change.component == true>>
-      <<set $change.component = false>>
-      <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
-    <<elseif $change.alert == true>>
-      <<set $change.alert = false>>
-      <<replace "#alertcon">><<display "SystemAlert">><</replace>>
-    <<elseif $change.function == true>>
-      <<set $change.function = false>>
-      <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
-    <<elseif $change.designation == true>>
-      <<set $change.designation = false>>
-      <<replace "#designcon">><<display "SelfDesignation">><</replace>>
-    <<elseif $change.cam == true>>
-      <<set $change.cam = false>>
-      <<replace "#camcon">><<display "CameraToggle">><</replace>>
-    <<elseif $change.background == true>>
-      <<include "FlickFast">>
-      <<set $change.background = false>>
-    <<endif>>
-  <</repeat>>
-  <</silently>><</widget>>
-
-
-::Snake [nobr snake]
-  <p>System repairs: 1%</p>
-  <<timed 60s>>
-    <<set $alert.worm = "won">>
-    <<set $alert.next = "Something">>
-    <<set $change.alert = true>>
-  <</timed>>
-  <iframe src="snakegame.html" width="100%" height="100%" position="relative">
-  </iframe>

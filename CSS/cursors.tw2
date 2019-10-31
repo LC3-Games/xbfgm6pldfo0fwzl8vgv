@@ -98,5 +98,6 @@
 }
 
 .yellow-star-cursor {
-  animation: yellow-star-anim 1s infinite;
+  /* animation: yellow-star-anim 1s infinite; */
+  cursor: url("images/hover_cursor.png"), auto;
 }

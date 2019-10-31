@@ -118,17 +118,68 @@
 	font-size: 1.2em;
 }
 
+#component #unsorted a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+	margin-bottom: 0.4em;
+  user-select: none;
+}
+
+#component .sorted a {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111111;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+	margin-bottom: 0.4em;
+  user-select: none;
+}
+
+#component #unsorted a:hover {
+  /* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
+  text-decoration: none;
+}
+
 #component p {
+	padding-top: 0.5em;
 	border-bottom: 1px solid #93939370;
 }
 
-#component ul {
+/* #component ul {
 	border-bottom: 1px solid #93939370;
+	padding-top: 0.5em;
+} */
+
+.comp-container {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  background-color: #1111118c;
+  border: 1px solid #939393;
+  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#unsorted .comp-container a {
+	padding: 2px !important;
+	margin-right: 4px;
 }
 
 .scrollcontent {
 	overflow-y: auto;
-	height: 93%;
+	height: 91%;
+	padding-top: 0.5em;
 }
 
 .scrollcontent::-webkit-scrollbar
@@ -179,7 +230,8 @@
 }
 
 #lib-container a:hover {
-  animation: yellow-star-anim 1s infinite;
+  /* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
   text-decoration: none;
 }
 
