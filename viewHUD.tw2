@@ -35,8 +35,8 @@
 ::ComponentBreakdown [nobr]
   <div id="compcon">
   <div id="component">
-    <<set $change.alert = true>>
     <h4>COMPONENTS</h4>
+    <<set $change.alert = true>>
     <div id="unsorted">
       <h5>UNSORTED</h5>
       <div class="scrollcontent">
@@ -349,7 +349,7 @@
             <<if $comp.open.life == "ves">>
               <div class="comp-container">
                 <ul>
-                  <<if $comp.life.sorted.ess.includes("Water collection")>>
+                  <<if $comp.life.sorted.ves.includes("Water collection")>>
                     <li>Water collection</li>
                   <<endif>>
                   <<if $comp.life.sorted.ves.includes("Waste management")>>
@@ -372,13 +372,13 @@
             <<if $comp.open.suit == "ves">>
               <div class="comp-container">
                 <ul>
-                  <<if $comp.suit.sorted.ess.includes("Heat sink repository")>>
+                  <<if $comp.suit.sorted.ves.includes("Heat sink repository")>>
                     <li>Heat sink repository</li>
                   <<endif>>
-                  <<if $comp.suit.sorted.ess.includes("Motor lattice")>>
+                  <<if $comp.suit.sorted.ves.includes("Motor lattice")>>
                     <li>Motor lattice</li>
                   <<endif>>
-                  <<if $comp.suit.sorted.ess.includes("Ligamentation system")>>
+                  <<if $comp.suit.sorted.ves.includes("Ligamentation system")>>
                     <li>Ligamentation system</li>
                   <<endif>>
                 </ul>
@@ -403,7 +403,11 @@
 ::SystemAlert [nobr]
   <div id="alertcon">
   <div id="systemAlert">
+    <<if $alert.his.length > 0>>
+      <<set $alert.his.deleteAt(0)>>
+    <<endif>>
     <h4>SYSTEM ALERT</h4>
+    <div id="syscon">
     <<if $alert.worm == false>>
       <p>ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH</p>
 
@@ -437,18 +441,18 @@
       </div>
     <<endif>>
 
-    <<if $alert.frag == 5 && $alert.worm == "done">>
+    <<if $alert.frag == 1 && $alert.worm == "done">>
       <p>SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED</p>
 
       <p>ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE</p>
 
       <div class="buttonbg">
         <span class="green"><<button "DISMISS">>
-          <<set $alert.frag = 5>>
+          <<set $alert.frag = 2>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
-    <<elseif $alert.frag == 5>>
+    <<elseif $alert.frag == 2>>
       <p>OUT OUT OUT OUT OUT</p>
 
       <p>SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN</p>
@@ -456,10 +460,10 @@
       <p>SEEKING LIGHTSOURCE</p>
 
       <<timed 3s>>
-        <<set $alert.frag = 5>>
+        <<set $alert.frag = 3>>
         <<set $change.alert = true>>
       <</timed>>
-    <<elseif $alert.frag == 5>>
+    <<elseif $alert.frag == 3>>
       <p>SEEKING LIGHTSOURCE</p>
 
       <p>FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN</p>
@@ -468,11 +472,11 @@
 
       <div class="buttonbg">
         <span class="green"><<button "DISMISS">>
-          <<set $alert.frag = 5>>
+          <<set $alert.frag = 4>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
-    <<elseif $alert.frag == 5>>
+    <<elseif $alert.frag == 4>>
       <p>SOMETHING STARTED CLICKING</p>
 
       <p>YOU HEAR THAT? I HEAR THAT?</p>
@@ -492,14 +496,14 @@
 
       <p>IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER</p>
 
-      <<timed 6s>>
+      <<timed 5s>>
         <<set $alert.frag = "done">>
         <<set $alert.hide = "true">>
         <<set $change.alert = true>>
       <</timed>>
     <<endif>>
 
-    <<if alert.frag == "done">>
+    <<if $alert.frag == "done">>
       <<if $comp.photo == "ves" && $override.photo == false>>
         <p>NEEDED FOR POWER</p>
 
@@ -510,9 +514,7 @@
             <<set $change.component = true>>
             <<set $change.alert = true>>
           <</button>></span>
-        </div>
-        <div class="buttonbg">
-          <span class="green"><<button "OVERRIDE">>
+          <span class="red"><<button "OVERRIDE">>
             <<set $damage -= 22>>
             <<set $battery -= 7>>
             <<set $alert.hide = true>>
@@ -521,7 +523,7 @@
             <<set $change.alert = true>>
           <</button>></span>
         </div>
-      <<elseif $comp.climate.sorted.ves.inlcudes("Exo combusters") && $override.exo == false>>
+      <<elseif $comp.climate.sorted.ves.includes("Exo combusters") && $override.exo == false>>
         <p>WAIT IM AFRAID TO DIG THIS OUT</p>
 
         <p>SYSTEMS THROWING ERRORS</p>
@@ -536,29 +538,25 @@
             <<set $change.component = true>>
             <<set $change.alert = true>>
           <</button>></span>
-        </div>
-        <div class="buttonbg">
-          <span class="green"><<button "OVERRIDE">>
+          <span class="red"><<button "OVERRIDE">>
             <<set $damage -= 25>>
-            <<set $override.limbs = true>>
+            <<set $override.exo = true>>
             <<set $alert.hide = true>>
             <<set $change.damage = true>>
             <<set $change.alert = true>>
           <</button>></span>
         </div>
-      <<elseif $comp.human.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") && $override.limbs == false>>
+      <<elseif $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") && $override.limbs == false>>
         <p>STRUCTURAL INTEGRITY IS WILL BE COMPROMISED</p>
         <div class="buttonbg">
           <span class="green"><<button "CANCEL">>
-            <<set $comp.human.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>>
-            <<set $comp.human.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")>>
+            <<set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>>
+            <<set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")>>
             <<set $alert.hide = true>>
             <<set $change.component = true>>
             <<set $change.alert = true>>
           <</button>></span>
-        </div>
-        <div class="buttonbg">
-          <span class="green"><<button "OVERRIDE">>
+          <span class="red"><<button "OVERRIDE">>
             <<set $damage -= 27>>
             <<set $override.limbs = true>>
             <<set $alert.hide = true>>
@@ -576,9 +574,7 @@
             <<set $change.component = true>>
             <<set $change.alert = true>>
           <</button>></span>
-        </div>
-        <div class="buttonbg">
-          <span class="green"><<button "OVERRIDE">>
+          <span class="red"><<button "OVERRIDE">>
             <<set $damage -= 21>>
             <<set $override.motor = true>>
             <<set $alert.hide = true>>
@@ -592,7 +588,7 @@
         </div>
 
         <<timed 3s>>
-          <<replace "#first">>
+          <<replace ".first">>
             <<include "FlickFast">>
             <p>I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED</p>
 
@@ -604,9 +600,7 @@
                 <<set $change.component = true>>
                 <<set $change.alert = true>>
               <</button>></span>
-            </div>
-            <div class="buttonbg">
-              <span class="green"><<button "OVERRIDE">>
+              <span class="red"><<button "OVERRIDE">>
                 <<set $damage -= 32>>
                 <<set $override.lig = true>>
                 <<set $alert.hide = true>>
@@ -618,6 +612,8 @@
         <</timed>>
       <<endif>>
     <<endif>>
+
+    </div>
   </div>
   </div>
 
@@ -696,10 +692,11 @@
 ::SelfDesignation [nobr]
   <div id="designcon">
   <div id="designation">
-    <<timed 120s>>
+    <<timed 10s>>
       <<if $alert.frag != "done">>
-        <<set $alert.frag = "1">>
-        <<if $worm.alert == "done">>
+        <<set $alert.frag = 1>>
+        <<set $alert.his.push("frag")>>
+        <<if $alert.worm == "done">>
           <<set $change.alert = true>>
         <<endif>>
       <<endif>>
@@ -751,15 +748,27 @@
         <<audio "softAmbient" stop>>
         <<audio "tapMetal" loop volume 0.2 fadeoverto 16 0.5>>
       <<endif>>
+      <<if ($comp.suit.sorted.ves.includes("Ligamentation system") && $override.lig == false) || ($comp.photo == "ves" && $override.photo == false) || ($comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") && $override.limbs == false) || ($comp.climate.sorted.ves.includes("Exo combusters") && $override.exo == false) || ($comp.suit.sorted.ves.includes("Motor lattice") && $override.motor == false)>>
+        <<set $alert.his.push("something")>>
+        <<set $alert.hide = false>>
+        <<set $change.alert = true>>
+      <<endif>>
       <<set $change.component = false>>
       <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
     <<elseif $change.alert == true>>
       <<set $change.alert = false>>
-      <<replace "#alertcon">>
-        <<if $alert.hide == false>>
+      <<if $alert.hide == false>>
+        <<replace "#alertcon">>
           <<display "SystemAlert">>
+        <</replace>>
+      <<else>>
+        <<if $alert.his.length > 0>>
+          <<set $alert.hide = false>>
+          <<set $change.alert = true>>
         <<endif>>
-      <</replace>>
+        <<replace "#alertcon">>
+        <</replace>>
+      <<endif>>
     <<elseif $change.function == true>>
       <<set $change.function = false>>
       <<replace "#functcon">><<display "FunctionLibrary">><</replace>>

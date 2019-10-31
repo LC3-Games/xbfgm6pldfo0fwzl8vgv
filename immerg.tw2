@@ -178,7 +178,7 @@ Immerging
   <p>YOU</p>
   <p>STARTING TO THINKINKINKINKINKINK RESTARTING . . . </p>
 
-  <<timed 10s>>
+  <<timed 8s>>
     <<replace "#this">><div class="container black-reverse"></div><</replace>>
     <<timed 7s>>
       <<goto "AV Choice">>

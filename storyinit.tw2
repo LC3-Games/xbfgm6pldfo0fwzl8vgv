@@ -126,6 +126,7 @@
     worm : false,
     frag : 0,
     hide: false,
+    his : [],
   }>>
 
   <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>

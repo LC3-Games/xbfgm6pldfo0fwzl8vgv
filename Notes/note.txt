@@ -13,3 +13,7 @@ make sure all the variables are being set properly due to button presses cause i
 ask penny about the backgrounds for hatch vs the fucked up pic vs front facing etc.
 
 ALSO, nonsense conde & its consequences
+
+for testing purposes:
+  * snakegame should be 60
+  * self-desig frag time should be at east 90s-120s
