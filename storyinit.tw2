@@ -77,8 +77,8 @@
     life : {
       unsorted : [
         "Water collection",
-        "Wasted recycling",
-        "Climate control",
+        "Waste management",
+        "Air filtration",
       ],
       sorted : {
         ess : [],
@@ -89,7 +89,7 @@
     suit : {
       unsorted : [
         "Heat sink repository",
-        "Motor matrix",
+        "Motor lattice",
         "Ligamentation system",
       ],
       sorted : {
@@ -107,12 +107,14 @@
   <<set $pluck_pull = []>>
 
   <<set $cam = {
+    funct : "off",
     one : "on",
     two : "off"
   }>>
 
   <<set $alert = {
-    worm : false
+    off : true,
+    worm : false,
   }>>
 
   <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>

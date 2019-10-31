@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <img src="images/li_icon.png" id="icon" width="8" height="8">
+  <img src="images/li_icon.png" id="icon" width="0" height="0" opacity="0">
 <canvas width="390px" height="380px" id="game"></canvas>
 <script>
 var canvas = document.getElementById('game');
@@ -27,7 +27,7 @@ var context = canvas.getContext('2d');
 var img = document.getElementById("icon");
 var appleImg = context.createPattern(img, "repeat"); //doesnt seem to work with 'no-repeat'
 
-var grid = 32; // change this to made the squares bigger and smaller
+var grid = 16; // change this to made the squares bigger and smaller
 var count = 0;
 
 var snake = {

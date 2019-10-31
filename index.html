@@ -1222,7 +1222,7 @@ br {
 	right: 25px;
 	border: 2px solid #939393;
 	background-color: #1111118c;
-	font-size: 0.6em;
+	font-size: 0.65em;
 	color: white;
 	box-sizing: border-box;
 }
@@ -1283,19 +1283,19 @@ br {
 }
 
 #component #unsorted a {
-  width: 100%;
+  width: 59%;
   max-width: 100%;
   background-color: #111111;
   color: #eee;
   border: 1px solid #939393;
   line-height: normal;
   padding: .4em;
-	margin-bottom: 0.4em;
   user-select: none;
+	margin-bottom: 8px;
 }
 
 #component .sorted a {
-  width: 100%;
+  min-width: 50%;
   max-width: 100%;
   background-color: #111111;
   color: #eee;
@@ -1303,7 +1303,25 @@ br {
   line-height: normal;
   padding: .4em;
 	margin-bottom: 0.4em;
-  user-select: none;
+}
+
+.scrollcontent a {
+	user-select: none;
+	display: block;
+}
+
+.scrollcontent button {
+	margin-right: 4px;
+  padding: 1px;
+}
+
+#component button {
+	margin-left: 0;
+	margin-right: 4px;
+}
+
+.comp-container button {
+	font-size: 0.7em;
 }
 
 #component #unsorted a:hover {
@@ -1325,12 +1343,10 @@ br {
 .comp-container {
   box-sizing: border-box;
   padding: 10px;
-  margin-top: 6px;
   margin-bottom: 8px;
   background-color: #1111118c;
   border: 1px solid #939393;
   /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
-  margin-left: 10px;
   max-height: 300px;
   overflow-y: auto;
 }
@@ -1368,7 +1384,7 @@ br {
 	position: fixed;
 	border: 2px solid #939393;
 	color: white;
-	font-size: 0.6em;
+	font-size: 0.65em;
 }
 
 #functionLib h4 {
@@ -1467,6 +1483,15 @@ br {
 	display: inline-block;
 	left: 50%;
   transform: translate(-50%, 0);
+}
+
+.cam {
+	width: 100%;
+	height: 25px;
+}
+
+.cam button {
+
 }
 .ship1bg {
 	background: url("images/ship_finals/ship_1.png");
@@ -2523,8 +2548,8 @@ br {
     life : {
       unsorted : [
         "Water collection",
-        "Wasted recycling",
-        "Climate control",
+        "Waste management",
+        "Air filtration",
       ],
       sorted : {
         ess : [],
@@ -2535,7 +2560,7 @@ br {
     suit : {
       unsorted : [
         "Heat sink repository",
-        "Motor matrix",
+        "Motor lattice",
         "Ligamentation system",
       ],
       sorted : {
@@ -2553,12 +2578,14 @@ br {
   &lt;&lt;set $pluck_pull = []&gt;&gt;
 
   &lt;&lt;set $cam = {
+    funct : "off",
     one : "on",
     two : "off"
   }&gt;&gt;
 
   &lt;&lt;set $alert = {
-    worm : false
+    off : true,
+    worm : false,
   }&gt;&gt;
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
@@ -2603,25 +2630,21 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Skull (teeth et al)")&gt;&gt;
-                  &lt;li&gt;Skull (teeth et al)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Skull (teeth et al) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
-                  &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Torso (ribs, collarbones, etc.) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-                  &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Limbs (legs, arms, extensions, etc.) &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;&lt;endif&gt;&gt;
 
-        &lt;&lt;if $comp.bio == "unsorted"&gt;&gt;
-          &lt;p&gt;Human biomatter &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-        &lt;&lt;endif&gt;&gt;
-
         &lt;&lt;if $comp.climate.unsorted.length &gt; 0&gt;&gt;
-          &lt;&lt;link "Climate control systems"&gt;&gt;
+          &lt;&lt;link "Climate Control"&gt;&gt;
             &lt;&lt;if $comp.open.climate != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.climate = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
             &lt;&lt;set $change.component = true&gt;&gt;
           &lt;&lt;/link&gt;&gt;
@@ -2630,34 +2653,75 @@ br {
             &lt;div class="comp-container"&gt;
               &lt;ul&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Compressor")&gt;&gt;
-                  &lt;li&gt;Compressor&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Compressor &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Fans")&gt;&gt;
-                  &lt;li&gt;Fans&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Fans &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Exo combusters")&gt;&gt;
-                  &lt;li&gt;Exo combusters&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                  &lt;li&gt;Exo combusters &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;/ul&gt;
             &lt;/div&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;&lt;endif&gt;&gt;
 
-        &lt;p&gt;Life Support systems&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Water collection&lt;/li&gt;
-            &lt;li&gt;Wasted recycling&lt;/li&gt;
-            &lt;li&gt;Climate control (x)&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;p&gt;Suit Mechanics&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;Heat Sinks (x4)&lt;/li&gt;
-            &lt;li&gt;Motors (x21)&lt;/li&gt;
-            &lt;li&gt;Ligamentation system&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;p&gt;Photovoltaic Unit&lt;/p&gt;
+        &lt;&lt;if $comp.life.unsorted.length &gt; 0&gt;&gt;
+          &lt;&lt;link "Life Support"&gt;&gt;
+            &lt;&lt;if $comp.open.life != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.life = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.life = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.component = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+
+          &lt;&lt;if $comp.open.life == "unsorted"&gt;&gt;
+            &lt;div class="comp-container"&gt;
+              &lt;ul&gt;
+                &lt;&lt;if $comp.life.unsorted.includes("Water collection")&gt;&gt;
+                  &lt;li&gt;Water collection &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Water collection")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Water collection")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.life.unsorted.includes("Waste management")&gt;&gt;
+                  &lt;li&gt;Waste recycling &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Waste management")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Waste management")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.life.unsorted.includes("Air filtration")&gt;&gt;
+                  &lt;li&gt;Air filtration &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ves.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.life.unsorted.delete("Air filtration")&gt;&gt;&lt;&lt;set $comp.life.sorted.ess.push("Air filtration")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $comp.life.unsorted.length &gt; 0&gt;&gt;
+          &lt;&lt;link "Suit Mechanics"&gt;&gt;
+            &lt;&lt;if $comp.open.suit != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.suit = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.suit = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.component = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+
+          &lt;&lt;if $comp.open.suit == "unsorted"&gt;&gt;
+            &lt;div class="comp-container"&gt;
+              &lt;ul&gt;
+                &lt;&lt;if $comp.suit.unsorted.includes("Heat sink repository")&gt;&gt;
+                  &lt;li&gt;Heat sink repository &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Heat sink repository")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Heat sink repository")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.suit.unsorted.includes("Motor lattice")&gt;&gt;
+                  &lt;li&gt;Motor lattice &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+                &lt;&lt;if $comp.suit.unsorted.includes("Ligamentation system")&gt;&gt;
+                  &lt;li&gt;Ligamentation system &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/li&gt;
+                &lt;&lt;endif&gt;&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $comp.bio == "unsorted"&gt;&gt;
+          &lt;p&gt;Human biomatter &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $comp.photo == "unsorted"&gt;&gt;
+          &lt;p&gt;Photovoltaic unit &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&lt;&lt;set $comp.photo = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;span class="green"&gt;&lt;&lt;button "O"&gt;&lt;&lt;set $comp.photo = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;&lt;endif&gt;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+
     &lt;div id="bottomRow"&gt;
       &lt;div class="sorted left"&gt;
         &lt;h5&gt;ESSENTIAL&lt;/h5&gt;
@@ -2672,26 +2736,22 @@ br {
               &lt;div class="comp-container"&gt;
                 &lt;ul&gt;
                   &lt;&lt;if $comp.endo.sorted.ess.includes("Skull (teeth et al)")&gt;&gt;
-                    &lt;li&gt;Skull (teeth et al) &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Skull (teeth et al)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.endo.sorted.ess.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
-                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.endo.sorted.ess.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                 &lt;/ul&gt;
               &lt;/div&gt;
             &lt;&lt;endif&gt;&gt;
           &lt;&lt;endif&gt;&gt;
 
-          &lt;&lt;if $comp.bio == "ess"&gt;&gt;
-            &lt;p&gt;Human biomatter &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.bio = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-          &lt;&lt;endif&gt;&gt;
-
           &lt;&lt;if $comp.climate.sorted.ess.length &gt; 0&gt;&gt;
-            &lt;&lt;link "Climate control systems"&gt;&gt;
-              &lt;&lt;if $comp.open.climate != "ess"&gt;&gt;&lt;&lt;set $comp.open.climate = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;link "Climate Control"&gt;&gt;
+              &lt;&lt;if $comp.open.life != "ess"&gt;&gt;&lt;&lt;set $comp.open.climate = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
             &lt;&lt;/link&gt;&gt;
 
@@ -2699,17 +2759,72 @@ br {
               &lt;div class="comp-container"&gt;
                 &lt;ul&gt;
                   &lt;&lt;if $comp.climate.sorted.ess.includes("Compressor")&gt;&gt;
-                    &lt;li&gt;Compressor &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Compressor&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.climate.sorted.ess.includes("Fans")&gt;&gt;
-                    &lt;li&gt;Fans &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Fans&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.climate.sorted.ess.includes("Exo combusters")&gt;&gt;
-                    &lt;li&gt;Exo combusters &lt;&lt;button "X"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Exo combusters&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                 &lt;/ul&gt;
               &lt;/div&gt;
             &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.life.sorted.ess.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Life Control"&gt;&gt;
+              &lt;&lt;if $comp.open.life != "ess"&gt;&gt;&lt;&lt;set $comp.open.life = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.life = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.life == "ess"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.life.sorted.ess.includes("Water collection")&gt;&gt;
+                    &lt;li&gt;Water collection&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.life.sorted.ess.includes("Waste management")&gt;&gt;
+                    &lt;li&gt;Waste management&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.life.sorted.ess.includes("Air filtration")&gt;&gt;
+                    &lt;li&gt;Air filtration&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.suit.sorted.ess.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Suit Mechanics"&gt;&gt;
+              &lt;&lt;if $comp.open.suit != "ess"&gt;&gt;&lt;&lt;set $comp.open.suit = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.suit = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.suit == "ess"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Heat sink repository")&gt;&gt;
+                    &lt;li&gt;Heat sink repository&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Motor lattice")&gt;&gt;
+                    &lt;li&gt;Motor lattice&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Ligamentation system")&gt;&gt;
+                    &lt;li&gt;Ligamentation system&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+
+          &lt;&lt;if $comp.photo == "ess"&gt;&gt;
+            &lt;p&gt;Photovoltaic unit&lt;/p&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.bio == "ess"&gt;&gt;
+            &lt;p&gt;Human biomatter&lt;/p&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -2727,25 +2842,21 @@ br {
               &lt;div class="comp-container"&gt;
                 &lt;ul&gt;
                   &lt;&lt;if $comp.endo.sorted.ves.includes("Skull (teeth et al)")&gt;&gt;
-                    &lt;li&gt;Skull (teeth et al) &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Skull (teeth et al)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Skull (teeth et al)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.endo.sorted.ves.includes("Torso (ribs, collarbones, etc.)")&gt;&gt;
-                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Torso (ribs, collarbones, etc.)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Limbs (legs, arms, extensions, etc.)&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                 &lt;/ul&gt;
               &lt;/div&gt;
             &lt;&lt;endif&gt;&gt;
           &lt;&lt;endif&gt;&gt;
 
-          &lt;&lt;if $comp.bio == "ves"&gt;&gt;
-            &lt;p&gt;Human biomatter &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.bio = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-          &lt;&lt;endif&gt;&gt;
-
           &lt;&lt;if $comp.climate.sorted.ves.length &gt; 0&gt;&gt;
-            &lt;&lt;link "Climate control systems"&gt;&gt;
+            &lt;&lt;link "Climate Control"&gt;&gt;
               &lt;&lt;if $comp.open.climate != "ves"&gt;&gt;&lt;&lt;set $comp.open.climate = "ves"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.climate = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
             &lt;&lt;/link&gt;&gt;
@@ -2754,17 +2865,71 @@ br {
               &lt;div class="comp-container"&gt;
                 &lt;ul&gt;
                   &lt;&lt;if $comp.climate.sorted.ves.includes("Compressor")&gt;&gt;
-                    &lt;li&gt;Compressor &lt;&lt;button "0"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Compressor")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Compressor")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Compressor&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.climate.sorted.ves.includes("Fans")&gt;&gt;
-                    &lt;li&gt;Fans &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Fans")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Fans")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Fans&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                   &lt;&lt;if $comp.climate.sorted.ves.includes("Exo combusters")&gt;&gt;
-                    &lt;li&gt;Exo combusters &lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/li&gt;
+                    &lt;li&gt;Exo combusters&lt;/li&gt;
                   &lt;&lt;endif&gt;&gt;
                 &lt;/ul&gt;
               &lt;/div&gt;
             &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.life.sorted.ves.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Life Control"&gt;&gt;
+              &lt;&lt;if $comp.open.life != "ves"&gt;&gt;&lt;&lt;set $comp.open.life = "ves"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.life = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.life == "ves"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.life.sorted.ess.includes("Water collection")&gt;&gt;
+                    &lt;li&gt;Water collection&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.life.sorted.ves.includes("Waste management")&gt;&gt;
+                    &lt;li&gt;Waste management&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.life.sorted.ves.includes("Air filtration")&gt;&gt;
+                    &lt;li&gt;Air filtration&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.suit.sorted.ves.length &gt; 0&gt;&gt;
+            &lt;&lt;link "Suit Mechanics"&gt;&gt;
+              &lt;&lt;if $comp.open.suit != "ves"&gt;&gt;&lt;&lt;set $comp.open.suit = "ves"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.suit = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;if $comp.open.suit == "ves"&gt;&gt;
+              &lt;div class="comp-container"&gt;
+                &lt;ul&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Heat sink repository")&gt;&gt;
+                    &lt;li&gt;Heat sink repository&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Motor lattice")&gt;&gt;
+                    &lt;li&gt;Motor lattice&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                  &lt;&lt;if $comp.suit.sorted.ess.includes("Ligamentation system")&gt;&gt;
+                    &lt;li&gt;Ligamentation system&lt;/li&gt;
+                  &lt;&lt;endif&gt;&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.bio == "ves"&gt;&gt;
+            &lt;p&gt;Human biomatter&lt;/p&gt;
+          &lt;&lt;endif&gt;&gt;
+
+          &lt;&lt;if $comp.photo == "ves"&gt;&gt;
+            &lt;p&gt;Photovoltaic unit&lt;/p&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -2774,18 +2939,18 @@ br {
   &lt;div id="systemAlert"&gt;
     &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
     &lt;&lt;if $alert.worm == false&gt;&gt;
-    &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
+      &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
 
-    &lt;div class="buttonbg"&gt;
-      &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
-        &lt;&lt;set $alert.worm = "on"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-        &lt;&lt;set $alert.worm = "on"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-    &lt;/div&gt;
+      &lt;div class="buttonbg"&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+          &lt;&lt;set $alert.worm = "on"&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+          &lt;&lt;set $alert.worm = "on"&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;/div&gt;
     &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
         &lt;&lt;replace "#systemAlert"&gt;&gt;
@@ -2795,38 +2960,45 @@ br {
     &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
       &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
 
-      &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
-        &lt;&lt;set $alert.worm = "done"&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;div class="buttonbg"&gt;
+        &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
+          &lt;&lt;set $alert.worm = "done"&gt;&gt;
+          &lt;&lt;set $cam.funct = "on"&gt;&gt;
+          &lt;&lt;set $change.cam = "true"&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;/div&gt;
     &lt;&lt;endif&gt;&gt;
+
     &lt;&lt;if $alert.next == "Something" &amp;&amp; $alert.worm == "done"&gt;&gt;
       &lt;p&gt;I'm so more content, I guess&lt;/p&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="CameraToggle" tags="nobr" position="">&lt;div class="camcon"&gt;
     &lt;div class="cam"&gt;
-      &lt;&lt;if $cam.one == "on"&gt;&gt;
-        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.one = "on"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;elseif $cam.one == "off"&gt;&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
-          &lt;&lt;set $cam.one = "off"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;endif&gt;&gt;
-      &lt;&lt;if $cam.two == "on"&gt;&gt;
-        &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
-          &lt;&lt;set $cam.two = "on"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;&lt;elseif $cam.two == "off"&gt;&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
-          &lt;&lt;set $cam.two = "off"&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;&lt;if $cam.funct == "on"&gt;&gt;
+        &lt;&lt;if $cam.one == "on"&gt;&gt;
+          &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+            &lt;&lt;set $cam.one = "on"&gt;&gt;
+            &lt;&lt;set $change.cam = true&gt;&gt;
+          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;&lt;elseif $cam.one == "off"&gt;&gt;
+          &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
+            &lt;&lt;set $cam.one = "off"&gt;&gt;
+            &lt;&lt;set $change.cam = true&gt;&gt;
+          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;&lt;endif&gt;&gt;
+        &lt;&lt;if $cam.two == "on"&gt;&gt;
+          &lt;span class="grey"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+            &lt;&lt;set $cam.two = "on"&gt;&gt;
+            &lt;&lt;set $change.cam = true&gt;&gt;
+          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;&lt;elseif $cam.two == "off"&gt;&gt;
+          &lt;span class="green"&gt;&lt;&lt;button "CAMERA_2"&gt;&gt;
+            &lt;&lt;set $cam.two = "off"&gt;&gt;
+            &lt;&lt;set $change.cam = true&gt;&gt;
+          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+        &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
@@ -2886,7 +3058,9 @@ br {
       &lt;&lt;replace "#compcon"&gt;&gt;&lt;&lt;display "ComponentBreakdown"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;elseif $change.alert == true&gt;&gt;
       &lt;&lt;set $change.alert = false&gt;&gt;
-      &lt;&lt;replace "#alertcon"&gt;&gt;&lt;&lt;display "SystemAlert"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace "#alertcon"&gt;&gt;
+        &lt;&lt;display "SystemAlert"&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
     &lt;&lt;elseif $change.function == true&gt;&gt;
       &lt;&lt;set $change.function = false&gt;&gt;
       &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2902,7 +3076,7 @@ br {
     &lt;&lt;endif&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
   &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="Snake" tags="nobr snake" position="">&lt;p&gt;System repairs: 1%&lt;/p&gt;
-  &lt;&lt;timed 60s&gt;&gt;
+  &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;set $alert.worm = "won"&gt;&gt;
     &lt;&lt;set $alert.next = "Something"&gt;&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;
