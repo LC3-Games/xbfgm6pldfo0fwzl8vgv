@@ -14,6 +14,8 @@ ask penny about the backgrounds for hatch vs the fucked up pic vs front facing e
 
 ALSO, nonsense conde & its consequences
 
+make fade in or something for the first view of the hud. it's sudden and boring
+
 for testing purposes:
   * snakegame should be 60
   * self-desig frag time should be at east 90s-120s

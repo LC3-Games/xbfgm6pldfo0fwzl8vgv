@@ -3014,7 +3014,7 @@ br {
     damage : false,
     component : false,
     function : false,
-    designation : false,
+    desig : false,
     alert : false,
     cam : false,
   }&gt;&gt;
@@ -3541,14 +3541,15 @@ br {
         &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
           &lt;&lt;set $alert.worm = "done"&gt;&gt;
           &lt;&lt;set $cam.funct = "on"&gt;&gt;
-          &lt;&lt;set $alert.hide = "true"&gt;&gt;
+          &lt;&lt;set $alert.hide = true&gt;&gt;
+          &lt;&lt;set $change.desig = true&gt;&gt;
           &lt;&lt;set $change.cam = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
     &lt;&lt;endif&gt;&gt;
 
-    &lt;&lt;if $alert.frag == 1 &amp;&amp; $alert.worm == "done"&gt;&gt;
+    &lt;&lt;if $alert.frag == 1&gt;&gt;
       &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
 
       &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
@@ -3556,10 +3557,12 @@ br {
       &lt;div class="buttonbg"&gt;
         &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
           &lt;&lt;set $alert.frag = 2&gt;&gt;
+          &lt;&lt;set $alert.hide = true&gt;&gt;
+          &lt;&lt;set $change.desig = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 2&gt;&gt;
+    &lt;&lt;elseif $alert.frag == 3&gt;&gt;
       &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
 
       &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
@@ -3567,10 +3570,12 @@ br {
       &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
 
       &lt;&lt;timed 3s&gt;&gt;
-        &lt;&lt;set $alert.frag = 3&gt;&gt;
+        &lt;&lt;set $alert.frag = 4&gt;&gt;
+        &lt;&lt;set $alert.hide = true&gt;&gt;
+        &lt;&lt;set $change.desig = true&gt;&gt;
         &lt;&lt;set $change.alert = true&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;elseif $alert.frag == 3&gt;&gt;
+    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
       &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
 
       &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
@@ -3579,11 +3584,13 @@ br {
 
       &lt;div class="buttonbg"&gt;
         &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-          &lt;&lt;set $alert.frag = 4&gt;&gt;
+          &lt;&lt;set $alert.frag = 6&gt;&gt;
+          &lt;&lt;set $alert.hide = true&gt;&gt;
+          &lt;&lt;set $change.desig = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 4&gt;&gt;
+    &lt;&lt;elseif $alert.frag == 7&gt;&gt;
       &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
 
       &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
@@ -3594,18 +3601,21 @@ br {
 
       &lt;div class="buttonbg"&gt;
         &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-          &lt;&lt;set $alert.frag = 5&gt;&gt;
+          &lt;&lt;set $alert.frag = 8&gt;&gt;
+          &lt;&lt;set $alert.hide = true&gt;&gt;
+          &lt;&lt;set $change.desig = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+    &lt;&lt;elseif $alert.frag == 9&gt;&gt;
       &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
 
       &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
 
       &lt;&lt;timed 5s&gt;&gt;
         &lt;&lt;set $alert.frag = "done"&gt;&gt;
-        &lt;&lt;set $alert.hide = "true"&gt;&gt;
+        &lt;&lt;set $alert.hide = true&gt;&gt;
+        &lt;&lt;set $change.desig = true&gt;&gt;
         &lt;&lt;set $change.alert = true&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
     &lt;&lt;endif&gt;&gt;
@@ -3785,14 +3795,23 @@ br {
       &lt;&lt;endif&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="SelfDesignation" tags="nobr" position="">&lt;div id="designcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="SelfDesignation" tags="nobr" position="">&lt;div id="desigcon"&gt;
   &lt;div id="designation"&gt;
     &lt;&lt;timed 10s&gt;&gt;
-      &lt;&lt;if $alert.frag != "done"&gt;&gt;
-        &lt;&lt;set $alert.frag = 1&gt;&gt;
+      &lt;&lt;if $alert.worm == done &amp; $alert.frag != "done"&gt;&gt;
+        &lt;&lt;if $alert.frag == 0&gt;&gt;
+          &lt;&lt;set $alert.frag = 1&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 2&gt;&gt;
+          &lt;&lt;set $alert.frag = 3&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 4&gt;&gt;
+          &lt;&lt;set $alert.frag = 5&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 6&gt;&gt;
+          &lt;&lt;set $alert.frag = 7&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 8&gt;&gt;
+          &lt;&lt;set $alert.frag = 9&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
         &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-        &lt;&lt;if $alert.worm == "done"&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
@@ -3818,8 +3837,11 @@ br {
     &lt;div id="left-bg"&gt;&lt;/div&gt;
     &lt;div id="right-bg"&gt;&lt;/div&gt;
   &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;alternatively I can just invoke this when a variable is changed, but yeah
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;
   &lt;&lt;repeat 0.1s&gt;&gt;
+    &lt;&lt;if $change.desig == true&gt;&gt;
+      &lt;&lt;set $change.desig = false&gt;&gt;
+      &lt;&lt;replace "#desigcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;if $change.battery == true&gt;&gt;
       &lt;&lt;set $change.battery = false&gt;&gt;
       &lt;&lt;replace "#battcon"&gt;&gt;&lt;&lt;display "Battery"&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3856,9 +3878,6 @@ br {
     &lt;&lt;elseif $change.function == true&gt;&gt;
       &lt;&lt;set $change.function = false&gt;&gt;
       &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;elseif $change.designation == true&gt;&gt;
-      &lt;&lt;set $change.designation = false&gt;&gt;
-      &lt;&lt;replace "#designcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;elseif $change.cam == true&gt;&gt;
       &lt;&lt;set $change.cam = false&gt;&gt;
       &lt;&lt;replace "#camcon"&gt;&gt;&lt;&lt;display "CameraToggle"&gt;&gt;&lt;&lt;/replace&gt;&gt;

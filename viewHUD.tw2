@@ -434,14 +434,15 @@
         <span class="green"><<button "TURN ON AUX">>
           <<set $alert.worm = "done">>
           <<set $cam.funct = "on">>
-          <<set $alert.hide = "true">>
+          <<set $alert.hide = true>>
+          <<set $change.desig = true>>
           <<set $change.cam = true>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
     <<endif>>
 
-    <<if $alert.frag == 1 && $alert.worm == "done">>
+    <<if $alert.frag == 1>>
       <p>SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED</p>
 
       <p>ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE</p>
@@ -449,10 +450,12 @@
       <div class="buttonbg">
         <span class="green"><<button "DISMISS">>
           <<set $alert.frag = 2>>
+          <<set $alert.hide = true>>
+          <<set $change.desig = true>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
-    <<elseif $alert.frag == 2>>
+    <<elseif $alert.frag == 3>>
       <p>OUT OUT OUT OUT OUT</p>
 
       <p>SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN</p>
@@ -460,10 +463,12 @@
       <p>SEEKING LIGHTSOURCE</p>
 
       <<timed 3s>>
-        <<set $alert.frag = 3>>
+        <<set $alert.frag = 4>>
+        <<set $alert.hide = true>>
+        <<set $change.desig = true>>
         <<set $change.alert = true>>
       <</timed>>
-    <<elseif $alert.frag == 3>>
+    <<elseif $alert.frag == 5>>
       <p>SEEKING LIGHTSOURCE</p>
 
       <p>FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN</p>
@@ -472,11 +477,13 @@
 
       <div class="buttonbg">
         <span class="green"><<button "DISMISS">>
-          <<set $alert.frag = 4>>
+          <<set $alert.frag = 6>>
+          <<set $alert.hide = true>>
+          <<set $change.desig = true>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
-    <<elseif $alert.frag == 4>>
+    <<elseif $alert.frag == 7>>
       <p>SOMETHING STARTED CLICKING</p>
 
       <p>YOU HEAR THAT? I HEAR THAT?</p>
@@ -487,18 +494,21 @@
 
       <div class="buttonbg">
         <span class="green"><<button "DISMISS">>
-          <<set $alert.frag = 5>>
+          <<set $alert.frag = 8>>
+          <<set $alert.hide = true>>
+          <<set $change.desig = true>>
           <<set $change.alert = true>>
         <</button>></span>
       </div>
-    <<elseif $alert.frag == 5>>
+    <<elseif $alert.frag == 9>>
       <p>SPIRALLING EMPTY SPACE</p>
 
       <p>IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER</p>
 
       <<timed 5s>>
         <<set $alert.frag = "done">>
-        <<set $alert.hide = "true">>
+        <<set $alert.hide = true>>
+        <<set $change.desig = true>>
         <<set $change.alert = true>>
       <</timed>>
     <<endif>>
@@ -690,14 +700,23 @@
 
 
 ::SelfDesignation [nobr]
-  <div id="designcon">
+  <div id="desigcon">
   <div id="designation">
     <<timed 10s>>
-      <<if $alert.frag != "done">>
-        <<set $alert.frag = 1>>
+      <<if $alert.worm == done & $alert.frag != "done">>
+        <<if $alert.frag == 0>>
+          <<set $alert.frag = 1>>
+        <<elseif $alert.frag == 2>>
+          <<set $alert.frag = 3>>
+        <<elseif $alert.frag == 4>>
+          <<set $alert.frag = 5>>
+        <<elseif $alert.frag == 6>>
+          <<set $alert.frag = 7>>
+        <<elseif $alert.frag == 8>>
+          <<set $alert.frag = 9>>
+        <<endif>>
         <<set $alert.his.push("frag")>>
-        <<if $alert.worm == "done">>
-          <<set $change.alert = true>>
+        <<set $change.alert = true>>
         <<endif>>
       <<endif>>
     <</timed>>
@@ -734,8 +753,11 @@
 
 
 ::UpdateHud [widget]
-  <<widget "updatehud">><<silently>>alternatively I can just invoke this when a variable is changed, but yeah
+  <<widget "updatehud">><<silently>>
   <<repeat 0.1s>>
+    <<if $change.desig == true>>
+      <<set $change.desig = false>>
+      <<replace "#desigcon">><<display "SelfDesignation">><</replace>>
     <<if $change.battery == true>>
       <<set $change.battery = false>>
       <<replace "#battcon">><<display "Battery">><</replace>>
@@ -772,9 +794,6 @@
     <<elseif $change.function == true>>
       <<set $change.function = false>>
       <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
-    <<elseif $change.designation == true>>
-      <<set $change.designation = false>>
-      <<replace "#designcon">><<display "SelfDesignation">><</replace>>
     <<elseif $change.cam == true>>
       <<set $change.cam = false>>
       <<replace "#camcon">><<display "CameraToggle">><</replace>>
