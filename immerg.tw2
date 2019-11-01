@@ -729,5 +729,10 @@ Immerging
     <<set $bg = 5>>
   <<endif>>
   <<include "ViewHUD">>
-  <<
-  <p></p>
+  <p>thanks 4 playing</p>
+
+  [[credits|Credits]]
+
+
+::Credits [nobr]
+  <p>This game was written and created by Leah Case and Penelope Evans. Art is by Penelope Evans and Allison Lownie, or was used under a CC0 license. All audio is used under a CC0 license.</p>
