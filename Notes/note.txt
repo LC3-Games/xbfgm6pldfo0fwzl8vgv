@@ -14,9 +14,11 @@ ask penny about the backgrounds for hatch vs the fucked up pic vs front facing e
 
 ALSO, nonsense conde & its consequences
 
+talk to penny about comp.space balance
+
 make fade in or something for the first view of the hud. it's sudden and boring
 
-make sure there's no hands on background looking at body
+uhhh the interaction between .frag and the other things are janky af lol. like it WORKS but barely and it can push an override to a few windows later (though maybe not now that ive fixed some stuff)
 
 for testing purposes:
   * snakegame should be 60

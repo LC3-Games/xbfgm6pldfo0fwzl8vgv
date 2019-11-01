@@ -713,3 +713,21 @@ Immerging
 
 ::Game Over [nobr]
   <p>Tough shit.</p>
+
+
+::Ends [nobr]
+  <set _bg = random(1, 100)>>
+  <<if _bg >= 1 && _bg <= 20>>
+    <<set $bg = 1>>
+  <<elseif _bg >= 21 && _bg <= 40>>
+    <<set $bg = 2>>
+  <<elseif _bg >= 41 && _bg <= 60>>
+    <<set $bg = 3>>
+  <<elseif _bg >= 61 && _bg <= 80>>
+    <<set $bg = 4>>
+  <<elseif _bg >= 81 && _bg <= 100>>
+    <<set $bg = 5>>
+  <<endif>>
+  <<include "ViewHUD">>
+  <<
+  <p></p>

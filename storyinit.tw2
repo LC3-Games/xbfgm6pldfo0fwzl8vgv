@@ -29,21 +29,18 @@
     desig : false,
     alert : false,
     cam : false,
+    background : false,
   }>>
   <<set $battery = 10>>
   <<set $damage = 100>>
 
-  /* what was this for? */
   <<set $funct = {
-    test : false,
-    damage : false,
-    component : false,
-    alert : false,
-    function : false,
-    designation : false,
+    on : false,
   }>>
 
   <<set $comp = {
+    on : false,
+    space : 100,
     open : {
       human : "none",
       climate : "none",

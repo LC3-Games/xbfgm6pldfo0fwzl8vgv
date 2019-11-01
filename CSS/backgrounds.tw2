@@ -58,6 +58,14 @@
 	background-size: cover;
 }
 
+.ship7hatch {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+	background-size: cover;
+  background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+	        animation: move-hands 8s alternate both infinite;
+}
+
 #left-bg {
   background: url(images/o_dam.png);
   width: 50%;
@@ -91,6 +99,23 @@
   border-right: 4px solid left;
 }
 
+#right-bg-hatch {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+  background-size: 100%, 100%, contain;
+  width: 50%;
+  position: fixed;
+  right: 0px;
+  height: 3000px;
+  content: "";
+  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  overflow-y: hidden;
+  -webkit-transform: translateY(-1900px);
+      -ms-transform: translateY(-1900px);
+          transform: translateY(-1900px);
+  border-right: 4px solid left;
+}
+
 .familyImage .file-container {
 	background: url("images/ship_finals/noncolor_last.png");
 	background-size: cover;
@@ -99,4 +124,44 @@
 .corpse {
 	background: url("images/o_dam2.png");
 	background-size: cover;
+}
+
+.end1bg {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
+	background-size: cover;
+	background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+					animation: move-hands 8s alternate both infinite;
+}
+
+.end2bg {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
+	background-size: cover;
+	background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+					animation: move-hands 8s alternate both infinite;
+}
+
+.end3bg {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
+	background-size: cover;
+	background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+					animation: move-hands 8s alternate both infinite;
+}
+
+.end4bg {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
+	background-size: cover;
+	background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+					animation: move-hands 8s alternate both infinite;
+}
+
+.end5bg {
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
+	background-size: cover;
+	background-size: 70%, 70%, cover;
+	-webkit-animation: move-hands 8s alternate both infinite;
+					animation: move-hands 8s alternate both infinite;
 }
