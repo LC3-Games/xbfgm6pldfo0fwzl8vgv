@@ -518,7 +518,7 @@
 
           <p>IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER</p>
 
-          <<timed 6s>>
+          <<timed 8s>>
             <<set $alert.frag = "done">>
             <<set $alert.hide = true>>
             <<set $change.background = true>>
@@ -842,9 +842,20 @@
     <<elseif $change.alert == true>>
       <<set $change.alert = false>>
       <<if $alert.hide == false>>
-        <<replace "#alertcon">>
-          <<display "SystemAlert">>
-        <</replace>>
+        <<if $alert.frag == 9>>
+          <<if $comp.space > 60 && not $alert.his.includes("something")>>
+            <<replace "#alertcon">>
+            <</replace>>
+          <<else>>
+            <<replace "#alertcon">>
+              <<display "SystemAlert">>
+            <</replace>>
+          <<endif>>
+        <<else>>
+          <<replace "#alertcon">>
+            <<display "SystemAlert">>
+          <</replace>>
+        <<endif>>
       <<else>>
         <<if $alert.his.length > 0>>
           <<set $alert.hide = false>>

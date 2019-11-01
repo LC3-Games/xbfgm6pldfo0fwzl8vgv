@@ -20,7 +20,7 @@ Twee2::build_config.story_format = 'Sugarcube2'
 
 
 ::StoryTitle
-Immerging
+Lysogenesis
 
 
 ::Passage1 [nobr]
@@ -716,7 +716,7 @@ Immerging
 
 
 ::Ends [nobr]
-  <set _bg = random(1, 100)>>
+  <<set _bg = random(1, 100)>>
   <<if _bg >= 1 && _bg <= 20>>
     <<set $bg = 1>>
   <<elseif _bg >= 21 && _bg <= 40>>

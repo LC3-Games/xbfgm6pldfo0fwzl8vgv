@@ -14,7 +14,9 @@ ask penny about the backgrounds for hatch vs the fucked up pic vs front facing e
 
 ALSO, nonsense conde & its consequences
 
-talk to penny about comp.space balance
+comp.space balance ?
+
+blank system alert ater hitting first kull to ves--i think it's because i might've triggered the next frag, but th frag wasnt able to show since i wasnt in the limit yet so make sure it only triggers when you'e in the right range after frag == 8 or w/e (or it's another warning)
 
 make fade in or something for the first view of the hud. it's sudden and boring
 
