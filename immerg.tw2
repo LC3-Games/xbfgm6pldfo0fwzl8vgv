@@ -33,9 +33,7 @@ Lysogenesis
   <p>[[Start|White]]</p>
 
 
-::Start [nobr white crt ship7handsopen]
-<<include "BackgroundShit">>
-  <<include "ViewHUD">>
+::Start [nobr white]
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 

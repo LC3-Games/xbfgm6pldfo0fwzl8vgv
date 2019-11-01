@@ -24,4 +24,4 @@ uhhh the interaction between .frag and the other things are janky af lol. like i
 
 for testing purposes:
   * snakegame should be 60
-  * self-desig frag time should be at east 90s-120s
+  add snake game counter. in fact use the repeat to decide when it's over. eg. repeat every 2-3s adding +few%, and when % == 100, it boots you (but ofc this roughly equals 60s just make sure it increments fine)

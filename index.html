@@ -2327,9 +2327,7 @@ br {
 
   &lt;p&gt;Proceed with caution if you are photosensitive.&lt;/p&gt;
 
-  &lt;p&gt;[[Start|White]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr white crt ship7handsopen" position="">&lt;&lt;include "BackgroundShit"&gt;&gt;
-  &lt;&lt;include "ViewHUD"&gt;&gt;
-  &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
+  &lt;p&gt;[[Start|White]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr white" position="">&lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullleft"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -4109,7 +4107,7 @@ br {
     * biomatter (10)
      = 46
     &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="Snake" tags="nobr snake" position="">&lt;p class="snakey"&gt;System repairs: 1%&lt;/p&gt;
-  &lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;timed 60s&gt;&gt;
     &lt;&lt;set $alert.worm = "won"&gt;&gt;
     &lt;&lt;set $alert.next = "Something"&gt;&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;

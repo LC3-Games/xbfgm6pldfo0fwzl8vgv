@@ -953,7 +953,7 @@
 
 ::Snake [nobr snake]
   <p class="snakey">System repairs: 1%</p>
-  <<timed 2s>>
+  <<timed 60s>>
     <<set $alert.worm = "won">>
     <<set $alert.next = "Something">>
     <<set $change.alert = true>>
