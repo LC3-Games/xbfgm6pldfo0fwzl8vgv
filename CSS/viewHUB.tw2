@@ -166,6 +166,8 @@
 #component button {
 	margin-left: 0;
 	margin-right: 4px;
+	padding: 0;
+	width: 15px;
 }
 
 .comp-container button {

@@ -54,7 +54,7 @@
 }
 
 .ship7aux {
-	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
 	background-size: cover;
   background-size: 70%, 70%, cover;
 	-webkit-animation: move-hands 8s alternate both infinite;

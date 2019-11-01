@@ -1772,6 +1772,8 @@ br {
 #component button {
 	margin-left: 0;
 	margin-right: 4px;
+	padding: 0;
+	width: 15px;
 }
 
 .comp-container button {
@@ -2037,7 +2039,7 @@ br {
 }
 
 .ship7aux {
-	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
 	background-size: cover;
   background-size: 70%, 70%, cover;
 	-webkit-animation: move-hands 8s alternate both infinite;
@@ -3549,186 +3551,188 @@ br {
       &lt;/div&gt;
     &lt;&lt;endif&gt;&gt;
 
-    &lt;&lt;if $alert.frag == 1&gt;&gt;
-      &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
+    &lt;&lt;if $alert.worm == "done"&gt;&gt;
+        &lt;&lt;if $alert.frag == 1&gt;&gt;
+          &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
 
-      &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
+          &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
 
-      &lt;div class="buttonbg"&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-          &lt;&lt;set $alert.frag = 2&gt;&gt;
-          &lt;&lt;set $alert.hide = true&gt;&gt;
-          &lt;&lt;set $change.desig = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 3&gt;&gt;
-      &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
+          &lt;div class="buttonbg"&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+              &lt;&lt;set $alert.frag = 2&gt;&gt;
+              &lt;&lt;set $alert.hide = true&gt;&gt;
+              &lt;&lt;set $change.desig = true&gt;&gt;
+              &lt;&lt;set $change.alert = true&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;&lt;elseif $alert.frag == 3&gt;&gt;
+          &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
 
-      &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
+          &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
 
-      &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
+          &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
 
-      &lt;&lt;timed 3s&gt;&gt;
-        &lt;&lt;set $alert.frag = 4&gt;&gt;
-        &lt;&lt;set $alert.hide = true&gt;&gt;
-        &lt;&lt;set $change.desig = true&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;elseif $alert.frag == 5&gt;&gt;
-      &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
-
-      &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
-
-      &lt;p&gt;THE SHIP IS TRACTABLE&lt;/p&gt;
-
-      &lt;div class="buttonbg"&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-          &lt;&lt;set $alert.frag = 6&gt;&gt;
-          &lt;&lt;set $alert.hide = true&gt;&gt;
-          &lt;&lt;set $change.desig = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 7&gt;&gt;
-      &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
-
-      &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
-
-      &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
-
-      &lt;p&gt;THE HATCH IS OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
-
-      &lt;div class="buttonbg"&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-          &lt;&lt;set $alert.frag = 8&gt;&gt;
-          &lt;&lt;set $alert.hide = true&gt;&gt;
-          &lt;&lt;set $change.desig = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;&lt;elseif $alert.frag == 9&gt;&gt;
-      &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
-
-      &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
-
-      &lt;&lt;timed 5s&gt;&gt;
-        &lt;&lt;set $alert.frag = "done"&gt;&gt;
-        &lt;&lt;set $alert.hide = true&gt;&gt;
-        &lt;&lt;set $change.desig = true&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
-
-    &lt;&lt;if $alert.frag == "done"&gt;&gt;
-      &lt;&lt;if $comp.photo == "ves" &amp;&amp; $override.photo == false&gt;&gt;
-        &lt;p&gt;NEEDED FOR POWER&lt;/p&gt;
-
-        &lt;div class="buttonbg"&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-            &lt;&lt;set $comp.photo = "ess"&gt;&gt;
+          &lt;&lt;timed 3s&gt;&gt;
+            &lt;&lt;set $alert.frag = 4&gt;&gt;
             &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.component = true&gt;&gt;
+            &lt;&lt;set $change.desig = true&gt;&gt;
             &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-            &lt;&lt;set $damage -= 22&gt;&gt;
-            &lt;&lt;set $battery -= 7&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $override.photo = true&gt;&gt;
-            &lt;&lt;set $change.damage = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;&lt;elseif $comp.climate.sorted.ves.includes("Exo combusters") &amp;&amp; $override.exo == false&gt;&gt;
-        &lt;p&gt;WAIT IM AFRAID TO DIG THIS OUT&lt;/p&gt;
+          &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+          &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
 
-        &lt;p&gt;SYSTEMS THROWING ERRORS&lt;/p&gt;
+          &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
 
-        &lt;p&gt;OH&lt;/p&gt;
+          &lt;p&gt;THE SHIP IS TRACTABLE&lt;/p&gt;
 
-        &lt;div class="buttonbg"&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-            &lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;
-            &lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.component = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-            &lt;&lt;set $damage -= 25&gt;&gt;
-            &lt;&lt;set $override.exo = true&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.damage = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;&lt;elseif $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") &amp;&amp; $override.limbs == false&gt;&gt;
-        &lt;p&gt;STRUCTURAL INTEGRITY IS WILL BE COMPROMISED&lt;/p&gt;
-        &lt;div class="buttonbg"&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-            &lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-            &lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.component = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-            &lt;&lt;set $damage -= 27&gt;&gt;
-            &lt;&lt;set $override.limbs = true&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.damage = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;&lt;elseif $comp.suit.sorted.ves.includes("Motor lattice") &amp;&amp; $override.motor == false&gt;&gt;
-        &lt;p&gt;THIS WILL HURT THIS WILL HURT THIS WILL HURT&lt;/p&gt;
-        &lt;div class="buttonbg"&gt;
-          &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-            &lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;
-            &lt;&lt;set $comp.suit.sorted.ves.delete("Motor lattice")&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.component = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-            &lt;&lt;set $damage -= 21&gt;&gt;
-            &lt;&lt;set $override.motor = true&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.damage = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;&lt;elseif $comp.suit.sorted.ves.includes("Ligamentation system") &amp;&amp; $override.lig == false&gt;&gt;
-        &lt;div class="first"&gt;
-          &lt;p&gt;OH NO NO NO NO NO NO&lt;/p&gt;
-        &lt;/div&gt;
+          &lt;div class="buttonbg"&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+              &lt;&lt;set $alert.frag = 6&gt;&gt;
+              &lt;&lt;set $alert.hide = true&gt;&gt;
+              &lt;&lt;set $change.desig = true&gt;&gt;
+              &lt;&lt;set $change.alert = true&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;&lt;elseif $alert.frag == 7&gt;&gt;
+          &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
 
-        &lt;&lt;timed 3s&gt;&gt;
-          &lt;&lt;replace ".first"&gt;&gt;
-            &lt;&lt;include "FlickFast"&gt;&gt;
-            &lt;p&gt;I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED&lt;/p&gt;
+          &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
+
+          &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
+
+          &lt;p&gt;THE HATCH IS OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
+
+          &lt;div class="buttonbg"&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+              &lt;&lt;set $alert.frag = 8&gt;&gt;
+              &lt;&lt;set $alert.hide = true&gt;&gt;
+              &lt;&lt;set $change.desig = true&gt;&gt;
+              &lt;&lt;set $change.alert = true&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;&lt;elseif $alert.frag == 9&gt;&gt;
+          &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
+
+          &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
+
+          &lt;&lt;timed 5s&gt;&gt;
+            &lt;&lt;set $alert.frag = "done"&gt;&gt;
+            &lt;&lt;set $alert.hide = true&gt;&gt;
+            &lt;&lt;set $change.desig = true&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $alert.frag == "done"&gt;&gt;
+          &lt;&lt;if $comp.photo == "ves" &amp;&amp; $override.photo == false&gt;&gt;
+            &lt;p&gt;NEEDED FOR POWER&lt;/p&gt;
 
             &lt;div class="buttonbg"&gt;
               &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-                &lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;
-                &lt;&lt;set $comp.suit.sorted.ves.delete("Ligamentation system")&gt;&gt;
+                &lt;&lt;set $comp.photo = "ess"&gt;&gt;
                 &lt;&lt;set $alert.hide = true&gt;&gt;
                 &lt;&lt;set $change.component = true&gt;&gt;
                 &lt;&lt;set $change.alert = true&gt;&gt;
               &lt;&lt;/button&gt;&gt;&lt;/span&gt;
               &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-                &lt;&lt;set $damage -= 32&gt;&gt;
-                &lt;&lt;set $override.lig = true&gt;&gt;
+                &lt;&lt;set $damage -= 22&gt;&gt;
+                &lt;&lt;set $battery -= 7&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $override.photo = true&gt;&gt;
+                &lt;&lt;set $change.damage = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $comp.climate.sorted.ves.includes("Exo combusters") &amp;&amp; $override.exo == false&gt;&gt;
+            &lt;p&gt;WAIT IM AFRAID TO DIG THIS OUT&lt;/p&gt;
+
+            &lt;p&gt;SYSTEMS THROWING ERRORS&lt;/p&gt;
+
+            &lt;p&gt;OH&lt;/p&gt;
+
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                &lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;
+                &lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $change.component = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+              &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                &lt;&lt;set $damage -= 25&gt;&gt;
+                &lt;&lt;set $override.exo = true&gt;&gt;
                 &lt;&lt;set $alert.hide = true&gt;&gt;
                 &lt;&lt;set $change.damage = true&gt;&gt;
                 &lt;&lt;set $change.alert = true&gt;&gt;
               &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;/div&gt;
-          &lt;&lt;/replace&gt;&gt;
-        &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;elseif $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") &amp;&amp; $override.limbs == false&gt;&gt;
+            &lt;p&gt;STRUCTURAL INTEGRITY IS WILL BE COMPROMISED&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                &lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                &lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $change.component = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+              &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                &lt;&lt;set $damage -= 27&gt;&gt;
+                &lt;&lt;set $override.limbs = true&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $change.damage = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $comp.suit.sorted.ves.includes("Motor lattice") &amp;&amp; $override.motor == false&gt;&gt;
+            &lt;p&gt;THIS WILL HURT THIS WILL HURT THIS WILL HURT&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                &lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;
+                &lt;&lt;set $comp.suit.sorted.ves.delete("Motor lattice")&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $change.component = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+              &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                &lt;&lt;set $damage -= 21&gt;&gt;
+                &lt;&lt;set $override.motor = true&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $change.damage = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $comp.suit.sorted.ves.includes("Ligamentation system") &amp;&amp; $override.lig == false&gt;&gt;
+            &lt;div class="first"&gt;
+              &lt;p&gt;OH NO NO NO NO NO NO&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;&lt;timed 3s&gt;&gt;
+              &lt;&lt;replace ".first"&gt;&gt;
+                &lt;&lt;include "FlickFast"&gt;&gt;
+                &lt;p&gt;I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                    &lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;
+                    &lt;&lt;set $comp.suit.sorted.ves.delete("Ligamentation system")&gt;&gt;
+                    &lt;&lt;set $alert.hide = true&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                    &lt;&lt;set $damage -= 32&gt;&gt;
+                    &lt;&lt;set $override.lig = true&gt;&gt;
+                    &lt;&lt;set $alert.hide = true&gt;&gt;
+                    &lt;&lt;set $change.damage = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
 
     &lt;/div&gt;
   &lt;/div&gt;
@@ -3798,7 +3802,7 @@ br {
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="SelfDesignation" tags="nobr" position="">&lt;div id="desigcon"&gt;
   &lt;div id="designation"&gt;
     &lt;&lt;timed 10s&gt;&gt;
-      &lt;&lt;if $alert.worm == done &amp; $alert.frag != "done"&gt;&gt;
+      &lt;&lt;if $alert.worm == "done" &amp; $alert.frag != "done"&gt;&gt;
         &lt;&lt;if $alert.frag == 0&gt;&gt;
           &lt;&lt;set $alert.frag = 1&gt;&gt;
         &lt;&lt;elseif $alert.frag == 2&gt;&gt;
@@ -3810,9 +3814,9 @@ br {
         &lt;&lt;elseif $alert.frag == 8&gt;&gt;
           &lt;&lt;set $alert.frag = 9&gt;&gt;
         &lt;&lt;endif&gt;&gt;
+
         &lt;&lt;set $alert.his.push("frag")&gt;&gt;
         &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
     Self-Designation: $name, $pronoun1/$pronoun2
@@ -3842,7 +3846,7 @@ br {
     &lt;&lt;if $change.desig == true&gt;&gt;
       &lt;&lt;set $change.desig = false&gt;&gt;
       &lt;&lt;replace "#desigcon"&gt;&gt;&lt;&lt;display "SelfDesignation"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;if $change.battery == true&gt;&gt;
+    &lt;&lt;elseif $change.battery == true&gt;&gt;
       &lt;&lt;set $change.battery = false&gt;&gt;
       &lt;&lt;replace "#battcon"&gt;&gt;&lt;&lt;display "Battery"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;elseif $change.damage == true&gt;&gt;
