@@ -16,6 +16,8 @@ ALSO, nonsense conde & its consequences
 
 make fade in or something for the first view of the hud. it's sudden and boring
 
+make sure there's no hands on background looking at body
+
 for testing purposes:
   * snakegame should be 60
   * self-desig frag time should be at east 90s-120s
