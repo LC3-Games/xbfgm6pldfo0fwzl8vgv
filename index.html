@@ -3091,6 +3091,12 @@ br {
 
   }&gt;&gt;
 
+  &lt;&lt;set $snake = {
+    repair : 0,
+    time : 0,
+  }&gt;&gt;
+
+
   &lt;&lt;set $pluck_pull = []&gt;&gt;
 
   &lt;&lt;set $cam = {
@@ -3412,13 +3418,20 @@ br {
     * heat sink repository (8)
     * biomatter (10)
      = 53
-    &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="Snake" tags="nobr snake" position="">&lt;p class="snakey"&gt;System repairs: 1%&lt;/p&gt;
-  &lt;&lt;timed 1s&gt;&gt;
-    &lt;&lt;set $alert.worm = "won"&gt;&gt;
-    &lt;&lt;replace "#alertcon"&gt;&gt;
-      &lt;&lt;include "SystemAlert"&gt;&gt;
-    &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="Snake" tags="nobr snake" position="">&lt;&lt;repeat 5s&gt;&gt;
+    &lt;&lt;set $snake.time +=5&gt;&gt;
+    &lt;&lt;set $snake.repair +=6.6666&gt;&gt;
+    &lt;&lt;if $snake.time == 60&gt;&gt;
+      &lt;&lt;set $alert.worm = "won"&gt;&gt;
+      &lt;&lt;replace "#alertcon"&gt;&gt;
+        &lt;&lt;include "SystemAlert"&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+      &lt;&lt;replace "#repair"&gt;&gt;&lt;span id="repair"&gt;&lt;&lt;print Math.round($snake.repair)&gt;&gt;&lt;/span&gt;&lt;&lt;/replace&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;&lt;/repeat&gt;&gt;
+
+  &lt;p class="snakey"&gt;System repairs: &lt;span id="repair"&gt;&lt;&lt;print Math.round($snake.repair)&gt;&gt;&lt;/span&gt;%&lt;/p&gt;
   &lt;iframe src="snakegame.html" width="100%" height="100%" position="relative"&gt;
   &lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="54" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
   &lt;&lt;if $comp.on == true&gt;&gt;
@@ -3877,7 +3890,7 @@ br {
 
           &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
 
-          &lt;p&gt;THE HATCH IS OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
+          &lt;p&gt;THE HATCH WILL OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
 
           &lt;div class="buttonbg"&gt;
             &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;

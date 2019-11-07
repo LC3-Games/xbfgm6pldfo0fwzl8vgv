@@ -102,6 +102,12 @@
 
   }>>
 
+  <<set $snake = {
+    repair : 0,
+    time : 0,
+  }>>
+
+
   <<set $pluck_pull = []>>
 
   <<set $cam = {

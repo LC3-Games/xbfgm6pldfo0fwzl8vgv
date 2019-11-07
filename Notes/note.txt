@@ -1,19 +1,3 @@
 make hands clench and shake when you try to remove a bad part, or during some system alerts. Also just randomly during anim?
 
-hitting "cancel" when prompted by picking to toss a wrong item throws a bad sysAlert
-make sure all the variables are being set properly due to button presses cause im worried the change. stuff might make them sometimes miss another change. BUT AT THE SAME TIME, that shouldn't be an issue at all because it still runs until each change. is addressed so ehh we good PROBABLY. just be aware
-
-
 ALSO, nonsense conde & its consequences
-
-comp.space balance ?
-
-blank system alert ater hitting first kull to ves--i think it's because i might've triggered the next frag, but th frag wasnt able to show since i wasnt in the limit yet so make sure it only triggers when you'e in the right range after frag == 8 or w/e (or it's another warning)
-
-make fade in or something for the first view of the hud. it's sudden and boring
-
-uhhh the interaction between .frag and the other things are janky af lol. like it WORKS but barely and it can push an override to a few windows later (though maybe not now that ive fixed some stuff)
-
-for testing purposes:
-  * snakegame should be 60
-  add snake game counter. in fact use the repeat to decide when it's over. eg. repeat every 2-3s adding +few%, and when % == 100, it boots you (but ofc this roughly equals 60s just make sure it increments fine)

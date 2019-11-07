@@ -338,12 +338,19 @@
 
 
 ::Snake [nobr snake]
-  <p class="snakey">System repairs: 1%</p>
-  <<timed 1s>>
-    <<set $alert.worm = "won">>
-    <<replace "#alertcon">>
-      <<include "SystemAlert">>
-    <</replace>>
-  <</timed>>
+  <<repeat 5s>>
+    <<set $snake.time +=5>>
+    <<set $snake.repair +=6.6666>>
+    <<if $snake.time == 60>>
+      <<set $alert.worm = "won">>
+      <<replace "#alertcon">>
+        <<include "SystemAlert">>
+      <</replace>>
+    <<else>>
+      <<replace "#repair">><span id="repair"><<print Math.round($snake.repair)>></span><</replace>>
+    <<endif>>
+  <</repeat>>
+
+  <p class="snakey">System repairs: <span id="repair"><<print Math.round($snake.repair)>></span>%</p>
   <iframe src="snakegame.html" width="100%" height="100%" position="relative">
   </iframe>
