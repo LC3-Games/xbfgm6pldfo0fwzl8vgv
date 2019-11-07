@@ -1,16 +1,8 @@
-Transitions during the formation stage. 1D, 2D, 3D. The background takes on colour and shapes of decisions
+make hands clench and shake when you try to remove a bad part, or during some system alerts. Also just randomly during anim?
 
-revisit aligning the bullet items
-
-make anims smooth and rolly. All rolly, just in different directions from different starting points
-
-any word: (([A-Z])\w+)
-
-<<linkreplace"\1">><span class="hidetext">\1</span><<include "Word Count">><</linkreplace>>
-
+hitting "cancel" when prompted by picking to toss a wrong item throws a bad sysAlert
 make sure all the variables are being set properly due to button presses cause im worried the change. stuff might make them sometimes miss another change. BUT AT THE SAME TIME, that shouldn't be an issue at all because it still runs until each change. is addressed so ehh we good PROBABLY. just be aware
 
-ask penny about the backgrounds for hatch vs the fucked up pic vs front facing etc.
 
 ALSO, nonsense conde & its consequences
 

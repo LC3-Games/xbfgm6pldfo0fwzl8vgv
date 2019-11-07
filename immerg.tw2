@@ -7,7 +7,6 @@
   CSS/backgrounds.tw2
   js_ready_done.tw2
   zalgofile.tw2
-  snakegame.tw2
 
   storyinit.tw2
 
@@ -33,7 +32,9 @@ Lysogenesis
   <p>[[Start|White]]</p>
 
 
-::Start [nobr white]
+::Start [nobr white ship7handsopen]
+<<set $cursor = 6>>
+<<include "ViewHUD">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -661,11 +662,11 @@ Lysogenesis
 
     <p>
       <span class="green"><<button "CONFIRM">>
+        <<set $name to $name.trim()>>
         <<goto "ChoosePronouns">>
       <</button>></span>
       <span class="red"><<button "OVERRIDE">>
-        <<set $name to $name.trim()>>
-        <<goto "ChoosePronouns">>
+        <<goto "ChooseName">>
       <</button>></span>
     </p>
   </div>
@@ -684,12 +685,12 @@ Lysogenesis
 
     <p>
       <span class="green"><<button "CONFIRM">>
-        <<goto "Escape Start">>
-      <</button>></span>
-      <span class="red"><<button "OVERRIDE">>
         <<set $prnoun1 to $pronoun1.trim()>>
         <<set $pronoun2 = $pronoun1 + "s">>
         <<goto "HUD Boot">>
+      <</button>></span>
+      <span class="red"><<button "OVERRIDE">>
+        <<goto "ChoosePronouns">>
       <</button>></span>
     </p>
   </div>
@@ -705,27 +706,20 @@ Lysogenesis
         <<include "ViewHUD">>
         <<typewriter "HUD systems booted">>
           <<next>>
-          <<goto "Escape Start">>
+            <<goto "Escape Start">>
   <</timed>>
 
 
 ::Game Over [nobr]
   <p>Tough shit.</p>
 
-
 ::Ends [nobr]
-  <<set _bg = random(1, 100)>>
-  <<if _bg >= 1 && _bg <= 20>>
-    <<set $bg = 1>>
-  <<elseif _bg >= 21 && _bg <= 40>>
-    <<set $bg = 2>>
-  <<elseif _bg >= 41 && _bg <= 60>>
-    <<set $bg = 3>>
-  <<elseif _bg >= 61 && _bg <= 80>>
-    <<set $bg = 4>>
-  <<elseif _bg >= 81 && _bg <= 100>>
-    <<set $bg = 5>>
-  <<endif>>
+<<timed 5s>>
+<<removeclass ".container">>
+<</timed>>
+  <div class="fade-in-white container"></div>
+
+
   <<include "ViewHUD">>
   <p>thanks 4 playing</p>
 

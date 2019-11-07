@@ -1464,6 +1464,40 @@ br {
     background-position: 0% 105%, 100% 103%, 0% 0%;
   }
 }
+
+@keyframes fade-in-out {
+  0% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 1}
+}
+
+@-webkit-keyframes fade-in-out {
+  0% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 1}
+}
+
+.fade-in-out {
+  -webkit-animation: fade-in-out 2s;
+          animation: fade-in-out 2s;
+  position: fixed;
+}
+
+@keyframes fade-in-white {
+  0% {background-color: white; opacity: 1}
+  99% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 0; display: none}
+}
+
+@-webkit-keyframes fade-in-white {
+  0% {background-color: white; opacity: 1}
+  99% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 0; display: none}
+}
+
+.fade-in-white {
+  -webkit-animation: fade-in-white 5s;
+          animation: fade-in-white 5s;
+  position: fixed;
+}
 @keyframes cursor-anim {
   0%{
     cursor: url("images/cursors/frame1.png"), auto;
@@ -1502,31 +1536,31 @@ br {
 
 @-webkit-keyframes white-star-anim {
   0%{
-    cursor: url("images/cursors/simple1.png"), auto;
+    cursor: url("images/cursors/simple1.png")16 16, auto;
   }
   33%{
-    cursor: url("images/cursors/simple2.png"), auto;
+    cursor: url("images/cursors/simple2.png") 16 16, auto;
   }
   66%{
-    cursor: url("images/cursors/simple3.png"), auto;
+    cursor: url("images/cursors/simple3.png") 16 16, auto;
   }
   100%{
-    cursor: url("images/cursors/simple4.png"), auto;
+    cursor: url("images/cursors/simple4.png") 16 16, auto;
   }
 }
 
 @keyframes white-star-anim {
   0%{
-    cursor: url("images/cursors/simple1.png"), auto;
+    cursor: url("images/cursors/simple1.png") 16 16, auto;
   }
   33%{
-    cursor: url("images/cursors/simple2.png"), auto;
+    cursor: url("images/cursors/simple2.png") 16 16, auto;
   }
   66%{
-    cursor: url("images/cursors/simple3.png"), auto;
+    cursor: url("images/cursors/simple3.png") 16 16, auto;
   }
   100%{
-    cursor: url("images/cursors/simple4.png"), auto;
+    cursor: url("images/cursors/simple4.png") 16 16, auto;
   }
 }
 
@@ -2196,138 +2230,15 @@ br {
       $input.focus();
     }
   });
-// 
-// var canvas = document.getElementById('game');
-// var context = canvas.getContext('2d');
-// var grid = 16;
-// var count = 0;
-//
-// var snake = {
-//   x: 160,
-//   y: 160,
-//
-//   // snake velocity. moves one grid length every frame in either the x or y direction
-//   dx: grid,
-//   dy: 0,
-//
-//   // keep track of all grids the snake body occupies
-//   cells: [],
-//
-//   // length of the snake. grows when eating an apple
-//   maxCells: 4
-// };
-// var apple = {
-//   x: 320,
-//   y: 320
-// };
-// // get random whole numbers in a specific range
-// // @see https://stackoverflow.com/a/1527820/2124254
-// function getRandomInt(min, max) {
-//   return Math.floor(Math.random() * (max - min)) + min;
-// }
-// // game loop
-// function loop() {
-//   requestAnimationFrame(loop);
-//   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-//   if (++count < 4) {
-//     return;
-//   }
-//   count = 0;
-//   context.clearRect(0,0,canvas.width,canvas.height);
-//   // move snake by it's velocity
-//   snake.x += snake.dx;
-//   snake.y += snake.dy;
-//   // wrap snake position horizontally on edge of screen
-//   if (snake.x < 0) {
-//     snake.x = canvas.width - grid;
-//   }
-//   else if (snake.x >= canvas.width) {
-//     snake.x = 0;
-//   }
-//
-//   // wrap snake position vertically on edge of screen
-//   if (snake.y < 0) {
-//     snake.y = canvas.height - grid;
-//   }
-//   else if (snake.y >= canvas.height) {
-//     snake.y = 0;
-//   }
-//   // keep track of where snake has been. front of the array is always the head
-//   snake.cells.unshift({x: snake.x, y: snake.y});
-//   // remove cells as we move away from them
-//   if (snake.cells.length > snake.maxCells) {
-//     snake.cells.pop();
-//   }
-//   // draw apple
-//   context.fillStyle = 'red';
-//   context.fillRect(apple.x, apple.y, grid-1, grid-1);
-//   // draw snake one cell at a time
-//   context.fillStyle = 'green';
-//   snake.cells.forEach(function(cell, index) {
-//
-//     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-//     context.fillRect(cell.x, cell.y, grid-1, grid-1);
-//     // snake ate apple
-//     if (cell.x === apple.x && cell.y === apple.y) {
-//       snake.maxCells++;
-//       // canvas is 400x400 which is 25x25 grids
-//       apple.x = getRandomInt(0, 25) * grid;
-//       apple.y = getRandomInt(0, 25) * grid;
-//     }
-//     // check collision with all cells after this one (modified bubble sort)
-//     for (var i = index + 1; i < snake.cells.length; i++) {
-//
-//       // snake occupies same space as a body part. reset game
-//       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-//         snake.x = 160;
-//         snake.y = 160;
-//         snake.cells = [];
-//         snake.maxCells = 4;
-//         snake.dx = grid;
-//         snake.dy = 0;
-//         apple.x = getRandomInt(0, 25) * grid;
-//         apple.y = getRandomInt(0, 25) * grid;
-//       }
-//     }
-//   });
-// }
-// // listen to keyboard events to move the snake
-// document.addEventListener('keydown', function(e) {
-//   // prevent snake from backtracking on itself by checking that it's
-//   // not already moving on the same axis (pressing left while moving
-//   // left won't do anything, and pressing right while moving left
-//   // shouldn't let you collide with your own body)
-//
-//   // left arrow key
-//   if (e.which === 37 && snake.dx === 0) {
-//     snake.dx = -grid;
-//     snake.dy = 0;
-//   }
-//   // up arrow key
-//   else if (e.which === 38 && snake.dy === 0) {
-//     snake.dy = -grid;
-//     snake.dx = 0;
-//   }
-//   // right arrow key
-//   else if (e.which === 39 && snake.dx === 0) {
-//     snake.dx = grid;
-//     snake.dy = 0;
-//   }
-//   // down arrow key
-//   else if (e.which === 40 && snake.dy === 0) {
-//     snake.dy = grid;
-//     snake.dx = 0;
-//   }
-// });
-// // start the game
-// requestAnimationFrame(loop);
 </script><tw-passagedata pid="1" name="Passage1" tags="nobr" position="">&lt;div class="header-image"&gt;[img[image/lyso_header.png]]&lt;/div&gt;
 
   &lt;h1&gt;&lt;strong&gt;Epilepsy Warning&lt;strong&gt;&lt;/h1&gt;
 
   &lt;p&gt;Proceed with caution if you are photosensitive.&lt;/p&gt;
 
-  &lt;p&gt;[[Start|White]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr white" position="">&lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
+  &lt;p&gt;[[Start|White]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr white ship7handsopen" position="">&lt;&lt;set $cursor = 6&gt;&gt;
+&lt;&lt;include "ViewHUD"&gt;&gt;
+  &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullleft"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -2839,11 +2750,11 @@ br {
 
     &lt;p&gt;
       &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+        &lt;&lt;set $name to $name.trim()&gt;&gt;
         &lt;&lt;goto "ChoosePronouns"&gt;&gt;
       &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-        &lt;&lt;set $name to $name.trim()&gt;&gt;
-        &lt;&lt;goto "ChoosePronouns"&gt;&gt;
+        &lt;&lt;goto "ChooseName"&gt;&gt;
       &lt;&lt;/button&gt;&gt;&lt;/span&gt;
     &lt;/p&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="ChoosePronouns" tags="nobr" position="">&lt;&lt;set $pronoun1 = setup.makepronoun(3)&gt;&gt;
@@ -2858,12 +2769,12 @@ br {
 
     &lt;p&gt;
       &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
-        &lt;&lt;goto "Escape Start"&gt;&gt;
-      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
         &lt;&lt;set $prnoun1 to $pronoun1.trim()&gt;&gt;
         &lt;&lt;set $pronoun2 = $pronoun1 + "s"&gt;&gt;
         &lt;&lt;goto "HUD Boot"&gt;&gt;
+      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+        &lt;&lt;goto "ChoosePronouns"&gt;&gt;
       &lt;&lt;/button&gt;&gt;&lt;/span&gt;
     &lt;/p&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="HUD Boot" tags="nobr" position="">&lt;&lt;typewriter "Determining HUD systems . . . . . . . . . . . . ."&gt;&gt;
@@ -2875,19 +2786,13 @@ br {
         &lt;&lt;include "ViewHUD"&gt;&gt;
         &lt;&lt;typewriter "HUD systems booted"&gt;&gt;
           &lt;&lt;next&gt;&gt;
-          &lt;&lt;goto "Escape Start"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr" position="">&lt;p&gt;Tough shit.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;set _bg = random(1, 100)&gt;&gt;
-  &lt;&lt;if _bg &gt;= 1 &amp;&amp; _bg &lt;= 20&gt;&gt;
-    &lt;&lt;set $bg = 1&gt;&gt;
-  &lt;&lt;elseif _bg &gt;= 21 &amp;&amp; _bg &lt;= 40&gt;&gt;
-    &lt;&lt;set $bg = 2&gt;&gt;
-  &lt;&lt;elseif _bg &gt;= 41 &amp;&amp; _bg &lt;= 60&gt;&gt;
-    &lt;&lt;set $bg = 3&gt;&gt;
-  &lt;&lt;elseif _bg &gt;= 61 &amp;&amp; _bg &lt;= 80&gt;&gt;
-    &lt;&lt;set $bg = 4&gt;&gt;
-  &lt;&lt;elseif _bg &gt;= 81 &amp;&amp; _bg &lt;= 100&gt;&gt;
-    &lt;&lt;set $bg = 5&gt;&gt;
-  &lt;&lt;endif&gt;&gt;
+            &lt;&lt;goto "Escape Start"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr" position="">&lt;p&gt;Tough shit.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
+&lt;&lt;removeclass ".container"&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+  &lt;div class="fade-in-white container"&gt;&lt;/div&gt;
+
+
   &lt;&lt;include "ViewHUD"&gt;&gt;
   &lt;p&gt;thanks 4 playing&lt;/p&gt;
 
@@ -3228,7 +3133,7 @@ br {
     &lt;h4&gt;COMPONENTS&lt;/h4&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;
     &lt;div id="unsorted"&gt;
-      &lt;h5&gt;UNSORTED&lt;/h5&gt;
+      &lt;h5&gt;UNSORTED $comp.space&lt;/h5&gt;
       &lt;div class="scrollcontent"&gt;
         &lt;&lt;if $comp.endo.unsorted.length &gt; 0&gt;&gt;
           &lt;&lt;link "Human Endoskeleton"&gt;&gt;
@@ -3326,7 +3231,7 @@ br {
           &lt;&lt;endif&gt;&gt;
         &lt;&lt;endif&gt;&gt;
 
-        &lt;&lt;if $comp.life.unsorted.length &gt; 0&gt;&gt;
+        &lt;&lt;if $comp.suit.unsorted.length &gt; 0&gt;&gt;
           &lt;&lt;link "Suit Mechanics"&gt;&gt;
             &lt;&lt;if $comp.open.suit != "unsorted"&gt;&gt;&lt;&lt;set $comp.open.suit = "unsorted"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.suit = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
             &lt;&lt;set $change.component = true&gt;&gt;
@@ -3425,7 +3330,7 @@ br {
           &lt;&lt;endif&gt;&gt;
 
           &lt;&lt;if $comp.life.sorted.ess.length &gt; 0&gt;&gt;
-            &lt;&lt;link "Life Control"&gt;&gt;
+            &lt;&lt;link "Life Support"&gt;&gt;
               &lt;&lt;if $comp.open.life != "ess"&gt;&gt;&lt;&lt;set $comp.open.life = "ess"&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $comp.open.life = "none"&gt;&gt;&lt;&lt;endif&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
             &lt;&lt;/link&gt;&gt;
@@ -3590,9 +3495,6 @@ br {
   &lt;&lt;endif&gt;&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="SystemAlert" tags="nobr" position="">&lt;div id="alertcon"&gt;
   &lt;div id="systemAlert"&gt;
-    &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
-      &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
     &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
     &lt;div id="syscon"&gt;
     &lt;&lt;if passage() != "Endings"&gt;&gt;
@@ -3603,13 +3505,22 @@ br {
         &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
           &lt;&lt;set $alert.worm = "on"&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+            &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
         &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
           &lt;&lt;set $alert.worm = "on"&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+            &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
     &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
+      &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+        &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+      &lt;&lt;endif&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
         &lt;&lt;replace "#systemAlert"&gt;&gt;
           &lt;&lt;include "Snake"&gt;&gt;
@@ -3626,11 +3537,12 @@ br {
           &lt;&lt;set $change.desig = true&gt;&gt;
           &lt;&lt;set $change.cam = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+            &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
         &lt;&lt;/button&gt;&gt;&lt;/span&gt;
       &lt;/div&gt;
-    &lt;&lt;endif&gt;&gt;
-
-    &lt;&lt;if $alert.worm == "done"&gt;&gt;
+    &lt;&lt;elseif $alert.worm == "done"&gt;&gt;
         &lt;&lt;if $alert.frag == 1&gt;&gt;
           &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
 
@@ -3644,6 +3556,9 @@ br {
               &lt;&lt;set $change.function = true&gt;&gt;
               &lt;&lt;set $change.desig = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $alert.frag == 3&gt;&gt;
@@ -3661,6 +3576,9 @@ br {
             &lt;&lt;set $change.background = true&gt;&gt;
             &lt;&lt;set $change.desig = true&gt;&gt;
             &lt;&lt;set $change.alert = true&gt;&gt;
+            &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+              &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
           &lt;&lt;/timed&gt;&gt;
         &lt;&lt;elseif $alert.frag == 5&gt;&gt;
           &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
@@ -3675,6 +3593,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.desig = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $alert.frag == 7&gt;&gt;
@@ -3694,6 +3615,9 @@ br {
               &lt;&lt;set $change.component = true&gt;&gt;
               &lt;&lt;set $change.desig = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $alert.frag == 9 &amp;&amp; $comp.space &lt;= 60&gt;&gt;
@@ -3703,17 +3627,36 @@ br {
 
           &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
 
-          &lt;&lt;timed 8s&gt;&gt;
-            &lt;&lt;set $alert.frag = "done"&gt;&gt;
-            &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;set $change.background = true&gt;&gt;
-            &lt;&lt;set $change.desig = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;goto "Ends"&gt;&gt;
-          &lt;&lt;/timed&gt;&gt;
-        &lt;&lt;endif&gt;&gt;
+          &lt;div class="buttonbg"&gt;
+            &lt;span class="green"&gt;&lt;&lt;button "GO THROUGH"&gt;&gt;
+              &lt;&lt;set $alert.frag = "done"&gt;&gt;
+              &lt;&lt;set $alert.hide = true&gt;&gt;
+              &lt;&lt;set $change.background = true&gt;&gt;
+              &lt;&lt;set $change.desig = true&gt;&gt;
+              &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;set _bg = random(1, 100)&gt;&gt;
 
-        &lt;&lt;if $comp.photo == "ves" &amp;&amp; $override.photo == false&gt;&gt;
+              &lt;&lt;if _bg &gt;= 1 &amp;&amp; _bg &lt;= 20&gt;&gt;
+                &lt;&lt;set $bg = 1&gt;&gt;
+              &lt;&lt;elseif _bg &gt;= 21 &amp;&amp; _bg &lt;= 40&gt;&gt;
+                &lt;&lt;set $bg = 2&gt;&gt;
+              &lt;&lt;elseif _bg &gt;= 41 &amp;&amp; _bg &lt;= 60&gt;&gt;
+                &lt;&lt;set $bg = 3&gt;&gt;
+              &lt;&lt;elseif _bg &gt;= 61 &amp;&amp; _bg &lt;= 80&gt;&gt;
+                &lt;&lt;set $bg = 4&gt;&gt;
+              &lt;&lt;elseif _bg &gt;= 81 &amp;&amp; _bg &lt;= 100&gt;&gt;
+                &lt;&lt;set $bg = 5&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+              &lt;&lt;replace ".passage"&gt;&gt;&lt;div class="fade-in-out container"&gt;&lt;/div&gt;&lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto "Ends"&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+
+
+        &lt;&lt;elseif $comp.photo == "ves" &amp;&amp; $override.photo == false&gt;&gt;
           &lt;p&gt;NEEDED FOR POWER&lt;/p&gt;
 
           &lt;div class="buttonbg"&gt;
@@ -3722,6 +3665,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
               &lt;&lt;set $damage -= 22&gt;&gt;
@@ -3731,6 +3677,9 @@ br {
               &lt;&lt;set $change.damage = true&gt;&gt;
               &lt;&lt;set $change.battery = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $comp.climate.sorted.ves.includes("Exo combusters") &amp;&amp; $override.exo == false&gt;&gt;
@@ -3747,6 +3696,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
               &lt;&lt;set $damage -= 25&gt;&gt;
@@ -3754,6 +3706,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.damage = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)") &amp;&amp; $override.limbs == false&gt;&gt;
@@ -3765,6 +3720,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
               &lt;&lt;set $damage -= 27&gt;&gt;
@@ -3772,6 +3730,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.damage = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $comp.suit.sorted.ves.includes("Motor lattice") &amp;&amp; $override.motor == false&gt;&gt;
@@ -3783,6 +3744,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.component = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
               &lt;&lt;set $damage -= 21&gt;&gt;
@@ -3790,6 +3754,9 @@ br {
               &lt;&lt;set $alert.hide = true&gt;&gt;
               &lt;&lt;set $change.damage = true&gt;&gt;
               &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/div&gt;
         &lt;&lt;elseif $comp.suit.sorted.ves.includes("Ligamentation system") &amp;&amp; $override.lig == false&gt;&gt;
@@ -3809,6 +3776,9 @@ br {
                   &lt;&lt;set $alert.hide = true&gt;&gt;
                   &lt;&lt;set $change.component = true&gt;&gt;
                   &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                    &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+                  &lt;&lt;endif&gt;&gt;
                 &lt;&lt;/button&gt;&gt;&lt;/span&gt;
                 &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
                   &lt;&lt;set $damage -= 32&gt;&gt;
@@ -3816,14 +3786,20 @@ br {
                   &lt;&lt;set $alert.hide = true&gt;&gt;
                   &lt;&lt;set $change.damage = true&gt;&gt;
                   &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
+                    &lt;&lt;set $alert.his.deleteAt(0)&gt;&gt;
+                  &lt;&lt;endif&gt;&gt;
                 &lt;&lt;/button&gt;&gt;&lt;/span&gt;
               &lt;/div&gt;
             &lt;&lt;/replace&gt;&gt;
           &lt;&lt;/timed&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+          &lt;&lt;set $alert.hide = true&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
       &lt;&lt;else&gt;&gt;
-        endalerts go here
+        HI
       &lt;&lt;endif&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -4003,28 +3979,33 @@ br {
       &lt;&lt;endif&gt;&gt;
     &lt;&lt;elseif $change.alert == true&gt;&gt;
       &lt;&lt;set $change.alert = false&gt;&gt;
-      &lt;&lt;if $alert.hide == false&gt;&gt;
-        &lt;&lt;if $alert.frag == 9&gt;&gt;
-          &lt;&lt;if $comp.space &gt; 60 &amp;&amp; not $alert.his.includes("something")&gt;&gt;
-            &lt;&lt;replace "#alertcon"&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;if passage() != "Ends"&gt;&gt;
+        &lt;&lt;if $alert.hide == false&gt;&gt;
+          &lt;&lt;if $alert.frag == 9&gt;&gt;
+            &lt;&lt;if $comp.space &gt; 60 &amp;&amp; not $alert.his.includes("something")&gt;&gt;
+              &lt;&lt;replace "#alertcon"&gt;&gt;
+              &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;replace "#alertcon"&gt;&gt;
+                &lt;&lt;display "SystemAlert"&gt;&gt;
+              &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
           &lt;&lt;else&gt;&gt;
             &lt;&lt;replace "#alertcon"&gt;&gt;
               &lt;&lt;display "SystemAlert"&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;&lt;else&gt;&gt;
+          &lt;&lt;if ($alert.his.includes("frag") &amp;&amp; $alert.frag != 9) || ($alert.his.includes("frag") &amp;&amp; $alert.frag == 9 &amp;&amp; $comp.space &lt;= 60)&gt;&gt;
+            &lt;&lt;set $alert.hide = false&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
           &lt;&lt;replace "#alertcon"&gt;&gt;
-            &lt;&lt;display "SystemAlert"&gt;&gt;
           &lt;&lt;/replace&gt;&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;else&gt;&gt;
-        &lt;&lt;if $alert.his.length &gt; 0&gt;&gt;
-          &lt;&lt;set $alert.hide = false&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;endif&gt;&gt;
-        &lt;&lt;replace "#alertcon"&gt;&gt;
-        &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace "#alertcon"&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
       &lt;&lt;endif&gt;&gt;
     &lt;&lt;elseif $change.function == true&gt;&gt;
       &lt;&lt;if $funct.on == false&gt;&gt;
@@ -4055,19 +4036,19 @@ br {
       &lt;&lt;set $comp.space -=3&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.climate.sorted.ves.includes("Fans")&gt;&gt;
-      &lt;&lt;set $comp.space -=3&gt;&gt;
+      &lt;&lt;set $comp.space -=4&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.climate.sorted.ves.includes("Exo combusters")&gt;&gt;
       &lt;&lt;set $comp.space -=14&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.life.sorted.ves.includes("Water collection")&gt;&gt;
-      &lt;&lt;set $comp.space -=4&gt;&gt;
+      &lt;&lt;set $comp.space -=5&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.life.sorted.ves.includes("Waste management")&gt;&gt;
-      &lt;&lt;set $comp.space -=3&gt;&gt;
+      &lt;&lt;set $comp.space -=5&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.life.sorted.ves.includes("Air filtration")&gt;&gt;
-      &lt;&lt;set $comp.space -=5&gt;&gt;
+      &lt;&lt;set $comp.space -=7&gt;&gt;
     &lt;&lt;endif&gt;&gt;
     &lt;&lt;if $comp.suit.sorted.ves.includes("Heat sink repository")&gt;&gt;
       &lt;&lt;set $comp.space -=8&gt;&gt;
@@ -4099,15 +4080,15 @@ br {
     * skull (4)
     * torso (6)
     * compressor (3)
-    * fans (3)
-    * water collection (4)
-    * waste management (3)
-    * air filtration (5)
+    * fans (4)
+    * water collection (5)
+    * waste management (5)
+    * air filtration (7)
     * heat sink repository (8)
     * biomatter (10)
-     = 46
+     = 53
     &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="Snake" tags="nobr snake" position="">&lt;p class="snakey"&gt;System repairs: 1%&lt;/p&gt;
-  &lt;&lt;timed 60s&gt;&gt;
+  &lt;&lt;timed 1s&gt;&gt;
     &lt;&lt;set $alert.worm = "won"&gt;&gt;
     &lt;&lt;set $alert.next = "Something"&gt;&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;

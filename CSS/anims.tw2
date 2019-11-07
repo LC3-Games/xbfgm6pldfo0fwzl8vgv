@@ -945,3 +945,37 @@
     background-position: 0% 105%, 100% 103%, 0% 0%;
   }
 }
+
+@keyframes fade-in-out {
+  0% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 1}
+}
+
+@-webkit-keyframes fade-in-out {
+  0% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 1}
+}
+
+.fade-in-out {
+  -webkit-animation: fade-in-out 2s;
+          animation: fade-in-out 2s;
+  position: fixed;
+}
+
+@keyframes fade-in-white {
+  0% {background-color: white; opacity: 1}
+  99% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 0; display: none}
+}
+
+@-webkit-keyframes fade-in-white {
+  0% {background-color: white; opacity: 1}
+  99% {background-color: white; opacity: 0}
+  100% {background-color: white; opacity: 0; display: none}
+}
+
+.fade-in-white {
+  -webkit-animation: fade-in-white 5s;
+          animation: fade-in-white 5s;
+  position: fixed;
+}
