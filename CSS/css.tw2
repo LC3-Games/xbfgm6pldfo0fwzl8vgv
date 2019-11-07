@@ -309,3 +309,27 @@ br {
 .snake {
 	height: 100vh;
 }
+
+.end-container {
+	top: 10%;
+	position: fixed;
+	width: 80%;
+	height: 70%;
+	border: 8px double #111111;
+	background: #1111118c;
+	padding: 20px 50px 50px 50px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+			-ms-transform: translate(-50%, 0);
+					transform: translate(-50%, 0);
+}
+
+.end-container p {
+	margin-bottom: 1em;
+}
+
+.end-header {
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}

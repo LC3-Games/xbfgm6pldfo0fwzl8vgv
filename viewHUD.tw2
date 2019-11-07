@@ -825,7 +825,7 @@
 ::BackgroundShit [nobr]
   <div id="backcon">
   <<timed 0.2s>><<include "FlickFast">><</timed>>
-  <<if $cam.one == "on" && $cam.two == "off" && passage() != "Ends">>
+  <<if $cam.one == "on" && $cam.two == "off" && passage() == "Escape Start">>
     <<if $bg == "hatch">>
       <script>
         $(".passage").removeClass("ship7aux ship7handsopen");

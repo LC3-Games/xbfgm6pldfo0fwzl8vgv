@@ -714,9 +714,9 @@ Lysogenesis
   <p>Tough shit.</p>
 
 ::Ends [nobr]
-<<timed 5s>>
-<<removeclass ".container">>
-<</timed>>
+  <<timed 5s>>
+  <<removeclass ".container">>
+  <</timed>>
   <div class="fade-in-white container"></div>
 
 
@@ -726,5 +726,13 @@ Lysogenesis
   [[credits|Credits]]
 
 
-::Credits [nobr]
-  <p>This game was written and created by Leah Case and Penelope Evans. Art is by Penelope Evans and Allison Lownie, or was used under a CC0 license. All audio is used under a CC0 license.</p>
+::Credits [nobr credits crt]
+  <<include "BackgroundShit">>
+  <div class="end-container">
+    <div class="end-header">Credits</div>
+    <p>This game was written and created by Leah Case (https://koolkandy.itch.io/ https://twitter.com/leahthecase ) and Penelope Evans (https://twitter.com/olbeyblade_jpeg https://wonderbreath.itch.io/ ).</p>
+
+    <p>Art is by Penelope Evans and Allison Lownie (Find her at: https://twitter.com/alowknees https://lowknees.tumblr.com/ ), or was used under a CC0 license. All audio is used under a CC0 license.</p>
+
+    <p><<link "Play again">><<run UI.restart()>><</link>></p>
+  </div>

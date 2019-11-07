@@ -410,6 +410,30 @@ br {
 .snake {
 	height: 100vh;
 }
+
+.end-container {
+	top: 10%;
+	position: fixed;
+	width: 80%;
+	height: 70%;
+	border: 8px double #111111;
+	background: #1111118c;
+	padding: 20px 50px 50px 50px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+			-ms-transform: translate(-50%, 0);
+					transform: translate(-50%, 0);
+}
+
+.end-container p {
+	margin-bottom: 1em;
+}
+
+.end-header {
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
 .shape {
   width: 100px;
   margin: auto;
@@ -2788,15 +2812,23 @@ br {
           &lt;&lt;next&gt;&gt;
             &lt;&lt;goto "Escape Start"&gt;&gt;
   &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr" position="">&lt;p&gt;Tough shit.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
-&lt;&lt;removeclass ".container"&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;removeclass ".container"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
   &lt;div class="fade-in-white container"&gt;&lt;/div&gt;
 
 
   &lt;&lt;include "ViewHUD"&gt;&gt;
   &lt;p&gt;thanks 4 playing&lt;/p&gt;
 
-  [[credits|Credits]]</tw-passagedata><tw-passagedata pid="36" name="Credits" tags="nobr" position="">&lt;p&gt;This game was written and created by Leah Case and Penelope Evans. Art is by Penelope Evans and Allison Lownie, or was used under a CC0 license. All audio is used under a CC0 license.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="37" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+  [[credits|Credits]]</tw-passagedata><tw-passagedata pid="36" name="Credits" tags="nobr credits crt" position="">&lt;&lt;include "BackgroundShit"&gt;&gt;
+  &lt;div class="end-container"&gt;
+    &lt;div class="end-header"&gt;Credits&lt;/div&gt;
+    &lt;p&gt;This game was written and created by Leah Case (https://koolkandy.itch.io/ https://twitter.com/leahthecase ) and Penelope Evans (https://twitter.com/olbeyblade_jpeg https://wonderbreath.itch.io/ ).&lt;/p&gt;
+
+    &lt;p&gt;Art is by Penelope Evans and Allison Lownie (Find her at: https://twitter.com/alowknees https://lowknees.tumblr.com/ ), or was used under a CC0 license. All audio is used under a CC0 license.&lt;/p&gt;
+
+    &lt;p&gt;&lt;&lt;link "Play again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
       var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
@@ -2906,10 +2938,6 @@ br {
         $(".passage").addClass("corpse");
       &lt;&lt;/script&gt;&gt;
     &lt;&lt;endif&gt;&gt;
-  &lt;&lt;endif&gt;&gt;
-
-  &lt;&lt;if passage() == "Snake"&gt;&gt;
-
   &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="39" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
@@ -3896,7 +3924,7 @@ br {
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="BackgroundShit" tags="nobr" position="">&lt;div id="backcon"&gt;
   &lt;&lt;timed 0.2s&gt;&gt;&lt;&lt;include "FlickFast"&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off" &amp;&amp; passage() != "Ends"&gt;&gt;
+  &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off" &amp;&amp; passage() == "Escape Start"&gt;&gt;
     &lt;&lt;if $bg == "hatch"&gt;&gt;
       &lt;script&gt;
         $(".passage").removeClass("ship7aux ship7handsopen");
