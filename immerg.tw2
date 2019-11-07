@@ -11,6 +11,8 @@
   storyinit.tw2
 
   viewHUD.tw2
+  components.tw2
+  systemalert.tw2
 
 
 ::StoryIFID [twee2]

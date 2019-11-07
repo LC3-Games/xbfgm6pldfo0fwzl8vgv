@@ -29,19 +29,6 @@
      return State.variables.pronoun1
   }
 
-  $("div.wrapper input").click(function(){
-  	var $input = $(this);
-  	inputFieldID = $input.attr("id");
-    var outputFieldID = getOutputFieldIDFromInputFieldID(inputFieldID);
-    var $overlay = $input.siblings($("#"+outputFieldID));
-    if ($input.val() == "" || $input.val() == inputTextDefault) {
-      $overlay.css("font", $input.css("font"));
-      $input.val("");
-      $overlay.show().animate({"width": $input.width()}, $animSpeed);
-      $input.focus();
-    }
-  });
-
 
 ::PassageDone
   <<if passage() == "ShapeChoice">>

@@ -1,0 +1,368 @@
+::ComponentBreakdown [nobr]
+  <div id="compcon">
+  <<if $comp.on == true>>
+  <div id="component">
+    <h4>COMPONENTS</h4>
+    <<set $change.alert = true>>
+    <div id="unsorted">
+      <h5>UNSORTED $comp.space</h5>
+      <div class="scrollcontent">
+        <<if $comp.endo.unsorted.length > 0>>
+          <<link "Human Endoskeleton">>
+            <<if $comp.open.human != "unsorted">><<set $comp.open.human = "unsorted">><<else>><<set $comp.open.human = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.human == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.endo.unsorted.includes("Skull (teeth et al)")>>
+                  <li>Skull (teeth et al)
+                    <span class="red"><<button "X">><<set $comp.endo.unsorted.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ves.push("Skull (teeth et al)")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.endo.unsorted.delete("Skull (teeth et al)")>><<set $comp.endo.sorted.ess.push("Skull (teeth et al)")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.endo.unsorted.includes("Torso (ribs, collarbones, etc.)")>>
+                  <li>Torso (ribs, collarbones, etc.)
+                    <span class="red"><<button "X">><<set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ves.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.endo.unsorted.delete("Torso (ribs, collarbones, etc.)")>><<set $comp.endo.sorted.ess.push("Torso (ribs, collarbones, etc.)")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")>>
+                  <li>Limbs (legs, arms, extensions, etc.)
+                    <span class="red"><<button "X">><<set $alert.his.push("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")>><<set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <<if $comp.climate.unsorted.length > 0>>
+          <<link "Climate Control">>
+            <<if $comp.open.climate != "unsorted">><<set $comp.open.climate = "unsorted">><<else>><<set $comp.open.climate = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.climate == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.climate.unsorted.includes("Compressor")>>
+                  <li>Compressor
+                    <span class="red"><<button "X">><<set $comp.climate.unsorted.delete("Compressor")>><<set $comp.climate.sorted.ves.push("Compressor")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.climate.unsorted.delete("Compressor")>><<set $comp.climate.sorted.ess.push("Compressor")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.climate.unsorted.includes("Fans")>>
+                  <li>Fans
+                    <span class="red"><<button "X">><<set $comp.climate.unsorted.delete("Fans")>><<set $comp.climate.sorted.ves.push("Fans")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.climate.unsorted.delete("Fans")>><<set $comp.climate.sorted.ess.push("Fans")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.climate.unsorted.includes("Exo combusters")>>
+                  <li>Exo combusters
+                    <span class="red"><<button "X">><<set $alert.his.push("Exo combusters")>><<set $comp.climate.unsorted.delete("Exo combusters")>><<set $comp.climate.sorted.ves.push("Exo combusters")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.climate.unsorted.delete("Exo combusters")>><<set $comp.climate.sorted.ess.push("Exo combusters")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <<if $comp.life.unsorted.length > 0>>
+          <<link "Life Support">>
+            <<if $comp.open.life != "unsorted">><<set $comp.open.life = "unsorted">><<else>><<set $comp.open.life = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.life == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.life.unsorted.includes("Water collection")>>
+                  <li>Water collection
+                    <span class="red"><<button "X">><<set $comp.life.unsorted.delete("Water collection")>><<set $comp.life.sorted.ves.push("Water collection")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.life.unsorted.delete("Water collection")>><<set $comp.life.sorted.ess.push("Water collection")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.life.unsorted.includes("Waste management")>>
+                  <li>Waste recycling
+                    <span class="red"><<button "X">><<set $comp.life.unsorted.delete("Waste management")>><<set $comp.life.sorted.ves.push("Waste management")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.life.unsorted.delete("Waste management")>><<set $comp.life.sorted.ess.push("Waste management")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.life.unsorted.includes("Air filtration")>>
+                  <li>Air filtration
+                    <span class="red"><<button "X">><<set $comp.life.unsorted.delete("Air filtration")>><<set $comp.life.sorted.ves.push("Air filtration")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.life.unsorted.delete("Air filtration")>><<set $comp.life.sorted.ess.push("Air filtration")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <<if $comp.suit.unsorted.length > 0>>
+          <<link "Suit Mechanics">>
+            <<if $comp.open.suit != "unsorted">><<set $comp.open.suit = "unsorted">><<else>><<set $comp.open.suit = "none">><<endif>>
+            <<set $change.component = true>>
+          <</link>>
+
+          <<if $comp.open.suit == "unsorted">>
+            <div class="comp-container">
+              <ul>
+                <<if $comp.suit.unsorted.includes("Heat sink repository")>>
+                  <li>Heat sink repository
+                    <span class="red"><<button "X">><<set $comp.suit.unsorted.delete("Heat sink repository")>><<set $comp.suit.sorted.ves.push("Heat sink repository")>><<set $change.component = true>><</button>></span>
+                  <span class="green"><<button "O">><<set $comp.suit.unsorted.delete("Heat sink repository")>><<set $comp.suit.sorted.ess.push("Heat sink repository")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.suit.unsorted.includes("Motor lattice")>>
+                  <li>Motor lattice
+                    <span class="red"><<button "X">><<set $alert.his.push("Motor lattice")>><<set $comp.suit.unsorted.delete("Motor lattice")>><<set $comp.suit.sorted.ves.push("Motor lattice")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.suit.unsorted.delete("Motor lattice")>><<set $comp.suit.sorted.ess.push("Motor lattice")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+                <<if $comp.suit.unsorted.includes("Ligamentation system")>>
+                  <li>Ligamentation system
+                    <span class="red"><<button "X">><<set $alert.his.push("Ligamentation system")>><<set $comp.suit.unsorted.delete("Ligamentation system")>><<set $comp.suit.sorted.ves.push("Ligamentation system")>><<set $change.component = true>><</button>></span>
+                    <span class="green"><<button "O">><<set $comp.suit.unsorted.delete("Ligamentation system")>><<set $comp.suit.sorted.ess.push("Ligamentation system")>><<set $change.component = true>><</button>></span>
+                  </li>
+                <<endif>>
+              </ul>
+            </div>
+          <<endif>>
+        <<endif>>
+
+        <<if $comp.bio == "unsorted">>
+          <p>Human biomatter
+            <span class="red"><<button "X">><<set $comp.bio = "ves">><<set $change.component = true>><</button>></span>
+            <span class="green"><<button "O">><<set $comp.bio = "ess">><<set $change.component = true>><</button>></span>
+          </p>
+        <<endif>>
+
+        <<if $comp.photo == "unsorted">>
+          <p>Photovoltaic unit
+            <span class="red"><<button "X">><<set $alert.his.push("Photovoltaic unit")>><<set $comp.photo = "ves">><<set $change.component = true>><</button>></span>
+            <span class="green"><<button "O">><<set $comp.photo = "ess">><<set $change.component = true>><</button>></span>
+          </p>
+        <<endif>>
+      </div>
+    </div>
+
+    <div id="bottomRow">
+      <div class="sorted left">
+        <h5>ESSENTIAL</h5>
+        <div class="scrollcontent">
+          <<if $comp.endo.sorted.ess.length > 0>>
+            <<link "Human Endoskeleton">>
+              <<if $comp.open.human != "ess">><<set $comp.open.human = "ess">><<else>><<set $comp.open.human = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.human == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.endo.sorted.ess.includes("Skull (teeth et al)")>>
+                    <li>Skull (teeth et al)</li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ess.includes("Torso (ribs, collarbones, etc.)")>>
+                    <li>Torso (ribs, collarbones, etc.)</li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ess.includes("Limbs (legs, arms, extensions, etc.)")>>
+                    <li>Limbs (legs, arms, extensions, etc.)</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.climate.sorted.ess.length > 0>>
+            <<link "Climate Control">>
+              <<if $comp.open.life != "ess">><<set $comp.open.climate = "ess">><<else>><<set $comp.open.climate = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.climate == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.climate.sorted.ess.includes("Compressor")>>
+                    <li>Compressor</li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ess.includes("Fans")>>
+                    <li>Fans</li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ess.includes("Exo combusters")>>
+                    <li>Exo combusters</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.life.sorted.ess.length > 0>>
+            <<link "Life Support">>
+              <<if $comp.open.life != "ess">><<set $comp.open.life = "ess">><<else>><<set $comp.open.life = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.life == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.life.sorted.ess.includes("Water collection")>>
+                    <li>Water collection</li>
+                  <<endif>>
+                  <<if $comp.life.sorted.ess.includes("Waste management")>>
+                    <li>Waste management</li>
+                  <<endif>>
+                  <<if $comp.life.sorted.ess.includes("Air filtration")>>
+                    <li>Air filtration</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.suit.sorted.ess.length > 0>>
+            <<link "Suit Mechanics">>
+              <<if $comp.open.suit != "ess">><<set $comp.open.suit = "ess">><<else>><<set $comp.open.suit = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.suit == "ess">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.suit.sorted.ess.includes("Heat sink repository")>>
+                    <li>Heat sink repository</li>
+                  <<endif>>
+                  <<if $comp.suit.sorted.ess.includes("Motor lattice")>>
+                    <li>Motor lattice</li>
+                  <<endif>>
+                  <<if $comp.suit.sorted.ess.includes("Ligamentation system")>>
+                    <li>Ligamentation system</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+
+          <<if $comp.photo == "ess">>
+            <p>Photovoltaic unit</p>
+          <<endif>>
+
+          <<if $comp.bio == "ess">>
+            <p>Human biomatter</p>
+          <<endif>>
+        </div>
+      </div>
+
+      <div class="sorted right">
+        <h5>VESTIGIAL</h5>
+        <div class="scrollcontent">
+          <<if $comp.endo.sorted.ves.length > 0>>
+            <<link "Human Endoskeleton">>
+              <<if $comp.open.human != "ves">><<set $comp.open.human = "ves">><<else>><<set $comp.open.human = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.human == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.endo.sorted.ves.includes("Skull (teeth et al)")>>
+                    <li>Skull (teeth et al)</li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ves.includes("Torso (ribs, collarbones, etc.)")>>
+                    <li>Torso (ribs, collarbones, etc.)</li>
+                  <<endif>>
+                  <<if $comp.endo.sorted.ves.includes("Limbs (legs, arms, extensions, etc.)")>>
+                    <li>Limbs (legs, arms, extensions, etc.)</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.climate.sorted.ves.length > 0>>
+            <<link "Climate Control">>
+              <<if $comp.open.climate != "ves">><<set $comp.open.climate = "ves">><<else>><<set $comp.open.climate = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.climate == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.climate.sorted.ves.includes("Compressor")>>
+                    <li>Compressor</li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ves.includes("Fans")>>
+                    <li>Fans</li>
+                  <<endif>>
+                  <<if $comp.climate.sorted.ves.includes("Exo combusters")>>
+                    <li>Exo combusters</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.life.sorted.ves.length > 0>>
+            <<link "Life Control">>
+              <<if $comp.open.life != "ves">><<set $comp.open.life = "ves">><<else>><<set $comp.open.life = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.life == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.life.sorted.ves.includes("Water collection")>>
+                    <li>Water collection</li>
+                  <<endif>>
+                  <<if $comp.life.sorted.ves.includes("Waste management")>>
+                    <li>Waste management</li>
+                  <<endif>>
+                  <<if $comp.life.sorted.ves.includes("Air filtration")>>
+                    <li>Air filtration</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.suit.sorted.ves.length > 0>>
+            <<link "Suit Mechanics">>
+              <<if $comp.open.suit != "ves">><<set $comp.open.suit = "ves">><<else>><<set $comp.open.suit = "none">><<endif>>
+              <<set $change.component = true>>
+            <</link>>
+
+            <<if $comp.open.suit == "ves">>
+              <div class="comp-container">
+                <ul>
+                  <<if $comp.suit.sorted.ves.includes("Heat sink repository")>>
+                    <li>Heat sink repository</li>
+                  <<endif>>
+                  <<if $comp.suit.sorted.ves.includes("Motor lattice")>>
+                    <li>Motor lattice</li>
+                  <<endif>>
+                  <<if $comp.suit.sorted.ves.includes("Ligamentation system")>>
+                    <li>Ligamentation system</li>
+                  <<endif>>
+                </ul>
+              </div>
+            <<endif>>
+          <<endif>>
+
+          <<if $comp.bio == "ves">>
+            <p>Human biomatter</p>
+          <<endif>>
+
+          <<if $comp.photo == "ves">>
+            <p>Photovoltaic unit</p>
+          <<endif>>
+        </div>
+      </div>
+    </div>
+  </div>
+  <<endif>>
+  </div>
