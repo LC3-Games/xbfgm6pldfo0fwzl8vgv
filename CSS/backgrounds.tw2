@@ -211,12 +211,12 @@
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
   40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
   60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
     background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
@@ -242,14 +242,14 @@
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
   40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
   60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
 		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -273,12 +273,12 @@
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
   40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
   60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
     background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
@@ -304,12 +304,12 @@
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
   40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_4.png) no-repeat;
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
   60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
     background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
@@ -335,12 +335,12 @@
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
   40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
   60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
     background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }

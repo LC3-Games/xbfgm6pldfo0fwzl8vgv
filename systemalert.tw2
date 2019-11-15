@@ -247,7 +247,10 @@
           <<set $change.alert = true>>
         <<endif>>
       <<endif>>
-      <<else>>
+      <<elseif passage() == "Endings">>
+        <<if $bg == 2>>
+          <p><span class="small">there's so much sun</span></p>
+        <<endif>>
         HI
       <<endif>>
     </div>

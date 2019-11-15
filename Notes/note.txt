@@ -4,4 +4,6 @@ ALSO, nonsense code & its consequences
 
 have background flash to images of things that are not seen through ANY camera?
 
+bug test code: at the end of system alert (to read out different vars) and in $damage box
+
 https://www.cs.bgu.ac.il/~arielbar/sl/#/main

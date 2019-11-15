@@ -35,8 +35,6 @@
   <<set $damage = 100>>
   <<set $damageFloat = $damage>>
 
-  <<set $damAnim = 1>>
-
   <<set $funct = {
     on : false,
     hatch : false,
