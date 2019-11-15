@@ -66,6 +66,23 @@ body {
 	min-height: 100vh;
 }
 
+.start {
+	text-align: center;
+	line-height: 1.6;
+}
+
+.start button {
+	margin: 1em 0em 0em 0em;
+}
+
+.start button:hover {
+	background-color: #2768c1;
+}
+
+.start img {
+	max-width: 50%;
+}
+
 #fullright {
   content: "";
   margin: 0;
@@ -137,12 +154,12 @@ button.pink:hover {
 }
 
 span.red button {
-	background: #e53653; /* red */
+	background: #c30254; /* red */
 	animation: pulse-red 5.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 span.green button {
-	background: #008059; /* green */;
+	background: #2768c1; /* green */;
 	animation: pulse-green-bg 5.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
@@ -160,6 +177,7 @@ span.green button {
 	width: 100%;
 	position: absolute;
 	top: 0%;
+	animation: textShadow 1.6s infinite;
 }
 
 .quiz-container button {
@@ -205,10 +223,7 @@ span.green button {
   background: #1111118c;
   padding: 20px 50px 50px 50px;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
+  transform: translate(-50%, 0);
 }
 
 .file-container p {
@@ -217,8 +232,7 @@ span.green button {
 
 .file-container a {
 	color: white;
-	-webkit-animation: textShadow 1.6s infinite;
-	        animation: textShadow 1.6s infinite;
+	animation: textShadow 1.6s infinite;
 }
 
 .file-container img {
@@ -317,12 +331,13 @@ br {
 .end-container {
 	top: 10%;
 	position: fixed;
-	width: 80%;
+	width: 60%;
 	height: 70%;
 	border: 8px double #111111;
 	background: #1111118c;
 	padding: 20px 50px 50px 50px;
 	left: 50%;
+	animation: textShadow 1.6s infinite;
 	-webkit-transform: translate(-50%, 0);
 			-ms-transform: translate(-50%, 0);
 					transform: translate(-50%, 0);
@@ -330,6 +345,15 @@ br {
 
 .end-container p {
 	margin-bottom: 1em;
+
+}
+
+.end-container a {
+	color: #c30254;
+}
+
+.end-container button:hover {
+	background-color: #2768c1;
 }
 
 .end-header {

@@ -37,11 +37,12 @@
 
   <<set $funct = {
     on : false,
-    hatch : false,
-    core : false,
-    offon : false,
-    redun : false,
-    init : false,
+    hatch : "off",
+    core : "off",
+    offon : "off",
+    redun : "off",
+    init : "off",
+    click : 0,
 
     fail : 0,
 
@@ -131,7 +132,8 @@
   <<set $cam = {
     funct : "off",
     one : "on",
-    two : "off"
+    two : "off",
+    click : 0,
   }>>
 
   <<set $alert = {
@@ -140,12 +142,10 @@
     frag : 0,
     hide: false,
     his : [],
-    visible : false,
+    visible : true,
+    show : true,
   }>>
 
   <<cacheaudio "softAmbient" "Sounds/soft_ambient.ogg">>
   <<cacheaudio "pinkNoise" "Sounds/pink_noise.ogg">>
-  <<cacheaudio "auralDrone" "Sounds/aural_drone.ogg">>
-  <<cacheaudio "harmonicDrone" "Sounds/harmonic_drone.ogg">>
   <<cacheaudio "tapMetal" "Sounds/tapping_metal.ogg">>
-  <<cacheaudio "ambientDrone" "Sounds/ambient_drone.ogg">>

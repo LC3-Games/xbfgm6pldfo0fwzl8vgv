@@ -1,9 +1,3 @@
-make hands clench and shake when you try to remove a bad part, or during some system alerts. Also just randomly during anim?
-
-ALSO, nonsense code & its consequences
-
-have background flash to images of things that are not seen through ANY camera?
-
-bug test code: at the end of system alert (to read out different vars) and in $damage box
+audio for ending
 
 https://www.cs.bgu.ac.il/~arielbar/sl/#/main

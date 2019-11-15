@@ -1,0 +1,123 @@
+::UpdateHud [widget]
+  <<widget "updatehud">><<silently>>
+  <<repeat 0.1s>>
+    <<if $change.desig == true>>
+      <<set $change.desig = false>>
+      <<replace "#desigcon">><<display "SelfDesignation">><</replace>>
+    <<elseif $change.battery == true>>
+      <<set $change.battery = false>>
+      <<replace "#battcon">><<display "Battery">><</replace>>
+    <<elseif $change.damage == true>>
+      <<set $change.damage = false>>
+      <<replace "#damagecon">><<display "Damage">><</replace>>
+    <<elseif $change.component == true>>
+      <<if $comp.on == true>>
+        <<if $firstChange == "no">>
+          <<set $firstChange = "yes">>
+          <<audio "softAmbient" stop>>
+          <<audio "tapMetal" loop volume 0.2 fadeoverto 16 0.5>>
+        <<endif>>
+        <<include "CompSpace">>
+        <<set $change.component = false>>
+        <<replace "#compcon">><<display "ComponentBreakdown">><</replace>>
+      <<else>>
+        <<replace "#compcon">><</replace>>
+      <<endif>>
+    /* <<elseif $change.alert == true>>
+      <<set $change.alert = false>>
+      <<if passage() != "Ends">>
+        <<if ($alert.frag == 9 && $comp.space <= 60 && $alert.hide != false) || ($alert.his.includes("frag") && $alert.frag == 9 && $alert.his.length >1) || ($alert.his.includes("frag") && $alert.frag !=9 && $alert.his.length > 0) || ($alert.frag == 7 && $funct.funct >= 3 && $alert.hide != false) || ($alert.his.includes("frag") && ($alert.frag !=9 || $alert.frag !=7) && $alert.his.length > 0)>>
+          <<set $alert.hide = false>>
+          <<set $fuckyou = "first">>
+        <<endif>>
+
+        <<if $alert.hide == false>>
+          <<if (($alert.frag == 9 && $comp.space > 60) && $alert.his.length <= 1) || ($alert.frag == 7 && $funct.funct <3)>>
+            <<set $fuckyou = "second">>
+            <<replace "#alertcon">>
+            <</replace>>
+            <<set $alert.visible = false>>
+
+          <<else>>
+            <<if $alert.frag == 7 && $funct.funct <3>>
+              <<set $fuckyou = "fourth">>
+              <<set $alert.visible = false>>
+              <<replace "#alertcon">>
+              <</replace>>
+            <<else>>
+              <<set $fuckyou = "third">>
+              <<set $alert.visible = true>>
+              <<replace "#alertcon">>
+                <div id="systemAlert">
+                  <h4>SYSTEM ALERT</h4>
+                  <div id="syscon">
+                  <<include "SystemAlert">>
+                  </div>
+                </div>
+                <<set $alert.hide == true>>
+              <</replace>>
+            <<endif>>
+
+          <<endif>>
+        <<else>>
+          <<set $fuckyou = "fourth">>
+          <<set $alert.visible = false>>
+          <<replace "#alertcon">>
+          <</replace>>
+
+        <<endif>>
+
+      <<else>>
+      <<set $alert.visible = false>>
+        <<set $fuckyou = "fifth">>
+        <<replace "#alertcon">>
+        <</replace>>
+
+      <<endif>> */
+    <<elseif $change.function == true>>
+      <<if $funct.on == false>>
+        <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
+      <<else>>
+        <<set $change.function = false>>
+        <<replace "#functcon">><<display "FunctionLibrary">><</replace>>
+      <<endif>>
+    <<elseif $change.cam == true>>
+      <<set $change.cam = false>>
+      <<replace "#camcon">><<display "CameraToggle">><</replace>>
+    <<elseif $change.background == true>>
+      <<set $change.background = false>>
+      <<replace "#backcon">><<display "BackgroundShit">><</replace>>
+    <<endif>>
+    /* <<if $alert.his.length >0 && $alert.visible == false && $alert.frag != 9>>
+      <<set $change.alert = true>>
+    <<elseif $alert.frag == 9 && $alert.his.length >1 && $alert.visible == false>>
+      <<set $change.alert = true>>
+    <<endif>> */
+  <</repeat>>
+  <</silently>><</widget>>
+
+
+::SelfDesignation [nobr]
+  <div id="desigcon">
+  <div id="designation">
+    /* <<timed 10s>>
+      <<if $alert.worm == "done" & $alert.frag != "done">>
+        <<if $alert.frag == 0>>
+          <<set $alert.frag = 1>>
+        <<elseif $alert.frag == 2>>
+          <<set $alert.frag = 3>>
+        <<elseif $alert.frag == 4>>
+          <<set $alert.frag = 5>>
+        <<elseif $alert.frag == 6>>
+          <<set $alert.frag = 7>>
+        <<elseif $alert.frag == 8>>
+          <<set $alert.frag = 9>>
+        <<endif>>
+
+        <<set $alert.his.push("frag")>>
+        <<set $change.alert = true>>
+      <<endif>>
+    <</timed>> */
+    Self-Designation: $name, $pronoun1/$pronoun2
+  </div>
+  </div>

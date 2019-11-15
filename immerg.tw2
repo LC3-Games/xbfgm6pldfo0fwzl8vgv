@@ -10,10 +10,11 @@
 
   storyinit.tw2
 
-  viewHUD.tw2
-  components.tw2
-  FunctionLib.tw2
-  systemalert.tw2
+  viewHUD/HUDBones.tw2
+  viewHUD/Components.tw2
+  viewHUD/FunctionLib.tw2
+  viewHUD/NEWSYSTEMALERT.tw2
+  viewHUD/alertwidget.tw2
 
 
 ::StoryIFID [twee2]
@@ -25,21 +26,19 @@ Twee2::build_config.story_format = 'Sugarcube2'
 Lysogenesis
 
 
-::Passage1 [nobr]
-  <div class="header-image">[img[image/lyso_header.png]]</div>
+::Start [nobr start]
+  <div class="header-image">[img[promo/TWIT_IMG.png]]</div>
 
-  <h1><strong>Epilepsy Warning<strong></h1>
+  <h1><strong>Epilepsy Warning</strong></h1>
 
   <p>Proceed with caution if you are photosensitive.</p>
 
-  <p>To play this game at full screen, hit F11 at any time.</p>
+  <p>Hit F11 to enter/exit full screen mode at any time.</p>
 
-  <p>[[Start|White]]</p>
+  <p><<button "Start">><<goto "White">><</button>></p>
 
 
-::Start [nobr white ship7handsopen crt]
-<<set $cursor = 6>>
-<<include "ViewHUD">>
+::White [nobr white]
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>
 
 
@@ -701,22 +700,27 @@ Lysogenesis
   </div>
 
 
-::HUD Boot [nobr]
-  <<typewriter "Determining HUD systems . . . . . . . . . . . . .">>
+::HUD Boot [nobr crt]
+  <<typewriter ">Determining HUD systems . . . . . . . . . . . . .">>
   <<timed 3s>>
     <<include "FlickFast">>
-    <<typewriter "Booting up HUD systems. . . . . . . . . . . . .">>
+    <<typewriter ">Booting up HUD systems. . . . . . . . . . . . .">>
       <<next>>
         <<include "FlickFast">>
         <<include "ViewHUD">>
-        <<typewriter "HUD systems booted">>
+        <<typewriter ">HUD systems booted">>
           <<next>>
             <<goto "Escape Start">>
   <</timed>>
 
 
-::Game Over [nobr]
-  <p>Tough shit.</p>
+::Game Over [nobr start]
+  <p>Maybe next time</p>
+
+  <<timed 2s>>
+  <p><<button "Try again">><<run UI.restart()>><</button>></p>
+  <</timed>>
+
 
 ::Ends [nobr]
   <<timed 5s>>
@@ -739,5 +743,5 @@ Lysogenesis
 
     <p>Art is by Penelope Evans and Allison Lownie (Find her at: https://twitter.com/alowknees https://lowknees.tumblr.com/ ), or was used under a CC0 license. All audio is used under a CC0 license.</p>
 
-    <p><<link "Play again">><<run UI.restart()>><</link>></p>
+    <p><<button "Play again">><<run UI.restart()>><</button>></p>
   </div>

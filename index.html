@@ -100,7 +100,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Lysogenesis" startnode="2" creator="Twee2" creator-version="0.5.0" ifid="80A24E8A-1ED1-4677-84AF-EB3E11E6D40D" format="Sugarcube2" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html, body, div, span, applet, object, iframe, p, blockquote, pre,
+	<tw-storydata name="Lysogenesis" startnode="1" creator="Twee2" creator-version="0.5.0" ifid="80A24E8A-1ED1-4677-84AF-EB3E11E6D40D" format="Sugarcube2" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html, body, div, span, applet, object, iframe, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, img, ins, kbd, q, s, samp,
 small, strike, sub, tt, var,
@@ -165,6 +165,23 @@ body {
   -o-transition: none;
   transition: none;
 	min-height: 100vh;
+}
+
+.start {
+	text-align: center;
+	line-height: 1.6;
+}
+
+.start button {
+	margin: 1em 0em 0em 0em;
+}
+
+.start button:hover {
+	background-color: #2768c1;
+}
+
+.start img {
+	max-width: 50%;
 }
 
 #fullright {
@@ -238,12 +255,12 @@ button.pink:hover {
 }
 
 span.red button {
-	background: #e53653; /* red */
+	background: #c30254; /* red */
 	animation: pulse-red 5.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 span.green button {
-	background: #008059; /* green */;
+	background: #2768c1; /* green */;
 	animation: pulse-green-bg 5.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
@@ -261,6 +278,7 @@ span.green button {
 	width: 100%;
 	position: absolute;
 	top: 0%;
+	animation: textShadow 1.6s infinite;
 }
 
 .quiz-container button {
@@ -306,10 +324,7 @@ span.green button {
   background: #1111118c;
   padding: 20px 50px 50px 50px;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-	/* animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both; */
+  transform: translate(-50%, 0);
 }
 
 .file-container p {
@@ -318,8 +333,7 @@ span.green button {
 
 .file-container a {
 	color: white;
-	-webkit-animation: textShadow 1.6s infinite;
-	        animation: textShadow 1.6s infinite;
+	animation: textShadow 1.6s infinite;
 }
 
 .file-container img {
@@ -418,12 +432,13 @@ br {
 .end-container {
 	top: 10%;
 	position: fixed;
-	width: 80%;
+	width: 60%;
 	height: 70%;
 	border: 8px double #111111;
 	background: #1111118c;
 	padding: 20px 50px 50px 50px;
 	left: 50%;
+	animation: textShadow 1.6s infinite;
 	-webkit-transform: translate(-50%, 0);
 			-ms-transform: translate(-50%, 0);
 					transform: translate(-50%, 0);
@@ -431,6 +446,15 @@ br {
 
 .end-container p {
 	margin-bottom: 1em;
+
+}
+
+.end-container a {
+	color: #c30254;
+}
+
+.end-container button:hover {
+	background-color: #2768c1;
 }
 
 .end-header {
@@ -1146,10 +1170,10 @@ br {
 
 @keyframes bat-flicker {
   0% {
-    background-color: #008059;
+    background-color: #2768c1;
   }
   100% {
-    background-color: #0080594d;
+    background-color: #2768c14d;
   }
 }
 
@@ -1173,10 +1197,10 @@ br {
 
 @keyframes pulse-green-bg {
   0% {
-    background-color: #008059;
+    background-color: #2768c1;
   }
   100% {
-    background-color: #0e7a0e;
+    background-color: #387ad4;
   }
 }
 
@@ -1478,7 +1502,7 @@ br {
 }
 
 #component .right h5 {
-	color: #e53653; /* red */
+	color: #c30254; /* red */
 }
 
 #component .sorted.left {
@@ -1486,7 +1510,7 @@ br {
 }
 
 #component .left h5 {
-	color: #008059; /* green */
+	color: #2768c1; /* green */
 }
 
 #component h4 {
@@ -1604,7 +1628,7 @@ br {
 /* Sys Alert */
 #systemAlert {
 	position: fixed;
-  background: #e536538c;
+  background: #c302548c;
   height: 405px;
   top: 150px;
   width: 100%;
@@ -1684,7 +1708,7 @@ br {
 }
 
 .cam .green button {
-	background: #008059; /* green */
+	background: #2768c1; /* green */
 }
 
 /* Funct Stuff */
@@ -1719,10 +1743,27 @@ br {
 
 #lib-container ul {
 	margin-bottom: 1.25em;
+	margin-top: 0.5em;
 }
 
 #lib-container li {
-	/* list-style-image: url(images/li_icon.png); */
+	list-style-image: none;
+	filter: grayscale(1);
+	margin-left: 10px;
+}
+
+#lib-conatiner li::before {
+  list-style: none;
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-image: url(images/square_blue.png);
+  z-index: 100;
+  filter: grayscale(1);
+  background-size: contain;
+	padding-right: 10px;
+	background-repeat: no-repeat;
 }
 
 #lib-container a {
@@ -1821,7 +1862,7 @@ blockquote .small {
 }
 
 #libtank .red button {
-	background-color: #e53653;
+	background-color: #c30254;
 	font-size: 1.5em;
 	position: relative;
 	margin: 0;
@@ -1942,7 +1983,7 @@ blockquote .small {
 	width: 10px;
 	height: 20px;
 	margin: 0;
-	background-color: #008059; /* green */
+	background-color: #2768c1; /* green */
 	border: 1px solid black;
 	content: "";
 	display: inline-block;
@@ -1952,9 +1993,9 @@ blockquote .small {
 #damage {
 	position: fixed;
 	font-size: 0.5em;
-	width: 115px;
-	height: 15px;
-	padding: 4px;
+	width: 122px;
+  height: 15px;
+  padding: 4px 0px 0px 0px;
 	color: white;
 	right: 25px;
 	top: 35px;
@@ -2126,11 +2167,21 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
 		background-image: url(images/hands/closed_left.png), url(images/hands/closed_right.png), url(images/ship_finals/ship_final.png);
 		background-size: 70%, 70%, cover;
     background-position: 0% 112%, 100% 110%, 0% 0%;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background-image: url(images/hands/open_left.png), url(images/hands/open_right.png), url(images/ship_finals/ship_final.png);
 		background-size: 70%, 70%, cover;
@@ -2157,15 +2208,25 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -2188,15 +2249,25 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -2219,11 +2290,21 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
 		background-size: 70%, 70%, cover;
@@ -2250,15 +2331,25 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -2281,15 +2372,25 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
-  60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
+	}
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
+		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -2312,15 +2413,25 @@ blockquote .small {
   30% {
     background-position: 0% 115%, 100% 114%, 0% 0%;
   }
+	39.9% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   40% {
     background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
     background-position: 0% 112%, 100% 110%, 0% 0%;
 		background-size: 70%, 70%, cover;
   }
+	59.9% {
+		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
 		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
   }
   70% {
     background-position: 0% 110%, 100% 108%, 0% 0%;
@@ -2361,17 +2472,15 @@ blockquote .small {
      }
      return State.variables.pronoun1
   }
-</script><tw-passagedata pid="1" name="Passage1" tags="nobr" position="">&lt;div class="header-image"&gt;[img[image/lyso_header.png]]&lt;/div&gt;
+</script><tw-passagedata pid="1" name="Start" tags="nobr start" position="">&lt;div class="header-image"&gt;[img[promo/TWIT_IMG.png]]&lt;/div&gt;
 
-  &lt;h1&gt;&lt;strong&gt;Epilepsy Warning&lt;strong&gt;&lt;/h1&gt;
+  &lt;h1&gt;&lt;strong&gt;Epilepsy Warning&lt;/strong&gt;&lt;/h1&gt;
 
   &lt;p&gt;Proceed with caution if you are photosensitive.&lt;/p&gt;
 
-  &lt;p&gt;To play this game at full screen, hit F11 at any time.&lt;/p&gt;
+  &lt;p&gt;Hit F11 to enter/exit full screen mode at any time.&lt;/p&gt;
 
-  &lt;p&gt;[[Start|White]]&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr white ship7handsopen crt" position="">&lt;&lt;set $cursor = 6&gt;&gt;
-&lt;&lt;include "ViewHUD"&gt;&gt;
-  &lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
+  &lt;p&gt;&lt;&lt;button "Start"&gt;&gt;&lt;&lt;goto "White"&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="White" tags="nobr white" position="">&lt;a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="3" name="BinaryColorChoice" tags="nobr flick" position="">&lt;a data-passage="ColorChoice" style="animation: cursor-anim 10s infinite;"&gt;&lt;div class="container" style="min-height: 100vh"&gt;&lt;/div&gt;&lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="ColorChoice" tags="nobr" position="">&lt;&lt;set $cursor = 2&gt;&gt;
   &lt;div class="container"&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'pink'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullright"&gt;&lt;/div&gt;&lt;/a&gt;
     &lt;a data-passage="ShapeChoice" data-setter="$colorChoice = 'blue'" style="animation: cursor-anim 8s infinite;"&gt;&lt;div id="fullleft"&gt;&lt;/div&gt;&lt;/a&gt;
@@ -2910,17 +3019,21 @@ blockquote .small {
         &lt;&lt;goto "ChoosePronouns"&gt;&gt;
       &lt;&lt;/button&gt;&gt;&lt;/span&gt;
     &lt;/p&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="HUD Boot" tags="nobr" position="">&lt;&lt;typewriter "Determining HUD systems . . . . . . . . . . . . ."&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="HUD Boot" tags="nobr crt" position="">&lt;&lt;typewriter "&gt;Determining HUD systems . . . . . . . . . . . . ."&gt;&gt;
   &lt;&lt;timed 3s&gt;&gt;
     &lt;&lt;include "FlickFast"&gt;&gt;
-    &lt;&lt;typewriter "Booting up HUD systems. . . . . . . . . . . . ."&gt;&gt;
+    &lt;&lt;typewriter "&gt;Booting up HUD systems. . . . . . . . . . . . ."&gt;&gt;
       &lt;&lt;next&gt;&gt;
         &lt;&lt;include "FlickFast"&gt;&gt;
         &lt;&lt;include "ViewHUD"&gt;&gt;
-        &lt;&lt;typewriter "HUD systems booted"&gt;&gt;
+        &lt;&lt;typewriter "&gt;HUD systems booted"&gt;&gt;
           &lt;&lt;next&gt;&gt;
             &lt;&lt;goto "Escape Start"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr" position="">&lt;p&gt;Tough shit.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr start" position="">&lt;p&gt;Maybe next time&lt;/p&gt;
+
+  &lt;&lt;timed 2s&gt;&gt;
+  &lt;p&gt;&lt;&lt;button "Try again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;removeclass ".container"&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
   &lt;div class="fade-in-white container"&gt;&lt;/div&gt;
@@ -2936,7 +3049,7 @@ blockquote .small {
 
     &lt;p&gt;Art is by Penelope Evans and Allison Lownie (Find her at: https://twitter.com/alowknees https://lowknees.tumblr.com/ ), or was used under a CC0 license. All audio is used under a CC0 license.&lt;/p&gt;
 
-    &lt;p&gt;&lt;&lt;link "Play again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;&lt;button "Play again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
@@ -3148,11 +3261,12 @@ blockquote .small {
 
   &lt;&lt;set $funct = {
     on : false,
-    hatch : false,
-    core : false,
-    offon : false,
-    redun : false,
-    init : false,
+    hatch : "off",
+    core : "off",
+    offon : "off",
+    redun : "off",
+    init : "off",
+    click : 0,
 
     fail : 0,
 
@@ -3242,7 +3356,8 @@ blockquote .small {
   &lt;&lt;set $cam = {
     funct : "off",
     one : "on",
-    two : "off"
+    two : "off",
+    click : 0,
   }&gt;&gt;
 
   &lt;&lt;set $alert = {
@@ -3251,15 +3366,14 @@ blockquote .small {
     frag : 0,
     hide: false,
     his : [],
-    visible : false,
+    visible : true,
+    show : true,
   }&gt;&gt;
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "pinkNoise" "Sounds/pink_noise.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "auralDrone" "Sounds/aural_drone.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "harmonicDrone" "Sounds/harmonic_drone.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "tapMetal" "Sounds/tapping_metal.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "ambientDrone" "Sounds/ambient_drone.ogg"&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;cacheaudio "tapMetal" "Sounds/tapping_metal.ogg"&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;changealert&gt;&gt;
   &lt;&lt;include "BackgroundShit"&gt;&gt;
 
   &lt;&lt;include "SelfDesignation"&gt;&gt;
@@ -3274,7 +3388,7 @@ blockquote .small {
 
   &lt;&lt;include "Damage"&gt;&gt;
 
-  &lt;&lt;include "SystemAlert"&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
+  &lt;&lt;include "SysAlert"&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
   &lt;div id="damage"&gt;
     &lt;&lt;if $damage &lt;= 20&gt;&gt;
       &lt;&lt;goto "Game Over"&gt;&gt;
@@ -3282,7 +3396,7 @@ blockquote .small {
     Integrity: &lt;span id="dam"&gt;&lt;&lt;print $damageFloat.toFixed(2)&gt;&gt;&lt;/span&gt;%
     &lt;&lt;repeat 0.4s&gt;&gt;
       &lt;&lt;set $damageFloat = randomFloat($damage-1.23, $damage)&gt;&gt;
-      &lt;&lt;replace "#dam"&gt;&gt;&lt;&lt;print $damageFloat.toFixed(2)&gt;&gt; &lt;&lt;print $alert.his&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace "#dam"&gt;&gt;&lt;&lt;print $damageFloat.toFixed(2)&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;set $damageFloat = $damage&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
   &lt;/div&gt;
@@ -3296,6 +3410,9 @@ blockquote .small {
           &lt;&lt;else&gt;&gt;
             &lt;span class="green"&gt;&lt;&lt;button "CAMERA_1"&gt;&gt;
               &lt;&lt;set $cam.one = "off"&gt;&gt;
+              &lt;&lt;if $cam.click == 1&gt;&gt;
+                &lt;&lt;set $cam.click = 2&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
               &lt;&lt;set $change.cam = true&gt;&gt;
               &lt;&lt;set $change.background = true&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
@@ -3314,6 +3431,7 @@ blockquote .small {
           &lt;&lt;else&gt;&gt;
             &lt;span class="green"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
               &lt;&lt;set $cam.two = "off"&gt;&gt;
+
               &lt;&lt;set $change.cam = true&gt;&gt;
               &lt;&lt;set $change.background = true&gt;&gt;
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
@@ -3321,6 +3439,9 @@ blockquote .small {
         &lt;&lt;elseif $cam.two == "off"&gt;&gt;
           &lt;span class="grey"&gt;&lt;&lt;button "VIEW_PORT"&gt;&gt;
             &lt;&lt;set $cam.two = "on"&gt;&gt;
+            &lt;&lt;if $cam.click == 0&gt;&gt;
+              &lt;&lt;set $cam.click = 1&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
             &lt;&lt;set $change.cam = true&gt;&gt;
             &lt;&lt;set $change.background = true&gt;&gt;
           &lt;&lt;/button&gt;&gt;&lt;/span&gt;
@@ -3329,24 +3450,6 @@ blockquote .small {
     &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="SelfDesignation" tags="nobr" position="">&lt;div id="desigcon"&gt;
   &lt;div id="designation"&gt;
-    &lt;&lt;timed 10s&gt;&gt;
-      &lt;&lt;if $alert.worm == "done" &amp; $alert.frag != "done"&gt;&gt;
-        &lt;&lt;if $alert.frag == 0&gt;&gt;
-          &lt;&lt;set $alert.frag = 1&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 2&gt;&gt;
-          &lt;&lt;set $alert.frag = 3&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 4&gt;&gt;
-          &lt;&lt;set $alert.frag = 5&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 6&gt;&gt;
-          &lt;&lt;set $alert.frag = 7&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 8&gt;&gt;
-          &lt;&lt;set $alert.frag = 9&gt;&gt;
-        &lt;&lt;endif&gt;&gt;
-
-        &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-        &lt;&lt;set $change.alert = true&gt;&gt;
-      &lt;&lt;endif&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
     Self-Designation: $name, $pronoun1/$pronoun2
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
@@ -3383,25 +3486,25 @@ blockquote .small {
   &lt;&lt;else&gt;&gt;
     &lt;script&gt;
       $(".passage").removeClass("ship7aux ship7handsopen ship7bg");
+      $(".passage").remove("#left-bg #right-bg #right-bg-hatch");
     &lt;/script&gt;
-    &lt;&lt;if $bg == 1&gt;&gt;
+    &lt;&lt;if $endbg == 1&gt;&gt;
       &lt;script&gt;
-
         $(".passage").addClass("end1bg");
       &lt;/script&gt;
-    &lt;&lt;elseif $bg == 2&gt;&gt;
+    &lt;&lt;elseif $endbg == 2&gt;&gt;
       &lt;script&gt;
         $(".passage").addClass("end2bg");
       &lt;/script&gt;
-    &lt;&lt;elseif $bg == 3&gt;&gt;
+    &lt;&lt;elseif $endbg == 3&gt;&gt;
       &lt;script&gt;
         $(".passage").addClass("end3bg");
       &lt;/script&gt;
-    &lt;&lt;elseif $bg == 4&gt;&gt;
+    &lt;&lt;elseif $endbg == 4&gt;&gt;
       &lt;script&gt;
         $(".passage").addClass("end4bg");
       &lt;/script&gt;
-    &lt;&lt;elseif $bg == 5&gt;&gt;
+    &lt;&lt;elseif $endbg == 5&gt;&gt;
       &lt;script&gt;
         $(".passage").addClass("end5bg");
       &lt;/script&gt;
@@ -3431,39 +3534,6 @@ blockquote .small {
       &lt;&lt;else&gt;&gt;
         &lt;&lt;replace "#compcon"&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;endif&gt;&gt;
-    &lt;&lt;elseif $change.alert == true&gt;&gt;
-      &lt;&lt;set $change.alert = false&gt;&gt;
-      &lt;&lt;if passage() != "Ends"&gt;&gt;
-        &lt;&lt;if ($alert.frag == 9 &amp;&amp; $comp.space &lt;= 60 &amp;&amp; $alert.hide != false) || ($alert.his.includes("frag") &amp;&amp; $alert.frag == 9 &amp;&amp; $alert.his.length &gt;1) || ($alert.his.includes("frag") &amp;&amp; $alert.frag !=9 &amp;&amp; $alert.his.length &gt; 0)&gt;&gt;
-          &lt;&lt;set $alert.hide = false&gt;&gt;
-        &lt;&lt;endif&gt;&gt;
-
-        &lt;&lt;if $alert.hide == false&gt;&gt;
-          &lt;&lt;if ($alert.frag == 9 &amp;&amp; $comp.space &gt; 60) &amp;&amp; $alert.his.length &lt;= 1&gt;&gt;
-            &lt;&lt;replace "#alertcon"&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-            &lt;&lt;set $alert.visible = false&gt;&gt;
-          &lt;&lt;else&gt;&gt;
-            &lt;&lt;set $alert.visible = true&gt;&gt;
-            &lt;&lt;replace "#alertcon"&gt;&gt;
-              &lt;&lt;display "SystemAlert"&gt;&gt;
-              &lt;&lt;set $alert.hide = true&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-
-          &lt;&lt;endif&gt;&gt;
-        &lt;&lt;else&gt;&gt;
-          &lt;&lt;set $alert.visible = false&gt;&gt;
-          &lt;&lt;replace "#alertcon"&gt;&gt;
-          &lt;&lt;/replace&gt;&gt;
-
-        &lt;&lt;endif&gt;&gt;
-
-      &lt;&lt;else&gt;&gt;
-      &lt;&lt;set $alert.visible = false&gt;&gt;
-        &lt;&lt;replace "#alertcon"&gt;&gt;
-        &lt;&lt;/replace&gt;&gt;
-
-      &lt;&lt;endif&gt;&gt;
     &lt;&lt;elseif $change.function == true&gt;&gt;
       &lt;&lt;if $funct.on == false&gt;&gt;
         &lt;&lt;replace "#functcon"&gt;&gt;&lt;&lt;display "FunctionLibrary"&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -3477,11 +3547,6 @@ blockquote .small {
     &lt;&lt;elseif $change.background == true&gt;&gt;
       &lt;&lt;set $change.background = false&gt;&gt;
       &lt;&lt;replace "#backcon"&gt;&gt;&lt;&lt;display "BackgroundShit"&gt;&gt;&lt;&lt;/replace&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
-    &lt;&lt;if $alert.his.length &gt;0 &amp;&amp; $alert.visible == false &amp;&amp; $alert.frag != 9&gt;&gt;
-      &lt;&lt;set $change.alert = true&gt;&gt;
-    &lt;&lt;elseif $alert.frag == 9 &amp;&amp; $alert.his.length &gt;1 &amp;&amp; $alert.visible == false&gt;&gt;
-      &lt;&lt;set $change.alert = true&gt;&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
   &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="CompSpace" tags="nobr" position="">&lt;&lt;set $comp.space = 100&gt;&gt;
@@ -3552,11 +3617,15 @@ blockquote .small {
     &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="Snake" tags="nobr snake" position="">&lt;&lt;repeat 5s&gt;&gt;
     &lt;&lt;set $snake.time +=5&gt;&gt;
     &lt;&lt;set $snake.repair +=6.6666&gt;&gt;
-    &lt;&lt;if $snake.time == 5&gt;&gt;
+    &lt;&lt;if $snake.time == 60&gt;&gt;
       &lt;&lt;set $alert.worm = "won"&gt;&gt;
-      &lt;&lt;set $alert.visible = true&gt;&gt;
       &lt;&lt;replace "#alertcon"&gt;&gt;
-        &lt;&lt;include "SystemAlert"&gt;&gt;
+        &lt;div id="systemAlert"&gt;
+          &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+          &lt;div id="syscon"&gt;
+            &lt;&lt;include "SysAlert"&gt;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
       &lt;&lt;/replace&gt;&gt;
       &lt;&lt;stop&gt;&gt;
     &lt;&lt;else&gt;&gt;
@@ -3572,7 +3641,7 @@ blockquote .small {
     &lt;h4&gt;COMPONENTS&lt;/h4&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;
     &lt;div id="unsorted"&gt;
-      &lt;h5&gt;UNSORTED $comp.space&lt;/h5&gt;
+      &lt;h5&gt;UNSORTED&lt;/h5&gt;
       &lt;div class="scrollcontent"&gt;
         &lt;&lt;if $comp.endo.unsorted.length &gt; 0&gt;&gt;
           &lt;&lt;link "Human Endoskeleton"&gt;&gt;
@@ -3597,7 +3666,7 @@ blockquote .small {
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.endo.unsorted.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
                   &lt;li&gt;Limbs (legs, arms, extensions, etc.)
-                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $alert.show = true&gt;&gt;&lt;&lt;set $change.alert = true&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ves.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                     &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.endo.unsorted.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                   &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
@@ -3629,7 +3698,7 @@ blockquote .small {
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.climate.unsorted.includes("Exo combusters")&gt;&gt;
                   &lt;li&gt;Exo combusters
-                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Exo combusters")&gt;&gt;&lt;&lt;set $alert.show = true&gt;&gt;&lt;&lt;set $change.alert = true&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ves.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                     &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.climate.unsorted.delete("Exo combusters")&gt;&gt;&lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                   &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
@@ -3687,13 +3756,13 @@ blockquote .small {
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.suit.unsorted.includes("Motor lattice")&gt;&gt;
                   &lt;li&gt;Motor lattice
-                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Motor lattice")&gt;&gt;&lt;&lt;set $alert.show = true&gt;&gt;&lt;&lt;set $change.alert = true&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                     &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Motor lattice")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                   &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
                 &lt;&lt;if $comp.suit.unsorted.includes("Ligamentation system")&gt;&gt;
                   &lt;li&gt;Ligamentation system
-                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Ligamentation system")&gt;&gt;&lt;&lt;set $alert.show = true&gt;&gt;&lt;&lt;set $change.alert = true&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ves.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                     &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.suit.unsorted.delete("Ligamentation system")&gt;&gt;&lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
                   &lt;/li&gt;
                 &lt;&lt;endif&gt;&gt;
@@ -3711,7 +3780,7 @@ blockquote .small {
 
         &lt;&lt;if $comp.photo == "unsorted"&gt;&gt;
           &lt;p&gt;Photovoltaic unit
-            &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Photovoltaic unit")&gt;&gt;&lt;&lt;set $comp.photo = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;span class="red"&gt;&lt;&lt;button "X"&gt;&gt;&lt;&lt;set $alert.his.push("Photovoltaic unit")&gt;&gt;&lt;&lt;set $alert.show = true&gt;&gt;&lt;&lt;set $change.alert = true&gt;&gt;&lt;&lt;set $comp.photo = "ves"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="green"&gt;&lt;&lt;button "O"&gt;&gt;&lt;&lt;set $comp.photo = "ess"&gt;&gt;&lt;&lt;set $change.component = true&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
           &lt;/p&gt;
         &lt;&lt;endif&gt;&gt;
@@ -3940,7 +4009,26 @@ blockquote .small {
       &lt;div class="lib-link"&gt;
         &lt;&lt;if $funct.hatch != "done"&gt;&gt;
           &lt;&lt;link ".hatch_init()"&gt;&gt;
-            &lt;&lt;if $funct.hatch == false&gt;&gt;&lt;&lt;set $funct.hatch = true&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = false&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $funct.click +=1&gt;&gt;
+            &lt;&lt;if $funct.hatch == "off"&gt;&gt;
+              &lt;&lt;if $funct.redun == "on"&gt;&gt;
+                &lt;&lt;set $funct.redun = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.core == "on"&gt;&gt;
+                &lt;&lt;set $funct.core = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $funct.hatch = "on"&gt;&gt;
+              &lt;&lt;if $funct.offon == "on"&gt;&gt;
+                &lt;&lt;set $funct.offon = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.init == "on"&gt;&gt;
+                &lt;&lt;set $funct.init = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;set $funct.hatch = "off"&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+
             &lt;&lt;set $change.function = true&gt;&gt;
           &lt;&lt;/link&gt;&gt;
         &lt;&lt;else&gt;&gt;
@@ -3950,10 +4038,10 @@ blockquote .small {
           &lt;/span&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;/div&gt;
-        &lt;&lt;if $funct.hatch == true&gt;&gt;
+        &lt;&lt;if $funct.hatch == "on"&gt;&gt;
           &lt;div id="libtank"&gt;
             &lt;div id="funct-header"&gt;
-              &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
+              &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.hatch = "off"&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
               &lt;h3&gt;.hatch_init()&lt;/h3&gt;
             &lt;/div&gt;
             &lt;div class="funct-container"&gt;
@@ -4031,7 +4119,7 @@ blockquote .small {
                     &lt;&lt;include "Failed"&gt;&gt;
                   &lt;&lt;else&gt;&gt;
                     &lt;&lt;set $funct.hatch = "done"&gt;&gt;
-                    &lt;&lt;set $change.funct = true&gt;&gt;
+                    &lt;&lt;set $change.function = true&gt;&gt;
                   &lt;&lt;endif&gt;&gt;
                 &lt;&lt;/button&gt;&gt;
               &lt;/span&gt;
@@ -4039,22 +4127,48 @@ blockquote .small {
           &lt;/div&gt;
       &lt;&lt;endif&gt;&gt;
       &lt;ul&gt;
-        &lt;li&gt;Sys Dependencies: UNSPECIFIED&lt;/li&gt;
+        &lt;li&gt;Sys Dependencies: ME&lt;/li&gt;
         &lt;li&gt;Funct Performance: LOW&lt;/li&gt;
-        &lt;li&gt;File integrity: LOW&lt;/li&gt;
+        &lt;li&gt;File integrity: MIN&lt;/li&gt;
       &lt;/ul&gt;
 
-      &lt;div class="lib-link"&gt;
-        &lt;&lt;link ".core_mech_lead()"&gt;&gt;
-          &lt;&lt;if $funct.core == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = true&gt;&gt;&lt;&lt;set $funct.offon = false&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;endif&gt;&gt;
-          &lt;&lt;set $change.function = true&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-      &lt;/div&gt;
-      &lt;&lt;if $funct.core == true&gt;&gt;
+      &lt;&lt;if $funct.core != "done"&gt;&gt;
+        &lt;div class="lib-link"&gt;
+          &lt;&lt;link ".core_mech_lead()"&gt;&gt;
+            &lt;&lt;set $funct.click +=1&gt;&gt;
+            &lt;&lt;if $funct.core == "off"&gt;&gt;
+              &lt;&lt;if $funct.hatch == "on"&gt;&gt;
+                &lt;&lt;set $funct.hatch = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.offon == "on"&gt;&gt;
+                &lt;&lt;set $funct.offon = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $funct.core = "on"&gt;&gt;
+              &lt;&lt;if $funct.redun == "on"&gt;&gt;
+                &lt;&lt;set $funct.redun = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.init == "on"&gt;&gt;
+                &lt;&lt;set $funct.init = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;set $funct.core = "off"&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.function = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/div&gt;
+      &lt;&lt;else&gt;&gt;
+        &lt;span class="inactive"&gt;
+          &lt;&lt;link ".core_mech_lead()"&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+
+      &lt;&lt;if $funct.core == "on"&gt;&gt;
         &lt;div id="libtank"&gt;
 
           &lt;div id="funct-header"&gt;
-            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
+            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.core = "off"&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
             &lt;h3&gt;.core_mech_lead()&lt;/h3&gt;
           &lt;/div&gt;
 
@@ -4101,7 +4215,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.core = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4109,22 +4223,49 @@ blockquote .small {
         &lt;/div&gt;
       &lt;&lt;endif&gt;&gt;
       &lt;ul&gt;
-        &lt;li&gt;Sys Dependencies: UNSPECIFIED&lt;/li&gt;
-        &lt;li&gt;Funct Performance: LOW&lt;/li&gt;
+        &lt;li&gt;Sys Dependencies: TACHI.SYS&lt;/li&gt;
+        &lt;li&gt;Funct Performance: MED&lt;/li&gt;
         &lt;li&gt;File integrity: LOW&lt;/li&gt;
       &lt;/ul&gt;
 
-      &lt;div class="lib-link"&gt;
-        &lt;&lt;link ".off_on_req()"&gt;&gt;
-          &lt;&lt;if $funct.offon == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = true&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.offonredun = false&gt;&gt;&lt;&lt;endif&gt;&gt;
-          &lt;&lt;set $change.function = true&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-      &lt;/div&gt;
-      &lt;&lt;if $funct.offon == true&gt;&gt;
+      &lt;&lt;if $funct.offon != "done"&gt;&gt;
+        &lt;div class="lib-link"&gt;
+          &lt;&lt;link ".off_on_req()"&gt;&gt;
+            &lt;&lt;set $funct.click +=1&gt;&gt;
+            &lt;&lt;if $funct.offon == "off"&gt;&gt;
+              &lt;&lt;if $funct.hatch == "on"&gt;&gt;
+                &lt;&lt;set $funct.hatch = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.core == "on"&gt;&gt;
+                &lt;&lt;set $funct.core = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $funct.offon = "on"&gt;&gt;
+              &lt;&lt;if $funct.redun == "on"&gt;&gt;
+                &lt;&lt;set $funct.redun = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.init == "on"&gt;&gt;
+                &lt;&lt;set $funct.init = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;set $funct.offon = "off"&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;set $change.function = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/div&gt;
+      &lt;&lt;else&gt;&gt;
+        &lt;span class="inactive"&gt;
+          &lt;&lt;link ".off_on_req()"&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+
+      &lt;&lt;if $funct.offon == "on"&gt;&gt;
         &lt;div id="libtank"&gt;
 
           &lt;div id="funct-header"&gt;
-            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.offonredun = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
+            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.offon = "off"&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
             &lt;h3&gt;.off_on_req()&lt;/h3&gt;
           &lt;/div&gt;
 
@@ -4173,7 +4314,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.offon = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4182,20 +4323,47 @@ blockquote .small {
       &lt;&lt;endif&gt;&gt;
       &lt;ul&gt;
         &lt;li&gt;Sys Dependencies: UNSPECIFIED&lt;/li&gt;
-        &lt;li&gt;Funct Performance: LOW&lt;/li&gt;
-        &lt;li&gt;File integrity: LOW&lt;/li&gt;
+        &lt;li&gt;Funct Performance: MED&lt;/li&gt;
+        &lt;li&gt;File integrity: MED&lt;/li&gt;
       &lt;/ul&gt;
 
-      &lt;div class="lib-link"&gt;
-        &lt;&lt;link ".hatch_redun()"&gt;&gt;
-          &lt;&lt;if $funct.redun == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = false&gt;&gt;&lt;&lt;set $funct.redun = true&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;endif&gt;&gt;
-          &lt;&lt;set $change.function = true&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-      &lt;/div&gt;
-      &lt;&lt;if $funct.redun == true&gt;&gt;
+      &lt;&lt;if $funct.redun != "done"&gt;&gt;
+        &lt;div class="lib-link"&gt;
+          &lt;&lt;link ".hatch_redun()"&gt;&gt;
+            &lt;&lt;set $funct.click +=1&gt;&gt;
+            &lt;&lt;if $funct.redun == "off"&gt;&gt;
+              &lt;&lt;if $funct.hatch == "on"&gt;&gt;
+                &lt;&lt;set $funct.hatch = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.core == "on"&gt;&gt;
+                &lt;&lt;set $funct.core = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $funct.redun = "on"&gt;&gt;
+              &lt;&lt;if $funct.offon == "on"&gt;&gt;
+                &lt;&lt;set $funct.offon = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.init == "on"&gt;&gt;
+                &lt;&lt;set $funct.init = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;set $funct.redun = "off"&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;set $change.function = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/div&gt;
+      &lt;&lt;else&gt;&gt;
+        &lt;span class="inactive"&gt;
+          &lt;&lt;link ".hatch_redun()"&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+
+      &lt;&lt;if $funct.redun == "on"&gt;&gt;
         &lt;div id="libtank"&gt;
           &lt;div id="funct-header"&gt;
-            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
+            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.redun = "off"&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
             &lt;h3&gt;.hatch_redun()&lt;/h3&gt;
           &lt;/div&gt;
           &lt;div class="funct-container"&gt;
@@ -4243,7 +4411,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.redun = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4251,21 +4419,46 @@ blockquote .small {
         &lt;/div&gt;
       &lt;&lt;endif&gt;&gt;
       &lt;ul&gt;
-        &lt;li&gt;Sys Dependencies: UNSPECIFIED&lt;/li&gt;
-        &lt;li&gt;Funct Performance: LOW&lt;/li&gt;
-        &lt;li&gt;File integrity: LOW&lt;/li&gt;
+        &lt;li&gt;Sys Dependencies: HATCH.INIT()&lt;/li&gt;
+        &lt;li&gt;Funct Performance: HIGH&lt;/li&gt;
+        &lt;li&gt;File integrity: MED&lt;/li&gt;
       &lt;/ul&gt;
 
-      &lt;div class="lib-link"&gt;
-        &lt;&lt;link ".init_init_init_init_init()"&gt;&gt;
-          &lt;&lt;if $funct.init == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = false&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $funct.init = true&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;endif&gt;&gt;
-          &lt;&lt;set $change.function = true&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-      &lt;/div&gt;
-      &lt;&lt;if $funct.init == true&gt;&gt;
+      &lt;&lt;if $funct.init != "done"&gt;&gt;
+        &lt;div class="lib-link"&gt;
+          &lt;&lt;link ".init_init_init_init_init()"&gt;&gt;
+            &lt;&lt;set $funct.click +=1&gt;&gt;
+            &lt;&lt;if $funct.init == "off"&gt;&gt;
+              &lt;&lt;if $funct.hatch == "on"&gt;&gt;
+                &lt;&lt;set $funct.hatch = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.core == "on"&gt;&gt;
+                &lt;&lt;set $funct.core = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;set $funct.init = "on"&gt;&gt;
+              &lt;&lt;if $funct.redun == "on"&gt;&gt;
+                &lt;&lt;set $funct.redun = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+              &lt;&lt;if $funct.offon == "on"&gt;&gt;
+                &lt;&lt;set $funct.offon = "off"&gt;&gt;
+              &lt;&lt;endif&gt;&gt;
+
+            &lt;&lt;else&gt;&gt;
+              &lt;&lt;set $funct.init = "off"&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+            &lt;&lt;set $change.function = true&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/div&gt;
+      &lt;&lt;else&gt;&gt;
+        &lt;span class="inactive"&gt;
+          &lt;&lt;link ".init_init_init_init_init()"&gt;&gt;
+          &lt;&lt;/link&gt;&gt;
+        &lt;/span&gt;
+      &lt;&lt;endif&gt;&gt;
+      &lt;&lt;if $funct.init == "on"&gt;&gt;
         &lt;div id="libtank"&gt;
           &lt;div id="funct-header"&gt;
-            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
+            &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.init = "off"&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
             &lt;h3&gt;.init_init_init_init_init()&lt;/h3&gt;
           &lt;/div&gt;
           &lt;div class="funct-container"&gt;
@@ -4385,7 +4578,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.init = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4393,9 +4586,9 @@ blockquote .small {
         &lt;/div&gt;
       &lt;&lt;endif&gt;&gt;
       &lt;ul&gt;
-        &lt;li&gt;Sys Dependencies: UNSPECIFIED&lt;/li&gt;
+        &lt;li&gt;Sys Dependencies: SHIP.TANK.FUNCT()&lt;/li&gt;
         &lt;li&gt;Funct Performance: LOW&lt;/li&gt;
-        &lt;li&gt;File integrity: LOW&lt;/li&gt;
+        &lt;li&gt;File integrity: HIGH&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -4418,7 +4611,7 @@ blockquote .small {
                 &lt;&lt;include "Failed"&gt;&gt;
               &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $funct.hatch = "done"&gt;&gt;
-                &lt;&lt;set $change.funct = true&gt;&gt;
+                &lt;&lt;set $change.function = true&gt;&gt;
               &lt;&lt;endif&gt;&gt;
             &lt;&lt;/button&gt;&gt;
           &lt;/span&gt;
@@ -4431,7 +4624,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.core = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4445,7 +4638,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.offon = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4459,7 +4652,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.redun = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4473,7 +4666,7 @@ blockquote .small {
                   &lt;&lt;include "Failed"&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                   &lt;&lt;set $funct.init = "done"&gt;&gt;
-                  &lt;&lt;set $change.funct = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
                 &lt;&lt;endif&gt;&gt;
               &lt;&lt;/button&gt;&gt;
             &lt;/span&gt;
@@ -4488,263 +4681,342 @@ blockquote .small {
     &lt;script&gt;
       $(".fail-flick").remove(".fail-flick")
     &lt;/script&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="SystemAlert" tags="nobr" position="">&lt;div id="alertcon"&gt;
-  &lt;div id="systemAlert"&gt;
-    &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
-    &lt;div id="syscon"&gt;
-    &lt;&lt;if passage() != "Endings"&gt;&gt;
-    &lt;&lt;if $alert.worm == false&gt;&gt;
-      &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
-
-      &lt;div class="buttonbg"&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
-          &lt;&lt;set $alert.worm = "on"&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-        &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-          &lt;&lt;set $alert.worm = "on"&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
-      &lt;&lt;timed 0.1s&gt;&gt;
-        &lt;&lt;set $alert.visible = true&gt;&gt;
-        &lt;&lt;replace "#systemAlert"&gt;&gt;
-          &lt;&lt;include "Snake"&gt;&gt;
-        &lt;&lt;/replace&gt;&gt;
-      &lt;&lt;/timed&gt;&gt;
-    &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
-      &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
-
-      &lt;div class="buttonbg"&gt;
-        &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
-          &lt;&lt;set $alert.worm = "done"&gt;&gt;
-          &lt;&lt;set $cam.funct = "on"&gt;&gt;
-          &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-          &lt;&lt;set $change.desig = true&gt;&gt;
-          &lt;&lt;set $change.cam = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;&lt;elseif $alert.worm == "done"&gt;&gt;
-        &lt;&lt;if $alert.frag == 1&gt;&gt;
-          &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
-
-          &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-              &lt;&lt;set $funct.on = true&gt;&gt;
-              &lt;&lt;set $alert.frag = 2&gt;&gt;
-              &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-              &lt;&lt;set $change.function = true&gt;&gt;
-              &lt;&lt;set $change.desig = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.frag == 3&gt;&gt;
-          &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
-
-          &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
-
-          &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
-
-          &lt;&lt;timed 6s&gt;&gt;
-            &lt;&lt;set $bg = "hatch"&gt;&gt;
-            &lt;&lt;set $alert.frag = 4&gt;&gt;
-            &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-            &lt;&lt;set $change.cam = true&gt;&gt;
-            &lt;&lt;set $change.background = true&gt;&gt;
-            &lt;&lt;set $change.desig = true&gt;&gt;
-            &lt;&lt;set $change.alert = true&gt;&gt;
-          &lt;&lt;/timed&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 5&gt;&gt;
-          &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
-
-          &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
-
-          &lt;p&gt;THE SHIP IS TRACTABLE&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-              &lt;&lt;set $alert.frag = 6&gt;&gt;
-              &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-              &lt;&lt;set $change.desig = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.frag == 7&gt;&gt;
-          &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
-
-          &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
-
-          &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
-
-          &lt;p&gt;THE HATCH WILL OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
-              &lt;&lt;set $comp.on = true&gt;&gt;
-              &lt;&lt;set $alert.frag = 8&gt;&gt;
-              &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-              &lt;&lt;set $change.component = true&gt;&gt;
-              &lt;&lt;set $change.desig = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.frag == 9 &amp;&amp; $comp.space &lt;= 60&gt;&gt;
-          &lt;p&gt;THE SUIT IS OF SIZE&lt;/p&gt;
-
-          &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
-
-          &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "GO THROUGH"&gt;&gt;
-              &lt;&lt;set $alert.frag = "done"&gt;&gt;
-              &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
-              &lt;&lt;set $change.background = true&gt;&gt;
-              &lt;&lt;set $change.desig = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-              &lt;&lt;set _bg = random(1, 100)&gt;&gt;
-
-              &lt;&lt;if _bg &gt;= 1 &amp;&amp; _bg &lt;= 20&gt;&gt;
-                &lt;&lt;set $bg = 1&gt;&gt;
-              &lt;&lt;elseif _bg &gt;= 21 &amp;&amp; _bg &lt;= 40&gt;&gt;
-                &lt;&lt;set $bg = 2&gt;&gt;
-              &lt;&lt;elseif _bg &gt;= 41 &amp;&amp; _bg &lt;= 60&gt;&gt;
-                &lt;&lt;set $bg = 3&gt;&gt;
-              &lt;&lt;elseif _bg &gt;= 61 &amp;&amp; _bg &lt;= 80&gt;&gt;
-                &lt;&lt;set $bg = 4&gt;&gt;
-              &lt;&lt;elseif _bg &gt;= 81 &amp;&amp; _bg &lt;= 100&gt;&gt;
-                &lt;&lt;set $bg = 5&gt;&gt;
-              &lt;&lt;endif&gt;&gt;
-
-              &lt;&lt;replace ".passage"&gt;&gt;&lt;div class="fade-in-out container"&gt;&lt;/div&gt;&lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto "Ends"&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/replace&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-
-
-        &lt;&lt;elseif $alert.his.includes("Photovoltaic unit")&gt;&gt;
-          &lt;p&gt;NEEDED FOR POWER&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-              &lt;&lt;set $comp.photo = "ess"&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Photovoltaic unit")&gt;&gt;
-              &lt;&lt;set $change.component = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-            &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-              &lt;&lt;set $damage -= 22&gt;&gt;
-              &lt;&lt;set $battery -= 4&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Photovoltaic unit")&gt;&gt;
-              &lt;&lt;set $change.damage = true&gt;&gt;
-              &lt;&lt;set $change.battery = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.his.includes("Exo combusters")&gt;&gt;
-          &lt;p&gt;WAIT IM AFRAID TO DIG THIS OUT&lt;/p&gt;
-
-          &lt;p&gt;SYSTEMS THROWING ERRORS&lt;/p&gt;
-
-          &lt;p&gt;OH&lt;/p&gt;
-
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-              &lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;
-              &lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Exo combusters")&gt;&gt;
-              &lt;&lt;set $change.component = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-            &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-              &lt;&lt;set $damage -= 25&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Exo combusters")&gt;&gt;
-              &lt;&lt;set $change.damage = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.his.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-          &lt;p&gt;STRUCTURAL INTEGRITY IS WILL BE COMPROMISED&lt;/p&gt;
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-              &lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-              &lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-              &lt;&lt;set $change.component = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-            &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-              &lt;&lt;set $damage -= 27&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
-              &lt;&lt;set $change.damage = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.his.includes("Motor lattice")&gt;&gt;
-          &lt;p&gt;THIS WILL HURT THIS WILL HURT THIS WILL HURT&lt;/p&gt;
-          &lt;div class="buttonbg"&gt;
-            &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-              &lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;
-              &lt;&lt;set $comp.suit.sorted.ves.delete("Motor lattice")&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Motor lattice")&gt;&gt;
-              &lt;&lt;set $change.component = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-            &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-              &lt;&lt;set $damage -= 21&gt;&gt;
-              &lt;&lt;set $alert.his.delete("Motor lattice")&gt;&gt;
-              &lt;&lt;set $change.damage = true&gt;&gt;
-              &lt;&lt;set $change.alert = true&gt;&gt;
-            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;&lt;elseif $alert.his.includes("Ligamentation system")&gt;&gt;
-          &lt;div class="first"&gt;
-            &lt;p&gt;OH NO NO NO NO NO NO&lt;/p&gt;
-          &lt;/div&gt;
-
-          &lt;&lt;timed 3s&gt;&gt;
-            &lt;&lt;replace ".first"&gt;&gt;
-              &lt;&lt;include "FlickFast"&gt;&gt;
-              &lt;p&gt;I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED&lt;/p&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="SysAlert" tags="" position="">&lt;div id="alertcon"&gt;
+    &lt;&lt;if $alert.visible == true&gt;&gt;
+      &lt;&lt;if passage() != "Endings"&gt;&gt;
+        &lt;&lt;if $alert.worm == false&gt;&gt;
+          &lt;div id="systemAlert"&gt;
+            &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+            &lt;div id="syscon"&gt;
+              &lt;&lt;set $alert.show = false&gt;&gt;
+              &lt;p&gt;ADDRESS SUB-SYSTEM FAILURES TO PREVENT IMMINENT CRASH&lt;/p&gt;
 
               &lt;div class="buttonbg"&gt;
-                &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
-                  &lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;
-                  &lt;&lt;set $alert.his.delete("Ligamentation system")&gt;&gt;
-                  &lt;&lt;set $comp.suit.sorted.ves.delete("Ligamentation system")&gt;&gt;
-                  &lt;&lt;set $change.component = true&gt;&gt;
+                &lt;span class="green"&gt;&lt;&lt;button "CONFIRM"&gt;&gt;
+
+                  &lt;&lt;set $alert.worm = "on"&gt;&gt;
+                  &lt;&lt;set $alert.show = true&gt;&gt;
                   &lt;&lt;set $change.alert = true&gt;&gt;
                 &lt;&lt;/button&gt;&gt;&lt;/span&gt;
                 &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
-                  &lt;&lt;set $alert.his.delete("Ligamentation system")&gt;&gt;
-                  &lt;&lt;set $damage -= 32&gt;&gt;
-                  &lt;&lt;set $change.damage = true&gt;&gt;
+                  &lt;&lt;set $alert.worm = "on"&gt;&gt;
+                  &lt;&lt;set $alert.show = true&gt;&gt;
                   &lt;&lt;set $change.alert = true&gt;&gt;
                 &lt;&lt;/button&gt;&gt;&lt;/span&gt;
               &lt;/div&gt;
-            &lt;&lt;/replace&gt;&gt;
-          &lt;&lt;/timed&gt;&gt;
-        &lt;&lt;else&gt;&gt;
-          $alert.his.length
-          &lt;&lt;print $alert.his&gt;&gt;
-          &lt;&lt;print $alert.frag&gt;&gt;
-          &lt;&lt;set $alert.hide = true&gt;&gt;
-          &lt;&lt;set $alert.visible = false&gt;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;&lt;elseif $alert.worm == "on"&gt;&gt;
+            &lt;&lt;timed 0.1s&gt;&gt;
+              &lt;&lt;replace "#alertcon"&gt;&gt;
+                &lt;div id="systemAlert"&gt;
+                  &lt;&lt;include "Snake"&gt;&gt;
+                &lt;/div&gt;
+              &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;elseif $alert.worm == "won"&gt;&gt;
+            &lt;p&gt;AUX CAMERA ACCESS RENABLED&lt;/p&gt;
+
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "TURN ON AUX"&gt;&gt;
+                &lt;&lt;set $alert.worm = "done"&gt;&gt;
+                &lt;&lt;set $cam.funct = "on"&gt;&gt;
+                &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $alert.show = false&gt;&gt;
+                &lt;&lt;set $change.cam = true&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $alert.worm == "done"&gt;&gt;
+              &lt;&lt;if $alert.frag == 1&gt;&gt;
+                &lt;p&gt;SYSTEMS NON-FUNCTIONAL SPIRALLING FRAGMENTED&lt;/p&gt;
+
+                &lt;p&gt;ICE IN THE ICE IN THE MAJOR CAUSE OF SYSTEM FAILURE&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+                    &lt;&lt;set $alert.frag = 2&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.frag == 3&gt;&gt;
+                &lt;p&gt;OUT OUT OUT OUT OUT&lt;/p&gt;
+
+                &lt;p&gt;SMALL IN HERE AND THE SYSTEMS ARE SLOWING DOWN&lt;/p&gt;
+
+                &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
+
+                &lt;p&gt;HATCH SYSTEMS DISCOVERED&lt;/p&gt;
+
+                &lt;&lt;timed 6s&gt;&gt;
+                  &lt;&lt;set $bg = "hatch"&gt;&gt;
+                  &lt;&lt;set $funct.on = true&gt;&gt;
+                  &lt;&lt;set $alert.frag = 4&gt;&gt;
+                  &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                  &lt;&lt;set $alert.visible = false&gt;&gt;
+                  &lt;&lt;set $change.cam = true&gt;&gt;
+                  &lt;&lt;set $change.background = true&gt;&gt;
+                  &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;set $change.function = true&gt;&gt;
+                &lt;&lt;/timed&gt;&gt;
+              &lt;&lt;elseif $alert.frag == 5&gt;&gt;
+                &lt;p&gt;SEEKING LIGHTSOURCE&lt;/p&gt;
+
+                &lt;p&gt;FENCED INTO THE BOX KILLS THE ASTRONAUT AND I AM FENCED IN WE ARE YOU ARE BUT THE SHIP IS BROKEN&lt;/p&gt;
+
+                &lt;p&gt;THE SHIP IS TRACTABLE&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+                    &lt;&lt;set $alert.frag = 6&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $cam.one = "on"&gt;&gt;
+                    &lt;&lt;set $cam.two = "off"&gt;&gt;
+                    &lt;&lt;set $change.cam = true&gt;&gt;
+                    &lt;&lt;set $change.background = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.frag == 7&gt;&gt;
+                &lt;p&gt;SOMETHING STARTED CLICKING&lt;/p&gt;
+
+                &lt;p&gt;YOU HEAR THAT? I HEAR THAT?&lt;/p&gt;
+
+                &lt;p&gt;SUBSYSTEMS COLLAPSING ON THEMSELVES&lt;/p&gt;
+
+                &lt;p&gt;THE HATCH WILL OPEN BUT THE SUIT IS TOO HEAVY AND TOO LARGE&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+                    &lt;&lt;set $comp.on = true&gt;&gt;
+                    &lt;&lt;set $alert.frag = 8&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.frag == 9&gt;&gt;
+                &lt;p&gt;THE SUIT IS OF SIZE&lt;/p&gt;
+
+                &lt;p&gt;SPIRALLING EMPTY SPACE&lt;/p&gt;
+
+                &lt;p&gt;IM NOT LOOKING OVER MY SHOULDER BUT I AM LOOKING OVER MY SHOULDER&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "GO THROUGH"&gt;&gt;
+                    &lt;&lt;set $alert.frag = "done"&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("frag")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.background = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                    &lt;&lt;set _bg = random(1, 100)&gt;&gt;
+
+                    &lt;&lt;if _bg &gt;= 1 &amp;&amp; _bg &lt;= 20&gt;&gt;
+                      &lt;&lt;set $endbg = 1&gt;&gt;
+                    &lt;&lt;elseif _bg &gt;= 21 &amp;&amp; _bg &lt;= 40&gt;&gt;
+                      &lt;&lt;set $endbg = 2&gt;&gt;
+                    &lt;&lt;elseif _bg &gt;= 41 &amp;&amp; _bg &lt;= 60&gt;&gt;
+                      &lt;&lt;set $endbg = 3&gt;&gt;
+                    &lt;&lt;elseif _bg &gt;= 61 &amp;&amp; _bg &lt;= 80&gt;&gt;
+                      &lt;&lt;set $endbg = 4&gt;&gt;
+                    &lt;&lt;elseif _bg &gt;= 81 &amp;&amp; _bg &lt;= 100&gt;&gt;
+                      &lt;&lt;set $endbg = 5&gt;&gt;
+                    &lt;&lt;endif&gt;&gt;
+
+                    &lt;&lt;replace ".passage"&gt;&gt;&lt;div class="fade-in-out container"&gt;&lt;/div&gt;&lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto "Ends"&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/replace&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+
+
+              &lt;&lt;elseif $alert.his.includes("Photovoltaic unit")&gt;&gt;
+                &lt;p&gt;NEEDED FOR POWER&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                    &lt;&lt;set $comp.photo = "ess"&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Photovoltaic unit")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                    &lt;&lt;set $damage -= 22&gt;&gt;
+                    &lt;&lt;set $battery -= 4&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Photovoltaic unit")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.damage = true&gt;&gt;
+                    &lt;&lt;set $change.battery = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.his.includes("Exo combusters")&gt;&gt;
+                &lt;p&gt;WAIT IM AFRAID TO DIG THIS OUT&lt;/p&gt;
+
+                &lt;p&gt;SYSTEMS THROWING ERRORS&lt;/p&gt;
+
+                &lt;p&gt;OH&lt;/p&gt;
+
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                    &lt;&lt;set $comp.climate.sorted.ess.push("Exo combusters")&gt;&gt;
+                    &lt;&lt;set $comp.climate.sorted.ves.delete("Exo combusters")&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Exo combusters")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                    &lt;&lt;set $damage -= 25&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Exo combusters")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.damage = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.his.includes("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                &lt;p&gt;STRUCTURAL INTEGRITY IS WILL BE COMPROMISED&lt;/p&gt;
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                    &lt;&lt;set $comp.endo.sorted.ess.push("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;&lt;set $comp.endo.sorted.ves.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                    &lt;&lt;set $damage -= 27&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Limbs (legs, arms, extensions, etc.)")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.damage = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.his.includes("Motor lattice")&gt;&gt;
+                &lt;p&gt;THIS WILL HURT THIS WILL HURT THIS WILL HURT&lt;/p&gt;
+                &lt;div class="buttonbg"&gt;
+                  &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                    &lt;&lt;set $comp.suit.sorted.ess.push("Motor lattice")&gt;&gt;
+                    &lt;&lt;set $comp.suit.sorted.ves.delete("Motor lattice")&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Motor lattice")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.component = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                  &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                    &lt;&lt;set $damage -= 21&gt;&gt;
+                    &lt;&lt;set $alert.his.delete("Motor lattice")&gt;&gt;
+                    &lt;&lt;set $alert.visible = false&gt;&gt;
+                    &lt;&lt;set $change.damage = true&gt;&gt;
+                    &lt;&lt;set $change.alert = true&gt;&gt;
+                  &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;&lt;elseif $alert.his.includes("Ligamentation system")&gt;&gt;
+                &lt;div class="first"&gt;
+                  &lt;p&gt;OH NO NO NO NO NO NO&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;&lt;timed 3s&gt;&gt;
+                  &lt;&lt;replace ".first"&gt;&gt;
+                    &lt;&lt;include "FlickFast"&gt;&gt;
+                    &lt;p&gt;I'LL BE TRAPPED YOU'LL BE TRAPPED WE'LL BE TRAPPED&lt;/p&gt;
+
+                    &lt;div class="buttonbg"&gt;
+                      &lt;span class="green"&gt;&lt;&lt;button "CANCEL"&gt;&gt;
+                        &lt;&lt;set $comp.suit.sorted.ess.push("Ligamentation system")&gt;&gt;
+                        &lt;&lt;set $alert.his.delete("Ligamentation system")&gt;&gt;
+                        &lt;&lt;set $alert.visible = false&gt;&gt;
+                        &lt;&lt;set $comp.suit.sorted.ves.delete("Ligamentation system")&gt;&gt;
+                        &lt;&lt;set $change.component = true&gt;&gt;
+                        &lt;&lt;set $change.alert = true&gt;&gt;
+                      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                      &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
+                        &lt;&lt;set $alert.his.delete("Ligamentation system")&gt;&gt;
+                        &lt;&lt;set $damage -= 32&gt;&gt;
+                        &lt;&lt;set $alert.visible = false&gt;&gt;
+                        &lt;&lt;set $change.damage = true&gt;&gt;
+                        &lt;&lt;set $change.alert = true&gt;&gt;
+                      &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                  &lt;&lt;/replace&gt;&gt;
+                &lt;&lt;/timed&gt;&gt;
+              &lt;&lt;else&gt;&gt;
+                $alert.his.length
+                &lt;&lt;print $alert.his&gt;&gt;
+                &lt;&lt;print $alert.frag&gt;&gt;
+                &lt;&lt;print $fuckyou&gt;&gt;
+                /* &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt; */
+              &lt;&lt;endif&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;elseif passage() == "Endings"&gt;&gt;
+          &lt;&lt;if $bg == 2&gt;&gt;
+            &lt;p&gt;&lt;span class="small"&gt;there's so much sun&lt;/span&gt;&lt;/p&gt;
+          &lt;&lt;endif&gt;&gt;
+          HI
+        &lt;&lt;endif&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="ChangeAlert" tags="widget" position="">&lt;&lt;widget "changealert"&gt;&gt;&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 0.2s&gt;&gt;
+      &lt;&lt;if $alert.worm == "done" &amp; $alert.frag != "done"&gt;&gt;
+        &lt;&lt;if $alert.frag == 0&gt;&gt;
+          &lt;&lt;set $alert.frag = 1&gt;&gt;
+          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 2 &amp;&amp; $cam.click &gt;= 1&gt;&gt;
+          &lt;&lt;set $alert.frag = 3&gt;&gt;
+          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 4 &amp;&amp; $cam.click &gt;= 2&gt;&gt;
+          &lt;&lt;set $alert.frag = 5&gt;&gt;
+          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 6 &amp;&amp; $funct.click &gt;= 3&gt;&gt;
+          &lt;&lt;set $alert.frag = 7&gt;&gt;
+          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;elseif $alert.frag == 8 &amp;&amp; $comp.space &lt;= 60&gt;&gt;
+          &lt;&lt;set $alert.frag = 9&gt;&gt;
+          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
-      &lt;&lt;elseif passage() == "Endings"&gt;&gt;
-        &lt;&lt;if $bg == 2&gt;&gt;
-          &lt;p&gt;&lt;span class="small"&gt;there's so much sun&lt;/span&gt;&lt;/p&gt;
+
+      &lt;&lt;if $change.alert == true&gt;&gt;
+        &lt;&lt;if passage() != "Ends"&gt;&gt;
+          &lt;&lt;if $alert.show == true&gt;&gt;
+            &lt;&lt;set $alert.show = false&gt;&gt;
+            &lt;&lt;set $alert.visible = true&gt;&gt;
+            &lt;&lt;replace "#alertcon"&gt;&gt;
+              &lt;div id="systemAlert"&gt;
+                &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+                &lt;div id="syscon"&gt;
+                &lt;&lt;include "SysAlert"&gt;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;&lt;/replace&gt;&gt;
+          &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace "#alertcon"&gt;&gt;
+            &lt;&lt;/replace&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
         &lt;&lt;endif&gt;&gt;
-        HI
       &lt;&lt;endif&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata></tw-storydata>
+
+      &lt;&lt;set $change.alert = false&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],["┬á","\\u00a0"],["ßÜÇ","\\u1680"],["ßáÄ","\\u180e"],["ΓÇÇ","\\u2000"],["ΓÇü","\\u2001"],["ΓÇé","\\u2002"],["ΓÇâ","\\u2003"],["ΓÇä","\\u2004"],["ΓÇà","\\u2005"],["ΓÇå","\\u2006"],["ΓÇç","\\u2007"],["ΓÇê","\\u2008"],["ΓÇë","\\u2009"],["ΓÇè","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],["ΓÇ»","\\u202f"],["Γüƒ","\\u205f"],["πÇÇ","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="\\s"===e?"\\S":e.replace(/^\[/,"[^"),r="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",n=r.replace("\\-",""),a=function(){return"("+r+"+)\\(([^\\)\\|\\n]+)\\):|("+r+"+):([^;\\|\\n]+);|((?:\\."+r+"+)+);|((?:#"+r+"+)+);"}();return Object.freeze({space:e,spaceNoTerminator:"[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:t,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:r,anyLetterStrict:n,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:a,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){!function(e){if(e&&e.prototype&&null==e.prototype.firstElementChild){var t=Node.ELEMENT_NODE;Object.defineProperty(e.prototype,"firstElementChild",{get:function(){for(var e=this.childNodes,r=0;r<e.length;++r){var n=e[r];if(n.nodeType===t)return n}return null}})}}(window.Node||window.Element)}(),function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=e&&function(){try{var e=document.createElement("audio").play();return e.catch(function(){}),e instanceof Promise}catch(e){}return!1}(),r=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),n=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),a=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),i=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),o=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),s=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,audioPromise:t,fileAPI:r,geolocation:n,mutationObserver:a,performance:i,touch:o,transitionEndEvent:s})}(),Visibility=function(){function e(){return Boolean(r&&document[r.hiddenProperty])}function t(){return r&&document[r.stateProperty]||"visible"}var r=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return null}();return Object.freeze(Object.defineProperties({},{isHidden:{value:e},state:{value:t},hiddenProperty:{value:r.hiddenProperty},stateProperty:{value:r.stateProperty},changeEvent:{value:r.changeEvent}}))}(),_ref3=function(){function e(t){if("object"!==(void 0===t?"undefined":_typeof(t))||null===t)return t;if(t instanceof String)return String(t);if(t instanceof Number)return Number(t);if(t instanceof Boolean)return Boolean(t);if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return t instanceof Array?r=new Array(t.length):t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){return r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){return r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){switch(n.nodeName.toUpperCase()){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===(void 0===e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){var n=jQuery(document.createElement("div")),a=jQuery(document.createElement("button")),i=jQuery(document.createElement("pre")),o=L10n.get("errorTitle")+": "+(t||"unknown error");return a.addClass("error-toggle").ariaClick({label:L10n.get("errorToggle")},function(){a.hasClass("enabled")?(a.removeClass("enabled"),i.attr({"aria-hidden":!0,hidden:"hidden"})):(a.addClass("enabled"),i.removeAttr("aria-hidden hidden"))}).appendTo(n),jQuery(document.createElement("span")).addClass("error").text(o).appendTo(n),jQuery(document.createElement("code")).text(r).appendTo(i),i.addClass("error-source").attr({"aria-hidden":!0,hidden:"hidden"}).appendTo(n),n.addClass("error-view").appendTo(e),console.warn(o+"\n\t"+r.replace(/\n/g,"\n\t")),!1}function i(e,t){var r=i;switch(void 0===e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){return"{ΓÇ»"+[].concat(_toConsumableArray(e)).map(function(e){var n=_slicedToArray(e,2),a=n[0],i=n[1];return r(a,t)+" ΓåÆ "+r(i,t)}).join(", ")+"ΓÇ»}"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))

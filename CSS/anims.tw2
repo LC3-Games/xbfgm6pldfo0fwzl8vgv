@@ -599,10 +599,10 @@
 
 @keyframes bat-flicker {
   0% {
-    background-color: #008059;
+    background-color: #2768c1;
   }
   100% {
-    background-color: #0080594d;
+    background-color: #2768c14d;
   }
 }
 
@@ -626,10 +626,10 @@
 
 @keyframes pulse-green-bg {
   0% {
-    background-color: #008059;
+    background-color: #2768c1;
   }
   100% {
-    background-color: #0e7a0e;
+    background-color: #387ad4;
   }
 }
 
