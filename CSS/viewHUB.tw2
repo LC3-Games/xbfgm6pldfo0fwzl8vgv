@@ -1,63 +1,5 @@
 ::ViewHUB [stylesheet]
-#battery {
-	position: fixed;
-	top: 10px;
-	right: 25px;
-	width: 120px;
-	height: 25px;
-	border: 1px solid black;
-	display: inline-block;
-}
-
-.appear #battery {
-	-webkit-animation: battery-appear 3s linear;
-	        animation: battery-appear 3s linear;
-}
-
-#systemAlert p {
-	margin-bottom: 1em;
-}
-
-.batteryLevel {
-	position: relative;
-	width: 10px;
-	height: 20px;
-	margin: 0;
-	background-color: green;
-	border: 1px solid black;
-	-webkit-animation: battery-flicker 3s ease alternate infinite;
-	        animation: battery-flicker 3s ease alternate infinite;
-	content: "";
-	display: inline-block;
-}
-
-#damage {
-	position: fixed;
-	font-size: 0.5em;
-	width: 115px;
-	height: 15px;
-	background-color: #1111118c;
-	padding: 4px;
-	color: white;
-	right: 25px;
-	top: 35px;
-	text-align: center;
-}
-
-#designation {
-	background-color: #1111118c;
-	text-align: center;
-	height: 25px;
-	top: 10px;
-	left: 50%;
-	color: white;
-	-webkit-transform: translate(-50%, 0);
-	    -ms-transform: translate(-50%, 0);
-	        transform: translate(-50%, 0);
-	position: fixed;
-	font-size: 0.8em;
-}
-
+/* Components */
 #component {
 	position: fixed;
 	height: 600px;
@@ -70,12 +12,15 @@
 	color: white;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
+	z-index: 20;
+	animation: textShadow 1.6s infinite;
 }
 
 #component #unsorted {
 	height: 300px;
 	padding: 10px;
 	border-bottom: 2px solid #939393;
+	animation: textShadow 1.6s infinite;
 }
 
 #component #bottomRow {
@@ -84,6 +29,7 @@
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
   height: 237px;
+	animation: textShadow 1.6s infinite;
 }
 
 #component .sorted {
@@ -100,7 +46,7 @@
 	font-size: 1.2em;
 	margin: 0.2em;
 	border-bottom: 1px solid #939393;
-	color: yellow;
+	color: #ffee8e; /* yellow */
 }
 
 #component .sorted.right {
@@ -109,7 +55,7 @@
 }
 
 #component .right h5 {
-	color: red;
+	color: #e53653; /* red */
 }
 
 #component .sorted.left {
@@ -117,7 +63,7 @@
 }
 
 #component .left h5 {
-	color: green;
+	color: #008059; /* green */
 }
 
 #component h4 {
@@ -131,7 +77,6 @@
 #component #unsorted a {
   width: 59%;
   max-width: 100%;
-  background-color: #111111;
   color: #eee;
   border: 1px solid #939393;
   line-height: normal;
@@ -141,6 +86,15 @@
       -ms-user-select: none;
           user-select: none;
 	margin-top: 4px;
+	animation: textShadow 1.6s infinite;
+}
+
+#component #unsorted a:hover {
+	background-color: #111111;
+}
+
+#component .sorted a:hover {
+	background-color: #111111;
 }
 
 #component .sorted a {
@@ -152,19 +106,7 @@
   line-height: normal;
   padding: .4em;
 	margin-top: 4px;
-}
-
-.scrollcontent a {
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	display: block;
-}
-
-.scrollcontent button {
-	margin-right: 4px;
-  padding: 1px;
+	animation: textShadow 1.6s infinite;
 }
 
 #component button {
@@ -179,7 +121,6 @@
 }
 
 #component #unsorted a:hover {
-  /* animation: yellow-star-anim 1s infinite; */
 	cursor: url("images/hover_cursor.png"), auto;
   text-decoration: none;
 }
@@ -189,11 +130,6 @@
 	border-bottom: 1px solid #93939370;
 }
 
-/* #component ul {
-	border-bottom: 1px solid #93939370;
-	padding-top: 0.5em;
-} */
-
 .comp-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -201,7 +137,6 @@
   margin-bottom: 8px;
   background-color: #1111118c;
   border: 1px solid #939393;
-  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
   max-height: 300px;
   overflow-y: auto;
 }
@@ -217,6 +152,19 @@
 	padding-top: 0.5em;
 }
 
+.scrollcontent a {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	display: block;
+}
+
+.scrollcontent button {
+	margin-right: 4px;
+  padding: 1px;
+}
+
 .scrollcontent::-webkit-scrollbar
 {
 	width: 10px;
@@ -230,85 +178,10 @@
 	border: 1px solid #ffffff8c;
 }
 
-#functionLib {
-	height: 600px;
-	width: 300px;
-	top: 75px;
-	left: 25px;
-	background-color: #1111118c;
-	position: fixed;
-	border: 2px solid #939393;
-	color: white;
-	font-size: 0.65em;
-}
-
-#functionLib h4 {
-	text-align: center;
-	margin: 0.2em;
-	border-bottom: 1px solid #939393;
-	font-size: 1.2em
-}
-
-#lib-container {
-	padding: 20px;
-}
-
-#lib-container a {
-  width: 100%;
-  max-width: 100%;
-  background-color: #111111;
-  color: #eee;
-  border: 1px solid #939393;
-  line-height: normal;
-  padding: .4em;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-#lib-container a:hover {
-  /* animation: yellow-star-anim 1s infinite; */
-	cursor: url("images/hover_cursor.png"), auto;
-  text-decoration: none;
-}
-
-.funct-container {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  margin-top: 6px;
-  margin-bottom: 8px;
-  background-color: #1111118c;
-  border: 1px solid #939393;
-  -webkit-animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  margin-left: 10px;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.funct-container button {
-  margin: 20px 0px 0px 70px;
-	width: 100%;
-}
-
-.funct-container .red::before {
-  height: 1px;
-  border-top: 1px solid #93939370;
-  width: 230px;
-  content: "";
-  position: fixed;
-  bottom: 45px;
-}
-
-#lib-container p {
-  /* animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
-}
-
+/* Sys Alert */
 #systemAlert {
 	position: fixed;
-  background: #ff00008c;
+  background: #e536538c;
   height: 405px;
   top: 150px;
   width: 100%;
@@ -318,9 +191,10 @@
   color: white;
   font-size: 1em;
   text-align: center;
-  z-index: 1;
+  z-index: 50;
 	user-select: none;
 	text-shadow: 2px 2px 0px black;
+	animation: pulse-red-bg 5.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 #systemAlert h4 {
@@ -331,13 +205,19 @@
 	margin-top: 0;
 	border-bottom: 1px solid #939393;
 	font-size: 1.2em;
+	animation: textShadow 1.6s infinite;
+}
+
+#systemAlert p {
+	margin-bottom: 1em;
+	animation: textShadow 1.6s infinite;
 }
 
 #systemAlert button {
 	margin: auto 0;
 	display: inline-block;
 	width: 400px;
-
+	animation: textShadow 1.6s infinite;
 }
 
 #systemAlert .buttonbg {
@@ -351,11 +231,12 @@
           transform: translate(-50%, 0);
 }
 
+/* Cam Stuff */
 .cam {
 	text-align: center;
 	height: 25px;
 	bottom: 25px;
-	width: 40%;
+	width: 600px;
 	display: inline-block;
 	left: 50%;
 	color: white;
@@ -380,5 +261,298 @@
 }
 
 .cam .green button {
-	background: green;
+	background: #008059; /* green */
+}
+
+/* Funct Stuff */
+
+#functionLib {
+	height: 600px;
+	width: 300px;
+	top: 75px;
+	left: 25px;
+	background-color: #1111118c;
+	position: fixed;
+	border: 2px solid #939393;
+	color: white;
+	font-size: 0.65em;
+	z-index: 30;
+	overflow-y: hidden;
+	animation: textShadow 1.6s infinite;
+}
+
+#functionLib h4 {
+	text-align: center;
+	margin: 0.2em;
+	border-bottom: 1px solid #939393;
+	font-size: 1.2em
+}
+
+#lib-container {
+	padding: 20px;
+	height: 530px;
+	overflow-y: auto;
+}
+
+#lib-container ul {
+	margin-bottom: 1.25em;
+}
+
+#lib-container li {
+	/* list-style-image: url(images/li_icon.png); */
+}
+
+#lib-container a {
+  width: 100%;
+  max-width: 100%;
+  color: #eee;
+  border: 1px solid #939393;
+  line-height: normal;
+  padding: .4em;
+	animation: textShadow 1.6s infinite;
+}
+
+#lib-container a:hover {
+	background-color: #111111;
+}
+
+#lib-container .inactive a:hover {
+	background-color: #ff002a8c;
+}
+
+#lib-container::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+  background-color: #ffffff8c;
+}
+
+#lib-container::-webkit-scrollbar-thumb
+{
+	background-color: #111111;
+	border: 1px solid #ffffff8c;
+}
+
+#lib-container a:hover {
+  /* animation: yellow-star-anim 1s infinite; */
+	cursor: url("images/hover_cursor.png"), auto;
+  text-decoration: none;
+}
+
+.lib-link {
+	margin-bottom: 0.5em;
+}
+
+#libtank {
+  top: 10%;
+  position: fixed;
+  width: 60%;
+  height: 600px;
+  border: 2px solid #939393;
+  background: #111111d9;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+	z-index: 30;
+	overflow-y: auto;
+	overflow-x: hidden;
+	animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+.funct-container {
+	position: relative;
+	padding: 0px 100px;
+}
+
+.funct-container blockquote {
+	line-height: 1.6
+}
+
+blockquote strong {
+	font-size: 1.3em;
+}
+
+blockquote .small {
+	font-variant: small-caps;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.flash-word button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin-top: 2px;
+  padding: 0;
+  left: 22px;
+}
+
+#btn-con {
+	width: 100%;
+	position: sticky;
+	bottom: 0;
+	text-align: center;
+	background: #111111d9;
+	border-top: 1px solid #939393;
+}
+
+#libtank .red button {
+	background-color: #e53653;
+	font-size: 1.5em;
+	position: relative;
+	margin: 0;
+	width: 400px;
+	animation: none;
+	animation: textShadow 1.6s infinite;
+}
+
+#libtank .red button:hover {
+	background-color: #ff002a;
+}
+
+.leftdent {
+	margin-left: 2em;
+}
+
+.moreleftdent {
+	margin-left: 3em;
+}
+
+.funct-container a {
+	color: white;
+	-webkit-animation: textShadow 1.6s infinite;
+	        animation: textShadow 1.6s infinite;
+	margin-bottom: 2em;
+}
+
+.funct-container .flash-word:hover {
+	color: white;
+	-webkit-animation: flash-word 0.1s infinite;
+					animation: flash-word 0.1s infinite;
+	text-decoration: none;
+}
+
+.funct-container .flash-word {
+	color: white;
+	-webkit-animation: flash-word-half 1s infinite;
+					animation: flash-word-half 1s infinite;
+	text-decoration: none;
+}
+
+#libtank::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+  background-color: #ffffff8c;
+}
+
+#libtank::-webkit-scrollbar-thumb
+{
+	background-color: #111111;
+	border: 1px solid #ffffff8c;
+}
+
+#funct-header {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	background: #111111d9;
+	border-bottom: 1px solid #939393;
+	padding: 10px 0px 0px 100px;
+	z-index: 100;
+}
+
+#funct-header h3 {
+	margin: 0;
+	padding-bottom: 0.5em;
+	font-size: 1.5em;
+}
+
+#funct-header a {
+	background-image: url(images/triangle_blue.png);
+	background-repeat: no-repeat;
+	background-size: 20px;
+	position: absolute;
+	left: 60px;
+	top: 13px;
+	background-position: center;
+	background-color: transparent;
+	padding: 0;
+	height: 20px;
+	width: 20px;
+	border: none;
+	color: transparent;
+  filter: grayscale(1);
+	-webkit-transform: rotate(230deg);
+	    -ms-transform: rotate(230deg);
+	        transform: rotate(230deg);
+}
+
+#funct-header img {
+	max-height: 30px;
+	-webkit-transform: rotate(230deg);
+	    -ms-transform: rotate(230deg);
+	        transform: rotate(230deg);
+	padding: 0;
+	margin: 0;
+	-webkit-filter: grayscale(1);
+	        filter: grayscale(1);
+	position: fixed;
+	left: 15px;
+}
+
+/* Battery */
+#battery {
+	position: fixed;
+	top: 10px;
+	right: 25px;
+	width: 120px;
+	height: 25px;
+	border: 1px solid black;
+	display: inline-block;
+	background-color: #111111d9;
+}
+
+.batteryLevel {
+	position: relative;
+	width: 10px;
+	height: 20px;
+	margin: 0;
+	background-color: #008059; /* green */
+	border: 1px solid black;
+	-webkit-animation: battery-flicker 3s ease alternate infinite;
+	        animation: battery-flicker 3s ease alternate infinite;
+	content: "";
+	display: inline-block;
+}
+
+/* Damage */
+#damage {
+	position: fixed;
+	font-size: 0.5em;
+	width: 115px;
+	height: 15px;
+	padding: 4px;
+	color: white;
+	right: 25px;
+	top: 35px;
+	text-align: center;
+	animation: textShadow 1.6s infinite;
+}
+
+/* Desig */
+#designation {
+	text-align: center;
+	height: 25px;
+	top: 10px;
+	left: 50%;
+	color: white;
+	-webkit-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	        transform: translate(-50%, 0);
+	position: fixed;
+	font-size: 0.8em;
+	z-index: 20;
+	animation: textShadow 1.6s infinite;
 }

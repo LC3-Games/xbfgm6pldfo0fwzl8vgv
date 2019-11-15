@@ -1,6 +1,6 @@
 ::StoryJS [script]
   UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
-  $('<div id="right-side-bar"></div>').appendTo(document.body); /* ain't really a side bar anymore but this creates the persistent element used for the phone */
+  $('<div id="right-side-bar"></div>').appendTo(document.body);
   var i = 0;
   var txt = 'Lorem ipsum dummy text blabla.';
   var speed = 50;
@@ -142,8 +142,6 @@
       <</script>>
     <<endif>>
   <<endif>>
-
-::PassageReady
 
 
 :: Typewriterfast[widget]

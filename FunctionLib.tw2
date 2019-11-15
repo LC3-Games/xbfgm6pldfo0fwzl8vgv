@@ -1,0 +1,521 @@
+::FunctionLibrary [nobr]
+  <div id="functcon">
+  <<if $funct.on == true>>
+  <div id="functionLib">
+    <h4>HATCH FUNCT.LIB REVIEW</h4>
+    <div id="lib-container">
+      <div class="lib-link">
+        <<if $funct.hatch != "done">>
+          <<link ".hatch_init()">>
+            <<if $funct.hatch == false>><<set $funct.hatch = true>><<set $funct.core = false>><<set $funct.offon = false>><<set $funct.redun = false>><<set $funct.init = false>><<else>><<set $funct.hatch = false>><<endif>>
+            <<set $change.function = true>>
+          <</link>>
+        <<else>>
+          <span class="inactive">
+            <<link ".hatch_init()">>
+            <</link>>
+          </span>
+        <<endif>>
+      </div>
+        <<if $funct.hatch == true>>
+          <div id="libtank">
+            <div id="funct-header">
+              <<link ".">><<set $funct.hatch = false>><<set $change.function = true>><</link>>
+              <h3>.hatch_init()</h3>
+            </div>
+            <div class="funct-container">
+              <blockquote>justify AUG[AUG[destroy()][DIF]][&#1472;] <strong>&#838;</strong></blockquote>
+              	<div class="flash-word 11"><div class="1"><<button "-">><<removeclass ".11" "flash-word">><<remove ".1">><</button>></div>
+                  <blockquote class="leftdent">y &#172;&#1472; ( &#172;&#172;0.56 );</blockquote>
+                	<blockquote class="leftdent">exInt /&#1472; CROSS;</blockquote>
+                	<blockquote class="leftdent">sysCon /&#1472; y</blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong></blockquote>
+              <div class="flash-word 9"><<button "-">><<replace ".9">><<set $funct.checks.hatch +=1>><</replace>><</button>>
+                <blockquote>re/claim &#172;( &#172;0.39 ) : <span class="small">Did I tell you? Did I tell you, love?</span></blockquote>
+                <blockquote>re/claim &#172;( &#172;0.39 ) : <span class="small">I got the job!</span></blockquote>
+              </div>
+              <blockquote>justify short(y)<strong>&#838;</strong></blockquote>
+              	<div class="flash-word 22"><div class="2"><<button "-">><<removeclass ".22" "flash-word">><<remove ".2">><</button>></div>
+                  <blockquote class="leftdent">time /&#1472; CROSS;</blockquote>
+                	<blockquote class="leftdent">if(short(( &#172;rule() ),( time ))</blockquote>
+                    <blockquote class="moreleftdent">&#172; bar(destroy(&#172;&#172;destroy(x),&#172;( rift(exInt,( &#172;areaGrab )) ) &#836; ( rift(( ( &#172;mislead(time) ) ),( 0.11 ))</blockquote>
+                    <blockquote class="leftdent">)))</blockquote>
+                    <blockquote class="leftdent">>&#172; &#172;0.3 / AUG[y &#172; ( time ) / short() / 54][10])<strong>&#838;</strong></blockquote>
+                </div>
+
+              <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              	<div class="flash-word 33"><div class="3"><<button "-">><<removeclass ".33" "flash-word">><<remove ".3">><</button>></div>
+                  <blockquote class="leftdent">if(y)<strong>&#838;</strong></blockquote>
+                	<blockquote class="leftdent">if(( DIF &#172; &#172;1 ))<strong>&#838;</strong></blockquote>
+                	<blockquote class="leftdent">CROSS;</blockquote>
+                	<blockquote class="leftdent">relDamGet &#172;&#1472; rift();</blockquote>
+                	<blockquote class="leftdent">if(rule(AUG[effex(time)][rule(0.8,93) &#187; &#172;destroy()]))<strong>&#838;</strong></blockquote>
+                	<blockquote class="moreleftdent">if(notStable)<strong>&#838;</strong></blockquote>
+                	<blockquote class="moreleftdent">( relDamGet );</blockquote>
+                	<blockquote class="moreleftdent">exInt &#187;&#1472; notStable;</blockquote>
+                	<blockquote class="leftdent">time &#836;&#1472; AUG[&#172;1][( ( CROSS ) )]</blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              	<div class="flash-word 4"><<button "-">><<replace ".4">><<set $funct.checks.hatch +=1>><</replace>><</button>>
+                  <blockquote class="leftdent">&#172;y;</blockquote>
+                    <blockquote class="moreleftdent">re/claim : <span class="small">I don't think I've ever been this excited in my life!</span></blockquote>
+                    <blockquote class="moreleftdent">re/claim : <span class="small">We're finally doing it.</span></blockquote>
+                	<blockquote class="leftdent">relDamGet &#172; destroy(0.48)</blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong></blockquote>
+              	<div class="flash-word 55"><div class="5"><<button "-">><<removeclass ".55" "flash-word">><<remove ".5">><</button>></div>
+                  <blockquote class="leftdent">if(y)<strong>&#838;</strong></blockquote>
+                </div>
+
+              <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+
+              <blockquote><strong>&#826;</strong></blockquote>
+              <blockquote><strong>&#826;</strong></blockquote>
+              <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              	<div class="flash-word 66"><div class="6"><<button "-">><<removeclass ".66" "flash-word">><<remove ".6">><</button>></div>
+                  <blockquote class="leftdent">effex(effex(( short(&#172;AUG[&#172;relDamGet][&#172;64],y,CROSS) / &#172;mislead() ),CROSS) &#172; &#172;58)</blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong></blockquote>
+              <blockquote><strong>&#826;</strong></blockquote>
+              	<div class="flash-word 7"><<button "-">><<replace ".7">><<set $funct.checks.hatch +=1>><</replace>><</button>>
+                  <blockquote class="leftdent">( ( &#172;&#172;0.97 ) )</blockquote>
+                  <blockquote class="leftdent">re/claim : <span class="small">I WANT TO GO HOME</span></blockquote>
+                  <blockquote class="leftdent">re/claim : <span class="small">please,</span></blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong></blockquote>
+              	<div class="flash-word 88"><div class="8"><<button "-">><<removeclass ".88" "flash-word">><<remove ".8">><</button>></div>
+                  <blockquote class="leftdent">exInt &#836;&#1472; DIF &#187; effex(&#172;AUG[rule(( &#172;AUG[19][&#1472;] ))][bar(x,AUG[y][( relDamGet )])])</blockquote>
+                </div>
+              <blockquote><strong>&#826;</strong></blockquote>
+            </div>
+
+            <div id="btn-con">
+              <span class="red">
+                <<button "EXECUTE">>
+                  <<if $funct.checks.hatch <2>>
+                    <<set $funct.fail = 1>>
+                    <<include "Failed">>
+                  <<else>>
+                    <<set $funct.hatch = "done">>
+                    <<set $change.funct = true>>
+                  <<endif>>
+                <</button>>
+              </span>
+            </div>
+          </div>
+      <<endif>>
+      <ul>
+        <li>Sys Dependencies: UNSPECIFIED</li>
+        <li>Funct Performance: LOW</li>
+        <li>File integrity: LOW</li>
+      </ul>
+
+      <div class="lib-link">
+        <<link ".core_mech_lead()">>
+          <<if $funct.core == false>><<set $funct.hatch = false>><<set $funct.core = true>><<set $funct.offon = false>><<set $funct.redun = false>><<set $funct.init = false>><<else>><<set $funct.core = false>><<endif>>
+          <<set $change.function = true>>
+        <</link>>
+      </div>
+      <<if $funct.core == true>>
+        <div id="libtank">
+
+          <div id="funct-header">
+            <<link ".">><<set $funct.core = false>><<set $change.function = true>><</link>>
+            <h3>.core_mech_lead()</h3>
+          </div>
+
+          <div class="funct-container">
+            <div class="flash-word 1"><<button "-">><<replace ".1">><</replace>><</button>>
+              <blockquote>re/claim &#172;AUG[&#1472;][y] : "One can not simply parse himself"</blockquote>
+            </div>
+            <blockquote>justify AUG[&#172;0.81][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 2"><<button "-">><<replace ".2">><</replace>><</button>>
+              	<blockquote class="leftdent">
+                  if(( mislead(DIF,time,&#172;560.507) ) \/ AUG[&#172;rule(0.75,( y ),CROSS) &#836; DIF][( 28 < &#172;60 )])<strong>&#838;</strong>
+                	notStable /&#1472; rift(&#172;&#172;92 !&#1472; exInt,mislead(( DIF !&#1472; 12 ) / &#172;areaGrab &#1472;&#1472; time >&#1472; 34,short(0.46)));
+                </blockquote>
+              </div>
+            	<blockquote class="leftdent">( CROSS )</blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <div class="flash-word 4"><<button "-">><<replace ".4">><</replace>><</button>>
+              <blockquote>ext auxAlpha &#1472; ( mislead(mislead(AUG[AUG[rift(( relDamGet ),( CROSS /\ ( AUG[bar(areaGrab,( y ))][( ( bar(rift(exInt,&#172;exInt < CROSS &#1472;&#1472; &#172;1,short(rule(( &#172;0.61 &#172; ( CROSS ) <&#1472; auxAlpha ),mislead(&#172;1,&#172;91)))),bar(&#172;78,&#172;mislead(&#172;auxAlpha,80))) ) ) / time] ) ))][&#172;0.98]][time]),&#172;&#172;0.88,&#172;&#172;18) )</blockquote>
+            </div>
+            <blockquote>re/claim &#172;0.18 : "Fear cuts deeper than swords."</blockquote>
+            <blockquote>justify AUG[auxAlpha][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 3"><<button "-">><<replace ".3">><</replace>><</button>>
+              	<blockquote class="leftdent">relDamGet /&#1472; AUG[CROSS][areaGrab &#172; ( &#172;DIF )] <&#1472; DIF;</blockquote>
+              	<blockquote class="leftdent">notStable;</blockquote>
+              	<blockquote class="leftdent">&#172;mislead(exInt)</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>ext sysCon &#1472; exInt</blockquote>
+          </div>
+
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.core <2>>
+                  <<set $funct.fail = 2>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.core = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        </div>
+      <<endif>>
+      <ul>
+        <li>Sys Dependencies: UNSPECIFIED</li>
+        <li>Funct Performance: LOW</li>
+        <li>File integrity: LOW</li>
+      </ul>
+
+      <div class="lib-link">
+        <<link ".off_on_req()">>
+          <<if $funct.offonredun == false>><<set $funct.hatch = false>><<set $funct.core = false>><<set $funct.offon = false>><<set $funct.redun = true>><<set $funct.init = false>><<else>><<set $funct.offonredun = false>><<endif>>
+          <<set $change.function = true>>
+        <</link>>
+      </div>
+      <<if $funct.offonredun == true>>
+        <div id="libtank"></div>
+
+          <div id="funct-header">
+            <<link ".">><<set $funct.offonredun = false>><<set $change.function = true>><</link>>
+            <h3>.off_on_req()</h3>
+          </div>
+
+          <div class="funct-container">
+            <blockquote>justify effex()<strong>&#838;</strong></blockquote>
+              <div class="flash-word 1"><<button "-">><<replace ".1">><</replace>><</button>>
+              	<blockquote class="leftdent">&#172;y;</blockquote>
+              	<blockquote class="leftdent">auxAlpha &#836;&#1472; areaGrab</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <div class="flash-word 2"><<button "-">><<replace ".2">><</replace>><</button>>
+              <blockquote>re/claim short(( ( destroy(CROSS,AUG[&#172;x][( &#172;rule(&#172;77,notStable \/ 65 &#172; effex(470.7),CROSS) \/ effex(&#172;0.44 > effex(&#172;&#172;88,&#172;1) &#836; &#172;( CROSS ),0.23) )],x) ) )) : "One can not simply parse himself"</blockquote>
+            </div>
+            <blockquote>justify effex(y,areaGrab)<strong>&#838;</strong></blockquote>
+              <div class="flash-word 3"><<button "-">><<replace ".3">><</replace>><</button>>
+              	<blockquote class="leftdent">notStable &#836;&#1472; mislead(y / ( &#172;0.67 ))</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>ext y &#1472; &#172;( &#172;AUG[auxAlpha][DIF] )</blockquote>
+            <blockquote>justify AUG[( ( ( 64 ) ) >&#1472; &#172;82 / &#172;0.17 )][&#1472;] <strong>&#838;</strong></blockquote>
+
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>justify AUG[DIF][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 4"><<button "-">><<replace ".4">><</replace>><</button>>
+            	  <blockquote class="leftdent">&#1472; &#836;&#1472; time</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+          </div>
+
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.offon <2>>
+                  <<set $funct.fail = 3>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.offon = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        </div>
+      <<endif>>
+      <ul>
+        <li>Sys Dependencies: UNSPECIFIED</li>
+        <li>Funct Performance: LOW</li>
+        <li>File integrity: LOW</li>
+      </ul>
+
+      <div class="lib-link">
+        <<link ".hatch_redun()">>
+          <<if $funct.redun == false>><<set $funct.hatch = false>><<set $funct.core = false>><<set $funct.offon = false>><<set $funct.redun = true>><<set $funct.init = false>><<else>><<set $funct.redun = false>><<endif>>
+          <<set $change.function = true>>
+        <</link>>
+      </div>
+      <<if $funct.redun == true>>
+        <div id="libtank">
+          <div id="funct-header">
+            <<link ".">><<set $funct.redun = false>><<set $change.function = true>><</link>>
+            <h3>.hatch_redun()</h3>
+          </div>
+          <div class="funct-container">
+            <blockquote>justify AUG[65][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 1"><<button "-">><<replace ".1">><</replace>><</button>>
+              	<blockquote class="leftdent">if(mislead(DIF))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">sysCon &#836;&#1472; &#172;&#172;AUG[&#172;DIF][notStable] &#836; ( &#172;&#172;50 / &#172;98 &#172; 330.63 );</blockquote>
+              	<blockquote class="leftdent">bar(( ( relDamGet ) ),auxAlpha &#187; DIF)</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>ext exInt &#1472; &#172;mislead() &#172; AUG[( auxAlpha / &#172;1 &#172; sysCon )][time]</blockquote>
+            <blockquote>justify rule()<strong>&#838;</strong></blockquote>
+              <div class="flash-word 2"><<button "-">><<replace ".2">><</replace>><</button>>
+              	<blockquote class="leftdent">AUG[720.762 &#187; DIF][( &#172;&#172;&#172;3 &#836; sysCon )];</blockquote>
+              	<blockquote class="leftdent">sysCon &#836;&#1472; AUG[destroy(0.51)][rift(notStable,AUG[effex(( AUG[rift(exInt,effex(DIF) / auxAlpha)][y] ),effex(auxAlpha / areaGrab,mislead(DIF,&#172;short(bar() &#172; &#172;1 / DIF,mislead(( &#172;&#172;exInt ),1))),auxAlpha) &#172; &#172;1 / CROSS)][&#172;&#172;1])]</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>justify AUG[mislead(notStable)][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 3"><<button "-">><<replace ".3">><</replace>><</button>>
+              	<blockquote class="leftdent">rift(240.9,&#172;exInt);</blockquote>
+              	<blockquote class="leftdent">y &#836;&#1472; ( rift(sysCon) );</blockquote>
+              	<blockquote class="leftdent">48</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <div class="flash-word 4"><<button "-">><<replace ".4">><</replace>><</button>>
+              <blockquote>re/claim rule(&#172;DIF) : "A mind needs books as a sword needs a whetstone, if it is to keep its edge."</blockquote>
+            </div>
+            <div class="flash-word 5"><<button "-">><<replace ".5">><</replace>><</button>>
+              <blockquote>re/claim ( &#172;notStable &#836; &#172;990.248 ) : "One can not simply parse himself"</blockquote>
+            </div>
+          </div>
+
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.redun <2>>
+                  <<set $funct.fail = 4>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.redun = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        </div>
+      <<endif>>
+      <ul>
+        <li>Sys Dependencies: UNSPECIFIED</li>
+        <li>Funct Performance: LOW</li>
+        <li>File integrity: LOW</li>
+      </ul>
+
+      <div class="lib-link">
+        <<link ".init_init_init_init_init()">>
+          <<if $funct.init == false>><<set $funct.hatch = false>><<set $funct.core = false>><<set $funct.offon = false>><<set $funct.redun = false>><<set $funct.init = true>><<else>><<set $funct.init = false>><<endif>>
+          <<set $change.function = true>>
+        <</link>>
+      </div>
+      <<if $funct.init == true>>
+        <div id="libtank">
+          <div id="funct-header">
+            <<link ".">><<set $funct.init = false>><<set $change.function = true>><</link>>
+            <h3>.init_init_init_init_init()</h3>
+          </div>
+          <div class="funct-container">
+            <blockquote>justify AUG[areaGrab &#172; areaGrab &#187; 34][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 1"><<button "-">><<replace ".1">><</replace>><</button>>
+              	<blockquote class="leftdent">auxAlpha &#187;&#1472; 0.43;</blockquote>
+              	<blockquote class="leftdent">time &#172;&#1472; AUG[( AUG[25][relDamGet] ) &#187; effex(short(1,y,CROSS),mislead(CROSS,y,mislead(sysCon,notStable,DIF &#172; rift(DIF,&#172;rift(auxAlpha)))))][&#1472; &#172; &#1472;]</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>ext areaGrab &#1472; ( &#172;rule(&#172;0.29,notStable / DIF / mislead(x)) &#172; auxAlpha )</blockquote>
+            <blockquote>justify AUG[0.3][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 2"><<button "-">><<replace ".2">><</replace>><</button>>
+              	<blockquote class="leftdent">notStable /&#1472; 0.46;</blockquote>
+              	<blockquote class="leftdent">( rule(effex(rift(exInt &#836; relDamGet,&#172;CROSS)),( notStable )) )</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>re/claim CROSS : "Nothing burns like the cold."</blockquote>
+            <blockquote>justify AUG[relDamGet][&#1472;] <strong>&#838;</strong></blockquote>
+              <div class="flash-word 3"><<button "-">><<replace ".3">><</replace>><</button>>
+              	<blockquote class="leftdent">if(( &#172;( areaGrab ) &#172; y ))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">mislead(( ( rift(&#172;78,AUG[effex()][y]) / y ) ) / mislead(1,AUG[&#172;bar(( &#172;effex() )) &#187; &#172;0.56 &#836;</blockquote> <blockquote>x][destroy()]) &#836; x &#187; DIF / relDamGet);</blockquote>
+              	<blockquote class="leftdent">effex();</blockquote>
+              	<blockquote class="leftdent">if(&#172;46)<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">rule(&#172;&#172;CROSS);</blockquote>
+              	<blockquote class="leftdent">&#1472;</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              <div class="flash-word 4"><<button "-">><<replace ".4">><</replace>><</button>>
+              	<blockquote class="leftdent">if(AUG[&#172;540.4][1])<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">if(&#172;&#172;( 23 ))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">&#172;( time ) &#836; ( &#172;( &#172;&#172;760.37 / DIF ) )</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              <div class="flash-word 5"><<button "-">><<replace ".5">><</replace>><</button>>
+              	<blockquote class="leftdent">notStable &#836;&#1472; AUG[relDamGet &#836; 250.453 &#836; 0.29][( bar() )] &#836; &#172;rule(destroy(&#172;bar()),( ( ( &#172;1 / effex(&#172;0.94,&#172;short(( DIF ),sysCon,&#172;destroy(y &#836; time &#172; notStable &#172; time) / &#172;AUG[&#172;94][&#172;mislead(( sysCon ) / mislead(( ( ( &#172;980.6382 / destroy(( y )) ) &#836; ( 68 ) &#836; 0.22 ) ),&#172;( ( auxAlpha ) ) &#187; &#172;0.23),&#172;880.45)] &#836; ( DIF ) &#836; &#172;500.6 &#836; ( &#172;75 ) &#836; &#172;0.34)) ) ) ))</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+              <div class="flash-word 6"><<button "-">><<replace ".6">><</replace>><</button>>
+              	<blockquote class="leftdent">if(destroy(&#172;&#172;0.57) &#187; mislead(&#172;x,( &#172;AUG[( AUG[&#172;time][&#172;( exInt ) &#836; areaGrab] )][short(x,notStable,&#172;0.56)] )))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">relDamGet &#836;&#1472; auxAlpha;</blockquote>
+              	<blockquote class="leftdent">DIF;</blockquote>
+              	<blockquote class="leftdent">if(&#172;bar(&#172;CROSS,CROSS / &#172;auxAlpha &#187; &#172;0.92 / &#172;0.26,effex(( CROSS ),3 &#187; DIF)))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">( &#172;39 )</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              <div class="flash-word 7"><<button "-">><<replace ".7">><</replace>><</button>>
+              	<blockquote class="leftdent">mislead(0.43,( 92 ),&#172;( ( &#172;1 ) ));</blockquote>
+              	<blockquote class="leftdent">time &#187;&#1472; ( short(( AUG[( relDamGet )][950.6] ) / notStable &#187; ( 0.5 )) )</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+              <div class="flash-word 8"><<button "-">><<replace ".8">><</replace>><</button>>
+              	<blockquote class="leftdent">&#1472; &#172;&#1472; &#172;&#172;&#172;effex(&#172;&#172;810.7,relDamGet)</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              <div class="flash-word 9"><<button "-">><<replace ".9">><</replace>><</button>>
+              	<blockquote class="leftdent">if(DIF)<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">if(effex(sysCon,sysCon &#172; ( &#172;areaGrab &#187; time )))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">if(AUG[effex(CROSS,rule(short(&#172;&#172;&#172;740.83 / DIF,&#172;exInt / ( &#172;1 &#836; &#172;auxAlpha )),&#172;DIF,( 1 ) / AUG[CROSS &#187; AUG[8][&#172;CROSS]][( CROSS &#172; &#172;48 )]))][&#172;DIF])<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">sysCon &#836;&#1472; auxAlpha</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong> else <strong>&#838;</strong></blockquote>
+              <div class="flash-word 10"><<button "-">><<replace ".10">><</replace>><</button>>
+              	<blockquote class="leftdent">CROSS;</blockquote>
+              	<blockquote class="leftdent">auxAlpha &#187;&#1472; &#172;1 &#836; &#172;0.96</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            	<blockquote class="leftdent">relDamGet &#172; CROSS</blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            	<blockquote class="leftdent">CROSS;</blockquote>
+            	<blockquote class="leftdent">if(&#172;92)<strong>&#838;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+              <div class="flash-word 11"><<button "-">><<replace ".11">><</replace>><</button>>
+              	<blockquote class="leftdent">if(( ( destroy(sysCon,effex(&#172;areaGrab),DIF) ) ))<strong>&#838;</strong></blockquote>
+              	<blockquote class="leftdent">&#172;0.66</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            	<blockquote class="leftdent">relDamGet &#836;&#1472; &#172;&#172;&#172;15 &#187; rule(53,CROSS,&#172;&#172;0.1)</blockquote>
+            <blockquote><strong>&#826;</strong></blockquote>
+            <blockquote>justify effex()<strong>&#838;</strong></blockquote>
+              <div class="flash-word 12"><<button "-">><<replace ".12">><</replace>><</button>>
+            	  <blockquote class="leftdent">notStable &#172;&#1472; ( &#172;0.22 )</blockquote>
+              </div>
+            <blockquote><strong>&#826;</strong></blockquote>
+          </div>
+
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.init <2>>
+                  <<set $funct.fail = 5>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.init = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        </div>
+      <<endif>>
+      <ul>
+        <li>Sys Dependencies: UNSPECIFIED</li>
+        <li>Funct Performance: LOW</li>
+        <li>File integrity: LOW</li>
+      </ul>
+    </div>
+  </div>
+  <<endif>>
+  </div>
+
+
+::Failed [nobr]
+  <<replace "#btn-con">>
+
+    <<include "FailFlick">>
+    <span class="red">
+      <<button "FAILED">>
+      <</button>>
+    </span>
+
+    <<timed 2s>>
+      <<replace "#btn-con">>
+        <<if $funct.fail == 1>>
+          <span class="red">
+            <<button "EXECUTE">>
+              <<if $funct.checks.hatch <2>>
+                <<set $funct.fail = 1>>
+                <<include "Failed">>
+              <<else>>
+                <<set $funct.hatch = "done">>
+                <<set $change.funct = true>>
+              <<endif>>
+            <</button>>
+          </span>
+        <<elseif $funct.fail == 2>>
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.core <2>>
+                  <<set $funct.fail = 2>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.core = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        <<elseif $funct.fail == 3>>
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.offon <2>>
+                  <<set $funct.fail = 3>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.offon = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        <<elseif $funct.fail == 4>>
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.redun <2>>
+                  <<set $funct.fail = 4>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.redun = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        <<elseif $funct.fail == 5>>
+          <div id="btn-con">
+            <span class="red">
+              <<button "EXECUTE">>
+                <<if $funct.checks.init <2>>
+                  <<set $funct.fail = 5>>
+                  <<include "Failed">>
+                <<else>>
+                  <<set $funct.init = "done">>
+                  <<set $change.funct = true>>
+                <<endif>>
+              <</button>>
+            </span>
+          </div>
+        <<endif>>
+      <</replace>>
+    <</timed>>
+  <</replace>>
+
+
+::FailFlick [nobr]
+  <script>
+    $(".passage").prepend("<div class='fail-flick'></div>")
+  </script>
+  <<timed 2s>>
+    <script>
+      $(".fail-flick").remove(".fail-flick")
+    </script>
+  <</timed>>

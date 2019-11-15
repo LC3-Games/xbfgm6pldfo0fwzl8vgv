@@ -12,6 +12,7 @@
 
   viewHUD.tw2
   components.tw2
+  FunctionLib.tw2
   systemalert.tw2
 
 
@@ -31,10 +32,12 @@ Lysogenesis
 
   <p>Proceed with caution if you are photosensitive.</p>
 
+  <p>To play this game at full screen, hit F11 at any time.</p>
+
   <p>[[Start|White]]</p>
 
 
-::Start [nobr white ship7handsopen]
+::Start [nobr white ship7handsopen crt]
 <<set $cursor = 6>>
 <<include "ViewHUD">>
   <a data-passage="BinaryColorChoice" style="animation: cursor-anim 10s infinite;"><div class="container" style="min-height: 100vh"></div></a>

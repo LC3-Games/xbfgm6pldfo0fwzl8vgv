@@ -19,6 +19,7 @@
       </div>
     <<elseif $alert.worm == "on">>
       <<timed 0.1s>>
+        <<set $alert.visible = true>>
         <<replace "#systemAlert">>
           <<include "Snake">>
         <</replace>>
@@ -239,6 +240,7 @@
           <</timed>>
         <<else>>
           <<set $alert.hide = true>>
+          <<set $alert.visible = false>>
           <<set $change.alert = true>>
         <<endif>>
       <<endif>>

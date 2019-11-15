@@ -77,34 +77,6 @@
   </div>
 
 
-::FunctionLibrary [nobr]
-  <div id="functcon">
-  <<if $funct.on == true>>
-  <div id="functionLib">
-    <h4>FUNCTON LIBRARY REVIEW</h4>
-    <div id="lib-container">
-      <<link ".pressTest()">>
-        <<if $funct.test == false>><<set $funct.test = true>><<else>><<set $funct.test = false>><<endif>>
-        <<set $change.function = true>>
-      <</link>>
-      <<if $funct.test == true>>
-        <div class="funct-container">
-          <p>&nbsp;&nbsp;&nbsp;1. pressTest = {</p>
-          <p>&nbsp;&nbsp;&nbsp;2. &nbsp;&nbsp;x-x++++++</p>
-          <p>&nbsp;&nbsp;&nbsp;3. &nbsp;&nbsp;sfdsbhfd</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. . .</p>
-          <p>4562. asdjasdasd</p>
-          <p>4563. }</p>
-
-          <span class="red"><<button "EXECUTE">><</button>></span>
-        </div>
-      <<endif>>
-    </div>
-  </div>
-  <<endif>>
-  </div>
-
-
 ::SelfDesignation [nobr]
   <div id="desigcon">
   <div id="designation">
@@ -137,6 +109,7 @@
     <<for _i to 0; _i < $battery; _i++>><div class="batteryLevel"></div><</for>>
   </div>
   </div>
+
 
 ::BackgroundShit [nobr]
   <div id="backcon">
@@ -229,23 +202,30 @@
         <<endif>>
 
         <<if $alert.hide == false>>
-          <<if ($alert.frag == 9 && $comp.space > 60) && not $alert.his.length > 1>>
+          <<if ($alert.frag == 9 && $comp.space > 60) && $alert.his.length <= 1>>
             <<replace "#alertcon">>
             <</replace>>
+            <<set $alert.visible = false>>
           <<else>>
+            <<set $alert.visible = true>>
             <<replace "#alertcon">>
               <<display "SystemAlert">>
               <<set $alert.hide = true>>
             <</replace>>
+
           <<endif>>
         <<else>>
+          <<set $alert.visible = false>>
           <<replace "#alertcon">>
           <</replace>>
+
         <<endif>>
 
       <<else>>
+      <<set $alert.visible = false>>
         <<replace "#alertcon">>
         <</replace>>
+
       <<endif>>
     <<elseif $change.function == true>>
       <<if $funct.on == false>>
@@ -261,8 +241,10 @@
       <<set $change.background = false>>
       <<replace "#backcon">><<display "BackgroundShit">><</replace>>
     <<endif>>
-    <<if $alert.his.length >0>>
-      <<set $alert.change = true>>
+    <<if $alert.his.length >0 && $alert.visible == false && $alert.frag != 9>>
+      <<set $change.alert = true>>
+    <<elseif $alert.frag == 9 && $alert.his.length >1 && $alert.visible == false>>
+      <<set $change.alert = true>>
     <<endif>>
   <</repeat>>
   <</silently>><</widget>>
@@ -341,11 +323,13 @@
   <<repeat 5s>>
     <<set $snake.time +=5>>
     <<set $snake.repair +=6.6666>>
-    <<if $snake.time == 60>>
+    <<if $snake.time == 5>>
       <<set $alert.worm = "won">>
+      <<set $alert.visible = true>>
       <<replace "#alertcon">>
         <<include "SystemAlert">>
       <</replace>>
+      <<stop>>
     <<else>>
       <<replace "#repair">><span id="repair"><<print Math.round($snake.repair)>></span><</replace>>
     <<endif>>

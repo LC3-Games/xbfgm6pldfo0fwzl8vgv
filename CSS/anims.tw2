@@ -255,6 +255,11 @@
   100% {background: transparent}
 }
 
+@keyframes fail-flick {
+  0% {background: #ff0000b3}
+  100% {background: transparent}
+}
+
 
 .shape-anim-1 {
   -webkit-animation: shape-anim-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
@@ -437,6 +442,16 @@
 @keyframes flash-word {
   0% {opacity: 1}
   100% {opacity: 0}
+}
+
+@-webkit-keyframes flash-word-half {
+  0% {opacity: 1}
+  100% {opacity: 0.8}
+}
+
+@keyframes flash-word-half {
+  0% {opacity: 1}
+  100% {opacity: 0.8}
 }
 
 @-webkit-keyframes flicker {
@@ -742,25 +757,46 @@
           animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
-@-webkit-keyframes shadow-inset-center {
-  0% {
-    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
-            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
-  }
-  100% {
-    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
-            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
-  }
+.shadow-inset-center {
+  -webkit-animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+          animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 @keyframes shadow-inset-center {
   0% {
-    -webkit-box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
-            box-shadow: inset 0 0 30px 0 rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 30px 0 #e53653;
+            box-shadow: inset 0 0 30px 0 #e53653;
   }
   100% {
-    -webkit-box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
-            box-shadow: inset 0 0 70px 0px rgba(255, 0, 0, 1);
+    -webkit-box-shadow: inset 0 0 70px 0px #e53653;
+            box-shadow: inset 0 0 70px 0px #ff002a;
+  }
+}
+
+@keyframes pulse-red-bg {
+  0% {
+    background-color: #e536538c;
+  }
+  100% {
+    background-color: #ff002a8c;
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    background-color: #e53653;
+  }
+  100% {
+    background-color: #ff002a;
+  }
+}
+
+@keyframes pulse-green-bg {
+  0% {
+    background-color: #008059;
+  }
+  100% {
+    background-color: #0e7a0e;
   }
 }
 
@@ -770,6 +806,15 @@
 	height: 100%;
 	width: 100%;
 	position: fixed;
+}
+
+.fail-flick {
+	-webkit-animation: fail-flick 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1;
+	        animation: fail-flick 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+  z-index: 100000
 }
 
 @-webkit-keyframes screen-stutter {
