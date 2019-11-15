@@ -521,8 +521,6 @@ blockquote .small {
 	margin: 0;
 	background-color: #008059; /* green */
 	border: 1px solid black;
-	-webkit-animation: battery-flicker 3s ease alternate infinite;
-	        animation: battery-flicker 3s ease alternate infinite;
 	content: "";
 	display: inline-block;
 }

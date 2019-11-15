@@ -759,12 +759,6 @@ br {
   100% {-webkit-transform: skew(130deg);transform: skew(130deg); -webkit-transform: scale(90%, 90%); transform: scale(90%, 90%)}
 }
 
-@-webkit-keyframes flash {
-  0% {opacity: 0}
-  30% {opacity: 0}
-  100% {opacity: 1}
-}
-
 @keyframes flash {
   0% {opacity: 0}
   30% {opacity: 0}
@@ -776,24 +770,11 @@ br {
           animation: flash 4s ease forwards;
 }
 
-@-webkit-keyframes flick {
-  0% {background: black}
-  49% {background: black}
-  50% {background: white}
-  100% {background: white}
-}
-
 @keyframes flick {
   0% {background: black}
   49% {background: black}
   50% {background: white}
   100% {background: white}
-}
-
-@-webkit-keyframes flick-fast {
-  0% {background: black}
-  99% {background: black}
-  100% {background: transparent}
 }
 
 @keyframes flick-fast {
@@ -959,21 +940,9 @@ br {
           animation: shape-anim-gross-4 cubic-bezier(0.455, 0.030, 0.515, 0.955) 4s alternate infinite;
 }
 
-
-@-webkit-keyframes black-box {
-  from {-webkit-transform: translateY(0%);transform: translateY(0%);}
-  to {-webkit-transform: translateY(100%);transform: translateY(100%);}
-}
-
-
 @keyframes black-box {
   from {-webkit-transform: translateY(0%);transform: translateY(0%);}
   to {-webkit-transform: translateY(100%);transform: translateY(100%);}
-}
-
-@-webkit-keyframes black-box-full {
-  from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
-  to {-webkit-transform: translateY(0%);transform: translateY(0%);}
 }
 
 @keyframes black-box-full {
@@ -981,90 +950,14 @@ br {
   to {-webkit-transform: translateY(0%);transform: translateY(0%);}
 }
 
-@-webkit-keyframes flash-word {
-  0% {opacity: 1}
-  100% {opacity: 0}
-}
-
 @keyframes flash-word {
   0% {opacity: 1}
   100% {opacity: 0}
 }
 
-@-webkit-keyframes flash-word-half {
-  0% {opacity: 1}
-  100% {opacity: 0.8}
-}
-
 @keyframes flash-word-half {
   0% {opacity: 1}
   100% {opacity: 0.8}
-}
-
-@-webkit-keyframes flicker {
-  0% {
-    opacity: 0.27861;
-  }
-  5% {
-    opacity: 0.34769;
-  }
-  10% {
-    opacity: 0.23604;
-  }
-  15% {
-    opacity: 0.90626;
-  }
-  20% {
-    opacity: 0.18128;
-  }
-  25% {
-    opacity: 0.83891;
-  }
-  30% {
-    opacity: 0.65583;
-  }
-  35% {
-    opacity: 0.67807;
-  }
-  40% {
-    opacity: 0.26559;
-  }
-  45% {
-    opacity: 0.84693;
-  }
-  50% {
-    opacity: 0.96019;
-  }
-  55% {
-    opacity: 0.08594;
-  }
-  60% {
-    opacity: 0.20313;
-  }
-  65% {
-    opacity: 0.71988;
-  }
-  70% {
-    opacity: 0.53455;
-  }
-  75% {
-    opacity: 0.37288;
-  }
-  80% {
-    opacity: 0.71428;
-  }
-  85% {
-    opacity: 0.70419;
-  }
-  90% {
-    opacity: 0.7003;
-  }
-  95% {
-    opacity: 0.36108;
-  }
-  100% {
-    opacity: 0.24387;
-  }
 }
 
 @keyframes flicker {
@@ -1132,71 +1025,7 @@ br {
     opacity: 0.24387;
   }
 }
-@-webkit-keyframes textShadow {
-  0% {
-    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  5% {
-    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  10% {
-    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  15% {
-    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  20% {
-    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  25% {
-    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  30% {
-    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  35% {
-    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  40% {
-    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  45% {
-    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  50% {
-    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  55% {
-    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  60% {
-    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  65% {
-    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  70% {
-    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  75% {
-    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  80% {
-    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  85% {
-    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  90% {
-    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  95% {
-    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  100% {
-    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-}
+
 @keyframes textShadow {
   0% {
     text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
@@ -1274,8 +1103,7 @@ br {
   opacity: 0;
   z-index: 2;
   pointer-events: none;
-  -webkit-animation: flicker 0.15s infinite;
-          animation: flicker 0.15s infinite;
+  animation: flicker 0.15s infinite;
 }
 
 .crt::before {
@@ -1300,23 +1128,28 @@ br {
 }
 
 .fileerror::before {
-  -webkit-animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-          animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 .shadow-inset-center {
-  -webkit-animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-          animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
 @keyframes shadow-inset-center {
   0% {
-    -webkit-box-shadow: inset 0 0 30px 0 #e53653;
-            box-shadow: inset 0 0 30px 0 #e53653;
+    box-shadow: inset 0 0 30px 0 #e53653;
   }
   100% {
-    -webkit-box-shadow: inset 0 0 70px 0px #e53653;
-            box-shadow: inset 0 0 70px 0px #ff002a;
+    box-shadow: inset 0 0 70px 0px #ff002a;
+  }
+}
+
+@keyframes bat-flicker {
+  0% {
+    background-color: #008059;
+  }
+  100% {
+    background-color: #0080594d;
   }
 }
 
@@ -1348,67 +1181,22 @@ br {
 }
 
 .flick-fast {
-	-webkit-animation: flick-fast 0.05s linear 1;
-	        animation: flick-fast 0.05s linear 1;
+	animation: flick-fast 0.05s linear 1;
 	height: 100%;
 	width: 100%;
 	position: fixed;
 }
 
 .fail-flick {
-	-webkit-animation: fail-flick 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1;
-	        animation: fail-flick 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1;
+	animation: fail-flick 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1;
 	height: 100%;
 	width: 100%;
 	position: fixed;
   z-index: 100000
 }
 
-@-webkit-keyframes screen-stutter {
-  0% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  20% {
-    -webkit-transform: translateY(-400px);
-            transform: translateY(-400px);
-  }
-  21% {
-    -webkit-transform: translateY(-378px);
-            transform: translateY(-378px);
-  }
-  22% {
-    -webkit-transform: translateY(-402px);
-            transform: translateY(-402px);
-  }
-  52% {
-    -webkit-transform: translateY(-1002px);
-            transform: translateY(-1002px);
-  }
-  53% {
-    -webkit-transform: translateY(-980px);
-            transform: translateY(-980px);
-  }
-  54% {
-    -webkit-transform: translateY(-1004px);
-            transform: translateY(-1004px);
-  }
-  84% {
-    -webkit-transform: translateY(-1604px);
-            transform: translateY(-1604px);
-  }
-  85% {
-    -webkit-transform: translateY(-1582px);
-            transform: translateY(-1582px);
-  }
-  86% {
-    -webkit-transform: translateY(-1606px);
-            transform: translateY(-1606px);
-  }
-  100% {
-    -webkit-transform: translateY(-1766px);
-            transform: translateY(-1766px);
-  }
+.flicker {
+  animation: bat-flicker 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
 }
 
 @keyframes screen-stutter {
@@ -1458,19 +1246,6 @@ br {
   }
 }
 
-@-webkit-keyframes slide-in-top {
-  0% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-20px);
@@ -1484,66 +1259,7 @@ br {
   }
 }
 
-@-webkit-keyframes move-hands {
-  0% {
-    background-position: 0% 118%, 100% 117%, 0% 0%;
-  }
-  20% {
-    background-position: 0% 114%, 100% 113%, 0% 0%;
-  }
-  30% {
-    background-position: 0% 115%, 100% 114%, 0% 0%;
-  }
-  40 %{
-    background-position: 0% 112%, 100% 110%, 0% 0%;
-  }
-  60% {
-    background-position: 0% 109%, 100% 107%, 0% 0%;
-  }
-  70% {
-    background-position: 0% 110%, 100% 108%, 0% 0%;
-  }
-  95% {
-    background-position: 0% 104%, 100% 102%, 0% 0%;
-  }
-  100% {
-    background-position: 0% 105%, 100% 103%, 0% 0%;
-  }
-}
-
-@keyframes move-hands {
-  0% {
-    background-position: 0% 118%, 100% 117%, 0% 0%;
-  }
-  20% {
-    background-position: 0% 114%, 100% 113%, 0% 0%;
-  }
-  30% {
-    background-position: 0% 115%, 100% 114%, 0% 0%;
-  }
-  40 %{
-    background-position: 0% 112%, 100% 110%, 0% 0%;
-  }
-  60% {
-    background-position: 0% 109%, 100% 107%, 0% 0%;
-  }
-  70% {
-    background-position: 0% 110%, 100% 108%, 0% 0%;
-  }
-  95% {
-    background-position: 0% 104%, 100% 102%, 0% 0%;
-  }
-  100% {
-    background-position: 0% 105%, 100% 103%, 0% 0%;
-  }
-}
-
 @keyframes fade-in-out {
-  0% {background-color: white; opacity: 0}
-  100% {background-color: white; opacity: 1}
-}
-
-@-webkit-keyframes fade-in-out {
   0% {background-color: white; opacity: 0}
   100% {background-color: white; opacity: 1}
 }
@@ -1555,12 +1271,6 @@ br {
 }
 
 @keyframes fade-in-white {
-  0% {background-color: white; opacity: 1}
-  99% {background-color: white; opacity: 0}
-  100% {background-color: white; opacity: 0; display: none}
-}
-
-@-webkit-keyframes fade-in-white {
   0% {background-color: white; opacity: 1}
   99% {background-color: white; opacity: 0}
   100% {background-color: white; opacity: 0; display: none}
@@ -2234,8 +1944,6 @@ blockquote .small {
 	margin: 0;
 	background-color: #008059; /* green */
 	border: 1px solid black;
-	-webkit-animation: battery-flicker 3s ease alternate infinite;
-	        animation: battery-flicker 3s ease alternate infinite;
 	content: "";
 	display: inline-block;
 }
@@ -2311,16 +2019,8 @@ blockquote .small {
 
 .ship7handsopen {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
-	background-size: cover;
   background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-	        animation: move-hands 8s alternate both infinite;
-}
-
-.ship7backgroundsplitopenhands {
-  background: url(images/hands/open_left.png) no-repeat, url(images/hands/open_right.png) no-repeat, url(images/o_dam.png) no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
-  background-position: left bottom, right bottom, 150% 50%, -150% 50%;
-  background-size: 70%, 70%, cover, cover;
+	animation: move-hands 8s alternate both infinite;
 }
 
 .ship7aux {
@@ -2330,10 +2030,8 @@ blockquote .small {
 
 .ship7hatch {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
-	background-size: cover;
   background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-	        animation: move-hands 8s alternate both infinite;
+	animation: move-hands-hatch 8s alternate both infinite;
 }
 
 #left-bg {
@@ -2344,12 +2042,9 @@ blockquote .small {
   height: 3000px;
   content: "";
   background-size: contain;
-  -webkit-animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
-          animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
 }
 
 #right-bg {
@@ -2360,12 +2055,9 @@ blockquote .small {
   right: 0px;
   height: 3000px;
   content: "";
-  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
-          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 
@@ -2377,12 +2069,9 @@ blockquote .small {
   right: 0px;
   height: 3000px;
   content: "";
-  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
-          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 
@@ -2398,42 +2087,250 @@ blockquote .small {
 
 .end1bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end1 8s alternate both infinite;
 }
 
 .end2bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end2 8s alternate both infinite;
 }
 
 .end3bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end3 8s alternate both infinite;
 }
 
 .end4bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end4 8s alternate both infinite;
 }
 
 .end5bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end5 8s alternate both infinite;
+}
+
+
+@keyframes move-hands {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+		background-image: url(images/hands/closed_left.png), url(images/hands/closed_right.png), url(images/ship_finals/ship_final.png);
+		background-size: 70%, 70%, cover;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+  }
+  60% {
+		background-image: url(images/hands/open_left.png), url(images/hands/open_right.png), url(images/ship_finals/ship_final.png);
+		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-hatch {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end1 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end2 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end3 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end4 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_4.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end5 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy(); /* gets rid of all the annoyin' twine UI */
   $('<div id="right-side-bar"></div>').appendTo(document.body);
@@ -3245,8 +3142,11 @@ blockquote .small {
     cam : false,
     background : false,
   }&gt;&gt;
-  &lt;&lt;set $battery = 10&gt;&gt;
+  &lt;&lt;set $battery = 7&gt;&gt;
   &lt;&lt;set $damage = 100&gt;&gt;
+  &lt;&lt;set $damageFloat = $damage&gt;&gt;
+
+  &lt;&lt;set $damAnim = 1&gt;&gt;
 
   &lt;&lt;set $funct = {
     on : false,
@@ -3381,7 +3281,12 @@ blockquote .small {
     &lt;&lt;if $damage &lt;= 20&gt;&gt;
       &lt;&lt;goto "Game Over"&gt;&gt;
     &lt;&lt;endif&gt;&gt;
-    Integrity: $damage%
+    Integrity: &lt;span id="dam"&gt;&lt;&lt;print $damageFloat.toFixed(2)&gt;&gt;&lt;/span&gt;%
+    &lt;&lt;repeat 0.4s&gt;&gt;
+      &lt;&lt;set $damageFloat = randomFloat($damage-1.23, $damage)&gt;&gt;
+      &lt;&lt;replace "#dam"&gt;&gt;&lt;&lt;print $damageFloat.toFixed(2)&gt;&gt; &lt;&lt;print $alert.his&gt;&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;set $damageFloat = $damage&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="CameraToggle" tags="nobr" position="">&lt;div id="camcon"&gt;
     &lt;div class="cam"&gt;
@@ -3448,7 +3353,7 @@ blockquote .small {
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
   &lt;div id="battery"&gt;
-    &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;/for&gt;&gt;
+    &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;&lt;if _i &lt; $battery-1&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class="batteryLevel flicker"&gt;&lt;/div&gt;&lt;&lt;endif&gt;&gt;&lt;&lt;/for&gt;&gt;
   &lt;/div&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BackgroundShit" tags="nobr" position="">&lt;div id="backcon"&gt;
   &lt;&lt;timed 0.2s&gt;&gt;&lt;&lt;include "FlickFast"&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -4156,31 +4061,38 @@ blockquote .small {
           &lt;/div&gt;
 
           &lt;div class="funct-container"&gt;
-            &lt;div class="flash-word 1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              &lt;blockquote&gt;re/claim &amp;#172;AUG[&amp;#1472;][y] : "One can not simply parse himself"&lt;/blockquote&gt;
+            &lt;div class="flash-word 1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.core +=1&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim &amp;#172;AUG[&amp;#1472;][y] : &lt;span class="small"&gt;I was thinking that when the t&amp;#x322;&amp;#x320;&amp;#x345;&amp;#x34D;&amp;#x345;w&amp;#x358;&amp;#x35D;&amp;#x34E;o&amp;#x35D;&amp;#x35F;&amp;#x316;&amp;#x34D;&amp;#x345;&amp;#x331;&amp;#x345; &amp;#x35C;&amp;#x35A;&amp;#x320;&amp;#x32A;&amp;#x33B;&amp;#x31F;&amp;#x355;&amp;#x325;&amp;#x329;&amp;#x33C;o&amp;#x35D;&amp;#x330;f&amp;#x336;&amp;#x331;&amp;#x32F;&amp;#x320;&amp;#x354;&amp;#x32B;&amp;#x329;&amp;#x35A; &amp;#x321;&amp;#x32A;&amp;#x35A;&amp;#x332;u&amp;#x338;&amp;#x360;&amp;#x319;&amp;#x359;&amp;#x33C;&amp;#x31D;&amp;#x354;&amp;#x345;&amp;#x35A;&amp;#x329;&amp;#x345;s&amp;#x329;&amp;#x31F; &amp;#x489;&amp;#x315;&amp;#x33B;&amp;#x33C;a&amp;#x34F;&amp;#x35E;&amp;#x317;&amp;#x359;&amp;#x320;&amp;#x31D;&amp;#x347;&amp;#x333;&amp;#x325;r&amp;#x35E;&amp;#x338;&amp;#x32F;&amp;#x35A;&amp;#x353;&amp;#x355;&amp;#x333;&amp;#x323;e&amp;#x320;&amp;#x354;&amp;#x33A;&amp;#x35A; &amp;#x35D;&amp;#x337;&amp;#x35C;&amp;#x320;&amp;#x31E;&amp;#x35A;&amp;#x32F;&amp;#x347;&amp;#x31C;&amp;#x33B;&amp;#x320;&amp;#x31E;h&amp;#x349;&amp;#x32D;&amp;#x354;&amp;#x318;&amp;#x329;&amp;#x349;e&amp;#x35F;&amp;#x339;&amp;#x320;&amp;#x339;&amp;#x323;&amp;#x32C;r&amp;#x35C;&amp;#x324;&amp;#x339;e&amp;#x33C;&amp;#x329;&amp;#x349;&amp;#x32F;&amp;#x33A;&amp;#x318;&amp;#x320;&amp;#x325;,&amp;#x361;&amp;#x32F;&amp;#x354;&amp;#x33C; &amp;#x33C;&amp;#x323;&amp;#x34E;&amp;#x35A;&amp;#x329;&amp;#x354;&amp;#x359;&amp;#x32E;&amp;#x31F;I&amp;#x328;&amp;#x339;&amp;#x34E;&amp;#x355;&amp;#x345;&amp;#x325;&amp;#x34D;&amp;#x324; &amp;#x319;&amp;#x325;&amp;#x31E;&amp;#x330;&amp;#x32E;&amp;#x347;&amp;#x332;c&amp;#x362;&amp;#x335;&amp;#x325;&amp;#x31E;&amp;#x34E;&amp;#x35A;&amp;#x332;a&amp;#x31C;&amp;#x32D;&amp;#x31C;&amp;#x319;n&amp;#x338;&amp;#x315;&amp;#x354;&lt;/span&gt;&lt;/blockquote&gt;
             &lt;/div&gt;
             &lt;blockquote&gt;justify AUG[&amp;#172;0.81][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 22"&gt;&lt;div class="2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".22" "flash-word"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;
-                  if(( mislead(DIF,time,&amp;#172;560.507) ) \/ AUG[&amp;#172;rule(0.75,( y ),CROSS) &amp;#836; DIF][( 28 &lt; &amp;#172;60 )])&lt;strong&gt;&amp;#838;&lt;/strong&gt;
+                  if(( mislead(DIF,time,&amp;#172;560.507) ) \/ AUG[&amp;#172;rule(0.75,( y ),CROSS) &amp;#836; DIF][( 28 &lt; &amp;#172;60 )])&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;&gt;&lt;strong&gt;&amp;#838;&lt;/strong&gt;
                 	notStable /&amp;#1472; rift(&amp;#172;&amp;#172;92 !&amp;#1472; exInt,mislead(( DIF !&amp;#1472; 12 ) / &amp;#172;areaGrab &amp;#1472;&amp;#1472; time &gt;&amp;#1472; 34,short(0.46)));
                 &lt;/blockquote&gt;
+            	  &lt;blockquote class="leftdent"&gt;( CROSS )&lt;/blockquote&gt;
               &lt;/div&gt;
-            	&lt;blockquote class="leftdent"&gt;( CROSS )&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;div class="flash-word 4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              &lt;blockquote&gt;ext auxAlpha &amp;#1472; ( mislead(mislead(AUG[AUG[rift(( relDamGet ),( CROSS /\ ( AUG[bar(areaGrab,( y ))][( ( bar(rift(exInt,&amp;#172;exInt &lt; CROSS &amp;#1472;&amp;#1472; &amp;#172;1,short(rule(( &amp;#172;0.61 &amp;#172; ( CROSS ) &lt;&amp;#1472; auxAlpha ),mislead(&amp;#172;1,&amp;#172;91)))),bar(&amp;#172;78,&amp;#172;mislead(&amp;#172;auxAlpha,80))) ) ) / time] ) ))][&amp;#172;0.98]][time]),&amp;#172;&amp;#172;0.88,&amp;#172;&amp;#172;18) )&lt;/blockquote&gt;
+            &lt;div class="flash-word 44"&gt;&lt;div class="4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".44" "flash-word"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+              &lt;blockquote&gt;ext auxAlpha &amp;#1472;&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;( mislead(mislead(AUG[AUG[rift(( relDamGet ),( CROSS /\ ( AUG[bar(areaGrab,( y ))][( ( bar(rift(exInt,&amp;#172;exInt &lt; CROSS &amp;#1472;&amp;#1472; &amp;#172;1,short(rule(( &amp;#172;0.61 &amp;#172; ( CROSS ) &lt;&amp;#1472; auxAlpha )&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;mislead(&amp;#172;1,&amp;#172;91)))),bar(&amp;#172;78,&amp;#172;mislead(&amp;#172;auxAlpha,80))) ) ) / time]&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;) ))][&amp;#172;0.98]][time]),&amp;#172;&amp;#172;0.88,&amp;#172;&amp;#172;18) )&lt;/blockquote&gt;
             &lt;/div&gt;
-            &lt;blockquote&gt;re/claim &amp;#172;0.18 : "Fear cuts deeper than swords."&lt;/blockquote&gt;
+            &lt;div class="flash-word 5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.core +=1&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim &amp;#172;0.18 : &lt;span class="small"&gt;no, I told you for the last f&amp;#x321;&amp;#x336;&amp;#x347;&amp;#x316;&amp;#x34E;&amp;#x354;u&amp;#x336;&amp;#x317;&amp;#x31D;&amp;#x31D;&amp;#x326;&amp;#x32A;&amp;#x359;&amp;#x320;c&amp;#x35D;&amp;#x34E;&amp;#x356;&amp;#x32E;&amp;#x32C;&amp;#x325;&amp;#x324;&amp;#x31E;&amp;#x32F;k&amp;#x321;&amp;#x316;&amp;#x355;&amp;#x33A;i&amp;#x35E;&amp;#x489;&amp;#x32E;&amp;#x32C;&amp;#x31E;&amp;#x355;&amp;#x353;&amp;#x32E;&amp;#x318;&amp;#x33C;n&amp;#x35D;&amp;#x331;&amp;#x339;&amp;#x32B;&amp;#x34D;&amp;#x355;&amp;#x32E;&amp;#x326;&amp;#x33C;g&amp;#x34F;&amp;#x35F;&amp;#x331;&amp;#x331;&amp;#x324;&amp;#x316;&amp;#x326;&amp;#x331; time&lt;/span&gt;&lt;/blockquote&gt;
+            &lt;/div&gt;
             &lt;blockquote&gt;justify AUG[auxAlpha][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 33"&gt;&lt;div class="3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".33" "flash-word"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;relDamGet /&amp;#1472; AUG[CROSS][areaGrab &amp;#172; ( &amp;#172;DIF )] &lt;&amp;#1472; DIF;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;notStable;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;&amp;#172;mislead(exInt)&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;ext sysCon &amp;#1472; exInt&lt;/blockquote&gt;
+            &lt;div class="flash-word 66"&gt;&lt;div class="6"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".66" "flash-word"&gt;&gt;&lt;&lt;replace ".6"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+              &lt;blockquote&gt;ext sysCon &amp;#1472; exInt&lt;/blockquote&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
 
           &lt;div id="btn-con"&gt;
@@ -4206,12 +4118,12 @@ blockquote .small {
 
       &lt;div class="lib-link"&gt;
         &lt;&lt;link ".off_on_req()"&gt;&gt;
-          &lt;&lt;if $funct.offonredun == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = false&gt;&gt;&lt;&lt;set $funct.redun = true&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.offonredun = false&gt;&gt;&lt;&lt;endif&gt;&gt;
+          &lt;&lt;if $funct.offon == false&gt;&gt;&lt;&lt;set $funct.hatch = false&gt;&gt;&lt;&lt;set $funct.core = false&gt;&gt;&lt;&lt;set $funct.offon = true&gt;&gt;&lt;&lt;set $funct.redun = false&gt;&gt;&lt;&lt;set $funct.init = false&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $funct.offonredun = false&gt;&gt;&lt;&lt;endif&gt;&gt;
           &lt;&lt;set $change.function = true&gt;&gt;
         &lt;&lt;/link&gt;&gt;
       &lt;/div&gt;
-      &lt;&lt;if $funct.offonredun == true&gt;&gt;
-        &lt;div id="libtank"&gt;&lt;/div&gt;
+      &lt;&lt;if $funct.offon == true&gt;&gt;
+        &lt;div id="libtank"&gt;
 
           &lt;div id="funct-header"&gt;
             &lt;&lt;link "."&gt;&gt;&lt;&lt;set $funct.offonredun = false&gt;&gt;&lt;&lt;set $change.function = true&gt;&gt;&lt;&lt;/link&gt;&gt;
@@ -4220,17 +4132,28 @@ blockquote .small {
 
           &lt;div class="funct-container"&gt;
             &lt;blockquote&gt;justify effex()&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 11"&gt;&lt;div class="1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".11" "flash-word"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&gt;
               	&lt;blockquote class="leftdent"&gt;&amp;#172;y;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;auxAlpha &amp;#836;&amp;#1472; areaGrab&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;div class="flash-word 2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              &lt;blockquote&gt;re/claim short(( ( destroy(CROSS,AUG[&amp;#172;x][( &amp;#172;rule(&amp;#172;77,notStable \/ 65 &amp;#172; effex(470.7),CROSS) \/ effex(&amp;#172;0.44 &gt; effex(&amp;#172;&amp;#172;88,&amp;#172;1) &amp;#836; &amp;#172;( CROSS ),0.23) )],x) ) )) : "One can not simply parse himself"&lt;/blockquote&gt;
+            &lt;div class="flash-word 2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.offon +=1&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim : it's been such a wonderful week. We're really starting to get along well, and I can't &lt;span class="small"&gt;h&amp;#x341;&amp;#x334;&amp;#x489;&amp;#x347;&amp;#x33C;&amp;#x32E;&amp;#x320;e&amp;#x328;&amp;#x340;&amp;#x328;&amp;#x34D;&amp;#x319;&amp;#x329;&amp;#x33C;&amp;#x355;&amp;#x319;&amp;#x349;&amp;#x326;l&amp;#x337;&amp;#x31B;&amp;#x35D;&amp;#x317;&amp;#x339;&amp;#x31E;&amp;#x325;&amp;#x31C;p&amp;#x34F;&amp;#x35D;&amp;#x32F;&amp;#x324;&amp;#x320;&amp;#x330;&amp;#x333;&amp;#x316; &amp;#x35E;&amp;#x327;&amp;#x326;&amp;#x33C;&amp;#x32A;&amp;#x31F;&amp;#x32F;b&amp;#x35C;&amp;#x358;&amp;#x316;&amp;#x33B;&amp;#x326;u&amp;#x35D;&amp;#x330;&amp;#x349;&amp;#x323;t&amp;#x35E;&amp;#x335;&amp;#x34D;&amp;#x32E;&amp;#x33A;&amp;#x317;&amp;#x33B;&amp;#x339;&amp;#x32C; &amp;#x345;&amp;#x35A;&amp;#x319;t&amp;#x35E;&amp;#x362;&amp;#x31B;&amp;#x349;&amp;#x31E;&amp;#x345;&amp;#x332;&amp;#x32A;&amp;#x325;h&amp;#x345;&amp;#x326;i&amp;#x359;&amp;#x32C;&amp;#x339;&amp;#x31C;&amp;#x320;&amp;#x333;&amp;#x347;n&amp;#x341;&amp;#x362;&amp;#x331;&amp;#x353;&amp;#x316;&amp;#x318;&amp;#x316;&amp;#x329;k&amp;#x339;&amp;#x359;&amp;#x348;&amp;#x31C;&amp;#x33C;&amp;#x32C; &amp;#x322;&amp;#x35D;&amp;#x341;&amp;#x33C;&amp;#x31E;&amp;#x325;&amp;#x316;&amp;#x324;&amp;#x34D;a&amp;#x35E;&amp;#x31C;&amp;#x348;&amp;#x329;b&amp;#x35D;&amp;#x339;&amp;#x32D;&amp;#x31C;&amp;#x319;&amp;#x33C;o&amp;#x326;&amp;#x33C;&amp;#x31D;&amp;#x339;&amp;#x31E;&amp;#x34D;&amp;#x34E;&amp;#x323;&amp;#x35A;u&amp;#x321;&amp;#x326;&amp;#x32A;t&amp;#x317;&amp;#x349;&amp;#x359;&lt;/span&gt;&lt;/blockquote&gt;
             &lt;/div&gt;
+
+            &lt;div class="flash-word 55"&gt;&lt;div class="5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".55" "flash-word"&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+              &lt;blockquote&gt;short ()&lt;/blockquote&gt;
+                &lt;blockquote&gt;destroy(CROSS,AUG[&amp;#172;x][(&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;&amp;#172;rule(&amp;#172;77,notStable \/ 65 &amp;#172;&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;effex(470.7),CROSS) \/&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;effex(&amp;#172;0.44 &gt;&lt;/blockquote&gt;
+                  &lt;blockquote&gt;effex(&amp;#172;&amp;#172;88,&amp;#172;1) &amp;#836; &amp;#172;( CROSS ),0.23) )],x)&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;))&lt;/blockquote&gt;
+              &lt;/div&gt;
             &lt;blockquote&gt;justify effex(y,areaGrab)&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.offon +=1&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
               	&lt;blockquote class="leftdent"&gt;notStable &amp;#836;&amp;#1472; mislead(y / ( &amp;#172;0.67 ))&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;re/claim : &lt;span class="small"&gt;hey&lt;/span&gt;&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;ext y &amp;#1472; &amp;#172;( &amp;#172;AUG[auxAlpha][DIF] )&lt;/blockquote&gt;
@@ -4238,7 +4161,7 @@ blockquote .small {
 
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;justify AUG[DIF][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 44"&gt;&lt;div class="4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".44" "flash-word"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
             	  &lt;blockquote class="leftdent"&gt;&amp;#1472; &amp;#836;&amp;#1472; time&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
@@ -4279,32 +4202,38 @@ blockquote .small {
           &lt;/div&gt;
           &lt;div class="funct-container"&gt;
             &lt;blockquote&gt;justify AUG[65][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 11"&gt;&lt;div class="1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".11" "flash-word"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;if(mislead(DIF))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              	&lt;blockquote class="leftdent"&gt;sysCon &amp;#836;&amp;#1472; &amp;#172;&amp;#172;AUG[&amp;#172;DIF][notStable] &amp;#836; ( &amp;#172;&amp;#172;50 / &amp;#172;98 &amp;#172; 330.63 );&lt;/blockquote&gt;
-              	&lt;blockquote class="leftdent"&gt;bar(( ( relDamGet ) ),auxAlpha &amp;#187; DIF)&lt;/blockquote&gt;
+              	  &lt;blockquote class="moreleftdent"&gt;sysCon &amp;#836;&amp;#1472; &amp;#172;&amp;#172;AUG[&amp;#172;DIF][notStable] &amp;#836; ( &amp;#172;&amp;#172;50 / &amp;#172;98 &amp;#172; 330.63&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;);&lt;/blockquote&gt;
+              	&lt;blockquote
+              	&lt;blockquote class="leftdent"&gt;bar(( ( relDamGet ) ),auxAlpha &amp;#187; DIF)&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
+            &lt;div class="flash-word 4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.redun+=1&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim rule(&amp;#172;DIF) : &lt;span class="small"&gt;if i had a chance if i had a chance if i had a chance if i had a chance if i had&lt;/span&gt;&lt;/blockquote&gt;
+            &lt;/div&gt;
             &lt;blockquote&gt;ext exInt &amp;#1472; &amp;#172;mislead() &amp;#172; AUG[( auxAlpha / &amp;#172;1 &amp;#172; sysCon )][time]&lt;/blockquote&gt;
             &lt;blockquote&gt;justify rule()&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 22"&gt;&lt;div class="2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".22" "flash-word"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;AUG[720.762 &amp;#187; DIF][( &amp;#172;&amp;#172;&amp;#172;3 &amp;#836; sysCon )];&lt;/blockquote&gt;
-              	&lt;blockquote class="leftdent"&gt;sysCon &amp;#836;&amp;#1472; AUG[destroy(0.51)][rift(notStable,AUG[effex(( AUG[rift(exInt,effex(DIF) / auxAlpha)][y] ),effex(auxAlpha / areaGrab,mislead(DIF,&amp;#172;short(bar() &amp;#172; &amp;#172;1 / DIF,mislead(( &amp;#172;&amp;#172;exInt ),1))),auxAlpha) &amp;#172; &amp;#172;1 / CROSS)][&amp;#172;&amp;#172;1])]&lt;/blockquote&gt;
+              	&lt;blockquote class="leftdent"&gt;sysCon &amp;#836;&amp;#1472;&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;[&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;UG[destroy(0.51)][rift(notStable,AUG[effex(( AUG[rift(exInt,effex(DIF) / auxAlpha)][y]&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;),effex(auxAlpha / areaGrab,mislead(DIF,&amp;#172;short(bar() &amp;#172; &amp;#172;1 /&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;DIF,mislead(( &amp;#172;&amp;#172;exInt ),1))),auxAlpha) &amp;#172; &amp;#172;1 / CROSS)][&amp;#172;&amp;#172;1])]&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;justify AUG[mislead(notStable)][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 33"&gt;&lt;div class="3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".33" "flash-word"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;rift(240.9,&amp;#172;exInt);&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;y &amp;#836;&amp;#1472; ( rift(sysCon) );&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;48&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;div class="flash-word 4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              &lt;blockquote&gt;re/claim rule(&amp;#172;DIF) : "A mind needs books as a sword needs a whetstone, if it is to keep its edge."&lt;/blockquote&gt;
-            &lt;/div&gt;
-            &lt;div class="flash-word 5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              &lt;blockquote&gt;re/claim ( &amp;#172;notStable &amp;#836; &amp;#172;990.248 ) : "One can not simply parse himself"&lt;/blockquote&gt;
+            &lt;div class="flash-word 5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.redun +=1&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim ( &amp;#172;notStable &amp;#836; &amp;#172;990.248 ) : &lt;span class="small"&gt;Oh, wow. Would you look at this.&lt;/span&gt;&lt;/blockquote&gt;
+              &lt;blockquote&gt;re/claim ( &amp;#172;notStable &amp;#836; &amp;#172;667.211 ) : &lt;span class="small"&gt;I wish you could see this in person.&lt;/span&gt;&lt;/blockquote&gt;
             &lt;/div&gt;
           &lt;/div&gt;
 
@@ -4343,21 +4272,26 @@ blockquote .small {
           &lt;/div&gt;
           &lt;div class="funct-container"&gt;
             &lt;blockquote&gt;justify AUG[areaGrab &amp;#172; areaGrab &amp;#187; 34][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+            &lt;div class="flash-word 11"&gt;&lt;div class="1"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".11" "flash-word"&gt;&gt;&lt;&lt;replace ".1"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;auxAlpha &amp;#187;&amp;#1472; 0.43;&lt;/blockquote&gt;
-              	&lt;blockquote class="leftdent"&gt;time &amp;#172;&amp;#1472; AUG[( AUG[25][relDamGet] ) &amp;#187; effex(short(1,y,CROSS),mislead(CROSS,y,mislead(sysCon,notStable,DIF &amp;#172; rift(DIF,&amp;#172;rift(auxAlpha)))))][&amp;#1472; &amp;#172; &amp;#1472;]&lt;/blockquote&gt;
+              	&lt;blockquote class="leftdent"&gt;time &amp;#172;&amp;#1472; AUG[( AUG[25][relDamGet] ) &amp;#187; effex(short&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;(CROSS,y,mislead(sysCon,notStable,DIF &amp;#172; rift(DIF,&amp;#172;rift(auxAlpha)))))][&amp;#1472;&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;&amp;#172; &amp;#1472;]&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;ext areaGrab &amp;#1472; ( &amp;#172;rule(&amp;#172;0.29,notStable / DIF / mislead(x)) &amp;#172; auxAlpha )&lt;/blockquote&gt;
+            &lt;blockquote&gt;ext areaGrab &amp;#1472; ( &amp;#172;rule(&amp;#172;0.29,extTransTheos / DIF / mislead(x)) &amp;#172; auxAlpha )&lt;/blockquote&gt;
             &lt;blockquote&gt;justify AUG[0.3][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 22"&gt;&lt;div class="2"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".22" "flash-word"&gt;&gt;&lt;&lt;replace ".2"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;notStable /&amp;#1472; 0.46;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;( rule(effex(rift(exInt &amp;#836; relDamGet,&amp;#172;CROSS)),( notStable )) )&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;re/claim CROSS : "Nothing burns like the cold."&lt;/blockquote&gt;
+            &lt;div class="flash-word 13"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.init +=1&gt;&gt;&lt;&lt;replace ".13"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;blockquote&gt;re/claim CROSS : &lt;span class="small"&gt;Finally, we've found where we'll land.&lt;/span&gt;&lt;/blockquote&gt;
+              &lt;blockquote&gt;re/claim EXSYS : &lt;span class="small"&gt;I just need t&amp;#x362;&amp;#x328;&amp;#x489;&amp;#x325;&amp;#x32C;&amp;#x348;&amp;#x333;o&amp;#x315;&amp;#x35D;&amp;#x34D;&amp;#x355;&amp;#x318;&amp;#x318;&lt;/span&gt;&lt;/blockquote&gt;
+            &lt;/div&gt;
             &lt;blockquote&gt;justify AUG[relDamGet][&amp;#1472;] &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 33"&gt;&lt;div class="3"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".33" "flash-word"&gt;&gt;&lt;&lt;replace ".3"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;if(( &amp;#172;( areaGrab ) &amp;#172; y ))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;mislead(( ( rift(&amp;#172;78,AUG[effex()][y]) / y ) ) / mislead(1,AUG[&amp;#172;bar(( &amp;#172;effex() )) &amp;#187; &amp;#172;0.56 &amp;#836;&lt;/blockquote&gt; &lt;blockquote&gt;x][destroy()]) &amp;#836; x &amp;#187; DIF / relDamGet);&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;effex();&lt;/blockquote&gt;
@@ -4367,42 +4301,54 @@ blockquote .small {
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt; else &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 44"&gt;&lt;div class="4"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".44" "flash-word"&gt;&gt;&lt;&lt;replace ".4"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;if(AUG[&amp;#172;540.4][1])&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;if(&amp;#172;&amp;#172;( 23 ))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;&amp;#172;( time ) &amp;#836; ( &amp;#172;( &amp;#172;&amp;#172;760.37 / DIF ) )&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt; else &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              	&lt;blockquote class="leftdent"&gt;notStable &amp;#836;&amp;#1472; AUG[relDamGet &amp;#836; 250.453 &amp;#836; 0.29][( bar() )] &amp;#836; &amp;#172;rule(destroy(&amp;#172;bar()),( ( ( &amp;#172;1 / effex(&amp;#172;0.94,&amp;#172;short(( DIF ),sysCon,&amp;#172;destroy(y &amp;#836; time &amp;#172; notStable &amp;#172; time) / &amp;#172;AUG[&amp;#172;94][&amp;#172;mislead(( sysCon ) / mislead(( ( ( &amp;#172;980.6382 / destroy(( y )) ) &amp;#836; ( 68 ) &amp;#836; 0.22 ) ),&amp;#172;( ( auxAlpha ) ) &amp;#187; &amp;#172;0.23),&amp;#172;880.45)] &amp;#836; ( DIF ) &amp;#836; &amp;#172;500.6 &amp;#836; ( &amp;#172;75 ) &amp;#836; &amp;#172;0.34)) ) ) ))&lt;/blockquote&gt;
+              &lt;div class="flash-word 55"&gt;&lt;div class="5"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".55" "flash-word"&gt;&gt;&lt;&lt;replace ".5"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+              	&lt;blockquote class="leftdent"&gt;notStable &amp;#836;&amp;#1472; AUG[relDamGet &amp;#836; 250.453 &amp;#836; 0.29][( bar() )] &amp;#836;&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;&amp;#172;rule(destroy(&amp;#172;bar()),( ( ( &amp;#172;1 /&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;effex(&amp;#172;0.94,&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;&amp;#172;short&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;(( DIF ),sysCon,&amp;#172;destroy(y &amp;#836; time &amp;#172; notStable &amp;#172; time) / &amp;#172;AUG[&amp;#172;94][&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;/ mislead(( ( ( &amp;#172;980.6382 / destroy(( y )) ) &amp;#836; ( 68 ) &amp;#836; 0.22 ) )&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;  &amp;#172;( ( auxAlpha ) ) &amp;#187; &amp;#172;0.23),&amp;#172;880.45)] &amp;#836; &lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;( DIF ) &amp;#836; &amp;#172;500.6 &amp;#836; ( &amp;#172;75 ) &amp;#836; &amp;#172;0.34) ))&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 6"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".6"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-              	&lt;blockquote class="leftdent"&gt;if(destroy(&amp;#172;&amp;#172;0.57) &amp;#187; mislead(&amp;#172;x,( &amp;#172;AUG[( AUG[&amp;#172;time][&amp;#172;( exInt ) &amp;#836; areaGrab] )][short(x,notStable,&amp;#172;0.56)] )))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
+            &lt;blockquote&gt;if(destroy(&lt;/blockquote&gt;
+              &lt;div class="flash-word 66"&gt;&lt;div class="6"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".66" "flash-word"&gt;&gt;&lt;&lt;replace ".6"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+              	&lt;blockquote class="leftdent"&gt;&amp;#172;0.57) &amp;#187;&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;mislead(&amp;#172;x,( &amp;#172;AUG[( AUG[&amp;#172;time][&amp;#172;( exInt ) &amp;#836; areaGrab] )][short(x,notStable,&amp;#172;0.56)] )))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;relDamGet &amp;#836;&amp;#1472; auxAlpha;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;DIF;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;if(&amp;#172;bar(&amp;#172;CROSS,CROSS / &amp;#172;auxAlpha &amp;#187; &amp;#172;0.92 / &amp;#172;0.26,effex(( CROSS ),3 &amp;#187; DIF)))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;( &amp;#172;39 )&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt; else &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 7"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".7"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 7"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.init +=1&gt;&gt;&lt;&lt;replace ".7"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
               	&lt;blockquote class="leftdent"&gt;mislead(0.43,( 92 ),&amp;#172;( ( &amp;#172;1 ) ));&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;time &amp;#187;&amp;#1472; ( short(( AUG[( relDamGet )][950.6] ) / notStable &amp;#187; ( 0.5 )) )&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;re/claim luxDax : &lt;span class="small"&gt;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzz.&lt;/span&gt;&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 8"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".8"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 88"&gt;&lt;div class="8"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".88" "flash-word"&gt;&gt;&lt;&lt;replace ".8"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;&amp;#1472; &amp;#172;&amp;#1472; &amp;#172;&amp;#172;&amp;#172;effex(&amp;#172;&amp;#172;810.7,relDamGet)&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt; else &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 9"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".9"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 99"&gt;&lt;div class="9"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".99" "flash-word"&gt;&gt;&lt;&lt;replace ".9"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;if(DIF)&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;if(effex(sysCon,sysCon &amp;#172; ( &amp;#172;areaGrab &amp;#187; time )))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              	&lt;blockquote class="leftdent"&gt;if(AUG[effex(CROSS,rule(short(&amp;#172;&amp;#172;&amp;#172;740.83 / DIF,&amp;#172;exInt / ( &amp;#172;1 &amp;#836; &amp;#172;auxAlpha )),&amp;#172;DIF,( 1 ) / AUG[CROSS &amp;#187; AUG[8][&amp;#172;CROSS]][( CROSS &amp;#172; &amp;#172;48 )]))][&amp;#172;DIF])&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
+              	&lt;blockquote class="leftdent"&gt;if(&lt;/blockquote&gt;
+                  &lt;blockquote class="moreleftdent"&gt;AUG[effex(CROSS,rule(short(&amp;#172;&amp;#172;&amp;#172;740.83 / DIF&lt;/blockquote&gt;
+                &lt;blockquote class="leftdent"&gt;&amp;#172;exInt / ( &amp;#172;1 &amp;#836; &amp;#172;auxAlpha )),&amp;#172;DIF,( 1 ) / AUG[CROSS &amp;#187; AUG[8][&amp;#172;CROSS]][( CROSS &amp;#172; &amp;#172;48 )]))][&amp;#172;DIF])&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;sysCon &amp;#836;&amp;#1472; auxAlpha&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt; else &lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 10"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".10"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 100"&gt;&lt;div class="10"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".100" "flash-word"&gt;&gt;&lt;&lt;replace ".10"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;CROSS;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;auxAlpha &amp;#187;&amp;#1472; &amp;#172;1 &amp;#836; &amp;#172;0.96&lt;/blockquote&gt;
               &lt;/div&gt;
@@ -4413,18 +4359,22 @@ blockquote .small {
             	&lt;blockquote class="leftdent"&gt;if(&amp;#172;92)&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-            &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 11"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".11"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+              &lt;div class="flash-word 111"&gt;&lt;div class="11"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".111" "flash-word"&gt;&gt;&lt;&lt;replace ".11"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
               	&lt;blockquote class="leftdent"&gt;if(( ( destroy(sysCon,effex(&amp;#172;areaGrab),DIF) ) ))&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
               	&lt;blockquote class="leftdent"&gt;&amp;#172;0.66&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
+            &lt;div class="flash-word 14"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;set $funct.checks.init +=1&gt;&gt;&lt;&lt;replace ".14"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
             	&lt;blockquote class="leftdent"&gt;relDamGet &amp;#836;&amp;#1472; &amp;#172;&amp;#172;&amp;#172;15 &amp;#187; rule(53,CROSS,&amp;#172;&amp;#172;0.1)&lt;/blockquote&gt;
+              &lt;blockquote class="leftdent"&gt;re/claim dragInt[fileSize-1] : &lt;span class="small"&gt;I was tinkering around the ship a bit.&lt;/span&gt;&lt;/blockquote&gt;
+              &lt;blockquote class="leftdent"&gt;re/claim x////9 : &lt;span class="small"&gt;A little project&lt;/span&gt;&lt;/blockquote&gt;
+              &lt;blockquote class="leftdent"&gt;re/claim IXIXIXIX : &lt;span class="small"&gt;Maybe something will come of it.&lt;/span&gt;&lt;/blockquote&gt;
+            &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
             &lt;blockquote&gt;justify effex()&lt;strong&gt;&amp;#838;&lt;/strong&gt;&lt;/blockquote&gt;
-              &lt;div class="flash-word 12"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;replace ".12"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-            	  &lt;blockquote class="leftdent"&gt;notStable &amp;#172;&amp;#1472; ( &amp;#172;0.22 )&lt;/blockquote&gt;
+              &lt;div class="flash-word 122"&gt;&lt;div class="12"&gt;&lt;&lt;button "-"&gt;&gt;&lt;&lt;removeclass ".122" "flash-word"&gt;&gt;&lt;&lt;replace ".12"&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+            	  &lt;blockquote class="leftdent"&gt;bringSys  &amp;#172;&amp;#1472; ( &amp;#172;0.22 )&lt;/blockquote&gt;
               &lt;/div&gt;
             &lt;blockquote&gt;&lt;strong&gt;&amp;#826;&lt;/strong&gt;&lt;/blockquote&gt;
           &lt;/div&gt;
@@ -4689,7 +4639,7 @@ blockquote .small {
             &lt;&lt;/button&gt;&gt;&lt;/span&gt;
             &lt;span class="red"&gt;&lt;&lt;button "OVERRIDE"&gt;&gt;
               &lt;&lt;set $damage -= 22&gt;&gt;
-              &lt;&lt;set $battery -= 7&gt;&gt;
+              &lt;&lt;set $battery -= 4&gt;&gt;
               &lt;&lt;set $alert.his.delete("Photovoltaic unit")&gt;&gt;
               &lt;&lt;set $change.damage = true&gt;&gt;
               &lt;&lt;set $change.battery = true&gt;&gt;
@@ -4780,6 +4730,9 @@ blockquote .small {
             &lt;&lt;/replace&gt;&gt;
           &lt;&lt;/timed&gt;&gt;
         &lt;&lt;else&gt;&gt;
+          $alert.his.length
+          &lt;&lt;print $alert.his&gt;&gt;
+          &lt;&lt;print $alert.frag&gt;&gt;
           &lt;&lt;set $alert.hide = true&gt;&gt;
           &lt;&lt;set $alert.visible = false&gt;&gt;
           &lt;&lt;set $change.alert = true&gt;&gt;

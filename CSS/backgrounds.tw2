@@ -41,16 +41,8 @@
 
 .ship7handsopen {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
-	background-size: cover;
   background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-	        animation: move-hands 8s alternate both infinite;
-}
-
-.ship7backgroundsplitopenhands {
-  background: url(images/hands/open_left.png) no-repeat, url(images/hands/open_right.png) no-repeat, url(images/o_dam.png) no-repeat, url(images/ship_finals/ship_final.png) no-repeat;
-  background-position: left bottom, right bottom, 150% 50%, -150% 50%;
-  background-size: 70%, 70%, cover, cover;
+	animation: move-hands 8s alternate both infinite;
 }
 
 .ship7aux {
@@ -60,10 +52,8 @@
 
 .ship7hatch {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
-	background-size: cover;
   background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-	        animation: move-hands 8s alternate both infinite;
+	animation: move-hands-hatch 8s alternate both infinite;
 }
 
 #left-bg {
@@ -74,12 +64,9 @@
   height: 3000px;
   content: "";
   background-size: contain;
-  -webkit-animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
-          animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
+  animation: screen-stutter 136s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
 }
 
 #right-bg {
@@ -90,12 +77,9 @@
   right: 0px;
   height: 3000px;
   content: "";
-  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
-          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 
@@ -107,12 +91,9 @@
   right: 0px;
   height: 3000px;
   content: "";
-  -webkit-animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
-          animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+  animation: screen-stutter 108s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
   overflow-y: hidden;
-  -webkit-transform: translateY(-1900px);
-      -ms-transform: translateY(-1900px);
-          transform: translateY(-1900px);
+  transform: translateY(-1900px);
   border-right: 4px solid left;
 }
 
@@ -128,40 +109,248 @@
 
 .end1bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_1.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end1 8s alternate both infinite;
 }
 
 .end2bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_2.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end2 8s alternate both infinite;
 }
 
 .end3bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_3.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end3 8s alternate both infinite;
 }
 
 .end4bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end4 8s alternate both infinite;
 }
 
 .end5bg {
 	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-	background-size: cover;
 	background-size: 70%, 70%, cover;
-	-webkit-animation: move-hands 8s alternate both infinite;
-					animation: move-hands 8s alternate both infinite;
+	animation: move-hands-end5 8s alternate both infinite;
+}
+
+
+@keyframes move-hands {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+		background-image: url(images/hands/closed_left.png), url(images/hands/closed_right.png), url(images/ship_finals/ship_final.png);
+		background-size: 70%, 70%, cover;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+  }
+  60% {
+		background-image: url(images/hands/open_left.png), url(images/hands/open_right.png), url(images/ship_finals/ship_final.png);
+		background-size: 70%, 70%, cover;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-hatch {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/o_dam.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/hatch.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end1 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_1.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end2 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_2.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end3 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end4 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_4.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_3.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
+}
+
+@keyframes move-hands-end5 {
+  0% {
+    background-position: 0% 118%, 100% 117%, 0% 0%;
+  }
+  20% {
+    background-position: 0% 114%, 100% 113%, 0% 0%;
+  }
+  30% {
+    background-position: 0% 115%, 100% 114%, 0% 0%;
+  }
+  40% {
+    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+    background-position: 0% 112%, 100% 110%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  60% {
+		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/ship_finals/end_5.png) no-repeat;
+    background-position: 0% 109%, 100% 107%, 0% 0%;
+		background-size: 70%, 70%, cover;
+  }
+  70% {
+    background-position: 0% 110%, 100% 108%, 0% 0%;
+  }
+  95% {
+    background-position: 0% 104%, 100% 102%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 105%, 100% 103%, 0% 0%;
+  }
 }

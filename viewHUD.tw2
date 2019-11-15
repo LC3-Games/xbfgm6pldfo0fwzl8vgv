@@ -27,7 +27,12 @@
     <<if $damage <= 20>>
       <<goto "Game Over">>
     <<endif>>
-    Integrity: $damage%
+    Integrity: <span id="dam"><<print $damageFloat.toFixed(2)>></span>%
+    <<repeat 0.4s>>
+      <<set $damageFloat = randomFloat($damage-1.23, $damage)>>
+      <<replace "#dam">><<print $damageFloat.toFixed(2)>> <<print $alert.his>><</replace>>
+      <<set $damageFloat = $damage>>
+    <</repeat>>
   </div>
   </div>
 
@@ -106,7 +111,7 @@
 ::Battery [nobr]
   <div id="battcon">
   <div id="battery">
-    <<for _i to 0; _i < $battery; _i++>><div class="batteryLevel"></div><</for>>
+    <<for _i to 0; _i < $battery; _i++>><<if _i < $battery-1>><div class="batteryLevel"></div><<else>><div class="batteryLevel flicker"></div><<endif>><</for>>
   </div>
   </div>
 

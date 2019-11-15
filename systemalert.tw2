@@ -148,7 +148,7 @@
             <</button>></span>
             <span class="red"><<button "OVERRIDE">>
               <<set $damage -= 22>>
-              <<set $battery -= 7>>
+              <<set $battery -= 4>>
               <<set $alert.his.delete("Photovoltaic unit")>>
               <<set $change.damage = true>>
               <<set $change.battery = true>>
@@ -239,6 +239,9 @@
             <</replace>>
           <</timed>>
         <<else>>
+          $alert.his.length
+          <<print $alert.his>>
+          <<print $alert.frag>>
           <<set $alert.hide = true>>
           <<set $alert.visible = false>>
           <<set $change.alert = true>>

@@ -31,8 +31,11 @@
     cam : false,
     background : false,
   }>>
-  <<set $battery = 10>>
+  <<set $battery = 7>>
   <<set $damage = 100>>
+  <<set $damageFloat = $damage>>
+
+  <<set $damAnim = 1>>
 
   <<set $funct = {
     on : false,

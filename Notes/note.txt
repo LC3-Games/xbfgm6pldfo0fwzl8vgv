@@ -2,5 +2,6 @@ make hands clench and shake when you try to remove a bad part, or during some sy
 
 ALSO, nonsense code & its consequences
 
+have background flash to images of things that are not seen through ANY camera?
 
 https://www.cs.bgu.ac.il/~arielbar/sl/#/main
