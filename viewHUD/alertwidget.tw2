@@ -1,36 +1,41 @@
 ::ChangeAlert [widget]
   <<widget "changealert">><<silently>>
     <<repeat 0.2s>>
-      <<if $alert.worm == "done" & $alert.frag != "done">>
-        <<if $alert.frag == 0>>
-          <<set $alert.frag = 1>>
-          <<set $alert.his.push("frag")>>
-          <<set $alert.show = true>>
-        <<elseif $alert.frag == 2 && $cam.click >= 1>>
-          <<set $alert.frag = 3>>
-          <<set $alert.his.push("frag")>>
-          <<set $alert.show = true>>
-          <<set $change.alert = true>>
-        <<elseif $alert.frag == 4 && $cam.click >= 2>>
-          <<set $alert.frag = 5>>
-          <<set $alert.his.push("frag")>>
-          <<set $alert.show = true>>
-          <<set $change.alert = true>>
-        <<elseif $alert.frag == 6 && $funct.click >= 3>>
-          <<set $alert.frag = 7>>
-          <<set $alert.his.push("frag")>>
-          <<set $alert.show = true>>
-          <<set $change.alert = true>>
-        <<elseif $alert.frag == 8 && $comp.space <= 60>>
-          <<set $alert.frag = 9>>
-          <<set $alert.his.push("frag")>>
+      <<if passage() == "Escape Start">>
+        <<if $alert.worm == "done" & $alert.frag != "done">>
+          <<if $alert.frag == 0>>
+            <<set $alert.frag = 1>>
+            <<set $alert.his.push("frag")>>
+            <<set $alert.show = true>>
+          <<elseif $alert.frag == 2 && $cam.click >= 1>>
+            <<set $alert.frag = 3>>
+            <<set $alert.his.push("frag")>>
+            <<set $alert.show = true>>
+            <<set $change.alert = true>>
+          <<elseif $alert.frag == 4 && $cam.click >= 2>>
+            <<set $alert.frag = 5>>
+            <<set $alert.his.push("frag")>>
+            <<set $alert.show = true>>
+            <<set $change.alert = true>>
+          <<elseif $alert.frag == 6 && $funct.click >= 3>>
+            <<set $alert.frag = 7>>
+            <<set $alert.his.push("frag")>>
+            <<set $alert.show = true>>
+            <<set $change.alert = true>>
+          <<elseif $alert.frag == 8 && $comp.space <= 60>>
+            <<set $alert.frag = 9>>
+            <<set $alert.his.push("frag")>>
+            <<set $alert.show = true>>
+            <<set $change.alert = true>>
+          <<endif>>
+        <<endif>>
+
+        <<if $alert.his.includes("FAILED")>>
           <<set $alert.show = true>>
           <<set $change.alert = true>>
         <<endif>>
-      <<endif>>
 
-      <<if $change.alert == true>>
-        <<if passage() != "Ends">>
+        <<if $change.alert == true>>
           <<if $alert.show == true>>
             <<set $alert.show = false>>
             <<set $alert.visible = true>>
@@ -38,17 +43,39 @@
               <div id="systemAlert">
                 <h4>SYSTEM ALERT</h4>
                 <div id="syscon">
-                <<include "SysAlert">>
+                  <<include "SysAlert">>
                 </div>
               </div>
             <</replace>>
           <<else>>
             <<replace "#alertcon">>
+
+            <</replace>>
+          <<endif>>
+        <<endif>>
+
+      <<elseif passage() == "Ends">>
+        <<if $endnow == true>>
+          <<if $change.alert == true>>
+            <<if $alert.show == true>>
+              <<set $alert.show = false>>
+              <<set $alert.visible = true>>
+              <<replace "#alertcon">>
+                <div id="systemAlert">
+                  <h4>SYSTEM ALERT</h4>
+                  <div id="syscon">
+                    <<include "SysAlert">>
+                  </div>
+                </div>
+              <</replace>>
+            <<endif>>
+          <<elseif $ending == true>>
+            <<set $endnow = false>>
+            <<replace "#alertcon">>
             <</replace>>
           <<endif>>
         <<endif>>
       <<endif>>
-
       <<set $change.alert = false>>
     <</repeat>>
   <</silently>><</widget>>

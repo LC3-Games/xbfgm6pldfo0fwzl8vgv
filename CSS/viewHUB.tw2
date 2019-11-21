@@ -216,7 +216,7 @@
 #systemAlert button {
 	margin: auto 0;
 	display: inline-block;
-	width: 400px;
+	width: 500px;
 	animation: textShadow 1.6s infinite;
 }
 

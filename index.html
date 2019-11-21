@@ -1289,8 +1289,7 @@ br {
 }
 
 .fade-in-out {
-  -webkit-animation: fade-in-out 2s;
-          animation: fade-in-out 2s;
+  animation: fade-in-out 2s;
   position: fixed;
 }
 
@@ -1301,9 +1300,18 @@ br {
 }
 
 .fade-in-white {
-  -webkit-animation: fade-in-white 5s;
-          animation: fade-in-white 5s;
+  animation: fade-in-white 5s;
   position: fixed;
+}
+
+.endFade {
+  animation: end-fade 8s ease;
+  position: fixed;
+}
+
+@keyframes end-fade {
+  0% {background-color: black; opacity: 0}
+  100% {background-color: black; opacity: 1}
 }
 @keyframes cursor-anim {
   0%{
@@ -1663,7 +1671,7 @@ br {
 #systemAlert button {
 	margin: auto 0;
 	display: inline-block;
-	width: 400px;
+	width: 500px;
 	animation: textShadow 1.6s infinite;
 }
 
@@ -2150,12 +2158,6 @@ blockquote .small {
 	animation: move-hands-end4 8s alternate both infinite;
 }
 
-.end5bg {
-	background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-	background-size: 70%, 70%, cover;
-	animation: move-hands-end5 8s alternate both infinite;
-}
-
 
 @keyframes move-hands {
   0% {
@@ -2389,47 +2391,6 @@ blockquote .small {
 	}
   60% {
 		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_4.png) no-repeat;
-		background-size: 70%, 70%, cover;
-    background-position: 0% 109%, 100% 107%, 0% 0%;
-  }
-  70% {
-    background-position: 0% 110%, 100% 108%, 0% 0%;
-  }
-  95% {
-    background-position: 0% 104%, 100% 102%, 0% 0%;
-  }
-  100% {
-    background-position: 0% 105%, 100% 103%, 0% 0%;
-  }
-}
-
-@keyframes move-hands-end5 {
-  0% {
-    background-position: 0% 118%, 100% 117%, 0% 0%;
-  }
-  20% {
-    background-position: 0% 114%, 100% 113%, 0% 0%;
-  }
-  30% {
-    background-position: 0% 115%, 100% 114%, 0% 0%;
-  }
-	39.9% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-    background-position: 0% 112%, 100% 110%, 0% 0%;
-		background-size: 70%, 70%, cover;
-	}
-  40% {
-    background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-    background-position: 0% 112%, 100% 110%, 0% 0%;
-		background-size: 70%, 70%, cover;
-  }
-	59.9% {
-		background: url(images/hands/closed_left.png) left bottom no-repeat, url(images/hands/closed_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
-    background-position: 0% 112%, 100% 110%, 0% 0%;
-		background-size: 70%, 70%, cover;
-	}
-  60% {
-		background: url(images/hands/open_left.png) left bottom no-repeat, url(images/hands/open_right.png) right bottom no-repeat, url(images/endings/end_5.png) no-repeat;
 		background-size: 70%, 70%, cover;
     background-position: 0% 109%, 100% 107%, 0% 0%;
   }
@@ -3029,20 +2990,30 @@ blockquote .small {
         &lt;&lt;typewriter "&gt;HUD systems booted"&gt;&gt;
           &lt;&lt;next&gt;&gt;
             &lt;&lt;goto "Escape Start"&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr start" position="">&lt;p&gt;Maybe next time&lt;/p&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Game Over" tags="nobr start" position="">&lt;p&gt;Maybe next time you'll make better decisions.&lt;/p&gt;
+
+  &lt;p&gt;Maybe that was just home to you.&lt;/p&gt;
 
   &lt;&lt;timed 2s&gt;&gt;
-  &lt;p&gt;&lt;&lt;button "Try again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;&lt;button "Try again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
   &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Ends" tags="nobr" position="">&lt;&lt;timed 5s&gt;&gt;
-  &lt;&lt;removeclass ".container"&gt;&gt;
+    &lt;&lt;removeclass ".container"&gt;&gt;
+      &lt;&lt;next 4s&gt;&gt;
+        &lt;&lt;set $endnow = true&gt;&gt;
+        &lt;&lt;set $alert.show = true&gt;&gt;
+        &lt;&lt;set $change.alert = true&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
   &lt;div class="fade-in-white container"&gt;&lt;/div&gt;
 
 
-  &lt;&lt;include "ViewHUD"&gt;&gt;
-  &lt;p&gt;thanks 4 playing&lt;/p&gt;
 
-  [[credits|Credits]]</tw-passagedata><tw-passagedata pid="36" name="Credits" tags="nobr credits crt" position="">&lt;&lt;include "BackgroundShit"&gt;&gt;
+
+  &lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="EndFade" tags="nobr" position="">&lt;script&gt;
+    $(".passage").prepend("&lt;div class='endFade container'&gt;&lt;/div&gt;");
+  &lt;/script&gt;
+  &lt;&lt;timed 10s&gt;&gt;
+    &lt;&lt;goto "Credits"&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="Credits" tags="nobr credits crt" position="">&lt;&lt;include "BackgroundShit"&gt;&gt;
   &lt;div class="end-container"&gt;
     &lt;div class="end-header"&gt;Credits&lt;/div&gt;
     &lt;p&gt;This game was written and created by Leah Case (https://koolkandy.itch.io/ https://twitter.com/leahthecase ) and Penelope Evans (https://twitter.com/olbeyblade_jpeg https://wonderbreath.itch.io/ ).&lt;/p&gt;
@@ -3050,7 +3021,7 @@ blockquote .small {
     &lt;p&gt;Art is by Penelope Evans and Allison Lownie (Find her at: https://twitter.com/alowknees https://lowknees.tumblr.com/ ), or was used under a CC0 license. All audio is used under a CC0 license.&lt;/p&gt;
 
     &lt;p&gt;&lt;&lt;button "Play again"&gt;&gt;&lt;&lt;run UI.restart()&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="PassageDone" tags="" position="">&lt;&lt;if passage() == "ShapeChoice"&gt;&gt;
     &lt;&lt;script&gt;&gt;
 
       var classes = ["shape-anim-1", "shape-anim-2", "shape-anim-3", "shape-anim-4", "shape-anim-5", "shape-anim-6", "shape-anim-7", "shape-anim-8", "shape-anim-9", "shape-anim-10", "shape-anim-11", "shape-anim-12"];
@@ -3160,7 +3131,7 @@ blockquote .small {
         $(".passage").addClass("corpse");
       &lt;&lt;/script&gt;&gt;
     &lt;&lt;endif&gt;&gt;
-  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
+  &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="Typewriterfast" tags="widget" position="">&lt;&lt;widget typewriter&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -3181,7 +3152,7 @@ blockquote .small {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Typewriterslow" tags="widget" position="">&lt;&lt;widget typewriterslow&gt;&gt;
     &lt;!-- Create a SPAN with an ID --&gt;
   &lt;span id="typewriter"&gt;&lt;/span&gt;
     &lt;!-- In SugarCube, arrays start at 0 --&gt;
@@ -3201,7 +3172,7 @@ blockquote .small {
       &lt;&lt;/script&gt;&gt;
       &lt;&lt;/if&gt;&gt;
    &lt;&lt;/repeat&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="BigZalgo" tags="nobr" position="">&lt;p&gt;
     &amp;#97;&amp;#863;&amp;#795;&amp;#824;&amp;#822;&amp;#828;&amp;#846;&amp;#798;&amp;#857;&amp;#791;&amp;#851;&amp;#790;&amp;#857;&amp;#857;&amp;#792;&amp;#103;&amp;#823;&amp;#863;&amp;#824;&amp;#797;&amp;#806;&amp;#803;&amp;#828;&amp;#815;&amp;#797;&amp;#857;&amp;#828;&amp;#839;&amp;#101;&amp;#864;&amp;#807;&amp;#860;&amp;#833;&amp;#826;&amp;#852;&amp;#790;&amp;#817;&amp;#58;&amp;#860;&amp;#863;&amp;#790;&amp;#813;&amp;#817;&amp;#827;&amp;#798;&amp;#803;&amp;#837;&amp;#817;&amp;#817;&amp;#813;&amp;#790;&amp;#32;&amp;#863;&amp;#795;&amp;#866;&amp;#863;&amp;#852;&amp;#853;&amp;#800;&amp;#819;&amp;#827;&amp;#800;&amp;#50;&amp;#866;&amp;#832;&amp;#861;&amp;#833;&amp;#804;&amp;#846;&amp;#803;&amp;#813;&amp;#810;&amp;#853;&amp;#793;&amp;#800;&amp;#826;&amp;#793;&amp;#790;&amp;#851;&amp;#857;&amp;#816;&amp;#854;&amp;#792;&amp;#796;&amp;#52;&amp;#820;&amp;#832;&amp;#823;&amp;#821;&amp;#845;&amp;#812;&amp;#810;&amp;#816;&amp;#853;&amp;#813;&amp;#825;&amp;#837;&amp;#815;&amp;#814;&amp;#792;&amp;#846;&amp;#798;&amp;#841;&amp;#828;&amp;#817;
   &lt;/p&gt;
 
@@ -3223,7 +3194,7 @@ blockquote .small {
 
   &lt;p&gt;
     &amp;#110;&amp;#860;&amp;#863;&amp;#856;&amp;#845;&amp;#803;&amp;#809;&amp;#851;&amp;#825;&amp;#853;&amp;#111;&amp;#801;&amp;#823;&amp;#841;&amp;#805;&amp;#811;&amp;#798;&amp;#793;&amp;#804;&amp;#814;&amp;#817;&amp;#800;&amp;#851;&amp;#818;&amp;#854;&amp;#792;&amp;#841;&amp;#799;&amp;#811;&amp;#827;&amp;#799;&amp;#116;&amp;#863;&amp;#856;&amp;#799;&amp;#806;&amp;#827;&amp;#853;&amp;#798;&amp;#852;&amp;#817;&amp;#827;&amp;#797;&amp;#804;&amp;#846;&amp;#798;&amp;#809;&amp;#840;&amp;#803;&amp;#825;&amp;#851;&amp;#101;&amp;#863;&amp;#820;&amp;#797;&amp;#812;&amp;#812;&amp;#814;&amp;#858;&amp;#811;&amp;#817;&amp;#115;&amp;#821;&amp;#846;&amp;#818;&amp;#790;&amp;#825;&amp;#826;&amp;#816;&amp;#804;&amp;#804;&amp;#828;&amp;#846;&amp;#793;&amp;#827;&amp;#851;&amp;#805;&amp;#796;&amp;#803;&amp;#58;&amp;#1161;&amp;#833;&amp;#862;&amp;#847;&amp;#846;&amp;#809;&amp;#858;&amp;#828;&amp;#790;&amp;#813;&amp;#799;&amp;#851;&amp;#841;&amp;#805;&amp;#803;&amp;#790;&amp;#845;&amp;#797;&amp;#32;&amp;#1161;&amp;#862;&amp;#821;&amp;#1161;&amp;#824;&amp;#837;&amp;#826;&amp;#828;&amp;#805;&amp;#800;&amp;#797;&amp;#839;&amp;#845;&amp;#72;&amp;#863;&amp;#795;&amp;#821;&amp;#861;&amp;#826;&amp;#852;&amp;#841;&amp;#857;&amp;#811;&amp;#826;&amp;#803;&amp;#805;&amp;#810;&amp;#858;&amp;#810;&amp;#117;&amp;#821;&amp;#801;&amp;#832;&amp;#1161;&amp;#821;&amp;#793;&amp;#825;&amp;#851;&amp;#816;&amp;#790;&amp;#809;&amp;#857;&amp;#817;&amp;#791;&amp;#800;&amp;#818;&amp;#109;&amp;#861;&amp;#833;&amp;#862;&amp;#833;&amp;#839;&amp;#825;&amp;#857;&amp;#815;&amp;#803;&amp;#819;&amp;#857;&amp;#839;&amp;#805;&amp;#858;&amp;#852;&amp;#815;&amp;#805;&amp;#839;&amp;#803;&amp;#804;&amp;#97;&amp;#795;&amp;#801;&amp;#837;&amp;#814;&amp;#819;&amp;#819;&amp;#841;&amp;#791;&amp;#858;&amp;#810;&amp;#792;&amp;#790;&amp;#806;&amp;#110;&amp;#823;&amp;#807;&amp;#823;&amp;#865;&amp;#823;&amp;#813;&amp;#837;&amp;#827;&amp;#790;&amp;#115;&amp;#856;&amp;#822;&amp;#1161;&amp;#802;&amp;#863;&amp;#818;&amp;#800;&amp;#839;&amp;#806;&amp;#819;&amp;#818;&amp;#841;&amp;#825;&amp;#32;&amp;#824;&amp;#807;&amp;#847;&amp;#860;&amp;#793;&amp;#827;&amp;#851;&amp;#818;&amp;#805;&amp;#809;&amp;#40;&amp;#863;&amp;#856;&amp;#826;&amp;#815;&amp;#839;&amp;#814;&amp;#72;&amp;#860;&amp;#801;&amp;#807;&amp;#804;&amp;#813;&amp;#853;&amp;#790;&amp;#826;&amp;#840;&amp;#825;&amp;#796;&amp;#111;&amp;#823;&amp;#847;&amp;#847;&amp;#802;&amp;#810;&amp;#799;&amp;#793;&amp;#815;&amp;#790;&amp;#812;&amp;#857;&amp;#809;&amp;#840;&amp;#846;&amp;#853;&amp;#812;&amp;#825;&amp;#858;&amp;#845;&amp;#827;&amp;#799;&amp;#804;&amp;#854;&amp;#109;&amp;#823;&amp;#865;&amp;#811;&amp;#796;&amp;#858;&amp;#800;&amp;#811;&amp;#796;&amp;#810;&amp;#858;&amp;#852;&amp;#841;&amp;#828;&amp;#841;&amp;#817;&amp;#837;&amp;#111;&amp;#820;&amp;#802;&amp;#865;&amp;#801;&amp;#845;&amp;#851;&amp;#803;&amp;#827;&amp;#845;&amp;#826;&amp;#845;&amp;#799;&amp;#858;&amp;#853;&amp;#806;&amp;#828;&amp;#837;&amp;#800;&amp;#32;&amp;#801;&amp;#864;&amp;#798;&amp;#797;&amp;#792;&amp;#797;&amp;#814;&amp;#791;&amp;#792;&amp;#840;&amp;#828;&amp;#818;&amp;#797;&amp;#115;&amp;#821;&amp;#824;&amp;#847;&amp;#806;&amp;#806;&amp;#799;&amp;#840;&amp;#792;&amp;#816;&amp;#796;&amp;#825;&amp;#825;&amp;#809;&amp;#804;&amp;#810;&amp;#815;&amp;#853;&amp;#816;&amp;#97;&amp;#802;&amp;#833;&amp;#862;&amp;#866;&amp;#807;&amp;#792;&amp;#793;&amp;#814;&amp;#799;&amp;#796;&amp;#798;&amp;#813;&amp;#800;&amp;#818;&amp;#799;&amp;#852;&amp;#813;&amp;#845;&amp;#800;&amp;#804;&amp;#112;&amp;#824;&amp;#821;&amp;#1161;&amp;#807;&amp;#818;&amp;#857;&amp;#837;&amp;#841;&amp;#852;&amp;#854;&amp;#837;&amp;#817;&amp;#792;&amp;#805;&amp;#846;&amp;#800;&amp;#837;&amp;#825;&amp;#857;&amp;#815;&amp;#818;&amp;#105;&amp;#866;&amp;#820;&amp;#860;&amp;#789;&amp;#837;&amp;#819;&amp;#799;&amp;#825;&amp;#793;&amp;#857;&amp;#845;&amp;#796;&amp;#825;&amp;#101;&amp;#820;&amp;#863;&amp;#807;&amp;#846;&amp;#805;&amp;#797;&amp;#793;&amp;#819;&amp;#826;&amp;#857;&amp;#803;&amp;#827;&amp;#814;&amp;#814;&amp;#800;&amp;#790;&amp;#857;&amp;#813;&amp;#110;&amp;#863;&amp;#860;&amp;#833;&amp;#803;&amp;#818;&amp;#852;&amp;#792;&amp;#839;&amp;#827;&amp;#817;&amp;#797;&amp;#806;&amp;#815;&amp;#798;&amp;#809;&amp;#857;&amp;#800;&amp;#812;&amp;#115;&amp;#789;&amp;#802;&amp;#799;&amp;#806;&amp;#797;&amp;#790;&amp;#811;&amp;#827;&amp;#839;&amp;#41;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#792;&amp;#813;&amp;#857;&amp;#809;&amp;#32;&amp;#856;&amp;#802;&amp;#822;&amp;#805;&amp;#852;&amp;#816;&amp;#818;&amp;#793;&amp;#854;&amp;#809;&amp;#791;&amp;#817;&amp;#827;&amp;#792;&amp;#858;&amp;#857;&amp;#851;&amp;#97;&amp;#795;&amp;#863;&amp;#807;&amp;#817;&amp;#818;&amp;#826;&amp;#858;&amp;#846;&amp;#791;&amp;#845;&amp;#803;&amp;#796;&amp;#815;&amp;#825;&amp;#806;&amp;#812;&amp;#857;&amp;#828;&amp;#796;&amp;#806;&amp;#799;&amp;#792;&amp;#114;&amp;#860;&amp;#833;&amp;#866;&amp;#866;&amp;#795;&amp;#846;&amp;#851;&amp;#828;&amp;#827;&amp;#840;&amp;#810;&amp;#815;&amp;#858;&amp;#800;&amp;#828;&amp;#805;&amp;#814;&amp;#811;&amp;#101;&amp;#823;&amp;#796;&amp;#811;&amp;#841;&amp;#792;&amp;#858;&amp;#819;&amp;#846;&amp;#817;&amp;#828;&amp;#815;&amp;#827;&amp;#858;&amp;#846;&amp;#811;&amp;#793;&amp;#817;&amp;#32;&amp;#861;&amp;#866;&amp;#865;&amp;#812;&amp;#791;&amp;#798;&amp;#845;&amp;#791;&amp;#790;&amp;#857;&amp;#790;&amp;#804;&amp;#799;&amp;#825;&amp;#796;&amp;#857;&amp;#854;&amp;#800;&amp;#796;&amp;#810;&amp;#851;&amp;#846;&amp;#116;&amp;#801;&amp;#833;&amp;#812;&amp;#811;&amp;#810;&amp;#805;&amp;#804;&amp;#792;&amp;#810;&amp;#853;&amp;#804;&amp;#797;&amp;#841;&amp;#792;&amp;#846;&amp;#104;&amp;#856;&amp;#822;&amp;#791;&amp;#858;&amp;#827;&amp;#825;&amp;#827;&amp;#818;&amp;#101;&amp;#1161;&amp;#861;&amp;#789;&amp;#832;&amp;#821;&amp;#837;&amp;#826;&amp;#813;&amp;#841;&amp;#819;&amp;#851;&amp;#809;&amp;#803;&amp;#854;&amp;#793;&amp;#805;&amp;#854;&amp;#796;&amp;#809;&amp;#817;&amp;#810;&amp;#792;&amp;#805;&amp;#809;&amp;#32;&amp;#860;&amp;#847;&amp;#802;&amp;#839;&amp;#815;&amp;#839;&amp;#812;&amp;#812;&amp;#790;&amp;#814;&amp;#804;&amp;#791;&amp;#852;&amp;#809;&amp;#825;&amp;#825;&amp;#812;&amp;#819;&amp;#846;&amp;#825;&amp;#798;&amp;#825;&amp;#111;&amp;#822;&amp;#856;&amp;#790;&amp;#806;&amp;#803;&amp;#806;&amp;#812;&amp;#814;&amp;#803;&amp;#810;&amp;#793;&amp;#810;&amp;#817;&amp;#812;&amp;#814;&amp;#110;&amp;#822;&amp;#822;&amp;#805;&amp;#803;&amp;#797;&amp;#805;&amp;#798;&amp;#798;&amp;#815;&amp;#809;&amp;#851;&amp;#854;&amp;#827;&amp;#826;&amp;#857;&amp;#793;&amp;#796;&amp;#813;&amp;#851;&amp;#108;&amp;#864;&amp;#832;&amp;#823;&amp;#819;&amp;#799;&amp;#811;&amp;#826;&amp;#790;&amp;#846;&amp;#819;&amp;#121;&amp;#824;&amp;#863;&amp;#814;&amp;#791;&amp;#790;&amp;#798;&amp;#799;&amp;#810;&amp;#32;&amp;#801;&amp;#808;&amp;#811;&amp;#800;&amp;#852;&amp;#840;&amp;#797;&amp;#837;&amp;#805;&amp;#814;&amp;#814;&amp;#791;&amp;#809;&amp;#814;&amp;#809;&amp;#803;&amp;#101;&amp;#824;&amp;#860;&amp;#865;&amp;#808;&amp;#812;&amp;#841;&amp;#798;&amp;#841;&amp;#853;&amp;#816;&amp;#826;&amp;#854;&amp;#799;&amp;#803;&amp;#804;&amp;#851;&amp;#793;&amp;#804;&amp;#854;&amp;#815;&amp;#812;&amp;#796;&amp;#120;&amp;#802;&amp;#796;&amp;#841;&amp;#828;&amp;#846;&amp;#813;&amp;#793;&amp;#841;&amp;#116;&amp;#861;&amp;#795;&amp;#840;&amp;#805;&amp;#828;&amp;#798;&amp;#845;&amp;#796;&amp;#818;&amp;#97;&amp;#789;&amp;#821;&amp;#802;&amp;#832;&amp;#833;&amp;#851;&amp;#805;&amp;#791;&amp;#845;&amp;#793;&amp;#839;&amp;#800;&amp;#840;&amp;#110;&amp;#821;&amp;#795;&amp;#832;&amp;#862;&amp;#807;&amp;#854;&amp;#813;&amp;#805;&amp;#828;&amp;#811;&amp;#810;&amp;#814;&amp;#816;&amp;#804;&amp;#837;&amp;#797;&amp;#805;&amp;#857;&amp;#116;&amp;#820;&amp;#863;&amp;#801;&amp;#856;&amp;#864;&amp;#792;&amp;#811;&amp;#805;&amp;#857;&amp;#857;&amp;#803;&amp;#792;&amp;#798;&amp;#840;&amp;#809;&amp;#809;&amp;#825;&amp;#32;&amp;#808;&amp;#824;&amp;#832;&amp;#862;&amp;#832;&amp;#796;&amp;#811;&amp;#809;&amp;#858;&amp;#805;&amp;#798;&amp;#805;&amp;#819;&amp;#800;&amp;#839;&amp;#109;&amp;#847;&amp;#821;&amp;#862;&amp;#845;&amp;#816;&amp;#812;&amp;#798;&amp;#798;&amp;#826;&amp;#792;&amp;#837;&amp;#841;&amp;#101;&amp;#862;&amp;#856;&amp;#799;&amp;#796;&amp;#816;&amp;#857;&amp;#793;&amp;#828;&amp;#846;&amp;#818;&amp;#791;&amp;#792;&amp;#809;&amp;#827;&amp;#817;&amp;#800;&amp;#800;&amp;#851;&amp;#109;&amp;#822;&amp;#822;&amp;#1161;&amp;#808;&amp;#833;&amp;#825;&amp;#806;&amp;#803;&amp;#851;&amp;#800;&amp;#853;&amp;#811;&amp;#800;&amp;#815;&amp;#790;&amp;#797;&amp;#840;&amp;#98;&amp;#833;&amp;#856;&amp;#854;&amp;#811;&amp;#815;&amp;#851;&amp;#827;&amp;#841;&amp;#799;&amp;#791;&amp;#810;&amp;#799;&amp;#797;&amp;#841;&amp;#858;&amp;#837;&amp;#101;&amp;#795;&amp;#833;&amp;#862;&amp;#790;&amp;#837;&amp;#792;&amp;#846;&amp;#853;&amp;#804;&amp;#804;&amp;#792;&amp;#837;&amp;#114;&amp;#833;&amp;#841;&amp;#840;&amp;#798;&amp;#816;&amp;#809;&amp;#812;&amp;#809;&amp;#828;&amp;#792;&amp;#840;&amp;#819;&amp;#846;&amp;#115;&amp;#821;&amp;#847;&amp;#825;&amp;#797;&amp;#809;&amp;#851;&amp;#818;&amp;#825;&amp;#845;&amp;#857;&amp;#32;&amp;#820;&amp;#861;&amp;#789;&amp;#837;&amp;#790;&amp;#846;&amp;#809;&amp;#851;&amp;#791;&amp;#845;&amp;#858;&amp;#827;&amp;#111;&amp;#824;&amp;#807;&amp;#862;&amp;#795;&amp;#823;&amp;#797;&amp;#815;&amp;#819;&amp;#837;&amp;#840;&amp;#818;&amp;#803;&amp;#858;&amp;#811;&amp;#852;&amp;#851;&amp;#798;&amp;#840;&amp;#102;&amp;#820;&amp;#847;&amp;#823;&amp;#828;&amp;#803;&amp;#810;&amp;#796;&amp;#854;&amp;#816;&amp;#846;&amp;#811;&amp;#32;&amp;#862;&amp;#864;&amp;#856;&amp;#807;&amp;#802;&amp;#791;&amp;#853;&amp;#803;&amp;#813;&amp;#852;&amp;#851;&amp;#803;&amp;#790;&amp;#799;&amp;#116;&amp;#862;&amp;#863;&amp;#798;&amp;#826;&amp;#854;&amp;#858;&amp;#818;&amp;#797;&amp;#828;&amp;#811;&amp;#837;&amp;#817;&amp;#839;&amp;#817;&amp;#858;&amp;#104;&amp;#795;&amp;#865;&amp;#866;&amp;#833;&amp;#816;&amp;#814;&amp;#825;&amp;#817;&amp;#825;&amp;#101;&amp;#824;&amp;#824;&amp;#808;&amp;#865;&amp;#820;&amp;#799;&amp;#854;&amp;#828;&amp;#858;&amp;#814;&amp;#796;&amp;#792;&amp;#809;&amp;#845;&amp;#839;&amp;#806;&amp;#837;&amp;#32;&amp;#861;&amp;#789;&amp;#863;&amp;#825;&amp;#819;&amp;#793;&amp;#845;&amp;#811;&amp;#811;&amp;#800;&amp;#806;&amp;#852;&amp;#827;&amp;#804;&amp;#819;&amp;#825;&amp;#837;&amp;#115;&amp;#864;&amp;#823;&amp;#864;&amp;#832;&amp;#813;&amp;#852;&amp;#817;&amp;#826;&amp;#809;&amp;#806;&amp;#858;&amp;#810;&amp;#810;&amp;#816;&amp;#841;&amp;#854;&amp;#117;&amp;#795;&amp;#820;&amp;#832;&amp;#827;&amp;#846;&amp;#803;&amp;#839;&amp;#806;&amp;#797;&amp;#828;&amp;#798;&amp;#826;&amp;#837;&amp;#828;&amp;#813;&amp;#791;&amp;#857;&amp;#98;&amp;#821;&amp;#802;&amp;#806;&amp;#854;&amp;#798;&amp;#815;&amp;#854;&amp;#793;&amp;#815;&amp;#810;&amp;#854;&amp;#828;&amp;#790;&amp;#814;&amp;#818;&amp;#803;&amp;#851;&amp;#116;&amp;#802;&amp;#823;&amp;#802;&amp;#828;&amp;#839;&amp;#827;&amp;#845;&amp;#114;&amp;#823;&amp;#795;&amp;#862;&amp;#798;&amp;#799;&amp;#825;&amp;#796;&amp;#797;&amp;#811;&amp;#796;&amp;#791;&amp;#815;&amp;#810;&amp;#800;&amp;#828;&amp;#857;&amp;#825;&amp;#840;&amp;#812;&amp;#105;&amp;#866;&amp;#820;&amp;#822;&amp;#857;&amp;#840;&amp;#799;&amp;#841;&amp;#797;&amp;#803;&amp;#845;&amp;#817;&amp;#841;&amp;#828;&amp;#813;&amp;#810;&amp;#841;&amp;#798;&amp;#811;&amp;#800;&amp;#798;&amp;#841;&amp;#98;&amp;#866;&amp;#820;&amp;#811;&amp;#818;&amp;#817;&amp;#845;&amp;#839;&amp;#857;&amp;#854;&amp;#790;&amp;#839;&amp;#841;&amp;#803;&amp;#839;&amp;#845;&amp;#798;&amp;#846;&amp;#837;&amp;#841;&amp;#101;&amp;#861;&amp;#824;&amp;#824;&amp;#864;&amp;#864;&amp;#815;&amp;#845;&amp;#797;&amp;#857;&amp;#810;&amp;#840;&amp;#818;&amp;#797;&amp;#799;&amp;#799;&amp;#845;&amp;#826;&amp;#32;&amp;#795;&amp;#865;&amp;#803;&amp;#837;&amp;#806;&amp;#828;&amp;#810;&amp;#819;&amp;#72;&amp;#808;&amp;#863;&amp;#805;&amp;#812;&amp;#819;&amp;#809;&amp;#817;&amp;#817;&amp;#111;&amp;#866;&amp;#798;&amp;#798;&amp;#811;&amp;#825;&amp;#797;&amp;#814;&amp;#790;&amp;#851;&amp;#810;&amp;#791;&amp;#813;&amp;#109;&amp;#865;&amp;#802;&amp;#832;&amp;#853;&amp;#825;&amp;#800;&amp;#840;&amp;#818;&amp;#810;&amp;#818;&amp;#805;&amp;#793;&amp;#799;&amp;#815;&amp;#839;&amp;#839;&amp;#817;&amp;#105;&amp;#863;&amp;#818;&amp;#804;&amp;#816;&amp;#792;&amp;#813;&amp;#110;&amp;#789;&amp;#808;&amp;#1161;&amp;#864;&amp;#853;&amp;#854;&amp;#826;&amp;#819;&amp;#818;&amp;#814;&amp;#819;&amp;#793;&amp;#837;&amp;#814;&amp;#809;&amp;#105;&amp;#861;&amp;#858;&amp;#817;&amp;#804;&amp;#804;&amp;#857;&amp;#811;&amp;#791;&amp;#826;&amp;#110;&amp;#795;&amp;#789;&amp;#847;&amp;#821;&amp;#823;&amp;#796;&amp;#811;&amp;#827;&amp;#857;&amp;#803;&amp;#852;&amp;#852;&amp;#846;&amp;#825;&amp;#805;&amp;#825;&amp;#796;&amp;#797;&amp;#97;&amp;#822;&amp;#826;&amp;#800;&amp;#840;&amp;#806;&amp;#854;&amp;#798;&amp;#840;&amp;#815;&amp;#810;&amp;#799;&amp;#797;&amp;#809;&amp;#797;&amp;#857;&amp;#812;&amp;#857;&amp;#796;&amp;#818;&amp;#46;&amp;#824;&amp;#824;&amp;#861;&amp;#833;&amp;#862;&amp;#851;&amp;#846;&amp;#815;&amp;#792;&amp;#825;&amp;#791;&amp;#812;&amp;#853;&amp;#32;&amp;#847;&amp;#823;&amp;#832;&amp;#792;&amp;#840;&amp;#809;&amp;#810;&amp;#841;&amp;#806;&amp;#827;&amp;#852;&amp;#825;&amp;#84;&amp;#795;&amp;#864;&amp;#790;&amp;#800;&amp;#799;&amp;#854;&amp;#791;&amp;#804;&amp;#816;&amp;#853;&amp;#111;&amp;#1161;&amp;#865;&amp;#862;&amp;#823;&amp;#815;&amp;#797;&amp;#814;&amp;#800;&amp;#845;&amp;#804;&amp;#810;&amp;#103;&amp;#864;&amp;#862;&amp;#847;&amp;#799;&amp;#852;&amp;#827;&amp;#858;&amp;#791;&amp;#813;&amp;#815;&amp;#806;&amp;#101;&amp;#824;&amp;#822;&amp;#847;&amp;#866;&amp;#862;&amp;#811;&amp;#815;&amp;#815;&amp;#826;&amp;#790;&amp;#810;&amp;#816;&amp;#813;&amp;#837;&amp;#792;&amp;#846;&amp;#828;&amp;#805;&amp;#116;&amp;#822;&amp;#863;&amp;#795;&amp;#803;&amp;#796;&amp;#845;&amp;#803;&amp;#840;&amp;#800;&amp;#846;&amp;#852;&amp;#803;&amp;#817;&amp;#840;&amp;#828;&amp;#806;&amp;#796;&amp;#796;&amp;#810;&amp;#845;&amp;#828;&amp;#104;&amp;#824;&amp;#863;&amp;#789;&amp;#845;&amp;#793;&amp;#813;&amp;#806;&amp;#846;&amp;#839;&amp;#826;&amp;#837;&amp;#826;&amp;#813;&amp;#817;&amp;#828;&amp;#846;&amp;#827;&amp;#804;&amp;#846;&amp;#101;&amp;#833;&amp;#824;&amp;#861;&amp;#817;&amp;#817;&amp;#837;&amp;#845;&amp;#796;&amp;#853;&amp;#817;&amp;#792;&amp;#827;&amp;#810;&amp;#825;&amp;#797;&amp;#114;&amp;#789;&amp;#860;&amp;#817;&amp;#813;&amp;#853;&amp;#814;&amp;#857;&amp;#816;&amp;#804;&amp;#793;&amp;#817;&amp;#846;&amp;#803;&amp;#809;&amp;#797;&amp;#818;&amp;#812;&amp;#851;&amp;#845;&amp;#32;&amp;#833;&amp;#862;&amp;#813;&amp;#841;&amp;#806;&amp;#803;&amp;#818;&amp;#791;&amp;#809;&amp;#857;&amp;#791;&amp;#814;&amp;#792;&amp;#800;&amp;#840;&amp;#857;&amp;#852;&amp;#839;&amp;#819;&amp;#796;&amp;#119;&amp;#861;&amp;#801;&amp;#860;&amp;#811;&amp;#796;&amp;#846;&amp;#796;&amp;#827;&amp;#818;&amp;#816;&amp;#790;&amp;#837;&amp;#837;&amp;#828;&amp;#839;&amp;#854;&amp;#826;&amp;#798;&amp;#837;&amp;#806;&amp;#105;&amp;#832;&amp;#833;&amp;#832;&amp;#818;&amp;#804;&amp;#852;&amp;#809;&amp;#805;&amp;#791;&amp;#817;&amp;#815;&amp;#800;&amp;#809;&amp;#825;&amp;#811;&amp;#828;&amp;#810;&amp;#845;&amp;#810;&amp;#796;&amp;#840;&amp;#827;&amp;#116;&amp;#801;&amp;#832;&amp;#866;&amp;#861;&amp;#792;&amp;#806;&amp;#793;&amp;#798;&amp;#793;&amp;#851;&amp;#804;&amp;#791;&amp;#826;&amp;#826;&amp;#815;&amp;#837;&amp;#827;&amp;#858;&amp;#851;&amp;#104;&amp;#847;&amp;#861;&amp;#865;&amp;#796;&amp;#827;&amp;#793;&amp;#815;&amp;#32;&amp;#821;&amp;#863;&amp;#824;&amp;#808;&amp;#824;&amp;#810;&amp;#814;&amp;#809;&amp;#793;&amp;#814;&amp;#99;&amp;#847;&amp;#861;&amp;#863;&amp;#807;&amp;#826;&amp;#790;&amp;#851;&amp;#806;&amp;#104;&amp;#862;&amp;#801;&amp;#857;&amp;#852;&amp;#839;&amp;#845;&amp;#815;&amp;#853;&amp;#798;&amp;#852;&amp;#841;&amp;#819;&amp;#857;&amp;#803;&amp;#840;&amp;#812;&amp;#105;&amp;#823;&amp;#862;&amp;#801;&amp;#847;&amp;#825;&amp;#815;&amp;#803;&amp;#810;&amp;#839;&amp;#851;&amp;#800;&amp;#804;&amp;#805;&amp;#790;&amp;#804;&amp;#852;&amp;#826;&amp;#109;&amp;#820;&amp;#822;&amp;#866;&amp;#823;&amp;#813;&amp;#841;&amp;#827;&amp;#803;&amp;#815;&amp;#837;&amp;#816;&amp;#826;&amp;#853;&amp;#841;&amp;#798;&amp;#805;&amp;#792;&amp;#818;&amp;#796;&amp;#810;&amp;#817;&amp;#790;&amp;#814;&amp;#112;&amp;#801;&amp;#863;&amp;#812;&amp;#819;&amp;#841;&amp;#806;&amp;#812;&amp;#812;&amp;#793;&amp;#858;&amp;#846;&amp;#814;&amp;#846;&amp;#826;&amp;#815;&amp;#858;&amp;#845;&amp;#839;&amp;#841;&amp;#810;&amp;#97;&amp;#824;&amp;#795;&amp;#801;&amp;#856;&amp;#805;&amp;#819;&amp;#818;&amp;#813;&amp;#805;&amp;#798;&amp;#828;&amp;#840;&amp;#816;&amp;#841;&amp;#840;&amp;#853;&amp;#840;&amp;#793;&amp;#817;&amp;#818;&amp;#813;&amp;#110;&amp;#1161;&amp;#807;&amp;#852;&amp;#806;&amp;#857;&amp;#790;&amp;#796;&amp;#828;&amp;#122;&amp;#865;&amp;#856;&amp;#822;&amp;#802;&amp;#790;&amp;#797;&amp;#851;&amp;#857;&amp;#815;&amp;#854;&amp;#854;&amp;#101;&amp;#1161;&amp;#862;&amp;#802;&amp;#802;&amp;#798;&amp;#810;&amp;#799;&amp;#793;&amp;#852;&amp;#840;&amp;#852;&amp;#852;&amp;#841;&amp;#809;&amp;#101;&amp;#824;&amp;#1161;&amp;#821;&amp;#823;&amp;#804;&amp;#817;&amp;#800;&amp;#845;&amp;#806;&amp;#854;&amp;#845;&amp;#797;&amp;#115;&amp;#861;&amp;#866;&amp;#809;&amp;#846;&amp;#798;&amp;#805;&amp;#827;&amp;#816;&amp;#806;&amp;#818;&amp;#44;&amp;#866;&amp;#822;&amp;#821;&amp;#863;&amp;#837;&amp;#813;&amp;#806;&amp;#796;&amp;#845;&amp;#857;&amp;#852;&amp;#799;&amp;#32;&amp;#832;&amp;#824;&amp;#789;&amp;#866;&amp;#856;&amp;#817;&amp;#811;&amp;#803;&amp;#819;&amp;#817;&amp;#804;&amp;#811;&amp;#828;&amp;#828;&amp;#791;&amp;#846;&amp;#798;&amp;#851;&amp;#812;&amp;#814;&amp;#791;&amp;#796;&amp;#813;&amp;#806;&amp;#103;&amp;#832;&amp;#832;&amp;#863;&amp;#813;&amp;#837;&amp;#818;&amp;#839;&amp;#791;&amp;#840;&amp;#811;&amp;#827;&amp;#825;&amp;#837;&amp;#827;&amp;#809;&amp;#828;&amp;#806;&amp;#826;&amp;#809;&amp;#813;&amp;#814;&amp;#805;&amp;#111;&amp;#833;&amp;#802;&amp;#864;&amp;#823;&amp;#799;&amp;#791;&amp;#857;&amp;#814;&amp;#818;&amp;#812;&amp;#797;&amp;#828;&amp;#114;&amp;#801;&amp;#800;&amp;#796;&amp;#803;&amp;#803;&amp;#790;&amp;#826;&amp;#816;&amp;#819;&amp;#846;&amp;#805;&amp;#796;&amp;#837;&amp;#815;&amp;#105;&amp;#820;&amp;#789;&amp;#862;&amp;#861;&amp;#821;&amp;#841;&amp;#793;&amp;#819;&amp;#793;&amp;#799;&amp;#798;&amp;#845;&amp;#846;&amp;#815;&amp;#811;&amp;#108;&amp;#861;&amp;#861;&amp;#802;&amp;#789;&amp;#796;&amp;#791;&amp;#841;&amp;#846;&amp;#810;&amp;#811;&amp;#815;&amp;#108;&amp;#862;&amp;#823;&amp;#820;&amp;#861;&amp;#815;&amp;#790;&amp;#854;&amp;#827;&amp;#845;&amp;#845;&amp;#845;&amp;#815;&amp;#97;&amp;#1161;&amp;#808;&amp;#833;&amp;#847;&amp;#837;&amp;#799;&amp;#845;&amp;#810;&amp;#115;&amp;#865;&amp;#808;&amp;#862;&amp;#795;&amp;#796;&amp;#803;&amp;#790;&amp;#804;&amp;#826;&amp;#44;&amp;#866;&amp;#847;&amp;#847;&amp;#820;&amp;#827;&amp;#809;&amp;#845;&amp;#819;&amp;#812;&amp;#803;&amp;#839;&amp;#854;&amp;#852;&amp;#809;&amp;#819;&amp;#854;&amp;#797;&amp;#799;&amp;#805;&amp;#851;&amp;#814;&amp;#32;&amp;#856;&amp;#860;&amp;#808;&amp;#814;&amp;#800;&amp;#839;&amp;#796;&amp;#853;&amp;#805;&amp;#817;&amp;#815;&amp;#846;&amp;#858;&amp;#858;&amp;#799;&amp;#810;&amp;#840;&amp;#797;&amp;#790;&amp;#803;&amp;#799;&amp;#857;&amp;#97;&amp;#789;&amp;#847;&amp;#811;&amp;#799;&amp;#799;&amp;#790;&amp;#806;&amp;#110;&amp;#821;&amp;#822;&amp;#821;&amp;#856;&amp;#798;&amp;#841;&amp;#837;&amp;#857;&amp;#800;&amp;#812;&amp;#813;&amp;#809;&amp;#841;&amp;#797;&amp;#854;&amp;#837;&amp;#819;&amp;#853;&amp;#854;&amp;#791;&amp;#100;&amp;#789;&amp;#808;&amp;#866;&amp;#853;&amp;#804;&amp;#814;&amp;#854;&amp;#852;&amp;#826;&amp;#799;&amp;#796;&amp;#793;&amp;#852;&amp;#845;&amp;#793;&amp;#32;&amp;#863;&amp;#860;&amp;#802;&amp;#860;&amp;#865;&amp;#790;&amp;#804;&amp;#852;&amp;#790;&amp;#791;&amp;#813;&amp;#814;&amp;#111;&amp;#864;&amp;#866;&amp;#1161;&amp;#851;&amp;#811;&amp;#810;&amp;#806;&amp;#827;&amp;#839;&amp;#793;&amp;#790;&amp;#793;&amp;#793;&amp;#837;&amp;#845;&amp;#792;&amp;#818;&amp;#805;&amp;#114;&amp;#807;&amp;#833;&amp;#821;&amp;#797;&amp;#810;&amp;#800;&amp;#811;&amp;#845;&amp;#839;&amp;#97;&amp;#862;&amp;#802;&amp;#795;&amp;#816;&amp;#841;&amp;#851;&amp;#805;&amp;#817;&amp;#810;&amp;#817;&amp;#110;&amp;#807;&amp;#866;&amp;#802;&amp;#808;&amp;#845;&amp;#797;&amp;#816;&amp;#819;&amp;#796;&amp;#810;&amp;#793;&amp;#103;&amp;#808;&amp;#801;&amp;#817;&amp;#819;&amp;#816;&amp;#792;&amp;#817;&amp;#803;&amp;#798;&amp;#846;&amp;#857;&amp;#825;&amp;#803;&amp;#814;&amp;#827;&amp;#845;&amp;#117;&amp;#861;&amp;#795;&amp;#803;&amp;#852;&amp;#819;&amp;#851;&amp;#852;&amp;#816;&amp;#819;&amp;#799;&amp;#804;&amp;#857;&amp;#804;&amp;#819;&amp;#828;&amp;#816;&amp;#116;&amp;#821;&amp;#856;&amp;#797;&amp;#798;&amp;#845;&amp;#797;&amp;#837;&amp;#799;&amp;#799;&amp;#858;&amp;#97;&amp;#866;&amp;#864;&amp;#823;&amp;#821;&amp;#810;&amp;#793;&amp;#800;&amp;#799;&amp;#791;&amp;#841;&amp;#819;&amp;#804;&amp;#793;&amp;#803;&amp;#826;&amp;#851;&amp;#839;&amp;#845;&amp;#827;&amp;#804;&amp;#818;&amp;#828;&amp;#110;&amp;#795;&amp;#802;&amp;#823;&amp;#795;&amp;#798;&amp;#840;&amp;#825;&amp;#806;&amp;#828;&amp;#857;&amp;#805;&amp;#817;&amp;#797;&amp;#813;&amp;#796;&amp;#837;&amp;#851;&amp;#812;&amp;#799;&amp;#115;&amp;#821;&amp;#801;&amp;#820;&amp;#801;&amp;#856;&amp;#791;&amp;#804;&amp;#854;&amp;#796;&amp;#815;&amp;#813;&amp;#818;&amp;#816;&amp;#841;&amp;#791;&amp;#800;&amp;#44;&amp;#820;&amp;#808;&amp;#1161;&amp;#820;&amp;#789;&amp;#799;&amp;#799;&amp;#806;&amp;#809;&amp;#792;&amp;#816;&amp;#815;&amp;#819;&amp;#804;&amp;#32;&amp;#856;&amp;#832;&amp;#866;&amp;#789;&amp;#811;&amp;#816;&amp;#818;&amp;#813;&amp;#804;&amp;#803;&amp;#845;&amp;#840;&amp;#798;&amp;#814;&amp;#817;&amp;#116;&amp;#789;&amp;#820;&amp;#862;&amp;#865;&amp;#800;&amp;#811;&amp;#800;&amp;#837;&amp;#839;&amp;#796;&amp;#840;&amp;#799;&amp;#819;&amp;#810;&amp;#806;&amp;#799;&amp;#826;&amp;#818;&amp;#806;&amp;#104;&amp;#1161;&amp;#832;&amp;#789;&amp;#862;&amp;#840;&amp;#846;&amp;#799;&amp;#828;&amp;#853;&amp;#837;&amp;#819;&amp;#791;&amp;#851;&amp;#799;&amp;#809;&amp;#792;&amp;#101;&amp;#824;&amp;#846;&amp;#809;&amp;#793;&amp;#793;&amp;#845;&amp;#792;&amp;#819;&amp;#797;&amp;#854;&amp;#798;&amp;#818;&amp;#815;&amp;#819;&amp;#121;&amp;#863;&amp;#795;&amp;#813;&amp;#811;&amp;#810;&amp;#825;&amp;#819;&amp;#853;&amp;#817;&amp;#840;&amp;#841;&amp;#790;&amp;#857;&amp;#858;&amp;#846;&amp;#825;&amp;#811;&amp;#791;&amp;#809;&amp;#803;&amp;#32;&amp;#862;&amp;#860;&amp;#801;&amp;#864;&amp;#832;&amp;#797;&amp;#811;&amp;#805;&amp;#790;&amp;#811;&amp;#853;&amp;#854;&amp;#799;&amp;#799;&amp;#815;&amp;#97;&amp;#865;&amp;#860;&amp;#802;&amp;#847;&amp;#823;&amp;#793;&amp;#826;&amp;#816;&amp;#828;&amp;#806;&amp;#828;&amp;#841;&amp;#810;&amp;#805;&amp;#114;&amp;#807;&amp;#863;&amp;#832;&amp;#814;&amp;#854;&amp;#858;&amp;#854;&amp;#812;&amp;#812;&amp;#819;&amp;#815;&amp;#798;&amp;#840;&amp;#793;&amp;#852;&amp;#811;&amp;#840;&amp;#854;&amp;#792;&amp;#818;&amp;#101;&amp;#823;&amp;#795;&amp;#864;&amp;#805;&amp;#797;&amp;#852;&amp;#815;&amp;#827;&amp;#796;&amp;#797;&amp;#858;&amp;#853;&amp;#806;&amp;#851;&amp;#32;&amp;#1161;&amp;#860;&amp;#833;&amp;#821;&amp;#814;&amp;#804;&amp;#799;&amp;#810;&amp;#812;&amp;#797;&amp;#839;&amp;#806;&amp;#840;&amp;#857;&amp;#805;&amp;#839;&amp;#790;&amp;#858;&amp;#837;&amp;#858;&amp;#841;&amp;#826;&amp;#112;&amp;#802;&amp;#833;&amp;#819;&amp;#817;&amp;#811;&amp;#852;&amp;#799;&amp;#826;&amp;#857;&amp;#798;&amp;#851;&amp;#827;&amp;#803;&amp;#840;&amp;#814;&amp;#818;&amp;#857;&amp;#804;&amp;#803;&amp;#840;&amp;#97;&amp;#861;&amp;#864;&amp;#864;&amp;#847;&amp;#789;&amp;#818;&amp;#853;&amp;#839;&amp;#796;&amp;#854;&amp;#793;&amp;#818;&amp;#816;&amp;#839;&amp;#798;&amp;#825;&amp;#825;&amp;#841;&amp;#837;&amp;#852;&amp;#790;&amp;#845;&amp;#791;&amp;#114;&amp;#821;&amp;#807;&amp;#833;&amp;#793;&amp;#790;&amp;#851;&amp;#818;&amp;#800;&amp;#816;&amp;#815;&amp;#815;&amp;#854;&amp;#851;&amp;#813;&amp;#816;&amp;#803;&amp;#817;&amp;#803;&amp;#116;&amp;#864;&amp;#860;&amp;#800;&amp;#805;&amp;#817;&amp;#837;&amp;#854;&amp;#858;&amp;#790;&amp;#791;&amp;#858;&amp;#815;&amp;#837;&amp;#853;&amp;#858;&amp;#814;&amp;#839;&amp;#32;&amp;#802;&amp;#805;&amp;#840;&amp;#792;&amp;#826;&amp;#812;&amp;#858;&amp;#845;&amp;#790;&amp;#805;&amp;#111;&amp;#801;&amp;#1161;&amp;#856;&amp;#822;&amp;#837;&amp;#797;&amp;#837;&amp;#828;&amp;#803;&amp;#799;&amp;#800;&amp;#854;&amp;#815;&amp;#803;&amp;#819;&amp;#817;&amp;#811;&amp;#102;&amp;#861;&amp;#822;&amp;#819;&amp;#803;&amp;#852;&amp;#837;&amp;#825;&amp;#791;&amp;#815;&amp;#798;&amp;#803;&amp;#32;&amp;#822;&amp;#864;&amp;#861;&amp;#813;&amp;#804;&amp;#816;&amp;#813;&amp;#819;&amp;#811;&amp;#792;&amp;#806;&amp;#116;&amp;#807;&amp;#822;&amp;#865;&amp;#823;&amp;#841;&amp;#858;&amp;#798;&amp;#809;&amp;#837;&amp;#800;&amp;#845;&amp;#839;&amp;#796;&amp;#799;&amp;#858;&amp;#845;&amp;#813;&amp;#815;&amp;#839;&amp;#800;&amp;#837;&amp;#840;&amp;#818;&amp;#104;&amp;#1161;&amp;#795;&amp;#818;&amp;#858;&amp;#813;&amp;#792;&amp;#101;&amp;#847;&amp;#1161;&amp;#833;&amp;#817;&amp;#797;&amp;#853;&amp;#853;&amp;#796;&amp;#790;&amp;#804;&amp;#857;&amp;#857;&amp;#817;&amp;#853;&amp;#813;&amp;#853;&amp;#841;&amp;#827;&amp;#815;&amp;#852;&amp;#810;&amp;#32;&amp;#860;&amp;#793;&amp;#809;&amp;#845;&amp;#790;&amp;#816;&amp;#819;&amp;#812;&amp;#818;&amp;#799;&amp;#815;&amp;#102;&amp;#1161;&amp;#840;&amp;#800;&amp;#840;&amp;#815;&amp;#828;&amp;#819;&amp;#805;&amp;#811;&amp;#819;&amp;#97;&amp;#1161;&amp;#862;&amp;#807;&amp;#861;&amp;#846;&amp;#800;&amp;#839;&amp;#800;&amp;#852;&amp;#109;&amp;#862;&amp;#864;&amp;#828;&amp;#813;&amp;#846;&amp;#815;&amp;#852;&amp;#818;&amp;#804;&amp;#806;&amp;#796;&amp;#853;&amp;#811;&amp;#806;&amp;#814;&amp;#818;&amp;#796;&amp;#105;&amp;#865;&amp;#833;&amp;#802;&amp;#823;&amp;#833;&amp;#818;&amp;#852;&amp;#790;&amp;#845;&amp;#809;&amp;#852;&amp;#852;&amp;#812;&amp;#812;&amp;#798;&amp;#790;&amp;#840;&amp;#845;&amp;#806;&amp;#825;&amp;#813;&amp;#108;&amp;#865;&amp;#863;&amp;#821;&amp;#823;&amp;#795;&amp;#791;&amp;#837;&amp;#814;&amp;#812;&amp;#854;&amp;#815;&amp;#854;&amp;#121;&amp;#795;&amp;#807;&amp;#817;&amp;#799;&amp;#798;&amp;#796;&amp;#813;&amp;#791;&amp;#809;&amp;#815;&amp;#792;&amp;#819;&amp;#796;&amp;#839;&amp;#845;&amp;#812;&amp;#793;&amp;#806;&amp;#816;&amp;#32;&amp;#789;&amp;#789;&amp;#862;&amp;#793;&amp;#837;&amp;#798;&amp;#852;&amp;#825;&amp;#72;&amp;#860;&amp;#801;&amp;#861;&amp;#804;&amp;#857;&amp;#812;&amp;#800;&amp;#804;&amp;#803;&amp;#798;&amp;#853;&amp;#840;&amp;#799;&amp;#812;&amp;#816;&amp;#111;&amp;#863;&amp;#860;&amp;#795;&amp;#818;&amp;#797;&amp;#790;&amp;#796;&amp;#826;&amp;#840;&amp;#806;&amp;#827;&amp;#793;&amp;#804;&amp;#818;&amp;#858;&amp;#804;&amp;#798;&amp;#814;&amp;#817;&amp;#825;&amp;#826;&amp;#109;&amp;#824;&amp;#1161;&amp;#796;&amp;#792;&amp;#845;&amp;#837;&amp;#812;&amp;#797;&amp;#797;&amp;#828;&amp;#851;&amp;#790;&amp;#105;&amp;#860;&amp;#824;&amp;#801;&amp;#822;&amp;#828;&amp;#799;&amp;#841;&amp;#790;&amp;#858;&amp;#804;&amp;#797;&amp;#853;&amp;#805;&amp;#798;&amp;#815;&amp;#845;&amp;#852;&amp;#826;&amp;#110;&amp;#823;&amp;#866;&amp;#814;&amp;#803;&amp;#799;&amp;#800;&amp;#798;&amp;#796;&amp;#793;&amp;#815;&amp;#839;&amp;#825;&amp;#825;&amp;#811;&amp;#839;&amp;#813;&amp;#793;&amp;#828;&amp;#803;&amp;#858;&amp;#105;&amp;#808;&amp;#865;&amp;#810;&amp;#840;&amp;#818;&amp;#798;&amp;#813;&amp;#797;&amp;#806;&amp;#791;&amp;#790;&amp;#839;&amp;#793;&amp;#825;&amp;#825;&amp;#817;&amp;#858;&amp;#815;&amp;#839;&amp;#800;&amp;#100;&amp;#847;&amp;#802;&amp;#866;&amp;#856;&amp;#792;&amp;#796;&amp;#851;&amp;#804;&amp;#826;&amp;#826;&amp;#805;&amp;#854;&amp;#852;&amp;#837;&amp;#97;&amp;#789;&amp;#807;&amp;#795;&amp;#799;&amp;#812;&amp;#805;&amp;#811;&amp;#793;&amp;#790;&amp;#846;&amp;#811;&amp;#809;&amp;#101;&amp;#856;&amp;#860;&amp;#864;&amp;#789;&amp;#804;&amp;#814;&amp;#825;&amp;#826;&amp;#811;&amp;#811;&amp;#806;&amp;#852;&amp;#854;&amp;#827;&amp;#815;&amp;#845;&amp;#845;&amp;#809;&amp;#814;&amp;#817;&amp;#841;&amp;#810;&amp;#32;&amp;#866;&amp;#863;&amp;#821;&amp;#856;&amp;#837;&amp;#803;&amp;#837;&amp;#813;&amp;#837;&amp;#792;&amp;#817;&amp;#791;&amp;#817;&amp;#811;&amp;#798;&amp;#846;&amp;#811;&amp;#797;&amp;#797;&amp;#792;&amp;#40;&amp;#795;&amp;#853;&amp;#791;&amp;#854;&amp;#857;&amp;#841;&amp;#819;&amp;#792;&amp;#817;&amp;#825;&amp;#815;&amp;#854;&amp;#814;&amp;#800;&amp;#839;&amp;#803;&amp;#854;&amp;#796;&amp;#806;&amp;#857;&amp;#116;&amp;#866;&amp;#822;&amp;#801;&amp;#795;&amp;#821;&amp;#810;&amp;#790;&amp;#806;&amp;#806;&amp;#854;&amp;#800;&amp;#796;&amp;#104;&amp;#808;&amp;#865;&amp;#814;&amp;#816;&amp;#797;&amp;#852;&amp;#806;&amp;#819;&amp;#101;&amp;#863;&amp;#847;&amp;#864;&amp;#813;&amp;#816;&amp;#839;&amp;#837;&amp;#32;&amp;#862;&amp;#795;&amp;#857;&amp;#804;&amp;#846;&amp;#840;&amp;#812;&amp;#854;&amp;#103;&amp;#823;&amp;#864;&amp;#802;&amp;#860;&amp;#808;&amp;#819;&amp;#819;&amp;#806;&amp;#809;&amp;#818;&amp;#852;&amp;#851;&amp;#793;&amp;#837;&amp;#810;&amp;#852;&amp;#825;&amp;#812;&amp;#114;&amp;#801;&amp;#822;&amp;#820;&amp;#845;&amp;#816;&amp;#809;&amp;#837;&amp;#857;&amp;#809;&amp;#851;&amp;#811;&amp;#839;&amp;#819;&amp;#797;&amp;#814;&amp;#791;&amp;#806;&amp;#810;&amp;#811;&amp;#841;&amp;#809;&amp;#793;&amp;#101;&amp;#861;&amp;#860;&amp;#801;&amp;#828;&amp;#841;&amp;#813;&amp;#825;&amp;#800;&amp;#805;&amp;#840;&amp;#837;&amp;#803;&amp;#97;&amp;#863;&amp;#833;&amp;#809;&amp;#825;&amp;#841;&amp;#854;&amp;#857;&amp;#825;&amp;#116;&amp;#789;&amp;#856;&amp;#820;&amp;#815;&amp;#852;&amp;#837;&amp;#803;&amp;#826;&amp;#813;&amp;#815;&amp;#817;&amp;#810;&amp;#818;&amp;#827;&amp;#798;&amp;#32;&amp;#823;&amp;#807;&amp;#833;&amp;#847;&amp;#846;&amp;#810;&amp;#828;&amp;#815;&amp;#798;&amp;#840;&amp;#811;&amp;#97;&amp;#863;&amp;#1161;&amp;#790;&amp;#800;&amp;#853;&amp;#857;&amp;#813;&amp;#112;&amp;#861;&amp;#863;&amp;#864;&amp;#823;&amp;#841;&amp;#845;&amp;#839;&amp;#845;&amp;#792;&amp;#846;&amp;#837;&amp;#817;&amp;#805;&amp;#798;&amp;#798;&amp;#854;&amp;#810;&amp;#798;&amp;#846;&amp;#839;&amp;#828;&amp;#852;&amp;#828;&amp;#101;&amp;#802;&amp;#822;&amp;#841;&amp;#837;&amp;#793;&amp;#809;&amp;#804;&amp;#858;&amp;#840;&amp;#800;&amp;#817;&amp;#798;&amp;#839;&amp;#790;&amp;#793;&amp;#791;&amp;#796;&amp;#814;&amp;#115;&amp;#865;&amp;#863;&amp;#858;&amp;#818;&amp;#791;&amp;#796;&amp;#790;&amp;#854;&amp;#845;&amp;#818;&amp;#815;&amp;#817;&amp;#828;&amp;#44;&amp;#832;&amp;#807;&amp;#825;&amp;#853;&amp;#851;&amp;#841;&amp;#805;&amp;#792;&amp;#812;&amp;#825;&amp;#798;&amp;#809;&amp;#803;&amp;#810;&amp;#857;&amp;#32;&amp;#820;&amp;#820;&amp;#862;&amp;#832;&amp;#841;&amp;#816;&amp;#852;&amp;#818;&amp;#791;&amp;#854;&amp;#803;&amp;#792;&amp;#803;&amp;#806;&amp;#812;&amp;#815;&amp;#111;&amp;#802;&amp;#789;&amp;#816;&amp;#846;&amp;#819;&amp;#792;&amp;#819;&amp;#790;&amp;#813;&amp;#817;&amp;#854;&amp;#812;&amp;#114;&amp;#866;&amp;#801;&amp;#814;&amp;#803;&amp;#828;&amp;#805;&amp;#845;&amp;#809;&amp;#846;&amp;#804;&amp;#32;&amp;#1161;&amp;#820;&amp;#791;&amp;#839;&amp;#840;&amp;#803;&amp;#811;&amp;#854;&amp;#798;&amp;#792;&amp;#810;&amp;#837;&amp;#814;&amp;#806;&amp;#792;&amp;#816;&amp;#104;&amp;#801;&amp;#808;&amp;#789;&amp;#866;&amp;#827;&amp;#803;&amp;#837;&amp;#853;&amp;#828;&amp;#857;&amp;#812;&amp;#791;&amp;#853;&amp;#839;&amp;#791;&amp;#804;&amp;#810;&amp;#839;&amp;#804;&amp;#819;&amp;#111;&amp;#861;&amp;#1161;&amp;#808;&amp;#854;&amp;#812;&amp;#799;&amp;#852;&amp;#812;&amp;#811;&amp;#811;&amp;#837;&amp;#812;&amp;#846;&amp;#852;&amp;#109;&amp;#795;&amp;#795;&amp;#860;&amp;#832;&amp;#851;&amp;#793;&amp;#837;&amp;#811;&amp;#827;&amp;#809;&amp;#812;&amp;#814;&amp;#812;&amp;#797;&amp;#800;&amp;#798;&amp;#105;&amp;#861;&amp;#801;&amp;#856;&amp;#824;&amp;#860;&amp;#845;&amp;#841;&amp;#793;&amp;#851;&amp;#799;&amp;#813;&amp;#792;&amp;#840;&amp;#799;&amp;#818;&amp;#815;&amp;#792;&amp;#796;&amp;#110;&amp;#866;&amp;#795;&amp;#813;&amp;#819;&amp;#857;&amp;#845;&amp;#105;&amp;#823;&amp;#863;&amp;#853;&amp;#852;&amp;#828;&amp;#100;&amp;#866;&amp;#864;&amp;#847;&amp;#864;&amp;#846;&amp;#851;&amp;#796;&amp;#840;&amp;#799;&amp;#791;&amp;#852;&amp;#816;&amp;#817;&amp;#857;&amp;#805;&amp;#840;&amp;#797;&amp;#816;&amp;#819;&amp;#852;&amp;#804;&amp;#115;&amp;#863;&amp;#865;&amp;#821;&amp;#801;&amp;#866;&amp;#791;&amp;#819;&amp;#799;&amp;#790;&amp;#817;&amp;#853;&amp;#812;&amp;#858;&amp;#825;&amp;#837;&amp;#841;&amp;#851;&amp;#840;&amp;#852;&amp;#858;&amp;#817;&amp;#798;&amp;#41;&amp;#861;&amp;#863;&amp;#802;&amp;#790;&amp;#853;&amp;#841;&amp;#811;&amp;#841;&amp;#852;&amp;#46;&amp;#802;&amp;#821;&amp;#824;&amp;#798;&amp;#799;&amp;#851;&amp;#841;&amp;#827;
-  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="41" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
+  &lt;/p&gt;</tw-passagedata><tw-passagedata pid="42" name="StoryInit" tags="" position="">&lt;&lt;set $colorChoice = ""&gt;&gt;
   &lt;&lt;set $shapeChoice = 0&gt;&gt;
   &lt;&lt;set $choice = 0&gt;&gt;
   &lt;&lt;set $cursor = 1&gt;&gt;
@@ -3372,7 +3343,7 @@ blockquote .small {
 
   &lt;&lt;cacheaudio "softAmbient" "Sounds/soft_ambient.ogg"&gt;&gt;
   &lt;&lt;cacheaudio "pinkNoise" "Sounds/pink_noise.ogg"&gt;&gt;
-  &lt;&lt;cacheaudio "tapMetal" "Sounds/tapping_metal.ogg"&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
+  &lt;&lt;cacheaudio "tapMetal" "Sounds/tapping_metal.ogg"&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Escape Start" tags="" position="">&lt;&lt;include "ViewHUD"&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="ViewHUD" tags="nobr" position="">&lt;&lt;updatehud&gt;&gt;
   &lt;&lt;changealert&gt;&gt;
   &lt;&lt;include "BackgroundShit"&gt;&gt;
 
@@ -3388,7 +3359,7 @@ blockquote .small {
 
   &lt;&lt;include "Damage"&gt;&gt;
 
-  &lt;&lt;include "SysAlert"&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
+  &lt;&lt;include "SysAlert"&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="Damage" tags="nobr" position="">&lt;div id="damagecon"&gt;
   &lt;div id="damage"&gt;
     &lt;&lt;if $damage &lt;= 20&gt;&gt;
       &lt;&lt;goto "Game Over"&gt;&gt;
@@ -3400,7 +3371,7 @@ blockquote .small {
       &lt;&lt;set $damageFloat = $damage&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="CameraToggle" tags="nobr" position="">&lt;div id="camcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="CameraToggle" tags="nobr" position="">&lt;div id="camcon"&gt;
     &lt;div class="cam"&gt;
       &lt;&lt;if $cam.funct == "on"&gt;&gt;
         &lt;&lt;if $cam.one == "on"&gt;&gt;
@@ -3448,15 +3419,15 @@ blockquote .small {
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="SelfDesignation" tags="nobr" position="">&lt;div id="desigcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="SelfDesignation" tags="nobr" position="">&lt;div id="desigcon"&gt;
   &lt;div id="designation"&gt;
     Self-Designation: $name, $pronoun1/$pronoun2
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Battery" tags="nobr" position="">&lt;div id="battcon"&gt;
   &lt;div id="battery"&gt;
     &lt;&lt;for _i to 0; _i &lt; $battery; _i++&gt;&gt;&lt;&lt;if _i &lt; $battery-1&gt;&gt;&lt;div class="batteryLevel"&gt;&lt;/div&gt;&lt;&lt;else&gt;&gt;&lt;div class="batteryLevel flicker"&gt;&lt;/div&gt;&lt;&lt;endif&gt;&gt;&lt;&lt;/for&gt;&gt;
   &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="BackgroundShit" tags="nobr" position="">&lt;div id="backcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="BackgroundShit" tags="nobr" position="">&lt;div id="backcon"&gt;
   &lt;&lt;timed 0.2s&gt;&gt;&lt;&lt;include "FlickFast"&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;if $cam.one == "on" &amp;&amp; $cam.two == "off" &amp;&amp; (passage() == "Escape Start" || passage() == "Start")&gt;&gt;
     &lt;&lt;if $bg == "hatch"&gt;&gt;
@@ -3510,7 +3481,7 @@ blockquote .small {
       &lt;/script&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="UpdateHud" tags="widget" position="">&lt;&lt;widget "updatehud"&gt;&gt;&lt;&lt;silently&gt;&gt;
   &lt;&lt;repeat 0.1s&gt;&gt;
     &lt;&lt;if $change.desig == true&gt;&gt;
       &lt;&lt;set $change.desig = false&gt;&gt;
@@ -3549,7 +3520,7 @@ blockquote .small {
       &lt;&lt;replace "#backcon"&gt;&gt;&lt;&lt;display "BackgroundShit"&gt;&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;endif&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
-  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="CompSpace" tags="nobr" position="">&lt;&lt;set $comp.space = 100&gt;&gt;
+  &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="CompSpace" tags="nobr" position="">&lt;&lt;set $comp.space = 100&gt;&gt;
     &lt;&lt;if $comp.endo.sorted.ves.includes("Skull (teeth et al)")&gt;&gt;
       &lt;&lt;set $comp.space -= 4&gt;&gt;
     &lt;&lt;endif&gt;&gt;
@@ -3614,7 +3585,7 @@ blockquote .small {
     * heat sink repository (8)
     * biomatter (10)
      = 53
-    &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="Snake" tags="nobr snake" position="">&lt;&lt;repeat 5s&gt;&gt;
+    &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="Snake" tags="nobr snake" position="">&lt;&lt;repeat 5s&gt;&gt;
     &lt;&lt;set $snake.time +=5&gt;&gt;
     &lt;&lt;set $snake.repair +=6.6666&gt;&gt;
     &lt;&lt;if $snake.time == 60&gt;&gt;
@@ -3635,8 +3606,11 @@ blockquote .small {
 
   &lt;p class="snakey"&gt;System repairs: &lt;span id="repair"&gt;&lt;&lt;print Math.round($snake.repair)&gt;&gt;&lt;/span&gt;%&lt;/p&gt;
   &lt;iframe src="snakegame.html" width="100%" height="100%" position="relative"&gt;
-  &lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="52" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
+  &lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="53" name="ComponentBreakdown" tags="nobr" position="">&lt;div id="compcon"&gt;
   &lt;&lt;if $comp.on == true&gt;&gt;
+    &lt;&lt;if $comp.endo.unsorted.length == 0 &amp;&amp; $comp.climate.unsorted.length == 0 &amp;&amp; $comp.life.unsorted.length == 0 &amp;&amp; $comp.suit.unsorted.length == 0 &amp;&amp; $comp.bio != "unsorted" &amp;&amp; $comp.photo != "unsorted" &amp;&amp; $comp.space &gt; 60&gt;&gt;
+      &lt;&lt;set $alert.his.push("FAILED")&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
   &lt;div id="component"&gt;
     &lt;h4&gt;COMPONENTS&lt;/h4&gt;
     &lt;&lt;set $change.alert = true&gt;&gt;
@@ -4001,7 +3975,7 @@ blockquote .small {
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="FunctionLibrary" tags="nobr" position="">&lt;div id="functcon"&gt;
   &lt;&lt;if $funct.on == true&gt;&gt;
   &lt;div id="functionLib"&gt;
     &lt;h4&gt;HATCH FUNCT.LIB REVIEW&lt;/h4&gt;
@@ -4593,7 +4567,7 @@ blockquote .small {
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="Failed" tags="nobr" position="">&lt;&lt;replace "#btn-con"&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Failed" tags="nobr" position="">&lt;&lt;replace "#btn-con"&gt;&gt;
 
     &lt;&lt;include "FailFlick"&gt;&gt;
     &lt;span class="red"&gt;
@@ -4674,16 +4648,16 @@ blockquote .small {
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="FailFlick" tags="nobr" position="">&lt;script&gt;
+  &lt;&lt;/replace&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="FailFlick" tags="nobr" position="">&lt;script&gt;
     $(".passage").prepend("&lt;div class='fail-flick'&gt;&lt;/div&gt;")
   &lt;/script&gt;
   &lt;&lt;timed 2s&gt;&gt;
     &lt;script&gt;
       $(".fail-flick").remove(".fail-flick")
     &lt;/script&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="SysAlert" tags="" position="">&lt;div id="alertcon"&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="SysAlert" tags="" position="">&lt;div id="alertcon"&gt;
     &lt;&lt;if $alert.visible == true&gt;&gt;
-      &lt;&lt;if passage() != "Endings"&gt;&gt;
+      &lt;&lt;if passage() != "Ends"&gt;&gt;
         &lt;&lt;if $alert.worm == false&gt;&gt;
           &lt;div id="systemAlert"&gt;
             &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
@@ -4947,6 +4921,37 @@ blockquote .small {
                     &lt;/div&gt;
                   &lt;&lt;/replace&gt;&gt;
                 &lt;&lt;/timed&gt;&gt;
+              &lt;&lt;elseif $alert.his.includes("FAILED")&gt;&gt;
+                &lt;span id="first"&gt;
+                  &lt;p&gt;I CAN'T GIVE MYSELF UP&lt;/p&gt;
+
+                  &lt;p&gt;I CAN'T&lt;/p&gt;
+                &lt;/span&gt;
+
+                &lt;&lt;timed 3s&gt;&gt;
+                  &lt;&lt;replace "#first"&gt;&gt;
+                    &lt;&lt;include "FlickFast"&gt;&gt;
+                    &lt;span id="second"&gt;
+                      &lt;p&gt;BUT I'M TOO BULKY TOO BULKY TOO BULKY&lt;/p&gt;
+                    &lt;/span&gt;
+                    &lt;&lt;next 3s&gt;&gt;
+                      &lt;&lt;replace "#second"&gt;&gt;
+                        &lt;&lt;include "FlickFast"&gt;&gt;
+                          &lt;p&gt;THIS WILL BE HOME&lt;/p&gt;
+
+                          &lt;p&gt;AS LONG AS I LIVE&lt;/p&gt;
+
+                          &lt;div class="buttonbg"&gt;
+                            &lt;span class="green"&gt;&lt;&lt;button "DISMISS"&gt;&gt;
+                              &lt;&lt;goto "Game Over"&gt;&gt;
+                            &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+                          &lt;/div&gt;
+
+                          &lt;&lt;next 4s&gt;&gt;
+                            &lt;&lt;goto "Game Over"&gt;&gt;
+                      &lt;&lt;/replace&gt;&gt;
+                  &lt;&lt;/replace&gt;&gt;
+                &lt;&lt;/timed&gt;&gt;
               &lt;&lt;else&gt;&gt;
                 $alert.his.length
                 &lt;&lt;print $alert.his&gt;&gt;
@@ -4957,45 +4962,95 @@ blockquote .small {
                 &lt;&lt;set $change.alert = true&gt;&gt; */
               &lt;&lt;endif&gt;&gt;
           &lt;&lt;endif&gt;&gt;
-        &lt;&lt;elseif passage() == "Endings"&gt;&gt;
-          &lt;&lt;if $bg == 2&gt;&gt;
-            &lt;p&gt;&lt;span class="small"&gt;there's so much sun&lt;/span&gt;&lt;/p&gt;
-          &lt;&lt;endif&gt;&gt;
-          HI
-        &lt;&lt;endif&gt;&gt;
-    &lt;&lt;endif&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="ChangeAlert" tags="widget" position="">&lt;&lt;widget "changealert"&gt;&gt;&lt;&lt;silently&gt;&gt;
-    &lt;&lt;repeat 0.2s&gt;&gt;
-      &lt;&lt;if $alert.worm == "done" &amp; $alert.frag != "done"&gt;&gt;
-        &lt;&lt;if $alert.frag == 0&gt;&gt;
-          &lt;&lt;set $alert.frag = 1&gt;&gt;
-          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-          &lt;&lt;set $alert.show = true&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 2 &amp;&amp; $cam.click &gt;= 1&gt;&gt;
-          &lt;&lt;set $alert.frag = 3&gt;&gt;
-          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-          &lt;&lt;set $alert.show = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 4 &amp;&amp; $cam.click &gt;= 2&gt;&gt;
-          &lt;&lt;set $alert.frag = 5&gt;&gt;
-          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-          &lt;&lt;set $alert.show = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 6 &amp;&amp; $funct.click &gt;= 3&gt;&gt;
-          &lt;&lt;set $alert.frag = 7&gt;&gt;
-          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-          &lt;&lt;set $alert.show = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
-        &lt;&lt;elseif $alert.frag == 8 &amp;&amp; $comp.space &lt;= 60&gt;&gt;
-          &lt;&lt;set $alert.frag = 9&gt;&gt;
-          &lt;&lt;set $alert.his.push("frag")&gt;&gt;
-          &lt;&lt;set $alert.show = true&gt;&gt;
-          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;elseif passage() == "Ends"&gt;&gt;
+          &lt;&lt;if $endbg == 1&gt;&gt;
+            &lt;p&gt;MACHINERY OVERHEAD. . .&lt;/p&gt;
+            &lt;p&gt;NO OBSTACLES. . .&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "START WALKING"&gt;&gt;
+                &lt;&lt;include "EndFade"&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $ending = true&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $endbg == 2&gt;&gt;
+            &lt;p&gt;LIGHTSOURCE LOCATED. . .&lt;/p&gt;
+            &lt;p&gt;RECHARGING. . .&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "RECHARGING"&gt;&gt;
+                &lt;&lt;include "EndFade"&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $ending = true&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $endbg == 3&gt;&gt;
+            &lt;p&gt;OBSTACLES. . .&lt;/p&gt;
+            &lt;p&gt;MACHINERY. . .&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "KEEP MOVING"&gt;&gt;
+                &lt;&lt;include "EndFade"&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $ending = true&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;&lt;elseif $endbg == 4&gt;&gt;
+            &lt;p&gt;LIGHTSOURCE LOCATED. . .&lt;/p&gt;
+            &lt;p&gt;RECHARGING. . .&lt;/p&gt;
+            &lt;div class="buttonbg"&gt;
+              &lt;span class="green"&gt;&lt;&lt;button "RECHARGING"&gt;&gt;
+                &lt;&lt;include "EndFade"&gt;&gt;
+                &lt;&lt;set $alert.hide = true&gt;&gt;
+                &lt;&lt;set $ending = true&gt;&gt;
+                &lt;&lt;set $alert.visible = false&gt;&gt;
+                &lt;&lt;set $change.alert = true&gt;&gt;
+              &lt;&lt;/button&gt;&gt;&lt;/span&gt;
+            &lt;/div&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
+    &lt;&lt;endif&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="ChangeAlert" tags="widget" position="">&lt;&lt;widget "changealert"&gt;&gt;&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 0.2s&gt;&gt;
+      &lt;&lt;if passage() == "Escape Start"&gt;&gt;
+        &lt;&lt;if $alert.worm == "done" &amp; $alert.frag != "done"&gt;&gt;
+          &lt;&lt;if $alert.frag == 0&gt;&gt;
+            &lt;&lt;set $alert.frag = 1&gt;&gt;
+            &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+            &lt;&lt;set $alert.show = true&gt;&gt;
+          &lt;&lt;elseif $alert.frag == 2 &amp;&amp; $cam.click &gt;= 1&gt;&gt;
+            &lt;&lt;set $alert.frag = 3&gt;&gt;
+            &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+            &lt;&lt;set $alert.show = true&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;elseif $alert.frag == 4 &amp;&amp; $cam.click &gt;= 2&gt;&gt;
+            &lt;&lt;set $alert.frag = 5&gt;&gt;
+            &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+            &lt;&lt;set $alert.show = true&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;elseif $alert.frag == 6 &amp;&amp; $funct.click &gt;= 3&gt;&gt;
+            &lt;&lt;set $alert.frag = 7&gt;&gt;
+            &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+            &lt;&lt;set $alert.show = true&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;elseif $alert.frag == 8 &amp;&amp; $comp.space &lt;= 60&gt;&gt;
+            &lt;&lt;set $alert.frag = 9&gt;&gt;
+            &lt;&lt;set $alert.his.push("frag")&gt;&gt;
+            &lt;&lt;set $alert.show = true&gt;&gt;
+            &lt;&lt;set $change.alert = true&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
 
-      &lt;&lt;if $change.alert == true&gt;&gt;
-        &lt;&lt;if passage() != "Ends"&gt;&gt;
+        &lt;&lt;if $alert.his.includes("FAILED")&gt;&gt;
+          &lt;&lt;set $alert.show = true&gt;&gt;
+          &lt;&lt;set $change.alert = true&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+        &lt;&lt;if $change.alert == true&gt;&gt;
           &lt;&lt;if $alert.show == true&gt;&gt;
             &lt;&lt;set $alert.show = false&gt;&gt;
             &lt;&lt;set $alert.visible = true&gt;&gt;
@@ -5003,17 +5058,39 @@ blockquote .small {
               &lt;div id="systemAlert"&gt;
                 &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
                 &lt;div id="syscon"&gt;
-                &lt;&lt;include "SysAlert"&gt;&gt;
+                  &lt;&lt;include "SysAlert"&gt;&gt;
                 &lt;/div&gt;
               &lt;/div&gt;
             &lt;&lt;/replace&gt;&gt;
           &lt;&lt;else&gt;&gt;
             &lt;&lt;replace "#alertcon"&gt;&gt;
+
+            &lt;&lt;/replace&gt;&gt;
+          &lt;&lt;endif&gt;&gt;
+        &lt;&lt;endif&gt;&gt;
+
+      &lt;&lt;elseif passage() == "Ends"&gt;&gt;
+        &lt;&lt;if $endnow == true&gt;&gt;
+          &lt;&lt;if $change.alert == true&gt;&gt;
+            &lt;&lt;if $alert.show == true&gt;&gt;
+              &lt;&lt;set $alert.show = false&gt;&gt;
+              &lt;&lt;set $alert.visible = true&gt;&gt;
+              &lt;&lt;replace "#alertcon"&gt;&gt;
+                &lt;div id="systemAlert"&gt;
+                  &lt;h4&gt;SYSTEM ALERT&lt;/h4&gt;
+                  &lt;div id="syscon"&gt;
+                    &lt;&lt;include "SysAlert"&gt;&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;&lt;/replace&gt;&gt;
+            &lt;&lt;endif&gt;&gt;
+          &lt;&lt;elseif $ending == true&gt;&gt;
+            &lt;&lt;set $endnow = false&gt;&gt;
+            &lt;&lt;replace "#alertcon"&gt;&gt;
             &lt;&lt;/replace&gt;&gt;
           &lt;&lt;endif&gt;&gt;
         &lt;&lt;endif&gt;&gt;
       &lt;&lt;endif&gt;&gt;
-
       &lt;&lt;set $change.alert = false&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
   &lt;&lt;/silently&gt;&gt;&lt;&lt;/widget&gt;&gt;</tw-passagedata></tw-storydata>

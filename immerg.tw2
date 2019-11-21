@@ -715,25 +715,38 @@ Lysogenesis
 
 
 ::Game Over [nobr start]
-  <p>Maybe next time</p>
+  <p>Maybe next time you'll make better decisions.</p>
+
+  <p>Maybe that was just home to you.</p>
 
   <<timed 2s>>
-  <p><<button "Try again">><<run UI.restart()>><</button>></p>
+    <p><<button "Try again">><<run UI.restart()>><</button>></p>
   <</timed>>
 
 
 ::Ends [nobr]
   <<timed 5s>>
-  <<removeclass ".container">>
+    <<removeclass ".container">>
+      <<next 4s>>
+        <<set $endnow = true>>
+        <<set $alert.show = true>>
+        <<set $change.alert = true>>
   <</timed>>
   <div class="fade-in-white container"></div>
 
 
+
+
   <<include "ViewHUD">>
-  <p>thanks 4 playing</p>
 
-  [[credits|Credits]]
 
+::EndFade [nobr]
+  <script>
+    $(".passage").prepend("<div class='endFade container'></div>");
+  </script>
+  <<timed 10s>>
+    <<goto "Credits">>
+  <</timed>>
 
 ::Credits [nobr credits crt]
   <<include "BackgroundShit">>

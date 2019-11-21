@@ -1,6 +1,9 @@
 ::ComponentBreakdown [nobr]
   <div id="compcon">
   <<if $comp.on == true>>
+    <<if $comp.endo.unsorted.length == 0 && $comp.climate.unsorted.length == 0 && $comp.life.unsorted.length == 0 && $comp.suit.unsorted.length == 0 && $comp.bio != "unsorted" && $comp.photo != "unsorted" && $comp.space > 60>>
+      <<set $alert.his.push("FAILED")>>
+    <<endif>>
   <div id="component">
     <h4>COMPONENTS</h4>
     <<set $change.alert = true>>
